@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EVREN NEXUS</title>
+
+<style>
+html,body{
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100%;
+    background:#fff;
+    font-family:Tahoma,Arial,sans-serif;
+}
+
+#header{
+    height:70px;
+    background:#10232e;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+}
+
+#logo{
+    font-size:25px;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+#back{
+    position:absolute;
+    right:20px;
+    top:22px;
+    color:#fff;
+    text-decoration:none;
+    font-size:12px;
+}
+
+#content{
+    width:100%;
+    height:calc(100vh - 110px);
+    position:relative;
+    background:#fff;
+}
+
+#loading{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    color:#555;
+    font-size:14px;
+    z-index:1;
+}
+
+#iframe{
+    width:100%;
+    height:100%;
+    border:0;
+    display:block;
+    position:relative;
+    z-index:2;
+    background:#fff;
+}
+
+#footer{
+    height:40px;
+    background:#10232e;
+    color:#ccc;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div id="header">
+
+    <a id="back" href="https://evrenexus.blogfa.com/">
+        بازگشت به EVREN NEXUS
+    </a>
+
+    <div id="logo">
+        EVREN NEXUS
+    </div>
+
+</div>
+
+<div id="content">
+
+    <div id="loading">
+        در حال بارگذاری خبر...
+    </div>
+
+    <iframe id="iframe"></iframe>
+
+</div>
+
+<div id="footer">
+    EVREN NEXUS — Markets · Real Estate · Investment · Technology · Business
+</div>
+
+<script>
+
+(function(){
+
+    var params = new URLSearchParams(window.location.search);
+
+    var newsUrl = params.get("url");
+
+    var iframe = document.getElementById("iframe");
+
+    var loading = document.getElementById("loading");
+
+    if(!newsUrl){
+
+        loading.innerHTML = "لینک خبر مشخص نشده است.";
+
+        return;
+
+    }
+
+    try{
+
+        var url = new URL(newsUrl);
+
+        var allowedHosts = [
+            "www.asriran.com",
+            "asriran.com",
+            "www.donya-e-eqtesad.com",
+            "donya-e-eqtesad.com"
+        ];
+
+        if(allowedHosts.indexOf(url.hostname) === -1){
+
+            loading.innerHTML = "این منبع در فهرست منابع EVREN NEXUS نیست.";
+
+            return;
+
+        }
+
+        iframe.src = newsUrl;
+
+        iframe.onload = function(){
+
+            loading.style.display = "none";
+
+        };
+
+    }catch(e){
+
+        loading.innerHTML = "آدرس خبر معتبر نیست.";
+
+    }
+
+})();
+
+</script>
+
+</body>
+</html>
