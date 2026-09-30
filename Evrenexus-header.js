@@ -3,7 +3,7 @@
 "use strict";
 
 var css = `
-#Evrenxus-header{width:850px;max-width:100%;height:75px;margin:0 auto;position:relative;z-index:1000;background:#fff;border-bottom:1px solid #d7d7d7;font-family:Tahoma,Arial,sans-serif;box-sizing:border-box}
+#Evrenxus-header{width:850px;max-width:100%;height:75px;position:fixed;top:0;left:50%;transform:translateX(-50%);z-index:1000;background:#fff;border-bottom:1px solid #d7d7d7;font-family:Tahoma,Arial,sans-serif;box-sizing:border-box}
 #Evrenxus-header *{box-sizing:border-box}
 #Evrenxus-header-row1{height:30px;background:#10232e;position:relative;overflow:hidden}
 .Evrenxus-header-brand{position:absolute;right:0;top:0;width:130px;height:30px;display:flex;align-items:center;justify-content:center;background:#0c1b24;z-index:3}
@@ -32,7 +32,7 @@ var css = `
 #Evrenxus-property-search-button{height:24px;padding:0 7px;border:1px solid #10232e;background:#10232e;color:#fff;font-size:10px;font-weight:bold;cursor:pointer}
 #Evrenxus-property-search-error{display:none;position:absolute;right:5px;top:36px;color:#b23a3a;font-size:9px;white-space:nowrap}
 @media(max-width:700px){
-#Evrenxus-header{width:100%;max-width:100%;margin:0;height:73px}
+#Evrenxus-header{width:100%;max-width:100%;left:0;transform:none;height:73px}
 #Evrenxus-header-row1{height:28px}
 .Evrenxus-header-brand{width:105px;height:28px}
 .Evrenxus-brand{font-size:11px}
