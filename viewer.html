@@ -5,7 +5,7 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-<title><-BlogAndPostTitle-></title>
+<title><-PostTitle-> | Evren Nexus</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -74,7 +74,7 @@ body{
 
 .Evrenxus-ticker{
     width:100%;
-    height:25px;
+    height:30px;
 
     display:flex;
     align-items:center;
@@ -1581,6 +1581,19 @@ body:not(.Evrenxus-home) #Evrenxus-economic-box{
 #Evrenxus-header-row1{
     width:100%;
     height:30px;
+    display:flex;
+    align-items:center;
+    direction:rtl;
+    background:#10232e;
+}
+.Evrenxus-header-brand{
+    width:130px;
+    min-width:130px;
+    height:30px;
+    background:#0c1b24;
+}
+.Evrenxus-header-brand .Evrenxus-brand{
+    font-size:14px;
 }
 #Evrenxus-header-row2{
     width:100%;
@@ -1592,7 +1605,8 @@ body:not(.Evrenxus-home) #Evrenxus-economic-box{
     border-top:1px solid #e8e8e8;
 }
 #Evrenxus-header #Evrenxus-market-tickers{
-    width:100%;
+    flex:1;
+    width:auto;
     height:30px;
     position:static;
     transform:none;
@@ -1651,6 +1665,32 @@ body:not(.Evrenxus-home) #Evrenxus-economic-box{
     }
 }
 
+
+@media screen and (max-width:700px){
+    #Evrenxus-header-row1{
+        height:28px;
+    }
+    .Evrenxus-header-brand{
+        width:105px;
+        min-width:105px;
+        height:28px;
+    }
+    .Evrenxus-header-brand .Evrenxus-brand{
+        font-size:11px;
+    }
+    #Evrenxus-header #Evrenxus-market-tickers{
+        height:28px;
+        flex:1;
+    }
+    #Evrenxus-header-row2{
+        height:45px;
+    }
+    #Evrenxus-header #Evrenxus-property-search{
+        width:220px;
+        max-width:220px;
+    }
+}
+
 </style>
 
 </head>
@@ -1667,22 +1707,14 @@ body:not(.Evrenxus-home) #Evrenxus-economic-box{
 
 <div id="Evrenxus-header">
 <div id="Evrenxus-header-row1">
+
+    <div class="Evrenxus-brand-box Evrenxus-header-brand">
+        <a href="https://evrenexus.blogfa.com/" class="Evrenxus-brand">Evren Nexus</a>
+    </div>
+
 <div id="Evrenxus-market-tickers">
 
     <div class="Evrenxus-ticker">
-
-        <div class="Evrenxus-brand-box">
-
-            <a
-                href="https://evrenexus.blogfa.com/"
-                class="Evrenxus-brand">
-
-                Evren Nexus
-
-            </a>
-
-        </div>
-
 
         <div class="Evrenxus-ticker-window">
 
@@ -1769,8 +1801,7 @@ body:not(.Evrenxus-home) #Evrenxus-economic-box{
 
 
 
-<div id="Evrenxus-property-search" align="right"
-     style="width:300px; max-width:100%; margin:10px 0;">
+<div id="Evrenxus-property-search" align="right">
 
     <div id="Evrenxus-property-search-info">
 
@@ -2498,3 +2529,4 @@ body:not(.Evrenxus-home) #Evrenxus-economic-box{
 </body>
 
 </html>
+
