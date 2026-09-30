@@ -1,233 +1,1920 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>EVREN NEXUS</title>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<title><-BlogAndPostTitle-></title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta http-equiv="content-language" content="fa">
+
+<meta name="description" content="<-BlogDescription->">
+
+<meta name="generator" content="blogfa.com">
+
 
 <style>
-html,body{
-    margin:0;
-    padding:0;
-    width:100%;
-    height:100%;
-    background:#fff;
-    font-family:Tahoma,Arial,sans-serif;
+
+*{
+    box-sizing:border-box;
 }
 
-#header{
-    height:70px;
+html,
+body{
+    margin:0;
+    padding:0;
+}
+
+body{
+    background:#f3f3f3;
+    color:#222;
+    font-family:Tahoma,Arial,sans-serif;
+    direction:rtl;
+}
+
+@font-face{
+    font-family:Vazir;
+    src:url("https://theme.blogfa.com/fa/font/Vazir.woff2") format("woff2");
+}
+
+@font-face{
+    font-family:Vazir;
+    src:url("https://theme.blogfa.com/fa/font/Vazir-Bold.woff2") format("woff2");
+    font-weight:bold;
+}
+
+#wrapper{
+    width:850px;
+    min-width:850px;
+    margin:0 auto 20px;
+    background:#fff;
+    border:1px solid #d5d5d5;
+    overflow:hidden;
+}
+
+
+/* =====================================================
+   MARKET TICKER
+   FIXED
+===================================================== */
+
+#Evrenxus-market-tickers{
+    width:850px;
+    height:30px;
+    position:fixed;
+    top:0;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:1000;
+    overflow:hidden;
+}
+
+.Evrenxus-ticker{
+    width:100%;
+    height:25px;
+
+    display:flex;
+    align-items:center;
+
     background:#10232e;
     color:#fff;
+
+    direction:rtl;
+
+    font-family:Vazir,Tahoma,sans-serif;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.Evrenxus-brand-box{
+    width:130px;
+    min-width:130px;
+
+    height:25px;
+
     display:flex;
     align-items:center;
     justify-content:center;
-    position:relative;
+
+    background:#0c1b24;
+
+    white-space:nowrap;
 }
 
-#logo{
-    font-size:25px;
-    font-weight:bold;
-    letter-spacing:1px;
-}
-
-#back{
-    position:absolute;
-    right:20px;
-    top:22px;
+.Evrenxus-brand{
     color:#fff;
     text-decoration:none;
-    font-size:12px;
+
+    font-family:Vazir,Tahoma,sans-serif;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.Evrenxus-brand:hover{
+    color:#fff;
+}
+
+.Evrenxus-datetime{
+    width:130px;
+    min-width:130px;
+
+    height:25px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:5px;
+
+    background:#0c1b24;
+
+    white-space:nowrap;
+
+    font-size:11px;
+}
+
+.Evrenxus-ticker-window{
+    flex:1;
+
+    height:25px;
+
+    overflow:hidden;
+
+    white-space:nowrap;
+}
+
+.Evrenxus-ticker-track{
+    display:inline-flex;
+    align-items:center;
+
+    height:25px;
+
+    white-space:nowrap;
+
+    animation:EvrenxusTickerMove 45s linear infinite;
+}
+
+.Evrenxus-ticker-track:hover{
+    animation-play-state:paused;
+}
+
+.Evrenxus-ticker-item{
+    display:inline-flex;
+    align-items:center;
+
+    margin-left:28px;
+
+    height:25px;
+
+    white-space:nowrap;
+}
+
+.Evrenxus-ticker-item .symbol{
+    color:#ddd;
+    margin-left:5px;
+}
+
+.Evrenxus-ticker-item .price{
+    color:#fff;
+}
+
+.up{
+    color:#70d690;
+    margin-right:5px;
+}
+
+.down{
+    color:#ff8585;
+    margin-right:5px;
+}
+
+@keyframes EvrenxusTickerMove{
+
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(50%);
+    }
+
+}
+
+
+/* =====================================================
+   MAIN MENU
+   FIXED
+===================================================== */
+
+#Evrenxus-main-menu{
+    width:auto;
+    height:45px;
+    margin:0;
+    padding:0;
+    background:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    direction:rtl;
+    overflow-x:auto;
+    overflow-y:hidden;
+    white-space:nowrap;
+    font-family:Vazir,Tahoma,sans-serif;
+    scrollbar-width:none;
+    flex:1;
+}
+
+#Evrenxus-main-menu::-webkit-scrollbar{
+    display:none;
+}
+
+#Evrenxus-main-menu a{
+    height:100%;
+
+    padding:0 13px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:#333;
+    text-decoration:none;
+
+    font-size:11.5px;
+    font-weight:bold;
+
+    border-left:1px solid #eeeeee;
+
+    white-space:nowrap;
+
+    transition:all .15s ease;
+}
+
+#Evrenxus-main-menu a:first-child{
+    border-left:none;
+}
+
+#Evrenxus-main-menu a:hover{
+    color:#147a9c;
+    background:#f7f9fa;
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+#container{
+    margin:0 0 10px;
+
+    /*
+     * Ticker: 25px
+     * Menu: 38px
+     * Search: 35px
+     * Gap: 12px
+     * Total: 110px
+     */
+
+    padding:87px 10px 0;
+
+    overflow:hidden;
 }
 
 #content{
-    width:100%;
-    height:calc(100vh - 110px);
-    position:relative;
-    background:#fff;
+    float:right;
+    width:610px;
 }
 
-#loading{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    color:#555;
-    font-size:14px;
-    z-index:1;
+#sidebar{
+    float:left;
+    width:200px;
 }
 
-#iframe{
-    width:100%;
-    height:100%;
-    border:0;
-    display:block;
-    position:relative;
-    z-index:2;
-    background:#fff;
-}
 
-#footer{
-    height:40px;
-    background:#10232e;
-    color:#ccc;
+/* =====================================================
+   PROPERTY SEARCH
+   FIXED HORIZONTAL BAR
+===================================================== */
+
+#Evrenxus-property-search{
+    width:300px;
+    max-width:300px;
+    height:35px;
+    margin:0;
+    padding:0 8px;
+    position:static;
+    transform:none;
+    z-index:auto;
+    border:1px solid #d6dde1;
+    border-right:4px solid #10232e;
+    background:linear-gradient(135deg,#ffffff 0%,#f8fafb 100%);
     display:flex;
     align-items:center;
-    justify-content:center;
-    font-size:10px;
+    direction:rtl;
+    font-family:Vazir,Tahoma,sans-serif;
+    box-shadow:none;
+    flex-shrink:0;
 }
+
+
+/* INFO */
+
+#Evrenxus-property-search-info{
+
+    flex:1;
+
+    min-width:0;
+
+    height:35px;
+
+    display:flex;
+    align-items:center;
+
+    gap:10px;
+
+    overflow:hidden;
+}
+
+
+/* TITLE */
+
+#Evrenxus-property-search-title{
+
+    color:#17252d;
+
+    font-size:12px;
+    font-weight:bold;
+
+    line-height:35px;
+
+    margin:0;
+
+    white-space:nowrap;
+
+    flex-shrink:0;
+}
+
+#Evrenxus-property-search-title a{
+
+    color:#17252d;
+
+    text-decoration:none;
+}
+
+#Evrenxus-property-search-title a:hover{
+
+    color:#147a9c;
+}
+
+
+/* HINT */
+
+#Evrenxus-property-search-hint{
+
+    color:#777;
+
+    font-size:9.5px;
+
+    line-height:35px;
+
+    white-space:nowrap;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+}
+
+
+/* FORM */
+
+#Evrenxus-property-search-form{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:5px;
+
+    flex-shrink:0;
+
+    direction:rtl;
+}
+
+
+/* INPUT */
+
+#Evrenxus-property-budget{
+
+    width:85px;
+    height:27px;
+
+    padding:0 7px;
+
+    border:1px solid #c8d0d5;
+
+    background:#fff;
+    color:#222;
+
+    outline:none;
+
+    border-radius:2px;
+
+    font-family:Vazir,Tahoma,sans-serif;
+
+    font-size:11px;
+
+    text-align:center;
+    direction:ltr;
+
+    transition:.15s;
+}
+
+#Evrenxus-property-budget::placeholder{
+
+    color:#999;
+}
+
+#Evrenxus-property-budget:focus{
+
+    border-color:#147a9c;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(20,122,156,.10);
+}
+
+
+/* BUTTON */
+
+#Evrenxus-property-search-button{
+
+    height:27px;
+
+    padding:0 13px;
+
+    border:1px solid #10232e;
+
+    border-radius:2px;
+
+    background:#10232e;
+    color:#fff;
+
+    font-family:Vazir,Tahoma,sans-serif;
+
+    font-size:11px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.15s;
+
+    white-space:nowrap;
+}
+
+#Evrenxus-property-search-button:hover{
+
+    background:#147a9c;
+
+    border-color:#147a9c;
+}
+
+
+/* ERROR */
+
+#Evrenxus-property-search-error{
+
+    display:none;
+
+    position:absolute;
+
+    right:10px;
+    top:36px;
+
+    color:#b23a3a;
+
+    font-family:Vazir,Tahoma,sans-serif;
+
+    font-size:10px;
+
+    white-space:nowrap;
+}
+
+
+/* =====================================================
+   SLIDER
+===================================================== */
+
+#Evrenxus-slider{
+
+    width:610px;
+    height:300px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    margin-bottom:25px;
+
+    background:#222;
+}
+
+.Evrenxus-slide{
+
+    display:none;
+
+    width:610px;
+    height:300px;
+
+    position:relative;
+}
+
+.Evrenxus-slide.active{
+
+    display:block;
+}
+
+.Evrenxus-slide img{
+
+    width:610px;
+    height:300px;
+
+    object-fit:cover;
+
+    display:block;
+}
+
+.Evrenxus-slide-caption{
+
+    position:absolute;
+
+    right:0;
+    bottom:0;
+
+    width:100%;
+
+    padding:35px 20px 18px;
+
+    background:linear-gradient(
+        transparent,
+        rgba(0,0,0,.88)
+    );
+
+    color:#fff;
+
+    font-family:Vazir,Tahoma,sans-serif;
+
+    font-size:18px;
+    font-weight:bold;
+}
+
+.Evrenxus-slider-prev,
+.Evrenxus-slider-next{
+
+    position:absolute;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:38px;
+    height:50px;
+
+    border:0;
+
+    background:rgba(0,0,0,.45);
+
+    color:#fff;
+
+    font-size:28px;
+
+    cursor:pointer;
+
+    z-index:10;
+}
+
+.Evrenxus-slider-prev{
+
+    left:0;
+}
+
+.Evrenxus-slider-next{
+
+    right:0;
+}
+
+.Evrenxus-slider-dots{
+
+    position:absolute;
+
+    bottom:8px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    z-index:11;
+
+    display:flex;
+
+    gap:5px;
+}
+
+.Evrenxus-slider-dot{
+
+    width:8px;
+    height:8px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.5);
+
+    cursor:pointer;
+}
+
+.Evrenxus-slider-dot.active{
+
+    background:#fff;
+}
+
+
+/* =====================================================
+   ECONOMIC NEWS
+===================================================== */
+
+#Evrenxus-economic-box{
+
+    width:610px;
+
+    margin-bottom:25px;
+
+    border:1px solid #d7d7d7;
+
+    background:#fff;
+
+    overflow:hidden;
+}
+
+#Evrenxus-economic-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:10px;
+
+    padding:10px;
+}
+
+.Evrenxus-economic-card{
+
+    display:flex;
+
+    width:100%;
+    height:125px;
+
+    min-width:0;
+
+    border:1px solid #e1e1e1;
+
+    background:#fff;
+
+    color:#222;
+
+    text-decoration:none;
+
+    overflow:hidden;
+
+    direction:rtl;
+
+    transition:.15s;
+}
+
+.Evrenxus-economic-card:hover{
+
+    background:#f6f6f6;
+    border-color:#bbb;
+}
+
+.Evrenxus-economic-image{
+
+    width:115px;
+    min-width:115px;
+
+    height:123px;
+
+    object-fit:cover;
+
+    display:block;
+
+    background:#eee;
+}
+
+.Evrenxus-economic-content{
+
+    padding:8px 9px;
+
+    overflow:hidden;
+
+    flex:1;
+}
+
+.Evrenxus-economic-title{
+
+    font-family:Vazir,Tahoma,sans-serif;
+
+    font-size:12px;
+    font-weight:bold;
+
+    line-height:1.7;
+
+    margin-bottom:5px;
+
+    display:-webkit-box;
+
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+
+    overflow:hidden;
+}
+
+.Evrenxus-economic-summary{
+
+    font-family:Vazir,Tahoma,sans-serif;
+
+    font-size:10.5px;
+
+    line-height:1.8;
+
+    color:#666;
+
+    text-align:justify;
+
+    display:-webkit-box;
+
+    -webkit-line-clamp:4;
+    -webkit-box-orient:vertical;
+
+    overflow:hidden;
+}
+
+.Evrenxus-economic-loading,
+.Evrenxus-economic-error{
+
+    grid-column:1 / 3;
+
+    padding:20px;
+
+    text-align:center;
+
+    font-family:Vazir,Tahoma,sans-serif;
+
+    font-size:12px;
+
+    color:#777;
+}
+
+
+/* =====================================================
+   BLOG POSTS
+===================================================== */
+
+.post{
+
+    margin-bottom:30px;
+}
+
+.post-title{
+
+    margin:0 0 10px;
+
+    font-family:Vazir,Tahoma,sans-serif;
+
+    font-size:21px;
+
+    line-height:1.8;
+}
+
+.post-title a{
+
+    color:#222;
+
+    text-decoration:none;
+}
+
+.post-title a:hover{
+
+    color:#147a9c;
+}
+
+.post-body{
+
+    font-family:Vazir,Tahoma,sans-serif;
+
+    font-size:14px;
+
+    line-height:2.1;
+
+    text-align:justify;
+}
+
+.post-body img{
+
+    max-width:100%;
+    height:auto;
+}
+
+.post-info{
+
+    margin-top:12px;
+
+    padding-top:8px;
+
+    border-top:1px solid #eee;
+
+    color:#888;
+
+    font-size:11px;
+}
+
+.post-info a{
+
+    color:#777;
+
+    text-decoration:none;
+}
+
+.blogfa-next{
+
+    clear:both;
+
+    margin:20px 0;
+
+    text-align:center;
+
+    font-family:Vazir,Tahoma,sans-serif;
+
+    font-size:12px;
+}
+
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+.menu{
+
+    margin-bottom:15px;
+
+    border:1px solid #ddd;
+
+    background:#fff;
+}
+
+.menu a{
+
+    display:block;
+
+    padding:9px 10px;
+
+    border-bottom:1px solid #eee;
+
+    color:#333;
+
+    text-decoration:none;
+
+    font-family:Vazir,Tahoma,sans-serif;
+
+    font-size:12px;
+
+    font-weight:bold;
+}
+
+.menu a:last-child{
+
+    border-bottom:0;
+}
+
+.menu a:hover{
+
+    background:#f3f3f3;
+}
+
+.custombox{
+
+    margin-bottom:15px;
+
+    padding:10px;
+
+    border:1px solid #ddd;
+
+    background:#fff;
+
+    font-family:Vazir,Tahoma,sans-serif;
+
+    font-size:12px;
+
+    line-height:1.9;
+}
+
+#Evrenxus-latest-posts{
+
+    width:200px;
+
+    margin-bottom:15px;
+
+    border:1px solid #d7d7d7;
+
+    background:#fff;
+
+    overflow:hidden;
+}
+
+.Evrenxus-latest-post-item{
+
+    display:block;
+
+    padding:7px 8px;
+
+    border-bottom:1px solid #eee;
+
+    color:#333;
+
+    text-decoration:none;
+
+    font-family:Vazir,Tahoma,sans-serif;
+
+    font-size:10.5px;
+
+    line-height:1.8;
+}
+
+.Evrenxus-latest-post-item:last-child{
+
+    border-bottom:0;
+}
+
+.Evrenxus-latest-post-item:hover{
+
+    color:#147a9c;
+
+    background:#fafafa;
+}
+
+
+/* =====================================================
+   PAGE MODE
+===================================================== */
+
+body.Evrenxus-home .post{
+
+    display:none;
+}
+
+body.Evrenxus-home .blogfa-next{
+
+    display:none;
+}
+
+body:not(.Evrenxus-home) #Evrenxus-economic-box{
+
+    display:none;
+}
+
+
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media screen and (max-width:700px){
+
+    #Evrenxus-header{
+        width:100%;
+        height:73px;
+        top:0;
+        left:0;
+        transform:none;
+    }
+    #Evrenxus-header-row1{
+        height:28px;
+    }
+    #Evrenxus-header-row2{
+        height:45px;
+        overflow:hidden;
+    }
+    #Evrenxus-header #Evrenxus-market-tickers{
+        width:100%;
+        height:28px;
+    }
+    #Evrenxus-header #Evrenxus-main-menu{
+        height:45px;
+        flex:1;
+        min-width:0;
+    }
+    #Evrenxus-header #Evrenxus-property-search{
+        width:250px;
+        max-width:250px;
+        height:35px;
+        flex-shrink:0;
+        padding:0 5px;
+    }
+
+
+    html,
+    body{
+
+        width:100%;
+
+        min-width:0;
+
+        overflow-x:hidden;
+    }
+
+    body{
+
+        background:#fff;
+    }
+
+    #wrapper{
+
+        width:100%;
+
+        min-width:0;
+
+        margin:0;
+
+        border:0;
+    }
+
+
+    /* TICKER */
+
+    #Evrenxus-market-tickers{
+        width:100%;
+        height:28px;
+    }
+
+    .Evrenxus-ticker{
+
+        height:28px;
+
+        font-size:11px;
+    }
+
+    .Evrenxus-brand-box{
+
+        width:125px;
+        min-width:125px;
+
+        height:28px;
+    }
+
+    .Evrenxus-brand{
+
+        font-size:12px;
+    }
+
+    .Evrenxus-datetime{
+
+        width:125px;
+        min-width:125px;
+
+        height:28px;
+
+        gap:3px;
+
+        font-size:9px;
+
+        padding:0 3px;
+    }
+
+    .Evrenxus-ticker-window{
+
+        height:28px;
+    }
+
+    .Evrenxus-ticker-track{
+
+        height:28px;
+
+        animation-duration:35s;
+    }
+
+    .Evrenxus-ticker-item{
+
+        height:28px;
+
+        margin-left:20px;
+
+        font-size:11px;
+    }
+
+
+    /* MAIN MENU */
+
+    #Evrenxus-main-menu{
+
+        width:100%;
+
+        height:36px;
+
+        top:28px;
+
+        left:0;
+
+        transform:none;
+
+        justify-content:flex-start;
+
+        overflow-x:auto;
+
+        overflow-y:hidden;
+
+        -webkit-overflow-scrolling:touch;
+
+        scrollbar-width:none;
+    }
+
+    #Evrenxus-main-menu::-webkit-scrollbar{
+
+        display:none;
+    }
+
+    #Evrenxus-main-menu a{
+
+        padding:0 11px;
+
+        font-size:10.5px;
+
+        flex-shrink:0;
+    }
+
+
+    /* CONTAINER */
+
+    #container{
+
+        width:100%;
+
+        margin:0 0 10px;
+
+        /*
+         * Ticker 28px
+         * Menu 36px
+         * Search 35px
+         * Gap 12px
+         */
+
+        padding:81px 8px 0;
+
+        overflow:visible;
+    }
+
+    #content{
+
+        float:none;
+
+        width:100%;
+    }
+
+    #sidebar{
+
+        float:none;
+
+        width:100%;
+
+        margin-top:20px;
+    }
+
+
+    /* PROPERTY SEARCH */
+
+    #Evrenxus-property-search{
+        width:250px;
+        max-width:250px;
+        height:35px;
+        margin:0;
+        padding:0 5px;
+        position:static;
+        transform:none;
+        border-right:3px solid #10232e;
+        box-shadow:none;
+    }
+
+
+    #Evrenxus-property-search-info{
+
+        height:35px;
+
+        gap:6px;
+
+        overflow:hidden;
+
+        margin:0;
+    }
+
+
+    #Evrenxus-property-search-title{
+
+        font-size:10.5px;
+
+        line-height:35px;
+
+        flex-shrink:0;
+    }
+
+
+    #Evrenxus-property-search-hint{
+
+        font-size:8px;
+
+        line-height:35px;
+
+        overflow:hidden;
+
+        text-overflow:ellipsis;
+
+        white-space:nowrap;
+    }
+
+
+    #Evrenxus-property-search-form{
+
+        width:auto;
+
+        height:35px;
+
+        justify-content:center;
+
+        flex-shrink:0;
+    }
+
+
+    #Evrenxus-property-budget{
+
+        width:65px;
+
+        height:26px;
+
+        max-width:none;
+
+        flex:none;
+
+        font-size:10px;
+    }
+
+
+    #Evrenxus-property-search-button{
+
+        height:26px;
+
+        padding:0 9px;
+
+        font-size:10px;
+    }
+
+
+    #Evrenxus-property-search-error{
+
+        position:absolute;
+
+        right:5px;
+
+        top:36px;
+
+        margin:0;
+
+        text-align:right;
+
+        white-space:nowrap;
+
+        font-size:9px;
+    }
+
+
+    /* SLIDER */
+
+    #Evrenxus-slider{
+
+        width:100%;
+
+        height:auto;
+
+        aspect-ratio:610 / 300;
+
+        margin-bottom:18px;
+    }
+
+    .Evrenxus-slide{
+
+        width:100%;
+
+        height:100%;
+    }
+
+    .Evrenxus-slide img{
+
+        width:100%;
+
+        height:100%;
+
+        object-fit:cover;
+    }
+
+    .Evrenxus-slide-caption{
+
+        padding:30px 12px 13px;
+
+        font-size:14px;
+
+        line-height:1.8;
+    }
+
+    .Evrenxus-slider-prev,
+    .Evrenxus-slider-next{
+
+        width:32px;
+
+        height:44px;
+
+        font-size:24px;
+    }
+
+    .Evrenxus-slider-dots{
+
+        bottom:6px;
+    }
+
+    .Evrenxus-slider-dot{
+
+        width:7px;
+
+        height:7px;
+    }
+
+
+    /* NEWS */
+
+    #Evrenxus-economic-box{
+
+        width:100%;
+
+        margin-bottom:20px;
+    }
+
+    #Evrenxus-economic-grid{
+
+        grid-template-columns:1fr;
+
+        gap:8px;
+
+        padding:8px;
+    }
+
+    .Evrenxus-economic-card{
+
+        width:100%;
+
+        height:110px;
+    }
+
+    .Evrenxus-economic-image{
+
+        width:105px;
+
+        min-width:105px;
+
+        height:108px;
+    }
+
+    .Evrenxus-economic-content{
+
+        padding:7px 8px;
+    }
+
+    .Evrenxus-economic-title{
+
+        font-size:11.5px;
+
+        line-height:1.7;
+
+        margin-bottom:3px;
+    }
+
+    .Evrenxus-economic-summary{
+
+        font-size:10px;
+
+        line-height:1.7;
+
+        -webkit-line-clamp:3;
+    }
+
+    .Evrenxus-economic-loading,
+    .Evrenxus-economic-error{
+
+        grid-column:1;
+
+        padding:18px 10px;
+
+        font-size:11px;
+    }
+
+
+    /* SIDEBAR */
+
+    .Evrenxus-latest-post-item{
+
+        padding:8px 8px;
+
+        font-size:11px;
+
+        line-height:1.8;
+    }
+
+    .custombox{
+
+        width:100%;
+
+        margin-bottom:12px;
+
+        padding:10px;
+
+        font-size:11px;
+    }
+}
+
+
+@media screen and (max-width:380px){
+
+    .Evrenxus-brand-box{
+
+        width:112px;
+
+        min-width:112px;
+    }
+
+    .Evrenxus-brand{
+
+        font-size:11px;
+    }
+
+    .Evrenxus-datetime{
+
+        width:112px;
+
+        min-width:112px;
+
+        font-size:8px;
+    }
+
+    .Evrenxus-ticker-item{
+
+        font-size:10px;
+
+        margin-left:16px;
+    }
+
+
+    #Evrenxus-main-menu{
+
+        height:35px;
+    }
+
+    #Evrenxus-main-menu a{
+
+        padding:0 10px;
+
+        font-size:10px;
+    }
+
+
+    #Evrenxus-property-search{
+
+        height:35px;
+
+        padding:0 5px;
+    }
+
+    #Evrenxus-property-search-title{
+
+        font-size:9.5px;
+    }
+
+    #Evrenxus-property-search-hint{
+
+        font-size:7.5px;
+    }
+
+    #Evrenxus-property-budget{
+
+        width:58px;
+
+        height:25px;
+    }
+
+    #Evrenxus-property-search-button{
+
+        height:25px;
+
+        padding:0 7px;
+
+        font-size:9px;
+    }
+
+    .Evrenxus-slide-caption{
+
+        font-size:12px;
+
+        padding:25px 10px 11px;
+    }
+
+    .Evrenxus-economic-image{
+
+        width:95px;
+
+        min-width:95px;
+    }
+
+    .Evrenxus-economic-title{
+
+        font-size:11px;
+    }
+
+    .Evrenxus-economic-summary{
+
+        font-size:9.5px;
+    }
+
+    .post-title{
+
+        font-size:18px;
+    }
+
+}
+
+
+@media screen and (min-width:701px) and (max-width:900px){
+
+    #wrapper{
+
+        width:850px;
+    }
+
+}
+
+
+#Evrenxus-header{
+    width:850px;
+    height:75px;
+    position:fixed;
+    top:0;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:1000;
+    background:#fff;
+    border-bottom:1px solid #d7d7d7;
+}
+#Evrenxus-header-row1{
+    width:100%;
+    height:30px;
+}
+#Evrenxus-header-row2{
+    width:100%;
+    height:45px;
+    display:flex;
+    align-items:center;
+    direction:rtl;
+    background:#fff;
+    border-top:1px solid #e8e8e8;
+}
+#Evrenxus-header #Evrenxus-market-tickers{
+    width:100%;
+    height:30px;
+    position:static;
+    transform:none;
+}
+#Evrenxus-header #Evrenxus-main-menu{
+    height:45px;
+}
+#Evrenxus-header #Evrenxus-property-search{
+    width:300px;
+    max-width:300px;
+    height:35px;
+}
+
 </style>
+
 </head>
+
 
 <body>
 
-<header id="Evrenxus-header">
+<div id="wrapper">
 
-    <!-- ROW 1 -->
-    <div id="Evrenxus-header-row1">
 
-        <!-- TICKER -->
-        <div id="Evrenxus-market-tickers">
-            ...
-        </div>
+<!-- =====================================================
+     MARKET TICKER
+===================================================== -->
 
-        <!-- BRAND -->
+<div id="Evrenxus-header">
+<div id="Evrenxus-header-row1">
+<div id="Evrenxus-market-tickers">
+
+    <div class="Evrenxus-ticker">
+
         <div class="Evrenxus-brand-box">
-            <a href="https://evrenexus.blogfa.com/"
-               class="Evrenxus-brand">
+
+            <a
+                href="https://evrenexus.blogfa.com/"
+                class="Evrenxus-brand">
+
                 Evren Nexus
+
             </a>
+
         </div>
 
-        <!-- DATE / TIME -->
+
+        <div class="Evrenxus-ticker-window">
+
+            <div
+                id="Evrenxus-global-track"
+                class="Evrenxus-ticker-track">
+
+                <span class="Evrenxus-ticker-item">
+
+                    در حال دریافت بازارهای جهانی...
+
+                </span>
+
+            </div>
+
+        </div>
+
+
         <div class="Evrenxus-datetime">
+
             <span id="Evrenxus-shamsi"></span>
+
             <span>|</span>
+
             <span id="Evrenxus-time"></span>
-        </div>
-
-    </div>
-
-
-    <!-- ROW 2 -->
-    <div id="Evrenxus-header-row2">
-
-        <!-- MAIN MENU -->
-        <nav id="Evrenxus-main-menu">
-
-            <a href="https://evrenexus.blogfa.com/">&#1582;&#1575;&#1606;&#1607;</a>
-            <a href="https://evrenexus.blogfa.com/profile">&#1583;&#1585;&#1576;&#1575;&#1585;&#1607; &#1605;&#1606;</a>
-            <a href="***">&#1575;&#1602;&#1578;&#1589;&#1575;&#1583;</a>
-            <a href="***">&#1591;&#1604;&#1575;</a>
-            <a href="***">&#1575;&#1585;&#1586;</a>
-            <a href="***">&#1605;&#1587;&#1705;&#1606;</a>
-            <a href="***">&#1576;&#1608;&#1585;&#1587;</a>
-            <a href="***">&#1705;&#1585;&#1740;&#1662;&#1578;&#1608;</a>
-            <a href="***">&#1582;&#1608;&#1583;&#1585;&#1608;</a>
-            <a href="***">&#1578;&#1581;&#1604;&#1740;&#1604; &#1576;&#1575;&#1586;&#1575;&#1585;</a>
-
-        </nav>
-
-
-        <!-- PROPERTY SEARCH -->
-        <div id="Evrenxus-property-search">
-
-            <div id="Evrenxus-property-search-title">
-                <a target="_blank"
-                   href="https://evrenexus.blogfa.com/post/5">
-                    &#1605;&#1608;&#1578;&#1608;&#1585; &#1580;&#1587;&#1578;&#1580;&#1608;&#1740; &#1575;&#1605;&#1604;&#1575;&#1705;
-                </a>
-            </div>
-
-            <div id="Evrenxus-property-search-form">
-
-                <input
-                    id="Evrenxus-property-budget"
-                    type="text"
-                    inputmode="decimal"
-                    autocomplete="off"
-                    placeholder="&#1576;&#1608;&#1583;&#1580;&#1607;"
-                    aria-label="&#1576;&#1608;&#1583;&#1580;&#1607; &#1582;&#1585;&#1740;&#1583; &#1605;&#1604;&#1705;">
-
-                <button
-                    id="Evrenxus-property-search-button"
-                    type="button">
-                    &#1576;&#1740;&#1575;&#1576;
-                </button>
-
-            </div>
 
         </div>
 
     </div>
 
-</header>
+</div>
+
+
+<!-- =====================================================
+     MAIN MENU
+===================================================== -->
+
+
+</div>
+<div id="Evrenxus-header-row2">
+<div id="Evrenxus-main-menu">
+
+    <a href="https://evrenexus.blogfa.com/">
+        خانه
+    </a>
+
+    <a href="https://evrenexus.blogfa.com/profile">
+        درباره من
+    </a>
+
+    <a href="***">
+        اقتصاد
+    </a>
+
+    <a href="***">
+        طلا
+    </a>
+
+    <a href="***">
+        ارز
+    </a>
+
+    <a href="***">
+        مسکن
+    </a>
+
+    <a href="***">
+        بورس
+    </a>
+
+    <a href="***">
+        کریپتو
+    </a>
+
+    <a href="***">
+        خودرو
+    </a>
+
+    <a href="***">
+        تحلیل بازار
+    </a>
+
+</div>
+
+
+
+<div id="Evrenxus-property-search" align="right"
+     style="width:300px; max-width:100%; margin:10px 0;">
+
+    <div id="Evrenxus-property-search-info">
+
+        <div id="Evrenxus-property-search-title">
+
+            <a
+                target="_blank"
+                href="https://evrenexus.blogfa.com/post/5">
+
+                موتور جستجوی املاک
+
+            </a>
+
+        </div>
+
+        <div id="Evrenxus-property-search-hint">
+
+            در باکس روبرو عدد را بر مبنای میلیارد تومان وارد کنید
+
+        </div>
+
+    </div>
+
+    <div id="Evrenxus-property-search-form">
+
+        <input
+            id="Evrenxus-property-budget"
+            type="text"
+            inputmode="decimal"
+            autocomplete="off"
+            placeholder="1-9999"
+            aria-label="بودجه خرید ملک">
+
+        <button
+            id="Evrenxus-property-search-button"
+            type="button">
+
+            بیاب
+
+        </button>
+
+    </div>
+
+    <div id="Evrenxus-property-search-error">
+
+رقم مورد نظر خود را بر پایه میلیارد تومان وارد کنید
+
+    </div>
+
+</div>
+</div>
+</div>
+
+<div id="container">
+
 
 <div id="content">
 
-    <div id="loading">
-        &#1583;&#1585; &#1581;&#1575;&#1604; &#1576;&#1575;&#1585;&#1711;&#1584;&#1575;&#1585;&#1740; &#1582;&#1576;&#1585;...
+
+<!-- =====================================================
+     PROPERTY SEARCH
+     FIXED HORIZONTAL BAR
+===================================================== -->
+
+<!-- =====================================================
+     SLIDER
+===================================================== -->
+
+<div id="Evrenxus-slider">
+
+    <div id="Evrenxus-slides"></div>
+
+    <button
+        class="Evrenxus-slider-prev"
+        onclick="EvrenxusPrevSlide()">
+
+        ‹
+
+    </button>
+
+    <button
+        class="Evrenxus-slider-next"
+        onclick="EvrenxusNextSlide()">
+
+        ›
+
+    </button>
+
+    <div
+        id="Evrenxus-slider-dots"
+        class="Evrenxus-slider-dots">
     </div>
 
-    <iframe id="iframe"></iframe>
+</div>
+
+
+<!-- =====================================================
+     ECONOMIC NEWS
+     فقط صفحه اصلی
+===================================================== -->
+
+<div id="Evrenxus-economic-box">
+
+    <div id="Evrenxus-economic-grid">
+
+        <div class="Evrenxus-economic-loading">
+
+            در حال دریافت مطالب...
+
+        </div>
+
+    </div>
 
 </div>
 
-<div id="footer">
-    EVREN NEXUS — Markets · Real Estate · Investment · Technology · Business
-</div>
+
+
+<!-- =====================================================
+     PAGE TYPE DETECTION
+===================================================== -->
 
 <script>
 
 (function(){
 
-    var params = new URLSearchParams(window.location.search);
+    var posts =
+        document.querySelectorAll(".post");
 
-    var newsUrl = params.get("url");
+    var isDirectPost = false;
 
-    var iframe = document.getElementById("iframe");
+    var currentPath =
+        window.location.pathname
+        .replace(/\/+$/,"");
 
-    var loading = document.getElementById("loading");
 
-    if(!newsUrl){
+    for(
+        var i = 0;
+        i < posts.length;
+        i++
+    ){
 
-        loading.innerHTML = "&#1604;&#1740;&#1606;&#1705; &#1582;&#1576;&#1585; &#1605;&#1588;&#1582;&#1589; &#1606;&#1588;&#1583;&#1607; &#1575;&#1587;&#1578;.";
+        var link =
+            posts[i].querySelector(
+                ".post-title a"
+            );
 
-        return;
+        if(!link){
+            continue;
+        }
 
-    }
 
-    try{
+        var postPath = "";
 
-        var url = new URL(newsUrl);
+        try{
 
-        var allowedHosts = [
-            "www.asriran.com",
-            "asriran.com",
-            "www.donya-e-eqtesad.com",
-            "donya-e-eqtesad.com"
-        ];
+            postPath =
+                new URL(
+                    link.href,
+                    window.location.href
+                ).pathname
+                .replace(/\/+$/,"");
 
-        if(allowedHosts.indexOf(url.hostname) === -1){
+        }
+        catch(e){
 
-            loading.innerHTML = "&#1575;&#1740;&#1606; &#1605;&#1606;&#1576;&#1593; &#1583;&#1585; &#1601;&#1607;&#1585;&#1587;&#1578; &#1605;&#1606;&#1575;&#1576;&#1593; EVREN NEXUS &#1606;&#1740;&#1587;&#1578;.";
-
-            return;
+            postPath = "";
 
         }
 
-        iframe.src = newsUrl;
 
-        iframe.onload = function(){
+        if(
+            postPath &&
+            currentPath === postPath
+        ){
 
-            loading.style.display = "none";
+            isDirectPost = true;
 
-        };
+            break;
 
-    }catch(e){
+        }
 
-        loading.innerHTML = "&#1570;&#1583;&#1585;&#1587; &#1582;&#1576;&#1585; &#1605;&#1593;&#1578;&#1576;&#1585; &#1606;&#1740;&#1587;&#1578;.";
+    }
+
+
+    if(!isDirectPost){
+
+        document.body.classList.add(
+            "Evrenxus-home"
+        );
 
     }
 
@@ -235,5 +1922,534 @@ html,body{
 
 </script>
 
+
+<!-- =====================================================
+     PROPERTY SEARCH SCRIPT
+===================================================== -->
+
+<script>
+
+(function(){
+
+    var input =
+        document.getElementById(
+            "Evrenxus-property-budget"
+        );
+
+    var button =
+        document.getElementById(
+            "Evrenxus-property-search-button"
+        );
+
+    var error =
+        document.getElementById(
+            "Evrenxus-property-search-error"
+        );
+
+
+    function normalizeDigits(value){
+
+        return String(value)
+
+            .replace(/[۰-۹]/g,function(d){
+
+                return "۰۱۲۳۴۵۶۷۸۹".indexOf(d);
+
+            })
+
+            .replace(/[٠-٩]/g,function(d){
+
+                return "٠١٢٣٤٥٦٧٨٩".indexOf(d);
+
+            });
+
+    }
+
+
+    function searchProperty(){
+
+        var value =
+            normalizeDigits(
+                input.value
+            )
+            .replace(/,/g,".")
+            .trim();
+
+
+        var budget =
+            Number(value);
+
+
+        if(
+            !value ||
+            !isFinite(budget) ||
+            budget < 1 ||
+            budget > 9999
+        ){
+
+            error.style.display =
+                "block";
+
+            input.focus();
+
+            return;
+
+        }
+
+
+        error.style.display =
+            "none";
+
+
+        window.open(
+            "https://evrenexus.github.io/avrin-property-advisor/?budget=" +
+            encodeURIComponent(budget),
+            "_blank"
+        );
+
+    }
+
+
+    button.addEventListener(
+        "click",
+        searchProperty
+    );
+
+
+    input.addEventListener(
+        "keydown",
+        function(event){
+
+            if(
+                event.key === "Enter"
+            ){
+
+                event.preventDefault();
+
+                searchProperty();
+
+            }
+
+        }
+    );
+
+
+    input.addEventListener(
+        "input",
+        function(){
+
+            error.style.display =
+                "none";
+
+        }
+    );
+
+})();
+
+</script>
+
+
+<!-- =====================================================
+     GLOBAL MARKETS
+===================================================== -->
+
+<script>
+
+(function(){
+
+    var symbols = [
+
+        "XAUUSD",
+        "XAGUSD",
+        "USOIL",
+        "XCUUSD",
+        "XPDUSD",
+        "DXY",
+        "BTCUSD",
+        "ETHUSD"
+
+    ];
+
+
+    var names = {
+
+        XAUUSD:"طلا",
+        XAGUSD:"نقره",
+        USOIL:"نفت",
+        XCUUSD:"مس",
+        XPDUSD:"پالادیوم",
+        DXY:"شاخص دلار",
+        BTCUSD:"بیت‌کوین",
+        ETHUSD:"اتریوم"
+
+    };
+
+
+    var dollarBased = {
+
+        XAUUSD:true,
+        XAGUSD:true,
+        USOIL:true,
+        XCUUSD:true,
+        XPDUSD:true,
+        DXY:false,
+        BTCUSD:true,
+        ETHUSD:true
+
+    };
+
+
+    var track =
+        document.getElementById(
+            "Evrenxus-global-track"
+        );
+
+
+    function formatPrice(value){
+
+        var number =
+            Number(value);
+
+
+        if(
+            !isFinite(number)
+        ){
+
+            return "-";
+
+        }
+
+
+        return new Intl.NumberFormat(
+            "en-US",
+            {
+                minimumFractionDigits:2,
+                maximumFractionDigits:2
+            }
+        ).format(number);
+
+    }
+
+
+    function createItem(
+        symbol,
+        data
+    ){
+
+        var item =
+            document.createElement(
+                "span"
+            );
+
+        item.className =
+            "Evrenxus-ticker-item";
+
+
+        var price =
+            formatPrice(
+                data.mid
+            );
+
+
+        var diff =
+            Number(
+                data.dayDiffPercent
+            );
+
+
+        var direction = "";
+
+
+        if(
+            isFinite(diff)
+        ){
+
+            if(diff > 0){
+
+                direction =
+                    '<span class="up">▲ ' +
+                    diff.toFixed(2) +
+                    '%</span>';
+
+            }
+
+            else if(diff < 0){
+
+                direction =
+                    '<span class="down">▼ ' +
+                    Math.abs(diff).toFixed(2) +
+                    '%</span>';
+
+            }
+
+        }
+
+
+        var pricePrefix =
+            dollarBased[symbol]
+            ? "$"
+            : "";
+
+
+        item.innerHTML =
+
+            '<span class="symbol">' +
+            names[symbol] +
+            '</span>' +
+
+            '<span class="price">' +
+            pricePrefix +
+            price +
+            '</span>' +
+
+            direction;
+
+
+        return item;
+
+    }
+
+
+    function loadMarkets(){
+
+        var results = [];
+
+        var completed = 0;
+
+
+        symbols.forEach(
+
+            function(symbol){
+
+                fetch(
+                    "https://biquote.io/api/" +
+                    symbol
+                )
+
+                .then(
+
+                    function(response){
+
+                        if(!response.ok){
+
+                            throw new Error(
+                                "HTTP error"
+                            );
+
+                        }
+
+                        return response.json();
+
+                    }
+
+                )
+
+                .then(
+
+                    function(data){
+
+                        if(
+                            data &&
+                            data.mid !== undefined
+                        ){
+
+                            results.push({
+
+                                symbol:symbol,
+                                data:data
+
+                            });
+
+                        }
+
+                    }
+
+                )
+
+                .catch(
+
+                    function(){}
+
+                )
+
+                .finally(
+
+                    function(){
+
+                        completed++;
+
+
+                        if(
+                            completed ===
+                            symbols.length
+                        ){
+
+                            if(
+                                !results.length
+                            ){
+
+                                track.innerHTML =
+
+                                    '<span class="Evrenxus-ticker-item">' +
+
+                                    'دریافت بازارهای جهانی امکان‌پذیر نیست' +
+
+                                    '</span>';
+
+                                return;
+
+                            }
+
+
+                            track.innerHTML =
+                                "";
+
+
+                            results.forEach(
+
+                                function(result){
+
+                                    track.appendChild(
+
+                                        createItem(
+                                            result.symbol,
+                                            result.data
+                                        )
+
+                                    );
+
+                                }
+
+                            );
+
+
+                            results.forEach(
+
+                                function(result){
+
+                                    track.appendChild(
+
+                                        createItem(
+                                            result.symbol,
+                                            result.data
+                                        )
+
+                                    );
+
+                                }
+
+                            );
+
+                        }
+
+                    }
+
+                );
+
+            }
+
+        );
+
+    }
+
+
+    loadMarkets();
+
+
+    setInterval(
+        loadMarkets,
+        120000
+    );
+
+})();
+
+</script>
+
+
+<!-- =====================================================
+     SHAMSI DATE / TIME
+===================================================== -->
+
+<script>
+
+(function(){
+
+    function updateDateTime(){
+
+        var now =
+            new Date();
+
+
+        var shamsi =
+
+            new Intl.DateTimeFormat(
+
+                "fa-IR-u-ca-persian",
+
+                {
+
+                    timeZone:"Asia/Tehran",
+
+                    year:"numeric",
+
+                    month:"long",
+
+                    day:"numeric"
+
+                }
+
+            ).format(now);
+
+
+        var time =
+
+            new Intl.DateTimeFormat(
+
+                "en-GB",
+
+                {
+
+                    timeZone:"Asia/Tehran",
+
+                    hour:"2-digit",
+
+                    minute:"2-digit",
+
+                    second:"2-digit",
+
+                    hour12:false
+
+                }
+
+            ).format(now);
+
+
+        document.getElementById(
+            "Evrenxus-shamsi"
+        ).textContent = shamsi;
+
+
+        document.getElementById(
+            "Evrenxus-time"
+        ).textContent = time;
+
+    }
+
+
+    updateDateTime();
+
+
+    setInterval(
+        updateDateTime,
+        1000
+    );
+
+})();
+
+</script>
+
+
+
 </body>
+
 </html>
