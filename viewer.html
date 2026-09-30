@@ -1604,6 +1604,51 @@ body:not(.Evrenxus-home) #Evrenxus-economic-box{
     width:300px;
     max-width:300px;
     height:35px;
+    position:relative;
+    margin:0;
+}
+
+
+@media screen and (max-width:700px){
+    #Evrenxus-header{
+        width:100%;
+        height:73px;
+        top:0;
+        left:0;
+        transform:none;
+    }
+    #Evrenxus-header-row1{
+        height:28px;
+    }
+    #Evrenxus-header-row2{
+        height:45px;
+        overflow:hidden;
+    }
+    #Evrenxus-header #Evrenxus-market-tickers{
+        width:100%;
+        height:28px;
+    }
+    #Evrenxus-header #Evrenxus-main-menu{
+        height:45px;
+        flex:1;
+        min-width:0;
+    }
+    #Evrenxus-header #Evrenxus-property-search{
+        width:250px;
+        max-width:250px;
+        height:35px;
+        flex-shrink:0;
+        padding:0 5px;
+    }
+}
+@media screen and (max-width:380px){
+    #Evrenxus-header #Evrenxus-main-menu{
+        height:45px;
+    }
+    #Evrenxus-header #Evrenxus-property-search{
+        width:250px;
+        max-width:250px;
+    }
 }
 
 </style>
