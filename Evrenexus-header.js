@@ -67,7 +67,7 @@ var globalNames={XAUUSD:"طلا",XAGUSD:"نقره",XCUUSD:"مس",XPDUSD:"پال�
 var cryptoIds=["bitcoin","ethereum","tether","binancecoin","solana","ripple","dogecoin","cardano","tron","polkadot"];
 var cryptoNames={bitcoin:"بیت‌کوین",ethereum:"اتریوم",tether:"تتر",binancecoin:"BNB",solana:"سولانا",ripple:"XRP",dogecoin:"دوج‌کوین",cardano:"کاردانو",tron:"ترون",polkadot:"پولکادات"};
 
-function fmt(v){var n=Number(v);return isFinite(n)?new Intl.NumberFormat("fa-IR",{maximumFractionDigits:2}).format(n):"-"}
+function fmt(v){var n=Number(v);return isFinite(n)?new Intl.NumberFormat("en-US",{maximumFractionDigits:2}).format(n):"-"}
 function item(label,price,unit,change){if(price==null)return "";var c=Number(change)>0?"Evrenxus-up":Number(change)<0?"Evrenxus-down":"";var a=Number(change)>0?"▲":Number(change)<0?"▼":"";return '<span class="Evrenxus-ticker-item"><span class="symbol">'+label+'</span><span class="price">'+fmt(price)+(unit?" "+unit:"")+'</span><span class="'+c+'">'+a+(change!=null&&change!==""?fmt(change)+"%":"")+'</span></span>'}
 function globalItem(name,data){if(!data)return "";return item(name,data.mid,"USD",data.dayDiffPercent)}
 
