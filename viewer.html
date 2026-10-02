@@ -4,16 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>خبرخوان Evren Nexus</title>
-<style>
-*{box-sizing:border-box}
-html,body{margin:0;padding:0;width:100%;min-height:100%;background:#fff;font-family:Tahoma,Arial,sans-serif}
-#content{width:100%;height:calc(100vh - 82px);margin-top:82px;position:relative;background:#fff}
-#loading{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#555;font-size:14px;z-index:1}
-#iframe{width:100%;height:100%;border:0;display:block;position:relative;z-index:2;background:#fff}
-@media(max-width:700px){
- #content{height:calc(100vh - 76px);margin-top:76px}
-}
-</style>
+<style>*{box-sizing:border-box}html,body{margin:0;padding:0;width:100%;min-height:100%;background:#fff;font-family:Tahoma,Arial,sans-serif}#content{width:100%;height:calc(100vh - 113px);margin-top:113px;position:relative;background:#fff}#loading{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#555;font-size:14px;z-index:1}#iframe{width:100%;height:100%;border:0;display:block;position:relative;z-index:2;background:#fff}@media(max-width:700px){#content{height:calc(100vh - 105px);margin-top:105px}}@media(max-width:430px){#content{height:calc(100vh - 102px);margin-top:102px}}</style>
 </head>
 <body>
 
@@ -28,30 +19,8 @@ html,body{margin:0;padding:0;width:100%;min-height:100%;background:#fff;font-fam
 (function(){
 var params=new URLSearchParams(location.search),newsUrl=params.get("url"),iframe=document.getElementById("iframe"),loading=document.getElementById("loading");
 if(!newsUrl){loading.textContent="لینک خبر مشخص نشده است.";return}
-try{
-var url=new URL(newsUrl),allowed=["www.asriran.com","asriran.com","www.donya-e-eqtesad.com","donya-e-eqtesad.com"];
-if(allowed.indexOf(url.hostname)===-1){loading.textContent="این منبع در فهرست منابع EVREN NEXUS نیست.";return}
-iframe.src=newsUrl;
-iframe.onload=function(){loading.style.display="none"};
-}catch(e){loading.textContent="آدرس خبر معتبر نیست."}
-})();
-(function(){
-var input=document.getElementById("Evrenxus-property-budget"),button=document.getElementById("Evrenxus-property-search-button"),error=document.getElementById("Evrenxus-property-search-error");
-function norm(v){return String(v).replace(/[۰-۹]/g,function(d){return"۰۱۲۳۴۵۶۷۸۹".indexOf(d)}).replace(/[٠-٩]/g,function(d){return"٠١٢٣٤٥٦٧٨٩".indexOf(d)}).replace(/,/g,".").trim()}
-function search(){var v=norm(input.value),b=Number(v);if(!v||!isFinite(b)||b<1||b>9999){error.style.display="block";input.focus();return}error.style.display="none";window.open("https://evrenexus.github.io/avrin-property-advisor/?budget="+encodeURIComponent(b),"_blank")}
-button.onclick=search;input.onkeydown=function(e){if(e.key==="Enter"){e.preventDefault();search()}};input.oninput=function(){error.style.display="none"}
-})();
-(function(){
-var symbols=["XAUUSD","XAGUSD","USOIL","XCUUSD","XPDUSD","DXY","BTCUSD","ETHUSD"],names={XAUUSD:"طلا",XAGUSD:"نقره",USOIL:"نفت",XCUUSD:"مس",XPDUSD:"پالادیوم",DXY:"شاخص دلار",BTCUSD:"بیت‌کوین",ETHUSD:"اتریوم"},track=document.getElementById("Evrenxus-global-track");
-function price(v){var n=Number(v);return isFinite(n)?new Intl.NumberFormat("en-US",{minimumFractionDigits:2,maximumFractionDigits:2}).format(n):"-"}
-function load(){var out=[];Promise.all(symbols.map(function(s){return fetch("https://biquote.io/api/"+s).then(function(r){return r.ok?r.json():null}).then(function(d){if(d&&d.mid!==undefined)out.push({s:s,d:d})}).catch(function(){})})).then(function(){if(!out.length){track.innerHTML='<span class="Evrenxus-ticker-item">دریافت بازارهای جهانی امکان‌پذیر نیست</span>';return}var html="";out.forEach(function(x){var d=Number(x.d.dayDiffPercent),dir=d>0?'<span class="up">▲ '+d.toFixed(2)+"%</span>":d<0?'<span class="down">▼ '+Math.abs(d).toFixed(2)+"%</span>":"";html+='<span class="Evrenxus-ticker-item"><span class="symbol">'+names[x.s]+'</span><span class="price">'+(x.s==="DXY"?"":"$")+price(x.d.mid)+"</span>"+dir+"</span>"});track.innerHTML=html+html})}
-load();setInterval(load,120000)
-})();
-(function(){
-function update(){var n=new Date();document.getElementById("Evrenxus-shamsi").textContent=new Intl.DateTimeFormat("fa-IR-u-ca-persian",{timeZone:"Asia/Tehran",year:"numeric",month:"long",day:"numeric"}).format(n);document.getElementById("Evrenxus-time").textContent=new Intl.DateTimeFormat("en-GB",{timeZone:"Asia/Tehran",hour:"2-digit",minute:"2-digit",second:"2-digit",hour12:false}).format(n)}
-update();setInterval(update,1000)
+try{var url=new URL(newsUrl),allowed=["www.asriran.com","asriran.com","www.donya-e-eqtesad.com","donya-e-eqtesad.com"];if(allowed.indexOf(url.hostname)===-1){loading.textContent="این منبع در فهرست منابع EVREN NEXUS نیست.";return}iframe.src=newsUrl;iframe.onload=function(){loading.style.display="none"}}catch(e){loading.textContent="آدرس خبر معتبر نیست."}
 })();
 </script>
-
 </body>
 </html>
