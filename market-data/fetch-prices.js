@@ -49,12 +49,16 @@ function findSingleRetail(rows, label) {
     // Expected TGJU order:
     // نام | قیمت زنده | تغییر | کمترین | بیشترین | زمان
     const price = numberFrom(row[1]);
+    const changeText = row[2] || "";
+    const change = numberFrom(changeText);
+    const percentMatch = cleanText(changeText).match(/\\((-?\\d+(?:\\.\\d+)?)%\\)/);
+    const changePercent = percentMatch ? Number(percentMatch[1]) : null;
     const low = numberFrom(row[3]);
     const high = numberFrom(row[4]);
     const time = row[5] || null;
 
     if (price !== null) {
-      return { price, low, high, time };
+      return { price, change, changePercent, low, high, time };
     }
   }
 
@@ -101,6 +105,63 @@ async function main() {
   for (const [key, value] of Object.entries(rial)) {
     prices[key] = {
       price: Math.round(value.price / 10),
+      change: value.change === null ? null : Math.round(value.change / 10),
+      changePercent: value.changePercent,
+      low: value.low === null ? null : Math.round(value.low / 10),
+      high: value.high === null ? null : Math.round(value.high / 10),
+      time: value.time
+    };
+  }
+
+  const currencyLabels = {
+    dollar: "دلار",
+    euro: "یورو",
+    aed: "درهم امارات",
+    gbp: "پوند انگلیس",
+    try: "لیر ترکیه",
+    chf: "فرانک سوئیس",
+    cny: "یوان چین",
+    jpy: "ین ژاپن",
+    krw: "وون کره جنوبی",
+    cad: "دلار کانادا",
+    aud: "دلار استرالیا",
+    nzd: "دلار نیوزیلند",
+    sgd: "دلار سنگاپور",
+    inr: "روپیه هند",
+    pkr: "روپیه پاکستان",
+    iqd: "دینار عراق",
+    sar: "ریال عربستان",
+    qar: "ریال قطر",
+    omr: "ریال عمان",
+    kwd: "دینار کویت",
+    myr: "رینگیت مالزی",
+    thb: "بات تایلند",
+    rub: "روبل روسیه",
+    azn: "منات آذربایجان",
+    amd: "درام ارمنستان",
+    gel: "لاری گرجستان",
+    afn: "افغانی"
+  };
+
+  const currenciesRial = {};
+  for (const [key, label] of Object.entries(currencyLabels)) {
+    currenciesRial[key] = findSingleRetail(rows, label);
+  }
+
+  const missingCurrencies = Object.entries(currenciesRial)
+    .filter(([, v]) => !v)
+    .map(([key]) => key);
+
+  if (missingCurrencies.length) {
+    throw new Error("Missing TGJU currency fields: " + missingCurrencies.join(", "));
+  }
+
+  const currencies = {};
+  for (const [key, value] of Object.entries(currenciesRial)) {
+    currencies[key] = {
+      price: Math.round(value.price / 10),
+      change: value.change === null ? null : Math.round(value.change / 10),
+      changePercent: value.changePercent,
       low: value.low === null ? null : Math.round(value.low / 10),
       high: value.high === null ? null : Math.round(value.high / 10),
       time: value.time
@@ -110,10 +171,11 @@ async function main() {
   const output = {
     source: "TGJU",
     sourceUrl: SOURCE_URL,
-    market: "coin_single_retail",
+    market: "tgju",
     unit: "toman",
     fetchedAt: new Date().toISOString(),
-    prices
+    prices,
+    currencies
   };
 
   fs.mkdirSync("market-data", { recursive: true });
