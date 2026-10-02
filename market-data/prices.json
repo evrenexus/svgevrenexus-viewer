@@ -1,16 +1,14 @@
 {
   "source": "TGJU",
   "sourceUrl": "https://www.tgju.org/",
+  "market": "coin_single_retail",
   "unit": "toman",
   "fetchedAt": null,
   "prices": {
-    "gold18": null,
-    "dollar": null,
-    "emami": null,
-    "half": null,
-    "quarter": null,
-    "gram": null,
-    "mesghal": null,
-    "melted": null
+    "emami": { "price": null, "low": null, "high": null, "time": null },
+    "bahar": { "price": null, "low": null, "high": null, "time": null },
+    "half": { "price": null, "low": null, "high": null, "time": null },
+    "quarter": { "price": null, "low": null, "high": null, "time": null },
+    "gram": { "price": null, "low": null, "high": null, "time": null }
   }
 }
