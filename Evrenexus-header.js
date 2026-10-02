@@ -19,7 +19,7 @@ var css=`
 .Evrenxus-up{color:#55cf8a;margin-right:5px}.Evrenxus-down{color:#ff7474;margin-right:5px}
 .Evrenxus-row-label{position:absolute;left:0;top:0;width:78px;height:31px;display:flex;align-items:center;justify-content:center;background:#101b23;color:#aeb9c1;font-size:8px;z-index:4;direction:rtl}
 @keyframes EvrenxusTickerMove{from{transform:translateX(0)}to{transform:translateX(50%)}}
-.Evrenxus-datetime{position:absolute;left:0;top:0;width:105px;height:31px;display:flex;align-items:center;justify-content:center;gap:4px;background:#101b23;color:#fff;font-size:8px;white-space:nowrap;z-index:4}
+.Evrenxus-datetime{display:inline-flex;align-items:center;justify-content:center;gap:4px;width:105px;min-width:105px;height:31px;margin-left:30px;background:#101b23;color:#fff;font-size:8px;white-space:nowrap;direction:rtl}
 #Evrenxus-header-row2{height:51px;display:flex;align-items:center;direction:rtl;background:#fff}
 #Evrenxus-main-menu{height:51px;display:flex;align-items:stretch;justify-content:flex-start;direction:rtl;overflow:hidden;white-space:nowrap;flex:1;min-width:0}
 #Evrenxus-main-menu a{height:51px;padding:0 7px;display:flex;align-items:center;color:#303a41;text-decoration:none;font-size:10.5px;font-weight:700;border-left:1px solid #edf0f2;flex-shrink:0;position:relative}
@@ -41,9 +41,9 @@ var wrap=document.createElement("div");wrap.innerHTML=`
 <div id="Evrenxus-header-row1">
 <div class="Evrenxus-header-brand"><a href="https://evrenexus.blogfa.com/" target="_top" class="Evrenxus-brand">Evren Nexus</a></div>
 <div id="Evrenxus-market-tickers">
-<div class="Evrenxus-ticker"><div class="Evrenxus-ticker-window"><div id="Evrenxus-metals-track" class="Evrenxus-ticker-track"><span class="Evrenxus-ticker-item">در حال دریافت طلا، فلزات و انرژی...</span></div></div><div class="Evrenxus-datetime"><span id="Evrenxus-metals-date"></span><span>|</span><span id="Evrenxus-metals-time"></span></div></div>
-<div class="Evrenxus-ticker"><div class="Evrenxus-ticker-window"><div id="Evrenxus-currency-track" class="Evrenxus-ticker-track"><span class="Evrenxus-ticker-item">در حال دریافت ارزهای خارجی...</span></div></div><div class="Evrenxus-datetime"><span id="Evrenxus-currency-date"></span><span>|</span><span id="Evrenxus-currency-time"></span></div></div>
-<div class="Evrenxus-ticker"><div class="Evrenxus-ticker-window"><div id="Evrenxus-crypto-track" class="Evrenxus-ticker-track"><span class="Evrenxus-ticker-item">در حال دریافت ارزهای دیجیتال...</span></div></div><div class="Evrenxus-datetime"><span id="Evrenxus-crypto-date"></span><span>|</span><span id="Evrenxus-crypto-time"></span></div></div>
+<div class="Evrenxus-ticker"><div class="Evrenxus-ticker-window"><div id="Evrenxus-metals-track" class="Evrenxus-ticker-track"><span class="Evrenxus-datetime"><span id="Evrenxus-metals-date"></span><span>|</span><span id="Evrenxus-metals-time"></span></span><span class="Evrenxus-ticker-item">در حال دریافت طلا، فلزات و انرژی...</span></div></div></div>
+<div class="Evrenxus-ticker"><div class="Evrenxus-ticker-window"><div id="Evrenxus-currency-track" class="Evrenxus-ticker-track"><span class="Evrenxus-datetime"><span id="Evrenxus-currency-date"></span><span>|</span><span id="Evrenxus-currency-time"></span></span><span class="Evrenxus-ticker-item">در حال دریافت ارزهای خارجی...</span></div></div></div>
+<div class="Evrenxus-ticker"><div class="Evrenxus-ticker-window"><div id="Evrenxus-crypto-track" class="Evrenxus-ticker-track"><span class="Evrenxus-datetime"><span id="Evrenxus-crypto-date"></span><span>|</span><span id="Evrenxus-crypto-time"></span></span><span class="Evrenxus-ticker-item">در حال دریافت ارزهای دیجیتال...</span></div></div></div>
 </div></div>
 <div id="Evrenxus-header-row2">
 <nav id="Evrenxus-main-menu"><a class="active" target="_top" href="https://evrenexus.blogfa.com/">خانه</a><a target="_top" href="https://evrenexus.blogfa.com/profile">درباره من</a><a href="#">اقتصاد</a><a href="#">طلا</a><a href="#">ارز</a><a href="#">مسکن</a><a href="#">بورس</a><a href="#">کریپتو</a><a href="#">خودرو</a><a href="#">تحلیل بازار</a></nav>
