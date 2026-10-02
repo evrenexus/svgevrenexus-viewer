@@ -101,7 +101,7 @@ var css = `
  #Evrenxus-header-row2{height:47px}
  #Evrenxus-main-menu{height:47px;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;padding-right:0}
  #Evrenxus-main-menu::-webkit-scrollbar{display:none}
- #Evrenxus-main-menu a{height:47px;padding:0 8px;font-size:9px}
+ #Evrenxus-main-menu a{height:47px;padding:0 8px;font-size:9px;background:#d9232e;color:#fff}
  #Evrenxus-main-menu a:hover:after,#Evrenxus-main-menu a.active:after{right:6px;left:6px;height:2px}
  #Evrenxus-property-search{
    width:190px;flex-basis:190px;height:32px;margin:0 3px;padding:0 3px;gap:3px
@@ -122,7 +122,7 @@ var css = `
  .Evrenxus-ticker-window{right:82px}
  #Evrenxus-header-row2{height:46px}
  #Evrenxus-main-menu{height:46px}
- #Evrenxus-main-menu a{padding:0 7px;font-size:8.5px}
+ #Evrenxus-main-menu a{padding:0 7px;font-size:8.5px;background:#d9232e;color:#fff}
  #Evrenxus-property-search{width:166px;flex-basis:166px;height:30px}
  #Evrenxus-property-search-title{font-size:7px}
  #Evrenxus-property-budget{width:38px}
