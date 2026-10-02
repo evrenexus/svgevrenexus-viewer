@@ -145,7 +145,7 @@ async function main() {
 
   const currenciesRial = {};
   for (const [key, label] of Object.entries(currencyLabels)) {
-    currenciesRial[key] = findSingleRetail(rows, label);
+    currenciesRial[key] = findSingleRetail(rows, label, false);
   }
 
   const missingCurrencies = Object.entries(currenciesRial)
