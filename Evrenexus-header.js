@@ -80,8 +80,10 @@ fetch("https://biquote.io/api/"+symbol).then(function(r){return r.ok?r.json():nu
 function loadLocal(){
 fetch(url+"?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){
 var p=d.prices||{},c=d.currencies||{};
-var coins=item("سکه امامی",p.emami,"تومان",p.emamiChange)+item("سکه بهار آزادی",p.bahar,"تومان",p.baharChange)+item("نیم سکه",p.half,"تومان",p.halfChange)+item("ربع سکه",p.quarter,"تومان",p.quarterChange)+item("سکه گرمی",p.gram,"تومان",p.gramChange)+item("طلای ۱۸",p.gold18,"تومان",p.gold18Change);
-var curr=item("دلار",c.dollar,"تومان",c.dollarChange)+item("یورو",c.euro,"تومان",c.euroChange)+item("درهم",c.aed,"تومان",c.aedChange)+item("پوند",c.gbp,"تومان",c.gbpChange)+item("لیر",c.try,"تومان",c.tryChange)+item("فرانک",c.chf,"تومان",c.chfChange)+item("یوان",c.cny,"تومان",c.cnyChange);
+function val(x){return x&&typeof x==="object"?(x.price!=null?x.price:x.value):x}
+function chg(x){return x&&typeof x==="object"?(x.changePercent!=null?x.changePercent:(x.change!=null?x.change:null)):null}
+var coins=item("سکه امامی",val(p.emami),"تومان",chg(p.emami))+item("سکه بهار آزادی",val(p.bahar),"تومان",chg(p.bahar))+item("نیم سکه",val(p.half),"تومان",chg(p.half))+item("ربع سکه",val(p.quarter),"تومان",chg(p.quarter))+item("سکه گرمی",val(p.gram),"تومان",chg(p.gram))+item("طلای ۱۸",val(p.gold18),"تومان",chg(p.gold18));
+var curr=item("دلار",val(c.dollar),"تومان",chg(c.dollar))+item("یورو",val(c.euro),"تومان",chg(c.euro))+item("درهم",val(c.aed),"تومان",chg(c.aed))+item("پوند",val(c.gbp),"تومان",chg(c.gbp))+item("لیر",val(c.try),"تومان",chg(c.try))+item("فرانک",val(c.chf),"تومان",chg(c.chf))+item("یوان",val(c.cny),"تومان",chg(c.cny));
 metal.innerHTML=(coins?coins:"")+ (metal.innerHTML||"");
 cur.innerHTML=curr?curr+curr:"<span class='Evrenxus-ticker-item'>اطلاعات ارز در دسترس نیست</span>";
 }).catch(function(){cur.innerHTML="<span class='Evrenxus-ticker-item'>خطا در دریافت ارزهای خارجی</span>"})
