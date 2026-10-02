@@ -214,29 +214,68 @@ else document.body.insertBefore(header,document.body.firstChild);
 (function(){
  var track=document.getElementById("Evrenxus-global-track"),
      url="https://evrenexus.github.io/svgevrenexus-viewer/market-data/prices.json";
+
  function toman(v){
    var n=Number(v);
    return isFinite(n)?new Intl.NumberFormat("fa-IR").format(Math.round(n)):"-";
  }
- function item(label,value){
+ function priceItem(label,obj){
+   if(!obj||obj.price===null||obj.price===undefined)return "";
+   var cls=obj.change>0?"Evrenxus-up":(obj.change<0?"Evrenxus-down":"");
+   var sign=obj.change>0?"▲ ":obj.change<0?"▼ ":"";
+   var pct=obj.changePercent!==null&&obj.changePercent!==undefined?
+     " ("+(obj.changePercent>0?"+":"")+obj.changePercent+"%)":"";
    return '<span class="Evrenxus-ticker-item"><span class="symbol">'+label+
-          '</span><span class="price">'+toman(value)+' تومان</span></span>';
+     '</span><span class="price">'+toman(obj.price)+' تومان</span>'+
+     '<span class="'+cls+'">'+sign+pct+'</span></span>';
  }
  function load(){
    fetch(url+"?v="+Date.now(),{cache:"no-store"})
     .then(function(r){if(!r.ok)throw new Error("market data");return r.json()})
     .then(function(d){
-      var p=d&&d.prices;
-      if(!p)throw new Error("no prices");
-      var html=
-        item("دلار",p.dollar)+
-        item("طلای ۱۸",p.gold18)+
-        item("سکه امامی",p.emami)+
-        item("نیم سکه",p.half)+
-        item("ربع سکه",p.quarter)+
-        item("سکه گرمی",p.gram)+
-        item("مثقال",p.mesghal)+
-        item("آبشده",p.melted);
+      var p=d&&d.prices,c=d&&d.currencies;
+      if(!p||!c)throw new Error("no market groups");
+
+      // Parallel category tickers: precious metals/coins + currencies.
+      var metals =
+        priceItem("سکه امامی",p.emami)+
+        priceItem("سکه بهار",p.bahar)+
+        priceItem("نیم سکه",p.half)+
+        priceItem("ربع سکه",p.quarter)+
+        priceItem("سکه گرمی",p.gram);
+
+      var currencies =
+        priceItem("دلار",c.dollar)+
+        priceItem("یورو",c.euro)+
+        priceItem("درهم",c.aed)+
+        priceItem("پوند",c.gbp)+
+        priceItem("لیر",c.try)+
+        priceItem("فرانک",c.chf)+
+        priceItem("یوان",c.cny)+
+        priceItem("ین",c.jpy)+
+        priceItem("وون",c.krw)+
+        priceItem("دلار کانادا",c.cad)+
+        priceItem("دلار استرالیا",c.aud)+
+        priceItem("دلار نیوزیلند",c.nzd)+
+        priceItem("دلار سنگاپور",c.sgd)+
+        priceItem("روپیه هند",c.inr)+
+        priceItem("روپیه پاکستان",c.pkr)+
+        priceItem("دینار عراق",c.iqd)+
+        priceItem("ریال عربستان",c.sar)+
+        priceItem("ریال قطر",c.qar)+
+        priceItem("ریال عمان",c.omr)+
+        priceItem("دینار کویت",c.kwd)+
+        priceItem("رینگیت مالزی",c.myr)+
+        priceItem("بات تایلند",c.thb)+
+        priceItem("روبل روسیه",c.rub)+
+        priceItem("منات آذربایجان",c.azn)+
+        priceItem("درام ارمنستان",c.amd)+
+        priceItem("لاری گرجستان",c.gel)+
+        priceItem("افغانی",c.afn);
+
+      // First row currently rotates through both groups.
+      // The structure is ready to split them into separate parallel rows later.
+      var html=metals+currencies;
       track.innerHTML=html+html;
     })
     .catch(function(){
@@ -246,7 +285,6 @@ else document.body.insertBefore(header,document.body.firstChild);
  load();
  setInterval(load,300000);
 })();
-
 (function(){
  function update(){
    var n=new Date(),
