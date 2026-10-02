@@ -6,7 +6,7 @@
 
 var css = `
 #Evrenxus-header{
- width:850px;max-width:100%;height:82px;position:fixed;top:0;left:50%;
+ width:850px;max-width:100%;height:113px;position:fixed;top:0;left:50%;
  transform:translateX(-50%);z-index:100000;background:#fff;
  border-bottom:1px solid #d9dfe3;font-family:Vazir,Tahoma,Arial,sans-serif;
  box-sizing:border-box;direction:rtl;box-shadow:0 1px 5px rgba(0,0,0,.04)
@@ -24,7 +24,7 @@ var css = `
  color:#fff;text-decoration:none;font-family:Vazir,Tahoma,sans-serif;
  font-size:14px;font-weight:700;letter-spacing:-.2px
 }
-#Evrenxus-market-tickers{height:31px;flex:1;min-width:0;position:relative}
+#Evrenxus-market-tickers{height:62px;position:relative}
 .Evrenxus-ticker{
  height:31px;position:relative;background:#17232d;color:#fff;display:flex;
  align-items:center;font-size:10px;font-weight:700;overflow:visible
@@ -89,11 +89,11 @@ var css = `
 }
 
 @media(max-width:700px){
- #Evrenxus-header{width:100%;max-width:100%;left:0;transform:none;height:76px}
- #Evrenxus-header-row1{height:29px}
+ #Evrenxus-header{width:100%;max-width:100%;left:0;transform:none;height:105px}
+ #Evrenxus-header-row1{height:58px}
  .Evrenxus-header-brand{width:92px;flex-basis:92px;height:29px}
  .Evrenxus-brand{font-size:10px}
- #Evrenxus-market-tickers{height:29px}
+ #Evrenxus-market-tickers{height:58px}
  .Evrenxus-ticker,.Evrenxus-ticker-window,.Evrenxus-ticker-track{height:29px}
  .Evrenxus-datetime{right:auto;left:0;width:92px;height:29px;font-size:7.5px;gap:3px}
  #Evrenxus-market-tickers{padding-left:0}
@@ -112,12 +112,12 @@ var css = `
  #Evrenxus-property-search-error{top:35px;font-size:8px}
 }
 @media(max-width:430px){
- #Evrenxus-header{height:74px}
- #Evrenxus-header-row1{height:28px}
+ #Evrenxus-header{height:102px}
+ #Evrenxus-header-row1{height:56px}
  .Evrenxus-header-brand{width:82px;flex-basis:82px;height:28px}
  .Evrenxus-brand{font-size:9px}
  .Evrenxus-datetime{width:82px;height:28px;font-size:7px}
- #Evrenxus-market-tickers{height:28px}
+ #Evrenxus-market-tickers{height:56px}
  .Evrenxus-ticker,.Evrenxus-ticker-window,.Evrenxus-ticker-track{height:28px}
  .Evrenxus-ticker-window{right:82px}
  #Evrenxus-header-row2{height:46px}
@@ -300,4 +300,17 @@ else document.body.insertBefore(header,document.body.firstChild);
  }
  update();setInterval(update,1000)
 })();
-})();
+})()(function(){
+ var coinTrack=document.getElementById("Evrenxus-coin-track"), currencyTrack=document.getElementById("Evrenxus-currency-track"),
+     url="https://evrenexus.github.io/svgevrenexus-viewer/market-data/prices.json";
+ function fmt(v){var n=Number(v);return isFinite(n)?new Intl.NumberFormat("fa-IR").format(Math.round(n)):"-"}
+ function item(label,o){if(!o||o.price==null)return "";var c=o.change>0?"Evrenxus-up":o.change<0?"Evrenxus-down":"";var a=o.change>0?"▲":o.change<0?"▼":"";return '<span class="Evrenxus-ticker-item"><span class="symbol">'+label+'</span><span class="price">'+fmt(o.price)+' تومان</span><span class="'+c+'">'+a+'</span></span>'}
+ function load(){fetch(url+"?v="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){
+  var p=d.prices||{},c=d.currencies||{};
+  var coins=item("سکه امامی",p.emami)+item("سکه بهار",p.bahar)+item("نیم سکه",p.half)+item("ربع سکه",p.quarter)+item("سکه گرمی",p.gram);
+  var curr=item("دلار",c.dollar)+item("یورو",c.euro)+item("درهم",c.aed)+item("پوند",c.gbp);
+  coinTrack.innerHTML=coins?coins+coins:'<span class="Evrenxus-ticker-item">اطلاعات سکه در دسترس نیست</span>';
+  currencyTrack.innerHTML=curr?curr+curr:'<span class="Evrenxus-ticker-item">اطلاعات ارز در دسترس نیست</span>';
+ }).catch(function(){coinTrack.innerHTML='<span class="Evrenxus-ticker-item">خطا در دریافت طلا و سکه</span>';currencyTrack.innerHTML='<span class="Evrenxus-ticker-item">خطا در دریافت ارز</span>'})}
+ load();setInterval(load,300000)
+})();;
