@@ -61,6 +61,7 @@ button.onclick=search;input.onkeydown=function(e){if(e.key==="Enter"){e.preventD
 (function(){
 var metal=document.getElementById("Evrenxus-metals-track"),cur=document.getElementById("Evrenxus-currency-track"),crypto=document.getElementById("Evrenxus-crypto-track");
 function stamp(prefix){var n=new Date(),d=document.getElementById("Evrenxus-"+prefix+"-date"),t=document.getElementById("Evrenxus-"+prefix+"-time");if(!d||!t)return;d.textContent=new Intl.DateTimeFormat("fa-IR-u-ca-persian",{timeZone:"Asia/Tehran",year:"numeric",month:"2-digit",day:"2-digit"}).format(n);t.textContent=new Intl.DateTimeFormat("en-GB",{timeZone:"Asia/Tehran",hour:"2-digit",minute:"2-digit",hour12:false}).format(n)}
+function renderTrack(track,prefix,content){track.innerHTML='<span class="Evrenxus-datetime"><span id="Evrenxus-'+prefix+'-date"></span><span>|</span><span id="Evrenxus-'+prefix+'-time"></span></span>'+content+content;stamp(prefix)}
 var url="https://evrenexus.github.io/svgevrenexus-viewer/market-data/prices.json";
 var globals=["XAUUSD","XAGUSD","XCUUSD","XPDUSD","XPTUSD","USOIL","DIESEL"];
 var globalNames={XAUUSD:"طلا",XAGUSD:"نقره",XCUUSD:"مس",XPDUSD:"پالادیوم",XPTUSD:"پلاتین",USOIL:"نفت",DIESEL:"دیزل"};
@@ -74,7 +75,7 @@ function globalItem(name,data){if(!data)return "";return item(name,data.mid,"USD
 function loadGlobals(){
 var out=[],done=0;
 globals.forEach(function(symbol){
-fetch("https://biquote.io/api/"+symbol).then(function(r){return r.ok?r.json():null}).then(function(d){if(d)out.push(globalItem(globalNames[symbol],d))}).catch(function(){}).finally(function(){done++;if(done===globals.length){stamp("metals");metal.innerHTML=out.length?out.join("")+out.join(""):"<span class='Evrenxus-ticker-item'>اطلاعات بازار جهانی در دسترس نیست</span>"}})
+fetch("https://biquote.io/api/"+symbol).then(function(r){return r.ok?r.json():null}).then(function(d){if(d)out.push(globalItem(globalNames[symbol],d))}).catch(function(){}).finally(function(){done++;if(done===globals.length){renderTrack(metal,"metals",out.length?out.join(""):"<span class='Evrenxus-ticker-item'>اطلاعات بازار جهانی در دسترس نیست</span>")}})
 })
 }
 
@@ -85,20 +86,16 @@ function val(x){return x&&typeof x==="object"?(x.price!=null?x.price:x.value):x}
 function chg(x){return x&&typeof x==="object"?(x.changePercent!=null?x.changePercent:(x.change!=null?x.change:null)):null}
 var coins=item("سکه امامی",val(p.emami),"تومان",chg(p.emami))+item("سکه بهار آزادی",val(p.bahar),"تومان",chg(p.bahar))+item("نیم سکه",val(p.half),"تومان",chg(p.half))+item("ربع سکه",val(p.quarter),"تومان",chg(p.quarter))+item("سکه گرمی",val(p.gram),"تومان",chg(p.gram))+item("طلای ۱۸",val(p.gold18),"تومان",chg(p.gold18));
 var curr=item("دلار",val(c.dollar),"تومان",chg(c.dollar))+item("یورو",val(c.euro),"تومان",chg(c.euro))+item("درهم",val(c.aed),"تومان",chg(c.aed))+item("پوند",val(c.gbp),"تومان",chg(c.gbp))+item("لیر",val(c.try),"تومان",chg(c.try))+item("فرانک",val(c.chf),"تومان",chg(c.chf))+item("یوان",val(c.cny),"تومان",chg(c.cny));
-metal.innerHTML=(coins?coins:"")+ (metal.innerHTML||"");
-stamp("metals");
-stamp("currency");
-cur.innerHTML=curr?curr+curr:"<span class='Evrenxus-ticker-item'>اطلاعات ارز در دسترس نیست</span>";
-}).catch(function(){cur.innerHTML="<span class='Evrenxus-ticker-item'>خطا در دریافت ارزهای خارجی</span>"})
+renderTrack(cur,"currency",curr?curr:"<span class='Evrenxus-ticker-item'>اطلاعات ارز در دسترس نیست</span>");
+}).catch(function(){renderTrack(cur,"currency","<span class='Evrenxus-ticker-item'>خطا در دریافت ارزهای خارجی</span>")})
 }
 
 function loadCrypto(){
 var q=cryptoIds.join(",");
 fetch("https://api.coingecko.com/api/v3/simple/price?ids="+encodeURIComponent(q)+"&vs_currencies=usd&include_24hr_change=true").then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){
 var out=cryptoIds.map(function(id){var x=d[id];return x?item(cryptoNames[id],x.usd,"USD",x.usd_24h_change):""}).join("");
-stamp("crypto");
-crypto.innerHTML=out?out+out:"<span class='Evrenxus-ticker-item'>اطلاعات رمزارزها در دسترس نیست</span>";
-}).catch(function(){crypto.innerHTML="<span class='Evrenxus-ticker-item'>خطا در دریافت ارزهای دیجیتال</span>"})
+renderTrack(crypto,"crypto",out?out:"<span class='Evrenxus-ticker-item'>اطلاعات رمزارزها در دسترس نیست</span>");
+}).catch(function(){renderTrack(crypto,"crypto","<span class='Evrenxus-ticker-item'>خطا در دریافت ارزهای دیجیتال</span>")})
 }
 function load(){loadGlobals();loadLocal();loadCrypto()}
 load();setInterval(load,300000);
