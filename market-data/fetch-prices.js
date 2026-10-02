@@ -3,17 +3,6 @@ const fs = require("fs");
 const SOURCE_URL = "https://www.tgju.org/";
 const OUTPUT = "market-data/prices.json";
 
-const TARGETS = {
-  gold18: ["طلای 18 عیار", "طلای 18 عیار / 750"],
-  dollar: ["دلار"],
-  emami: ["سکه امامی", "سکه امامی (طرح جدید)"],
-  half: ["نیم سکه"],
-  quarter: ["ربع سکه"],
-  gram: ["سکه گرمی"],
-  mesghal: ["مثقال طلا"],
-  melted: ["آبشده نقدی"]
-};
-
 function faToEn(value) {
   return String(value)
     .replace(/[۰-۹]/g, d => "۰۱۲۳۴۵۶۷۸۹".indexOf(d))
@@ -50,15 +39,25 @@ function rowsFromHtml(html) {
   return rows;
 }
 
-function findValue(rows, labels) {
+function findSingleRetail(rows, label) {
+  const wanted = label + " تک فروشی";
+
   for (const row of rows) {
-    const label = row[0] || "";
-    if (!labels.some(x => label.includes(x))) continue;
-    for (let i = 1; i < row.length; i++) {
-      const n = numberFrom(row[i]);
-      if (n !== null) return n;
+    const rowText = row.join(" | ");
+    if (!rowText.includes(wanted)) continue;
+
+    // Expected TGJU order:
+    // نام | قیمت زنده | تغییر | کمترین | بیشترین | زمان
+    const price = numberFrom(row[1]);
+    const low = numberFrom(row[3]);
+    const high = numberFrom(row[4]);
+    const time = row[5] || null;
+
+    if (price !== null) {
+      return { price, low, high, time };
     }
   }
+
   return null;
 }
 
@@ -71,37 +70,55 @@ async function main() {
   });
 
   if (!res.ok) throw new Error(`TGJU HTTP ${res.status}`);
+
   const html = await res.text();
   const rows = rowsFromHtml(html);
 
-  const rial = {
-    gold18: findValue(rows, TARGETS.gold18),
-    dollar: findValue(rows, TARGETS.dollar),
-    emami: findValue(rows, TARGETS.emami),
-    half: findValue(rows, TARGETS.half),
-    quarter: findValue(rows, TARGETS.quarter),
-    gram: findValue(rows, TARGETS.gram),
-    mesghal: findValue(rows, TARGETS.mesghal),
-    melted: findValue(rows, TARGETS.melted)
+  const labels = {
+    emami: "سکه امامی",
+    bahar: "سکه بهار آزادی",
+    half: "نیم سکه",
+    quarter: "ربع سکه",
+    gram: "سکه گرمی"
   };
 
-  const missing = Object.entries(rial).filter(([, v]) => v === null).map(([k]) => k);
-  if (missing.length) throw new Error("Missing TGJU fields: " + missing.join(", "));
+  const rial = {};
+  for (const [key, label] of Object.entries(labels)) {
+    rial[key] = findSingleRetail(rows, label);
+  }
 
-  const toman = Object.fromEntries(
-    Object.entries(rial).map(([key, value]) => [key, Math.round(value / 10)])
-  );
+  const missing = Object.entries(rial)
+    .filter(([, v]) => !v)
+    .map(([key]) => key);
+
+  if (missing.length) {
+    throw new Error("Missing TGJU single-retail fields: " + missing.join(", "));
+  }
+
+  // TGJU publishes these domestic values in rial.
+  // Evren Nexus stores and displays them in toman.
+  const prices = {};
+  for (const [key, value] of Object.entries(rial)) {
+    prices[key] = {
+      price: Math.round(value.price / 10),
+      low: value.low === null ? null : Math.round(value.low / 10),
+      high: value.high === null ? null : Math.round(value.high / 10),
+      time: value.time
+    };
+  }
 
   const output = {
     source: "TGJU",
     sourceUrl: SOURCE_URL,
+    market: "coin_single_retail",
     unit: "toman",
     fetchedAt: new Date().toISOString(),
-    prices: toman
+    prices
   };
 
   fs.mkdirSync("market-data", { recursive: true });
   fs.writeFileSync(OUTPUT, JSON.stringify(output, null, 2) + "\n");
+
   console.log(JSON.stringify(output, null, 2));
 }
 
