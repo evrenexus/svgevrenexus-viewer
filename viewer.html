@@ -5,9 +5,10 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>خبرخوان Evren Nexus</title>
 <style>
+
 *{box-sizing:border-box}
 html,body{margin:0;padding:0;width:100%;min-height:100%;background:#fff;font-family:Tahoma,Arial,sans-serif}
-#Evrenxus-header{width:850px;height:75px;position:fixed;top:0;left:50%;transform:translateX(-50%);z-index:1000;background:#fff;border-bottom:1px solid #d7d7d7}
+#content{width:100%;height:calc(100vh - 82px);margin-top:82px;position:relative;background:#fff}
 #Evrenxus-header-row1{height:30px;background:#10232e;position:relative;overflow:hidden}
 .Evrenxus-header-brand{position:absolute;right:0;top:0;width:130px;height:30px;display:flex;align-items:center;justify-content:center;background:#0c1b24;z-index:3}
 .Evrenxus-brand{color:#fff;text-decoration:none;font-size:14px;font-weight:bold}
@@ -32,52 +33,18 @@ html,body{margin:0;padding:0;width:100%;min-height:100%;background:#fff;font-fam
 #Evrenxus-property-budget{width:52px;height:24px;border:1px solid #c8d0d5;text-align:center;direction:ltr;font-family:Tahoma;font-size:10px}
 #Evrenxus-property-search-button{height:24px;padding:0 7px;border:1px solid #10232e;background:#10232e;color:#fff;font-size:10px;font-weight:bold;cursor:pointer}
 #Evrenxus-property-search-error{display:none;position:absolute;right:5px;top:36px;color:#b23a3a;font-size:9px;white-space:nowrap}
-#content{width:100%;height:calc(100vh - 75px);margin-top:75px;position:relative;background:#fff}
+#content{width:100%;height:calc(100vh - 82px);margin-top:82px;position:relative;background:#fff}
 #loading{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#555;font-size:14px;z-index:1}
 #iframe{width:100%;height:100%;border:0;display:block;position:relative;z-index:2;background:#fff}
 @media(max-width:700px){
-#Evrenxus-header{width:100%;height:73px;left:0;transform:none}
-#Evrenxus-header-row1{height:28px}
-.Evrenxus-header-brand{width:105px;height:28px}
-.Evrenxus-brand{font-size:11px}
-#Evrenxus-market-tickers{left:105px;right:105px;height:28px}
-.Evrenxus-ticker,.Evrenxus-ticker-window,.Evrenxus-ticker-track{height:28px}
-.Evrenxus-datetime{left:-105px;width:105px;height:28px;font-size:8px}
-#Evrenxus-header-row2{height:45px}
-#Evrenxus-main-menu{height:45px;overflow:hidden;flex:1;min-width:0}
-#Evrenxus-main-menu a{padding:0 6px;font-size:9px}
-#Evrenxus-property-search{margin:0 3px;padding:0 4px;gap:4px}
-#Evrenxus-property-search-title{font-size:8px}
-#Evrenxus-property-budget{width:50px}
-#Evrenxus-property-search-button{padding:0 6px;font-size:8px}
-#content{height:calc(100vh - 73px);margin-top:73px}
+#content{height:calc(100vh - 76px);margin-top:76px}
 }
+
 </style>
 </head>
 <body>
 
-<header id="Evrenxus-header">
-<div id="Evrenxus-header-row1">
-<div class="Evrenxus-header-brand"><a href="https://evrenexus.blogfa.com/" class="Evrenxus-brand">Evren Nexus</a></div>
-<div id="Evrenxus-market-tickers">
-<div class="Evrenxus-ticker">
-<div class="Evrenxus-ticker-window"><div id="Evrenxus-global-track" class="Evrenxus-ticker-track"><span class="Evrenxus-ticker-item">در حال دریافت بازارهای جهانی...</span></div></div>
-<div class="Evrenxus-datetime"><span id="Evrenxus-shamsi"></span><span>|</span><span id="Evrenxus-time"></span></div>
-</div>
-</div>
-</div>
-
-<div id="Evrenxus-header-row2">
-<nav id="Evrenxus-main-menu">
-<a href="https://evrenexus.blogfa.com/">خانه</a><a href="https://evrenexus.blogfa.com/profile">درباره من</a><a href="#">اقتصاد</a><a href="#">طلا</a><a href="#">ارز</a><a href="#">مسکن</a><a href="#">بورس</a><a href="#">کریپتو</a><a href="#">خودرو</a><a href="#">تحلیل بازار</a>
-</nav>
-<div id="Evrenxus-property-search">
-<div id="Evrenxus-property-search-title"><a target="_blank" href="https://evrenexus.blogfa.com/post/5">موتور جستجوی املاک</a></div>
-<div id="Evrenxus-property-search-form"><input id="Evrenxus-property-budget" type="text" inputmode="decimal" autocomplete="off" placeholder="1-9999"><button id="Evrenxus-property-search-button" type="button">بیاب</button></div>
-<div id="Evrenxus-property-search-error">رقم را بر پایه میلیارد تومان وارد کنید</div>
-</div>
-</div>
-</header>
+<script src="https://evrenexus.github.io/svgevrenexus-viewer/Evrenexus-header.js"></script>
 
 <div id="content">
 <div id="loading">در حال بارگذاری خبر...</div>
@@ -112,5 +79,6 @@ function update(){var n=new Date();document.getElementById("Evrenxus-shamsi").te
 update();setInterval(update,1000)
 })();
 </script>
+
 </body>
 </html>
