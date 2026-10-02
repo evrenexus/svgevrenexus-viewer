@@ -212,38 +212,39 @@ else document.body.insertBefore(header,document.body.firstChild);
 })();
 
 (function(){
- var symbols=["XAUUSD","XAGUSD","USOIL","XCUUSD","XPDUSD","DXY","BTCUSD","ETHUSD"],
- names={XAUUSD:"طلا",XAGUSD:"نقره",USOIL:"نفت",XCUUSD:"مس",XPDUSD:"پالادیوم",DXY:"شاخص دلار",BTCUSD:"بیت‌کوین",ETHUSD:"اتریوم"},
- track=document.getElementById("Evrenxus-global-track");
- function price(v){
+ var track=document.getElementById("Evrenxus-global-track"),
+     url="https://evrenexus.github.io/svgevrenexus-viewer/market-data/prices.json";
+ function toman(v){
    var n=Number(v);
-   return isFinite(n)?new Intl.NumberFormat("en-US",{minimumFractionDigits:2,maximumFractionDigits:2}).format(n):"-"
+   return isFinite(n)?new Intl.NumberFormat("fa-IR").format(Math.round(n)):"-";
+ }
+ function item(label,value){
+   return '<span class="Evrenxus-ticker-item"><span class="symbol">'+label+
+          '</span><span class="price">'+toman(value)+' تومان</span></span>';
  }
  function load(){
-   var out=[];
-   Promise.all(symbols.map(function(s){
-     return fetch("https://biquote.io/api/"+s)
-      .then(function(r){return r.ok?r.json():null})
-      .then(function(d){if(d&&d.mid!==undefined)out.push({s:s,d:d})})
-      .catch(function(){})
-   })).then(function(){
-     if(!out.length){
-       track.innerHTML='<span class="Evrenxus-ticker-item">دریافت بازارهای جهانی امکان‌پذیر نیست</span>';
-       return
-     }
-     var html="";
-     out.forEach(function(x){
-       var d=Number(x.d.dayDiffPercent),
-           dir=d>0?'<span class="Evrenxus-up">▲ '+d.toFixed(2)+"%</span>":
-              d<0?'<span class="Evrenxus-down">▼ '+Math.abs(d).toFixed(2)+"%</span>":"";
-       html+='<span class="Evrenxus-ticker-item"><span class="symbol">'+names[x.s]+
-              '</span><span class="price">'+(x.s==="DXY"?"":"$")+price(x.d.mid)+
-              "</span>"+dir+"</span>"
-     });
-     track.innerHTML=html+html
-   })
+   fetch(url+"?v="+Date.now(),{cache:"no-store"})
+    .then(function(r){if(!r.ok)throw new Error("market data");return r.json()})
+    .then(function(d){
+      var p=d&&d.prices;
+      if(!p)throw new Error("no prices");
+      var html=
+        item("دلار",p.dollar)+
+        item("طلای ۱۸",p.gold18)+
+        item("سکه امامی",p.emami)+
+        item("نیم سکه",p.half)+
+        item("ربع سکه",p.quarter)+
+        item("سکه گرمی",p.gram)+
+        item("مثقال",p.mesghal)+
+        item("آبشده",p.melted);
+      track.innerHTML=html+html;
+    })
+    .catch(function(){
+      track.innerHTML='<span class="Evrenxus-ticker-item">در حال دریافت نرخ بازار...</span>';
+    });
  }
- load();setInterval(load,120000)
+ load();
+ setInterval(load,300000);
 })();
 
 (function(){
