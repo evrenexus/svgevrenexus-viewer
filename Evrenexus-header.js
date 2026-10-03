@@ -88,8 +88,8 @@ function fmt(v){return v==null?"-":new Intl.NumberFormat("en-US",{maximumFractio
 function item(x){var v=x.price!=null?x.price:x.priceIRT,c=x.changePercent!=null?x.changePercent:x.changePercent24h,cl=Number(c)>0?"Evrenxus-up":Number(c)<0?"Evrenxus-down":"",ar=Number(c)>0?"▲":Number(c)<0?"▼":"";return '<span class="Evrenxus-ticker-item"><span class="symbol">'+x.name+'</span><span class="price">'+fmt(v)+'</span><span class="'+cl+'">'+ar+(Number.isFinite(Number(c))?fmt(c)+"%":"")+'</span></span>'}
 function render(track,prefix,groups,iso){var html=groups.flat().map(item).join("");track.innerHTML=html||'<span class="Evrenxus-ticker-item">اطلاعات در دسترس نیست</span>';}
 Promise.all([
-fetch("https://evrenexus.github.io/svgevnexus-viewer/market-data/tgju.json?v="+Date.now(),{cache:"no-store"}).then(r=>r.json()),
-fetch("https://evrenexus.github.io/svgevnexus-viewer/market-data/nobitex.json?v="+Date.now(),{cache:"no-store"}).then(r=>r.json())
+fetch("https://evrenexus.github.io/svgevrenexus-viewer/market-data/tgju.json?v="+Date.now(),{cache:"no-store"}).then(r=>r.json()),
+fetch("https://evrenexus.github.io/svgevrenexus-viewer/market-data/nobitex.json?v="+Date.now(),{cache:"no-store"}).then(r=>r.json())
 ]).then(function(a){var t=a[0],n=a[1];render(metal,"metals",[t.precious||[],t.baseMetals||[],t.energy||[]],t.scrapedAt);render(cur,"currency",[t.currency||[]],t.scrapedAt);render(crypto,"crypto",[n.markets||[]],n.scrapedAt)}).catch(function(){stamp("metals");stamp("currency");stamp("crypto")});
 })();
 (function(){
