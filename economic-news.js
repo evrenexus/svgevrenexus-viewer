@@ -99,7 +99,7 @@ function init(){
  }
  fetch("https://evrenexus.github.io/svgevrenexus-viewer/data/news.json?v="+Date.now(),{cache:"no-store"})
  .then(function(r){if(!r.ok)throw new Error("news");return r.json()})
- .then(function(data){render((data.items||[]).filter(function(x){return x&&x.title&&x.published&&/^https?:\\/\\//i.test(x.url||"")&&x.url!==x.source}).sort(function(a,b){return new Date(b.published)-new Date(a.published)}).slice(0,50))})
+ .then(function(data){render((data.items||[]).filter(function(x){return x&&x.title&&x.published&&String(x.url||"").indexOf("http")===0}).sort(function(a,b){return new Date(b.published)-new Date(a.published)}).slice(0,50))})
  .catch(function(){list.innerHTML='<div class="Evrenxus-news-error">دریافت خبرها انجام نشد.</div>'});
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",init);else init();
