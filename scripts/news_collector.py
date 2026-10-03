@@ -67,7 +67,12 @@ def parse(data,source):
             link=get("link")
             date=get("pubDate") or get("date") or get("{http://purl.org/dc/elements/1.1/}date")
             desc=get("description") or get("{http://purl.org/rss/1.0/modules/content/}encoded")
+        link=html.unescape(link.strip())
+        if link and not re.match(r"^https?://",link):
+            link=urljoin(source["site"],link)
         if not title or not link or not re.match(r"^https?://",link): continue
+        base=source["site"].rstrip("/")
+        if link.rstrip("/") in {base,base+"/feed",base+"/feeds"}: continue
         image=""
         m=re.search(r'<img[^>]+(?:src|data-src)=["\']([^"\']+)',desc,re.I)
         if m: image=urljoin(link,m.group(1))
@@ -107,8 +112,11 @@ def main():
             existing[item["id"]]=item
         status.append({"name":s["name"],"category":s["category"],"ok":bool(got),"items":len(got)})
     items=list(existing.values())
+    items=[x for x in items if x.get("title") and re.match(r"^https?://",x.get("url",""))]
     items.sort(key=lambda x:x.get("published",""),reverse=True)
     items=items[:300]
+    if len(items) < 20:
+        print("WARNING: fewer than 20 real articles collected:", len(items))
     OUT.parent.mkdir(parents=True,exist_ok=True)
     OUT.write_text(json.dumps({"updated":datetime.now(timezone.utc).isoformat(),"items":items,"sources":status},ensure_ascii=False,indent=2),encoding="utf-8")
     print("items:",len(items))
