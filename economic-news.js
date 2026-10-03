@@ -205,8 +205,38 @@ function init(){
         return p.catch(function(){return []});
     }
 
+    function originalLink(item){
+        var candidates=[];
+        var html=item.content||item["content:encoded"]||item.description||"";
+        if(html){
+            var box=document.createElement("div");
+            box.innerHTML=html;
+            var links=box.querySelectorAll("a[href]");
+            for(var i=0;i<links.length;i++){
+                candidates.push(links[i].getAttribute("href"));
+            }
+        }
+        candidates.push(item.source,item.guid,item.link);
+        for(var j=0;j<candidates.length;j++){
+            var v=candidates[j];
+            if(!v) continue;
+            v=String(v).trim();
+            if(/^\\//.test(v)) v="https:"+v;
+            if(!/^https?:\\/\\//i.test(v)) continue;
+            try{
+                var u=new URL(v);
+                if(u.hostname!=="khabarfarsi.com" && u.hostname!=="www.khabarfarsi.com" &&
+                   u.hostname!=="images.weserv.nl" && u.hostname!=="news.google.com"){
+                    return v;
+                }
+            }catch(e){}
+        }
+        return item.link||"";
+    }
+
     function openItem(item){
-        return viewer+"?url="+encodeURIComponent(item.link||"");
+        var link=originalLink(item);
+        return viewer+"?url="+encodeURIComponent(link);
     }
 
     function renderAsriran(items){
