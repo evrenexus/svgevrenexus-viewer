@@ -3,7 +3,7 @@
 "use strict";
 if(document.getElementById("Evrenxus-sidebar")) return;
 var css=`
-#Evrenxus-sidebar{width:200px;min-width:200px;max-width:200px;position:sticky;top:158px;align-self:flex-start;z-index:900;font-family:Vazir,Tahoma,Arial,sans-serif;direction:rtl}
+#Evrenxus-sidebar{width:200px;min-width:200px;max-width:200px;position:static;z-index:900;font-family:Vazir,Tahoma,Arial,sans-serif;direction:rtl}
 #Evrenxus-sidebar .Evrenxus-sidebar-box{width:200px;margin-bottom:16px;background:#fff;border:1px solid #dfe2e4}
 #Evrenxus-sidebar .Evrenxus-sidebar-menu{border-top:3px solid #202c35}
 #Evrenxus-sidebar .Evrenxus-sidebar-title{position:relative;padding:9px 10px;border-bottom:1px solid #e1e4e6;color:#202c35;font-size:12px;font-weight:700}
@@ -29,7 +29,8 @@ var box=document.createElement("aside");box.id="Evrenxus-sidebar";box.innerHTML=
 <div class="Evrenxus-sidebar-title">آخرین مطالب</div>
 <div id="Evrenxus-sidebar-latest"><div style="padding:12px;font-size:10px;color:#888">در حال دریافت...</div></div>
 </div>`;
-var host=document.getElementById("Evrenxus-sidebar-host");if(host){host.replaceWith(box)}else document.body.appendChild(box);
+var host=document.getElementById("sidebar-host") || document.getElementById("Evrenxus-sidebar-host");
+if(host){host.innerHTML="";host.appendChild(box)}else document.body.appendChild(box);
 function render(items){var el=document.getElementById("Evrenxus-sidebar-latest");if(!el)return;el.innerHTML="";(items||[]).slice(0,10).forEach(function(x){var a=document.createElement("a");a.className="Evrenxus-latest-item";a.target="_top";a.href=x.link||x.url||"https://evrenexus.blogfa.com/";a.textContent=x.title||"";el.appendChild(a)})}
 fetch("https://api.rss2json.com/v1/api.json?rss_url="+encodeURIComponent("https://evrenexus.blogfa.com/rss.aspx")+"&count=10",{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){render(d.items||[])}).catch(function(){render([])});
 })();
