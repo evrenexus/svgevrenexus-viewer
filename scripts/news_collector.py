@@ -58,7 +58,7 @@ BLOCKED_TITLE_TERMS=[
 def normalize_text(value):
     value=str(value or "").replace("ي","ی").replace("ى","ی").replace("ك","ک").replace("ۀ","ه")
     value=value.replace("‌"," ").replace("‏"," ").replace("‎"," ")
-    return re.sub(r"s+"," ",value).strip().lower()
+    return re.sub(r"\\s+"," ",value).strip().lower()
 
 def is_blocked_title(item):
     title=normalize_text(item.get("title",""))
@@ -105,7 +105,7 @@ def discover(home):
     return list(dict.fromkeys(found))
 
 def txt(v):
-    return re.sub(r"s+"," ",html.unescape(re.sub(r"<[^>]+>"," ",v or ""))).strip()
+    return re.sub(r"\\s+"," ",html.unescape(re.sub(r"<[^>]+>"," ",v or ""))).strip()
 
 def parse_date(value):
     value=txt(value)
