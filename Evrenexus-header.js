@@ -89,8 +89,8 @@ var tvMap={"انس طلا":"OANDA:XAUUSD","انس نقره":"OANDA:XAGUSD","ان
 function item(x,isCrypto){var v=isCrypto?x.priceIRT:x.price,c=x.changePercent!=null?x.changePercent:x.changePercent24h,unit=isCrypto?" تومان":"",cl=Number(c)>0?"Evrenxus-up":Number(c)<0?"Evrenxus-down":"",ar=Number(c)>0?"▲":Number(c)<0?"▼":"",tv=tvMap[x.name],inner='<span class="symbol">'+x.name+'</span><span class="price">'+fmt(v)+unit+'</span><span class="'+cl+'">'+ar+(Number.isFinite(Number(c))?fmt(c)+"%":"")+'</span>';return tv?'<a class="Evrenxus-ticker-item" href="#market-chart" data-tv-symbol="'+tv+'" data-tv-name="'+x.name+'" onclick="return window.EvrenxusOpenMarketChart(this.getAttribute(\'data-tv-symbol\'),this.getAttribute(\'data-tv-name\'))">'+inner+'</a>':'<span class="Evrenxus-ticker-item">'+inner+'</span>'}
 function render(track,prefix,groups,iso){var html=groups.flat().map(function(x){return item(x,prefix==="crypto")}).join("");track.innerHTML=html||'<span class="Evrenxus-ticker-item">اطلاعات در دسترس نیست</span>';}
 window.EvrenxusOpenMarketChart=function(symbol,name){
-var url="https://www.tradingview.com/chart/?symbol="+encodeURIComponent(symbol);
-window.open(url,"_blank","noopener,noreferrer");
+var url="https://evrenexus.github.io/svgevrenexus-viewer/market-chart.html?symbol="+encodeURIComponent(symbol)+"&name="+encodeURIComponent(name||"");
+window.open(url,"_blank");
 return false;
 }
 
