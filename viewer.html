@@ -19,7 +19,7 @@
 (function(){
 var params=new URLSearchParams(location.search),newsUrl=params.get("url"),iframe=document.getElementById("iframe"),loading=document.getElementById("loading");
 if(!newsUrl){loading.textContent="لینک خبر مشخص نشده است.";return}
-try{var url=new URL(newsUrl),allowed=["www.asriran.com","asriran.com","www.donya-e-eqtesad.com","donya-e-eqtesad.com"];if(allowed.indexOf(url.hostname)===-1){loading.textContent="این منبع در فهرست منابع EVREN NEXUS نیست.";return}iframe.src=newsUrl;iframe.onload=function(){loading.style.display="none"}}catch(e){loading.textContent="آدرس خبر معتبر نیست."}
+try{var url=new URL(newsUrl),allowed=["www.asriran.com","asriran.com","www.donya-e-eqtesad.com","donya-e-eqtesad.com","khabarfarsi.com","www.khabarfarsi.com"];if(allowed.indexOf(url.hostname)===-1){loading.textContent="این منبع در فهرست منابع EVREN NEXUS نیست.";return}iframe.src=newsUrl;iframe.onload=function(){loading.style.display="none"}}catch(e){loading.textContent="آدرس خبر معتبر نیست."}
 })();
 </script>
 </body>
