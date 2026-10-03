@@ -44,12 +44,11 @@ def discover(home):
     return list(dict.fromkeys(found))
 
 def txt(v):
-    return re.sub(r"\s+"," ",html.unescape(re.sub(r"<[^>]+>"," ",v or ""))).strip()
+    return re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", v or ""))).strip()
 
 def parse(data,source):
     root=ET.fromstring(data)
-    channel=root.find("channel")
-    atom=(root.tag.lower().endswith("feed"))
+    atom=root.tag.lower().endswith("feed")
     nodes=list(root.findall("item")) if not atom else list(root.findall("{http://www.w3.org/2005/Atom}entry"))
     out=[]
     for n in nodes[:30]:
@@ -80,17 +79,32 @@ def main():
     existing={x["id"]:x for x in old.get("items",[])}
     status=[]
     for s in SOURCES:
-        candidates=s["feeds"]+discover(s["site"])
+        candidates=list(s["feeds"])
+        # Only try homepage autodiscovery if no explicit feed succeeds.
         got=[]
         for u in dict.fromkeys(candidates):
             try:
                 data,ctype=fetch(u)
-                if b"<rss" in data[:1000].lower() or b"<feed" in data[:1000].lower() or "xml" in ctype.lower():
+                if b"<rss" in data[:2000].lower() or b"<feed" in data[:2000].lower() or "xml" in ctype.lower():
                     got=parse(data,s)
                     if got: break
             except Exception:
                 continue
-        for item in got: existing[item["id"]]=item
+        if not got:
+            try:
+                discovered=discover(s["site"])
+            except Exception:
+                discovered=[]
+            for u in dict.fromkeys(discovered):
+                try:
+                    data,ctype=fetch(u)
+                    if b"<rss" in data[:2000].lower() or b"<feed" in data[:2000].lower() or "xml" in ctype.lower():
+                        got=parse(data,s)
+                        if got: break
+                except Exception:
+                    continue
+        for item in got:
+            existing[item["id"]]=item
         status.append({"name":s["name"],"category":s["category"],"ok":bool(got),"items":len(got)})
     items=list(existing.values())
     items.sort(key=lambda x:x.get("published",""),reverse=True)
