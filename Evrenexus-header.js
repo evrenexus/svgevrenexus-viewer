@@ -89,33 +89,17 @@ var tvMap={"انس طلا":"OANDA:XAUUSD","انس نقره":"OANDA:XAGUSD","ان
 function item(x,isCrypto){var v=isCrypto?x.priceIRT:x.price,c=x.changePercent!=null?x.changePercent:x.changePercent24h,unit=isCrypto?" تومان":"",cl=Number(c)>0?"Evrenxus-up":Number(c)<0?"Evrenxus-down":"",ar=Number(c)>0?"▲":Number(c)<0?"▼":"",tv=tvMap[x.name],inner='<span class="symbol">'+x.name+'</span><span class="price">'+fmt(v)+unit+'</span><span class="'+cl+'">'+ar+(Number.isFinite(Number(c))?fmt(c)+"%":"")+'</span>';return tv?'<a class="Evrenxus-ticker-item" href="#market-chart" data-tv-symbol="'+tv+'" data-tv-name="'+x.name+'" onclick="return window.EvrenxusOpenMarketChart(this.getAttribute(\'data-tv-symbol\'),this.getAttribute(\'data-tv-name\'))">'+inner+'</a>':'<span class="Evrenxus-ticker-item">'+inner+'</span>'}
 function render(track,prefix,groups,iso){var html=groups.flat().map(function(x){return item(x,prefix==="crypto")}).join("");track.innerHTML=html||'<span class="Evrenxus-ticker-item">اطلاعات در دسترس نیست</span>';}
 window.EvrenxusOpenMarketChart=function(symbol,name){
-var panel=document.getElementById("Evrenxus-market-chart");
-if(!panel){
-panel=document.createElement("div");panel.id="Evrenxus-market-chart";
-panel.innerHTML='<div id="Evrenxus-market-chart-head"><span id="Evrenxus-market-chart-title"></span><button id="Evrenxus-market-chart-close" type="button">بستن</button></div><div id="Evrenxus-tv-chart"></div>';
-document.body.insertBefore(panel,document.body.firstChild);
-document.getElementById("Evrenxus-market-chart-close").onclick=function(){panel.style.display="none";document.getElementById("Evrenxus-tv-chart").innerHTML=""};
+var url="https://www.tradingview.com/chart/?symbol="+encodeURIComponent(symbol);
+window.open(url,"_blank","noopener,noreferrer");
+return false;
 }
-panel.style.display="block";
-document.getElementById("Evrenxus-market-chart-title").textContent="نمودار "+(name||symbol);
-var host=document.getElementById("Evrenxus-tv-chart");host.innerHTML="";
-var box=document.createElement("div");box.className="tradingview-widget-container";box.style.cssText="height:100%;width:100%";
-var widget=document.createElement("div");widget.className="tradingview-widget-container__widget";widget.style.cssText="height:calc(100% - 28px);width:100%";
-box.appendChild(widget);
-var credit=document.createElement("div");credit.style.cssText="height:28px;line-height:28px;text-align:left;font:10px Arial;color:#777;padding-left:8px";credit.innerHTML='<a href="https://www.tradingview.com/" target="_blank" rel="noopener nofollow" style="color:#777;text-decoration:none">TradingView</a>';
-box.appendChild(credit);host.appendChild(box);
-var s=document.createElement("script");s.type="text/javascript";s.src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";s.async=true;
-s.text='{"autosize":true,"symbol":"'+symbol.replace(/"/g,'\\\"')+'","interval":"60","timezone":"Asia/Tehran","theme":"light","style":"1","locale":"en","allow_symbol_change":true,"calendar":false,"hide_top_toolbar":false,"hide_side_toolbar":false,"hide_legend":false,"hide_volume":false,"save_image":false,"support_host":"https://www.tradingview.com"}';
-box.appendChild(s);
-setTimeout(function(){panel.scrollIntoView({behavior:"smooth",block:"start"})},80);
-}
-document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a[data-tv-symbol]");if(!a)return;e.preventDefault();openMarketChart(a.getAttribute("data-tv-symbol"),a.getAttribute("data-tv-name")||"")});
-function loadTGJU(){return fetch("https://evrenexus.github.io/svgevrenexus-viewer/market-data/tgju.json?v="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(t){render(metal,"metals",[t.precious||[],t.baseMetals||[],t.energy||[]],t.scrapedAt);render(cur,"currency",[t.currency||[]],t.scrapedAt)})}
-function loadCrypto(){return fetch("https://evrenexus.github.io/svgevrenexus-viewer/market-data/nobitex.json?v="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(n){render(crypto,"crypto",[(n.markets||[]).slice().sort(function(a,b){return a.symbol==="USDT"?-1:b.symbol==="USDT"?1:0})],n.scrapedAt)})}
+
+function loadTGJU(){return fetch("https://raw.githubusercontent.com/evrenexus/svgevrenexus-viewer/main/market-data/tgju.json?v="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(t){render(metal,"metals",[t.precious||[],t.baseMetals||[],t.energy||[]],t.scrapedAt);render(cur,"currency",[t.currency||[]],t.scrapedAt)})}
+function loadCrypto(){return fetch("https://raw.githubusercontent.com/evrenexus/svgevrenexus-viewer/main/market-data/nobitex.json?v="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(n){render(crypto,"crypto",[(n.markets||[]).slice().sort(function(a,b){return a.symbol==="USDT"?-1:b.symbol==="USDT"?1:0})],n.scrapedAt)})}
 loadTGJU().catch(function(){stamp("metals");stamp("currency")});
 loadCrypto().catch(function(){stamp("crypto")});
-setInterval(function(){loadTGJU().catch(function(){})},60*60*1000);
-setInterval(function(){loadCrypto().catch(function(){})},15*60*1000);
+function nextTehranHour(){var n=new Date(),t=new Date(n.toLocaleString("en-US",{timeZone:"Asia/Tehran"})),d=new Date(t);d.setMinutes(0,0,0);d.setHours(d.getHours()+1);return Math.max(1000,d.getTime()-t.getTime())}function scheduleTGJU(){setTimeout(function(){loadTGJU().catch(function(){});setInterval(function(){loadTGJU().catch(function(){})},60*60*1000)},nextTehranHour())}scheduleTGJU();
+function scheduleCrypto(){var n=new Date(),t=new Date(n.toLocaleString("en-US",{timeZone:"Asia/Tehran"})),m=t.getMinutes(),delay=((15-(m%15))*60-t.getSeconds())*1000-t.getMilliseconds();setTimeout(function(){loadCrypto().catch(function(){});setInterval(function(){loadCrypto().catch(function(){})},15*60*1000)},Math.max(1000,delay))}scheduleCrypto();
 })();
 (function(){
 function update(){var n=new Date(),d=document.getElementById("Evrenxus-shamsi"),t=document.getElementById("Evrenxus-time");if(!d||!t)return;d.textContent=new Intl.DateTimeFormat("fa-IR-u-ca-persian",{timeZone:"Asia/Tehran",year:"numeric",month:"long",day:"numeric"}).format(n);t.textContent=new Intl.DateTimeFormat("en-GB",{timeZone:"Asia/Tehran",hour:"2-digit",minute:"2-digit",second:"2-digit",hour12:false}).format(n)}
