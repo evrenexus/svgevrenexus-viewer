@@ -221,8 +221,8 @@ function init(){
             var v=candidates[j];
             if(!v) continue;
             v=String(v).trim();
-            if(/^\\//.test(v)) v="https:"+v;
-            if(!/^https?:\\/\\//i.test(v)) continue;
+            if(/^\/\//.test(v)) v="https:"+v;
+            if(!/^https?:\/\//i.test(v)) continue;
             try{
                 var u=new URL(v);
                 if(u.hostname!=="khabarfarsi.com" && u.hostname!=="www.khabarfarsi.com" &&
