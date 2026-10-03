@@ -160,7 +160,7 @@ def parse(data,source):
         image=""
         m=re.search(r'<img[^>]+(?:src|data-src)=["\']([^"\']+)',desc,re.I)
         if m: image=urljoin(link,m.group(1))
-        out.append({"id":hashlib.sha256(link.encode()).hexdigest()[:20],"title":txt(title),"summary":txt(desc)[:500],"url":link,"image":image,"source":source["name"],"category":source["category"],"published":parse_date(date)},"topics":[]})
+        out.append({"id":hashlib.sha256(link.encode()).hexdigest()[:20],"title":txt(title),"summary":txt(desc)[:500],"url":link,"image":image,"source":source["name"],"category":source["category"],"published":parse_date(date),"topics":[]})
     out.sort(key=lambda x: date_key(x.get("published","")), reverse=True)
     return out[:LATEST_PER_SOURCE]
 
