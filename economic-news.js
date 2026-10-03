@@ -81,6 +81,11 @@ function init(){
         return /^https?:\/\//i.test(v)?v:"";
     }
 
+    function imageProxy(v){
+        if(!v) return "";
+        return "https://images.weserv.nl/?url="+encodeURIComponent(v);
+    }
+
     function itemImage(item){
         var v=image(item.thumbnail);
         if(v) return v;
@@ -216,7 +221,7 @@ function init(){
             if(im){
                 var img=document.createElement("img");
                 img.className="Evrenxus-asriran-image";
-                img.src=im;
+                img.src=imageProxy(im);
                 img.alt=clean(item.title);
                 img.loading="lazy";
                 img.onerror=function(){this.remove()};
