@@ -191,7 +191,8 @@ def main():
     existing={}
     for x in old.get("items",[]):
         if isinstance(x,dict) and is_valid_item(x,now_ts):
-            x["topics"]=classify_topics(x)\n            existing[x["id"]]=x
+            x["topics"]=classify_topics(x)
+            existing[x["id"]]=x
 
     status=[]
     for s in SOURCES:
