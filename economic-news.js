@@ -14,42 +14,44 @@ function init(){
     style.textContent=
     "#Evrenxus-economic-news{width:610px;max-width:610px;margin:20px 0 25px;background:#fff;box-sizing:border-box;display:block;clear:none}"+
     "#Evrenxus-asriran-list{border-top:2px solid #202c35}"+
-    ".Evrenxus-asriran-item{display:flex;width:100%;box-sizing:border-box;padding:11px 0;border-bottom:1px solid #e2e5e7;color:#222;text-decoration:none;direction:rtl;gap:12px}"+
+    ".Evrenxus-asriran-item{display:flex;width:100%;box-sizing:border-box;padding:9px 0;border-bottom:1px solid #e2e5e7;color:#222;text-decoration:none;direction:rtl;gap:8px}"+
     ".Evrenxus-asriran-item:hover{background:#fafafa}"+
-    ".Evrenxus-asriran-image{width:110px;min-width:110px;height:80px;object-fit:cover;background:#eee}"+
+    ".Evrenxus-asriran-image{width:68px;min-width:68px;height:52px;object-fit:cover;background:#eee}"+
     ".Evrenxus-asriran-content{flex:1;min-width:0}"+
-    ".Evrenxus-asriran-title{margin:0 0 5px;color:#20272d;font-size:12px;font-weight:700;line-height:1.8}"+
-    ".Evrenxus-asriran-summary{color:#737a7f;font-size:10px;line-height:1.9}"+
-    "#Evrenxus-donya-box{width:200px;max-width:200px;box-sizing:border-box;margin:16px 0;background:#fff;border:1px solid #dfe2e4;overflow:hidden;display:block;clear:none}"+
+    ".Evrenxus-asriran-title{margin:0 0 4px;color:#20272d;font-size:10px;font-weight:700;line-height:1.8}"+
+    ".Evrenxus-asriran-summary{color:#737a7f;font-size:9px;line-height:1.7}"+
+    "#Evrenxus-donya-box{width:610px;max-width:610px;box-sizing:border-box;margin:20px 0 25px;background:#fff;border:1px solid #dfe2e4;overflow:hidden;display:block;clear:none}"+
     "#Evrenxus-donya-box .Evrenxus-donya-heading{padding:9px 10px;border-bottom:1px solid #e1e4e6;color:#202c35;font-size:12px;font-weight:700}"+
     "#Evrenxus-donya-box .Evrenxus-donya-heading:before{content:'';display:inline-block;width:4px;height:14px;margin-left:7px;vertical-align:-2px;background:#d9232e}"+
-    ".Evrenxus-donya-item{display:block;padding:9px;border-bottom:1px solid #edf0f1;color:#343b40;text-decoration:none;font-size:10px;line-height:1.9}"+
+    ".Evrenxus-donya-item{display:block;padding:10px;border-bottom:1px solid #edf0f1;color:#343b40;text-decoration:none;font-size:10px;line-height:1.9}"+
     ".Evrenxus-donya-item:hover{background:#fafafa;color:#d9232e}"+
     ".Evrenxus-donya-title{font-weight:700;color:#20272d;margin-bottom:4px}"+
     ".Evrenxus-donya-summary{color:#737a7f;font-weight:400}"+
     ".Evrenxus-news-loading,.Evrenxus-news-error{padding:18px 8px;text-align:center;color:#777;font-size:10px}";
     document.head.appendChild(style);
 
-    /* Fixed positions: Asriran immediately after slider; Donya immediately after menu. */
+    /* Fixed positions: Donya immediately after slider; Asriran immediately after menu. */
     var asBox=document.createElement("div");
     asBox.id="Evrenxus-economic-news";
     asBox.innerHTML='<div id="Evrenxus-asriran-list"><div class="Evrenxus-news-loading">در حال دریافت مطالب...</div></div>';
-
-    if(slider && slider.parentNode===content){
-        slider.parentNode.insertBefore(asBox,slider.nextSibling);
-    }else{
-        content.appendChild(asBox);
-    }
 
     var donyaBox=document.createElement("div");
     donyaBox.id="Evrenxus-donya-box";
     donyaBox.innerHTML='<div class="Evrenxus-donya-heading">آخرین مطالب</div><div id="Evrenxus-donya-list"><div class="Evrenxus-news-loading">در حال دریافت مطالب...</div></div>';
 
+    /* Donya-e-Eqtesad under slider */
+    if(slider && slider.parentNode===content){
+        slider.parentNode.insertBefore(donyaBox,slider.nextSibling);
+    }else{
+        content.appendChild(donyaBox);
+    }
+
+    /* Asriran in sidebar */
     var menu=sidebar.querySelector(".menu");
     if(menu && menu.parentNode===sidebar){
-        menu.parentNode.insertBefore(donyaBox,menu.nextSibling);
+        menu.parentNode.insertBefore(asBox,menu.nextSibling);
     }else{
-        sidebar.appendChild(donyaBox);
+        sidebar.appendChild(asBox);
     }
 
     var asList=document.getElementById("Evrenxus-asriran-list");
