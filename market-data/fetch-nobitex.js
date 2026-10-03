@@ -27,11 +27,14 @@ function clean(s){
   return digits(s).replace(/\s+/g," ").trim();
 }
 
-function priceFrom(s){
+function pricesFrom(s){
   const text=clean(s).replace(/٬/g,",");
-  const m=text.match(/irt\s*([\d,]+(?:\.\d+)?)/i);
+  const m=text.match(/irt\s*([\d,]+(?:\.\d+)?)\s*\$\s*([\d,]+(?:\.\d+)?)/i);
   if(!m) return null;
-  return Number(m[1].replace(/,/g,""));
+  return {
+    priceIRT:Number(m[1].replace(/,/g,"")),
+    priceUSDT:Number(m[2].replace(/,/g,""))
+  };
 }
 
 function changePercent(s){
@@ -75,13 +78,14 @@ async function main(){
 
     if(!match || result.some(x=>x.symbol===match[0])) return;
 
-    const price=priceFrom(cells[1] || "");
-    if(price==null) return;
+    const prices=pricesFrom(cells[1] || "");
+    if(prices==null) return;
 
     result.push({
       symbol:match[0],
       name:match[1],
-      priceIRT:price,
+      priceIRT:prices.priceIRT,
+      priceUSDT:prices.priceUSDT,
       changePercent24h:changePercent(cells[2] || "")
     });
   });
@@ -90,10 +94,10 @@ async function main(){
     const body=clean($("body").text());
     for(const [symbol,name] of wanted){
       if(result.some(x=>x.symbol===symbol)) continue;
-      const re=new RegExp(symbol+"[\\s\\S]{0,500}?irt\\s*([\\d,]+(?:\\.\\d+)?)\\s*\\$[\\d,.,]+[\\s\\S]{0,80}?([+-]?\\d+(?:\\.\\d+)?)\\s*[٪%]","i");
+      const re=new RegExp(symbol+"[\\s\\S]{0,500}?irt\\s*([\\d,]+(?:\\.\\d+)?)\\s*\\$\\s*([\\d,]+(?:\\.\\d+)?)[\\s\\S]{0,80}?([+-]?\\d+(?:\\.\\d+)?)\\s*[٪%]","i");
       const m=body.match(re);
       if(!m) continue;
-      result.push({symbol,name,priceIRT:Number(m[1].replace(/,/g,"")),changePercent24h:Number(m[2])});
+      result.push({symbol,name,priceIRT:Number(m[1].replace(/,/g,"")),priceUSDT:Number(m[2]),changePercent24h:Number(m[3])});
     }
   }
 
@@ -106,7 +110,8 @@ async function main(){
     sourcePage:"Nobitex price page",
     scrapedAt:new Date().toISOString(),
     scrapedAtTimezone:"UTC",
-    quoteCurrency:"IRT",
+    quoteCurrency:"USDT",
+    usdtPriceCurrency:"IRT",
     markets:result
   };
 
