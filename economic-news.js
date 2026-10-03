@@ -28,10 +28,11 @@ function init(){
     "#Evrenxus-donya-box{width:610px;max-width:610px;box-sizing:border-box;margin:20px 0 25px;background:#fff;border:1px solid #dfe2e4;overflow:hidden;display:block;clear:none}"+
     "#Evrenxus-donya-box .Evrenxus-donya-heading{padding:9px 10px;border-bottom:1px solid #e1e4e6;color:#202c35;font-size:12px;font-weight:700}"+
     "#Evrenxus-donya-box .Evrenxus-donya-heading:before{content:'';display:inline-block;width:4px;height:14px;margin-left:7px;vertical-align:-2px;background:#d9232e}"+
-    ".Evrenxus-donya-item{display:block;padding:10px;border-bottom:1px solid #edf0f1;color:#343b40;text-decoration:none;font-size:10px;line-height:1.9}"+
+    ".Evrenxus-donya-item{display:flex;width:100%;box-sizing:border-box;padding:10px;border-bottom:1px solid #edf0f1;color:#343b40;text-decoration:none;font-size:10px;line-height:1.9;direction:rtl;gap:10px;align-items:flex-start}"+
     ".Evrenxus-donya-item:hover{background:#fafafa;color:#d9232e}"+
-    ".Evrenxus-donya-image{display:block;width:100%;height:150px;object-fit:cover;background:#eee;margin:0 0 8px}"+
-    ".Evrenxus-donya-title{font-weight:700;color:#20272d;margin-bottom:4px}"+
+    ".Evrenxus-donya-image{display:block;width:130px;min-width:130px;height:80px;object-fit:cover;background:#eee;margin:0}"+
+    ".Evrenxus-donya-content{flex:1;min-width:0}"+
+    ".Evrenxus-donya-title{font-weight:700;color:#20272d;margin:0 0 4px}"+
     ".Evrenxus-donya-summary{color:#737a7f;font-weight:400}"+
     ".Evrenxus-news-loading,.Evrenxus-news-error{padding:18px 8px;text-align:center;color:#777;font-size:10px}";
     document.head.appendChild(style);
@@ -292,6 +293,9 @@ function init(){
                 a.appendChild(img);
             }
 
+            var contentBox=document.createElement("div");
+            contentBox.className="Evrenxus-donya-content";
+
             var t=document.createElement("div");
             t.className="Evrenxus-donya-title";
             t.textContent=clean(item.title);
@@ -300,8 +304,9 @@ function init(){
             s.className="Evrenxus-donya-summary";
             s.textContent=clean(item.description||item.content);
 
-            a.appendChild(t);
-            if(s.textContent)a.appendChild(s);
+            contentBox.appendChild(t);
+            if(s.textContent)contentBox.appendChild(s);
+            a.appendChild(contentBox);
             dList.appendChild(a);
         });
     }
