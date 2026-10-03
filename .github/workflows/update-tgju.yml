@@ -4,6 +4,9 @@ on:
   schedule:
     - cron: "30 * * * *"
   workflow_dispatch:
+  push:
+    paths:
+      - "market-data/fetch-tgju.js"
 
 permissions:
   contents: write
