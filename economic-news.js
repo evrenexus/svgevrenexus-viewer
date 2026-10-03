@@ -96,54 +96,35 @@ function init(){
     }
 
     function itemImage(item){
-        var v=image(item.thumbnail);
-        if(v) return v;
-        v=image(item.mediaThumbnail);
+        var v=image(item.thumbnail)||image(item.mediaThumbnail);
         if(v) return v;
 
-        if(item.enclosure) {
-            v=image(item.enclosure.link||item.enclosure.url||item.enclosure["@url"]);
-            if(v) return v;
-        }
-
-        var media=item.media||item["media:content"]||item["media:thumbnail"];
-        if(media){
-            if(!Array.isArray(media)) media=[media];
-            for(var i=0;i<media.length;i++){
-                var m=media[i];
-                v=image(m&&(m.url||m.link||m["@url"]||(m["$"]&&m["$"].url)));
-                if(v) return v;
-            }
-        }
-
-        var html=item["content:encoded"]||item.content||item.description||"";
+        var html=item.content||item["content:encoded"]||item.description||"";
         var box=document.createElement("div");
         box.innerHTML=html;
-        var imgs=box.querySelectorAll("img");
-        for(var j=0;j<imgs.length;j++){
-            var img=imgs[j];
-            v=image(img.getAttribute("src"))||
-              image(img.getAttribute("data-src"))||
-              image(img.getAttribute("data-original"))||
-              image(img.getAttribute("data-lazy-src"))||
-              image(img.getAttribute("data-image"))||
-              image(img.getAttribute("data-fallback-src"));
-            if(!v){
-                var ss=img.getAttribute("srcset")||img.getAttribute("data-srcset")||"";
-                if(ss){
-                    var parts=ss.split(",");
-                    for(var k=parts.length-1;k>=0;k--){
-                        v=image(parts[k].trim().split(/\s+/)[0]);
-                        if(v) break;
-                    }
-                }
-            }
-            if(!v){
-                var st=img.getAttribute("style")||"";
-                var murl=st.match(/url\((['"]?)(.*?)\1\)/i);
-                if(murl) v=image(murl[2]);
-            }
-            if(v) return v;
+        var img=box.querySelector("img");
+        if(img){
+            return image(img.getAttribute("src"))||
+                   image(img.getAttribute("data-src"))||
+                   image(img.getAttribute("data-original"))||
+                   "";
+        }
+        return "";
+    }
+
+    function donyaImage(item){
+        var v=image(item.thumbnail)||image(item.mediaThumbnail);
+        if(v) return v;
+
+        var html=item.content||item["content:encoded"]||item.description||"";
+        var box=document.createElement("div");
+        box.innerHTML=html;
+        var img=box.querySelector("img");
+        if(img){
+            return image(img.getAttribute("src"))||
+                   image(img.getAttribute("data-src"))||
+                   image(img.getAttribute("data-original"))||
+                   "";
         }
         return "";
     }
@@ -292,7 +273,7 @@ function init(){
             a.target="_blank";
             a.rel="noopener noreferrer";
 
-            var im=itemImage(item);
+            var im=donyaImage(item);
             if(im){
                 var img=document.createElement("img");
                 img.className="Evrenxus-donya-image";
