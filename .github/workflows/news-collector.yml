@@ -1,5 +1,5 @@
 name: Evren Nexus News Collector
-# News collector — reliable schedule
+# News collector — force immediate run
 
 on:
   schedule:
@@ -23,11 +23,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
       - name: Collect news
         timeout-minutes: 8
         run: python scripts/news_collector.py
-
       - name: Commit news database
         run: |
           git config user.name "evrenexus-news-bot"
