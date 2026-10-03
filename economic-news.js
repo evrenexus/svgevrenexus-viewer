@@ -12,15 +12,15 @@ function init(){
 
     var style=document.createElement("style");
     style.textContent=
-    "#Evrenxus-economic-news{width:610px;margin:20px 0 25px;background:#fff}"+
+    "#Evrenxus-economic-news{width:610px;max-width:610px;margin:20px 0 25px;background:#fff;box-sizing:border-box;display:block;clear:none}"+
     "#Evrenxus-asriran-list{border-top:2px solid #202c35}"+
-    ".Evrenxus-asriran-item{display:flex;width:100%;padding:11px 0;border-bottom:1px solid #e2e5e7;color:#222;text-decoration:none;direction:rtl;gap:12px}"+
+    ".Evrenxus-asriran-item{display:flex;width:100%;box-sizing:border-box;padding:11px 0;border-bottom:1px solid #e2e5e7;color:#222;text-decoration:none;direction:rtl;gap:12px}"+
     ".Evrenxus-asriran-item:hover{background:#fafafa}"+
     ".Evrenxus-asriran-image{width:110px;min-width:110px;height:80px;object-fit:cover;background:#eee}"+
     ".Evrenxus-asriran-content{flex:1;min-width:0}"+
     ".Evrenxus-asriran-title{margin:0 0 5px;color:#20272d;font-size:12px;font-weight:700;line-height:1.8}"+
     ".Evrenxus-asriran-summary{color:#737a7f;font-size:10px;line-height:1.9}"+
-    "#Evrenxus-donya-box{width:200px;margin:16px 0;background:#fff;border:1px solid #dfe2e4;overflow:hidden}"+
+    "#Evrenxus-donya-box{width:200px;max-width:200px;box-sizing:border-box;margin:16px 0;background:#fff;border:1px solid #dfe2e4;overflow:hidden;display:block;clear:none}"+
     "#Evrenxus-donya-box .Evrenxus-donya-heading{padding:9px 10px;border-bottom:1px solid #e1e4e6;color:#202c35;font-size:12px;font-weight:700}"+
     "#Evrenxus-donya-box .Evrenxus-donya-heading:before{content:'';display:inline-block;width:4px;height:14px;margin-left:7px;vertical-align:-2px;background:#d9232e}"+
     ".Evrenxus-donya-item{display:block;padding:9px;border-bottom:1px solid #edf0f1;color:#343b40;text-decoration:none;font-size:10px;line-height:1.9}"+
@@ -130,10 +130,41 @@ function init(){
         });
     }
 
+    function allorigins(url){
+        return fetch("https://api.allorigins.win/raw?url="+encodeURIComponent(url),{cache:"no-store"})
+        .then(function(r){if(!r.ok) throw new Error("proxy");return r.text()})
+        .then(function(xml){
+            var doc=new DOMParser().parseFromString(xml,"text/xml");
+            var nodes=[].slice.call(doc.querySelectorAll("item"));
+            if(!nodes.length) throw new Error("no items");
+            return nodes.map(function(n){
+                function get(tag){
+                    var e=n.getElementsByTagName(tag)[0];
+                    return e?e.textContent:"";
+                }
+                var en=n.getElementsByTagName("enclosure")[0];
+                var mc=n.getElementsByTagName("media:content")[0];
+                return {
+                    title:get("title"),
+                    link:get("link"),
+                    description:get("description"),
+                    content:get("content:encoded"),
+                    pubDate:get("pubDate"),
+                    thumbnail:mc?(mc.getAttribute("url")||""):"",
+                    enclosure:en?{url:en.getAttribute("url")} : null
+                };
+            });
+        });
+    }
+
+    function loadOne(url){
+        return rss(url).catch(function(){return allorigins(url)});
+    }
+
     function load(urls){
         var p=Promise.reject();
         urls.forEach(function(url){
-            p=p.catch(function(){return rss(url)});
+            p=p.catch(function(){return loadOne(url)});
         });
         return p.catch(function(){return []});
     }
