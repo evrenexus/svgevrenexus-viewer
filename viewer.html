@@ -17,9 +17,67 @@
 
 <script>
 (function(){
-var params=new URLSearchParams(location.search),newsUrl=params.get("url"),iframe=document.getElementById("iframe"),loading=document.getElementById("loading");
-if(!newsUrl){loading.textContent="لینک خبر مشخص نشده است.";return}
-try{var url=new URL(newsUrl),allowed=["www.asriran.com","asriran.com","www.donya-e-eqtesad.com","donya-e-eqtesad.com","khabarfarsi.com","www.khabarfarsi.com"];if(allowed.indexOf(url.hostname)===-1){loading.textContent="این منبع در فهرست منابع EVREN NEXUS نیست.";return}if(url.hostname==="khabarfarsi.com"||url.hostname==="www.khabarfarsi.com"){loading.textContent="در حال انتقال به خبر...";window.location.replace(newsUrl);return}iframe.src=newsUrl;iframe.onload=function(){loading.style.display="none"}}catch(e){loading.textContent="آدرس خبر معتبر نیست."}
+var params=new URLSearchParams(location.search),
+    newsUrl=params.get("url"),
+    iframe=document.getElementById("iframe"),
+    loading=document.getElementById("loading");
+
+function show(v){loading.textContent=v}
+
+function resolveKhabarFarsi(url){
+    return fetch("https://api.allorigins.win/raw?url="+encodeURIComponent(url),{cache:"no-store"})
+    .then(function(r){if(!r.ok)throw new Error("proxy");return r.text()})
+    .then(function(html){
+        var doc=new DOMParser().parseFromString(html,"text/html");
+        var links=[].slice.call(doc.querySelectorAll("a[href]"));
+        var candidates=[];
+        links.forEach(function(a){
+            var href=a.getAttribute("href")||"";
+            if(!/^https?:\\/\\//i.test(href))return;
+            try{
+                var u=new URL(href);
+                var h=u.hostname.toLowerCase();
+                if(h==="khabarfarsi.com"||h==="www.khabarfarsi.com"||h==="google.com"||h==="www.google.com"||h==="t.me"||h==="telegram.me")return;
+                var text=(a.textContent||"").replace(/\\s+/g," ").trim();
+                var score=0;
+                if(/خبر اصلی|متن کامل|ادامه خبر|منبع|مشاهده/i.test(text))score+=100;
+                if(u.pathname.length>8)score+=10;
+                candidates.push({url:href,score:score});
+            }catch(e){}
+        });
+        candidates.sort(function(a,b){return b.score-a.score});
+        if(candidates.length)return candidates[0].url;
+        throw new Error("source not found");
+    });
+}
+
+function showNews(url){
+    iframe.src=url;
+    iframe.onload=function(){loading.style.display="none"};
+    iframe.onerror=function(){show("امکان نمایش این خبر در خبرخوان وجود ندارد.")};
+}
+
+if(!newsUrl){show("لینک خبر مشخص نشده است.");return}
+
+try{
+    var url=new URL(newsUrl);
+    if(url.hostname==="khabarfarsi.com"||url.hostname==="www.khabarfarsi.com"){
+        show("در حال یافتن منبع اصلی خبر...");
+        resolveKhabarFarsi(newsUrl).then(function(source){
+            showNews(source);
+        }).catch(function(){
+            show("منبع اصلی خبر پیدا نشد.");
+        });
+        return;
+    }
+    if(!/^https?:$/i.test(url.protocol)){
+        show("آدرس خبر معتبر نیست.");
+        return;
+    }
+    showNews(newsUrl);
+}catch(e){
+    show("آدرس خبر معتبر نیست.");
+}
 })();
 </script>
 </body>
