@@ -7,9 +7,9 @@
 <style>
 *{box-sizing:border-box}
 html,body{margin:0;padding:0;background:#f1f2f3;color:#20272d;font-family:Vazir,Tahoma,Arial,sans-serif}
-#page{width:850px;max-width:100%;margin:0 auto;padding:158px 10px 25px;display:grid;grid-template-columns:200px 610px;gap:10px;align-items:start;direction:rtl}
-#content{width:610px;min-width:0;overflow:hidden;grid-column:2;grid-row:1}
-#sidebar-host{width:200px;min-width:200px;max-width:200px;grid-column:1;grid-row:1}
+#page{width:850px;max-width:100%;margin:0 auto;padding:158px 10px 25px;display:flex;flex-direction:row;align-items:flex-start;gap:10px;direction:rtl}
+#content{width:610px;max-width:610px;min-width:610px;flex:0 0 610px;order:1;overflow:hidden}
+#sidebar-host{width:200px;min-width:200px;max-width:200px;flex:0 0 200px;order:2}
 #Evrenxus-breaking{width:100%;height:34px;margin-bottom:14px;display:flex;align-items:center;background:#202c35;color:#fff;overflow:hidden}
 .Evrenxus-breaking-label{flex:0 0 78px;height:34px;display:flex;align-items:center;justify-content:center;background:#d9232e;font-size:10px;font-weight:700}
 .Evrenxus-breaking-track{height:34px;flex:1;min-width:0;overflow:hidden;display:flex;align-items:center;white-space:nowrap}
