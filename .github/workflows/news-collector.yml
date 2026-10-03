@@ -1,0 +1,34 @@
+name: Evren Nexus News Collector
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  push:
+    paths:
+      - "scripts/news_collector.py"
+      - ".github/workflows/news-collector.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: news-collector
+  cancel-in-progress: true
+
+jobs:
+  collect:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Collect news
+        run: python scripts/news_collector.py
+      - name: Commit news database
+        run: |
+          git config user.name "evrenexus-news-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/news.json
+          git diff --cached --quiet || git commit -m "Update aggregated news"
+          git push
