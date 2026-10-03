@@ -2,7 +2,7 @@
 const fs = require("fs");
 const cheerio = require("cheerio");
 
-const URL = "https://nobitex.company/price/";
+const URLS = ["https://nobitex.ir/price/","https://nobitex.company/price/"];
 
 const wanted = [
   ["BTC","بیت‌کوین"],
@@ -40,7 +40,11 @@ function changePercent(s){
 }
 
 async function main(){
-  const r=await fetch(URL,{
+  let html="";
+  let lastError=null;
+  for(const URL of URLS){
+    try{
+      const r=await fetch(URL,{
     headers:{
       "User-Agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/140 Safari/537.36",
       "Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
@@ -48,9 +52,12 @@ async function main(){
     }
   });
 
-  if(!r.ok) throw new Error("Nobitex HTTP "+r.status);
-
-  const html=await r.text();
+      if(!r.ok) throw new Error("HTTP "+r.status);
+      html=await r.text();
+      if(html.length>1000) break;
+    }catch(e){ lastError=e; }
+  }
+  if(!html) throw new Error("Nobitex page fetch failed: "+(lastError?.message||"unknown"));
   const $=cheerio.load(html);
   const result=[];
 
@@ -85,7 +92,7 @@ async function main(){
 
   const payload={
     source:"Nobitex",
-    sourcePage:URL,
+    sourcePage:"Nobitex price page",
     scrapedAt:new Date().toISOString(),
     scrapedAtTimezone:"UTC",
     quoteCurrency:"IRT",
