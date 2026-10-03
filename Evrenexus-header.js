@@ -87,10 +87,12 @@ function stamp(prefix,iso){var n=iso?new Date(iso):new Date(),d=document.getElem
 function fmt(v){return v==null?"-":new Intl.NumberFormat("en-US",{maximumFractionDigits:2}).format(Number(v))}
 function item(x){var v=x.price!=null?x.price:(x.symbol==="USDT"?x.priceIRT:x.priceUSDT),c=x.changePercent!=null?x.changePercent:x.changePercent24h,unit=x.symbol==="USDT"?" تومان":" USDT",cl=Number(c)>0?"Evrenxus-up":Number(c)<0?"Evrenxus-down":"",ar=Number(c)>0?"▲":Number(c)<0?"▼":"";return '<span class="Evrenxus-ticker-item"><span class="symbol">'+x.name+'</span><span class="price">'+fmt(v)+unit+'</span><span class="'+cl+'">'+ar+(Number.isFinite(Number(c))?fmt(c)+"%":"")+'</span></span>'}
 function render(track,prefix,groups,iso){var html=groups.flat().map(item).join("");track.innerHTML=html||'<span class="Evrenxus-ticker-item">اطلاعات در دسترس نیست</span>';}
-Promise.all([
-fetch("https://evrenexus.github.io/svgevrenexus-viewer/market-data/tgju.json?v="+Date.now(),{cache:"no-store"}).then(r=>r.json()),
-fetch("https://evrenexus.github.io/svgevrenexus-viewer/market-data/nobitex.json?v="+Date.now(),{cache:"no-store"}).then(r=>r.json())
-]).then(function(a){var t=a[0],n=a[1];render(metal,"metals",[t.precious||[],t.baseMetals||[],t.energy||[]],t.scrapedAt);render(cur,"currency",[t.currency||[]],t.scrapedAt);render(crypto,"crypto",[(n.markets||[]).slice().sort(function(a,b){return a.symbol==="USDT"?-1:b.symbol==="USDT"?1:0})],n.scrapedAt)}).catch(function(){stamp("metals");stamp("currency");stamp("crypto")});
+function loadTGJU(){return fetch("https://evrenexus.github.io/svgevrenexus-viewer/market-data/tgju.json?v="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(t){render(metal,"metals",[t.precious||[],t.baseMetals||[],t.energy||[]],t.scrapedAt);render(cur,"currency",[t.currency||[]],t.scrapedAt)})}
+function loadCrypto(){return fetch("https://evrenexus.github.io/svgevrenexus-viewer/market-data/nobitex.json?v="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(n){render(crypto,"crypto",[(n.markets||[]).slice().sort(function(a,b){return a.symbol==="USDT"?-1:b.symbol==="USDT"?1:0})],n.scrapedAt)})}
+loadTGJU().catch(function(){stamp("metals");stamp("currency")});
+loadCrypto().catch(function(){stamp("crypto")});
+setInterval(function(){loadTGJU().catch(function(){})},60*60*1000);
+setInterval(function(){loadCrypto().catch(function(){})},15*60*1000);
 })();
 (function(){
 function update(){var n=new Date(),d=document.getElementById("Evrenxus-shamsi"),t=document.getElementById("Evrenxus-time");if(!d||!t)return;d.textContent=new Intl.DateTimeFormat("fa-IR-u-ca-persian",{timeZone:"Asia/Tehran",year:"numeric",month:"long",day:"numeric"}).format(n);t.textContent=new Intl.DateTimeFormat("en-GB",{timeZone:"Asia/Tehran",hour:"2-digit",minute:"2-digit",second:"2-digit",hour12:false}).format(n)}
