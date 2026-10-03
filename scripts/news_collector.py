@@ -26,6 +26,52 @@ SOURCES=[
  {"name":"پزشک سایت","category":"پزشکی و سلامت","site":"https://www.pezeshk-site.ir/","feeds":["https://www.pezeshk-site.ir/feed/"]},
 ]
 
+
+TOPIC_RULES={
+ "economy":["اقتصاد","اقتصادی","تورم","رشد اقتصادی","بودجه","مالیات","بانک مرکزی","نرخ بهره","نقدینگی","تجارت","صادرات","واردات","تولید","رکود","اشتغال","دستمزد","معیشت","کسب و کار","کسب‌وکار","بازرگانی","صنعت","کشاورزی","نفت","گاز","انرژی"],
+ "markets":["بورس","بازار سرمایه","شاخص کل","شاخص هم‌وزن","فرابورس","سهام","نماد معاملاتی","عرضه اولیه","صندوق سرمایه‌گذاری","اوراق","حق تقدم","مجمع شرکت","کدال","پرتفوی","سرمایه‌گذاری"],
+ "currency-gold":["دلار","یورو","درهم","پوند","لیر","یوان","روبل","ارز","نرخ ارز","بازار ارز","طلا","سکه","طلای آبشده","آبشده","اونس","انس طلا","نقره"],
+ "real-estate":["مسکن","املاک","ملک","آپارتمان","خانه","اجاره","رهن","زمین","ساختمان","ساخت‌وساز","ساخت و ساز","پروانه ساختمانی","نهضت ملی مسکن","وام مسکن","قیمت مسکن"],
+ "technology":["فناوری","تکنولوژی","اینترنت","وب","موبایل","گوشی هوشمند","لپ‌تاپ","رایانه","کامپیوتر","گجت","نرم‌افزار","سخت‌افزار","سیستم‌عامل","اپلیکیشن","شبکه","امنیت سایبری","داده","استارتاپ"],
+ "ai":["هوش مصنوعی","هوش مصنوعی مولد","مدل زبانی","مدل بزرگ زبانی","LLM","AI","ChatGPT","OpenAI","Gemini","Claude","Copilot","ماشین لرنینگ","یادگیری ماشین","یادگیری عمیق","ربات هوشمند"],
+ "health":["پزشکی","سلامت","درمان","بیماری","بیمار","پزشک","دارو","دارویی","بیمارستان","کلینیک","جراحی","سرطان","قلب","دیابت","فشار خون","تغذیه","بهداشت","واکسن","ویروس"],
+ "auto":["خودرو","اتومبیل","ماشین","خودروساز","خودروسازی","خودرو برقی","خودروهای برقی","خودروی برقی","بنزین","موتورسیکلت","قطعه خودرو","قیمت خودرو"],
+ "science-life":["علم","پژوهش","دانشگاه","دانش‌آموز","آموزش","محیط زیست","آلودگی هوا","اقلیم","آب و هوا","فضا","نجوم","ستاره","سیاره","زیست‌شناسی","فیزیک","شیمی","سبک زندگی","گردشگری","کتاب","فرهنگ"]
+}
+POLITICAL_HINTS=["انتخابات","نماینده مجلس","مجلس شورای اسلامی","رئیس جمهور","رییس جمهور","وزیر","وزارت کشور","سیاست خارجی","دیپلماسی","تحریم","حزب","رأی‌گیری","رای‌گیری","کابینه","مذاکره سیاسی"]
+
+def normalize_text(value):
+    value=str(value or "").replace("ي","ی").replace("ى","ی").replace("ك","ک").replace("ۀ","ه")
+    value=value.replace("\u200c"," ").replace("\u200f"," ").replace("\u200e"," ")
+    return re.sub(r"\s+"," ",value).strip().lower()
+
+def classify_topics(item):
+    title=normalize_text(item.get("title",""))
+    summary=normalize_text(item.get("summary",""))
+    text=title+" "+title+" "+summary
+    scores={}
+    for topic,keywords in TOPIC_RULES.items():
+        score=0
+        for kw in keywords:
+            k=normalize_text(kw)
+            if k and k in text:
+                score += 3 if k in title else 1
+        scores[topic]=score
+    source_boost={
+      "پزشکی و سلامت":{"health":2},
+      "فناوری و علم":{"technology":1,"science-life":1},
+      "بورس و بازار سرمایه":{"markets":2},
+      "اقتصاد و سرمایه‌گذاری":{"economy":2}
+    }
+    for topic,boost in source_boost.get(item.get("category",""),{}).items():
+        scores[topic]=scores.get(topic,0)+boost
+    political=sum(2 if normalize_text(k) in title else 1 for k in POLITICAL_HINTS if normalize_text(k) in text)
+    ranked=sorted(scores.items(),key=lambda x:x[1],reverse=True)
+    topics=[topic for topic,score in ranked if score>=3]
+    if political>=4 and (not ranked or ranked[0][1] < political):
+        return []
+    return topics[:4]
+
 def fetch(url):
     req=Request(url,headers={"User-Agent":UA,"Accept":"application/rss+xml,application/atom+xml,application/xml,text/html;q=0.9,*/*;q=0.5"})
     last=None
@@ -112,7 +158,7 @@ def parse(data,source):
         image=""
         m=re.search(r'<img[^>]+(?:src|data-src)=["\']([^"\']+)',desc,re.I)
         if m: image=urljoin(link,m.group(1))
-        out.append({"id":hashlib.sha256(link.encode()).hexdigest()[:20],"title":txt(title),"summary":txt(desc)[:500],"url":link,"image":image,"source":source["name"],"category":source["category"],"published":parse_date(date)})
+        out.append({"id":hashlib.sha256(link.encode()).hexdigest()[:20],"title":txt(title),"summary":txt(desc)[:500],"url":link,"image":image,"source":source["name"],"category":source["category"],"published":parse_date(date)},"topics":[]})
     return out
 
 def is_valid_item(item, now_ts):
@@ -142,7 +188,7 @@ def main():
     existing={}
     for x in old.get("items",[]):
         if isinstance(x,dict) and is_valid_item(x,now_ts):
-            existing[x["id"]]=x
+            x["topics"]=classify_topics(x)\n            existing[x["id"]]=x
 
     status=[]
     for s in SOURCES:
@@ -188,6 +234,7 @@ def main():
 
         for item in got:
             if is_valid_item(item,now_ts):
+                item["topics"]=classify_topics(item)
                 existing[item["id"]]=item
 
         latest=max((date_key(x.get("published","")) for x in got if is_valid_item(x,now_ts)),default=0)
