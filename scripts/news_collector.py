@@ -40,12 +40,17 @@ TOPIC_RULES={
  "auto":["خودرو","اتومبیل","ماشین","خودروساز","خودروسازی","خودرو برقی","خودروهای برقی","خودروی برقی","بنزین","موتورسیکلت","قطعه خودرو","قیمت خودرو"],
  "science-life":["علم","پژوهش","دانشگاه","دانش‌آموز","آموزش","کنکور","آزمون","نتایج آزمون","محیط زیست","آلودگی هوا","اقلیم","آب و هوا","فضا","نجوم","ستاره","سیاره","زیست‌شناسی","فیزیک","شیمی","سبک زندگی","گردشگری","کتاب","فرهنگ"]
 }
-POLITICAL_HINTS=["انتخابات","نماینده مجلس","مجلس شورای اسلامی","رئیس جمهور","رییس جمهور","وزیر","وزارت کشور","سیاست خارجی","دیپلماسی","تحریم","حزب","رأی‌گیری","رای‌گیری","کابینه","مذاکره سیاسی"]\nBLOCKED_TITLE_TERMS=["اسرائیل","اسراییل","اسراییلی","اسرائیلی","اسراییلی","جنگ","جنگی","رژیم صهیونیستی","رژیم صهیونیست","صهیونیست","صهیونیستی","فلسطین","فلسطینی","غزه","یمن","حوثی ها","حوثی‌ها","حوثی","طالبان","طالبانی","کره شمالی","کره‌شمالی","موشک","موشکی","بالستیک","بالستیکی"]
+POLITICAL_HINTS=["انتخابات","نماینده مجلس","مجلس شورای اسلامی","رئیس جمهور","رییس جمهور","وزیر","وزارت کشور","سیاست خارجی","دیپلماسی","تحریم","حزب","رأی‌گیری","رای‌گیری","کابینه","مذاکره سیاسی"]
+BLOCKED_TITLE_TERMS=["اسرائیل","اسراییل","اسراییلی","اسرائیلی","اسراییلی","جنگ","جنگی","رژیم صهیونیستی","رژیم صهیونیست","صهیونیست","صهیونیستی","فلسطین","فلسطینی","غزه","یمن","حوثی ها","حوثی‌ها","حوثی","طالبان","طالبانی","کره شمالی","کره‌شمالی","موشک","موشکی","بالستیک","بالستیکی"]
 
 def normalize_text(value):
     value=str(value or "").replace("ي","ی").replace("ى","ی").replace("ك","ک").replace("ۀ","ه")
     value=value.replace("\u200c"," ").replace("\u200f"," ").replace("\u200e"," ")
     return re.sub(r"\s+"," ",value).strip().lower()
+
+def is_blocked_title(item):
+    title=normalize_text(item.get("title",""))
+    return any(normalize_text(term) in title for term in BLOCKED_TITLE_TERMS)
 
 def classify_topics(item):
     title=normalize_text(item.get("title",""))
@@ -191,6 +196,7 @@ def enrich_images(items,limit=IMAGE_ENRICH_LIMIT):
 def is_valid_item(item,now_ts):
     url=str(item.get("url","")).strip(); title=str(item.get("title","")).strip(); published=str(item.get("published","")).strip()
     if not title or not re.match(r"^https?://",url): return False
+    if is_blocked_title(item): return False
     for s in SOURCES:
         base=s["site"].rstrip("/")
         if url.rstrip("/") in {base,base+"/feed",base+"/feeds",base+"/rss"}: return False
