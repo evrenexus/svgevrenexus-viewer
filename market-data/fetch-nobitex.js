@@ -87,6 +87,17 @@ async function main(){
   });
 
   if(result.length<5){
+    const body=clean($("body").text());
+    for(const [symbol,name] of wanted){
+      if(result.some(x=>x.symbol===symbol)) continue;
+      const re=new RegExp(symbol+"[\\s\\S]{0,500}?irt\\s*([\\d,]+(?:\\.\\d+)?)\\s*\\$[\\d,.,]+[\\s\\S]{0,80}?([+-]?\\d+(?:\\.\\d+)?)\\s*[٪%]","i");
+      const m=body.match(re);
+      if(!m) continue;
+      result.push({symbol,name,priceIRT:Number(m[1].replace(/,/g,"")),changePercent24h:Number(m[2])});
+    }
+  }
+
+  if(result.length<5){
     throw new Error("Nobitex page yielded too few markets: "+result.length);
   }
 
