@@ -15,7 +15,7 @@ permissions:
 
 concurrency:
   group: news-collector
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   collect:
@@ -24,7 +24,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Collect news
-        timeout-minutes: 8
+        timeout-minutes: 10
         run: python scripts/news_collector.py
       - name: Commit news database
         run: |
