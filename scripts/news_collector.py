@@ -10,7 +10,7 @@ import xml.etree.ElementTree as ET
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/"data"/"news.json"
 UA="Mozilla/5.0 (compatible; EvrenNexusNewsBot/1.0; +https://evrenexus.github.io/svgevrenexus-viewer/)"
-LATEST_PER_SOURCE=14
+LATEST_PER_SOURCE=50
 FEED_SCAN_LIMIT=50
 IMAGE_ENRICH_LIMIT=24
 IMAGE_FETCH_TIMEOUT=10
