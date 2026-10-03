@@ -23,9 +23,7 @@ function init(){
 
     var css=document.createElement("style");
     css.textContent=
-    "#Evrenxus-economic-box{width:610px;margin:0 0 22px;background:#fff}"+
-    "#Evrenxus-economic-box .Evrenxus-section-title{position:relative;margin:0 0 12px;padding:0 10px 8px 0;border-bottom:2px solid #202c35;color:#202c35;font-size:14px;font-weight:700;line-height:1.8}"+
-    "#Evrenxus-economic-box .Evrenxus-section-title:before{content:'';position:absolute;right:0;bottom:-2px;width:55px;height:2px;background:#d9232e}"+
+    "#Evrenxus-economic-box{width:610px;margin:0 0 22px;background:#fff;border-top:2px solid #202c35}"+
     "#Evrenxus-asriran-list{border-top:1px solid #dfe2e4}"+
     ".Evrenxus-asriran-item{display:flex;width:100%;padding:10px 0;border-bottom:1px solid #e2e5e7;color:#222;text-decoration:none;direction:rtl;gap:10px}"+
     ".Evrenxus-asriran-item:hover{background:#fafafa}"+
@@ -49,15 +47,17 @@ function init(){
 
     var asriranBox=document.createElement("div");
     asriranBox.id="Evrenxus-economic-box";
-    asriranBox.innerHTML='<div class="Evrenxus-section-title">عصر ایران</div><div id="Evrenxus-asriran-list"><div class="Evrenxus-news-loading">در حال دریافت مطالب...</div></div>';
-    var breaking=document.getElementById("Evrenxus-breaking");
-    if(breaking) breaking.insertAdjacentElement("afterend",asriranBox);
+    asriranBox.innerHTML='<div id="Evrenxus-asriran-list"><div class="Evrenxus-news-loading">در حال دریافت مطالب...</div></div>';
+    var slider=document.getElementById("Evrenxus-slider");
+    if(slider) slider.insertAdjacentElement("afterend",asriranBox);
     else contentBox.insertBefore(asriranBox,contentBox.firstChild);
 
     var donyaBox=document.createElement("div");
     donyaBox.id="Evrenxus-donya-box";
-    donyaBox.innerHTML='<div class="Evrenxus-section-title">دنیای اقتصاد</div><div id="Evrenxus-donya-list"><div class="Evrenxus-news-loading">در حال دریافت مطالب...</div></div>';
-    sidebar.insertBefore(donyaBox,sidebar.firstChild);
+    donyaBox.innerHTML='<div class="Evrenxus-section-title">آخرین مطالب</div><div id="Evrenxus-donya-list"><div class="Evrenxus-news-loading">در حال دریافت مطالب...</div></div>';
+    var menu=sidebar.querySelector(".menu");
+    if(menu) menu.insertAdjacentElement("afterend",donyaBox);
+    else sidebar.insertBefore(donyaBox,sidebar.firstChild);
 
     var asriranList=document.getElementById("Evrenxus-asriran-list");
     var donyaList=document.getElementById("Evrenxus-donya-list");
@@ -192,7 +192,7 @@ function init(){
     function renderAsriran(items){
         asriranList.innerHTML="";
         if(!items.length){
-            asriranList.innerHTML='<div class="Evrenxus-news-error">مطالب عصر ایران دریافت نشد.</div>';
+            asriranList.innerHTML='<div class="Evrenxus-news-error">مطالب دریافت نشد.</div>';
             return;
         }
         items.slice(0,10).forEach(function(item){
@@ -231,7 +231,7 @@ function init(){
     function renderDonya(items){
         donyaList.innerHTML="";
         if(!items.length){
-            donyaList.innerHTML='<div class="Evrenxus-news-error">مطالب دنیای اقتصاد دریافت نشد.</div>';
+            donyaList.innerHTML='<div class="Evrenxus-news-error">مطالب دریافت نشد.</div>';
             return;
         }
         items.slice(0,10).forEach(function(item){
