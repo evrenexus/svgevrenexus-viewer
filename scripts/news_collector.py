@@ -63,7 +63,7 @@ def classify_topics(item):
             k=normalize_text(kw)
             if k and k in text: score += 3 if k in title else 1
         scores[topic]=score
-    source_boost={"پزشکی و سلامت":{"health":2},"فناوری و علم":{"technology":1,"science-life":1},"بورس و بازار سرمایه":{"markets":2},"اقتصاد و سرمایه‌گذاری":{"economy":2}}
+    source_boost={"پزشکی و سلامت":{"health":3},"فناوری و علم":{"technology":3,"science-life":1},"بورس و بازار سرمایه":{"markets":3},"اقتصاد و سرمایه‌گذاری":{"economy":3}}
     for topic,boost in source_boost.get(item.get("category",""),{}).items(): scores[topic]=scores.get(topic,0)+boost
     political=sum(2 if normalize_text(k) in title else 1 for k in POLITICAL_HINTS if normalize_text(k) in text)
     ranked=sorted(scores.items(),key=lambda x:x[1],reverse=True)
