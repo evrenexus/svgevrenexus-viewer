@@ -24,7 +24,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Collect news
-        timeout-minutes: 10
+        timeout-minutes: 5
         run: python scripts/news_collector.py
       - name: Commit news database
         run: |
