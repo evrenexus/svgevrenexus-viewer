@@ -78,7 +78,12 @@ async function main(){
 
     if(!match || result.some(x=>x.symbol===match[0])) return;
 
-    const prices=pricesFrom(cells[1] || "");
+    let prices=pricesFrom(cells[1] || "");
+    if(prices==null){
+      const rowText=cells.join(" ");
+      const m=rowText.match(/irt\\s*([\\d,]+(?:\\.\\d+)?)\\s*\\$\\s*([\\d,]+(?:\\.\\d+)?)/i);
+      if(m) prices={priceIRT:Number(m[1].replace(/,/g,"")),priceUSDT:Number(m[2].replace(/,/g,""))};
+    }
     if(prices==null) return;
 
     result.push({
