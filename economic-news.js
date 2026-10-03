@@ -221,10 +221,18 @@ function init(){
             if(im){
                 var img=document.createElement("img");
                 img.className="Evrenxus-asriran-image";
-                img.src=imageProxy(im);
                 img.alt=clean(item.title);
                 img.loading="lazy";
-                img.onerror=function(){this.remove()};
+                img.referrerPolicy="no-referrer";
+                img.onerror=function(){
+                    if(this.dataset.proxyTried!=="1"){
+                        this.dataset.proxyTried="1";
+                        this.src=imageProxy(im);
+                    }else{
+                        this.remove();
+                    }
+                };
+                img.src=im;
                 a.appendChild(img);
             }
 
