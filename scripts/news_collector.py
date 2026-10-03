@@ -12,7 +12,7 @@ OUT=ROOT/"data"/"news.json"
 UA="Mozilla/5.0 (compatible; EvrenNexusNewsBot/1.0; +https://evrenexus.github.io/svgevrenexus-viewer/)"
 LATEST_PER_SOURCE=50
 FEED_SCAN_LIMIT=50
-IMAGE_ENRICH_LIMIT=8
+IMAGE_ENRICH_LIMIT=40
 IMAGE_FETCH_TIMEOUT=4
 
 SOURCES=[
@@ -27,7 +27,6 @@ SOURCES=[
  {"name":"سلامت نیوز","category":"پزشکی و سلامت","site":"https://www.salamatnews.com/","feeds":["https://www.salamatnews.com/rss.xml"]},
  {"name":"پزشک سایت","category":"پزشکی و سلامت","site":"https://www.pezeshk-site.ir/","feeds":["https://www.pezeshk-site.ir/feed/"]},
 ]
-
 
 TOPIC_RULES={
  "economy":["اقتصاد","اقتصادی","تورم","رشد اقتصادی","بودجه","مالیات","بانک مرکزی","نرخ بهره","نقدینگی","تجارت","صادرات","واردات","تولید","رکود","اشتغال","دستمزد","معیشت","کسب و کار","کسب‌وکار","بازرگانی","صنعت","کشاورزی","نفت","گاز","انرژی"],
@@ -56,22 +55,14 @@ def classify_topics(item):
         score=0
         for kw in keywords:
             k=normalize_text(kw)
-            if k and k in text:
-                score += 3 if k in title else 1
+            if k and k in text: score += 3 if k in title else 1
         scores[topic]=score
-    source_boost={
-      "پزشکی و سلامت":{"health":2},
-      "فناوری و علم":{"technology":1,"science-life":1},
-      "بورس و بازار سرمایه":{"markets":2},
-      "اقتصاد و سرمایه‌گذاری":{"economy":2}
-    }
-    for topic,boost in source_boost.get(item.get("category",""),{}).items():
-        scores[topic]=scores.get(topic,0)+boost
+    source_boost={"پزشکی و سلامت":{"health":2},"فناوری و علم":{"technology":1,"science-life":1},"بورس و بازار سرمایه":{"markets":2},"اقتصاد و سرمایه‌گذاری":{"economy":2}}
+    for topic,boost in source_boost.get(item.get("category",""),{}).items(): scores[topic]=scores.get(topic,0)+boost
     political=sum(2 if normalize_text(k) in title else 1 for k in POLITICAL_HINTS if normalize_text(k) in text)
     ranked=sorted(scores.items(),key=lambda x:x[1],reverse=True)
     topics=[topic for topic,score in ranked if score>=3]
-    if political>=4 and (not ranked or ranked[0][1] < political):
-        return []
+    if political>=4 and (not ranked or ranked[0][1] < political): return []
     return topics[:4]
 
 def fetch(url):
@@ -79,238 +70,166 @@ def fetch(url):
     last=None
     for attempt in range(2):
         try:
-            with urlopen(req,timeout=8) as r:
-                return r.read(), r.headers.get("content-type","")
+            with urlopen(req,timeout=8) as r: return r.read(), r.headers.get("content-type","")
         except Exception as e:
             last=e
-            if attempt < 2:
-                time.sleep(1)
+            if attempt < 1: time.sleep(1)
     raise last
 
 def discover(home):
-    data,_=fetch(home)
-    text=data.decode("utf-8","ignore")
-    found=[]
+    data,_=fetch(home); text=data.decode("utf-8","ignore"); found=[]
     for m in re.finditer(r'<link[^>]+>',text,re.I):
         tag=m.group(0)
         if re.search(r'rel=["\'][^"\']*(alternate|feed)[^"\']*["\']',tag,re.I) and re.search(r'type=["\'][^"\']*(rss|atom|xml)[^"\']*["\']',tag,re.I):
             h=re.search(r'href=["\']([^"\']+)',tag,re.I)
             if h: found.append(urljoin(home,h.group(1)))
-    for p in ("/feed/","/feed","/rss","/rss/","/feeds/","/feeds"):
-        found.append(urljoin(home,p))
+    for p in ("/feed/","/feed","/rss","/rss/","/feeds/","/feeds"): found.append(urljoin(home,p))
     return list(dict.fromkeys(found))
 
 def txt(v):
-    return re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", v or ""))).strip()
+    return re.sub(r"\s+"," ",html.unescape(re.sub(r"<[^>]+>"," ",v or ""))).strip()
 
 def parse_date(value):
     value=txt(value)
-    if not value:
-        return ""
+    if not value: return ""
     try:
         dt=parsedate_to_datetime(value)
-        if dt.tzinfo is None:
-            dt=dt.replace(tzinfo=timezone.utc)
+        if dt.tzinfo is None: dt=dt.replace(tzinfo=timezone.utc)
         return dt.astimezone(timezone.utc).isoformat()
-    except Exception:
-        pass
+    except Exception: pass
     try:
         dt=datetime.fromisoformat(value.replace("Z","+00:00"))
-        if dt.tzinfo is None:
-            dt=dt.replace(tzinfo=timezone.utc)
+        if dt.tzinfo is None: dt=dt.replace(tzinfo=timezone.utc)
         return dt.astimezone(timezone.utc).isoformat()
-    except Exception:
-        return ""
+    except Exception: return ""
 
 def date_key(value):
-    try:
-        return datetime.fromisoformat(value.replace("Z","+00:00")).timestamp()
-    except Exception:
-        return 0.0
+    try: return datetime.fromisoformat(value.replace("Z","+00:00")).timestamp()
+    except Exception: return 0.0
+
+def first_image_from_html(value,base_url):
+    if not value: return ""
+    patterns=[
+        r'<meta\b[^>]*(?:property|name)=["\'](?:og:image|og:image:url|og:image:secure_url|twitter:image|twitter:image:src)["\'][^>]*content=["\']([^"\']+)["\']',
+        r'<meta\b[^>]*content=["\']([^"\']+)["\'][^>]*(?:property|name)=["\'](?:og:image|og:image:url|og:image:secure_url|twitter:image|twitter:image:src)["\']',
+        r'<img\b[^>]*(?:src|data-src|data-lazy-src)=["\']([^"\']+)'
+    ]
+    for pattern in patterns:
+        m=re.search(pattern,value,re.I)
+        if m:
+            candidate=urljoin(base_url,html.unescape(m.group(1).strip()))
+            if re.match(r"^https?://",candidate,re.I): return candidate
+    return ""
 
 def parse(data,source):
-    root=ET.fromstring(data)
-    atom=root.tag.lower().endswith("feed")
+    root=ET.fromstring(data); atom=root.tag.lower().endswith("feed")
     nodes=[n for n in root.iter() if n.tag.split("}")[-1].lower()==("entry" if atom else "item")]
     out=[]
     for n in nodes[:FEED_SCAN_LIMIT]:
         def get(tag):
             wanted=tag.split("}")[-1].lower()
             for x in n.iter():
-                if x.tag.split("}")[-1].lower()==wanted and x.text:
-                    return x.text.strip()
+                if x.tag.split("}")[-1].lower()==wanted and x.text: return x.text.strip()
             return ""
-        title=get("title") or get("{http://www.w3.org/2005/Atom}title")
+        title=get("title")
         if atom:
             links=[x for x in n.iter() if x.tag.split("}")[-1].lower()=="link"]
-            link=next((x.attrib.get("href","") for x in links if x.attrib.get("rel","alternate")=="alternate"),"")
-            link=link or (links[0].attrib.get("href","") if links else "")
-            date=get("{http://www.w3.org/2005/Atom}published") or get("{http://www.w3.org/2005/Atom}updated")
-            desc=get("{http://www.w3.org/2005/Atom}summary") or get("{http://www.w3.org/2005/Atom}content")
+            link=next((x.attrib.get("href","") for x in links if x.attrib.get("rel","alternate")=="alternate"),"") or (links[0].attrib.get("href","") if links else "")
+            date=get("published") or get("updated"); desc=get("summary") or get("content")
         else:
-            link=get("link")
-            date=get("pubDate") or get("date") or get("{http://purl.org/dc/elements/1.1/}date")
-            desc=get("description") or get("{http://purl.org/rss/1.0/modules/content/}encoded")
+            link=get("link"); date=get("pubDate") or get("date") or get("{http://purl.org/dc/elements/1.1/}date"); desc=get("description") or get("{http://purl.org/rss/1.0/modules/content/}encoded")
         link=html.unescape(link.strip())
-        if link and not re.match(r"^https?://",link):
-            link=urljoin(source["site"],link)
+        if link and not re.match(r"^https?://",link): link=urljoin(source["site"],link)
         if not title or not link or not re.match(r"^https?://",link): continue
         base=source["site"].rstrip("/")
         if link.rstrip("/") in {base,base+"/feed",base+"/feeds"}: continue
-        image=""
-        m=re.search(r'<img[^>]+(?:src|data-src)=["\']([^"\']+)',desc,re.I)
-        if m: image=urljoin(link,m.group(1))
+        image=first_image_from_html(desc,link)
+        if not image:
+            for x in n.iter():
+                tag=x.tag.split("}")[-1].lower()
+                if tag in {"content","thumbnail","image"}:
+                    candidate=x.attrib.get("url") or x.attrib.get("href") or (x.text.strip() if x.text else "")
+                    candidate=urljoin(link,html.unescape(candidate))
+                    if re.match(r"^https?://",candidate,re.I):
+                        image=candidate; break
+                if tag=="enclosure":
+                    candidate=x.attrib.get("url","")
+                    if re.search(r"\.(?:jpe?g|png|webp|gif)(?:\?|$)",candidate,re.I):
+                        image=urljoin(link,candidate); break
         out.append({"id":hashlib.sha256(link.encode()).hexdigest()[:20],"title":txt(title),"summary":txt(desc)[:500],"url":link,"image":image,"source":source["name"],"category":source["category"],"published":parse_date(date),"topics":[]})
-    out.sort(key=lambda x: date_key(x.get("published","")), reverse=True)
+    out.sort(key=lambda x:date_key(x.get("published","")),reverse=True)
     return out[:LATEST_PER_SOURCE]
 
 def fetch_article_image(url):
     try:
         req=Request(url,headers={"User-Agent":UA,"Accept":"text/html,application/xhtml+xml;q=0.9,*/*;q=0.5"})
-        with urlopen(req,timeout=IMAGE_FETCH_TIMEOUT) as r:
-            data=r.read(700000)
+        with urlopen(req,timeout=IMAGE_FETCH_TIMEOUT) as r: data=r.read(700000)
         text=data.decode("utf-8","ignore")
-        for tag in re.findall(r'<meta\\b[^>]*>',text,re.I):
-            attrs={}
-            for m in re.finditer(r'''([a-zA-Z_:][-a-zA-Z0-9_:]*)\\s*=\\s*["']([^"']*)["']''',tag):
-                attrs[m.group(1).lower()]=html.unescape(m.group(2).strip())
-            key=(attrs.get("property") or attrs.get("name") or "").lower()
-            if key in {"og:image","og:image:url","og:image:secure_url","twitter:image","twitter:image:src"} and attrs.get("content"):
-                candidate=urljoin(url,attrs["content"])
-                if re.match(r"^https?://",candidate,re.I): return candidate
-    except Exception:
-        pass
-    return ""
+        return first_image_from_html(text,url)
+    except Exception: return ""
 
-def enrich_images(items, limit=IMAGE_ENRICH_LIMIT):
+def enrich_images(items,limit=IMAGE_ENRICH_LIMIT):
     changed=0
     for item in sorted(items,key=lambda x:date_key(x.get("published","")),reverse=True):
         current=str(item.get("image") or "")
         needs=not current or "/thumbnail/" in current.lower() or "thumb" in current.lower()
         if not needs or changed>=limit: continue
         better=fetch_article_image(item.get("url",""))
-        if better and better != current:
-            item["image"]=better
-            changed+=1
+        if better and better!=current: item["image"]=better; changed+=1
     return changed
 
-def is_valid_item(item, now_ts):
-    url=str(item.get("url","")).strip()
-    title=str(item.get("title","")).strip()
-    published=str(item.get("published","")).strip()
-    if not title or not re.match(r"^https?://",url):
-        return False
-    # Never keep feed/homepage URLs or synthetic future records.
+def is_valid_item(item,now_ts):
+    url=str(item.get("url","")).strip(); title=str(item.get("title","")).strip(); published=str(item.get("published","")).strip()
+    if not title or not re.match(r"^https?://",url): return False
     for s in SOURCES:
         base=s["site"].rstrip("/")
-        if url.rstrip("/") in {base,base+"/feed",base+"/feeds",base+"/rss"}:
-            return False
+        if url.rstrip("/") in {base,base+"/feed",base+"/feeds",base+"/rss"}: return False
     ts=date_key(published)
-    if ts <= 0:
-        return False
-    if ts > now_ts + 300:
-        return False
+    if ts<=0 or ts>now_ts+300: return False
     return True
 
 def main():
-    now=datetime.now(timezone.utc)
-    now_ts=now.timestamp()
+    now=datetime.now(timezone.utc); now_ts=now.timestamp()
     old=json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else {"updated":"","items":[],"sources":[]}
-
-    # Start from the existing database, but purge test/homepage/future records.
     existing={}
     for x in old.get("items",[]):
         if isinstance(x,dict) and is_valid_item(x,now_ts):
-            x["topics"]=classify_topics(x)
-            existing[x["id"]]=x
-
+            x["topics"]=classify_topics(x); existing[x["id"]]=x
     status=[]
     for s in SOURCES:
-        attempted_at=datetime.now(timezone.utc).isoformat()
-        got=[]
-        errors=[]
-        candidates=list(s["feeds"])
-
-        # First try explicit feeds.
+        attempted_at=datetime.now(timezone.utc).isoformat(); got=[]; errors=[]; candidates=list(s["feeds"])
         for u in dict.fromkeys(candidates):
             try:
                 data,ctype=fetch(u)
                 if b"<rss" in data[:2000].lower() or b"<feed" in data[:2000].lower() or "xml" in ctype.lower():
                     parsed=parse(data,s)
-                    if parsed:
-                        got=parsed
-                        break
+                    if parsed: got=parsed; break
                     errors.append("feed parsed but contained no articles: "+u)
-                else:
-                    errors.append("not an RSS/Atom feed: "+u)
-            except Exception as e:
-                errors.append(type(e).__name__+": "+str(e)[:180])
-
-        # If explicit feeds fail, autodiscover.
+                else: errors.append("not an RSS/Atom feed: "+u)
+            except Exception as e: errors.append(type(e).__name__+": "+str(e)[:180])
         discovered=[]
         if not got:
-            try:
-                discovered=discover(s["site"])
-            except Exception as e:
-                errors.append("discovery: "+type(e).__name__+": "+str(e)[:180])
-
+            try: discovered=discover(s["site"])
+            except Exception as e: errors.append("discovery: "+type(e).__name__+": "+str(e)[:180])
             for u in dict.fromkeys(discovered):
                 try:
                     data,ctype=fetch(u)
                     if b"<rss" in data[:2000].lower() or b"<feed" in data[:2000].lower() or "xml" in ctype.lower():
                         parsed=parse(data,s)
-                        if parsed:
-                            got=parsed
-                            break
+                        if parsed: got=parsed; break
                         errors.append("discovered feed parsed but contained no articles: "+u)
-                except Exception as e:
-                    errors.append(type(e).__name__+": "+str(e)[:180])
-
+                except Exception as e: errors.append(type(e).__name__+": "+str(e)[:180])
         for item in got:
             if is_valid_item(item,now_ts):
-                item["topics"]=classify_topics(item)
-                existing[item["id"]]=item
-
+                item["topics"]=classify_topics(item); existing[item["id"]]=item
         latest=max((date_key(x.get("published","")) for x in got if is_valid_item(x,now_ts)),default=0)
-        status.append({
-            "name":s["name"],
-            "category":s["category"],
-            "ok":bool(got),
-            "items":len([x for x in got if is_valid_item(x,now_ts)]),
-            "attempted_at":attempted_at,
-            "last_success_at":datetime.now(timezone.utc).isoformat() if got else "",
-            "last_article_published":datetime.fromtimestamp(latest,timezone.utc).isoformat() if latest else "",
-            "error":"" if got else (" | ".join(errors[-3:])[:600] if errors else "no feed found")
-        })
-
-    # Keep only real, dated articles from the last 7 days.
-    cutoff=now_ts-(7*24*60*60)
-    items=[x for x in existing.values()
-           if is_valid_item(x,now_ts) and date_key(x.get("published","")) >= cutoff]
-    items.sort(key=lambda x:date_key(x.get("published","")),reverse=True)
-    items=items[:300]
-
-    # Backfill/upgrade images for the newest records.
-    enriched=enrich_images(items,IMAGE_ENRICH_LIMIT)
-    print("images_enriched:",enriched)
-
-    if len(items) < 20:
-        print("WARNING: fewer than 20 real articles collected:",len(items))
-
-    OUT.parent.mkdir(parents=True,exist_ok=True)
-    payload={
-        "updated":now.isoformat(),
-        "run": {
-            "started_at":now.isoformat(),
-            "finished_at":datetime.now(timezone.utc).isoformat(),
-            "items_total":len(items)
-        },
-        "items":items,
-        "sources":status
-    }
-    OUT.write_text(json.dumps(payload,ensure_ascii=False,indent=2),encoding="utf-8")
-    print("items:",len(items))
-    print("sources:",status)
+        status.append({"name":s["name"],"category":s["category"],"ok":bool(got),"items":len([x for x in got if is_valid_item(x,now_ts)]),"attempted_at":attempted_at,"last_success_at":datetime.now(timezone.utc).isoformat() if got else "","last_article_published":datetime.fromtimestamp(latest,timezone.utc).isoformat() if latest else "","error":"" if got else (" | ".join(errors[-3:])[:600] if errors else "no feed found")})
+    all_items=list(existing.values())
+    enrich_images(all_items)
+    all_items=[x for x in all_items if is_valid_item(x,now_ts)]
+    all_items.sort(key=lambda x:date_key(x.get("published","")),reverse=True)
+    all_items=all_items[:300]
+    OUT.write_text(json.dumps({"updated":now.isoformat(),"items":all_items,"sources":status},ensure_ascii=False,indent=2),encoding="utf-8")
 
 if __name__=="__main__":
     main()
