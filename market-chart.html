@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>نمودار بازار | Evren Nexus</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;width:100%;min-height:100%;background:#fff;font-family:Tahoma,Arial,sans-serif}
+#market-chart-page{width:100%;height:calc(100vh - 144px);margin-top:144px;position:relative;background:#fff}
+#market-chart-title{height:42px;display:flex;align-items:center;padding:0 14px;border-bottom:1px solid #e3e7ea;font-size:13px;font-weight:700;color:#26333b}
+#tradingview-chart{width:100%;height:calc(100% - 42px)}
+#market-chart-error{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#b4232e;font-size:13px;display:none}
+@media(max-width:700px){
+#market-chart-page{height:calc(100vh - 133px);margin-top:133px}
+#market-chart-title{height:38px;font-size:12px}
+#tradingview-chart{height:calc(100% - 38px)}
+}
+@media(max-width:430px){
+#market-chart-page{height:calc(100vh - 128px);margin-top:128px}
+}
+</style>
+</head>
+<body>
+<script src="https://evrenexus.github.io/svgevrenexus-viewer/Evrenexus-header.js"></script>
+<div id="market-chart-page">
+<div id="market-chart-title"></div>
+<div id="tradingview-chart"></div>
+<div id="market-chart-error"></div>
+</div>
+<script>
+(function(){
+var p=new URLSearchParams(location.search),
+symbol=p.get("symbol"),
+name=p.get("name")||symbol||"نمودار بازار",
+title=document.getElementById("market-chart-title"),
+error=document.getElementById("market-chart-error");
+title.textContent=name;
+if(!symbol){
+error.textContent="نماد بازار مشخص نشده است.";
+error.style.display="block";
+return;
+}
+var container=document.getElementById("tradingview-chart");
+var s=document.createElement("script");
+s.src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
+s.async=true;
+s.innerHTML=JSON.stringify({
+"autosize":true,
+"symbol":symbol,
+"interval":"D",
+"timezone":"Asia/Tehran",
+"theme":"light",
+"style":"1",
+"locale":"en",
+"allow_symbol_change":true,
+"hide_top_toolbar":false,
+"hide_legend":false,
+"save_image":false,
+"calendar":false,
+"support_host":"https://www.tradingview.com"
+});
+container.appendChild(s);
+})();
+</script>
+</body>
+</html>
