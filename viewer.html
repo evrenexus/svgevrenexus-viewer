@@ -4,25 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>خبرخوان Evren Nexus</title>
-<style>*{box-sizing:border-box}html,body{margin:0;padding:0;width:100%;min-height:100%;background:#fff;font-family:Tahoma,Arial,sans-serif}#content{width:100%;height:calc(100vh - 113px);margin-top:113px;position:relative;background:#fff}#loading{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#555;font-size:14px;z-index:1}#iframe{width:100%;height:100%;border:0;display:block;position:relative;z-index:2;background:#fff}@media(max-width:700px){#content{height:calc(100vh - 105px);margin-top:105px}}@media(max-width:430px){#content{height:calc(100vh - 102px);margin-top:102px}}#Evrenxus-market-chart{display:none;width:100%;margin-top:113px;background:#fff;scroll-margin-top:123px;border-bottom:1px solid #d9dfe3}#Evrenxus-market-chart-head{height:38px;display:flex;align-items:center;justify-content:space-between;padding:0 12px;border-bottom:1px solid #e7eaed;font-size:13px;font-weight:700;color:#26333b}#Evrenxus-market-chart-close{border:0;background:#f3f5f6;color:#4a555d;padding:5px 10px;cursor:pointer;font-family:Tahoma,Arial,sans-serif;font-size:11px}#Evrenxus-tv-chart{width:100%;height:520px}@media(max-width:700px){#Evrenxus-market-chart{margin-top:105px;scroll-margin-top:115px}#Evrenxus-tv-chart{height:430px}}@media(max-width:430px){#Evrenxus-market-chart{margin-top:102px;scroll-margin-top:112px}#Evrenxus-tv-chart{height:390px}}</style>
+<style>*{box-sizing:border-box}html,body{margin:0;padding:0;width:100%;min-height:100%;background:#fff;font-family:Tahoma,Arial,sans-serif}#content{width:100%;height:calc(100vh - 113px);margin-top:113px;position:relative;background:#fff}#loading{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#555;font-size:14px;z-index:1}#iframe{width:100%;height:100%;border:0;display:block;position:relative;z-index:2;background:#fff}@media(max-width:700px){#content{height:calc(100vh - 105px);margin-top:105px}}@media(max-width:430px){#content{height:calc(100vh - 102px);margin-top:102px}}</style>
 </head>
 <body>
 
 <script src="https://evrenexus.github.io/svgevrenexus-viewer/Evrenexus-header.js"></script>
 
-<div id="Evrenxus-market-chart" aria-label="نمودار بازار"><div id="Evrenxus-market-chart-head"><span id="Evrenxus-market-chart-title">نمودار بازار</span><button id="Evrenxus-market-chart-close" type="button">بستن</button></div><div id="Evrenxus-tv-chart"></div></div><div id="content">
+<div id="content">
 <div id="loading">در حال بارگذاری خبر...</div>
 <iframe id="iframe" title="خبر"></iframe>
 </div>
 
 <script>
-(function(){var chart=document.getElementById("Evrenxus-market-chart"),title=document.getElementById("Evrenxus-market-chart-title"),host=document.getElementById("Evrenxus-tv-chart"),close=document.getElementById("Evrenxus-market-chart-close"),tvReady=false,currentSymbol="";function loadTV(){if(tvReady)return Promise.resolve();return new Promise(function(resolve,reject){var s=document.createElement("script");s.src="https://s3.tradingview.com/tv.js";s.onload=function(){tvReady=true;resolve()};s.onerror=reject;document.head.appendChild(s)})}function show(d){if(!d||!d.symbol)return;chart.style.display="block";title.textContent="نمودار "+(d.name||d.symbol);host.innerHTML="";currentSymbol=d.symbol;loadTV().then(function(){if(currentSymbol!==d.symbol)return;new TradingView.widget({autosize:true,container_id:"Evrenx-tv-chart",symbol:d.symbol,interval:"60",timezone:"Asia/Tehran",theme:"light",style:"1",locale:"en",enable_publishing:false,hide_top_toolbar:false,hide_legend:false,save_image:false,allow_symbol_change:true});setTimeout(function(){chart.scrollIntoView({behavior:"smooth",block:"start"})},100)}).catch(function(){host.innerHTML='<div style="padding:30px;text-align:center;color:#777">امکان بارگذاری نمودار TradingView وجود ندارد.</div>'})}document.addEventListener("Evrenxus:market-chart",function(e){show(e.detail)});close.onclick=function(){chart.style.display="none";host.innerHTML=""};window.EvrenxusShowChart=show})();
 (function(){
 var params=new URLSearchParams(location.search),newsUrl=params.get("url"),iframe=document.getElementById("iframe"),loading=document.getElementById("loading");
 if(!newsUrl){loading.textContent="لینک خبر مشخص نشده است.";return}
 try{var url=new URL(newsUrl),allowed=["www.asriran.com","asriran.com","www.donya-e-eqtesad.com","donya-e-eqtesad.com"];if(allowed.indexOf(url.hostname)===-1){loading.textContent="این منبع در فهرست منابع EVREN NEXUS نیست.";return}iframe.src=newsUrl;iframe.onload=function(){loading.style.display="none"}}catch(e){loading.textContent="آدرس خبر معتبر نیست."}
 })();
 </script>
-<script>(function(){var p=new URLSearchParams(location.search),s=p.get("symbol"),n=p.get("name");if(s&&window.EvrenxusShowChart)window.EvrenxusShowChart({symbol:s,name:n||s})})();</script>
 </body>
 </html>
