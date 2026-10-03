@@ -41,12 +41,24 @@ TOPIC_RULES={
  "science-life":["علم","پژوهش","دانشگاه","دانش‌آموز","آموزش","کنکور","آزمون","نتایج آزمون","محیط زیست","آلودگی هوا","اقلیم","آب و هوا","فضا","نجوم","ستاره","سیاره","زیست‌شناسی","فیزیک","شیمی","سبک زندگی","گردشگری","کتاب","فرهنگ"]
 }
 POLITICAL_HINTS=["انتخابات","نماینده مجلس","مجلس شورای اسلامی","رئیس جمهور","رییس جمهور","وزیر","وزارت کشور","سیاست خارجی","دیپلماسی","تحریم","حزب","رأی‌گیری","رای‌گیری","کابینه","مذاکره سیاسی"]
-BLOCKED_TITLE_TERMS=["اسرائیل","اسراییل","اسراییلی","اسرائیلی","اسراییلی","جنگ","جنگی","رژیم صهیونیستی","رژیم صهیونیست","صهیونیست","صهیونیستی","فلسطین","فلسطینی","غزه","یمن","حوثی ها","حوثی‌ها","حوثی","طالبان","طالبانی","کره شمالی","کره‌شمالی","موشک","موشکی","بالستیک","بالستیکی"]
+BLOCKED_TITLE_TERMS=[
+ "اسرائیل","اسراییل","اسرائیلی","اسراییلی",
+ "جنگ","جنگی","جنگ‌ها","جنگها","درگیری","درگیری‌ها","درگیریها",
+ "رژیم صهیونیستی","رژیم صهیونیست","صهیونیست","صهیونیستی",
+ "فلسطین","فلسطینی","غزه","یمن","حوثی ها","حوثی‌ها","حوثی","طالبان","طالبانی",
+ "کره شمالی","کره‌شمالی","موشک","موشکی","بالستیک","بالستیکی",
+ "شهید","شهدا","شهیدان","شهادت","شهادت‌طلب","شهیدانه",
+ "رهبر","رهبری","مقام معظم رهبری","مقام معظم","خامنه‌ای","خامنه ای","خامنه‌ئی",
+ "آیت‌الله خامنه‌ای","آیت الله خامنه ای","آیت‌الله خامنه ای","آیت الله خامنه‌ای",
+ "حضرت آیت‌الله خامنه‌ای","حضرت آیت الله خامنه ای",
+ "امام خامنه‌ای","امام خامنه ای","رهبر انقلاب","رهبری انقلاب",
+ "آقا","آقای خامنه‌ای","آقای خامنه ای"
+]
 
 def normalize_text(value):
     value=str(value or "").replace("ي","ی").replace("ى","ی").replace("ك","ک").replace("ۀ","ه")
-    value=value.replace("\u200c"," ").replace("\u200f"," ").replace("\u200e"," ")
-    return re.sub(r"\s+"," ",value).strip().lower()
+    value=value.replace("‌"," ").replace("‏"," ").replace("‎"," ")
+    return re.sub(r"s+"," ",value).strip().lower()
 
 def is_blocked_title(item):
     title=normalize_text(item.get("title",""))
@@ -93,7 +105,7 @@ def discover(home):
     return list(dict.fromkeys(found))
 
 def txt(v):
-    return re.sub(r"\s+"," ",html.unescape(re.sub(r"<[^>]+>"," ",v or ""))).strip()
+    return re.sub(r"s+"," ",html.unescape(re.sub(r"<[^>]+>"," ",v or ""))).strip()
 
 def parse_date(value):
     value=txt(value)
@@ -156,8 +168,7 @@ def parse(data,source):
                 if tag in {"content","thumbnail","image"}:
                     candidate=x.attrib.get("url") or x.attrib.get("href") or (x.text.strip() if x.text else "")
                     candidate=urljoin(link,html.unescape(candidate))
-                    if re.match(r"^https?://",candidate,re.I):
-                        image=candidate; break
+                    if re.match(r"^https?://",candidate,re.I): image=candidate; break
                 if tag=="enclosure":
                     candidate=x.attrib.get("url","")
                     if re.search(r"\.(?:jpe?g|png|webp|gif)(?:\?|$)",candidate,re.I):
