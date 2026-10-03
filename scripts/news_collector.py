@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import json, re, hashlib, html, time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 from pathlib import Path
@@ -12,8 +13,8 @@ OUT=ROOT/"data"/"news.json"
 UA="Mozilla/5.0 (compatible; EvrenNexusNewsBot/1.0; +https://evrenexus.github.io/svgevrenexus-viewer/)"
 LATEST_PER_SOURCE=50
 FEED_SCAN_LIMIT=50
-IMAGE_ENRICH_LIMIT=40
-IMAGE_FETCH_TIMEOUT=4
+IMAGE_ENRICH_LIMIT=20
+IMAGE_FETCH_TIMEOUT=3
 
 SOURCES=[
  {"name":"دنیای اقتصاد","category":"اقتصاد و سرمایه‌گذاری","site":"https://donya-e-eqtesad.com/","feeds":["https://donya-e-eqtesad.com/feeds/"]},
@@ -169,13 +170,22 @@ def fetch_article_image(url):
     except Exception: return ""
 
 def enrich_images(items,limit=IMAGE_ENRICH_LIMIT):
-    changed=0
+    targets=[]
     for item in sorted(items,key=lambda x:date_key(x.get("published","")),reverse=True):
         current=str(item.get("image") or "")
         needs=not current or "/thumbnail/" in current.lower() or "thumb" in current.lower()
-        if not needs or changed>=limit: continue
-        better=fetch_article_image(item.get("url",""))
-        if better and better!=current: item["image"]=better; changed+=1
+        if needs:
+            targets.append(item)
+            if len(targets)>=limit: break
+    changed=0
+    with ThreadPoolExecutor(max_workers=10) as pool:
+        futures={pool.submit(fetch_article_image,item.get("url","")):item for item in targets}
+        for future in as_completed(futures):
+            item=futures[future]
+            try: better=future.result()
+            except Exception: better=""
+            if better and better!=item.get("image",""):
+                item["image"]=better; changed+=1
     return changed
 
 def is_valid_item(item,now_ts):
@@ -195,10 +205,9 @@ def main():
     for x in old.get("items",[]):
         if isinstance(x,dict) and is_valid_item(x,now_ts):
             x["topics"]=classify_topics(x); existing[x["id"]]=x
-    status=[]
-    for s in SOURCES:
-        attempted_at=datetime.now(timezone.utc).isoformat(); got=[]; errors=[]; candidates=list(s["feeds"])
-        for u in dict.fromkeys(candidates):
+    def collect_source(s):
+        attempted_at=datetime.now(timezone.utc).isoformat(); got=[]; errors=[]
+        for u in dict.fromkeys(s["feeds"]):
             try:
                 data,ctype=fetch(u)
                 if b"<rss" in data[:2000].lower() or b"<feed" in data[:2000].lower() or "xml" in ctype.lower():
@@ -207,10 +216,9 @@ def main():
                     errors.append("feed parsed but contained no articles: "+u)
                 else: errors.append("not an RSS/Atom feed: "+u)
             except Exception as e: errors.append(type(e).__name__+": "+str(e)[:180])
-        discovered=[]
         if not got:
             try: discovered=discover(s["site"])
-            except Exception as e: errors.append("discovery: "+type(e).__name__+": "+str(e)[:180])
+            except Exception as e: discovered=[]; errors.append("discovery: "+type(e).__name__+": "+str(e)[:180])
             for u in dict.fromkeys(discovered):
                 try:
                     data,ctype=fetch(u)
@@ -219,11 +227,23 @@ def main():
                         if parsed: got=parsed; break
                         errors.append("discovered feed parsed but contained no articles: "+u)
                 except Exception as e: errors.append(type(e).__name__+": "+str(e)[:180])
-        for item in got:
-            if is_valid_item(item,now_ts):
-                item["topics"]=classify_topics(item); existing[item["id"]]=item
-        latest=max((date_key(x.get("published","")) for x in got if is_valid_item(x,now_ts)),default=0)
-        status.append({"name":s["name"],"category":s["category"],"ok":bool(got),"items":len([x for x in got if is_valid_item(x,now_ts)]),"attempted_at":attempted_at,"last_success_at":datetime.now(timezone.utc).isoformat() if got else "","last_article_published":datetime.fromtimestamp(latest,timezone.utc).isoformat() if latest else "","error":"" if got else (" | ".join(errors[-3:])[:600] if errors else "no feed found")})
+        valid=[x for x in got if is_valid_item(x,now_ts)]
+        for item in valid: item["topics"]=classify_topics(item)
+        latest=max((date_key(x.get("published","")) for x in valid),default=0)
+        info={"name":s["name"],"category":s["category"],"ok":bool(valid),"items":len(valid),"attempted_at":attempted_at,"last_success_at":datetime.now(timezone.utc).isoformat() if valid else "","last_article_published":datetime.fromtimestamp(latest,timezone.utc).isoformat() if latest else "","error":"" if valid else (" | ".join(errors[-3:])[:600] if errors else "no feed found")}
+        return valid,info
+
+    status=[]
+    with ThreadPoolExecutor(max_workers=len(SOURCES)) as pool:
+        futures=[pool.submit(collect_source,s) for s in SOURCES]
+        for future in as_completed(futures):
+            try:
+                items,info=future.result()
+                for item in items: existing[item["id"]]=item
+                status.append(info)
+            except Exception as e:
+                status.append({"name":"unknown","category":"","ok":False,"items":0,"attempted_at":now.isoformat(),"last_success_at":"","last_article_published":"","error":type(e).__name__+": "+str(e)[:600]})
+
     all_items=list(existing.values())
     enrich_images(all_items)
     all_items=[x for x in all_items if is_valid_item(x,now_ts)]
