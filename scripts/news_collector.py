@@ -21,9 +21,9 @@ SOURCES=[
  {"name":"زومیت","category":"فناوری و علم","site":"https://www.zoomit.ir/","feeds":["https://www.zoomit.ir/feed/"]},
  {"name":"دیجیاتو","category":"فناوری و علم","site":"https://digiato.com/","feeds":["https://digiato.com/feed/"]},
  {"name":"پیوست","category":"فناوری و علم","site":"https://peivast.com/","feeds":["https://peivast.com/feed/"]},
- {"name":"دکترتو","category":"پزشکی و سلامت","site":"https://doctoreto.com/","feeds":[]},
- {"name":"پذیرش۲۴","category":"پزشکی و سلامت","site":"https://www.paziresh24.com/","feeds":[]},
- {"name":"اوما","category":"پزشکی و سلامت","site":"https://ooma.org/","feeds":[]},
+ {"name":"سلامت نیوز","category":"پزشکی و سلامت","site":"https://www.salamatnews.com/","feeds":["https://www.salamatnews.com/rss.xml"]},
+ {"name":"میهن سلامت","category":"پزشکی و سلامت","site":"https://mihansalamat.com/","feeds":["https://mihansalamat.com/feed/"]},
+ {"name":"پزشک سایت","category":"پزشکی و سلامت","site":"https://www.pezeshk-site.ir/","feeds":["https://www.pezeshk-site.ir/feed/"]},
 ]
 
 def fetch(url):
