@@ -12,6 +12,8 @@ OUT=ROOT/"data"/"news.json"
 UA="Mozilla/5.0 (compatible; EvrenNexusNewsBot/1.0; +https://evrenexus.github.io/svgevrenexus-viewer/)"
 LATEST_PER_SOURCE=14
 FEED_SCAN_LIMIT=50
+IMAGE_ENRICH_LIMIT=24
+IMAGE_FETCH_TIMEOUT=10
 
 SOURCES=[
  {"name":"دنیای اقتصاد","category":"اقتصاد و سرمایه‌گذاری","site":"https://donya-e-eqtesad.com/","feeds":["https://donya-e-eqtesad.com/feeds/"]},
@@ -164,6 +166,36 @@ def parse(data,source):
     out.sort(key=lambda x: date_key(x.get("published","")), reverse=True)
     return out[:LATEST_PER_SOURCE]
 
+def fetch_article_image(url):
+    try:
+        req=Request(url,headers={"User-Agent":UA,"Accept":"text/html,application/xhtml+xml;q=0.9,*/*;q=0.5"})
+        with urlopen(req,timeout=IMAGE_FETCH_TIMEOUT) as r:
+            data=r.read(700000)
+        text=data.decode("utf-8","ignore")
+        for tag in re.findall(r'<meta\\b[^>]*>',text,re.I):
+            attrs={}
+            for m in re.finditer(r'''([a-zA-Z_:][-a-zA-Z0-9_:]*)\\s*=\\s*["']([^"']*)["']''',tag):
+                attrs[m.group(1).lower()]=html.unescape(m.group(2).strip())
+            key=(attrs.get("property") or attrs.get("name") or "").lower()
+            if key in {"og:image","og:image:url","og:image:secure_url","twitter:image","twitter:image:src"} and attrs.get("content"):
+                candidate=urljoin(url,attrs["content"])
+                if re.match(r"^https?://",candidate,re.I): return candidate
+    except Exception:
+        pass
+    return ""
+
+def enrich_images(items, limit=IMAGE_ENRICH_LIMIT):
+    changed=0
+    for item in sorted(items,key=lambda x:date_key(x.get("published","")),reverse=True):
+        current=str(item.get("image") or "")
+        needs=not current or "/thumbnail/" in current.lower() or "thumb" in current.lower()
+        if not needs or changed>=limit: continue
+        better=fetch_article_image(item.get("url",""))
+        if better and better != current:
+            item["image"]=better
+            changed+=1
+    return changed
+
 def is_valid_item(item, now_ts):
     url=str(item.get("url","")).strip()
     title=str(item.get("title","")).strip()
@@ -259,6 +291,10 @@ def main():
            if is_valid_item(x,now_ts) and date_key(x.get("published","")) >= cutoff]
     items.sort(key=lambda x:date_key(x.get("published","")),reverse=True)
     items=items[:300]
+
+    # Backfill/upgrade images for the newest records.
+    enriched=enrich_images(items,IMAGE_ENRICH_LIMIT)
+    print("images_enriched:",enriched)
 
     if len(items) < 20:
         print("WARNING: fewer than 20 real articles collected:",len(items))
