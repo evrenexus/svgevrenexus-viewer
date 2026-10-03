@@ -30,6 +30,7 @@ function init(){
     "#Evrenxus-donya-box .Evrenxus-donya-heading:before{content:'';display:inline-block;width:4px;height:14px;margin-left:7px;vertical-align:-2px;background:#d9232e}"+
     ".Evrenxus-donya-item{display:block;padding:10px;border-bottom:1px solid #edf0f1;color:#343b40;text-decoration:none;font-size:10px;line-height:1.9}"+
     ".Evrenxus-donya-item:hover{background:#fafafa;color:#d9232e}"+
+    ".Evrenxus-donya-image{display:block;width:100%;height:150px;object-fit:cover;background:#eee;margin:0 0 8px}"+
     ".Evrenxus-donya-title{font-weight:700;color:#20272d;margin-bottom:4px}"+
     ".Evrenxus-donya-summary{color:#737a7f;font-weight:400}"+
     ".Evrenxus-news-loading,.Evrenxus-news-error{padding:18px 8px;text-align:center;color:#777;font-size:10px}";
@@ -289,6 +290,25 @@ function init(){
             a.href=openItem(item);
             a.target="_blank";
             a.rel="noopener noreferrer";
+
+            var im=itemImage(item);
+            if(im){
+                var img=document.createElement("img");
+                img.className="Evrenxus-donya-image";
+                img.alt=clean(item.title);
+                img.loading="lazy";
+                img.referrerPolicy="no-referrer";
+                img.onerror=function(){
+                    if(this.dataset.proxyTried!=="1"){
+                        this.dataset.proxyTried="1";
+                        this.src=imageProxy(im);
+                    }else{
+                        this.remove();
+                    }
+                };
+                img.src=im;
+                a.appendChild(img);
+            }
 
             var t=document.createElement("div");
             t.className="Evrenxus-donya-title";
