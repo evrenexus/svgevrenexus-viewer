@@ -72,9 +72,7 @@ function init(){
             "https://news.google.com/rss/search?q=site%3Aasriran.com&hl=fa&gl=IR&ceid=IR%3Afa"
         ],
         donya:[
-            "https://donya-e-eqtesad.com/feeds/",
-            "https://donya-e-eqtesad.com/fa/feeds/?p=all",
-            "https://news.google.com/rss/search?q=site%3Adonya-e-eqtesad.com&hl=fa&gl=IR&ceid=IR%3Afa"
+            "https://khabarfarsi.com/rss/top"
         ]
     };
 
