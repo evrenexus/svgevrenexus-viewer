@@ -36,6 +36,29 @@ var css=`
 `;
 var style=document.createElement("style");style.id="Evrenxus-header-style";style.textContent=css;document.head.appendChild(style);
 
+
+// Remove legacy market tickers from the host page.
+// The shared header below is the only market ticker source.
+(function(){
+function removeLegacyTickers(){
+  var needles=["در حال دریافت ارزهای خارجی","در حال دریافت ارزهای دیجیتال"];
+  document.querySelectorAll("body *").forEach(function(el){
+    if(el.id==="Evrenxus-header") return;
+    var txt=(el.textContent||"").trim();
+    if(!txt || !needles.some(function(n){return txt.indexOf(n)!==-1})) return;
+    var target=el;
+    for(var i=0;i<6 && target.parentElement;i++){
+      var p=target.parentElement;
+      var pt=(p.textContent||"").trim();
+      if(pt.length<=Math.max(txt.length+180,320)){target=p;}else break;
+    }
+    if(target && target.id!=="Evrenxus-header") target.remove();
+  });
+}
+removeLegacyTickers();
+new MutationObserver(removeLegacyTickers).observe(document.body,{childList:true,subtree:true});
+})();
+
 var wrap=document.createElement("div");wrap.innerHTML=`
 <header id="Evrenxus-header" dir="rtl">
 <div id="Evrenxus-header-row1">
