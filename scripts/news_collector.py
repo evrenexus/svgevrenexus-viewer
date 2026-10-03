@@ -22,11 +22,9 @@ SOURCES=[
  {"name":"بورس‌نیوز","category":"بورس و بازار سرمایه","site":"https://www.boursenews.ir/","feeds":["https://www.boursenews.ir/rss"]},
  {"name":"صدای بورس","category":"بورس و بازار سرمایه","site":"https://sedayebourse.ir/","feeds":[]},
  {"name":"فردای اقتصاد","category":"بورس و بازار سرمایه","site":"https://www.fardayeeghtesad.com/","feeds":[]},
- {"name":"زومیت","category":"فناوری و علم","site":"https://www.zoomit.ir/","feeds":["https://www.zoomit.ir/feed/"]},
  {"name":"دیجیاتو","category":"فناوری و علم","site":"https://digiato.com/","feeds":["https://digiato.com/feed/"]},
  {"name":"پیوست","category":"فناوری و علم","site":"https://peivast.com/","feeds":["https://peivast.com/feed/"]},
  {"name":"سلامت نیوز","category":"پزشکی و سلامت","site":"https://www.salamatnews.com/","feeds":["https://www.salamatnews.com/rss.xml"]},
- {"name":"میهن سلامت","category":"پزشکی و سلامت","site":"https://mihansalamat.com/","feeds":["https://mihansalamat.com/feed/"]},
  {"name":"پزشک سایت","category":"پزشکی و سلامت","site":"https://www.pezeshk-site.ir/","feeds":["https://www.pezeshk-site.ir/feed/"]},
 ]
 
