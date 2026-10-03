@@ -12,8 +12,8 @@ OUT=ROOT/"data"/"news.json"
 UA="Mozilla/5.0 (compatible; EvrenNexusNewsBot/1.0; +https://evrenexus.github.io/svgevrenexus-viewer/)"
 LATEST_PER_SOURCE=50
 FEED_SCAN_LIMIT=50
-IMAGE_ENRICH_LIMIT=24
-IMAGE_FETCH_TIMEOUT=10
+IMAGE_ENRICH_LIMIT=8
+IMAGE_FETCH_TIMEOUT=4
 
 SOURCES=[
  {"name":"دنیای اقتصاد","category":"اقتصاد و سرمایه‌گذاری","site":"https://donya-e-eqtesad.com/","feeds":["https://donya-e-eqtesad.com/feeds/"]},
@@ -79,14 +79,14 @@ def classify_topics(item):
 def fetch(url):
     req=Request(url,headers={"User-Agent":UA,"Accept":"application/rss+xml,application/atom+xml,application/xml,text/html;q=0.9,*/*;q=0.5"})
     last=None
-    for attempt in range(3):
+    for attempt in range(2):
         try:
-            with urlopen(req,timeout=25) as r:
+            with urlopen(req,timeout=8) as r:
                 return r.read(), r.headers.get("content-type","")
         except Exception as e:
             last=e
             if attempt < 2:
-                time.sleep(2 * (attempt + 1))
+                time.sleep(1)
     raise last
 
 def discover(home):
