@@ -126,9 +126,26 @@ function init(){
     }
 
     function rss2json(url){
-        return fetch("https://api.rss2json.com/v1/api.json?rss_url="+encodeURIComponent(url),{cache:"no-store"})
-        .then(function(r){if(!r.ok) throw Error("rss2json");return r.json()})
-        .then(function(d){if(!d||!d.items||!d.items.length) throw Error("empty");return d.items});
+        return new Promise(function(resolve,reject){
+            var callback="EvrenxusRSS_"+Date.now()+"_"+Math.floor(Math.random()*100000);
+            var script=document.createElement("script");
+            var done=false;
+            function finish(ok,value){
+                if(done) return;
+                done=true;
+                try{delete window[callback]}catch(e){window[callback]=undefined}
+                if(script.parentNode) script.parentNode.removeChild(script);
+                ok?resolve(value):reject(value);
+            }
+            window[callback]=function(d){
+                if(d&&d.status==="ok"&&d.items&&d.items.length) finish(true,d.items);
+                else finish(false,Error("rss2json empty"));
+            };
+            script.onerror=function(){finish(false,Error("rss2json network"))};
+            script.src="https://api.rss2json.com/v1/api.json?callback="+callback+"&rss_url="+encodeURIComponent(url)+"&count=10";
+            document.head.appendChild(script);
+            setTimeout(function(){finish(false,Error("rss2json timeout"))},12000);
+        });
     }
 
     function allorigins(url){
