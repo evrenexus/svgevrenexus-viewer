@@ -88,7 +88,28 @@ function fmt(v){return v==null?"-":new Intl.NumberFormat("en-US",{maximumFractio
 var tvMap={"انس طلا":"OANDA:XAUUSD","انس نقره":"OANDA:XAGUSD","انس پلاتین":"OANDA:XPTUSD","انس پالادیوم":"OANDA:XPDUSD","آلومینیوم":"COMEX:ALI1!","سرب":"LME:LEAD1!","روی":"LME:ZINC1!","مس":"COMEX:HG1!","نیکل":"LME:NICKEL1!","قلع":"LME:TIN1!","نفت برنت":"TVC:UKOIL","نفت اپک":"TVC:OPEC","نفت خام":"TVC:USOIL","نفت کوره":"NYMEX:HO1!","بنزین (RBOB)":"NYMEX:RB1!","گاز طبیعی":"NYMEX:NG1!","گازوییل":"NYMEX:HO1!","زغال سنگ":"NYMEX:MTF1!","دلار":"FX_IDC:USDIRR","یورو":"FX_IDC:EURIRR","درهم":"FX_IDC:AEDIRR","پوند":"FX_IDC:GBPIRR","لیر":"FX_IDC:TRYIRR","فرانک":"FX_IDC:CHFIRR","یوان":"FX_IDC:CNYIRR","ین":"FX_IDC:JPYIRR","روبل":"FX_IDC:RUBIRR","منات":"FX_IDC:AZNIRR","بیت‌کوین":"BINANCE:BTCUSDT","اتریوم":"BINANCE:ETHUSDT","لایت‌کوین":"BINANCE:LTCUSDT","تتر":"BINANCE:USDTUSD","ریپل":"BINANCE:XRPUSDT","بایننس‌کوین":"BINANCE:BNBUSDT","دوج‌کوین":"BINANCE:DOGEUSDT","ترون":"BINANCE:TRXUSDT","کاردانو":"BINANCE:ADAUSDT","سولانا":"BINANCE:SOLUSDT"};
 function item(x,isCrypto){var v=isCrypto?x.priceIRT:x.price,c=x.changePercent!=null?x.changePercent:x.changePercent24h,unit=isCrypto?" تومان":"",cl=Number(c)>0?"Evrenxus-up":Number(c)<0?"Evrenxus-down":"",ar=Number(c)>0?"▲":Number(c)<0?"▼":"",tv=tvMap[x.name],inner='<span class="symbol">'+x.name+'</span><span class="price">'+fmt(v)+unit+'</span><span class="'+cl+'">'+ar+(Number.isFinite(Number(c))?fmt(c)+"%":"")+'</span>';return tv?'<a class="Evrenxus-ticker-item" href="#market-chart" data-tv-symbol="'+tv+'" data-tv-name="'+x.name+'">'+inner+'</a>':'<span class="Evrenxus-ticker-item">'+inner+'</span>'}
 function render(track,prefix,groups,iso){var html=groups.flat().map(function(x){return item(x,prefix==="crypto")}).join("");track.innerHTML=html||'<span class="Evrenxus-ticker-item">اطلاعات در دسترس نیست</span>';}
-document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a[data-tv-symbol]");if(!a)return;var panel=document.getElementById("Evrenxus-market-chart");if(!panel)return;e.preventDefault();document.dispatchEvent(new CustomEvent("Evrenxus:market-chart",{detail:{symbol:a.getAttribute("data-tv-symbol"),name:a.getAttribute("data-tv-name")||""}}));});
+function openMarketChart(symbol,name){
+var panel=document.getElementById("Evrenxus-market-chart");
+if(!panel){
+panel=document.createElement("div");panel.id="Evrenxus-market-chart";
+panel.innerHTML='<div id="Evrenxus-market-chart-head"><span id="Evrenxus-market-chart-title"></span><button id="Evrenxus-market-chart-close" type="button">بستن</button></div><div id="Evrenxus-tv-chart"></div>';
+document.body.insertBefore(panel,document.body.firstChild);
+document.getElementById("Evrenxus-market-chart-close").onclick=function(){panel.style.display="none";document.getElementById("Evrenxus-tv-chart").innerHTML=""};
+}
+panel.style.display="block";
+document.getElementById("Evrenxus-market-chart-title").textContent="نمودار "+(name||symbol);
+var host=document.getElementById("Evrenxus-tv-chart");host.innerHTML="";
+var box=document.createElement("div");box.className="tradingview-widget-container";box.style.cssText="height:100%;width:100%";
+var widget=document.createElement("div");widget.className="tradingview-widget-container__widget";widget.style.cssText="height:calc(100% - 28px);width:100%";
+box.appendChild(widget);
+var credit=document.createElement("div");credit.style.cssText="height:28px;line-height:28px;text-align:left;font:10px Arial;color:#777;padding-left:8px";credit.innerHTML='<a href="https://www.tradingview.com/" target="_blank" rel="noopener nofollow" style="color:#777;text-decoration:none">TradingView</a>';
+box.appendChild(credit);host.appendChild(box);
+var s=document.createElement("script");s.type="text/javascript";s.src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";s.async=true;
+s.text='{"autosize":true,"symbol":"'+symbol.replace(/"/g,'\\\"')+'","interval":"60","timezone":"Asia/Tehran","theme":"light","style":"1","locale":"en","allow_symbol_change":true,"calendar":false,"hide_top_toolbar":false,"hide_side_toolbar":false,"hide_legend":false,"hide_volume":false,"save_image":false,"support_host":"https://www.tradingview.com"}';
+box.appendChild(s);
+setTimeout(function(){panel.scrollIntoView({behavior:"smooth",block:"start"})},80);
+}
+document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a[data-tv-symbol]");if(!a)return;e.preventDefault();openMarketChart(a.getAttribute("data-tv-symbol"),a.getAttribute("data-tv-name")||"")});
 function loadTGJU(){return fetch("https://evrenexus.github.io/svgevrenexus-viewer/market-data/tgju.json?v="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(t){render(metal,"metals",[t.precious||[],t.baseMetals||[],t.energy||[]],t.scrapedAt);render(cur,"currency",[t.currency||[]],t.scrapedAt)})}
 function loadCrypto(){return fetch("https://evrenexus.github.io/svgevrenexus-viewer/market-data/nobitex.json?v="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(n){render(crypto,"crypto",[(n.markets||[]).slice().sort(function(a,b){return a.symbol==="USDT"?-1:b.symbol==="USDT"?1:0})],n.scrapedAt)})}
 loadTGJU().catch(function(){stamp("metals");stamp("currency")});
