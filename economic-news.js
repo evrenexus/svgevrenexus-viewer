@@ -53,7 +53,7 @@ function init(){
     function cleanText(text){
         var div=document.createElement("div");
         div.innerHTML=text || "";
-        return (div.textContent || div.innerText || "").replace(/\\s+/g," ").trim();
+        return (div.textContent || div.innerText || "").replace(/\s+/g," ").trim();
     }
 
     function limitText(text,length){
@@ -70,7 +70,7 @@ function init(){
             .replace(/&#39;/g,"'");
         if(/^data:image/i.test(url) || /^javascript:/i.test(url)) return "";
         if(url.indexOf("//")===0) url="https:"+url;
-        if(!/^https?:\\/\\//i.test(url)) return "";
+        if(!/^https?:\/\//i.test(url)) return "";
         return url;
     }
 
