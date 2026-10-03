@@ -3,88 +3,45 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Evren Nexus | موضوعات</title>
+<title>اورین نکسوس</title>
 <style>
-*{box-sizing:border-box}
-html,body{margin:0;padding:0;background:#f1f2f3;color:#20272d;font-family:Vazir,Tahoma,Arial,sans-serif}
+*{box-sizing:border-box}html,body{margin:0;padding:0;background:#f1f2f3;color:#20272d;font-family:Vazir,Tahoma,Arial,sans-serif}
 #page{width:850px;max-width:100%;margin:0 auto;padding:158px 10px 25px;display:flex;flex-direction:row;align-items:flex-start;gap:10px;direction:rtl}
-#content{width:610px;max-width:610px;min-width:610px;flex:0 0 610px;order:1;overflow:hidden}
-#sidebar-host{width:200px;min-width:200px;max-width:200px;flex:0 0 200px;order:2}
-#Evrenxus-breaking{width:100%;height:34px;margin-bottom:14px;display:flex;align-items:center;background:#202c35;color:#fff;overflow:hidden}
-.Evrenxus-breaking-label{flex:0 0 78px;height:34px;display:flex;align-items:center;justify-content:center;background:#d9232e;font-size:10px;font-weight:700}
-.Evrenxus-breaking-track{height:34px;flex:1;min-width:0;overflow:hidden;display:flex;align-items:center;white-space:nowrap}
-.Evrenxus-breaking-track span{display:inline-block;padding-right:20px;color:#fff;font-size:10px;animation:EvrenxusBreakingMove 28s linear infinite}
-@keyframes EvrenxusBreakingMove{from{transform:translateX(-100%)}to{transform:translateX(100%)}}
-#river{width:100%;background:#fff;border:1px solid #dfe2e4;overflow:hidden}
-.item{display:flex;gap:10px;padding:11px;border-bottom:1px solid #edf0f1;text-decoration:none;color:#343b40;background:#fff}
-.item:hover{background:#fafafa}
-.item img{width:125px;min-width:125px;height:78px;object-fit:cover;background:#eee}
-.content{min-width:0;flex:1}
-.title{font-size:11px;font-weight:700;line-height:1.9;color:#20272d}
-.summary{font-size:9.5px;line-height:1.8;color:#737a7f;margin-top:3px}
-.meta{font-size:8.5px;color:#969da2;margin-top:6px}
-.loading,.error{padding:25px;text-align:center;color:#777;font-size:10px}
-@media(max-width:700px){
-html,body{background:#fff;overflow-x:hidden}
-#page{width:100%;padding:136px 8px 15px;display:block}
-#content{width:100%;max-width:none}
-#sidebar-host{width:100%;min-width:0;max-width:none}
-#Evrenxus-breaking{height:32px;margin-bottom:12px}
-.Evrenxus-breaking-label{flex-basis:67px;height:32px;font-size:9px}
-.Evrenxus-breaking-track{height:32px}.Evrenxus-breaking-track span{font-size:9px}
-}
+#content{width:610px;max-width:610px;min-width:610px;flex:0 0 610px;order:1;overflow:hidden}#sidebar-host{width:200px;min-width:200px;max-width:200px;flex:0 0 200px;order:2}
+#Evrenxus-breaking{width:100%;height:34px;margin-bottom:14px;display:flex;align-items:center;background:#202c35;color:#fff;overflow:hidden}.Evrenxus-breaking-label{flex:0 0 78px;height:34px;display:flex;align-items:center;justify-content:center;background:#d9232e;font-size:10px;font-weight:700}.Evrenxus-breaking-track{height:34px;flex:1;min-width:0;overflow:hidden;display:flex;align-items:center;white-space:nowrap}.Evrenxus-breaking-track span{display:inline-block;padding-right:20px;color:#fff;font-size:10px;animation:EvrenxusBreakingMove 28s linear infinite}@keyframes EvrenxusBreakingMove{from{transform:translateX(-100%)}to{transform:translateX(100%)}}
+.topic-head{background:#fff;border:1px solid #dfe2e4;border-top:3px solid #202c35;padding:12px 14px;margin-bottom:12px}.topic-name{font-size:18px;font-weight:700;color:#20272d}.topic-sub{font-size:9px;color:#858c91;margin-top:4px}.section-title{font-size:12px;font-weight:700;color:#202c35;padding:9px 11px;border-bottom:2px solid #d9232e;background:#fff}
+#important,#river{width:100%;background:#fff;border:1px solid #dfe2e4;overflow:hidden;margin-bottom:12px}.important-grid{display:grid;grid-template-columns:1fr 1fr}.important-item{display:block;padding:10px;text-decoration:none;color:#343b40;border-bottom:1px solid #edf0f1}.important-item:nth-child(odd){border-left:1px solid #edf0f1}.important-item img{width:100%;height:110px;object-fit:cover;background:#eee;display:block;margin-bottom:7px}.important-title{font-size:11px;font-weight:700;line-height:1.8}.important-meta{font-size:8px;color:#969da2;margin-top:5px}
+.item{display:flex;gap:10px;padding:11px;border-bottom:1px solid #edf0f1;text-decoration:none;color:#343b40;background:#fff}.item:hover,.important-item:hover{background:#fafafa}.item img{width:125px;min-width:125px;height:78px;object-fit:cover;background:#eee}.content{min-width:0;flex:1}.title{font-size:11px;font-weight:700;line-height:1.9;color:#20272d}.summary{font-size:9.5px;line-height:1.8;color:#737a7f;margin-top:3px}.meta{font-size:8.5px;color:#969da2;margin-top:6px}.loading,.error{padding:25px;text-align:center;color:#777;font-size:10px}
+@media(max-width:700px){html,body{background:#fff;overflow-x:hidden}#page{width:100%;padding:136px 8px 15px;display:block}#content{width:100%;max-width:none}#sidebar-host{width:100%;min-width:0;max-width:none}#Evrenxus-breaking{height:32px;margin-bottom:12px}.Evrenxus-breaking-label{flex-basis:67px;height:32px;font-size:9px}.Evrenxus-breaking-track{height:32px}.Evrenxus-breaking-track span{font-size:9px}.topic-name{font-size:16px}.important-grid{grid-template-columns:1fr}.important-item:nth-child(odd){border-left:0}.important-item img{height:150px}}
 @media(max-width:430px){#page{padding-top:132px}}
 </style>
 </head>
 <body>
 <script src="./Evrenexus-header.js"></script>
-<main id="page">
-<section id="content">
-<div id="Evrenxus-breaking">
-<div class="Evrenxus-breaking-label">خبر فوری</div>
-<div class="Evrenxus-breaking-track"><span>آخرین تحولات اقتصاد، بازارها، طلا، ارز، مسکن و فناوری در Evren Nexus</span></div>
-</div>
+<main id="page"><section id="content">
+<div id="Evrenxus-breaking"><div class="Evrenxus-breaking-label">خبر فوری</div><div class="Evrenxus-breaking-track"><span>آخرین تحولات اقتصاد، بازارها، طلا، ارز، مسکن و فناوری در اورین نکسوس</span></div></div>
+<div class="topic-head"><div class="topic-name" id="topicName">اورین نکسوس اقتصادی</div><div class="topic-sub">آخرین اخبار و تحولات این حوزه</div></div>
 <div id="Evrenxus-slider-host"></div>
-<section id="river"><div id="list"><div class="loading">در حال دریافت مطالب...</div></div></section>
-</section>
-<div id="sidebar-host"></div>
-</main>
-<script src="./Evrenexus-slider.js?v=1"></script>
-<script src="./Evrenexus-sidebar.js?v=1"></script>
+<section id="important"><div class="section-title">مهم‌ترین اخبار</div><div id="importantList" class="important-grid"><div class="loading">در حال دریافت مطالب...</div></div></section>
+<section id="river"><div class="section-title">جدیدترین اخبار</div><div id="list"><div class="loading">در حال دریافت مطالب...</div></div></section>
+</section><div id="sidebar-host"></div></main>
+<script src="./Evrenexus-slider.js?v=1"></script><script src="./Evrenexus-sidebar.js?v=1"></script>
 <script>
-(function(){
-"use strict";
-var TOPICS={economy:"اقتصاد",markets:"بازار و سرمایه‌گذاری","currency-gold":"ارز و طلا","real-estate":"مسکن",technology:"فناوری",ai:"هوش مصنوعی",health:"پزشکی و سلامت",auto:"خودرو","science-life":"علم و سبک زندگی"};
-var q=new URLSearchParams(location.search),topic=q.get("topic")||"economy";
-if(!TOPICS[topic])topic="economy";
-var list=document.getElementById("list");
+(function(){ "use strict";
+var TOPICS={economy:"اقتصادی",markets:"بازار و سرمایه‌گذاری","currency-gold":"ارز و طلا","real-estate":"مسکن",technology:"فناوری",ai:"هوش مصنوعی",health:"پزشکی و سلامت",auto:"خودرو","science-life":"علم و سبک زندگی"};
+var q=new URLSearchParams(location.search),topic=q.get("topic")||"economy";if(!TOPICS[topic])topic="economy";
+document.getElementById("topicName").textContent="اورین نکسوس "+TOPICS[topic];
+var list=document.getElementById("list"),importantList=document.getElementById("importantList");
 function proxy(v){return v?"https://images.weserv.nl/?url="+encodeURIComponent(v):""}
-function render(items){
-list.innerHTML="";
-if(!items.length){list.innerHTML='<div class="error">فعلاً مطلبی در این موضوع پیدا نشد.</div>';return}
-items.forEach(function(x){
-var a=document.createElement("a");
-a.className="item";
-a.href="./viewer.html?url="+encodeURIComponent(x.url);
-a.target="_blank";a.rel="noopener noreferrer";
-if(x.image){
-var im=document.createElement("img");
-im.src=x.image;im.alt=x.title||"";im.loading="lazy";im.referrerPolicy="no-referrer";
-im.onerror=function(){if(!this.dataset.p){this.dataset.p="1";this.src=proxy(x.image)}else this.remove()};
-a.appendChild(im);
-}
-var c=document.createElement("div");c.className="content";
-var t=document.createElement("div");t.className="title";t.textContent=x.title||"";c.appendChild(t);
-if(x.summary){var s=document.createElement("div");s.className="summary";s.textContent=x.summary;c.appendChild(s)}
-var m=document.createElement("div");m.className="meta";m.textContent=(x.source||"")+" • "+new Date(x.published).toLocaleString("fa-IR",{dateStyle:"short",timeStyle:"short"});c.appendChild(m);
-a.appendChild(c);list.appendChild(a);
-});
-}
-fetch("./data/news.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error();return r.json()}).then(function(data){
-var items=(data.items||[]).filter(function(x){return x&&x.title&&x.published&&x.url&&Array.isArray(x.topics)&&x.topics.indexOf(topic)!==-1});
-items.sort(function(a,b){return new Date(b.published)-new Date(a.published)});
-render(items.slice(0,100));
-}).catch(function(){list.innerHTML='<div class="error">دریافت خبرها انجام نشد.</div>'});
+function imageFor(x){return x.image||""}
+function makeItem(x,important){var a=document.createElement("a");a.href="./viewer.html?url="+encodeURIComponent(x.url);a.target="_blank";a.rel="noopener noreferrer";a.className=important?"important-item":"item";
+if(x.image){var im=document.createElement("img");im.src=x.image;im.alt=x.title||"";im.loading="lazy";im.referrerPolicy="no-referrer";im.onerror=function(){if(!this.dataset.p){this.dataset.p="1";this.src=proxy(x.image)}else this.remove()};a.appendChild(im)}
+var c=document.createElement("div");c.className=important?"":"content";var t=document.createElement("div");t.className=important?"important-title":"title";t.textContent=x.title||"";c.appendChild(t);
+if(!important&&x.summary){var s=document.createElement("div");s.className="summary";s.textContent=x.summary;c.appendChild(s)}
+var m=document.createElement("div");m.className=important?"important-meta":"meta";m.textContent=(x.source||"")+" • "+new Date(x.published).toLocaleString("fa-IR",{dateStyle:"short",timeStyle:"short"});c.appendChild(m);a.appendChild(c);return a}
+function render(items){list.innerHTML="";importantList.innerHTML="";if(!items.length){list.innerHTML='<div class="error">فعلاً مطلبی در این موضوع پیدا نشد.</div>';importantList.innerHTML='<div class="error">فعلاً مطلبی در این موضوع پیدا نشد.</div>';return}
+var important=items.slice(0,4),latest=items.slice(4,100);important.forEach(function(x){importantList.appendChild(makeItem(x,true))});latest.forEach(function(x){list.appendChild(makeItem(x,false))})}
+fetch("./data/news.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error();return r.json()}).then(function(data){var items=(data.items||[]).filter(function(x){return x&&x.title&&x.published&&x.url&&Array.isArray(x.topics)&&x.topics.indexOf(topic)!==-1});items.sort(function(a,b){return new Date(b.published)-new Date(a.published)});render(items)}).catch(function(){list.innerHTML='<div class="error">دریافت خبرها انجام نشد.</div>';importantList.innerHTML='<div class="error">دریافت خبرها انجام نشد.</div>'});
 })();
 </script>
 </body>
