@@ -1,9 +1,9 @@
 name: Evren Nexus News Collector
-# Initial activation
+# News collector — reliable schedule
 
 on:
   schedule:
-    - cron: "3,8,13,18,23,28,33,38,43,48,53,58 * * * *"
+    - cron: "*/5 * * * *"
   push:
     paths:
       - "scripts/news_collector.py"
@@ -19,14 +19,15 @@ concurrency:
 
 jobs:
   collect:
-    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Collect news
         timeout-minutes: 8
         run: python scripts/news_collector.py
+
       - name: Commit news database
         run: |
           git config user.name "evrenexus-news-bot"
