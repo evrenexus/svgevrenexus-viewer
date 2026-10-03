@@ -10,6 +10,8 @@ import xml.etree.ElementTree as ET
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/"data"/"news.json"
 UA="Mozilla/5.0 (compatible; EvrenNexusNewsBot/1.0; +https://evrenexus.github.io/svgevrenexus-viewer/)"
+LATEST_PER_SOURCE=14
+FEED_SCAN_LIMIT=50
 
 SOURCES=[
  {"name":"دنیای اقتصاد","category":"اقتصاد و سرمایه‌گذاری","site":"https://donya-e-eqtesad.com/","feeds":["https://donya-e-eqtesad.com/feeds/"]},
@@ -131,7 +133,7 @@ def parse(data,source):
     atom=root.tag.lower().endswith("feed")
     nodes=[n for n in root.iter() if n.tag.split("}")[-1].lower()==("entry" if atom else "item")]
     out=[]
-    for n in nodes[:30]:
+    for n in nodes[:FEED_SCAN_LIMIT]:
         def get(tag):
             wanted=tag.split("}")[-1].lower()
             for x in n.iter():
@@ -159,7 +161,8 @@ def parse(data,source):
         m=re.search(r'<img[^>]+(?:src|data-src)=["\']([^"\']+)',desc,re.I)
         if m: image=urljoin(link,m.group(1))
         out.append({"id":hashlib.sha256(link.encode()).hexdigest()[:20],"title":txt(title),"summary":txt(desc)[:500],"url":link,"image":image,"source":source["name"],"category":source["category"],"published":parse_date(date)},"topics":[]})
-    return out
+    out.sort(key=lambda x: date_key(x.get("published","")), reverse=True)
+    return out[:LATEST_PER_SOURCE]
 
 def is_valid_item(item, now_ts):
     url=str(item.get("url","")).strip()
