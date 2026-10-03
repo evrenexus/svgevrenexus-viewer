@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>رودخانه خبری | Evren Nexus</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;padding:0;background:#f5f6f7;font-family:Vazir,Tahoma,Arial,sans-serif;color:#28323a}
+#page{width:850px;max-width:100%;margin:0 auto;padding-top:143px}#river{width:610px;margin:0 auto 30px;background:#fff;border:1px solid #dfe2e4;overflow:hidden}
+#river-head{padding:12px 14px;border-bottom:2px solid #d9232e;background:#fff}#river-title{font-size:15px;font-weight:700}#river-subtitle{margin-top:4px;font-size:9px;color:#8a9298}
+.item{display:flex;gap:10px;padding:11px;border-bottom:1px solid #edf0f1;text-decoration:none;color:#343b40;background:#fff}.item:hover{background:#fafafa}
+.item img{width:125px;min-width:125px;height:78px;object-fit:cover;background:#eee}.content{min-width:0;flex:1}.title{font-size:11px;font-weight:700;line-height:1.9;color:#20272d}.summary{font-size:9.5px;line-height:1.8;color:#737a7f;margin-top:3px}.meta{font-size:8.5px;color:#969da2;margin-top:6px}
+.loading,.error{padding:25px;text-align:center;color:#777;font-size:10px}
+@media(max-width:700px){#page{width:100%;padding:136px 8px 15px}#river{width:100%;margin:0 auto}}
+@media(max-width:430px){#page{padding-top:132px}#river-head{padding:10px}#river-title{font-size:13px}.item img{width:100px;min-width:100px;height:68px}}
+</style></head>
+<body><script src="./Evrenexus-header.js"></script>
+<main id="page"><section id="river"><div id="river-head"><div id="river-title">در حال بارگذاری...</div><div id="river-subtitle">جدیدترین مطالب مرتبط</div></div><div id="list"><div class="loading">در حال دریافت مطالب...</div></div></section></main>
+<script>
+(function(){
+"use strict";
+var TOPICS={economy:"اقتصاد",markets:"بازار و سرمایه‌گذاری","currency-gold":"ارز و طلا","real-estate":"مسکن",technology:"فناوری",ai:"هوش مصنوعی",health:"پزشکی و سلامت",auto:"خودرو","science-life":"علم و سبک زندگی"};
+var q=new URLSearchParams(location.search),topic=q.get("topic")||"economy";if(!TOPICS[topic])topic="economy";
+document.getElementById("river-title").textContent="رودخانه خبری "+TOPICS[topic];
+var list=document.getElementById("list");
+function proxy(v){return v?"https://images.weserv.nl/?url="+encodeURIComponent(v):""}
+function render(items){list.innerHTML="";if(!items.length){list.innerHTML='<div class="error">فعلاً مطلبی در این موضوع پیدا نشد.</div>';return}
+items.forEach(function(x){var a=document.createElement("a");a.className="item";a.href="./viewer.html?url="+encodeURIComponent(x.url);a.target="_blank";a.rel="noopener noreferrer";
+if(x.image){var im=document.createElement("img");im.src=x.image;im.alt=x.title||"";im.loading="lazy";im.referrerPolicy="no-referrer";im.onerror=function(){if(!this.dataset.p){this.dataset.p="1";this.src=proxy(x.image)}else this.remove()};a.appendChild(im)}
+var c=document.createElement("div");c.className="content";var t=document.createElement("div");t.className="title";t.textContent=x.title||"";c.appendChild(t);
+if(x.summary){var s=document.createElement("div");s.className="summary";s.textContent=x.summary;c.appendChild(s)}
+var m=document.createElement("div");m.className="meta";m.textContent=(x.source||"")+" • "+new Date(x.published).toLocaleString("fa-IR",{dateStyle:"short",timeStyle:"short"});c.appendChild(m);a.appendChild(c);list.appendChild(a)})}
+fetch("./data/news.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error();return r.json()}).then(function(data){
+var items=(data.items||[]).filter(function(x){return x&&x.title&&x.published&&x.url&&Array.isArray(x.topics)&&x.topics.indexOf(topic)!==-1});
+items.sort(function(a,b){return new Date(b.published)-new Date(a.published)});render(items.slice(0,100))
+}).catch(function(){list.innerHTML='<div class="error">دریافت خبرها انجام نشد.</div>'});
+})();
+</script></body></html>
