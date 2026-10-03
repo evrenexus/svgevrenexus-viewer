@@ -17,9 +17,9 @@ var css=`
 .Evrenxus-ticker-item{display:inline-flex;align-items:center;margin-left:30px;height:31px;white-space:nowrap}
 .Evrenxus-ticker-item .symbol{color:#aeb9c1;margin-left:6px}.Evrenxus-ticker-item .price{color:#fff;direction:ltr}
 .Evrenxus-up{color:#55cf8a;margin-right:5px}.Evrenxus-down{color:#ff7474;margin-right:5px}
-.Evrenxus-row-label{position:absolute;left:0;top:0;width:78px;height:31px;display:flex;align-items:center;justify-content:center;background:#101b23;color:#aeb9c1;font-size:8px;z-index:4;direction:rtl}
+
 @keyframes EvrenxusTickerMove{from{transform:translateX(0)}to{transform:translateX(50%)}}
-.Evrenxus-datetime{display:inline-flex;align-items:center;justify-content:center;gap:4px;width:105px;min-width:105px;height:31px;margin-left:30px;background:#101b23;color:#fff;font-size:8px;white-space:nowrap;direction:rtl}
+
 #Evrenxus-header-row2{height:51px;display:flex;align-items:center;direction:rtl;background:#fff}
 #Evrenxus-main-menu{height:51px;display:flex;align-items:stretch;justify-content:flex-start;direction:rtl;overflow:hidden;white-space:nowrap;flex:1;min-width:0}
 #Evrenxus-main-menu a{height:51px;padding:0 7px;display:flex;align-items:center;color:#303a41;text-decoration:none;font-size:10.5px;font-weight:700;border-left:1px solid #edf0f2;flex-shrink:0;position:relative}
@@ -31,8 +31,8 @@ var css=`
 #Evrenxus-property-search-form{display:flex;align-items:center;gap:4px}#Evrenxus-property-budget{width:49px;height:24px;border:1px solid #cbd3d8;background:#fff;text-align:center;direction:ltr;font-size:10px;outline:none}
 #Evrenxus-property-search-button{height:24px;padding:0 7px;border:0;background:#d9232e;color:#fff;font-family:Vazir,Tahoma,sans-serif;font-size:9px;font-weight:700;cursor:pointer}
 #Evrenxus-property-search-error{display:none;position:absolute;right:5px;top:38px;color:#c3212b;font-size:9px;white-space:nowrap;background:#fff;padding:3px 6px;border:1px solid #ead0d3;z-index:20}
-@media(max-width:700px){#Evrenxus-header{width:100%;left:0;transform:none;height:133px}#Evrenxus-header-row1{height:86px}.Evrenxus-header-brand{width:92px;height:86px}.Evrenxus-brand{font-size:10px}#Evrenxus-market-tickers{height:86px;margin-right:92px}.Evrenxus-ticker,.Evrenxus-ticker-window,.Evrenxus-ticker-track{height:28.66px}.Evrenxus-datetime{width:82px;height:28.66px;font-size:7px}.Evrenxus-row-label{width:58px;height:28.66px;font-size:7px}#Evrenxus-header-row2{height:47px}#Evrenxus-main-menu{height:47px;overflow-x:auto}#Evrenxus-main-menu a{height:47px;padding:0 8px;font-size:9px;background:#d9232e;color:#fff}#Evrenxus-property-search{width:190px;flex-basis:190px;height:32px}}
-@media(max-width:430px){#Evrenxus-header{height:128px}#Evrenxus-header-row1{height:82px}.Evrenxus-header-brand{width:82px;height:82px}#Evrenxus-market-tickers{height:82px;margin-right:82px}.Evrenxus-ticker,.Evrenxus-ticker-window,.Evrenxus-ticker-track{height:27.33px}.Evrenxus-datetime,.Evrenxus-row-label{height:27.33px}.Evrenxus-row-label{width:52px;font-size:6.5px}#Evrenxus-header-row2{height:46px}#Evrenxus-main-menu{height:46px}#Evrenxus-main-menu a{height:46px;padding:0 7px;font-size:8.5px}#Evrenxus-property-search{width:166px;flex-basis:166px}}
+@media(max-width:700px){#Evrenxus-header{width:100%;left:0;transform:none;height:133px}#Evrenxus-header-row1{height:86px}.Evrenxus-header-brand{width:92px;height:86px}.Evrenxus-brand{font-size:10px}#Evrenxus-market-tickers{height:86px;margin-right:92px}.Evrenxus-ticker,.Evrenxus-ticker-window,.Evrenxus-ticker-track{height:28.66px}#Evrenxus-header-row2{height:47px}#Evrenxus-main-menu{height:47px;overflow-x:auto}#Evrenxus-main-menu a{height:47px;padding:0 8px;font-size:9px;background:#d9232e;color:#fff}#Evrenxus-property-search{width:190px;flex-basis:190px;height:32px}}
+@media(max-width:430px){#Evrenxus-header{height:128px}#Evrenxus-header-row1{height:82px}.Evrenxus-header-brand{width:82px;height:82px}#Evrenxus-market-tickers{height:82px;margin-right:82px}.Evrenxus-ticker,.Evrenxus-ticker-window,.Evrenxus-ticker-track{height:27.33px}.Evrenxus-datetime,#Evrenxus-header-row2{height:46px}#Evrenxus-main-menu{height:46px}#Evrenxus-main-menu a{height:46px;padding:0 7px;font-size:8.5px}#Evrenxus-property-search{width:166px;flex-basis:166px}}
 `;
 var style=document.createElement("style");style.id="Evrenxus-header-style";style.textContent=css;document.head.appendChild(style);
 
@@ -64,9 +64,9 @@ var wrap=document.createElement("div");wrap.innerHTML=`
 <div id="Evrenxus-header-row1">
 <div class="Evrenxus-header-brand"><a href="https://evrenexus.blogfa.com/" target="_top" class="Evrenxus-brand">Evren Nexus</a></div>
 <div id="Evrenxus-market-tickers">
-<div class="Evrenxus-ticker"><div class="Evrenxus-ticker-window"><div id="Evrenxus-metals-track" class="Evrenxus-ticker-track"><span class="Evrenxus-datetime"><span id="Evrenxus-metals-date"></span><span>|</span><span id="Evrenxus-metals-time"></span></span><span class="Evrenxus-ticker-item">TGJU | طلا، نقره، فلزات و انرژی</span></div></div></div>
-<div class="Evrenxus-ticker"><div class="Evrenxus-ticker-window"><div id="Evrenxus-currency-track" class="Evrenxus-ticker-track"><span class="Evrenxus-datetime"><span id="Evrenxus-currency-date"></span><span>|</span><span id="Evrenxus-currency-time"></span></span><span class="Evrenxus-ticker-item">TGJU | ارزهای خارجی</span></div></div></div>
-<div class="Evrenxus-ticker"><div class="Evrenxus-ticker-window"><div id="Evrenxus-crypto-track" class="Evrenxus-ticker-track"><span class="Evrenxus-datetime"><span id="Evrenxus-crypto-date"></span><span>|</span><span id="Evrenxus-crypto-time"></span></span><span class="Evrenxus-ticker-item">Nobitex | رمزارزها</span></div></div></div>
+<div class="Evrenxus-ticker"><div class="Evrenxus-ticker-window"><div id="Evrenxus-metals-track" class="Evrenxus-ticker-track"><span class="Evrenxus-ticker-item">در حال دریافت...</span></div></div></div>
+<div class="Evrenxus-ticker"><div class="Evrenxus-ticker-window"><div id="Evrenxus-currency-track" class="Evrenxus-ticker-track"><span class="Evrenxus-ticker-item">در حال دریافت...</span></div></div></div>
+<div class="Evrenxus-ticker"><div class="Evrenxus-ticker-window"><div id="Evrenxus-crypto-track" class="Evrenxus-ticker-track"><span class="Evrenxus-ticker-item">در حال دریافت...</span></div></div></div>
 </div></div>
 <div id="Evrenxus-header-row2">
 <nav id="Evrenxus-main-menu"><a class="active" target="_top" href="https://evrenexus.blogfa.com/">خانه</a><a target="_top" href="https://evrenexus.blogfa.com/profile">درباره من</a><a href="#">اقتصاد</a><a href="#">طلا</a><a href="#">ارز</a><a href="#">مسکن</a><a href="#">بورس</a><a href="#">کریپتو</a><a href="#">خودرو</a><a href="#">تحلیل بازار</a></nav>
@@ -86,7 +86,7 @@ var metal=document.getElementById("Evrenxus-metals-track"),cur=document.getEleme
 function stamp(prefix,iso){var n=iso?new Date(iso):new Date(),d=document.getElementById("Evrenxus-"+prefix+"-date"),t=document.getElementById("Evrenxus-"+prefix+"-time");if(!d||!t)return;d.textContent=new Intl.DateTimeFormat("fa-IR-u-ca-persian",{timeZone:"Asia/Tehran",year:"numeric",month:"2-digit",day:"2-digit"}).format(n);t.textContent=new Intl.DateTimeFormat("en-GB",{timeZone:"Asia/Tehran",hour:"2-digit",minute:"2-digit",hour12:false}).format(n)}
 function fmt(v){return v==null?"-":new Intl.NumberFormat("en-US",{maximumFractionDigits:2}).format(Number(v))}
 function item(x){var v=x.price!=null?x.price:x.priceIRT,c=x.changePercent!=null?x.changePercent:x.changePercent24h,cl=Number(c)>0?"Evrenxus-up":Number(c)<0?"Evrenxus-down":"",ar=Number(c)>0?"▲":Number(c)<0?"▼":"";return '<span class="Evrenxus-ticker-item"><span class="symbol">'+x.name+'</span><span class="price">'+fmt(v)+'</span><span class="'+cl+'">'+ar+(Number.isFinite(Number(c))?fmt(c)+"%":"")+'</span></span>'}
-function render(track,prefix,groups,iso){var html=groups.flat().map(item).join("");track.innerHTML='<span class="Evrenxus-datetime"><span id="Evrenxus-'+prefix+'-date"></span><span>|</span><span id="Evrenxus-'+prefix+'-time"></span></span>'+(html||'<span class="Evrenxus-ticker-item">اطلاعات در دسترس نیست</span>');stamp(prefix,iso)}
+function render(track,prefix,groups,iso){var html=groups.flat().map(item).join("");track.innerHTML=html||'<span class="Evrenxus-ticker-item">اطلاعات در دسترس نیست</span>';}
 Promise.all([
 fetch("https://evrenexus.github.io/svgevnexus-viewer/market-data/tgju.json?v="+Date.now(),{cache:"no-store"}).then(r=>r.json()),
 fetch("https://evrenexus.github.io/svgevnexus-viewer/market-data/nobitex.json?v="+Date.now(),{cache:"no-store"}).then(r=>r.json())
