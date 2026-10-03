@@ -3,7 +3,7 @@ name: Evren Nexus News Collector
 
 on:
   schedule:
-    - cron: "*/15 * * * *"
+    - cron: "7,22,37,52 * * * *"
   push:
     paths:
       - "scripts/news_collector.py"
