@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import json, re, hashlib, html
+import json, re, hashlib, html, time
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.request import Request, urlopen
@@ -27,8 +27,16 @@ SOURCES=[
 
 def fetch(url):
     req=Request(url,headers={"User-Agent":UA,"Accept":"application/rss+xml,application/atom+xml,application/xml,text/html;q=0.9,*/*;q=0.5"})
-    with urlopen(req,timeout=20) as r:
-        return r.read(), r.headers.get("content-type","")
+    last=None
+    for attempt in range(3):
+        try:
+            with urlopen(req,timeout=25) as r:
+                return r.read(), r.headers.get("content-type","")
+        except Exception as e:
+            last=e
+            if attempt < 2:
+                time.sleep(2 * (attempt + 1))
+    raise last
 
 def discover(home):
     data,_=fetch(home)
@@ -49,16 +57,18 @@ def txt(v):
 def parse(data,source):
     root=ET.fromstring(data)
     atom=root.tag.lower().endswith("feed")
-    nodes=list(root.findall("item")) if not atom else list(root.findall("{http://www.w3.org/2005/Atom}entry"))
+    nodes=[n for n in root.iter() if n.tag.split("}")[-1].lower()==("entry" if atom else "item")]
     out=[]
     for n in nodes[:30]:
         def get(tag):
-            x=n.find(tag)
-            if x is not None and x.text: return x.text.strip()
+            wanted=tag.split("}")[-1].lower()
+            for x in n.iter():
+                if x.tag.split("}")[-1].lower()==wanted and x.text:
+                    return x.text.strip()
             return ""
         title=get("title") or get("{http://www.w3.org/2005/Atom}title")
         if atom:
-            links=n.findall("{http://www.w3.org/2005/Atom}link")
+            links=[x for x in n.iter() if x.tag.split("}")[-1].lower()=="link"]
             link=next((x.attrib.get("href","") for x in links if x.attrib.get("rel","alternate")=="alternate"),"")
             link=link or (links[0].attrib.get("href","") if links else "")
             date=get("{http://www.w3.org/2005/Atom}published") or get("{http://www.w3.org/2005/Atom}updated")
