@@ -20,6 +20,11 @@ function init(){
     ".Evrenxus-asriran-content{flex:1;min-width:0}"+
     ".Evrenxus-asriran-title{margin:0 0 4px;color:#20272d;font-size:10px;font-weight:700;line-height:1.8}"+
     ".Evrenxus-asriran-summary{color:#737a7f;font-size:9px;line-height:1.7}"+
+    "#Evrenxus-economic-news:has(#Evrenxus-asriran-list){width:200px;max-width:200px}"+
+    "#Evrenxus-economic-news:has(#Evrenxus-asriran-list) .Evrenxus-asriran-item{display:block;padding:9px 8px}"+
+    "#Evrenxus-economic-news:has(#Evrenxus-asriran-list) .Evrenxus-asriran-image{display:block;width:100%;min-width:0;height:105px;margin:0 0 7px;object-fit:cover}"+
+    "#Evrenxus-economic-news:has(#Evrenxus-asriran-list) .Evrenxus-asriran-title{font-size:10px;line-height:1.8}"+
+    "#Evrenxus-economic-news:has(#Evrenxus-asriran-list) .Evrenxus-asriran-summary{font-size:9px;line-height:1.7}"+
     "#Evrenxus-donya-box{width:610px;max-width:610px;box-sizing:border-box;margin:20px 0 25px;background:#fff;border:1px solid #dfe2e4;overflow:hidden;display:block;clear:none}"+
     "#Evrenxus-donya-box .Evrenxus-donya-heading{padding:9px 10px;border-bottom:1px solid #e1e4e6;color:#202c35;font-size:12px;font-weight:700}"+
     "#Evrenxus-donya-box .Evrenxus-donya-heading:before{content:'';display:inline-block;width:4px;height:14px;margin-left:7px;vertical-align:-2px;background:#d9232e}"+
