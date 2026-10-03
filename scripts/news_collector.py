@@ -52,13 +52,20 @@ BLOCKED_TITLE_TERMS=[
  "آیت‌الله خامنه‌ای","آیت الله خامنه ای","آیت‌الله خامنه ای","آیت الله خامنه‌ای",
  "حضرت آیت‌الله خامنه‌ای","حضرت آیت الله خامنه ای",
  "امام خامنه‌ای","امام خامنه ای","رهبر انقلاب","رهبری انقلاب",
- "آقا","آقای خامنه‌ای","آقای خامنه ای"
+ "آقا","آقای خامنه‌ای","آقای خامنه ای",
+ "جان فدا","جان‌فدا","جانفدا",
+ "بسیج","بسیجی","بسیجیان","بسیج مردمی",
+ "سپاه","سپاهی","سپاهیان","سپاه پاسداران","سپاه پاسداران انقلاب اسلامی",
+ "ترامپ","ترامپِ","ترامپ‌ها","ترامپها",
+ "هگست","پیت هگست","پیت‌هگست",
+ "نتانیاهو","بنیامین نتانیاهو","بنیامین نتانیاهو",
+ "روبیو","مارکو روبیو","مارکو‌روبیو"
 ]
 
 def normalize_text(value):
     value=str(value or "").replace("ي","ی").replace("ى","ی").replace("ك","ک").replace("ۀ","ه")
     value=value.replace("‌"," ").replace("‏"," ").replace("‎"," ")
-    return re.sub(r"\\s+"," ",value).strip().lower()
+    return re.sub(r"\s+"," ",value).strip().lower()
 
 def is_blocked_title(item):
     title=normalize_text(item.get("title",""))
@@ -105,7 +112,7 @@ def discover(home):
     return list(dict.fromkeys(found))
 
 def txt(v):
-    return re.sub(r"\\s+"," ",html.unescape(re.sub(r"<[^>]+>"," ",v or ""))).strip()
+    return re.sub(r"\s+"," ",html.unescape(re.sub(r"<[^>]+>"," ",v or ""))).strip()
 
 def parse_date(value):
     value=txt(value)
