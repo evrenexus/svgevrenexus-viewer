@@ -115,47 +115,117 @@ def parse(data,source):
         out.append({"id":hashlib.sha256(link.encode()).hexdigest()[:20],"title":txt(title),"summary":txt(desc)[:500],"url":link,"image":image,"source":source["name"],"category":source["category"],"published":parse_date(date)})
     return out
 
+def is_valid_item(item, now_ts):
+    url=str(item.get("url","")).strip()
+    title=str(item.get("title","")).strip()
+    published=str(item.get("published","")).strip()
+    if not title or not re.match(r"^https?://",url):
+        return False
+    # Never keep feed/homepage URLs or synthetic future records.
+    for s in SOURCES:
+        base=s["site"].rstrip("/")
+        if url.rstrip("/") in {base,base+"/feed",base+"/feeds",base+"/rss"}:
+            return False
+    ts=date_key(published)
+    if ts <= 0:
+        return False
+    if ts > now_ts + 300:
+        return False
+    return True
+
 def main():
+    now=datetime.now(timezone.utc)
+    now_ts=now.timestamp()
     old=json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else {"updated":"","items":[],"sources":[]}
-    existing={x["id"]:x for x in old.get("items",[])}
+
+    # Start from the existing database, but purge test/homepage/future records.
+    existing={}
+    for x in old.get("items",[]):
+        if isinstance(x,dict) and is_valid_item(x,now_ts):
+            existing[x["id"]]=x
+
     status=[]
     for s in SOURCES:
-        candidates=list(s["feeds"])
-        # Only try homepage autodiscovery if no explicit feed succeeds.
+        attempted_at=datetime.now(timezone.utc).isoformat()
         got=[]
+        errors=[]
+        candidates=list(s["feeds"])
+
+        # First try explicit feeds.
         for u in dict.fromkeys(candidates):
             try:
                 data,ctype=fetch(u)
                 if b"<rss" in data[:2000].lower() or b"<feed" in data[:2000].lower() or "xml" in ctype.lower():
-                    got=parse(data,s)
-                    if got: break
-            except Exception:
-                continue
+                    parsed=parse(data,s)
+                    if parsed:
+                        got=parsed
+                        break
+                    errors.append("feed parsed but contained no articles: "+u)
+                else:
+                    errors.append("not an RSS/Atom feed: "+u)
+            except Exception as e:
+                errors.append(type(e).__name__+": "+str(e)[:180])
+
+        # If explicit feeds fail, autodiscover.
+        discovered=[]
         if not got:
             try:
                 discovered=discover(s["site"])
-            except Exception:
-                discovered=[]
+            except Exception as e:
+                errors.append("discovery: "+type(e).__name__+": "+str(e)[:180])
+
             for u in dict.fromkeys(discovered):
                 try:
                     data,ctype=fetch(u)
                     if b"<rss" in data[:2000].lower() or b"<feed" in data[:2000].lower() or "xml" in ctype.lower():
-                        got=parse(data,s)
-                        if got: break
-                except Exception:
-                    continue
+                        parsed=parse(data,s)
+                        if parsed:
+                            got=parsed
+                            break
+                        errors.append("discovered feed parsed but contained no articles: "+u)
+                except Exception as e:
+                    errors.append(type(e).__name__+": "+str(e)[:180])
+
         for item in got:
-            existing[item["id"]]=item
-        status.append({"name":s["name"],"category":s["category"],"ok":bool(got),"items":len(got)})
-    items=list(existing.values())
-    items=[x for x in items if x.get("title") and re.match(r"^https?://",x.get("url",""))]
+            if is_valid_item(item,now_ts):
+                existing[item["id"]]=item
+
+        latest=max((date_key(x.get("published","")) for x in got if is_valid_item(x,now_ts)),default=0)
+        status.append({
+            "name":s["name"],
+            "category":s["category"],
+            "ok":bool(got),
+            "items":len([x for x in got if is_valid_item(x,now_ts)]),
+            "attempted_at":attempted_at,
+            "last_success_at":datetime.now(timezone.utc).isoformat() if got else "",
+            "last_article_published":datetime.fromtimestamp(latest,timezone.utc).isoformat() if latest else "",
+            "error":"" if got else (" | ".join(errors[-3:])[:600] if errors else "no feed found")
+        })
+
+    # Keep only real, dated articles from the last 7 days.
+    cutoff=now_ts-(7*24*60*60)
+    items=[x for x in existing.values()
+           if is_valid_item(x,now_ts) and date_key(x.get("published","")) >= cutoff]
     items.sort(key=lambda x:date_key(x.get("published","")),reverse=True)
     items=items[:300]
+
     if len(items) < 20:
-        print("WARNING: fewer than 20 real articles collected:", len(items))
+        print("WARNING: fewer than 20 real articles collected:",len(items))
+
     OUT.parent.mkdir(parents=True,exist_ok=True)
-    OUT.write_text(json.dumps({"updated":datetime.now(timezone.utc).isoformat(),"items":items,"sources":status},ensure_ascii=False,indent=2),encoding="utf-8")
+    payload={
+        "updated":now.isoformat(),
+        "run": {
+            "started_at":now.isoformat(),
+            "finished_at":datetime.now(timezone.utc).isoformat(),
+            "items_total":len(items)
+        },
+        "items":items,
+        "sources":status
+    }
+    OUT.write_text(json.dumps(payload,ensure_ascii=False,indent=2),encoding="utf-8")
     print("items:",len(items))
     print("sources:",status)
 
-if __name__=="__main__": main()
+if __name__=="__main__":
+    main()
