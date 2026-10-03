@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import json, re, hashlib, html, time
 from datetime import datetime, timezone
+from email.utils import parsedate_to_datetime
 from pathlib import Path
 from urllib.request import Request, urlopen
 from urllib.parse import urljoin
@@ -54,6 +55,31 @@ def discover(home):
 def txt(v):
     return re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", v or ""))).strip()
 
+def parse_date(value):
+    value=txt(value)
+    if not value:
+        return ""
+    try:
+        dt=parsedate_to_datetime(value)
+        if dt.tzinfo is None:
+            dt=dt.replace(tzinfo=timezone.utc)
+        return dt.astimezone(timezone.utc).isoformat()
+    except Exception:
+        pass
+    try:
+        dt=datetime.fromisoformat(value.replace("Z","+00:00"))
+        if dt.tzinfo is None:
+            dt=dt.replace(tzinfo=timezone.utc)
+        return dt.astimezone(timezone.utc).isoformat()
+    except Exception:
+        return ""
+
+def date_key(value):
+    try:
+        return datetime.fromisoformat(value.replace("Z","+00:00")).timestamp()
+    except Exception:
+        return 0.0
+
 def parse(data,source):
     root=ET.fromstring(data)
     atom=root.tag.lower().endswith("feed")
@@ -86,7 +112,7 @@ def parse(data,source):
         image=""
         m=re.search(r'<img[^>]+(?:src|data-src)=["\']([^"\']+)',desc,re.I)
         if m: image=urljoin(link,m.group(1))
-        out.append({"id":hashlib.sha256(link.encode()).hexdigest()[:20],"title":txt(title),"summary":txt(desc)[:500],"url":link,"image":image,"source":source["name"],"category":source["category"],"published":date})
+        out.append({"id":hashlib.sha256(link.encode()).hexdigest()[:20],"title":txt(title),"summary":txt(desc)[:500],"url":link,"image":image,"source":source["name"],"category":source["category"],"published":parse_date(date)})
     return out
 
 def main():
@@ -123,7 +149,7 @@ def main():
         status.append({"name":s["name"],"category":s["category"],"ok":bool(got),"items":len(got)})
     items=list(existing.values())
     items=[x for x in items if x.get("title") and re.match(r"^https?://",x.get("url",""))]
-    items.sort(key=lambda x:x.get("published",""),reverse=True)
+    items.sort(key=lambda x:date_key(x.get("published","")),reverse=True)
     items=items[:300]
     if len(items) < 20:
         print("WARNING: fewer than 20 real articles collected:", len(items))
