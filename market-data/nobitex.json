@@ -1,6 +1,69 @@
 {
   "source": "Nobitex",
-  "scrapedAt": null,
+  "sourcePage": "Nobitex price page",
+  "scrapedAt": "2026-10-03T06:32:39.927Z",
+  "scrapedAtTimezone": "UTC",
   "quoteCurrency": "IRT",
-  "markets": []
+  "markets": [
+    {
+      "symbol": "BTC",
+      "name": "بیت‌کوین",
+      "priceIRT": 22329206652,
+      "changePercent24h": 1.5
+    },
+    {
+      "symbol": "ETH",
+      "name": "اتریوم",
+      "priceIRT": 707000014,
+      "changePercent24h": 0.86
+    },
+    {
+      "symbol": "LTC",
+      "name": "لایت‌کوین",
+      "priceIRT": 18367620,
+      "changePercent24h": 3.11
+    },
+    {
+      "symbol": "USDT",
+      "name": "تتر",
+      "priceIRT": 263004,
+      "changePercent24h": 2.14
+    },
+    {
+      "symbol": "XRP",
+      "name": "ریپل",
+      "priceIRT": 392900,
+      "changePercent24h": 1.28
+    },
+    {
+      "symbol": "BNB",
+      "name": "بایننس‌کوین",
+      "priceIRT": 202009382,
+      "changePercent24h": 1
+    },
+    {
+      "symbol": "DOGE",
+      "name": "دوج‌کوین",
+      "priceIRT": 24586,
+      "changePercent24h": 1.03
+    },
+    {
+      "symbol": "TRX",
+      "name": "ترون",
+      "priceIRT": 88875,
+      "changePercent24h": 2.16
+    },
+    {
+      "symbol": "ADA",
+      "name": "کاردانو",
+      "priceIRT": 65126,
+      "changePercent24h": 1.5
+    },
+    {
+      "symbol": "SOL",
+      "name": "سولانا",
+      "priceIRT": 31521398,
+      "changePercent24h": 1.75
+    }
+  ]
 }
