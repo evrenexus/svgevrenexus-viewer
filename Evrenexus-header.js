@@ -22,7 +22,7 @@ var css=`
 
 #Evrenxus-header-row2{height:30px;display:flex;align-items:center;direction:rtl;background:#fff}
 #Evrenxus-main-menu{height:30px;display:flex;align-items:stretch;justify-content:flex-start;direction:rtl;overflow:hidden;white-space:nowrap;flex:1;min-width:0}
-#Evrenxus-main-menu a{height:30px;padding:0 7px;display:flex;align-items:center;color:#303a41;text-decoration:none;font-size:10.5px;font-weight:700;border-left:1px solid #edf0f2;flex-shrink:0;position:relative}
+#Evrenxus-main-menu a{height:30px;padding:0 5px;display:flex;align-items:center;color:#303a41;text-decoration:none;font-size:9.5px;font-weight:700;border-left:1px solid #edf0f2;flex-shrink:0;position:relative}
 #Evrenxus-main-menu a:first-child{color:#d9232e}
 #Evrenxus-main-menu a:hover{color:#d9232e;background:#fafafa}
 #Evrenxus-main-menu a:hover:after,#Evrenxus-main-menu a.active:after{content:"";position:absolute;right:7px;left:7px;bottom:0;height:3px;background:#d9232e}
