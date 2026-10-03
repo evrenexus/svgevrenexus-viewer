@@ -14,13 +14,12 @@
 @media(max-width:430px){#page{padding-top:132px}#river-head{padding:10px}#river-title{font-size:13px}.item img{width:100px;min-width:100px;height:68px}}
 </style></head>
 <body><script src="./Evrenexus-header.js"></script>
-<main id="page"><section id="river"><div id="river-head"><div id="river-title">در حال بارگذاری...</div><div id="river-subtitle">جدیدترین مطالب مرتبط</div></div><div id="list"><div class="loading">در حال دریافت مطالب...</div></div></section></main>
+<main id="page"><section id="river"><div id="list"><div class="loading">در حال دریافت مطالب...</div></div></section></main>
 <script>
 (function(){
 "use strict";
 var TOPICS={economy:"اقتصاد",markets:"بازار و سرمایه‌گذاری","currency-gold":"ارز و طلا","real-estate":"مسکن",technology:"فناوری",ai:"هوش مصنوعی",health:"پزشکی و سلامت",auto:"خودرو","science-life":"علم و سبک زندگی"};
 var q=new URLSearchParams(location.search),topic=q.get("topic")||"economy";if(!TOPICS[topic])topic="economy";
-document.getElementById("river-title").textContent="رودخانه خبری "+TOPICS[topic];
 var list=document.getElementById("list");
 function proxy(v){return v?"https://images.weserv.nl/?url="+encodeURIComponent(v):""}
 function render(items){list.innerHTML="";if(!items.length){list.innerHTML='<div class="error">فعلاً مطلبی در این موضوع پیدا نشد.</div>';return}
