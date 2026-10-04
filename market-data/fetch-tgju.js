@@ -1,5 +1,6 @@
 // manual refresh trigger 2026-10-04
 // trigger after workflow fix
+// workflow_run deployment test
 // Direct page scraper
 const fs = require("fs");
 const cheerio = require("cheerio");
