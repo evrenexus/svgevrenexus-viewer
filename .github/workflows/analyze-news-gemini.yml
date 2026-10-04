@@ -7,7 +7,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: analyze-news-gemini
+  group: data-writes
   cancel-in-progress: false
 
 jobs:
@@ -40,4 +40,16 @@ jobs:
           fi
 
           git commit -m "Update AI news analysis"
-          git push origin HEAD:main
+
+          for i in 1 2 3 4 5; do
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              echo "Push succeeded on attempt $i"
+              exit 0
+            fi
+
+            git rebase --abort 2>/dev/null || true
+            sleep $((i * 5))
+          done
+
+          echo "Push failed after retries"
+          exit 1
