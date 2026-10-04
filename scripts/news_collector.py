@@ -109,6 +109,81 @@ def assign_topics(item):
     fb=fallback_topic(item)
     return [fb] if fb else []
 
+
+# ---------- importance scoring ----------
+# Important news must represent a meaningful event or decision, not merely a
+# recent article containing a topic keyword.
+IMPORTANCE_STRONG=[
+    "استعفا","برکناری","انتصاب","عزل","ابلاغ","تصویب","تصمیم دولت",
+    "تصمیم بانک مرکزی","بانک مرکزی اعلام کرد","وزارت اقتصاد اعلام کرد",
+    "مجلس تصویب کرد","هیات دولت تصویب کرد","آیین نامه","بخشنامه",
+    "تحریم جدید","رفع تحریم","توافق","مذاکره","آتش بس",
+    "افزایش قیمت","کاهش قیمت","افزایش نرخ","کاهش نرخ","تغییر نرخ",
+    "نرخ بهره","نرخ سود","نرخ ارز","قیمت دلار","قیمت طلا","قیمت سکه",
+    "تورم","رشد اقتصادی","بودجه","مالیات","صادرات نفت","قیمت نفت",
+    "عرضه اولیه","افزایش سرمایه","شاخص کل","ریزش بورس","رشد بورس",
+    "قیمت مسکن","جهش قیمت مسکن","کاهش قیمت مسکن","وام مسکن",
+    "تصمیم جدید","قانون جدید","قانون","مصوبه"
+]
+IMPORTANCE_MEDIUM=[
+    "اعلام کرد","اعلام شد","خبر داد","ابلاغ شد","تغییر کرد","افزایش یافت",
+    "کاهش یافت","رکورد زد","رکورد جدید","پیش بینی","پیش‌بینی",
+    "گزارش جدید","آمار جدید","آخرین آمار","چشم انداز","چشم‌انداز"
+]
+IMPORTANCE_LOW_CONTEXT=[
+    "گفت","گفتند","اظهار کرد","اظهار داشت","تاکید کرد","تأکید کرد",
+    "نشست","دیدار","گفتگو","گفت‌وگو","مصاحبه","کارشناس","تحلیل"
+]
+IMPORTANCE_HIGH_IMPACT_TOPICS={"economy","markets","currency-gold","real-estate"}
+IMPORTANCE_CLICKBAIT=[
+    "ببینید","تماشا کنید","عکس","تصاویر","ویدئو","فیلم","عجیب",
+    "باورنکردنی","جالب","خواندنی","راز","ناگفته","اینفوگرافیک"
+]
+
+def importance_score(item):
+    title=normalize_text(item.get("title",""))
+    summary=normalize_text(item.get("summary",""))
+    text=title+" "+summary
+    score=0
+
+    # The headline carries most of the signal.
+    strong=sum(1 for k in IMPORTANCE_STRONG if _contains(title,k))
+    medium=sum(1 for k in IMPORTANCE_MEDIUM if _contains(title,k))
+    context=sum(1 for k in IMPORTANCE_LOW_CONTEXT if _contains(title,k))
+
+    score += min(strong,3)*6
+    score += min(medium,2)*3
+    score -= min(context,2)*2
+
+    # A concrete number/change usually makes an economic headline more material.
+    if re.search(r"\d+(?:\.\d+)?\s*(?:درصد|%|میلیون|میلیارد|هزار|همت|درصدی)", title):
+        score += 3
+    if re.search(r"(افزایش|کاهش|رشد|ریزش|جهش|رسید|شد)\b", title):
+        score += 2
+
+    # Topic alone is not enough. High-impact topics get a small boost only
+    # when the headline already contains an event signal.
+    topics=item.get("topics") or []
+    if any(t in IMPORTANCE_HIGH_IMPACT_TOPICS for t in topics):
+        if strong or medium:
+            score += 2
+
+    # Non-economic lifestyle/celebrity/clickbait material should not enter
+    # the "most important" box merely because it is recent.
+    if any(_contains(title,k) for k in IMPORTANCE_CLICKBAIT):
+        score -= 5
+
+    # A bare topic headline such as "قیمت خودرو امروز" is not important.
+    if strong==0 and medium==0:
+        score -= 2
+
+    return max(0,score)
+
+def assign_importance(item):
+    item["importance_score"]=importance_score(item)
+    item["important"]=item["importance_score"]>=8
+    return item
+
 # ---------- duplicate-news detection ----------
 DEDUP_STOPWORDS=set("از با به در برای که و یا یک این آن این‌که است شد شده هستند را راى روی رویِ درباره توسط بر تا نیز اما اگر پس علیه پس از خبر اخبار اعلام گزارش گزارشگر گفت گفتند کرد کرده کردند خواهد می‌شود شد".split())
 DEDUP_SUFFIXES=("‌های","های","‌ها","ها","‌ات","ات","‌ان","ان","‌ای","ای","ی")
@@ -402,7 +477,7 @@ def main():
                 except Exception as e: errors.append(type(e).__name__+": "+str(e)[:180])
         valid=[x for x in got if is_valid_item(x,now_ts)]
         for item in valid:
-            item["published"]=normalize_published(item.get("published","")); item["topics"]=assign_topics(item)
+            item["published"]=normalize_published(item.get("published","")); item["topics"]=assign_topics(item); assign_importance(item)
         latest=max((date_key(x.get("published","")) for x in valid),default=0)
         info={"name":s["name"],"category":s["category"],"ok":bool(valid),"items":len(valid),"attempted_at":attempted_at,"last_success_at":datetime.now(timezone.utc).isoformat() if valid else "","last_article_published":datetime.fromtimestamp(latest,TEHRAN_TZ).isoformat() if latest else "","error":"" if valid else (" | ".join(errors[-3:])[:600] if errors else "no feed found")}
         return valid,info
