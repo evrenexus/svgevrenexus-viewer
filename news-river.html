@@ -37,7 +37,7 @@ var q=new URLSearchParams(location.search),topic=q.get("topic")||"economy",searc
 var searchInput=document.getElementById("newsSearchInput"),searchButton=document.getElementById("newsSearchButton"),tagsHost=document.getElementById("newsTags"),importantTitle=document.getElementById("importantTitle");
 searchInput.value=searchTerm;
 var topicLabel=TOPICS[topic];
-importantTitle.textContent="مهم‌ترین اخبار "+topicLabel;
+importantTitle.innerHTML='<a class="Evrenxus-refresh-icon" href="./manual-update.html" target="_blank" rel="noopener noreferrer" title="به‌روزرسانی">↻</a>مهم‌ترین اخبار '+topicLabel;
 searchInput.placeholder="جستجوی اخبار "+topicLabel;
 document.title=searchTerm?"نتایج جستجو":TOPICS[topic];
 var list=document.getElementById("list"),importantList=document.getElementById("importantList");
