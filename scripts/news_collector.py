@@ -34,6 +34,8 @@ SOURCES=[
  {"name":"پیوست","category":"فناوری و علم","site":"https://peivast.com/","feeds":["https://peivast.com/feed/"]},
  {"name":"سلامت نیوز","category":"پزشکی و سلامت","site":"https://www.salamatnews.com/","feeds":["https://www.salamatnews.com/rss.xml"]},
  {"name":"پزشک سایت","category":"پزشکی و سلامت","site":"https://www.pezeshk-site.ir/","feeds":["https://www.pezeshk-site.ir/feed/"]},
+ {"name":"انتخاب","category":"اقتصاد و سرمایه‌گذاری","site":"https://www.entekhab.ir/","feeds":["https://www.entekhab.ir/fa/rss/1"]},
+ {"name":"فرارو","category":"اقتصاد و سرمایه‌گذاری","site":"https://fararu.com/","feeds":["https://fararu.com/fa/rss"]},
 ]
 
 TOPIC_RULES={
@@ -300,7 +302,7 @@ def parse(data,source):
                     candidate=x.attrib.get("url","")
                     if re.search(r"\.(?:jpe?g|png|webp|gif)(?:\?|$)",candidate,re.I):
                         image=urljoin(link,candidate); break
-        out.append({"id":hashlib.sha256(link.encode()).hexdigest()[:20],"title":txt(title),"summary":txt(desc)[:500],"url":link,"image":image,"source":source["name"],"category":source["category"],"published":parse_date(date),"topics":[]})
+        out.append({"id":hashlib.sha256(link.encode()).hexdigest()[:20],"title":txt(title),"summary":txt(desc)[:300],"url":link,"image":image,"source":source["name"],"category":source["category"],"published":parse_date(date),"topics":[]})
     out.sort(key=lambda x:date_key(x.get("published","")),reverse=True)
     return out[:LATEST_PER_SOURCE]
 
