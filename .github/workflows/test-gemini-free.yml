@@ -8,7 +8,7 @@ permissions:
 
 jobs:
   test:
-    name: Test Gemini Free API
+    name: Test Gemini API Access
     runs-on: ubuntu-latest
 
     steps:
@@ -30,43 +30,35 @@ jobs:
           import urllib.request
 
           api_key = os.environ["GEMINI_API_KEY"]
-          model = "gemini-3.5-flash-lite"
-
-          url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
-
-          payload = {
-              "contents": [{
-                  "parts": [{
-                      "text": (
-                          "برای تست Evren Nexus، فقط در یک جمله فارسی بگو: "
-                          "آیا «استعفای وزیر نفت اعلام شد» یک خبر مهم اقتصادی است؟ چرا؟"
-                      )
-                  }]
-              }],
-              "generationConfig": {
-                  "maxOutputTokens": 120
-              }
-          }
+          url = "https://generativelanguage.googleapis.com/v1beta/models"
 
           req = urllib.request.Request(
               url,
-              data=json.dumps(payload).encode("utf-8"),
-              headers={
-                  "Content-Type": "application/json",
-                  "x-goog-api-key": api_key,
-              },
-              method="POST",
+              headers={"x-goog-api-key": api_key},
+              method="GET",
           )
 
           try:
               with urllib.request.urlopen(req, timeout=60) as response:
                   data = json.load(response)
           except urllib.error.HTTPError as e:
-              print("Gemini HTTP error:", e.code)
+              print("Gemini models.list HTTP error:", e.code)
               print(e.read().decode("utf-8", "replace")[:4000])
               raise
 
-          answer = data["candidates"][0]["content"]["parts"][0]["text"]
-          print("Gemini response:")
-          print(answer)
+          models = data.get("models", [])
+          print(f"Gemini returned {len(models)} models.")
+
+          for item in models:
+              name = item.get("name", "")
+              methods = item.get("supportedGenerationMethods", [])
+              if "generateContent" in methods:
+                  print(f"AVAILABLE: {name}")
+
+          target = "models/gemini-3.5-flash-lite"
+          if not any(item.get("name") == target and "generateContent" in item.get("supportedGenerationMethods", []) for item in models):
+              print(f"TARGET NOT AVAILABLE: {target}")
+              raise SystemExit(2)
+
+          print(f"TARGET AVAILABLE: {target}")
           PY
