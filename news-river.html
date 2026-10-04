@@ -30,7 +30,7 @@
 (function(){ "use strict";
 var TOPICS={economy:"اقتصادی",markets:"بازار و سرمایه‌گذاری","currency-gold":"ارز و طلا","real-estate":"مسکن",technology:"فناوری",ai:"هوش مصنوعی",health:"پزشکی و سلامت",auto:"خودرو","science-life":"علم و سبک زندگی"};
 var q=new URLSearchParams(location.search),topic=q.get("topic")||"economy",searchTerm=(q.get("q")||"").trim();if(!TOPICS[topic])topic="economy";
-var topicName=document.getElementById("topicName"),searchInput=document.getElementById("newsSearchInput"),searchButton=document.getElementById("newsSearchButton"),tagsHost=document.getElementById("newsTags");
+var searchInput=document.getElementById("newsSearchInput"),searchButton=document.getElementById("newsSearchButton"),tagsHost=document.getElementById("newsTags");
 searchInput.value=searchTerm;
 topicName.textContent=searchTerm?"نتایج جستجو":TOPICS[topic];document.title=searchTerm?"نتایج جستجو":TOPICS[topic];
 var list=document.getElementById("list"),importantList=document.getElementById("importantList");
