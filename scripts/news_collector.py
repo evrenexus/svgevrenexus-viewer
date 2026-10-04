@@ -269,16 +269,16 @@ def extract_article_text(url):
         with urlopen(req,timeout=SOURCE_FETCH_TIMEOUT) as r:
             data=r.read(1800000)
         raw=data.decode("utf-8","ignore")
-        raw=re.sub(r"(?is)<(script|style|noscript|svg|iframe|nav|footer|header)[^>]*>.*?</\\1>"," ",raw)
+        raw=re.sub(r"(?is)<(script|style|noscript|svg|iframe|nav|footer|header)[^>]*>.*?</\1>"," ",raw)
         # Prefer the semantic article/main container, then fall back to the full body.
         candidates=[]
-        for pat in (r"(?is)<article\\b[^>]*>(.*?)</article>",r"(?is)<main\\b[^>]*>(.*?)</main>",r"(?is)<div[^>]+(?:class|id)=[\"'][^\"']*(?:article|post|news|content)[^\"']*[\"'][^>]*>(.*?)</div>"):
+        for pat in (r"(?is)<article\b[^>]*>(.*?)</article>",r"(?is)<main\b[^>]*>(.*?)</main>",r"(?is)<div[^>]+(?:class|id)=[\"'][^\"']*(?:article|post|news|content)[^\"']*[\"'][^>]*>(.*?)</div>"):
             candidates.extend(re.findall(pat,raw))
         body=max(candidates,key=len) if candidates else raw
-        body=re.sub(r"(?is)<(p|br|li|h[1-6])[^>]*>", "\\n", body)
+        body=re.sub(r"(?is)<(p|br|li|h[1-6])[^>]*>", "\n", body)
         body=re.sub(r"(?is)</(p|br|li|h[1-6])>", "\\n", body)
         text=txt(body)
-        text=re.sub(r"\\n{3,}","\\n\\n",text)
+        text=re.sub(r"\n{3,}","\\n\\n",text)
         # Drop very short extraction results that are probably navigation/error pages.
         return text[:30000] if len(text)>=300 else ""
     except Exception:
