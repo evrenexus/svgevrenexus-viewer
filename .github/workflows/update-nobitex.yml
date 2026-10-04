@@ -1,13 +1,14 @@
-# Market data workflow — keep schedule active
+# Market data workflow — hourly refresh
 name: Update Nobitex Crypto Data
 
 on:
   schedule:
-    - cron: "1,16,31,46 * * * *"
+    - cron: "27 * * * *"
   workflow_dispatch:
   push:
     paths:
       - "market-data/fetch-nobitex.js"
+      - ".github/workflows/update-nobitex.yml"
 
 permissions:
   contents: write
