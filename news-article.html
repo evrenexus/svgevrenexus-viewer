@@ -32,7 +32,8 @@ function render(x){
  document.title=(x.title||"خبر")+" | Evren Nexus";
  var html='<h1 class="article-title">'+esc(x.title)+'</h1>';
  var su=safeUrl(x.url);
- html+='<div class="article-source-box">منبع خبر: '+esc(x.source||"نامشخص")+(su?' — <a href="'+esc(su)+'" target="_blank" rel="noopener noreferrer">مشاهده خبر اصلی</a>':"")+"</div>";
+ var reader=su?"./viewer.html?url="+encodeURIComponent(su):"";
+ html+='<div class="article-source-box">منبع خبر: '+esc(x.source||"نامشخص")+(reader?' — <a href="'+esc(reader)+'" target="_blank" rel="noopener noreferrer">مشاهده در خبرخوان Evren Nexus</a>':"")+"</div>";
  html+='<div class="article-meta">'+esc(date(x.published))+'</div>';
  if(x.image){var im=safeUrl(x.image);if(im)html+='<img class="article-image" src="'+esc(im)+'" alt="'+esc(x.title)+'" loading="eager" referrerpolicy="no-referrer">'}
  var paras=String(x.content||"").split(/\n\s*\n/).filter(Boolean);
