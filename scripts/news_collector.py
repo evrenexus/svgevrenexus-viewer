@@ -6,6 +6,7 @@ from zoneinfo import ZoneInfo
 from email.utils import parsedate_to_datetime
 from pathlib import Path
 from urllib.request import Request, urlopen
+from urllib.error import HTTPError
 from urllib.parse import urljoin
 import xml.etree.ElementTree as ET
 
@@ -113,7 +114,7 @@ def normalize_text(value):
 
 def is_blocked_title(item):
     title=normalize_text(item.get("title",""))
-    return any(normalize_text(term) in title for term in BLOCKED_TITLE_TERMS)
+    return any(_contains(title,term) for term in BLOCKED_TITLE_TERMS)
 
 def _contains(text, phrase):
     phrase=normalize_text(phrase)
@@ -193,6 +194,13 @@ def classify_topics(item):
         if len(topics)>=2:
             break
     return topics
+def assign_topics(item):
+    topics=classify_topics(item)
+    if topics:
+        return topics
+    fb=fallback_topic(item)
+    return [fb] if fb else []
+
 def fetch(url):
     req=Request(url,headers={"User-Agent":UA,"Accept":"application/rss+xml,application/atom+xml,application/xml,text/html;q=0.9,*/*;q=0.5"})
     last=None
@@ -202,6 +210,8 @@ def fetch(url):
                 return r.read(), r.headers.get("content-type","")
         except Exception as e:
             last=e
+            if isinstance(e,HTTPError) and e.code in (403,404,410):
+                break
             if attempt+1 < SOURCE_FETCH_RETRIES:
                 time.sleep(RETRY_BACKOFF_SECONDS)
     raise last
@@ -304,7 +314,7 @@ def enrich_images(items,limit=IMAGE_ENRICH_LIMIT):
     targets=[]
     for item in sorted(items,key=lambda x:date_key(x.get("published","")),reverse=True):
         current=str(item.get("image") or "")
-        needs=not current or "/thumbnail/" in current.lower() or "thumb" in current.lower()
+        needs=(not current or "/thumbnail/" in current.lower() or "thumb" in current.lower()) and item.get("image_tries",0)<3
         if needs:
             targets.append(item)
             if len(targets)>=limit: break
@@ -317,6 +327,8 @@ def enrich_images(items,limit=IMAGE_ENRICH_LIMIT):
             except Exception: better=""
             if better and better!=item.get("image",""):
                 item["image"]=better; changed+=1
+            else:
+                item["image_tries"]=item.get("image_tries",0)+1
     return changed
 
 def is_valid_item(item,now_ts):
@@ -337,7 +349,7 @@ def main():
     for x in old.get("items",[]):
         if isinstance(x,dict) and is_valid_item(x,now_ts):
             x["published"]=normalize_published(x.get("published",""))
-            x["topics"]=classify_topics(x); existing[x["id"]]=x
+            x["topics"]=assign_topics(x); existing[x["id"]]=x
     def collect_source(s):
         attempted_at=datetime.now(timezone.utc).isoformat(); got=[]; errors=[]
         for u in dict.fromkeys(s["feeds"]):
@@ -365,7 +377,7 @@ def main():
         valid=[x for x in got if is_valid_item(x,now_ts)]
         for item in valid:
             item["published"]=normalize_published(item.get("published",""))
-            item["topics"]=classify_topics(item) or ([fallback_topic(item)] if fallback_topic(item) else [])
+            item["topics"]=assign_topics(item)
         latest=max((date_key(x.get("published","")) for x in valid),default=0)
         info={"name":s["name"],"category":s["category"],"ok":bool(valid),"items":len(valid),"attempted_at":attempted_at,"last_success_at":datetime.now(timezone.utc).isoformat() if valid else "","last_article_published":datetime.fromtimestamp(latest,TEHRAN_TZ).isoformat() if latest else "","error":"" if valid else (" | ".join(errors[-3:])[:600] if errors else "no feed found")}
         return valid,info
@@ -376,7 +388,14 @@ def main():
         for future in as_completed(futures):
             try:
                 items,info=future.result()
-                for item in items: existing[item["id"]]=item
+                for item in items:
+                    prev=existing.get(item["id"])
+                    if prev:
+                        if prev.get("image") and not item.get("image"):
+                            item["image"]=prev["image"]
+                        if prev.get("image_tries"):
+                            item["image_tries"]=prev["image_tries"]
+                    existing[item["id"]]=item
                 status.append(info)
             except Exception as e:
                 status.append({"name":"unknown","category":"","ok":False,"items":0,"attempted_at":now.isoformat(),"last_success_at":"","last_article_published":"","error":type(e).__name__+": "+str(e)[:600]})
