@@ -111,7 +111,7 @@ def _contains(text, phrase):
     if " " not in phrase:
         if re.fullmatch(r"[a-z0-9]+", phrase):
             return re.search(r"(?<![a-z0-9])"+re.escape(phrase)+r"(?![a-z0-9])", text) is not None
-        return re.search(r"(?<!\\w)"+re.escape(phrase)+r"(?!\\w)", text, re.UNICODE) is not None
+        return re.search(r"(?<!\w)"+re.escape(phrase)+r"(?!\w)", text, re.UNICODE) is not None
     return phrase in text
 def classify_topics(item):
     title=normalize_text(item.get("title",""))
