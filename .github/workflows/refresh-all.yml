@@ -27,7 +27,8 @@ jobs:
         run: gh workflow run update-nobitex.yml --repo ${{ github.repository }} --ref main
 
       - name: Refresh Avrin listings
-        if: ${{ secrets.AVRIN_DISPATCH_TOKEN != '' }}
+        if: ${{ env.AVRIN_DISPATCH_TOKEN != '' }}
         env:
+          AVRIN_DISPATCH_TOKEN: ${{ secrets.AVRIN_DISPATCH_TOKEN }}
           GH_TOKEN: ${{ secrets.AVRIN_DISPATCH_TOKEN }}
         run: gh workflow run update-listings.yml --repo evrenexus/avrin-property-advisor --ref main
