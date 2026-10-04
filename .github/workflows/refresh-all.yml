@@ -1,0 +1,33 @@
+name: Refresh All Evren Nexus Data
+
+on:
+  workflow_dispatch:
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Refresh news
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run news-collector.yml --repo ${{ github.repository }} --ref main
+
+      - name: Refresh TGJU
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run update-tgju.yml --repo ${{ github.repository }} --ref main
+
+      - name: Refresh Nobitex
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run update-nobitex.yml --repo ${{ github.repository }} --ref main
+
+      - name: Refresh Avrin listings
+        if: ${{ secrets.AVRIN_DISPATCH_TOKEN != '' }}
+        env:
+          GH_TOKEN: ${{ secrets.AVRIN_DISPATCH_TOKEN }}
+        run: gh workflow run update-listings.yml --repo evrenexus/avrin-property-advisor --ref main
