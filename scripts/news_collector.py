@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# manual refresh trigger 2026-10-04
+#!/usr/bin/env python3
 import json, re, hashlib, html, time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
