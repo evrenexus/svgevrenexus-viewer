@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import json, os, time, hashlib
+import json, os, time, hashlib, random
 from pathlib import Path
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError, URLError
@@ -9,9 +9,10 @@ NEWS = ROOT / "data" / "news.json"
 OUT = ROOT / "data" / "news-ai.json"
 
 API = "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent"
-BATCH_SIZE = 25
+BATCH_SIZE = 12
+MAX_ITEMS = 50
 MAX_RETRIES = 5
-RETRY_SECONDS = 10
+RETRY_DELAYS = [5, 15, 30, 60, 90]
 
 def item_key(x):
     raw = x.get("id") or x.get("url") or x.get("title") or ""
@@ -41,21 +42,26 @@ def call_gemini(prompt, key):
             return json.loads(text)
         except HTTPError as e:
             body = ""
-            try: body = e.read().decode("utf-8", "ignore")[:1000]
-            except Exception: pass
+            try:
+                body = e.read().decode("utf-8", "ignore")[:2000]
+            except Exception:
+                pass
             last = f"HTTP {e.code}: {body}"
+            print(f"Gemini HTTP {e.code}: {body}")
             if e.code in (429, 500, 502, 503, 504):
-                wait = RETRY_SECONDS * (attempt + 1)
-                print(f"Gemini temporary HTTP {e.code}; retrying in {wait}s...")
-                time.sleep(wait)
+                delay = RETRY_DELAYS[min(attempt, len(RETRY_DELAYS)-1)] + random.uniform(0, 4)
+                print(f"Retry {attempt + 1}/{MAX_RETRIES} in {delay:.1f}s...")
+                time.sleep(delay)
                 continue
             raise RuntimeError(last)
         except (URLError, TimeoutError, ValueError, RuntimeError) as e:
             last = str(e)
+            print(f"Gemini temporary error: {last}")
             if attempt + 1 < MAX_RETRIES:
-                wait = RETRY_SECONDS * (attempt + 1)
-                print(f"Gemini temporary error; retrying in {wait}s...")
-                time.sleep(wait)
+                delay = RETRY_DELAYS[min(attempt, len(RETRY_DELAYS)-1)] + random.uniform(0, 4)
+                print(f"Retry {attempt + 1}/{MAX_RETRIES} in {delay:.1f}s...")
+                time.sleep(delay)
+
     raise RuntimeError(last)
 
 def save(ai):
@@ -65,36 +71,52 @@ def save(ai):
 
 def main():
     key = os.environ.get("GEMINI_API_KEY", "").strip()
-    if not key: raise SystemExit("GEMINI_API_KEY is missing")
+    if not key:
+        raise SystemExit("GEMINI_API_KEY is missing")
 
-    with NEWS.open(encoding="utf-8") as f: news = json.load(f)
+    with NEWS.open(encoding="utf-8") as f:
+        news = json.load(f)
     items = news.get("items", [])
 
     if OUT.exists():
         try:
-            with OUT.open(encoding="utf-8") as f: ai = json.load(f)
-        except Exception: ai = {}
-    else: ai = {}
+            with OUT.open(encoding="utf-8") as f:
+                ai = json.load(f)
+        except Exception:
+            ai = {}
+    else:
+        ai = {}
 
-    ai.setdefault("version", 1); ai.setdefault("updated", "")
-    ai.setdefault("items", {}); ai.setdefault("groups", {})
+    ai.setdefault("version", 1)
+    ai.setdefault("updated", "")
+    ai.setdefault("items", {})
+    ai.setdefault("groups", {})
 
     new_items = [x for x in items if item_key(x) not in ai["items"]]
+    new_items = new_items[:MAX_ITEMS]
+
     print(f"News total: {len(items)}")
     print(f"Already analyzed: {len(ai['items'])}")
-    print(f"New for AI: {len(new_items)}")
+    print(f"Selected for this run: {len(new_items)}")
 
-    existing = [{"id": k, "title": v.get("title",""), "summary": v.get("summary",""),
-                 "group_id": v.get("group_id","")} for k,v in ai["items"].items()][-300:]
+    existing = [{
+        "id": k,
+        "title": v.get("title", ""),
+        "summary": v.get("summary", ""),
+        "group_id": v.get("group_id", "")
+    } for k, v in ai["items"].items()][-300:]
 
     start = 0
-    batch_size = BATCH_SIZE
     while start < len(new_items):
-        batch = new_items[start:start + batch_size]
-        payload_items = [{"id": item_key(x), "title": x.get("title",""),
-                          "summary": x.get("summary","")[:700], "source": x.get("source",""),
-                          "published": x.get("published",""), "topics": x.get("topics",[])}
-                         for x in batch]
+        batch = new_items[start:start + BATCH_SIZE]
+        payload_items = [{
+            "id": item_key(x),
+            "title": x.get("title", ""),
+            "summary": x.get("summary", "")[:700],
+            "source": x.get("source", ""),
+            "published": x.get("published", ""),
+            "topics": x.get("topics", [])
+        } for x in batch]
 
         prompt = """تو سردبیر ارشد Evren Nexus هستی.
 خبرهای فارسی زیر را از نظر «اهمیت واقعی» و «تکراری بودن رویداد» ارزیابی کن.
@@ -124,46 +146,55 @@ def main():
 خبرهای قبلاً تحلیل‌شده برای مقایسه:
 """ + json.dumps(existing, ensure_ascii=False)
 
-        print(f"Processing batch {start//batch_size + 1}: {len(batch)} items")
+        print(f"Processing batch {start//BATCH_SIZE + 1}: {len(batch)} items")
         try:
             result = call_gemini(prompt, key)
         except RuntimeError as e:
-            if batch_size > 5:
-                batch_size = max(5, batch_size // 2)
-                print(f"Batch failed; reducing batch size to {batch_size} and retrying.")
-                continue
-            raise
+            print(f"Batch failed after retries: {e}")
+            print("Stopping cleanly. Successful batches are already saved.")
+            save(ai)
+            return
 
         by_id = {x["id"]: x for x in payload_items}
         for row in result.get("items", []):
-            rid = str(row.get("id",""))
-            if rid not in by_id: continue
+            rid = str(row.get("id", ""))
+            if rid not in by_id:
+                continue
             src = by_id[rid]
-            score = max(0, min(20, int(row.get("importance",0))))
+            score = max(0, min(20, int(row.get("importance", 0))))
             ai["items"][rid] = {
-                "title": src["title"], "summary": src["summary"], "source": src["source"],
-                "published": src["published"], "importance": score,
+                "title": src["title"],
+                "summary": src["summary"],
+                "source": src["source"],
+                "published": src["published"],
+                "importance": score,
                 "important": bool(row.get("important", score >= 11)),
-                "group_id": str(row.get("group_id","")),
+                "group_id": str(row.get("group_id", "")),
                 "representative": bool(row.get("representative", True)),
-                "reason": str(row.get("reason",""))[:300]
+                "reason": str(row.get("reason", ""))[:300]
             }
 
         for g in result.get("groups", []):
-            gid = str(g.get("group_id",""))
+            gid = str(g.get("group_id", ""))
             if gid:
-                ai["groups"][gid] = {"representative_id": str(g.get("representative_id",""))}
+                ai["groups"][gid] = {
+                    "representative_id": str(g.get("representative_id", ""))
+                }
 
         save(ai)
-        existing = [{"id": k, "title": v.get("title",""), "summary": v.get("summary",""),
-                     "group_id": v.get("group_id","")} for k,v in ai["items"].items()][-300:]
+        print(f"Saved batch. AI database items: {len(ai['items'])}")
+
+        existing = [{
+            "id": k,
+            "title": v.get("title", ""),
+            "summary": v.get("summary", ""),
+            "group_id": v.get("group_id", "")
+        } for k, v in ai["items"].items()][-300:]
+
         start += len(batch)
-        if batch_size < BATCH_SIZE:
-            batch_size = min(BATCH_SIZE, batch_size + 5)
 
     save(ai)
-    print(f"Saved: {OUT}")
-    print(f"AI database items: {len(ai['items'])}")
+    print(f"Completed. AI database items: {len(ai['items'])}")
 
 if __name__ == "__main__":
     main()
