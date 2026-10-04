@@ -8,31 +8,44 @@ permissions:
 
 jobs:
   test:
-    name: Diagnose Gemini API
+    name: Test Gemini 3.8 Flash
     runs-on: ubuntu-latest
 
     steps:
-      - name: Probe Gemini
+      - name: Test Gemini 3.8 Flash
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           set -e
 
-          echo "key length: ${#GEMINI_API_KEY}"
-
           B="https://generativelanguage.googleapis.com/v1beta"
+          URL="$B/models/gemini-3.8-flash:generateContent"
 
-          probe() {
-            echo
-            echo "--- $1"
-            shift
-            curl -sS -o /tmp/out -w "HTTP %{http_code}\n" "$@" || true
-            head -c 1200 /tmp/out
-            echo
-          }
+          echo "Testing Gemini 3.8 Flash..."
 
-          probe "list (header)"             -H "x-goog-api-key: $GEMINI_API_KEY"             "$B/models"
+          curl -sS -X POST \
+            -H "x-goog-api-key: $GEMINI_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d '{"contents":[{"parts":[{"text":"Reply with exactly: OK"}]}]}' \
+            "$URL" > /tmp/out
 
-          probe "list (query)"             "$B/models?key=$GEMINI_API_KEY"
+          python - <<'PY'
+          import json
+          with open("/tmp/out", encoding="utf-8") as f:
+              data=json.load(f)
 
-          probe "generate gemini-2.5-flash"             -X POST             -H "x-goog-api-key: $GEMINI_API_KEY"             -H "Content-Type: application/json"             -d '{"contents":[{"parts":[{"text":"Reply with OK"}]}]}'             "$B/models/gemini-2.5-flash:generateContent"
+          if "error" in data:
+              print("GEMINI ERROR:")
+              print(json.dumps(data["error"], ensure_ascii=False, indent=2))
+              raise SystemExit(1)
+
+          text=""
+          for c in data.get("candidates", []):
+              for p in c.get("content", {}).get("parts", []):
+                  if "text" in p:
+                      text += p["text"]
+
+          print("GEMINI RESPONSE:", text.strip())
+          if not text.strip():
+              raise SystemExit("Gemini returned no text")
+          PY
