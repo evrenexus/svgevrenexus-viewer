@@ -381,8 +381,7 @@ def extract_article_text(url):
 
         body=re.sub(r"(?is)<(p|br|li|h[1-6])[^>]*>", "\n", body)
         body=re.sub(r"(?is)</(p|br|li|h[1-6])>", "\n", body)
-        text=html.unescape(re.sub(r"<[^>]+>"," ",body))
-        text=re.sub(r"[ \t\r]+"," ",text)
+        # Remove residual Tailwind/CSS utility fragments that sometimes sit inside article wrappers.\n        text=re.sub(r"(?m)(?:^|\\s)[^\\n]{0,500}\\[[^\\n\\]]+\\][^\\n]{0,500}(?=\\n|$)", " ", body)\n        text=re.sub(r"(?i)(?:class|className)\\s*=\\s*[\"'][^\"']*[\"']", " ", text)\n        text=html.unescape(re.sub(r"<[^>]+>"," ",text))\n\n        # Remove attribution phrases that introduce a second publisher/source.\n        # Keep the actual report, but do not carry source-to-source references into our copy.\n        text=re.sub(r"(?im)^\\s*(?:به گزارش|به نقل از|به گفته|به نقل)\u200c?[^\\n]{0,180}(?:،|:|\\s-\\s)\\s*", "", text)\n        text=re.sub(r"(?im)^\\s*(?:اقتصادنیوز|فارس|ایسنا|ایرنا|مهر|تسنیم|باشگاه خبرنگاران|دنیای اقتصاد|تجارت.?نیوز|انتخاب|فرارو)\\s+را\\s+در\\s+(?:گوگل|تلگرام|ایکس|اینستاگرام|واتساپ|شبکه‌های اجتماعی)[^\\n]*$", "", text)\n        text=re.sub(r"(?im)^\\s*(?:ما را|این رسانه را|خبرگزاری[^\\n]{0,80})\\s+در\\s+(?:گوگل|تلگرام|ایکس|اینستاگرام|اینستاگرام|شبکه‌های اجتماعی)[^\\n]*$", "", text)\n        text=re.sub(r"(?im)^\\s*(?:برای دریافت|جهت دریافت|برای دنبال کردن|دنبال کنید|فالو کنید|ما را دنبال کنید)[^\\n]{0,180}$", "", text)\n\n        # Remove common source-promotion sentences wherever they occur as a line.\n        text=re.sub(r"(?im)^\\s*[^\\n]{0,100}\\b(?:را در گوگل دنبال کنید|ما را دنبال کنید|دنبال کنید|فالو کنید)\\b[^\\n]*$", "", text)\n        text=re.sub(r"[ \\t\\r]+"," ",text)
         text=re.sub(r"\n[ \t]+","\n",text)
         text=re.sub(r"\n{3,}","\n\n",text).strip()
 
