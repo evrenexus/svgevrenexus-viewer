@@ -8,11 +8,11 @@ permissions:
 
 jobs:
   test:
-    name: Test Gemini Free API
+    name: List Gemini models available to API key
     runs-on: ubuntu-latest
 
     steps:
-      - name: Call Gemini
+      - name: List available Gemini models
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
@@ -26,17 +26,18 @@ jobs:
           python - <<'PY'
           import json
           import os
-          import urllib.request
           import urllib.error
+          import urllib.request
 
           api_key = os.environ["GEMINI_API_KEY"]
-          url = "https://generativelanguage.googleapis.com/v1beta/models?key=" + api_key
 
-
-          # List only models that this API key can actually use for generateContent.
+          url = "https://generativelanguage.googleapis.com/v1beta/models"
           req = urllib.request.Request(
               url,
-              headers={"Content-Type": "application/json"},
+              headers={
+                  "Content-Type": "application/json",
+                  "x-goog-api-key": api_key,
+              },
               method="GET",
           )
 
@@ -50,31 +51,13 @@ jobs:
 
           print("Models available to this API key:")
           found = False
+
           for model in data.get("models", []):
               actions = model.get("supportedGenerationMethods", [])
               if "generateContent" in actions:
                   print(model.get("name", ""))
                   found = True
+
           if not found:
               print("No model supporting generateContent was returned.")
-
-
-          req = urllib.request.Request(
-              url,
-              data=json.dumps(payload).encode("utf-8"),
-              headers={"Content-Type": "application/json", "x-goog-api-key": api_key},
-              method="POST",
-          )
-
-          try:
-              with urllib.request.urlopen(req, timeout=60) as response:
-                  data = json.load(response)
-          except urllib.error.HTTPError as e:
-              print("Gemini HTTP error:", e.code)
-              print(e.read().decode("utf-8", "replace")[:4000])
-              raise
-
-          answer = data["candidates"][0]["content"]["parts"][0]["text"]
-          print("Gemini response:")
-          print(answer)
           PY
