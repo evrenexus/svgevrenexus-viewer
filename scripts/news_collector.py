@@ -350,8 +350,29 @@ def extract_article_text(url):
             data=r.read(1800000)
         raw=data.decode("utf-8","ignore")
 
+        # First try Schema.org JSON-LD. Many Iranian news sites expose the
+        # complete article body here even when the visible HTML uses dynamic wrappers.
+        ld_blocks=re.findall(r'(?is)<script[^>]+type=["\\\']application/ld\\+json["\\\'][^>]*>(.*?)</script>',raw)
+        for block in ld_blocks:
+            try:
+                obj=json.loads(html.unescape(block.strip()))
+                objs=obj if isinstance(obj,list) else [obj]
+                for entry in objs:
+                    if isinstance(entry,dict) and isinstance(entry.get("articleBody"),str):
+                        candidate=entry["articleBody"].strip()
+                        if len(candidate)>=300 and len(re.findall(r"[.!؟،؛]",candidate))>=3:
+                            return candidate[:30000]
+                    if isinstance(entry,dict) and isinstance(entry.get("@graph"),list):
+                        for node in entry["@graph"]:
+                            if isinstance(node,dict) and isinstance(node.get("articleBody"),str):
+                                candidate=node["articleBody"].strip()
+                                if len(candidate)>=300 and len(re.findall(r"[.!؟،؛]",candidate))>=3:
+                                    return candidate[:30000]
+            except Exception:
+                pass
+
         raw=re.sub(
-            r"(?is)<(script|style|noscript|svg|iframe|nav|footer|header|form|aside)[^>]*>.*?</\1>",
+            r"(?is)<(script|style|noscript|svg|iframe|nav|footer|header|form|aside)[^>]*>.*?</\\1>",
             " ",
             raw
         )
