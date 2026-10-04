@@ -12,6 +12,7 @@ API = "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:
 BATCH_SIZE = 12
 MAX_ITEMS = 50
 MAX_RETRIES = 5
+POLICY_VERSION = 2
 RETRY_DELAYS = [5, 15, 30, 60, 90]
 
 def item_key(x):
@@ -88,6 +89,10 @@ def main():
         ai = {}
 
     ai.setdefault("version", 1)
+    if ai.get("policy_version") != POLICY_VERSION:
+        print(f"Policy changed: {ai.get('policy_version', 0)} -> {POLICY_VERSION}. Re-analyzing all news.")
+        ai = {"version": 1, "policy_version": POLICY_VERSION, "updated": "", "items": {}, "groups": {}}
+    ai["policy_version"] = POLICY_VERSION
     ai.setdefault("updated", "")
     ai.setdefault("items", {})
     ai.setdefault("groups", {})
@@ -119,7 +124,13 @@ def main():
         } for x in batch]
 
         prompt = """تو سردبیر ارشد Evren Nexus هستی.
-خبرهای فارسی زیر را از نظر «اهمیت واقعی» و «تکراری بودن رویداد» ارزیابی کن.
+خبرهای فارسی زیر را از نظر «اهمیت واقعی»، «قابل انتشار بودن» و «تکراری بودن رویداد» ارزیابی کن.
+
+قواعد انتشار:
+- اخبار واقعی جنگ و درگیری نظامی، عملیات، حمله، آتش‌بس و تحولات میدانی قابل انتشارند.
+- خبرهایی که ارزش اصلی آنها فقط اظهارنظر، مصاحبه، تهدید، هشدار، پیش‌بینی یا وعده یک مقام نظامی است قابل انتشار نیستند و باید publishable=false شوند.
+- صرف حضور نام یک مقام نظامی باعث حذف خبر نمی‌شود؛ معیار، ارزش خبری اصلی متن است.
+- اخبار سیاسی را به‌طور کلی حذف نکن؛ تصمیم، استعفا، انتصاب یا قانون با اثر مهم اقتصادی/حکومتی قابل انتشار است.
 
 معیار اهمیت:
 - 16 تا 20: رویداد بسیار مهم با اثر گسترده ملی/اقتصادی/بازاری یا تصمیم مهم دولت، بانک مرکزی، مجلس یا تغییر مهم در سیاست.
@@ -138,7 +149,7 @@ def main():
 - گروه‌بندی را نسبت به خبرهای قبلی هم انجام بده.
 
 فقط JSON معتبر:
-{"items":[{"id":"...","importance":0,"important":false,"group_id":"g001","representative":true,"reason":"کوتاه"}],
+{"items":[{"id":"...","importance":0,"important":false,"publishable":true,"exclude_reason":"","group_id":"g001","representative":true,"reason":"کوتاه"}],
 "groups":[{"group_id":"g001","representative_id":"..."}]}
 
 خبرهای جدید:
@@ -168,7 +179,9 @@ def main():
                 "source": src["source"],
                 "published": src["published"],
                 "importance": score,
-                "important": bool(row.get("important", score >= 11)),
+                "important": bool(row.get("important", score >= 11)) and bool(row.get("publishable", True)),
+                "publishable": bool(row.get("publishable", True)),
+                "exclude_reason": str(row.get("exclude_reason", ""))[:300],
                 "group_id": str(row.get("group_id", "")),
                 "representative": bool(row.get("representative", True)),
                 "reason": str(row.get("reason", ""))[:300]
