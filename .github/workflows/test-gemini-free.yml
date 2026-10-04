@@ -8,7 +8,7 @@ permissions:
 
 jobs:
   test:
-    name: Test Gemini v1 API
+    name: Test Gemini Free API
     runs-on: ubuntu-latest
 
     steps:
@@ -30,9 +30,9 @@ jobs:
           import urllib.request
 
           api_key = os.environ["GEMINI_API_KEY"]
-          model = "gemini-2.5-flash"
+          model = "gemini-3.5-flash-lite"
 
-          url = f"https://generativelanguage.googleapis.com/v1/models/{model}:generateContent"
+          url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
 
           payload = {
               "contents": [{
@@ -44,7 +44,6 @@ jobs:
                   }]
               }],
               "generationConfig": {
-                  "temperature": 0.1,
                   "maxOutputTokens": 120
               }
           }
@@ -63,7 +62,7 @@ jobs:
               with urllib.request.urlopen(req, timeout=60) as response:
                   data = json.load(response)
           except urllib.error.HTTPError as e:
-              print("Gemini v1 HTTP error:", e.code)
+              print("Gemini HTTP error:", e.code)
               print(e.read().decode("utf-8", "replace")[:4000])
               raise
 
