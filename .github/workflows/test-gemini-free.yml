@@ -1,0 +1,67 @@
+name: Test Gemini Free AI
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Test Gemini Free API
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Call Gemini
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          set -e
+
+          if [ -z "$GEMINI_API_KEY" ]; then
+            echo "GEMINI_API_KEY secret is not configured."
+            exit 1
+          fi
+
+          python - <<'PY'
+          import json
+          import os
+          import urllib.request
+
+          api_key = os.environ["GEMINI_API_KEY"]
+          url = (
+              "https://generativelanguage.googleapis.com/v1beta/models/"
+              "gemini-2.5-flash-lite:generateContent"
+              "?key=" + api_key
+          )
+
+          payload = {
+              "contents": [{
+                  "parts": [{
+                      "text": (
+                          "You are testing Evren Nexus news analysis. "
+                          "Reply in Persian with exactly one short sentence: "
+                          "آیا تیتر «استعفای وزیر نفت اعلام شد» یک خبر مهم اقتصادی است؟ چرا؟"
+                      )
+                  }]
+              }],
+              "generationConfig": {
+                  "temperature": 0.1,
+                  "maxOutputTokens": 120
+              }
+          }
+
+          req = urllib.request.Request(
+              url,
+              data=json.dumps(payload).encode("utf-8"),
+              headers={"Content-Type": "application/json"},
+              method="POST",
+          )
+
+          with urllib.request.urlopen(req, timeout=60) as response:
+              data = json.load(response)
+
+          answer = data["candidates"][0]["content"]["parts"][0]["text"]
+          print("Gemini response:")
+          print(answer)
+          PY
