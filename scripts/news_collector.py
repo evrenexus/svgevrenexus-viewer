@@ -32,16 +32,47 @@ SOURCES=[
 ]
 
 TOPIC_RULES={
- "economy":["اقتصاد","اقتصادی","تورم","رشد اقتصادی","بودجه","مالیات","بانک مرکزی","نرخ بهره","نقدینگی","تجارت","صادرات","واردات","تولید","رکود","اشتغال","دستمزد","معیشت","کسب و کار","کسب‌وکار","بازرگانی","صنعت","کشاورزی","نفت","گاز","انرژی"],
- "markets":["بورس","بازار سرمایه","شاخص کل","شاخص هم‌وزن","فرابورس","سهام","نماد معاملاتی","عرضه اولیه","پذیره‌نویسی","بورس کالا","صندوق سرمایه‌گذاری","اوراق","حق تقدم","مجمع شرکت","کدال","پرتفوی","سرمایه‌گذاری"],
- "currency-gold":["دلار","یورو","درهم","پوند","لیر","یوان","روبل","ارز","نرخ ارز","بازار ارز","طلا","سکه","طلای آبشده","آبشده","اونس","انس طلا","نقره"],
- "real-estate":["مسکن","املاک","ملک","آپارتمان","خانه","اجاره","رهن","زمین","ساختمان","ساخت‌وساز","ساخت و ساز","پروانه ساختمانی","نهضت ملی مسکن","وام مسکن","قیمت مسکن"],
- "technology":["فناوری","تکنولوژی","اینترنت","وب","موبایل","گوشی هوشمند","لپ‌تاپ","رایانه","کامپیوتر","گجت","نرم‌افزار","سخت‌افزار","سیستم‌عامل","اپلیکیشن","شبکه","امنیت سایبری","داده","استارتاپ"],
- "ai":["هوش مصنوعی","هوش مصنوعی مولد","مدل زبانی","مدل بزرگ زبانی","LLM","AI","ChatGPT","OpenAI","Gemini","Claude","Copilot","ماشین لرنینگ","یادگیری ماشین","یادگیری عمیق","ربات هوشمند"],
- "health":["پزشکی","سلامت","درمان","بیماری","بیمار","پزشک","دارو","دارویی","بیمارستان","کلینیک","جراحی","سرطان","قلب","دیابت","فشار خون","تغذیه","بهداشت","واکسن","ویروس"],
- "auto":["خودرو","اتومبیل","ماشین","خودروساز","خودروسازی","خودرو برقی","خودروهای برقی","خودروی برقی","بنزین","موتورسیکلت","قطعه خودرو","قیمت خودرو"],
- "science-life":["علم","پژوهش","دانشگاه","دانش‌آموز","آموزش","کنکور","آزمون","نتایج آزمون","محیط زیست","آلودگی هوا","اقلیم","آب و هوا","فضا","نجوم","ستاره","سیاره","زیست‌شناسی","فیزیک","شیمی","سبک زندگی","گردشگری","کتاب","فرهنگ"]
+ "economy":{
+  "strong":["اقتصاد","اقتصادی","تورم","رشد اقتصادی","بودجه","مالیات","بانک مرکزی","نرخ بهره","نقدینگی","تجارت خارجی","صادرات","واردات","رکود اقتصادی","اشتغال","دستمزد","معیشت","کسب و کار","کسب‌وکار","بازرگانی","سیاست اقتصادی","تولید ناخالص داخلی","gdp"],
+  "medium":["تولید","صنعت","کشاورزی","نفت","گاز","انرژی","تجارت","رکود","بازار کار"]
+ },
+ "markets":{
+  "strong":["بورس","بازار سرمایه","شاخص کل","شاخص هم‌وزن","فرابورس","سهام","نماد معاملاتی","عرضه اولیه","پذیره‌نویسی","بورس کالا","صندوق سرمایه‌گذاری","اوراق بهادار","حق تقدم","مجمع شرکت","کدال","پرتفوی"],
+  "medium":["سرمایه‌گذاری","سهم","بازدهی بورس","معاملات سهام","بازار سهام"]
+ },
+ "currency-gold":{
+  "strong":["دلار","یورو","درهم","پوند","لیر","یوان","روبل","نرخ ارز","بازار ارز","طلا","سکه","طلای آبشده","آبشده","اونس طلا","انس طلا","نقره","قیمت طلا","قیمت سکه"],
+  "medium":["ارز","اونس","انس"]
+ },
+ "real-estate":{
+  "strong":["مسکن","املاک","ملک","آپارتمان","اجاره مسکن","رهن و اجاره","رهن","زمین مسکونی","پروانه ساختمانی","نهضت ملی مسکن","وام مسکن","قیمت مسکن","خرید خانه","فروش خانه","بازار مسکن"],
+  "medium":["خانه","زمین","ساختمان","ساخت‌وساز","ساخت و ساز"]
+ },
+ "technology":{
+  "strong":["فناوری","تکنولوژی","اینترنت","گوشی هوشمند","لپ‌تاپ","رایانه","کامپیوتر","گجت","نرم‌افزار","سخت‌افزار","سیستم‌عامل","اپلیکیشن","امنیت سایبری","شبکه کامپیوتری","استارتاپ فناوری"],
+  "medium":["وب","موبایل","شبکه","داده","استارتاپ"]
+ },
+ "ai":{
+  "strong":["هوش مصنوعی","هوش مصنوعی مولد","مدل زبانی","مدل بزرگ زبانی","llm","chatgpt","openai","gemini","claude","copilot","یادگیری ماشین","یادگیری عمیق","ماشین لرنینگ","ربات هوشمند"],
+  "medium":["مدل هوش مصنوعی","مدل مولد","مولد"]
+ },
+ "health":{
+  "strong":["پزشکی","سلامت","درمان","بیماری","پزشک","دارو","دارویی","بیمارستان","کلینیک","جراحی","سرطان","دیابت","فشار خون","واکسن","ویروس","بیماری قلبی","پزشکی بالینی"],
+  "medium":["بیمار","قلب","تغذیه","بهداشت"]
+ },
+ "auto":{
+  "strong":["خودرو","اتومبیل","خودروساز","خودروسازی","خودرو برقی","خودروهای برقی","خودروی برقی","موتورسیکلت","قطعه خودرو","قیمت خودرو","بازار خودرو","خرید خودرو"],
+  "medium":["ماشین","بنزین"]
+ },
+ "science-life":{
+  "strong":["علم","پژوهش","دانشگاه","دانش‌آموز","کنکور","نتایج آزمون","محیط زیست","آلودگی هوا","اقلیم","آب و هوا","فضا","نجوم","ستاره","سیاره","زیست‌شناسی","فیزیک","شیمی","سبک زندگی","گردشگری"],
+  "medium":["آموزش","آزمون","کتاب","فرهنگ"]
+ }
 }
+
+# Generic words are deliberately weak: one generic word must never classify an article.
+GENERIC_TOPIC_WORDS={"economy":["تولید","صنعت","کشاورزی","تجارت","اشتغال"],"markets":["سرمایه‌گذاری","سهم"],"currency-gold":["ارز","اونس","انس"],"real-estate":["خانه","زمین","ساختمان","ساخت‌وساز","ساخت و ساز"],"technology":["وب","موبایل","شبکه","داده","استارتاپ"],"health":["بیمار","قلب","تغذیه","بهداشت"],"auto":["ماشین","بنزین"],"science-life":["آموزش","آزمون","کتاب","فرهنگ"]}
+
 POLITICAL_HINTS=["انتخابات","نماینده مجلس","مجلس شورای اسلامی","رئیس جمهور","رییس جمهور","وزیر","وزارت کشور","سیاست خارجی","دیپلماسی","تحریم","حزب","رأی‌گیری","رای‌گیری","کابینه","مذاکره سیاسی"]
 BLOCKED_TITLE_TERMS=[
  "اسرائیل","اسراییل","اسرائیلی","اسراییلی",
@@ -73,25 +104,75 @@ def is_blocked_title(item):
     title=normalize_text(item.get("title",""))
     return any(normalize_text(term) in title for term in BLOCKED_TITLE_TERMS)
 
+def _contains(text, phrase):
+    phrase=normalize_text(phrase)
+    if not phrase: return False
+    # Latin abbreviations need token boundaries; Persian phrases use exact normalized substring.
+    if re.fullmatch(r"[a-z0-9]+", phrase):
+        return re.search(r"(?<![a-z0-9])"+re.escape(phrase)+r"(?![a-z0-9])", text) is not None
+    return phrase in text
+
 def classify_topics(item):
     title=normalize_text(item.get("title",""))
     summary=normalize_text(item.get("summary",""))
-    text=title+" "+title+" "+summary
+    # Title is the strongest signal; summary only confirms it.
     scores={}
-    for topic,keywords in TOPIC_RULES.items():
+    strong_hits={}
+    for topic,groups in TOPIC_RULES.items():
         score=0
-        for kw in keywords:
-            k=normalize_text(kw)
-            if k and k in text: score += 3 if k in title else 1
+        hits=0
+        title_strong=0
+        for kw in groups["strong"]:
+            if _contains(title,kw):
+                score += 10
+                hits += 1
+                title_strong += 1
+            elif _contains(summary,kw):
+                score += 3
+                hits += 1
+        medium_title=sum(1 for kw in groups["medium"] if _contains(title,kw))
+        medium_summary=sum(1 for kw in groups["medium"] if _contains(summary,kw))
+        score += medium_title*4 + medium_summary
+        hits += medium_title + medium_summary
+        generic_hits=sum(1 for kw in GENERIC_TOPIC_WORDS.get(topic,[]) if _contains(title,kw))
+        generic_summary=sum(1 for kw in GENERIC_TOPIC_WORDS.get(topic,[]) if _contains(summary,kw))
+        # Generic vocabulary is useful only when it appears in combination.
+        if generic_hits + generic_summary >= 2:
+            score += 2
+            hits += 1
         scores[topic]=score
-    source_boost={"پزشکی و سلامت":{"health":3},"فناوری و علم":{"technology":3,"science-life":1},"بورس و بازار سرمایه":{"markets":3},"اقتصاد و سرمایه‌گذاری":{"economy":3}}
-    for topic,boost in source_boost.get(item.get("category",""),{}).items(): scores[topic]=scores.get(topic,0)+boost
-    political=sum(2 if normalize_text(k) in title else 1 for k in POLITICAL_HINTS if normalize_text(k) in text)
-    ranked=sorted(scores.items(),key=lambda x:x[1],reverse=True)
-    topics=[topic for topic,score in ranked if score>=3]
-    if political>=4 and (not ranked or ranked[0][1] < political): return []
-    return topics[:4]
+        strong_hits[topic]=title_strong
 
+    # Source is only a weak tie-breaker after real textual evidence.
+    source_hint={"پزشکی و سلامت":"health","فناوری و علم":"technology","بورس و بازار سرمایه":"markets","اقتصاد و سرمایه‌گذاری":"economy"}.get(item.get("category",""))
+    if source_hint and scores.get(source_hint,0)>=3:
+        scores[source_hint]+=1
+
+    political=sum(2 if _contains(title,k) else 1 for k in POLITICAL_HINTS if _contains(title+" "+summary,k))
+    ranked=sorted(scores.items(),key=lambda x:x[1],reverse=True)
+    if political>=4 and (not ranked or ranked[0][1] < political):
+        return []
+
+    # High precision policy: no topic unless there is meaningful evidence.
+    eligible=[(topic,score) for topic,score in ranked if score>=7]
+    if not eligible:
+        return []
+
+    best_topic,best_score=eligible[0]
+    second_score=eligible[1][1] if len(eligible)>1 else 0
+
+    # A strong title signal can stand alone. Otherwise require a clear margin.
+    if strong_hits.get(best_topic,0)==0 and best_score-second_score<4:
+        return []
+
+    topics=[best_topic]
+    # A second topic is allowed only when it is independently strong.
+    for topic,score in eligible[1:]:
+        if score>=10 and best_score-score<=8:
+            topics.append(topic)
+        if len(topics)>=2:
+            break
+    return topics
 def fetch(url):
     req=Request(url,headers={"User-Agent":UA,"Accept":"application/rss+xml,application/atom+xml,application/xml,text/html;q=0.9,*/*;q=0.5"})
     last=None
