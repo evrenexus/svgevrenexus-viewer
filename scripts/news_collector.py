@@ -2,6 +2,7 @@
 import json, re, hashlib, html, time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 from email.utils import parsedate_to_datetime
 from pathlib import Path
 from urllib.request import Request, urlopen
@@ -11,10 +12,11 @@ import xml.etree.ElementTree as ET
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/"data"/"news.json"
 UA="Mozilla/5.0 (compatible; EvrenNexusNewsBot/1.0; +https://evrenexus.github.io/svgevrenexus-viewer/)"
-LATEST_PER_SOURCE=50
+LATEST_PER_SOURCE=14
 FEED_SCAN_LIMIT=50
 IMAGE_ENRICH_LIMIT=20
 IMAGE_FETCH_TIMEOUT=3
+TEHRAN_TZ=ZoneInfo("Asia/Tehran")
 
 SOURCES=[
  {"name":"دنیای اقتصاد","category":"اقتصاد و سرمایه‌گذاری","site":"https://donya-e-eqtesad.com/","feeds":["https://donya-e-eqtesad.com/feeds/"]},
@@ -119,14 +121,17 @@ def parse_date(value):
     if not value: return ""
     try:
         dt=parsedate_to_datetime(value)
-        if dt.tzinfo is None: dt=dt.replace(tzinfo=timezone.utc)
-        return dt.astimezone(timezone.utc).isoformat()
+        if dt.tzinfo is None: dt=dt.replace(tzinfo=TEHRAN_TZ)
+        return dt.astimezone(TEHRAN_TZ).isoformat()
     except Exception: pass
     try:
         dt=datetime.fromisoformat(value.replace("Z","+00:00"))
-        if dt.tzinfo is None: dt=dt.replace(tzinfo=timezone.utc)
-        return dt.astimezone(timezone.utc).isoformat()
+        if dt.tzinfo is None: dt=dt.replace(tzinfo=TEHRAN_TZ)
+        return dt.astimezone(TEHRAN_TZ).isoformat()
     except Exception: return ""
+
+def normalize_published(value):
+    return parse_date(value)
 
 def date_key(value):
     try: return datetime.fromisoformat(value.replace("Z","+00:00")).timestamp()
@@ -228,6 +233,7 @@ def main():
     existing={}
     for x in old.get("items",[]):
         if isinstance(x,dict) and is_valid_item(x,now_ts):
+            x["published"]=normalize_published(x.get("published",""))
             x["topics"]=classify_topics(x); existing[x["id"]]=x
     def collect_source(s):
         attempted_at=datetime.now(timezone.utc).isoformat(); got=[]; errors=[]
@@ -252,9 +258,11 @@ def main():
                         errors.append("discovered feed parsed but contained no articles: "+u)
                 except Exception as e: errors.append(type(e).__name__+": "+str(e)[:180])
         valid=[x for x in got if is_valid_item(x,now_ts)]
-        for item in valid: item["topics"]=classify_topics(item)
+        for item in valid:
+            item["published"]=normalize_published(item.get("published",""))
+            item["topics"]=classify_topics(item)
         latest=max((date_key(x.get("published","")) for x in valid),default=0)
-        info={"name":s["name"],"category":s["category"],"ok":bool(valid),"items":len(valid),"attempted_at":attempted_at,"last_success_at":datetime.now(timezone.utc).isoformat() if valid else "","last_article_published":datetime.fromtimestamp(latest,timezone.utc).isoformat() if latest else "","error":"" if valid else (" | ".join(errors[-3:])[:600] if errors else "no feed found")}
+        info={"name":s["name"],"category":s["category"],"ok":bool(valid),"items":len(valid),"attempted_at":attempted_at,"last_success_at":datetime.now(timezone.utc).isoformat() if valid else "","last_article_published":datetime.fromtimestamp(latest,TEHRAN_TZ).isoformat() if latest else "","error":"" if valid else (" | ".join(errors[-3:])[:600] if errors else "no feed found")}
         return valid,info
 
     status=[]
