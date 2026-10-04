@@ -1,10 +1,8 @@
 name: Evren Nexus News Collector
-# News collector — force immediate run
-# Trigger collector without changing schedule
 
 on:
   schedule:
-    - cron: "3,13,23,33,43,53 * * * *"
+    - cron: "7 * * * *"
   push:
     paths:
       - "scripts/news_collector.py"
