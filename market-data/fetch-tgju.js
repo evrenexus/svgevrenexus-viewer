@@ -1,3 +1,4 @@
+// manual refresh trigger 2026-10-04
 // trigger after workflow fix
 // Direct page scraper
 const fs = require("fs");
