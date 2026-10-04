@@ -1,1 +1,43 @@
+name: Analyze News with Gemini
 
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: analyze-news-gemini
+  cancel-in-progress: false
+
+jobs:
+  analyze:
+    name: Analyze news with Gemini
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout latest main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Run AI analysis
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 scripts/news_ai.py
+
+      - name: Commit AI database
+        run: |
+          git config user.name "evrenexus-ai-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data/news-ai.json
+
+          if git diff --cached --quiet; then
+            echo "No AI data changes."
+            exit 0
+          fi
+
+          git commit -m "Update AI news analysis"
+          git push origin HEAD:main
