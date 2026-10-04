@@ -8,57 +8,31 @@ permissions:
 
 jobs:
   test:
-    name: Test Gemini API Access
+    name: Diagnose Gemini API
     runs-on: ubuntu-latest
 
     steps:
-      - name: Call Gemini
+      - name: Probe Gemini
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           set -e
 
-          if [ -z "$GEMINI_API_KEY" ]; then
-            echo "GEMINI_API_KEY secret is not configured."
-            exit 1
-          fi
+          echo "key length: ${#GEMINI_API_KEY}"
 
-          python - <<'PY'
-          import json
-          import os
-          import urllib.error
-          import urllib.request
+          B="https://generativelanguage.googleapis.com/v1beta"
 
-          api_key = os.environ["GEMINI_API_KEY"]
-          url = "https://generativelanguage.googleapis.com/v1beta/models"
+          probe() {
+            echo
+            echo "--- $1"
+            shift
+            curl -sS -o /tmp/out -w "HTTP %{http_code}\n" "$@" || true
+            head -c 1200 /tmp/out
+            echo
+          }
 
-          req = urllib.request.Request(
-              url,
-              headers={"x-goog-api-key": api_key},
-              method="GET",
-          )
+          probe "list (header)"             -H "x-goog-api-key: $GEMINI_API_KEY"             "$B/models"
 
-          try:
-              with urllib.request.urlopen(req, timeout=60) as response:
-                  data = json.load(response)
-          except urllib.error.HTTPError as e:
-              print("Gemini models.list HTTP error:", e.code)
-              print(e.read().decode("utf-8", "replace")[:4000])
-              raise
+          probe "list (query)"             "$B/models?key=$GEMINI_API_KEY"
 
-          models = data.get("models", [])
-          print(f"Gemini returned {len(models)} models.")
-
-          for item in models:
-              name = item.get("name", "")
-              methods = item.get("supportedGenerationMethods", [])
-              if "generateContent" in methods:
-                  print(f"AVAILABLE: {name}")
-
-          target = "models/gemini-3.5-flash-lite"
-          if not any(item.get("name") == target and "generateContent" in item.get("supportedGenerationMethods", []) for item in models):
-              print(f"TARGET NOT AVAILABLE: {target}")
-              raise SystemExit(2)
-
-          print(f"TARGET AVAILABLE: {target}")
-          PY
+          probe "generate gemini-2.5-flash"             -X POST             -H "x-goog-api-key: $GEMINI_API_KEY"             -H "Content-Type: application/json"             -d '{"contents":[{"parts":[{"text":"Reply with OK"}]}]}'             "$B/models/gemini-2.5-flash:generateContent"
