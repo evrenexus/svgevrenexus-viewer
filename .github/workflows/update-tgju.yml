@@ -1,33 +1,11 @@
-# Market data workflow — hourly refresh
-name: Update TGJU Market Data
+name: Legacy TGJU Workflow (Disabled)
 
 on:
-  schedule:
-    - cron: "17 * * * *"
   workflow_dispatch:
-  push:
-    paths:
-      - "market-data/fetch-tgju.js"
-      - ".github/workflows/update-tgju.yml"
-
-permissions:
-  contents: write
 
 jobs:
-  update:
+  disabled:
+    if: ${{ false }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - run: npm install --no-save cheerio@1.0.0-rc.12
-      - run: node market-data/fetch-tgju.js
-      - name: Commit TGJU data
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add market-data/tgju.json
-          git diff --cached --quiet || git commit -m "Update TGJU market data"
-          git pull --rebase origin main
-          git push
+      - run: echo "Legacy workflow disabled. Use Evren Nexus — Update All."
