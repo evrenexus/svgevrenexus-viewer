@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>به‌روزرسانی داده‌ها</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Tahoma,Arial,sans-serif;background:#f1f2f3;color:#20272d}
+.box{width:340px;max-width:calc(100% - 24px);margin:120px auto 0;background:#fff;border:1px solid #dfe2e4;padding:24px;text-align:center}
+h1{font-size:15px;margin:0 0 18px}input{width:100%;padding:10px;border:1px solid #dfe2e4;font:12px Tahoma;outline:0}button{width:100%;margin-top:10px;padding:10px;border:0;background:#d9232e;color:#fff;font:11px Tahoma;cursor:pointer}.error{font-size:10px;color:#d9232e;margin-top:10px;display:none}
+</style>
+</head>
+<body>
+<div class="box">
+<h1>به‌روزرسانی داده‌های اورین نکسوس</h1>
+<input id="password" type="password" placeholder="رمز عبور" autocomplete="off">
+<button onclick="enter()">ادامه</button>
+<div id="error" class="error">رمز عبور نادرست است.</div>
+</div>
+<script>
+function enter(){
+ var p=document.getElementById("password").value;
+ if(p==="13790920"){
+   location.href="https://github.com/evrenexus/svgevrenexus-viewer/actions/workflows/refresh-all.yml";
+ }else{
+   document.getElementById("error").style.display="block";
+ }
+}
+document.getElementById("password").addEventListener("keydown",function(e){if(e.key==="Enter")enter()});
+</script>
+</body>
+</html>
