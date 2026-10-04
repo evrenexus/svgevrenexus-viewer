@@ -107,11 +107,12 @@ def is_blocked_title(item):
 def _contains(text, phrase):
     phrase=normalize_text(phrase)
     if not phrase: return False
-    # Latin abbreviations need token boundaries; Persian phrases use exact normalized substring.
-    if re.fullmatch(r"[a-z0-9]+", phrase):
-        return re.search(r"(?<![a-z0-9])"+re.escape(phrase)+r"(?![a-z0-9])", text) is not None
+    # Single terms require word boundaries so «خانه» does not match «کارخانه».
+    if " " not in phrase:
+        if re.fullmatch(r"[a-z0-9]+", phrase):
+            return re.search(r"(?<![a-z0-9])"+re.escape(phrase)+r"(?![a-z0-9])", text) is not None
+        return re.search(r"(?<!\\w)"+re.escape(phrase)+r"(?!\\w)", text, re.UNICODE) is not None
     return phrase in text
-
 def classify_topics(item):
     title=normalize_text(item.get("title",""))
     summary=normalize_text(item.get("summary",""))
