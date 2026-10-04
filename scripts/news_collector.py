@@ -82,7 +82,7 @@ def classify_topics(item):
         score=0; hits=0; title_strong=0
         for kw in groups["strong"]:
             if _contains(title,kw): score+=10; hits+=1; title_strong+=1
-            elif _contains(summary,kw): score+=3; hits+=1
+            elif _contains(summary,kw): score+=5; hits+=1
         medium_title=sum(1 for kw in groups["medium"] if _contains(title,kw)); medium_summary=sum(1 for kw in groups["medium"] if _contains(summary,kw))
         score += medium_title*4 + medium_summary; hits += medium_title + medium_summary
         generic_hits=sum(1 for kw in GENERIC_TOPIC_WORDS.get(topic,[]) if _contains(title,kw)); generic_summary=sum(1 for kw in GENERIC_TOPIC_WORDS.get(topic,[]) if _contains(summary,kw))
@@ -93,10 +93,10 @@ def classify_topics(item):
     political=sum(2 if _contains(title,k) else 1 for k in POLITICAL_HINTS if _contains(title+" "+summary,k))
     ranked=sorted(scores.items(),key=lambda x:x[1],reverse=True)
     if political>=4 and (not ranked or ranked[0][1]<political): return []
-    eligible=[(topic,score) for topic,score in ranked if score>=7]
+    eligible=[(topic,score) for topic,score in ranked if score>=5]
     if not eligible: return []
     best_topic,best_score=eligible[0]; second_score=eligible[1][1] if len(eligible)>1 else 0
-    if strong_hits.get(best_topic,0)==0 and best_score-second_score<4: return []
+    if strong_hits.get(best_topic,0)==0 and best_score<7 and best_score-second_score<3: return []
     topics=[best_topic]
     for topic,score in eligible[1:]:
         if score>=10 and best_score-score<=8: topics.append(topic)
