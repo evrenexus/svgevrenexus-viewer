@@ -20,7 +20,7 @@ var s=document.createElement("style");s.id="Evrenxus-sidebar-style";s.textConten
 var box=document.createElement("aside");box.id="Evrenxus-sidebar";box.innerHTML=`
 <div class="Evrenxus-sidebar-box Evrenxus-sidebar-menu">
 <div class="Evrenxus-sidebar-title">منوی سایت</div>
-<a class="Evrenxus-menu-link" target="_top" href="https://evrenexus.blogfa.com/">صفحه اصلی</a>
+<a class="Evrenxus-menu-link" target="_top" href="https://evrenexus.github.io/svgevrenexus-viewer/">صفحه اصلی</a>
 <a class="Evrenxus-menu-link" target="_top" href="https://evrenexus.blogfa.com/">درباره من</a>
 <a class="Evrenxus-menu-link" target="_top" href="https://evrenexus.blogfa.com/archive">آرشیو مطالب</a>
 <a class="Evrenxus-menu-link" target="_top" href="https://evrenexus.blogfa.com/posts/">عناوین نوشته‌ها</a>
