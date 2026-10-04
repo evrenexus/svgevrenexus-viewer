@@ -1,13 +1,14 @@
-# Market data workflow — keep schedule active
+# Market data workflow — hourly refresh
 name: Update TGJU Market Data
 
 on:
   schedule:
-    - cron: "1 * * * *"
+    - cron: "17 * * * *"
   workflow_dispatch:
   push:
     paths:
       - "market-data/fetch-tgju.js"
+      - ".github/workflows/update-tgju.yml"
 
 permissions:
   contents: write
