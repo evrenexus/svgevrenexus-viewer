@@ -16,7 +16,9 @@ LATEST_PER_SOURCE=14
 FEED_SCAN_LIMIT=50
 IMAGE_ENRICH_LIMIT=20
 IMAGE_FETCH_TIMEOUT=3
-SOURCE_FETCH_TIMEOUT=5
+SOURCE_FETCH_TIMEOUT=8
+SOURCE_FETCH_RETRIES=2
+RETRY_BACKOFF_SECONDS=1
 TEHRAN_TZ=ZoneInfo("Asia/Tehran")
 
 SOURCES=[
@@ -122,6 +124,14 @@ def _contains(text, phrase):
             return re.search(r"(?<![a-z0-9])"+re.escape(phrase)+r"(?![a-z0-9])", text) is not None
         return re.search(r"(?<!\w)"+re.escape(phrase)+r"(?!\w)", text, re.UNICODE) is not None
     return phrase in text
+def fallback_topic(item):
+    return {
+        "اقتصاد و سرمایه‌گذاری": "economy",
+        "بورس و بازار سرمایه": "markets",
+        "فناوری و علم": "technology",
+        "پزشکی و سلامت": "health",
+    }.get(item.get("category",""))
+
 def classify_topics(item):
     title=normalize_text(item.get("title",""))
     summary=normalize_text(item.get("summary",""))
@@ -186,13 +196,15 @@ def classify_topics(item):
 def fetch(url):
     req=Request(url,headers={"User-Agent":UA,"Accept":"application/rss+xml,application/atom+xml,application/xml,text/html;q=0.9,*/*;q=0.5"})
     last=None
-    # Each request is intentionally short and isolated. A dead source must never
-    # hold the whole news collection run hostage.
-    try:
-        with urlopen(req,timeout=SOURCE_FETCH_TIMEOUT) as r:
-            return r.read(), r.headers.get("content-type","")
-    except Exception as e:
-        raise e
+    for attempt in range(SOURCE_FETCH_RETRIES):
+        try:
+            with urlopen(req,timeout=SOURCE_FETCH_TIMEOUT) as r:
+                return r.read(), r.headers.get("content-type","")
+        except Exception as e:
+            last=e
+            if attempt+1 < SOURCE_FETCH_RETRIES:
+                time.sleep(RETRY_BACKOFF_SECONDS)
+    raise last
 
 def discover(home):
     data,_=fetch(home); text=data.decode("utf-8","ignore"); found=[]
@@ -337,11 +349,9 @@ def main():
                     errors.append("feed parsed but contained no articles: "+u)
                 else: errors.append("not an RSS/Atom feed: "+u)
             except Exception as e: errors.append(type(e).__name__+": "+str(e)[:180])
-        # If a source has an explicitly configured feed, do not perform extra
-        # homepage/feed discovery after it fails. Discovery can multiply delays
-        # when a site is unavailable. Sources without a configured feed may still
-        # use discovery once, with the same per-request timeout.
-        if not got and not s["feeds"]:
+        # If configured feeds fail (including 404), inspect the homepage for the
+        # site's current RSS/Atom link. This recovers from changed feed URLs.
+        if not got:
             try: discovered=discover(s["site"])
             except Exception as e: discovered=[]; errors.append("discovery: "+type(e).__name__+": "+str(e)[:180])
             for u in dict.fromkeys(discovered):
@@ -355,7 +365,7 @@ def main():
         valid=[x for x in got if is_valid_item(x,now_ts)]
         for item in valid:
             item["published"]=normalize_published(item.get("published",""))
-            item["topics"]=classify_topics(item)
+            item["topics"]=classify_topics(item) or ([fallback_topic(item)] if fallback_topic(item) else [])
         latest=max((date_key(x.get("published","")) for x in valid),default=0)
         info={"name":s["name"],"category":s["category"],"ok":bool(valid),"items":len(valid),"attempted_at":attempted_at,"last_success_at":datetime.now(timezone.utc).isoformat() if valid else "","last_article_published":datetime.fromtimestamp(latest,TEHRAN_TZ).isoformat() if latest else "","error":"" if valid else (" | ".join(errors[-3:])[:600] if errors else "no feed found")}
         return valid,info
@@ -372,6 +382,9 @@ def main():
                 status.append({"name":"unknown","category":"","ok":False,"items":0,"attempted_at":now.isoformat(),"last_success_at":"","last_article_published":"","error":type(e).__name__+": "+str(e)[:600]})
 
     all_items=list(existing.values())
+    if not status or not any(x.get("ok") for x in status):
+        print("All news sources failed; keeping previous news.json unchanged.")
+        return
     enrich_images(all_items)
     all_items=[x for x in all_items if is_valid_item(x,now_ts)]
     all_items.sort(key=lambda x:date_key(x.get("published","")),reverse=True)
