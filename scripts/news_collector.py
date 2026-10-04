@@ -114,7 +114,7 @@ DEDUP_STOPWORDS=set("از با به در برای که و یا یک این آن 
 DEDUP_SUFFIXES=("‌های","های","‌ها","ها","‌ات","ات","‌ان","ان","‌ای","ای","ی")
 
 def dedup_stem(token):
-    token=normalize_text(token).strip(".,:;!?؟،؛()[]{}"'«»")
+    token=normalize_text(token).strip(".,:;!?؟،؛()[]{}'\"«»")
     if len(token)<3 or token in DEDUP_STOPWORDS: return ""
     for suffix in DEDUP_SUFFIXES:
         if token.endswith(suffix) and len(token)-len(suffix)>=3:
