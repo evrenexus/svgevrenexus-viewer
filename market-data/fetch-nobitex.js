@@ -1,3 +1,4 @@
+// manual refresh trigger 2026-10-04
 // Direct page scraper
 const fs = require("fs");
 const cheerio = require("cheerio");
