@@ -1,0 +1,93 @@
+name: Test Gemini News Ranking
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  rank:
+    name: AI News Importance + Duplicate Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Analyze latest news with Gemini
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          set -e
+          python3 - <<'PY'
+          import json, urllib.request
+
+          with open("data/news.json", encoding="utf-8") as f:
+              data=json.load(f)
+
+          items=data.get("items", [])[:40]
+          compact=[]
+          for i,x in enumerate(items):
+              compact.append({
+                  "id": x.get("id"),
+                  "title": x.get("title",""),
+                  "summary": x.get("summary",""),
+                  "topics": x.get("topics",[]),
+                  "source": x.get("source",""),
+                  "published": x.get("published","")
+              })
+
+          prompt = """تو سردبیر ارشد خبرهای اقتصادی و عمومی ایران هستی.
+از بین خبرهای زیر، اهمیت واقعی خبرها را ارزیابی کن و خبرهای مربوط به یک رویداد واحد را تشخیص بده.
+
+قواعد:
+1) اهمیت را بر اساس اثر واقعی خبر بر اقتصاد، بازار، سیاست‌گذاری، زندگی مردم یا یک رویداد مهم ملی بسنج.
+2) صرفاً جدید بودن، مصاحبه، اظهارنظر، عکس، گزارش توصیفی و کلیک‌بیت امتیاز بالا نگیرد.
+3) اگر چند خبر یک رویداد واحد را پوشش می‌دهند، آنها را در یک duplicate_group قرار بده.
+4) برای هر گروه فقط بهترین خبر را به عنوان representative_id انتخاب کن.
+5) امتیاز اهمیت از 0 تا 20 باشد.
+6) فقط JSON معتبر برگردان و هیچ متن دیگری ننویس.
+
+فرمت دقیق:
+{
+  "items": [
+    {"id":"...", "importance":0, "important":false, "duplicate_group":"...", "representative":true}
+  ]
+}
+
+خبرها:
+""" + json.dumps(compact, ensure_ascii=False)
+
+          payload=json.dumps({
+              "contents":[{"parts":[{"text":prompt}]}],
+              "generationConfig":{
+                  "temperature":0.1,
+                  "responseMimeType":"application/json"
+              }
+          }).encode()
+
+          req=urllib.request.Request(
+              "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent",
+              data=payload,
+              headers={
+                  "x-goog-api-key": __import__("os").environ["GEMINI_API_KEY"],
+                  "Content-Type":"application/json"
+              },
+              method="POST"
+          )
+
+          with urllib.request.urlopen(req, timeout=90) as r:
+              result=json.load(r)
+
+          text=""
+          for c in result.get("candidates",[]):
+              for p in c.get("content",{}).get("parts",[]):
+                  text += p.get("text","")
+
+          if not text:
+              raise RuntimeError(json.dumps(result, ensure_ascii=False))
+
+          parsed=json.loads(text)
+          print(json.dumps(parsed, ensure_ascii=False, indent=2))
+          PY
