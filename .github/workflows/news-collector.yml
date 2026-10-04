@@ -32,5 +32,8 @@ jobs:
           git config user.name "evrenexus-news-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/news.json
-          git diff --cached --quiet || git commit -m "Update aggregated news"
-          git push
+          if ! git diff --cached --quiet; then
+            git commit -m "Update aggregated news"
+            git pull --rebase origin main
+            git push
+          fi
