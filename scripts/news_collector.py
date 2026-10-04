@@ -16,6 +16,7 @@ LATEST_PER_SOURCE=14
 FEED_SCAN_LIMIT=50
 IMAGE_ENRICH_LIMIT=20
 IMAGE_FETCH_TIMEOUT=3
+SOURCE_FETCH_TIMEOUT=5
 TEHRAN_TZ=ZoneInfo("Asia/Tehran")
 
 SOURCES=[
@@ -185,13 +186,13 @@ def classify_topics(item):
 def fetch(url):
     req=Request(url,headers={"User-Agent":UA,"Accept":"application/rss+xml,application/atom+xml,application/xml,text/html;q=0.9,*/*;q=0.5"})
     last=None
-    for attempt in range(2):
-        try:
-            with urlopen(req,timeout=8) as r: return r.read(), r.headers.get("content-type","")
-        except Exception as e:
-            last=e
-            if attempt < 1: time.sleep(1)
-    raise last
+    # Each request is intentionally short and isolated. A dead source must never
+    # hold the whole news collection run hostage.
+    try:
+        with urlopen(req,timeout=SOURCE_FETCH_TIMEOUT) as r:
+            return r.read(), r.headers.get("content-type","")
+    except Exception as e:
+        raise e
 
 def discover(home):
     data,_=fetch(home); text=data.decode("utf-8","ignore"); found=[]
@@ -336,7 +337,11 @@ def main():
                     errors.append("feed parsed but contained no articles: "+u)
                 else: errors.append("not an RSS/Atom feed: "+u)
             except Exception as e: errors.append(type(e).__name__+": "+str(e)[:180])
-        if not got:
+        # If a source has an explicitly configured feed, do not perform extra
+        # homepage/feed discovery after it fails. Discovery can multiply delays
+        # when a site is unavailable. Sources without a configured feed may still
+        # use discovery once, with the same per-request timeout.
+        if not got and not s["feeds"]:
             try: discovered=discover(s["site"])
             except Exception as e: discovered=[]; errors.append("discovery: "+type(e).__name__+": "+str(e)[:180])
             for u in dict.fromkeys(discovered):
