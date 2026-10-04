@@ -27,17 +27,17 @@ TEHRAN_TZ=ZoneInfo("Asia/Tehran")
 DUPLICATE_WINDOW_HOURS=48
 
 SOURCES=[
- {"name":"دنیای اقتصاد","category":"اقتصاد و سرمایه‌گذاری","site":"https://donya-e-eqtesad.com/","feeds":["https://donya-e-eqtesad.com/feeds/"]},
- {"name":"اقتصادنیوز","category":"اقتصاد و سرمایه‌گذاری","site":"https://www.eghtesadnews.com/","feeds":["https://www.eghtesadnews.com/feeds"]},
- {"name":"تجارت‌نیوز","category":"اقتصاد و سرمایه‌گذاری","site":"https://tejaratnews.com/","feeds":["https://tejaratnews.com/feed/"]},
- {"name":"بورس‌نیوز","category":"بورس و بازار سرمایه","site":"https://www.boursenews.ir/","feeds":["https://www.boursenews.ir/rss"]},
- {"name":"صدای بورس","category":"بورس و بازار سرمایه","site":"https://sedayebourse.ir/","feeds":[]},
- {"name":"فردای اقتصاد","category":"بورس و بازار سرمایه","site":"https://www.fardayeeghtesad.com/","feeds":[]},
- {"name":"پیوست","category":"فناوری و علم","site":"https://peivast.com/","feeds":["https://peivast.com/feed/"]},
- {"name":"سلامت نیوز","category":"پزشکی و سلامت","site":"https://www.salamatnews.com/","feeds":["https://www.salamatnews.com/rss.xml"]},
- {"name":"پزشک سایت","category":"پزشکی و سلامت","site":"https://www.pezeshk-site.ir/","feeds":["https://www.pezeshk-site.ir/feed/"]},
- {"name":"انتخاب","category":"اقتصاد و سرمایه‌گذاری","site":"https://www.entekhab.ir/","feeds":["https://www.entekhab.ir/fa/rss/1"]},
- {"name":"فرارو","category":"اقتصاد و سرمایه‌گذاری","site":"https://fararu.com/","feeds":["https://fararu.com/fa/rss"]},
+ {"name":"دنیای اقتصاد","category":"اقتصاد و سرمایه‌گذاری","site":"https://donya-e-eqtesad.com/","feeds":["https://donya-e-eqtesad.com/feeds/"],"allow_internal_republish":True},
+ {"name":"اقتصادنیوز","category":"اقتصاد و سرمایه‌گذاری","site":"https://www.eghtesadnews.com/","feeds":["https://www.eghtesadnews.com/feeds"],"allow_internal_republish":True},
+ {"name":"تجارت‌نیوز","category":"اقتصاد و سرمایه‌گذاری","site":"https://tejaratnews.com/","feeds":["https://tejaratnews.com/feed/"],"allow_internal_republish":True},
+ {"name":"بورس‌نیوز","category":"بورس و بازار سرمایه","site":"https://www.boursenews.ir/","feeds":["https://www.boursenews.ir/rss"],"allow_internal_republish":True},
+ {"name":"صدای بورس","category":"بورس و بازار سرمایه","site":"https://sedayebourse.ir/","feeds":[],"allow_internal_republish":True},
+ {"name":"فردای اقتصاد","category":"بورس و بازار سرمایه","site":"https://www.fardayeeghtesad.com/","feeds":[],"allow_internal_republish":True},
+ {"name":"پیوست","category":"فناوری و علم","site":"https://peivast.com/","feeds":["https://peivast.com/feed/"],"allow_internal_republish":True},
+ {"name":"سلامت نیوز","category":"پزشکی و سلامت","site":"https://www.salamatnews.com/","feeds":["https://www.salamatnews.com/rss.xml"],"allow_internal_republish":True},
+ {"name":"پزشک سایت","category":"پزشکی و سلامت","site":"https://www.pezeshk-site.ir/","feeds":["https://www.pezeshk-site.ir/feed/"],"allow_internal_republish":True},
+ {"name":"انتخاب","category":"اقتصاد و سرمایه‌گذاری","site":"https://www.entekhab.ir/","feeds":["https://www.entekhab.ir/fa/rss/1"],"allow_internal_republish":True},
+ {"name":"فرارو","category":"اقتصاد و سرمایه‌گذاری","site":"https://fararu.com/","feeds":["https://fararu.com/fa/rss"],"allow_internal_republish":True},
 ]
 
 TOPIC_RULES={
@@ -259,9 +259,45 @@ def parse(data,source):
                     candidate=x.attrib.get("url","")
                     if re.search(r"\.(?:jpe?g|png|webp|gif)(?:\?|$)",candidate,re.I):
                         image=urljoin(link,candidate); break
-        out.append({"id":hashlib.sha256(link.encode()).hexdigest()[:20],"title":txt(title),"summary":txt(desc)[:300],"url":link,"image":image,"source":source["name"],"category":source["category"],"published":parse_date(date),"topics":[]})
+        out.append({"id":hashlib.sha256(link.encode()).hexdigest()[:20],"title":txt(title),"summary":txt(desc)[:300],"content":"","url":link,"image":image,"source":source["name"],"source_site":source["site"],"allow_internal_republish":bool(source.get("allow_internal_republish")),"category":source["category"],"published":parse_date(date),"topics":[]})
     out.sort(key=lambda x:date_key(x.get("published","")),reverse=True)
     return out[:LATEST_PER_SOURCE]
+
+def extract_article_text(url):
+    try:
+        req=Request(url,headers={"User-Agent":UA,"Accept":"text/html,application/xhtml+xml;q=0.9,*/*;q=0.5"})
+        with urlopen(req,timeout=SOURCE_FETCH_TIMEOUT) as r:
+            data=r.read(1800000)
+        raw=data.decode("utf-8","ignore")
+        raw=re.sub(r"(?is)<(script|style|noscript|svg|iframe|nav|footer|header)[^>]*>.*?</\\1>"," ",raw)
+        # Prefer the semantic article/main container, then fall back to the full body.
+        candidates=[]
+        for pat in (r"(?is)<article\\b[^>]*>(.*?)</article>",r"(?is)<main\\b[^>]*>(.*?)</main>",r"(?is)<div[^>]+(?:class|id)=[\"'][^\"']*(?:article|post|news|content)[^\"']*[\"'][^>]*>(.*?)</div>"):
+            candidates.extend(re.findall(pat,raw))
+        body=max(candidates,key=len) if candidates else raw
+        body=re.sub(r"(?is)<(p|br|li|h[1-6])[^>]*>", "\\n", body)
+        body=re.sub(r"(?is)</(p|br|li|h[1-6])>", "\\n", body)
+        text=txt(body)
+        text=re.sub(r"\\n{3,}","\\n\\n",text)
+        # Drop very short extraction results that are probably navigation/error pages.
+        return text[:30000] if len(text)>=300 else ""
+    except Exception:
+        return ""
+
+def enrich_content(items,limit=50):
+    targets=[x for x in sorted(items,key=lambda x:date_key(x.get("published","")),reverse=True)
+             if x.get("allow_internal_republish") and not x.get("content")][:limit]
+    changed=0
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        futures={pool.submit(extract_article_text,item.get("url","")):item for item in targets}
+        for future in as_completed(futures):
+            item=futures[future]
+            try: content=future.result()
+            except Exception: content=""
+            if content:
+                item["content"]=content
+                changed+=1
+    return changed
 
 def fetch_article_image(url):
     try:
@@ -347,6 +383,7 @@ def main():
                     if prev:
                         if prev.get("image") and not item.get("image"): item["image"]=prev["image"]
                         if prev.get("image_tries"): item["image_tries"]=prev["image_tries"]
+                        if prev.get("content") and not item.get("content"): item["content"]=prev["content"]
                     existing[item["id"]]=item
                 status.append(info)
             except Exception as e:
@@ -355,6 +392,7 @@ def main():
     if not status or not any(x.get("ok") for x in status):
         print("All news sources failed; keeping previous news.json unchanged."); return
     enrich_images(all_items)
+    enrich_content(all_items)
     all_items=[x for x in all_items if is_valid_item(x,now_ts)]
     all_items.sort(key=lambda x:date_key(x.get("published","")),reverse=True)
     all_items=all_items[:300]
