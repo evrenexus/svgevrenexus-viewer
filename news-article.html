@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>خبر | Evren Nexus</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;padding:0;background:#f1f2f3;color:#20272d;font-family:Vazir,Tahoma,Arial,sans-serif}
+#page{width:850px;max-width:100%;margin:0 auto;padding:123px 10px 25px;display:flex;gap:10px;direction:rtl}
+#content{width:610px;min-width:610px;overflow:hidden}#sidebar-host{width:200px;min-width:200px}
+.article{background:#fff;border:1px solid #dfe2e4;padding:16px}.article-title{font-size:18px;line-height:2;font-weight:700;margin:0 0 8px;color:#20272d}.article-meta{font-size:9px;color:#8a9298;border-bottom:1px solid #edf0f1;padding-bottom:10px;margin-bottom:12px}.article-image{width:100%;max-height:380px;object-fit:cover;display:block;background:#eee;margin:0 0 15px}.article-body{font-size:12px;line-height:2.25;color:#333;white-space:pre-line}.article-source{margin-top:18px;padding-top:10px;border-top:1px solid #e5e7e9;font-size:10px;color:#697177}.article-source a{color:#d9232e;text-decoration:none}.back{display:inline-block;margin-bottom:10px;background:#202c35;color:#fff;text-decoration:none;padding:7px 12px;font-size:9px}
+.error{background:#fff;border:1px solid #dfe2e4;padding:25px;text-align:center;font-size:11px;color:#777}
+@media(max-width:700px){#page{width:100%;padding:112px 8px 20px;display:block}#content{width:100%;min-width:0}#sidebar-host{display:none}.article{padding:12px}.article-title{font-size:15px}.article-body{font-size:11px;line-height:2.2}.article-image{max-height:280px}}
+</style>
+</head>
+<body>
+<script src="./Evrenexus-header.js"></script>
+<main id="page"><section id="content">
+<a class="back" href="javascript:history.back()">بازگشت به اخبار</a>
+<article class="article" id="article"><div class="error">در حال دریافت خبر...</div></article>
+</section><aside id="sidebar-host"></aside></main>
+<script src="./Evrenexus-sidebar.js?v=1"></script>
+<script>
+(function(){
+"use strict";
+var id=new URLSearchParams(location.search).get("id"),host=document.getElementById("article");
+function safeUrl(v){try{var u=new URL(v,location.href);return /^https?:$/i.test(u.protocol)?u.href:""}catch(e){return ""}}
+function esc(v){return String(v||"").replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]})}
+function date(v){var d=new Date(v);return Number.isNaN(d.getTime())?"":d.toLocaleString("fa-IR",{dateStyle:"long",timeStyle:"short"})}
+function render(x){
+ if(!x || !x.allow_internal_republish || !x.content){host.innerHTML='<div class="error">این خبر در نسخه داخلی قابل نمایش نیست.<br><br><a href="'+esc(safeUrl(x&&x.url))+'">مشاهده منبع خبر</a></div>';return}
+ document.title=(x.title||"خبر")+" | Evren Nexus";
+ var html='<h1 class="article-title">'+esc(x.title)+'</h1>';
+ html+='<div class="article-meta">'+esc(x.source||"")+" • "+esc(date(x.published))+'</div>';
+ if(x.image){var im=safeUrl(x.image);if(im)html+='<img class="article-image" src="'+esc(im)+'" alt="'+esc(x.title)+'" loading="eager" referrerpolicy="no-referrer">'}
+ var paras=String(x.content||"").split(/\n\s*\n/).filter(Boolean);
+ html+='<div class="article-body">'+paras.map(esc).join("\n\n")+'</div>';
+ html+='<div class="article-source">منبع: '+esc(x.source||"")+"";
+ var su=safeUrl(x.url);if(su)html+=' — <a href="'+esc(su)+'" target="_blank" rel="noopener noreferrer">مشاهده منبع اصلی</a>';
+ html+='</div>';host.innerHTML=html;
+}
+fetch("./data/news.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error();return r.json()}).then(function(data){
+ var x=(data.items||[]).find(function(v){return v&&v.id===id});render(x);
+}).catch(function(){host.innerHTML='<div class="error">دریافت خبر انجام نشد.</div>'});
+})();
+</script>
+</body>
+</html>
