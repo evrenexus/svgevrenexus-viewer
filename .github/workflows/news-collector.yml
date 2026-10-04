@@ -1,5 +1,6 @@
 name: Evren Nexus News Collector
 # News collector — force immediate run
+# Trigger collector without changing schedule
 
 on:
   schedule:
