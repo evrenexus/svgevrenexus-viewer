@@ -3,7 +3,7 @@ name: Update Nobitex Crypto Data
 
 on:
   schedule:
-    - cron: "*/15 * * * *"
+    - cron: "1,16,31,46 * * * *"
   workflow_dispatch:
   push:
     paths:
