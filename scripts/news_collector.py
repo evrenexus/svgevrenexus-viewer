@@ -264,23 +264,65 @@ def parse(data,source):
     return out[:LATEST_PER_SOURCE]
 
 def extract_article_text(url):
+    """
+    Extract only the actual article body.
+
+    Never fall back to <body>, <main>, or a generic site-wide container:
+    those commonly contain navigation, ads, related stories and comments.
+    """
     try:
         req=Request(url,headers={"User-Agent":UA,"Accept":"text/html,application/xhtml+xml;q=0.9,*/*;q=0.5"})
         with urlopen(req,timeout=SOURCE_FETCH_TIMEOUT) as r:
             data=r.read(1800000)
         raw=data.decode("utf-8","ignore")
-        raw=re.sub(r"(?is)<(script|style|noscript|svg|iframe|nav|footer|header)[^>]*>.*?</\1>"," ",raw)
-        # Prefer the semantic article/main container, then fall back to the full body.
+
+        # Remove elements that can never be part of the article body.
+        raw=re.sub(
+            r"(?is)<(script|style|noscript|svg|iframe|nav|footer|header|form|aside)[^>]*>.*?</\\1>",
+            " ",
+            raw
+        )
+
+        # Site-specific article containers. Order matters: prefer explicit
+        # article containers over broad "content" classes.
+        patterns=[
+            r'(?is)<article\\b[^>]*>(.*?)</article>',
+            r'(?is)<div\\b[^>]*(?:class|id)=["\\'][^"\\']*(?:article-body|article__body|article-body-content|article-content|article_content|post-content|post-body|news-body|news-content|story-body|story-content)[^"\\']*["\\'][^>]*>(.*?)</div>',
+            r'(?is)<div\\b[^>]*(?:class|id)=["\\'][^"\\']*(?:article|post|news|story)[^"\\']*["\\'][^>]*>(.*?)</div>',
+        ]
+
         candidates=[]
-        for pat in (r"(?is)<article\b[^>]*>(.*?)</article>",r"(?is)<main\b[^>]*>(.*?)</main>",r"(?is)<div[^>]+(?:class|id)=[\"'][^\"']*(?:article|post|news|content)[^\"']*[\"'][^>]*>(.*?)</div>"):
+        for pat in patterns:
             candidates.extend(re.findall(pat,raw))
-        body=max(candidates,key=len) if candidates else raw
-        body=re.sub(r"(?is)<(p|br|li|h[1-6])[^>]*>", "\n", body)
+            if candidates:
+                break
+
+        if not candidates:
+            return ""
+
+        # Do not simply choose the largest block: a large "article" wrapper
+        # can still contain related-news widgets and comments.
+        body=max(candidates,key=lambda x: len(re.sub(r"<[^>]+>"," ",x)))
+
+        # Strip common non-article blocks that may live inside the article wrapper.
+        body=re.sub(
+            r'(?is)<(?:div|section|ul|ol)[^>]*(?:class|id)=["\\'][^"\\']*(?:related|recommend|recommended|sidebar|comments?|comment-list|advert|ads|banner|share|social|breadcrumb|tags?|most-read|popular|latest|more-news)[^"\\']*["\\'][^>]*>.*?</(?:div|section|ul|ol)>',
+            " ",
+            body
+        )
+
+        body=re.sub(r"(?is)<(p|br|li|h[1-6])[^>]*>", "\\n", body)
         body=re.sub(r"(?is)</(p|br|li|h[1-6])>", "\\n", body)
-        text=txt(body)
-        text=re.sub(r"\n{3,}","\\n\\n",text)
-        # Drop very short extraction results that are probably navigation/error pages.
-        return text[:30000] if len(text)>=300 else ""
+        text=html.unescape(re.sub(r"<[^>]+>"," ",body))
+        text=re.sub(r"[ \\t\\r]+"," ",text)
+        text=re.sub(r"\\n[ \\t]+","\\n",text)
+        text=re.sub(r"\\n{3,}","\\n\\n",text).strip()
+
+        # A real article should contain several readable sentences.
+        if len(text)<300 or len(re.findall(r"[.!؟،؛]",text))<3:
+            return ""
+
+        return text[:30000]
     except Exception:
         return ""
 
