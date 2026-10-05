@@ -72,7 +72,7 @@ var wrap=document.createElement("div");wrap.innerHTML=`
 <nav id="Evrenxus-main-menu"><a class="active" target="_top" href="https://evrenexus.github.io/svgevrenexus-viewer/">خانه</a><a target="_top" href="https://evrenexus.github.io/svgevrenexus-viewer/news-river.html?topic=economy" data-topic="economy">اقتصاد</a><a target="_top" href="https://evrenexus.github.io/svgevrenexus-viewer/news-river.html?topic=markets" data-topic="markets">بازار و سرمایه‌گذاری</a><a target="_top" href="https://evrenexus.github.io/svgevrenexus-viewer/news-river.html?topic=currency-gold" data-topic="currency-gold">ارز و طلا</a><a target="_top" href="https://evrenexus.github.io/svgevrenexus-viewer/news-river.html?topic=real-estate" data-topic="real-estate">مسکن</a><a target="_top" href="https://evrenexus.github.io/svgevrenexus-viewer/news-river.html?topic=technology" data-topic="technology">فناوری</a><a target="_top" href="https://evrenexus.github.io/svgevrenexus-viewer/news-river.html?topic=ai" data-topic="ai">هوش مصنوعی</a><a target="_top" href="https://evrenexus.github.io/svgevrenexus-viewer/news-river.html?topic=health" data-topic="health">پزشکی و سلامت</a><a target="_top" href="https://evrenexus.github.io/svgevrenexus-viewer/news-river.html?topic=auto" data-topic="auto">خودرو</a><a target="_top" href="https://evrenexus.github.io/svgevrenexus-viewer/news-river.html?topic=science-life" data-topic="science-life">علم و سبک زندگی</a></nav>
 <div id="Evrenxus-property-search"><div id="Evrenxus-property-search-title"><a target="_blank" href="https://evrenexus.blogfa.com/post/5">موتور جستجوی املاک</a></div><div id="Evrenxus-property-search-form"><input id="Evrenxus-property-budget" type="text" inputmode="decimal" autocomplete="off" placeholder="1-999"><button id="Evrenxus-property-search-button" type="button">بیاب</button></div><div id="Evrenxus-property-search-error">رقم را بر پایه میلیارد تومان وارد کنید</div></div>
 </div></header>`;
-function mountHeader(){if(document.getElementById("Evrenxus-header"))return;var root=document.body||document.documentElement;if(!root)return;var header=wrap.firstElementChild;if(!header)return;root.insertBefore(header,root.firstChild)}
+function mountHeader(){if(document.getElementById("Evrenxus-header"))return;var root=document.body||document.documentElement;if(!root)return;var header=wrap.firstElementChild;if(!header)return;root.insertBefore(header,root.firstChild);initTickers()}
 if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",mountHeader,{once:true});}else{mountHeader();}
 
 (function(){
@@ -83,7 +83,7 @@ function search(){var v=norm(input.value),b=Number(v);if(!v||!isFinite(b)||b<1||
 button.onclick=search;input.onkeydown=function(e){if(e.key==="Enter"){e.preventDefault();search()}};input.oninput=function(){error.style.display="none"}
 })();
 
-(function(){
+function initTickers(){
 var metal=document.getElementById("Evrenxus-metals-track"),cur=document.getElementById("Evrenxus-currency-track"),crypto=document.getElementById("Evrenxus-crypto-track");
 function stamp(prefix,iso){var n=iso?new Date(iso):new Date(),d=document.getElementById("Evrenxus-"+prefix+"-date"),t=document.getElementById("Evrenxus-"+prefix+"-time");if(!d||!t)return;d.textContent=new Intl.DateTimeFormat("fa-IR-u-ca-persian",{timeZone:"Asia/Tehran",year:"numeric",month:"2-digit",day:"2-digit"}).format(n);t.textContent=new Intl.DateTimeFormat("en-GB",{timeZone:"Asia/Tehran",hour:"2-digit",minute:"2-digit",hour12:false}).format(n)}
 function fmt(v){return v==null?"-":new Intl.NumberFormat("en-US",{maximumFractionDigits:2}).format(Number(v))}
@@ -118,7 +118,7 @@ loadTGJU().catch(function(){showLoadError(metal);showLoadError(cur)});
 loadCrypto().catch(function(){showLoadError(crypto)});
 function nextTehranHour(){var n=new Date(),t=new Date(n.toLocaleString("en-US",{timeZone:"Asia/Tehran"})),d=new Date(t);d.setMinutes(0,0,0);d.setHours(d.getHours()+1);return Math.max(1000,d.getTime()-t.getTime())}function scheduleTGJU(){setTimeout(function(){loadTGJU().catch(function(){});setInterval(function(){loadTGJU().catch(function(){})},60*60*1000)},nextTehranHour())}scheduleTGJU();
 function scheduleCrypto(){var n=new Date(),t=new Date(n.toLocaleString("en-US",{timeZone:"Asia/Tehran"})),m=t.getMinutes(),delay=((15-(m%15))*60-t.getSeconds())*1000-t.getMilliseconds();setTimeout(function(){loadCrypto().catch(function(){});setInterval(function(){loadCrypto().catch(function(){})},15*60*1000)},Math.max(1000,delay))}scheduleCrypto();
-})();
+}
 (function(){
 function update(){var n=new Date(),d=document.getElementById("Evrenxus-shamsi"),t=document.getElementById("Evrenxus-time");if(!d||!t)return;d.textContent=new Intl.DateTimeFormat("fa-IR-u-ca-persian",{timeZone:"Asia/Tehran",year:"numeric",month:"long",day:"numeric"}).format(n);t.textContent=new Intl.DateTimeFormat("en-GB",{timeZone:"Asia/Tehran",hour:"2-digit",minute:"2-digit",second:"2-digit",hour12:false}).format(n)}
 update();setInterval(update,1000);
