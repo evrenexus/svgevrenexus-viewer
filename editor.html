@@ -153,41 +153,51 @@ async function saveOne(id,attempt){
     render();
   }catch(e){console.error(e);$('status').textContent='❌ '+e.message;}
 }
-function saveDirect(){
-  const changed={};
-  Object.keys(choices).forEach(id=>{
-    if(JSON.stringify(originalChoices[id]||{})!==JSON.stringify(choices[id]||{}))changed[id]=choices[id]
-  });
-  if(!Object.keys(changed).length){$('status').textContent='تغییری برای ذخیره وجود ندارد.';return;}
-  let token=$('token').value.trim()||sessionStorage.getItem('evren_github_token')||'';
-  if(!token){$('status').textContent='ابتدا GitHub Token را وارد کن.';return;}
-  $('status').textContent='در حال ذخیره مستقیم در GitHub...';
-  try{
-    const repo='evrenexus/svgevrenexus-viewer',path='data/editorial.json';
-    const get=await fetch('https://api.github.com/repos/'+repo+'/contents/'+path,{headers:{Authorization:'Bearer '+token,Accept:'application/vnd.github+json'}});
-    if(!get.ok)throw new Error('دسترسی GitHub رد شد ('+get.status+')');
-    const current=await get.json();
-    const bytes=Uint8Array.from(atob(current.content.replace(/\s/g,'')),c=>c.charCodeAt(0));
-    const decoded=new TextDecoder('utf-8',{fatal:true}).decode(bytes);
-    const existing=JSON.parse(decoded);
-    const items=existing.items||{};
-    Object.entries(changed).forEach(([id,v])=>{if(v&&Object.keys(v).length)items[id]=v;else delete items[id]});
-    const content=JSON.stringify({updated:new Date().toISOString(),items},null,2)+'\n';
-    try{ JSON.parse(content); }catch(e){ throw new Error('JSON تولیدشده معتبر نیست؛ ذخیره متوقف شد.'); }
-    const encoded=(()=>{const b=new TextEncoder().encode(content);let bin='';for(const byte of b)bin+=String.fromCharCode(byte);return btoa(bin)})();
-    const put=await fetch('https://api.github.com/repos/'+repo+'/contents/'+path,{
-      method:'PUT',
-      headers:{Authorization:'Bearer '+token,Accept:'application/vnd.github+json','Content-Type':'application/json'},
-      body:JSON.stringify({message:'Update editorial data',content:encoded,sha:current.sha,branch:'main'})
-    });
-    if(!put.ok){const e=await put.text();throw new Error('ذخیره GitHub شکست خورد ('+put.status+'): '+e.slice(0,180));}
-    sessionStorage.setItem('evren_github_token',token);
-    originalChoices=JSON.parse(JSON.stringify(items));
-    choices=JSON.parse(JSON.stringify(items));
-    $('output').value=content;
-    $('status').textContent='✅ ذخیره واقعی انجام شد؛ data/editorial.json به‌روزرسانی شد.';
-  }catch(e){console.error(e);$('status').textContent='❌ '+e.message;}
+function clearToken(){
+  sessionStorage.removeItem('evren_github_token');
+  $('loginToken').value='';
+  $('token').value='';
+  $('loginStatus').textContent='توکن پاک شد.';
+  $('status').textContent='توکن پاک شد.';
+  $('login').style.display='flex';
+  $('panel').style.display='none';
 }
-function clearToken(){sessionStorage.removeItem('evren_github_token');$('token').value='';$('status').textContent='توکن پاک شد.';}
-function login(){const t=$('loginToken').value.trim();if(!t){$('loginStatus').textContent='رمز عبور را وارد کنید.';return;}sessionStorage.setItem('evren_github_token',t);$('token').value=t;$('login').style.display='none';$('panel').style.display='block';load();} const savedToken=sessionStorage.getItem('evren_github_token');if(savedToken){$('login').style.display='none';$('panel').style.display='block';$('token').value=savedToken;load();} ['q','cat','filter'].forEach(id=>$(id).addEventListener(id==='q'?'input':'change',render));
+async function login(){
+  const t=$('loginToken').value.trim();
+  if(!t){showLoginError('توکن را وارد کنید.');return;}
+  const btn=$('login').querySelector('button');
+  btn.disabled=true;showLoginError('در حال بررسی توکن...');
+  try{
+    await validateToken(t);
+    sessionStorage.setItem('evren_github_token',t);
+    $('token').value=t;
+    $('login').style.display='none';
+    $('panel').style.display='block';
+    await load();
+  }catch(e){
+    sessionStorage.removeItem('evren_github_token');
+    $('token').value='';
+    showLoginError('❌ '+e.message);
+  }finally{
+    btn.disabled=false;
+  }
+}
+async function restoreSession(){
+  const savedToken=sessionStorage.getItem('evren_github_token');
+  if(!savedToken)return;
+  try{
+    await validateToken(savedToken);
+    $('token').value=savedToken;
+    $('login').style.display='none';
+    $('panel').style.display='block';
+    await load();
+  }catch(e){
+    sessionStorage.removeItem('evren_github_token');
+    $('login').style.display='flex';
+    $('panel').style.display='none';
+    showLoginError('توکن ذخیره‌شده معتبر نیست یا دسترسی لازم را ندارد.');
+  }
+}
+restoreSession();
+['q','cat','filter'].forEach(id=>$(id).addEventListener(id==='q'?'input':'change',render));
 </script></body></html>
