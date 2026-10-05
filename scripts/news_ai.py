@@ -22,6 +22,7 @@ MAX_RETRIES = 3
 MAX_CONSECUTIVE_BATCH_FAILURES = 2
 POLICY_VERSION = 4
 RETRY_DELAYS = [8, 20, 45]
+QUOTA_DEFAULT_COOLDOWN_SECONDS = 6 * 60 * 60
 
 TOPICS = [
     "economy","markets","currency-gold","real-estate","technology",
@@ -72,7 +73,9 @@ def call_gemini(prompt, key):
             last = f"HTTP {e.code}: {body}"
             print(last)
             if e.code == 429:
-                raise RuntimeError(last)
+                # Quota/rate-limit errors must never be retried: a retry can only
+                # waste time and may keep the workflow in a failed state.
+                raise RuntimeError("GEMINI_QUOTA_EXHAUSTED " + last)
             if e.code not in (500,502,503,504):
                 raise RuntimeError(last)
         except (URLError, TimeoutError, ValueError, RuntimeError) as e:
@@ -502,15 +505,19 @@ def main():
         except RuntimeError as e:
             failed_batches+=1; consecutive_failures+=1
             msg=str(e); print(f"Batch {batch_no}/{total_batches} failed: {msg}")
-            if "HTTP 429" in msg:
+            if "GEMINI_QUOTA_EXHAUSTED" in msg or "HTTP 429" in msg:
                 import re as _re
                 m = _re.search(r'"retryDelay"\s*:\s*"([0-9]+)s"', msg)
-                retry_seconds = int(m.group(1)) if m else 60 * 60
-                usage["quota_block_until_epoch"] = time.time() + retry_seconds
-                usage["quota_block_until"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime(time.time()+retry_seconds))
+                retry_seconds = int(m.group(1)) if m else QUOTA_DEFAULT_COOLDOWN_SECONDS
+                # Never let a bad/missing retryDelay create an immediate retry loop.
+                retry_seconds = max(60, retry_seconds)
+                block_until = time.time() + retry_seconds
+                usage["quota_block_until_epoch"] = block_until
+                usage["quota_block_until"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime(block_until))
                 ai["usage"] = usage
                 save_ai(ai)
                 print(f"Gemini quota exhausted. Cooldown recorded until {usage['quota_block_until']}.")
+                print("Quota exhaustion is a normal skip condition; exiting successfully.")
                 break
             print(f"Consecutive batch failures: {consecutive_failures}/{MAX_CONSECUTIVE_BATCH_FAILURES}")
             if consecutive_failures>=MAX_CONSECUTIVE_BATCH_FAILURES:
