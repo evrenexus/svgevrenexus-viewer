@@ -35,12 +35,12 @@ const CATS=[
 async function load(){
  $('status').textContent='در حال دریافت...';
  try{
-  const [nr,er]=await Promise.all([fetch('data/news.json?'+Date.now()),fetch('data/editorial.json?'+Date.now())]);
+  const [nr,er]=await Promise.all([fetch('https://raw.githubusercontent.com/evrenexus/svgevrenexus-viewer/main/data/news.json?'+Date.now()),fetch('https://raw.githubusercontent.com/evrenexus/svgevrenexus-viewer/main/data/editorial.json?'+Date.now())]);
   const d=await nr.json(),e=await er.json();news=d.items||[];choices=JSON.parse(JSON.stringify(e.items||{}));originalChoices=JSON.parse(JSON.stringify(e.items||{}));
   const cats=[...new Set(news.map(x=>x.category).filter(Boolean))].sort();
   $('cat').innerHTML='<option value="">همه دسته‌های فعلی</option>'+cats.map(c=>'<option>'+esc(c)+'</option>').join('');
   render();$('status').textContent=news.length+' خبر';
- }catch(e){$('status').textContent='خطا در دریافت داده‌ها';}
+ }catch(e){console.error(e);$('status').textContent='خطا در دریافت خبرها: '+e.message;}
 }
 function state(n){return choices[n.id]||{}}
 function setChoice(id,key,val){
