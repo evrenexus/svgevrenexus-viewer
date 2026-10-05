@@ -162,6 +162,20 @@ function clearToken(){
   $('login').style.display='flex';
   $('panel').style.display='none';
 }
+async function validateToken(t){
+  const repo='evrenexus/svgevrenexus-viewer',path='data/editorial.json';
+  const r=await fetch('https://api.github.com/repos/'+repo+'/contents/'+path+'?ref=main&t='+Date.now(),{
+    headers:{Authorization:'Bearer '+t,Accept:'application/vnd.github+json'}
+  });
+  if(!r.ok){
+    let msg='HTTP '+r.status;
+    try{const j=await r.json();if(j.message)msg=j.message;}catch(e){}
+    throw new Error(msg);
+  }
+  const j=await r.json();
+  if(!j.content)throw new Error('دسترسی به editorial.json تأیید نشد.');
+  return true;
+}
 async function login(){
   const t=$('loginToken').value.trim();
   if(!t){showLoginError('توکن را وارد کنید.');return;}
