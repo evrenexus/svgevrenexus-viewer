@@ -11,7 +11,7 @@ input,select,button{font:inherit;padding:8px;border:1px solid #ccc;border-radius
 .important.active{background:#d89b00}.slider.active{background:#2867c7}.republish.active{background:#14804a}.reject.active{background:#b42318}.delete{color:#b42318}.delete.active{background:#b42318;color:#fff}
 .category{min-width:150px}.status{font-size:12px;color:#555;margin-right:auto}.empty{text-align:center;padding:30px;color:#777;background:#fff;border-radius:8px}
 .info{background:#fff8d8;border:1px solid #e6d36a;padding:10px;margin-bottom:12px;font-size:12px;line-height:2}.output{width:100%;min-height:90px;direction:ltr;text-align:left;font:12px Consolas,monospace}
-.editor{display:none;background:#f8f9fa;border:1px solid #ddd;padding:10px;margin-top:10px}.editor.open{display:block}.editor input,.editor textarea{width:100%;box-sizing:border-box;margin:4px 0}.editor textarea{min-height:180px}.publish{background:#14804a;color:#fff}.edit{background:#eee}
+.editor{display:none;background:#f8f9fa;border:1px solid #ddd;padding:10px;margin-top:10px}.editor.open{display:block}.editor input,.editor textarea{width:100%;box-sizing:border-box;margin:4px 0}.editor textarea{min-height:90px}.richbar{display:flex;gap:5px;flex-wrap:wrap;background:#fff;border:1px solid #ccc;border-bottom:0;padding:7px;border-radius:6px 6px 0 0}.richbar button{padding:5px 9px}.richbody{min-height:260px;background:#fff;border:1px solid #ccc;border-radius:0 0 6px 6px;padding:12px;line-height:2.2;outline:none}.richbody:focus{border-color:#777}.richbody img{max-width:100%;height:auto}.publish{background:#14804a;color:#fff}.edit{background:#eee}
 </style></head>
 <body><div id="loginScreen" style="position:fixed;inset:0;background:#f4f5f7;display:flex;align-items:center;justify-content:center;z-index:9999"><div style="background:#fff;width:min(380px,90%);padding:28px;border-radius:12px;box-shadow:0 8px 30px #0002;text-align:center"><h2 style="margin-top:0">ورود به پنل مدیریت</h2><p style="color:#666;font-size:13px">رمز عبور مدیریت را وارد کنید.</p><input id="loginToken" type="password" placeholder="رمز عبور" style="width:100%;box-sizing:border-box;margin:10px 0;padding:11px"><button class="primary" id="loginButton" type="button">ورود</button><div id="loginStatus" style="color:#b42318;font-size:12px;margin-top:10px"></div></div></div><div id="panel" style="display:none"><div class="wrap">
 <h1>پنل سردبیری Evren Nexus</h1>
@@ -69,14 +69,23 @@ function toggleNewsEditor(id){
   if(box.classList.contains('open')){
     box.querySelector('[data-f="title"]').value=s.title!==undefined?s.title:(n.title||'');
     box.querySelector('[data-f="summary"]').value=s.summary!==undefined?s.summary:(n.summary||'');
-    box.querySelector('[data-f="content"]').value=s.content!==undefined?s.content:(n.content||'');
+    box.querySelector('[data-f="content"]').innerHTML=s.content!==undefined?s.content:escRich(n.content||'');
     box.querySelector('[data-f="image"]').value=s.image!==undefined?s.image:(n.image||'');
   }
 }
-function publishNews(id){choices[id]=choices[id]||{};choices[id].republish=!choices[id].republish;choices[id].published=choices[id].republish;choices[id].updated_at=new Date().toISOString();$('status').textContent=choices[id].republish?'انتشار داخلی انتخاب شد؛ برای ثبت دکمه «ذخیره» همین خبر را بزن.':'انتشار داخلی لغو شد؛ برای ثبت دکمه «ذخیره» همین خبر را بزن.';render();}
+async function publishNews(id){
+  choices[id]=choices[id]||{};
+  const next=!choices[id].republish;
+  choices[id].republish=next; choices[id].published=next; choices[id].updated_at=new Date().toISOString();
+  $('status').textContent=next?'در حال انتشار خبر...':'در حال لغو انتشار خبر...';
+  await saveOne(id);
+}
 function saveEdit(id){
   const box=document.getElementById('ed_'+id); if(!box)return; choices[id]=choices[id]||{};
-  ['title','summary','content','image'].forEach(f=>choices[id][f]=box.querySelector('[data-f="'+f+'"]').value);
+  choices[id].title=box.querySelector('[data-f="title"]').value;
+  choices[id].summary=box.querySelector('[data-f="summary"]').value;
+  choices[id].content=box.querySelector('[data-f="content"]').innerHTML;
+  choices[id].image=box.querySelector('[data-f="image"]').value;
   choices[id].edited=true; choices[id].updated_at=new Date().toISOString();
   $('status').textContent='ویرایش آماده شد؛ برای ثبت دائمی «ذخیره مستقیم در GitHub» را بزن.'; render();
 }
@@ -99,9 +108,24 @@ function render(){
     const publish=makeButton('publish','📰 انتشار داخلی',!!s.republish);publish.onclick=()=>publishNews(n.id);actions.appendChild(publish);
     const del=makeButton('delete','🗑️ '+(s.deleted?'بازگردانی خبر':'حذف خبر'),!!s.deleted);del.onclick=()=>toggleDelete(n.id);actions.appendChild(del); const saveButton=makeButton('primary','💾 ذخیره',false);saveButton.onclick=()=>saveOne(n.id);actions.appendChild(saveButton);
     const select=document.createElement('select');select.className='category';select.innerHTML='<option value="">خودکار: '+esc(labelCat(n.category||''))+'</option>'+CATS.map(c=>'<option value="'+c[0]+'">'+c[1]+'</option>').join('');if(s.category)select.value=s.category;select.onchange=()=>setCategory(n.id,select.value);actions.appendChild(select);card.appendChild(actions);
-    const ed=document.createElement('div');ed.id='ed_'+n.id;ed.className='editor';ed.innerHTML='<input data-f="title" placeholder="عنوان"><input data-f="summary" placeholder="خلاصه"><input data-f="image" placeholder="آدرس تصویر"><textarea data-f="content" placeholder="متن خبر"></textarea>';
-    const saveEditButton=document.createElement('button');saveEditButton.className='primary';saveEditButton.textContent='ذخیره و آماده انتشار';saveEditButton.onclick=()=>saveEdit(n.id);ed.appendChild(saveEditButton);card.appendChild(ed);list.appendChild(card);
+    const ed=document.createElement('div');ed.id='ed_'+n.id;ed.className='editor';
+    ed.innerHTML='<input data-f="title" placeholder="عنوان"><textarea data-f="summary" placeholder="خلاصه"></textarea><input data-f="image" placeholder="آدرس تصویر"><div class="richbar"><button type="button" data-cmd="bold"><b>پررنگ</b></button><button type="button" data-cmd="italic"><i>کج</i></button><button type="button" data-cmd="insertUnorderedList">• فهرست</button><button type="button" data-cmd="insertOrderedList">۱. فهرست</button><button type="button" data-cmd="formatBlock" data-value="h2">عنوان</button><button type="button" data-cmd="formatBlock" data-value="p">پاراگراف</button><button type="button" data-cmd="createLink">لینک</button><button type="button" data-cmd="removeFormat">پاک‌کردن قالب</button></div><div class="richbody" data-f="content" contenteditable="true"></div>';
+    const saveEditButton=document.createElement('button');saveEditButton.className='primary';saveEditButton.textContent='ذخیره و آماده انتشار';saveEditButton.onclick=()=>saveEdit(n.id);ed.appendChild(saveEditButton);
+    ed.querySelectorAll('[data-cmd]').forEach(function(b){b.addEventListener('click',function(){applyRichCommand(b.dataset.cmd,b.dataset.value,ed);});});card.appendChild(ed);list.appendChild(card);
   });
+}
+function escRich(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>');}
+function applyRichCommand(cmd,value,ed){
+  const body=ed.querySelector('[data-f="content"]'); if(!body)return;
+  body.focus();
+  if(cmd==='createLink'){
+    const url=prompt('آدرس لینک را وارد کنید:','https://');
+    if(url)document.execCommand('createLink',false,url);
+  }else if(cmd==='formatBlock'){
+    document.execCommand(cmd,false,value||'p');
+  }else{
+    document.execCommand(cmd,false,null);
+  }
 }
 function makeButton(cls,text,active){const b=document.createElement('button');b.className=cls+(active?' active':'');b.type='button';b.textContent=text;return b;}
 function labelCat(x){const m=CATS.find(c=>c[0]===x);return m?m[1]:(x||'بدون دسته');}
