@@ -107,29 +107,39 @@ function makeButton(cls,text,active){const b=document.createElement('button');b.
 function labelCat(x){const m=CATS.find(c=>c[0]===x);return m?m[1]:(x||'بدون دسته');}
 function fmt(x){try{return new Date(x).toLocaleString('fa-IR',{dateStyle:'short',timeStyle:'short'});}catch(e){return '';}}
 function esc(s){return String(s||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
-async function saveOne(id){
+async function saveOne(id,attempt){
+  attempt=attempt||0;
   const s=state(id)||{};
   if(JSON.stringify(originalChoices[id]||{})===JSON.stringify(s)){ $('status').textContent='تغییری برای ذخیره این خبر وجود ندارد.'; return; }
   let token=$('token').value.trim()||sessionStorage.getItem('evren_github_token')||'';
   if(!token){$('status').textContent='ابتدا وارد پنل شوید.';return;}
-  $('status').textContent='در حال ذخیره این خبر...';
+  $('status').textContent=attempt?'در حال تلاش دوباره برای ذخیره...':'در حال ذخیره این خبر...';
   try{
     const repo='evrenexus/svgevrenexus-viewer',path='data/editorial.json';
-    const get=await fetch('https://api.github.com/repos/'+repo+'/contents/'+path,{headers:{Authorization:'Bearer '+token,Accept:'application/vnd.github+json'}});
+    const headers={Authorization:'Bearer '+token,Accept:'application/vnd.github+json'};
+    const get=await fetch('https://api.github.com/repos/'+repo+'/contents/'+path+'?ref=main&t='+Date.now(),{headers});
     if(!get.ok)throw new Error('دسترسی GitHub رد شد ('+get.status+')');
     const current=await get.json();
-    const bytes=Uint8Array.from(atob(current.content.replace(/\s/g,'')),c=>c.charCodeAt(0));
+    if(!current.content)throw new Error('محتوای editorial.json خالی برگشت؛ ذخیره متوقف شد.');
+    const bytes=Uint8Array.from(atob(current.content.replace(/\\s/g,'')),c=>c.charCodeAt(0));
     const decoded=new TextDecoder('utf-8',{fatal:true}).decode(bytes);
     const existing=JSON.parse(decoded);
-    const items=existing.items||{};
-    if(s&&Object.keys(s).length) items[id]=s; else delete items[id];
-    const content=JSON.stringify({updated:new Date().toISOString(),items},null,2)+'\n';
-    try{ JSON.parse(content); }catch(e){ throw new Error('JSON تولیدشده معتبر نیست؛ ذخیره متوقف شد.'); }
-    const encoded=(()=>{const b=new TextEncoder().encode(content);let bin='';for(const byte of b)bin+=String.fromCharCode(byte);return btoa(bin)})();
+    if(!existing||typeof existing!=='object'||Array.isArray(existing))throw new Error('editorial.json ساختار نامعتبر دارد؛ ذخیره متوقف شد.');
+    const items=existing.items;
+    if(!items||typeof items!=='object'||Array.isArray(items))throw new Error('ساختار items در editorial.json نامعتبر است؛ ذخیره متوقف شد.');
+    if(s&&Object.keys(s).length)items[id]=s;else delete items[id];
+    const content=JSON.stringify({updated:new Date().toISOString(),items:items},null,2)+'\\n';
+    JSON.parse(content);
+    const b=new TextEncoder().encode(content);let bin='';for(const byte of b)bin+=String.fromCharCode(byte);
+    const encoded=btoa(bin);
     const put=await fetch('https://api.github.com/repos/'+repo+'/contents/'+path,{
-      method:'PUT',headers:{Authorization:'Bearer '+token,Accept:'application/vnd.github+json','Content-Type':'application/json'},
+      method:'PUT',headers:Object.assign({},headers,{'Content-Type':'application/json'}),
       body:JSON.stringify({message:'Update editorial item '+id,content:encoded,sha:current.sha,branch:'main'})
     });
+    if(put.status===409){
+      if(attempt<1)return saveOne(id,attempt+1);
+      throw new Error('تداخل: فایل هم‌زمان تغییر کرد. ذخیره انجام نشد؛ دوباره تلاش کنید.');
+    }
     if(!put.ok){const e=await put.text();throw new Error('ذخیره شکست خورد ('+put.status+'): '+e.slice(0,180));}
     originalChoices[id]=JSON.parse(JSON.stringify(s));
     $('output').value=content;
