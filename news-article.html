@@ -34,7 +34,7 @@ function date(v){var d=new Date(v);return Number.isNaN(d.getTime())?"":d.toLocal
 function render(x,ed){
 var s=ed&&ed.items&&x?ed.items[x.id]:null;
 var selected=!!(s&&((s.published===true)||(s.republish===true))&&s.deleted!==true);
-var allowed=!!(x&&x.allow_internal_republish);
+var allowed=true;
 var edited=!!(s&&s.edited===true);
 var data=Object.assign({},x||{});
 if(edited){
