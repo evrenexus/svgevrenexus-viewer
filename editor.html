@@ -16,12 +16,12 @@ input,select,button{font:inherit;padding:8px;border:1px solid #ccc;border-radius
 <body><div class="wrap">
 <h1>پنل سردبیری Evren Nexus</h1>
 <div class="sub">دسته‌بندی ابتدا به‌صورت خودکار انجام می‌شود؛ مدیر می‌تواند هر انتخابی را ویرایش و ذخیره کند.</div>
-<div class="info">دسته‌بندی و تحلیل خبرها خودکار است. «مهم» و «اسلایدر» دستی‌اند. هر خبر را می‌توانی ویرایش، منتشر، حذف یا بازگردانی کنی.</div>
+<div class="info">دسته‌بندی و تحلیل خبرها خودکار است. همه انتخاب‌های مدیر تا زمان ذخیره محلی‌اند و با «ذخیره همه تغییرات در GitHub» واقعاً ثبت می‌شوند.</div>
 <div class="bar">
 <input id="q" placeholder="جستجوی عنوان..." style="min-width:260px">
 <select id="cat"><option value="">همه دسته‌های فعلی</option></select>
 <select id="filter"><option value="all">همه</option><option value="important">مهم‌ها</option><option value="slider">اسلایدرها</option><option value="republish">بازنشرها</option><option value="deleted">حذف‌شده‌ها</option><option value="unselected">انتخاب‌نشده‌ها</option></select>
-<button onclick="load()">بارگذاری</button><button class="primary" onclick="saveDirect()">ثبت واقعی در GitHub</button>
+<button onclick="load()">بارگذاری</button><button class="primary" onclick="saveDirect()">ذخیره همه تغییرات در GitHub</button>
 <span id="status" class="status"></span></div>
 <div style="background:#fff;padding:10px;border:1px solid #ddd;border-radius:8px;margin-bottom:12px;font-size:12px"><b>دسترسی ذخیره:</b> برای نوشتن مستقیم در GitHub، یک Fine-grained Token فقط با دسترسی Contents: Read and write برای این مخزن وارد کن. توکن در GitHub ذخیره نمی‌شود و فقط در همین مرورگر نگه‌داری می‌شود.<br><input id="token" type="password" placeholder="GitHub Token" style="width:100%;box-sizing:border-box;margin-top:7px"><button onclick="clearToken()" style="margin-top:7px">پاک کردن توکن</button></div><textarea id="output" class="output" readonly placeholder="گزارش ذخیره اینجا نمایش داده می‌شود."></textarea>
 <div id="list"></div></div>
@@ -73,7 +73,7 @@ function openEditor(id){
     box.querySelector('[data-f="image"]').value=s.image!==undefined?s.image:(n.image||'');
   }
 }
-function saveEdit(id){
+function publishNews(id){choices[id]=choices[id]||{};choices[id].republish=true;choices[id].published=true;choices[id].updated_at=new Date().toISOString();openEditor(id);$('status').textContent='انتشار داخلی فعال شد؛ متن و تصویر را بررسی و سپس «ذخیره در GitHub» بزن.';render();}\nfunction saveEdit(id){
   const box=document.getElementById('ed_'+id); if(!box)return; choices[id]=choices[id]||{};
   ['title','summary','content','image'].forEach(f=>choices[id][f]=box.querySelector('[data-f="'+f+'"]').value);
   choices[id].published=true; choices[id].edited=true; choices[id].updated_at=new Date().toISOString();
@@ -95,7 +95,7 @@ function render(){
     const important=makeButton('important','⭐ مهم',!!s.important);important.onclick=()=>setChoice(n.id,'important',!state(n.id).important);actions.appendChild(important);
     const slider=makeButton('slider','🖼 اسلایدر',!!s.slider);slider.onclick=()=>setChoice(n.id,'slider',!state(n.id).slider);actions.appendChild(slider);
     const edit=makeButton('edit','✏️ ویرایش',false);edit.onclick=()=>openEditor(n.id);actions.appendChild(edit);
-    const publish=makeButton('publish','📰 انتشار نسخه ویرایش‌شده',false);publish.onclick=()=>openEditor(n.id);actions.appendChild(publish);
+    const publish=makeButton('publish','📰 انتشار داخلی',!!s.republish);publish.onclick=()=>publishNews(n.id);actions.appendChild(publish);
     const del=makeButton('delete','🗑️ '+(s.deleted?'بازگردانی خبر':'حذف خبر'),!!s.deleted);del.onclick=()=>toggleDelete(n.id);actions.appendChild(del);
     const select=document.createElement('select');select.className='category';select.innerHTML='<option value="">خودکار: '+esc(labelCat(n.category||''))+'</option>'+CATS.map(c=>'<option value="'+c[0]+'">'+c[1]+'</option>').join('');if(s.category)select.value=s.category;select.onchange=()=>setCategory(n.id,select.value);actions.appendChild(select);card.appendChild(actions);
     const ed=document.createElement('div');ed.id='ed_'+n.id;ed.className='editor';ed.innerHTML='<input data-f="title" placeholder="عنوان"><input data-f="summary" placeholder="خلاصه"><input data-f="image" placeholder="آدرس تصویر"><textarea data-f="content" placeholder="متن خبر"></textarea>';
