@@ -1,10 +1,9 @@
-name: Analyze News with Gemini
+name: Evren Nexus — AI Manager
 
 on:
+  schedule:
+    - cron: '17 */4 * * *'
   workflow_dispatch:
-  workflow_run:
-    workflows: ["Evren Nexus — Update All"]
-    types: [completed]
 
 permissions:
   contents: write
@@ -15,7 +14,6 @@ concurrency:
 
 jobs:
   analyze:
-    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
     name: Analyze news with Gemini
     runs-on: ubuntu-latest
 
@@ -38,7 +36,7 @@ jobs:
 
           # news_ai.py writes both files. Commit both together so
           # no generated editorial changes remain unstaged during rebase.
-          git add data/news-ai.json data/editorial.json
+          git add data/news-ai.json data/editorial.json data/articles.json
 
           if git diff --cached --quiet; then
             echo "No AI data changes."
