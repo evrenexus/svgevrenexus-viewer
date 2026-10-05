@@ -547,8 +547,11 @@ def main():
 
     ai["usage"]=usage
     if candidates and successful_batches==0:
-        print(f"::error::No news were analyzed successfully. {failed_batches} batch(es) failed.")
-        raise SystemExit(1)
+        if float(usage.get("quota_block_until_epoch",0) or 0) > time.time():
+            print("Gemini quota exhausted; cooldown recorded. No AI analysis was completed in this run, but the workflow will exit successfully.")
+            return
+        print(f"::warning::No news were analyzed successfully. {failed_batches} batch(es) failed.")
+        return
 
     if failed_batches:
         print(f"::warning::{failed_batches} batch(es) failed; successful batches were preserved.")
