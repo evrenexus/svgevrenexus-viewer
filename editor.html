@@ -90,15 +90,28 @@ function render(){
  let arr=news.filter(n=>(!q||(n.title||'').toLowerCase().includes(q))&&(!cat||n.category===cat));
  arr=arr.filter(n=>{let s=state(n);return f==='all'||(f==='important'&&s.important)||(f==='slider'&&s.slider)||(f==='republish'&&s.republish)||(f==='unselected'&&!s.important&&!s.slider&&!s.republish&&!s.reject&&!s.category)});
  if(!arr.length){$('list').innerHTML='<div class="empty">خبری پیدا نشد.</div>';return}
- $('list').innerHTML=arr.map(n=>{let s=state(n);let opts='<option value="">خودکار: '+esc(labelCat(n.category||''))+'</option>'+CATS.map(c=>'<option value="'+c[0]+'" '+(s.category===c[0]?'selected':'')+'>'+c[1]+'</option>').join('');
- return '<div class="card"><div class="title">'+esc(n.title||'بدون عنوان')+'</div><div class="meta">'+esc(n.source||'')+' · '+fmt(n.published)+' · دسته فعلی: '+esc(n.category||'نامشخص')+'</div><div class="actions">'+
- '<button class="important '+(s.important?'active':'')+'" onclick="setChoice('+JSON.stringify(n.id)+',\'important\','+(!s.important)+')">⭐ مهم</button>'+
- '<button class="slider '+(s.slider?'active':'')+'" onclick="setChoice('+JSON.stringify(n.id)+',\'slider\','+(!s.slider)+')">🖼 اسلایدر</button>'+
- '<button class="edit" onclick="openEditor('+JSON.stringify(n.id)+')">✏️ ویرایش</button>'+
- '<button class="publish" onclick="openEditor('+JSON.stringify(n.id)+')">📰 انتشار نسخه ویرایش‌شده</button>'+
- '<select class="category" onchange="setCategory('+JSON.stringify(n.id)+',this.value)">'+opts+'</select>'+
- '</div><div id="ed_'+n.id+'" class="editor"><input data-f="title" placeholder="عنوان"><input data-f="summary" placeholder="خلاصه"><input data-f="image" placeholder="آدرس تصویر"><textarea data-f="content" placeholder="متن خبر"></textarea><button class="primary" onclick="saveEdit('+JSON.stringify(n.id)+')">ذخیره و آماده انتشار</button></div></div>'}).join('');
+ $('list').innerHTML=arr.map(n=>{
+   let s=state(n);
+   let opts='<option value="">خودکار: '+esc(labelCat(n.category||''))+'</option>'+CATS.map(c=>'<option value="'+c[0]+'" '+(s.category===c[0]?'selected':'')+'>'+c[1]+'</option>').join('');
+   return '<div class="card"><div class="title">'+esc(n.title||'بدون عنوان')+'</div><div class="meta">'+esc(n.source||'')+' · '+fmt(n.published)+' · دسته فعلی: '+esc(n.category||'نامشخص')+'</div><div class="actions">'+
+   '<button class="action important '+(s.important?'active':'')+'" data-action="important" data-id="'+esc(n.id)+'">⭐ مهم</button>'+
+   '<button class="action slider '+(s.slider?'active':'')+'" data-action="slider" data-id="'+esc(n.id)+'">🖼 اسلایدر</button>'+
+   '<button class="action edit" data-action="edit" data-id="'+esc(n.id)+'">✏️ ویرایش</button>'+
+   '<button class="action publish" data-action="edit" data-id="'+esc(n.id)+'">📰 انتشار نسخه ویرایش‌شده</button>'+
+   '<select class="category" data-action="category" data-id="'+esc(n.id)+'">'+opts+'</select>'+
+   '</div><div id="ed_'+esc(n.id)+'" class="editor"><input data-f="title" placeholder="عنوان"><input data-f="summary" placeholder="خلاصه"><input data-f="image" placeholder="آدرس تصویر"><textarea data-f="content" placeholder="متن خبر"></textarea><button class="primary" data-action="save" data-id="'+esc(n.id)+'">ذخیره و آماده انتشار</button></div></div>'
+ }).join('');
 }
+$('list').addEventListener('click',function(e){
+ const el=e.target.closest('[data-action]'); if(!el)return;
+ const id=el.dataset.id, action=el.dataset.action;
+ if(action==='important'||action==='slider'){const s=state({id});setChoice(id,action,!s[action]);}
+ else if(action==='edit') openEditor(id);
+ else if(action==='save') saveEdit(id);
+});
+$('list').addEventListener('change',function(e){
+ const el=e.target.closest('[data-action="category"]'); if(el)setCategory(el.dataset.id,el.value);
+});
 function labelCat(x){let m=CATS.find(c=>c[0]===x);return m?m[1]:(x||'بدون دسته')}
 function fmt(x){try{return new Date(x).toLocaleString('fa-IR',{dateStyle:'short',timeStyle:'short'})}catch(e){return ''}}
 function esc(s){return String(s||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
