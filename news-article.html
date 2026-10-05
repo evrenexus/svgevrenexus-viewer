@@ -56,6 +56,11 @@ html+='<div class="article-body">'+paras.map(esc).join("\n\n")+'</div>';
 html+='<div class="article-source">منبع: '+esc(x.source||"")+"</div>";
 host.innerHTML=html;
 }
+function normalizeEditorial(j){
+  if(!j||typeof j!=="object"||Array.isArray(j))return {};
+  if(j.items!==undefined&&(!j.items||typeof j.items!=="object"||Array.isArray(j.items)))return {};
+  return j;
+}
 fetch("./data/news.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("news.json HTTP "+r.status);return r.json()}).then(function(data){return fetch("./data/editorial.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("editorial.json HTTP "+r.status);return r.json()}).catch(function(e){console.warn("Editorial data unavailable:",e);return {};}).then(function(editorial){return [data,editorial]});}).then(function(ds){var x=(ds[0].items||[]).find(function(v){return v&&v.id===id});render(x,ds[1]||{})}).catch(function(){host.innerHTML='<div class="error">دریافت خبر انجام نشد.</div>'});
 })();
 </script>
