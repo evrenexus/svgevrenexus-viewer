@@ -2,6 +2,9 @@ name: Analyze News with Gemini
 
 on:
   workflow_dispatch:
+  workflow_run:
+    workflows: ["Evren Nexus — Update All"]
+    types: [completed]
 
 permissions:
   contents: write
@@ -12,6 +15,7 @@ concurrency:
 
 jobs:
   analyze:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
     name: Analyze news with Gemini
     runs-on: ubuntu-latest
 
