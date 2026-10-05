@@ -1,0 +1,52 @@
+name: Save editorial selections
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  save:
+    if: startsWith(github.event.issue.title, 'EVREN_EDITOR')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Merge editorial selections
+        env:
+          BODY: ${{ github.event.issue.body }}
+        run: |
+          python - <<'PY'
+          import json, os
+          body=os.environ.get('BODY','')
+          marker=chr(96)*3+'json'
+          if 'EVREN_EDITOR' not in body or marker not in body: raise SystemExit('Invalid editorial payload')
+          payload=body.split(marker,1)[1].split(chr(96)*3,1)[0].strip()
+          incoming=json.loads(payload)
+          path='data/editorial.json'
+          with open(path,encoding='utf-8') as f: data=json.load(f)
+          items=data.setdefault('items',{})
+          for k,v in incoming.get('items',{}).items():
+              if v: items[k]=v
+              else: items.pop(k,None)
+          data['updated']=incoming.get('updated')
+          with open(path,'w',encoding='utf-8') as f:
+              json.dump(data,f,ensure_ascii=False,indent=2);f.write('\n')
+          PY
+
+      - name: Commit editorial data
+        run: |
+          git config user.name 'Evren Nexus Editorial Bot'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/editorial.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Update editorial selections'
+          git push
+
+      - name: Close request issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh issue close '${{ github.event.issue.number }}' --repo '${{ github.repository }}' --comment 'انتخاب‌های سردبیری ثبت شد.'
