@@ -20,12 +20,12 @@ input,select,button{font:inherit;padding:8px;border:1px solid #ccc;border-radius
 <input id="q" placeholder="جستجوی عنوان..." style="min-width:260px">
 <select id="cat"><option value="">همه دسته‌های فعلی</option></select>
 <select id="filter"><option value="all">همه</option><option value="important">مهم‌ها</option><option value="slider">اسلایدرها</option><option value="republish">بازنشرها</option><option value="unselected">انتخاب‌نشده‌ها</option></select>
-<button onclick="load()">بارگذاری</button><button class="primary" onclick="copyChoices()">کپی انتخاب‌ها برای ChatGPT</button>
+<button onclick="load()">بارگذاری</button><button class="primary" onclick="copyChoices()">ثبت واقعی در GitHub</button>
 <span id="status" class="status"></span></div>
 <textarea id="output" class="output" readonly placeholder="بعد از انتخاب، خروجی را اینجا می‌بینی."></textarea>
 <div id="list"></div></div>
 <script>
-let news=[],choices={};
+let news=[],choices={},originalChoices={};
 const $=id=>document.getElementById(id);
 const CATS=[
  ['economy','اقتصادی'],['markets','بازار و سرمایه‌گذاری'],['currency-gold','ارز و طلا'],['real-estate','مسکن'],
@@ -35,7 +35,7 @@ async function load(){
  $('status').textContent='در حال دریافت...';
  try{
   const [nr,er]=await Promise.all([fetch('data/news.json?'+Date.now()),fetch('data/editorial.json?'+Date.now())]);
-  const d=await nr.json(),e=await er.json();news=d.items||[];choices=e.items||{};
+  const d=await nr.json(),e=await er.json();news=d.items||[];choices=JSON.parse(JSON.stringify(e.items||{}));originalChoices=JSON.parse(JSON.stringify(e.items||{}));
   const cats=[...new Set(news.map(x=>x.category).filter(Boolean))].sort();
   $('cat').innerHTML='<option value="">همه دسته‌های فعلی</option>'+cats.map(c=>'<option>'+esc(c)+'</option>').join('');
   render();$('status').textContent=news.length+' خبر';
@@ -52,6 +52,15 @@ function setCategory(id,val){
  choices[id].updated_at=new Date().toISOString();
  if(!choices[id].important&&!choices[id].slider&&!choices[id].republish&&!choices[id].reject&&!choices[id].category)delete choices[id];
  render();
+}
+function saveToGitHub(){
+ const changed={};Object.keys(choices).forEach(function(id){if(JSON.stringify((originalChoices[id]||{}))!==JSON.stringify((choices[id]||{})))changed[id]=choices[id]});
+ if(!Object.keys(changed).length){$('status').textContent='تغییری برای ثبت وجود ندارد.';return}
+ const payload={updated:new Date().toISOString(),items:changed};
+ const ticks=String.fromCharCode(96);
+ const body='EVREN_EDITOR\\n\\n'+ticks+ticks+ticks+'json\\n'+JSON.stringify(payload,null,2)+'\\n'+ticks+ticks+ticks;
+ const url='https://github.com/evrenexus/svgevrenexus-viewer/issues/new?title='+encodeURIComponent('EVREN_EDITOR | ثبت انتخاب سردبیری')+'&body='+encodeURIComponent(body);
+ $('output').value=body;$(`status`).textContent='صفحه GitHub باز شد؛ Issue را ثبت کن.';window.open(url,'_blank');
 }
 function copyChoices(){
  const payload={updated:new Date().toISOString(),items:choices};
