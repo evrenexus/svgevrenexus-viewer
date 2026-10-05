@@ -1,0 +1,44 @@
+name: Build public data
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['data/news.json', 'data/editorial.json']
+  workflow_run:
+    workflows: ["Evren Nexus — Update All"]
+    types: [completed]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data-writes
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Validate and build
+        run: python3 scripts/build_public.py
+
+      - name: Commit
+        run: |
+          git config user.name "evrenexus-build-bot"
+          git config user.email "evrenexus-build-bot@users.noreply.github.com"
+          git add data/public
+          if git diff --cached --quiet; then echo "No changes"; exit 0; fi
+          git commit -m "build: public data"
+          for i in 1 2 3 4 5; do
+            if git pull --rebase origin main && git push origin HEAD:main; then exit 0; fi
+            git rebase --abort 2>/dev/null || true
+            sleep $((i * 5))
+          done
+          echo "push failed"; exit 1
