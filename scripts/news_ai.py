@@ -354,11 +354,31 @@ def generate_permanent_articles(all_news, ai, key):
             aid = "article-" + hashlib.sha1(normalize_title(title).encode("utf-8")).hexdigest()[:16]
         old = db["items"].get(aid, {})
         now_iso = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+        # Always retain source attribution from the grouped raw reports.
+        row_sources = row.get("sources", [])
+        if not isinstance(row_sources, list):
+            row_sources = []
+        source_ids = row.get("source_ids", [])
+        if not isinstance(source_ids, list):
+            source_ids = []
+        if not row_sources:
+            candidate_sources = []
+            gid = str(row.get("group_id", ""))
+            for cand in candidates:
+                if str(cand.get("group_id", "")) != gid:
+                    continue
+                candidate_sources = cand.get("sources", [])
+                break
+            if candidate_sources:
+                row_sources = [{
+                    "name": s.get("source", "") or s.get("name", ""),
+                    "url": s.get("url", "")
+                } for s in candidate_sources[:3] if isinstance(s, dict) and (s.get("source") or s.get("name"))]
         db["items"][aid] = {
             "id": aid, "title": title, "summary": str(row.get("summary", "")).strip()[:400],
             "content": content, "category": str(row.get("category", "economy")),
-            "group_id": str(row.get("group_id", "")), "source_ids": row.get("source_ids", []),
-            "sources": row.get("sources", []),
+            "group_id": str(row.get("group_id", "")), "source_ids": source_ids,
+            "sources": row_sources,
             "image": str(row.get("image", "") or (old.get("image", "") if isinstance(old, dict) else "")),
             "created_at": old.get("created_at", now_iso) if isinstance(old, dict) else now_iso,
             "updated_at": now_iso,
