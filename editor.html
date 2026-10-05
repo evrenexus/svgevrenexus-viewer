@@ -33,13 +33,13 @@ const CATS=[['economy','اقتصادی'],['markets','بازار و سرمایه�
 async function load(){
   $('status').textContent='در حال دریافت...';
   try{
-    const [nr,er]=await Promise.all([
-      fetch('./data/news.json?'+Date.now(),{cache:'no-store'}),
-      fetch('./data/editorial.json?'+Date.now(),{cache:'no-store'})
+    const getJSON=async (urls)=>{let last='';for(const u of urls){try{const r=await fetch(u,{cache:'no-store'});if(!r.ok){last='HTTP '+r.status+' '+u;continue;}const t=await r.text();if(!t.trim())throw new Error('پاسخ خالی');return JSON.parse(t);}catch(e){last=e.message;}}throw new Error(last||'خطا در دریافت داده');};
+    const [d,e]=await Promise.all([
+      getJSON(['./data/news.json?'+Date.now(),'https://raw.githubusercontent.com/evrenexus/svgevrenexus-viewer/main/data/news.json?'+Date.now()]),
+      getJSON(['./data/editorial.json?'+Date.now(),'https://raw.githubusercontent.com/evrenexus/svgevrenexus-viewer/main/data/editorial.json?'+Date.now()])
     ]);
-    if(!nr.ok||!er.ok) throw new Error('HTTP '+nr.status+'/'+er.status);
-    const d=await nr.json(), e=await er.json();
-    news=Array.isArray(d.items)?d.items:[];
+    news=Array.isArray(d)?d:(Array.isArray(d.items)?d.items:(Array.isArray(d.news)?d.news:[]));
+    if(!news.length) throw new Error('news.json دریافت شد اما آرایه خبرها پیدا نشد');
     choices=JSON.parse(JSON.stringify(e.items||{}));
     originalChoices=JSON.parse(JSON.stringify(e.items||{}));
     const cats=[...new Set(news.map(x=>x.category).filter(Boolean))].sort();
