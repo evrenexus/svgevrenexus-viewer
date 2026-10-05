@@ -41,15 +41,17 @@ if(slides.length>1)setInterval(function(){show(current+1)},5000);
 var q=new URLSearchParams(location.search),topic=q.get("topic")||(location.pathname.endsWith("/index.html")||location.pathname.endsWith("/")?"all":"economy");
 Promise.all([
 fetch("./data/news.json?v="+Date.now(),{cache:"no-store"}),
-fetch("./data/editorial.json?v="+Date.now(),{cache:"no-store"})
-]).then(function(rs){return Promise.all([rs[0].json(),rs[1].json()])}).then(function(ds){
-var d=ds[0],ed=ds[1]||{},ei=ed.items||{};window.EVREN_EDITORIAL=ei;
+fetch("./data/editorial.json?v="+Date.now(),{cache:"no-store"}),
+fetch("./data/news-ai.json?v="+Date.now(),{cache:"no-store"})
+]).then(function(rs){return Promise.all([rs[0].json(),rs[1].json(),rs[2].json()])}).then(function(ds){
+var d=ds[0],ed=ds[1]||{},ai=ds[2]||{},ei=ed.items||{},aii=ai.items||{};window.EVREN_EDITORIAL=ei;
 var items=(d.items||[]).filter(function(x){
 if(!x||!x.title||!x.published||!x.url)return false;
-var s=ei[x.id]||{};
-if(!s.slider)return false;
+var s=ei[x.id]||{},a=aii[x.id]||{};
+var topics=Array.isArray(a.slider_topics)?a.slider_topics:[];
+if(!topics.length && s.slider!==true)return false;
 var chosenTopic=s.category||topic;
-return topic==="all"||chosenTopic===topic;
+return topic==="all"||topics.indexOf(topic)!==-1||chosenTopic===topic;
 });
 items.sort(function(a,b){return new Date(b.published)-new Date(a.published)});render(items)
 }).catch(function(){slider.style.display="none"});
