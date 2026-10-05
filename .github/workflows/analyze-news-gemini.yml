@@ -2,6 +2,9 @@ name: Analyze News with Gemini
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/news_ai.py'
   workflow_run:
     workflows: ["Evren Nexus — Update All"]
     types: [completed]
@@ -15,7 +18,7 @@ concurrency:
 
 jobs:
   analyze:
-    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event_name == 'push' || github.event.workflow_run.conclusion == 'success' }}
     name: Analyze news with Gemini
     runs-on: ubuntu-latest
 
