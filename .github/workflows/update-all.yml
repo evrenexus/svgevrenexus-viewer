@@ -1,6 +1,8 @@
 name: Evren Nexus — Update All
 
 on:
+  schedule:
+    - cron: '*/30 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -55,8 +57,6 @@ jobs:
 
           git commit -m "Update all Evren Nexus data"
 
-          # Rebase the generated commit onto the latest main.
-          # If another commit appeared meanwhile, retry from a fresh checkout.
           for attempt in 1 2 3; do
             git fetch origin main
 
@@ -75,7 +75,6 @@ jobs:
               git reset --hard origin/main
 
               python scripts/news_collector.py
-
               node market-data/fetch-tgju.js
               node market-data/fetch-nobitex.js
 
