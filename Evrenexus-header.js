@@ -18,7 +18,7 @@ var css=`
 .Evrenxus-ticker-item .symbol{color:#aeb9c1;margin-left:6px}.Evrenxus-ticker-update{color:#8e9aa3;margin-right:38px;font-size:9px;opacity:.9}.Evrenxus-ticker-item .price{color:#fff;direction:ltr}
 .Evrenxus-up{color:#55cf8a;margin-right:5px}.Evrenxus-down{color:#ff7474;margin-right:5px}
 
-@keyframes EvrenxusTickerMove{from{transform:translateX(0)}to{transform:translateX(var(--EvrenxusTickerDistance,-100vw))}}
+@keyframes EvrenxusTickerMove{from{transform:translateX(var(--EvrenxusTickerDistance,-100vw))}to{transform:translateX(0)}}
 
 #Evrenxus-header-row2{height:30px;display:flex;align-items:center;direction:rtl;background:#fff}
 #Evrenxus-main-menu{height:30px;display:flex;align-items:stretch;justify-content:flex-start;direction:rtl;overflow:hidden;white-space:nowrap;flex:1;min-width:0}
