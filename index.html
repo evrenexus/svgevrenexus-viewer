@@ -58,7 +58,7 @@ Promise.all([
 fetch("./data/news.json?v="+Date.now(),{cache:"no-store"}),
 fetch("./data/editorial.json?v="+Date.now(),{cache:"no-store"})
 ]).then(function(rs){if(!rs[0].ok||!rs[1].ok)throw Error();return Promise.all([rs[0].json(),rs[1].json()])}).then(function(ds){
-var data=ds[0],ed=ds[1]||{};editorial=ed;var all=(data.items||[]).filter(function(x){return x&&x.title&&x.published&&safeUrl(x.url)&&safeDate(x.published)});
+var data=ds[0],ed=ds[1]||{};editorial=ed;var all=(data.items||[]).filter(function(x){var es=(ed.items&&ed.items[x.id])||{};return x&&x.title&&x.published&&safeUrl(x.url)&&safeDate(x.published)&&es.deleted!==true});
 all.sort(function(a,b){return safeDate(b.published)-safeDate(a.published)});
 var tagCounts={};all.slice(0,120).forEach(function(x){(Array.isArray(x.topics)?x.topics:[]).forEach(function(t){if(TOPICS[t])tagCounts[t]=(tagCounts[t]||0)+1})});Object.keys(tagCounts).sort(function(a,b){return tagCounts[b]-tagCounts[a]}).forEach(function(t){var a=document.createElement("a");a.className="news-tag";a.href="./news-river.html?topic="+encodeURIComponent(t);a.textContent=TOPICS[t];tagsHost.appendChild(a)});
 var items=searchTerm?all.filter(function(x){var hay=((x.title||"")+" "+(x.summary||"")+" "+(x.source||"")).toLowerCase();return hay.indexOf(searchTerm.toLowerCase())!==-1}):all;
