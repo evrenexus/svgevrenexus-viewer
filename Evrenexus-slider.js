@@ -39,5 +39,18 @@ document.getElementById("Evrenxus-slider-prev").onclick=function(){show(current-
 if(slides.length>1)setInterval(function(){show(current+1)},5000);
 }
 var q=new URLSearchParams(location.search),topic=q.get("topic")||(location.pathname.endsWith("/index.html")||location.pathname.endsWith("/")?"all":"economy");
-fetch("./data/news.json?v="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){var items=(d.items||[]).filter(function(x){return x&&x.title&&x.published&&x.url&&(topic==="all"||Array.isArray(x.topics)&&x.topics.indexOf(topic)!==-1)});items.sort(function(a,b){return new Date(b.published)-new Date(a.published)});render(items)}).catch(function(){slider.style.display="none"});
+Promise.all([
+fetch("./data/news.json?v="+Date.now(),{cache:"no-store"}),
+fetch("./data/editorial.json?v="+Date.now(),{cache:"no-store"})
+]).then(function(rs){return Promise.all([rs[0].json(),rs[1].json()])}).then(function(ds){
+var d=ds[0],ed=ds[1]||{},ei=ed.items||{};
+var items=(d.items||[]).filter(function(x){
+if(!x||!x.title||!x.published||!x.url)return false;
+var s=ei[x.id]||{};
+if(!s.slider)return false;
+var chosenTopic=s.category||topic;
+return topic==="all"||chosenTopic===topic;
+});
+items.sort(function(a,b){return new Date(b.published)-new Date(a.published)});render(items)
+}).catch(function(){slider.style.display="none"});
 })();
