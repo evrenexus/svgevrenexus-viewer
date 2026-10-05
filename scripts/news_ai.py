@@ -372,7 +372,7 @@ def main():
             if "HTTP 429" in msg:
                 import re as _re
                 m = _re.search(r'"retryDelay"\s*:\s*"([0-9]+)s"', msg)
-                retry_seconds = int(m.group(1)) if m else 12 * 3600
+                retry_seconds = int(m.group(1)) if m else 60 * 60
                 usage["quota_block_until_epoch"] = time.time() + retry_seconds
                 usage["quota_block_until"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime(time.time()+retry_seconds))
                 ai["usage"] = usage
