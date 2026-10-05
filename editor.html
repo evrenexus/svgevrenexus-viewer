@@ -34,8 +34,8 @@ async function load(){
   $('status').textContent='در حال دریافت...';
   try{
     const [nr,er]=await Promise.all([
-      fetch('https://raw.githubusercontent.com/evrenexus/svgevrenexus-viewer/main/data/news.json?'+Date.now(),{cache:'no-store'}),
-      fetch('https://raw.githubusercontent.com/evrenexus/svgevrenexus-viewer/main/data/editorial.json?'+Date.now(),{cache:'no-store'})
+      fetch('./data/news.json?'+Date.now(),{cache:'no-store'}),
+      fetch('./data/editorial.json?'+Date.now(),{cache:'no-store'})
     ]);
     if(!nr.ok||!er.ok) throw new Error('HTTP '+nr.status+'/'+er.status);
     const d=await nr.json(), e=await er.json();
@@ -76,7 +76,7 @@ function openEditor(id){
 function publishNews(id){choices[id]=choices[id]||{};choices[id].republish=!choices[id].republish;choices[id].published=choices[id].republish;choices[id].updated_at=new Date().toISOString();$('status').textContent=choices[id].republish?'انتشار داخلی انتخاب شد؛ برای ثبت «ذخیره همه تغییرات» را بزن.':'انتشار داخلی لغو شد؛ برای ثبت «ذخیره همه تغییرات» را بزن.';render();}\nfunction saveEdit(id){
   const box=document.getElementById('ed_'+id); if(!box)return; choices[id]=choices[id]||{};
   ['title','summary','content','image'].forEach(f=>choices[id][f]=box.querySelector('[data-f="'+f+'"]').value);
-  choices[id].published=true; choices[id].edited=true; choices[id].updated_at=new Date().toISOString();
+  choices[id].edited=true; choices[id].updated_at=new Date().toISOString();
   $('status').textContent='ویرایش آماده شد؛ برای ثبت دائمی «ذخیره مستقیم در GitHub» را بزن.'; render();
 }
 function render(){
