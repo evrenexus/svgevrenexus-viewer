@@ -8,7 +8,7 @@ body{font-family:Tahoma,Arial,sans-serif;background:#f4f5f7;margin:0;color:#222}
 h1{font-size:22px;margin:0 0 8px}.sub{color:#666;font-size:12px;margin-bottom:15px}.bar{background:#fff;padding:12px;border-radius:8px;margin-bottom:12px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 input,select,button{font:inherit;padding:8px;border:1px solid #ccc;border-radius:6px}button{cursor:pointer;background:#fff}.primary{background:#111;color:#fff}.card{background:#fff;border-radius:8px;padding:14px;margin-bottom:10px;border:1px solid #ddd}
 .title{font-weight:700;font-size:16px;line-height:1.9}.meta{font-size:11px;color:#777;margin:5px 0 10px}.actions{display:flex;gap:7px;flex-wrap:wrap;align-items:center}.actions button.active{color:#fff}
-.important.active{background:#d89b00}.slider.active{background:#2867c7}.republish.active{background:#14804a}.reject.active{background:#b42318}
+.important.active{background:#d89b00}.slider.active{background:#2867c7}.republish.active{background:#14804a}.reject.active{background:#b42318}.delete{color:#b42318}.delete.active{background:#b42318;color:#fff}
 .category{min-width:150px}.status{font-size:12px;color:#555;margin-right:auto}.empty{text-align:center;padding:30px;color:#777;background:#fff;border-radius:8px}
 .info{background:#fff8d8;border:1px solid #e6d36a;padding:10px;margin-bottom:12px;font-size:12px;line-height:2}.output{width:100%;min-height:90px;direction:ltr;text-align:left;font:12px Consolas,monospace}
 .editor{display:none;background:#f8f9fa;border:1px solid #ddd;padding:10px;margin-top:10px}.editor.open{display:block}.editor input,.editor textarea{width:100%;box-sizing:border-box;margin:4px 0}.editor textarea{min-height:180px}.publish{background:#14804a;color:#fff}.edit{background:#eee}
@@ -16,11 +16,11 @@ input,select,button{font:inherit;padding:8px;border:1px solid #ccc;border-radius
 <body><div class="wrap">
 <h1>پنل سردبیری Evren Nexus</h1>
 <div class="sub">دسته‌بندی ابتدا به‌صورت خودکار انجام می‌شود؛ مدیر می‌تواند هر انتخابی را ویرایش و ذخیره کند.</div>
-<div class="info">دسته‌بندی و تحلیل خبرها خودکار است. فقط «مهم» و «اسلایدر» کاملاً دستی‌اند. هر خبر را هم می‌توانی ویرایش و با قالب Evren Nexus منتشر کنی.</div>
+<div class="info">دسته‌بندی و تحلیل خبرها خودکار است. «مهم» و «اسلایدر» دستی‌اند. هر خبر را می‌توانی ویرایش، منتشر، حذف یا بازگردانی کنی.</div>
 <div class="bar">
 <input id="q" placeholder="جستجوی عنوان..." style="min-width:260px">
 <select id="cat"><option value="">همه دسته‌های فعلی</option></select>
-<select id="filter"><option value="all">همه</option><option value="important">مهم‌ها</option><option value="slider">اسلایدرها</option><option value="republish">بازنشرها</option><option value="unselected">انتخاب‌نشده‌ها</option></select>
+<select id="filter"><option value="all">همه</option><option value="important">مهم‌ها</option><option value="slider">اسلایدرها</option><option value="republish">بازنشرها</option><option value="deleted">حذف‌شده‌ها</option><option value="unselected">انتخاب‌نشده‌ها</option></select>
 <button onclick="load()">بارگذاری</button><button class="primary" onclick="saveToGitHub()">ثبت واقعی در GitHub</button>
 <span id="status" class="status"></span></div>
 <textarea id="output" class="output" readonly placeholder="بعد از انتخاب، خروجی را اینجا می‌بینی."></textarea>
@@ -34,8 +34,8 @@ async function load(){
   $('status').textContent='در حال دریافت...';
   try{
     const [nr,er]=await Promise.all([
-      fetch('https://raw.githubusercontent.com/evrenexus/svgevrenexus-viewer/main/data/news.json?'+Date.now()),
-      fetch('https://raw.githubusercontent.com/evrenexus/svgevrenexus-viewer/main/data/editorial.json?'+Date.now())
+      fetch('https://raw.githubusercontent.com/evrenexus/svgevrenexus-viewer/main/data/news.json?'+Date.now(),{cache:'no-store'}),
+      fetch('https://raw.githubusercontent.com/evrenexus/svgevrenexus-viewer/main/data/editorial.json?'+Date.now(),{cache:'no-store'})
     ]);
     if(!nr.ok||!er.ok) throw new Error('HTTP '+nr.status+'/'+er.status);
     const d=await nr.json(), e=await er.json();
@@ -44,36 +44,28 @@ async function load(){
     originalChoices=JSON.parse(JSON.stringify(e.items||{}));
     const cats=[...new Set(news.map(x=>x.category).filter(Boolean))].sort();
     $('cat').innerHTML='<option value="">همه دسته‌های فعلی</option>'+cats.map(c=>'<option value="'+esc(c)+'">'+esc(labelCat(c))+'</option>').join('');
-    render();
-    $('status').textContent=news.length+' خبر';
+    render(); $('status').textContent=news.length+' خبر';
   }catch(e){console.error(e);$('status').textContent='خطا: '+e.message;}
 }
-
 function state(id){return choices[id]||{}}
-
+function cleanIfEmpty(id){
+  const s=choices[id]; if(!s)return;
+  if(!s.important&&!s.slider&&!s.republish&&!s.reject&&!s.deleted&&!s.category&&!s.edited&&!s.published) delete choices[id];
+}
 function setChoice(id,key,val){
-  choices[id]=choices[id]||{};
-  choices[id][key]=!!val;
-  choices[id].updated_at=new Date().toISOString();
-  if(!choices[id].important&&!choices[id].slider&&!choices[id].republish&&!choices[id].reject&&!choices[id].category&&!choices[id].edited&&!choices[id].published) delete choices[id];
-  render();
+  choices[id]=choices[id]||{}; choices[id][key]=!!val; choices[id].updated_at=new Date().toISOString(); cleanIfEmpty(id); render();
 }
-
 function setCategory(id,val){
-  choices[id]=choices[id]||{};
-  if(val) choices[id].category=val; else delete choices[id].category;
-  choices[id].updated_at=new Date().toISOString();
-  if(!choices[id].important&&!choices[id].slider&&!choices[id].republish&&!choices[id].reject&&!choices[id].category&&!choices[id].edited&&!choices[id].published) delete choices[id];
-  render();
+  choices[id]=choices[id]||{}; if(val)choices[id].category=val;else delete choices[id].category;
+  choices[id].updated_at=new Date().toISOString(); cleanIfEmpty(id); render();
 }
-
+function toggleDelete(id){
+  choices[id]=choices[id]||{}; choices[id].deleted=!choices[id].deleted; choices[id].updated_at=new Date().toISOString();
+  render(); $('status').textContent=choices[id].deleted?'خبر حذف شد؛ برای ثبت دائمی «ثبت واقعی در GitHub» را بزن.':'خبر بازگردانی شد؛ برای ثبت دائمی «ثبت واقعی در GitHub» را بزن.';
+}
 function openEditor(id){
-  const n=news.find(x=>x.id===id);
-  if(!n) return;
-  const box=document.getElementById('ed_'+id);
-  if(!box){$('status').textContent='خطا: فرم ویرایش پیدا نشد';return;}
-  box.classList.toggle('open');
-  const s=state(id);
+  const n=news.find(x=>x.id===id),box=document.getElementById('ed_'+id); if(!n||!box)return;
+  box.classList.toggle('open'); const s=state(id);
   if(box.classList.contains('open')){
     box.querySelector('[data-f="title"]').value=s.title!==undefined?s.title:(n.title||'');
     box.querySelector('[data-f="summary"]').value=s.summary!==undefined?s.summary:(n.summary||'');
@@ -81,88 +73,46 @@ function openEditor(id){
     box.querySelector('[data-f="image"]').value=s.image!==undefined?s.image:(n.image||'');
   }
 }
-
 function saveEdit(id){
-  const box=document.getElementById('ed_'+id);
-  if(!box)return;
-  choices[id]=choices[id]||{};
+  const box=document.getElementById('ed_'+id); if(!box)return; choices[id]=choices[id]||{};
   ['title','summary','content','image'].forEach(f=>choices[id][f]=box.querySelector('[data-f="'+f+'"]').value);
-  choices[id].published=true;
-  choices[id].edited=true;
-  choices[id].updated_at=new Date().toISOString();
-  $('status').textContent='ویرایش خبر ثبت شد؛ برای ثبت دائمی، «ثبت واقعی در GitHub» را بزن.';
-  render();
+  choices[id].published=true; choices[id].edited=true; choices[id].updated_at=new Date().toISOString();
+  $('status').textContent='ویرایش خبر ثبت شد؛ برای ثبت دائمی، «ثبت واقعی در GitHub» را بزن.'; render();
 }
-
 function render(){
-  const q=$('q').value.trim().toLowerCase(), cat=$('cat').value, f=$('filter').value;
+  const q=$('q').value.trim().toLowerCase(),cat=$('cat').value,f=$('filter').value;
   let arr=news.filter(n=>(!q||(n.title||'').toLowerCase().includes(q))&&(!cat||n.category===cat));
-  arr=arr.filter(n=>{
-    const s=state(n.id);
-    return f==='all'||(f==='important'&&s.important)||(f==='slider'&&s.slider)||(f==='republish'&&s.republish)||(f==='unselected'&&!s.important&&!s.slider&&!s.republish&&!s.reject&&!s.category&&!s.edited&&!s.published);
+  arr=arr.filter(n=>{const s=state(n.id);
+    return f==='all'||(f==='important'&&s.important)||(f==='slider'&&s.slider)||(f==='republish'&&s.republish)||(f==='deleted'&&s.deleted)||
+      (f==='unselected'&&!s.important&&!s.slider&&!s.republish&&!s.reject&&!s.deleted&&!s.category&&!s.edited&&!s.published);
   });
-  const list=$('list');
-  list.innerHTML='';
-  if(!arr.length){list.innerHTML='<div class="empty">خبری پیدا نشد.</div>';return;}
-
+  const list=$('list');list.innerHTML='';if(!arr.length){list.innerHTML='<div class="empty">خبری پیدا نشد.</div>';return;}
   arr.forEach(n=>{
-    const s=state(n.id);
-    const card=document.createElement('div'); card.className='card';
-    const title=document.createElement('div'); title.className='title'; title.textContent=n.title||'بدون عنوان'; card.appendChild(title);
-    const meta=document.createElement('div'); meta.className='meta'; meta.textContent=(n.source||'')+' · '+fmt(n.published)+' · دسته فعلی: '+(n.category||'نامشخص'); card.appendChild(meta);
-    const actions=document.createElement('div'); actions.className='actions';
-
-    const important=makeButton('important','⭐ مهم',!!s.important);
-    important.addEventListener('click',()=>setChoice(n.id,'important',!state(n.id).important));
-    actions.appendChild(important);
-
-    const slider=makeButton('slider','🖼 اسلایدر',!!s.slider);
-    slider.addEventListener('click',()=>setChoice(n.id,'slider',!state(n.id).slider));
-    actions.appendChild(slider);
-
-    const edit=makeButton('edit','✏️ ویرایش',false);
-    edit.addEventListener('click',()=>openEditor(n.id));
-    actions.appendChild(edit);
-
-    const publish=makeButton('publish','📰 انتشار نسخه ویرایش‌شده',false);
-    publish.addEventListener('click',()=>openEditor(n.id));
-    actions.appendChild(publish);
-
-    const select=document.createElement('select'); select.className='category';
-    select.innerHTML='<option value="">خودکار: '+esc(labelCat(n.category||''))+'</option>'+CATS.map(c=>'<option value="'+c[0]+'">'+c[1]+'</option>').join('');
-    if(s.category)select.value=s.category;
-    select.addEventListener('change',()=>setCategory(n.id,select.value));
-    actions.appendChild(select);
-    card.appendChild(actions);
-
-    const ed=document.createElement('div'); ed.id='ed_'+n.id; ed.className='editor';
-    ed.innerHTML='<input data-f="title" placeholder="عنوان"><input data-f="summary" placeholder="خلاصه"><input data-f="image" placeholder="آدرس تصویر"><textarea data-f="content" placeholder="متن خبر"></textarea>';
-    const save=document.createElement('button'); save.className='primary'; save.textContent='ذخیره و آماده انتشار'; save.addEventListener('click',()=>saveEdit(n.id)); ed.appendChild(save);
-    card.appendChild(ed);
-    list.appendChild(card);
+    const s=state(n.id),card=document.createElement('div');card.className='card';
+    const title=document.createElement('div');title.className='title';title.textContent=n.title||'بدون عنوان';card.appendChild(title);
+    const meta=document.createElement('div');meta.className='meta';meta.textContent=(n.source||'')+' · '+fmt(n.published)+' · دسته فعلی: '+(n.category||'نامشخص')+(s.deleted?' · حذف‌شده':'');card.appendChild(meta);
+    const actions=document.createElement('div');actions.className='actions';
+    const important=makeButton('important','⭐ مهم',!!s.important);important.onclick=()=>setChoice(n.id,'important',!state(n.id).important);actions.appendChild(important);
+    const slider=makeButton('slider','🖼 اسلایدر',!!s.slider);slider.onclick=()=>setChoice(n.id,'slider',!state(n.id).slider);actions.appendChild(slider);
+    const edit=makeButton('edit','✏️ ویرایش',false);edit.onclick=()=>openEditor(n.id);actions.appendChild(edit);
+    const publish=makeButton('publish','📰 انتشار نسخه ویرایش‌شده',false);publish.onclick=()=>openEditor(n.id);actions.appendChild(publish);
+    const del=makeButton('delete','🗑️ '+(s.deleted?'بازگردانی خبر':'حذف خبر'),!!s.deleted);del.onclick=()=>toggleDelete(n.id);actions.appendChild(del);
+    const select=document.createElement('select');select.className='category';select.innerHTML='<option value="">خودکار: '+esc(labelCat(n.category||''))+'</option>'+CATS.map(c=>'<option value="'+c[0]+'">'+c[1]+'</option>').join('');if(s.category)select.value=s.category;select.onchange=()=>setCategory(n.id,select.value);actions.appendChild(select);card.appendChild(actions);
+    const ed=document.createElement('div');ed.id='ed_'+n.id;ed.className='editor';ed.innerHTML='<input data-f="title" placeholder="عنوان"><input data-f="summary" placeholder="خلاصه"><input data-f="image" placeholder="آدرس تصویر"><textarea data-f="content" placeholder="متن خبر"></textarea>';
+    const save=document.createElement('button');save.className='primary';save.textContent='ذخیره و آماده انتشار';save.onclick=()=>saveEdit(n.id);ed.appendChild(save);card.appendChild(ed);list.appendChild(card);
   });
 }
-
-function makeButton(cls,text,active){
-  const b=document.createElement('button'); b.className=cls+(active?' active':''); b.type='button'; b.textContent=text; return b;
-}
+function makeButton(cls,text,active){const b=document.createElement('button');b.className=cls+(active?' active':'');b.type='button';b.textContent=text;return b;}
 function labelCat(x){const m=CATS.find(c=>c[0]===x);return m?m[1]:(x||'بدون دسته');}
 function fmt(x){try{return new Date(x).toLocaleString('fa-IR',{dateStyle:'short',timeStyle:'short'});}catch(e){return '';}}
 function esc(s){return String(s||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
-
 function saveToGitHub(){
-  const changed={};
-  Object.keys(choices).forEach(id=>{if(JSON.stringify(originalChoices[id]||{})!==JSON.stringify(choices[id]||{}))changed[id]=choices[id];});
+  const changed={};Object.keys(choices).forEach(id=>{if(JSON.stringify(originalChoices[id]||{})!==JSON.stringify(choices[id]||{}))changed[id]=choices[id]});
   if(!Object.keys(changed).length){$('status').textContent='تغییری برای ثبت وجود ندارد.';return;}
-  const payload={updated:new Date().toISOString(),items:changed};
-  const ticks=String.fromCharCode(96);
-  const body='EVREN_EDITOR\\n\\n'+ticks.repeat(3)+'json\\n'+JSON.stringify(payload,null,2)+'\\n'+ticks.repeat(3);
+  const payload={updated:new Date().toISOString(),items:changed},ticks=String.fromCharCode(96);
+  const body='EVREN_EDITOR\n\n'+ticks.repeat(3)+'json\n'+JSON.stringify(payload,null,2)+'\n'+ticks.repeat(3);
   const url='https://github.com/evrenexus/svgevrenexus-viewer/issues/new?title='+encodeURIComponent('EVREN_EDITOR | ثبت انتخاب سردبیری')+'&body='+encodeURIComponent(body);
-  $('output').value=body;
-  $('status').textContent='GitHub باز شد؛ Issue را ثبت کن.';
-  window.open(url,'_blank');
+  $('output').value=body;$('status').textContent='GitHub باز شد؛ Issue را ثبت کن.';window.open(url,'_blank');
 }
-
-['q','cat','filter'].forEach(id=>$(id).addEventListener('input',render));
-load();
+['q','cat','filter'].forEach(id=>$(id).addEventListener(id==='q'?'input':'change',render));load();
 </script></body></html>
