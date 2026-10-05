@@ -20,7 +20,7 @@ h1{font-size:21px;line-height:1.9;margin:0 0 8px;color:#20272d}
 @media(max-width:700px){#page{display:block;width:100%;padding:112px 8px 20px}#content{width:100%;padding:13px}#sidebar-host{display:none}h1{font-size:17px}.article-body{font-size:11px;line-height:2.2}}
 </style></head>
 <body>
-<script src="./Evrenexus-header.js?v=20261005-6"></script>
+
 <main id="page"><section id="content"><a class="back" href="./">بازگشت به خانه</a><article id="article">در حال دریافت مطلب...</article></section><aside id="sidebar-host"></aside></main>
 <script src="./Evrenexus-sidebar.js?v=1"></script>
 <script>
@@ -33,4 +33,5 @@ function rich(v){var box=document.createElement("div");box.innerHTML=String(v||"
 function render(a){if(!a){host.innerHTML="<h1>مطلب پیدا نشد</h1>";return}document.title=(a.title||"مطلب")+" | Evren Nexus";var html="<h1>"+esc(a.title)+"</h1>";html+="<div class='ai-notice'><strong>منبع مطلب: </strong>";var src=Array.isArray(a.sources)&&a.sources.length?a.sources[0]:null;var srcName=src&&src.name?src.name:(a.source_name||"");var srcUrl=src&&safeUrl(src.url)?safeUrl(src.url):safeUrl(a.source_url||"");if(srcName){html+=srcUrl?"<a href='"+esc(srcUrl)+"' target='_blank' rel='noopener noreferrer'>"+esc(srcName)+"</a>":esc(srcName)}else if(srcUrl){try{html+="<a href='"+esc(srcUrl)+"' target='_blank' rel='noopener noreferrer'>"+esc(new URL(srcUrl).hostname.replace(/^www\\./,""))+"</a>"}catch(e){html+=esc(srcUrl)}}else{html+="منبع اصلی در اطلاعات این مطلب ثبت نشده است"}html+="<br>این مطلب توسط هوش مصنوعی Evren Nexus بازنشر و تنظیم شده است. صحت و سقم محتوای آن بر عهده منبع اصلی است و Evren Nexus مسئولیتی در قبال صحت آن ندارد.</div>";html+="<div class='meta'>Evren Nexus • "+esc(new Date(a.updated_at||a.published_at).toLocaleString("fa-IR"))+"</div>";if(a.summary)html+="<div class='summary'>"+esc(a.summary)+"</div>";html+="<div class='article-body'>"+rich(a.content)+"</div>";var ss=Array.isArray(a.sources)?a.sources:[];if(ss.length){html+="<div class='sources'><strong>منابع:</strong><ul>";ss.forEach(function(s){var u=safeUrl(s.url);if(u)html+="<li><a href='"+esc(u)+"' target='_blank' rel='noopener noreferrer'>"+esc(s.name||u)+"</a></li>";});html+="</ul></div>"}host.innerHTML=html}
 fetch("./data/articles.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error();return r.json()}).then(function(d){var a=d&&d.items?d.items[id]:null;render(a)}).catch(function(){host.innerHTML="<h1>دریافت مطلب انجام نشد.</h1>"});
 })();
-</script></body></html>
+</script><script src="https://evrenexus.github.io/svgevrenexus-viewer/Evrenexus-header.js?v=20261005-7"></script>
+</body></html>
