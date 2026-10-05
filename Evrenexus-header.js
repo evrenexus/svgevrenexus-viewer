@@ -96,7 +96,7 @@ return false;
 }
 
 function dataURL(file){
-  return "./market-data/"+file+"?v="+Date.now();
+  return "https://evrenexus.github.io/svgevrenexus-viewer/market-data/"+file+"?v="+Date.now();
 }
 function fetchWithTimeout(url){
   return Promise.race([
