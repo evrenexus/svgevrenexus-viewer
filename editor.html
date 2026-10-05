@@ -28,92 +28,141 @@ input,select,button{font:inherit;padding:8px;border:1px solid #ccc;border-radius
 <script>
 let news=[],choices={},originalChoices={};
 const $=id=>document.getElementById(id);
-const CATS=[
- ['economy','اقتصادی'],['markets','بازار و سرمایه‌گذاری'],['currency-gold','ارز و طلا'],['real-estate','مسکن'],
- ['technology','فناوری'],['ai','هوش مصنوعی'],['science-life','علم و سبک زندگی'],['health','پزشکی و سلامت'],['auto','خودرو']
-];
+const CATS=[['economy','اقتصادی'],['markets','بازار و سرمایه‌گذاری'],['currency-gold','ارز و طلا'],['real-estate','مسکن'],['technology','فناوری'],['ai','هوش مصنوعی'],['science-life','علم و سبک زندگی'],['health','پزشکی و سلامت'],['auto','خودرو']];
+
 async function load(){
- $('status').textContent='در حال دریافت...';
- try{
-  const [nr,er]=await Promise.all([fetch('https://raw.githubusercontent.com/evrenexus/svgevrenexus-viewer/main/data/news.json?'+Date.now()),fetch('https://raw.githubusercontent.com/evrenexus/svgevrenexus-viewer/main/data/editorial.json?'+Date.now())]);
-  const d=await nr.json(),e=await er.json();news=d.items||[];choices=JSON.parse(JSON.stringify(e.items||{}));originalChoices=JSON.parse(JSON.stringify(e.items||{}));
-  const cats=[...new Set(news.map(x=>x.category).filter(Boolean))].sort();
-  $('cat').innerHTML='<option value="">همه دسته‌های فعلی</option>'+cats.map(c=>'<option>'+esc(c)+'</option>').join('');
-  render();$('status').textContent=news.length+' خبر';
- }catch(e){console.error(e);$('status').textContent='خطا در دریافت خبرها: '+e.message;}
+  $('status').textContent='در حال دریافت...';
+  try{
+    const [nr,er]=await Promise.all([
+      fetch('https://raw.githubusercontent.com/evrenexus/svgevrenexus-viewer/main/data/news.json?'+Date.now()),
+      fetch('https://raw.githubusercontent.com/evrenexus/svgevrenexus-viewer/main/data/editorial.json?'+Date.now())
+    ]);
+    if(!nr.ok||!er.ok) throw new Error('HTTP '+nr.status+'/'+er.status);
+    const d=await nr.json(), e=await er.json();
+    news=Array.isArray(d.items)?d.items:[];
+    choices=JSON.parse(JSON.stringify(e.items||{}));
+    originalChoices=JSON.parse(JSON.stringify(e.items||{}));
+    const cats=[...new Set(news.map(x=>x.category).filter(Boolean))].sort();
+    $('cat').innerHTML='<option value="">همه دسته‌های فعلی</option>'+cats.map(c=>'<option value="'+esc(c)+'">'+esc(labelCat(c))+'</option>').join('');
+    render();
+    $('status').textContent=news.length+' خبر';
+  }catch(e){console.error(e);$('status').textContent='خطا: '+e.message;}
 }
-function state(n){return choices[n.id]||{}}
+
+function state(id){return choices[id]||{}}
+
 function setChoice(id,key,val){
- choices[id]=choices[id]||{};choices[id][key]=!!val;choices[id].updated_at=new Date().toISOString();
- if(!choices[id].important&&!choices[id].slider&&!choices[id].republish&&!choices[id].reject&&!choices[id].category)delete choices[id];
- render();
+  choices[id]=choices[id]||{};
+  choices[id][key]=!!val;
+  choices[id].updated_at=new Date().toISOString();
+  if(!choices[id].important&&!choices[id].slider&&!choices[id].republish&&!choices[id].reject&&!choices[id].category&&!choices[id].edited&&!choices[id].published) delete choices[id];
+  render();
 }
-function openEditor(id){
- const n=news.find(x=>x.id===id),s=state(n); if(!n)return;
- const box=document.getElementById('ed_'+id); box.classList.toggle('open');
- if(box.classList.contains('open')){
-  box.querySelector('[data-f=title]').value=s.title!==undefined?s.title:(n.title||'');
-  box.querySelector('[data-f=summary]').value=s.summary!==undefined?s.summary:(n.summary||'');
-  box.querySelector('[data-f=content]').value=s.content!==undefined?s.content:(n.content||'');
-  box.querySelector('[data-f=image]').value=s.image!==undefined?s.image:(n.image||'');
- }
-}
-function saveEdit(id){
- const box=document.getElementById('ed_'+id), n=news.find(x=>x.id===id); choices[id]=choices[id]||{};
- ['title','summary','content','image'].forEach(f=>{choices[id][f]=box.querySelector('[data-f='+f+']').value});
- choices[id].published=true; choices[id].edited=true; choices[id].updated_at=new Date().toISOString();
- render();
-}
+
 function setCategory(id,val){
- choices[id]=choices[id]||{};if(val)choices[id].category=val;else delete choices[id].category;
- choices[id].updated_at=new Date().toISOString();
- if(!choices[id].important&&!choices[id].slider&&!choices[id].republish&&!choices[id].reject&&!choices[id].category)delete choices[id];
- render();
+  choices[id]=choices[id]||{};
+  if(val) choices[id].category=val; else delete choices[id].category;
+  choices[id].updated_at=new Date().toISOString();
+  if(!choices[id].important&&!choices[id].slider&&!choices[id].republish&&!choices[id].reject&&!choices[id].category&&!choices[id].edited&&!choices[id].published) delete choices[id];
+  render();
 }
-function saveToGitHub(){
- const changed={};Object.keys(choices).forEach(function(id){if(JSON.stringify((originalChoices[id]||{}))!==JSON.stringify((choices[id]||{})))changed[id]=choices[id]});
- if(!Object.keys(changed).length){$('status').textContent='تغییری برای ثبت وجود ندارد.';return}
- const payload={updated:new Date().toISOString(),items:changed};
- const ticks=String.fromCharCode(96);
- const body='EVREN_EDITOR\\n\\n'+ticks+ticks+ticks+'json\\n'+JSON.stringify(payload,null,2)+'\\n'+ticks+ticks+ticks;
- const url='https://github.com/evrenexus/svgevrenexus-viewer/issues/new?title='+encodeURIComponent('EVREN_EDITOR | ثبت انتخاب سردبیری')+'&body='+encodeURIComponent(body);
- $('output').value=body;$('status').textContent='صفحه GitHub باز شد؛ Issue را ثبت کن.';window.open(url,'_blank');
+
+function openEditor(id){
+  const n=news.find(x=>x.id===id);
+  if(!n) return;
+  const box=document.getElementById('ed_'+id);
+  if(!box){$('status').textContent='خطا: فرم ویرایش پیدا نشد';return;}
+  box.classList.toggle('open');
+  const s=state(id);
+  if(box.classList.contains('open')){
+    box.querySelector('[data-f="title"]').value=s.title!==undefined?s.title:(n.title||'');
+    box.querySelector('[data-f="summary"]').value=s.summary!==undefined?s.summary:(n.summary||'');
+    box.querySelector('[data-f="content"]').value=s.content!==undefined?s.content:(n.content||'');
+    box.querySelector('[data-f="image"]').value=s.image!==undefined?s.image:(n.image||'');
+  }
 }
-function copyChoices(){
- const payload={updated:new Date().toISOString(),items:choices};
- const txt='EVREN_EDITOR\n'+JSON.stringify(payload);
- $('output').value=txt;
- navigator.clipboard?.writeText(txt).then(()=>{$('status').textContent='کپی شد؛ خروجی را در گفتگو برای من بفرست.'}).catch(()=>{$('status').textContent='متن پایین را کپی کن و برای من بفرست.'});
+
+function saveEdit(id){
+  const box=document.getElementById('ed_'+id);
+  if(!box)return;
+  choices[id]=choices[id]||{};
+  ['title','summary','content','image'].forEach(f=>choices[id][f]=box.querySelector('[data-f="'+f+'"]').value);
+  choices[id].published=true;
+  choices[id].edited=true;
+  choices[id].updated_at=new Date().toISOString();
+  $('status').textContent='ویرایش خبر ثبت شد؛ برای ثبت دائمی، «ثبت واقعی در GitHub» را بزن.';
+  render();
 }
+
 function render(){
- const q=$('q').value.trim().toLowerCase(),cat=$('cat').value,f=$('filter').value;
- let arr=news.filter(n=>(!q||(n.title||'').toLowerCase().includes(q))&&(!cat||n.category===cat));
- arr=arr.filter(n=>{let s=state(n);return f==='all'||(f==='important'&&s.important)||(f==='slider'&&s.slider)||(f==='republish'&&s.republish)||(f==='unselected'&&!s.important&&!s.slider&&!s.republish&&!s.reject&&!s.category)});
- if(!arr.length){$('list').innerHTML='<div class="empty">خبری پیدا نشد.</div>';return}
- $('list').innerHTML=arr.map(n=>{
-   let s=state(n);
-   let opts='<option value="">خودکار: '+esc(labelCat(n.category||''))+'</option>'+CATS.map(c=>'<option value="'+c[0]+'" '+(s.category===c[0]?'selected':'')+'>'+c[1]+'</option>').join('');
-   return '<div class="card"><div class="title">'+esc(n.title||'بدون عنوان')+'</div><div class="meta">'+esc(n.source||'')+' · '+fmt(n.published)+' · دسته فعلی: '+esc(n.category||'نامشخص')+'</div><div class="actions">'+
-   '<button class="action important '+(s.important?'active':'')+'" data-action="important" data-id="'+esc(n.id)+'">⭐ مهم</button>'+
-   '<button class="action slider '+(s.slider?'active':'')+'" data-action="slider" data-id="'+esc(n.id)+'">🖼 اسلایدر</button>'+
-   '<button class="action edit" data-action="edit" data-id="'+esc(n.id)+'">✏️ ویرایش</button>'+
-   '<button class="action publish" data-action="edit" data-id="'+esc(n.id)+'">📰 انتشار نسخه ویرایش‌شده</button>'+
-   '<select class="category" data-action="category" data-id="'+esc(n.id)+'">'+opts+'</select>'+
-   '</div><div id="ed_'+esc(n.id)+'" class="editor"><input data-f="title" placeholder="عنوان"><input data-f="summary" placeholder="خلاصه"><input data-f="image" placeholder="آدرس تصویر"><textarea data-f="content" placeholder="متن خبر"></textarea><button class="primary" data-action="save" data-id="'+esc(n.id)+'">ذخیره و آماده انتشار</button></div></div>'
- }).join('');
+  const q=$('q').value.trim().toLowerCase(), cat=$('cat').value, f=$('filter').value;
+  let arr=news.filter(n=>(!q||(n.title||'').toLowerCase().includes(q))&&(!cat||n.category===cat));
+  arr=arr.filter(n=>{
+    const s=state(n.id);
+    return f==='all'||(f==='important'&&s.important)||(f==='slider'&&s.slider)||(f==='republish'&&s.republish)||(f==='unselected'&&!s.important&&!s.slider&&!s.republish&&!s.reject&&!s.category&&!s.edited&&!s.published);
+  });
+  const list=$('list');
+  list.innerHTML='';
+  if(!arr.length){list.innerHTML='<div class="empty">خبری پیدا نشد.</div>';return;}
+
+  arr.forEach(n=>{
+    const s=state(n.id);
+    const card=document.createElement('div'); card.className='card';
+    const title=document.createElement('div'); title.className='title'; title.textContent=n.title||'بدون عنوان'; card.appendChild(title);
+    const meta=document.createElement('div'); meta.className='meta'; meta.textContent=(n.source||'')+' · '+fmt(n.published)+' · دسته فعلی: '+(n.category||'نامشخص'); card.appendChild(meta);
+    const actions=document.createElement('div'); actions.className='actions';
+
+    const important=makeButton('important','⭐ مهم',!!s.important);
+    important.addEventListener('click',()=>setChoice(n.id,'important',!state(n.id).important));
+    actions.appendChild(important);
+
+    const slider=makeButton('slider','🖼 اسلایدر',!!s.slider);
+    slider.addEventListener('click',()=>setChoice(n.id,'slider',!state(n.id).slider));
+    actions.appendChild(slider);
+
+    const edit=makeButton('edit','✏️ ویرایش',false);
+    edit.addEventListener('click',()=>openEditor(n.id));
+    actions.appendChild(edit);
+
+    const publish=makeButton('publish','📰 انتشار نسخه ویرایش‌شده',false);
+    publish.addEventListener('click',()=>openEditor(n.id));
+    actions.appendChild(publish);
+
+    const select=document.createElement('select'); select.className='category';
+    select.innerHTML='<option value="">خودکار: '+esc(labelCat(n.category||''))+'</option>'+CATS.map(c=>'<option value="'+c[0]+'">'+c[1]+'</option>').join('');
+    if(s.category)select.value=s.category;
+    select.addEventListener('change',()=>setCategory(n.id,select.value));
+    actions.appendChild(select);
+    card.appendChild(actions);
+
+    const ed=document.createElement('div'); ed.id='ed_'+n.id; ed.className='editor';
+    ed.innerHTML='<input data-f="title" placeholder="عنوان"><input data-f="summary" placeholder="خلاصه"><input data-f="image" placeholder="آدرس تصویر"><textarea data-f="content" placeholder="متن خبر"></textarea>';
+    const save=document.createElement('button'); save.className='primary'; save.textContent='ذخیره و آماده انتشار'; save.addEventListener('click',()=>saveEdit(n.id)); ed.appendChild(save);
+    card.appendChild(ed);
+    list.appendChild(card);
+  });
 }
-$('list').addEventListener('click',function(e){
- const el=e.target.closest('[data-action]'); if(!el)return;
- const id=el.dataset.id, action=el.dataset.action;
- if(action==='important'||action==='slider'){const s=state({id});setChoice(id,action,!s[action]);}
- else if(action==='edit') openEditor(id);
- else if(action==='save') saveEdit(id);
-});
-$('list').addEventListener('change',function(e){
- const el=e.target.closest('[data-action="category"]'); if(el)setCategory(el.dataset.id,el.value);
-});
-function labelCat(x){let m=CATS.find(c=>c[0]===x);return m?m[1]:(x||'بدون دسته')}
-function fmt(x){try{return new Date(x).toLocaleString('fa-IR',{dateStyle:'short',timeStyle:'short'})}catch(e){return ''}}
-function esc(s){return String(s||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
-['q','cat','filter'].forEach(id=>$(id).addEventListener('input',render));load();
+
+function makeButton(cls,text,active){
+  const b=document.createElement('button'); b.className=cls+(active?' active':''); b.type='button'; b.textContent=text; return b;
+}
+function labelCat(x){const m=CATS.find(c=>c[0]===x);return m?m[1]:(x||'بدون دسته');}
+function fmt(x){try{return new Date(x).toLocaleString('fa-IR',{dateStyle:'short',timeStyle:'short'});}catch(e){return '';}}
+function esc(s){return String(s||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
+
+function saveToGitHub(){
+  const changed={};
+  Object.keys(choices).forEach(id=>{if(JSON.stringify(originalChoices[id]||{})!==JSON.stringify(choices[id]||{}))changed[id]=choices[id];});
+  if(!Object.keys(changed).length){$('status').textContent='تغییری برای ثبت وجود ندارد.';return;}
+  const payload={updated:new Date().toISOString(),items:changed};
+  const ticks=String.fromCharCode(96);
+  const body='EVREN_EDITOR\\n\\n'+ticks.repeat(3)+'json\\n'+JSON.stringify(payload,null,2)+'\\n'+ticks.repeat(3);
+  const url='https://github.com/evrenexus/svgevrenexus-viewer/issues/new?title='+encodeURIComponent('EVREN_EDITOR | ثبت انتخاب سردبیری')+'&body='+encodeURIComponent(body);
+  $('output').value=body;
+  $('status').textContent='GitHub باز شد؛ Issue را ثبت کن.';
+  window.open(url,'_blank');
+}
+
+['q','cat','filter'].forEach(id=>$(id).addEventListener('input',render));
+load();
 </script></body></html>
