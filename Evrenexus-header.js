@@ -96,11 +96,17 @@ return false;
 }
 
 function dataURL(file){
-  return "https://raw.githubusercontent.com/evrenexus/svgevrenexus-viewer/main/market-data/"+file+"?v="+Date.now();
+  return "./market-data/"+file+"?v="+Date.now();
+}
+function fetchWithTimeout(url){
+  return Promise.race([
+    fetch(url,{cache:"no-store"}),
+    new Promise(function(_,reject){setTimeout(function(){reject(new Error("timeout"))},8000)})
+  ]);
 }
 function fetchJSON(file,fallback){
-  return fetch(dataURL(file),{cache:"no-store"}).then(function(r){if(!r.ok)throw new Error(file+" "+r.status);return r.json()}).catch(function(){
-    return fetch(fallback+file+"?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw new Error(file+" fallback "+r.status);return r.json()});
+  return fetchWithTimeout(dataURL(file)).then(function(r){if(!r.ok)throw new Error(file+" "+r.status);return r.json()}).catch(function(){
+    return fetchWithTimeout(fallback+file+"?v="+Date.now()).then(function(r){if(!r.ok)throw new Error(file+" fallback "+r.status);return r.json()});
   });
 }
 function loadTGJU(){return fetchJSON("tgju.json","https://raw.githubusercontent.com/evrenexus/svgevrenexus-viewer/main/market-data/").then(function(t){render(metal,"metals",[t.precious||[],t.baseMetals||[],t.energy||[]],t.scrapedAt);render(cur,"currency",[t.currency||[]],t.scrapedAt)})}
