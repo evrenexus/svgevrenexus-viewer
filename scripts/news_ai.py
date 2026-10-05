@@ -11,7 +11,7 @@ EDITORIAL = ROOT / "data" / "editorial.json"
 
 API = "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent"
 BATCH_SIZE = 12
-MAX_ITEMS = 60
+MAX_ITEMS = 300
 MAX_RETRIES = 5
 POLICY_VERSION = 3
 RETRY_DELAYS = [5, 15, 30, 60, 90]
