@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>سردبیری | Evren Nexus</title>
+<style>
+body{font-family:Tahoma,Arial,sans-serif;background:#f4f5f7;margin:0;color:#222}
+.wrap{max-width:1100px;margin:20px auto;padding:0 12px}
+h1{font-size:22px;margin:0 0 8px}.sub{color:#666;font-size:12px;margin-bottom:15px}
+.bar{background:#fff;padding:12px;border-radius:8px;margin-bottom:12px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+input,select,button{font:inherit;padding:8px;border:1px solid #ccc;border-radius:6px}
+button{cursor:pointer;background:#fff}.primary{background:#111;color:#fff}
+.card{background:#fff;border-radius:8px;padding:14px;margin-bottom:10px;border:1px solid #ddd}
+.title{font-weight:700;font-size:16px;line-height:1.9}.meta{font-size:11px;color:#777;margin:5px 0 10px}
+.actions{display:flex;gap:7px;flex-wrap:wrap}.actions button.active{color:#fff}
+.important.active{background:#d89b00}.republish.active{background:#14804a}.reject.active{background:#b42318}
+.status{font-size:12px;color:#555;margin-right:auto}
+.empty{text-align:center;padding:30px;color:#777;background:#fff;border-radius:8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>پنل سردبیری Evren Nexus</h1>
+<div class="sub">انتخاب «مهم» و «بازنشر اختصاصی» دستی است؛ سیستم فقط انتخاب‌های شما را ثبت می‌کند.</div>
+<div class="bar">
+<input id="q" placeholder="جستجوی عنوان..." style="min-width:260px">
+<select id="cat"><option value="">همه دسته‌ها</option></select>
+<select id="filter"><option value="all">همه</option><option value="important">مهم‌ها</option><option value="republish">بازنشرها</option><option value="unselected">انتخاب‌نشده‌ها</option></select>
+<button class="primary" onclick="load()">بارگذاری</button>
+<span id="status" class="status"></span>
+</div>
+<div id="list"></div>
+</div>
+<script>
+let news=[], choices=JSON.parse(localStorage.getItem('evren_editor_choices')||'{}');
+const $=id=>document.getElementById(id);
+async function load(){
+ $('status').textContent='در حال دریافت...';
+ try{
+  const r=await fetch('data/news.json?'+Date.now()); const d=await r.json(); news=d.items||[];
+  const cats=[...new Set(news.map(x=>x.category).filter(Boolean))].sort();
+  $('cat').innerHTML='<option value="">همه دسته‌ها</option>'+cats.map(c=>'<option>'+esc(c)+'</option>').join('');
+  render(); $('status').textContent=news.length+' خبر';
+ }catch(e){$('status').textContent='خطا در دریافت اخبار';}
+}
+function state(n){return choices[n.id]||{}}
+function setChoice(id,key,val){
+ choices[id]=choices[id]||{}; choices[id][key]=val;
+ localStorage.setItem('evren_editor_choices',JSON.stringify(choices)); render();
+}
+function render(){
+ const q=$('q').value.trim().toLowerCase(), cat=$('cat').value, f=$('filter').value;
+ let arr=news.filter(n=>(!q||(n.title||'').toLowerCase().includes(q))&&(!cat||n.category===cat));
+ arr=arr.filter(n=>{let s=state(n);return f==='all'||(f==='important'&&s.important)||(f==='republish'&&s.republish)||(f==='unselected'&&!s.important&&!s.republish)});
+ if(!arr.length){$('list').innerHTML='<div class="empty">خبری پیدا نشد.</div>';return}
+ $('list').innerHTML=arr.map(n=>{let s=state(n);
+ return '<div class="card"><div class="title">'+esc(n.title||'بدون عنوان')+'</div><div class="meta">'+esc(n.source||'')+' · '+fmt(n.published)+'</div><div class="actions">'+
+ '<button class="important '+(s.important?'active':'')+'" onclick="setChoice('+JSON.stringify(n.id)+',\'important\','+(!s.important)+')">⭐ مهم</button>'+
+ '<button class="republish '+(s.republish?'active':'')+'" onclick="setChoice('+JSON.stringify(n.id)+',\'republish\','+(!s.republish)+')">✍️ بازنشر اختصاصی</button>'+
+ '<button class="reject '+(s.reject?'active':'')+'" onclick="setChoice('+JSON.stringify(n.id)+',\'reject\','+(!s.reject)+')">🗑 رد</button>'+
+ '</div></div>'}).join('');
+}
+function fmt(x){try{return new Date(x).toLocaleString('fa-IR',{dateStyle:'short',timeStyle:'short'})}catch(e){return ''}}
+function esc(s){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+['q','cat','filter'].forEach(id=>$(id).addEventListener('input',render));
+load();
+</script>
+</body></html>
