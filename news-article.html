@@ -12,7 +12,7 @@
 .article-source-box{display:flex;align-items:center;gap:7px;border:1px solid #d6b900;background:#ffeb00;color:#000;padding:7px 10px;margin:0 0 12px;font-size:10px;line-height:1.8;font-weight:700}
 .article-source-box a{color:#000;text-decoration:none;font-weight:700}.article-source-box a:hover{text-decoration:underline}
 .ai-republish-warning{background:#f00000;color:#fff;padding:10px 12px;margin:0 0 14px;font-size:10px;line-height:2;font-weight:700;text-align:right;border:1px solid #c40000}
-.article-meta{font-size:9px;color:#8a9298;border-bottom:1px solid #edf0f1;padding-bottom:10px;margin-bottom:12px}.article-image{width:100%;max-height:380px;object-fit:cover;display:block;background:#eee;margin:0 0 15px}.article-body{font-size:12px;line-height:2.25;color:#333;white-space:pre-line}.article-source{margin-top:18px;padding-top:10px;border-top:1px solid #e5e7e9;font-size:10px;color:#697177}.article-source a{color:#d9232e;text-decoration:none}.back{display:inline-block;margin-bottom:10px;background:#202c35;color:#fff;text-decoration:none;padding:7px 12px;font-size:9px}
+.article-meta{font-size:9px;color:#8a9298;border-bottom:1px solid #edf0f1;padding-bottom:10px;margin-bottom:12px}.article-image{width:100%;max-height:380px;object-fit:cover;display:block;background:#eee;margin:0 0 15px}.article-body{font-size:12px;line-height:2.25;color:#333}.article-body p{margin:0 0 12px}.article-body h2{font-size:18px;margin:18px 0 8px}.article-body h3{font-size:15px;margin:16px 0 7px}.article-body ul,.article-body ol{padding-right:24px}.article-body a{color:#1769aa}.article-body img{max-width:100%;height:auto;display:block;margin:10px auto}.article-source{margin-top:18px;padding-top:10px;border-top:1px solid #e5e7e9;font-size:10px;color:#697177}.article-source a{color:#d9232e;text-decoration:none}.back{display:inline-block;margin-bottom:10px;background:#202c35;color:#fff;text-decoration:none;padding:7px 12px;font-size:9px}
 .error{background:#fff;border:1px solid #dfe2e4;padding:25px;text-align:center;font-size:11px;color:#777}
 @media(max-width:700px){#page{width:100%;padding:112px 8px 20px;display:block}#content{width:100%;min-width:0}#sidebar-host{display:none}.article{padding:12px}.article-title{font-size:15px}.article-body{font-size:11px;line-height:2.2}.article-image{max-height:280px}}
 </style>
@@ -30,6 +30,24 @@
 var id=new URLSearchParams(location.search).get("id"),host=document.getElementById("article");
 function safeUrl(v){try{var u=new URL(v,location.href);return /^https?:$/i.test(u.protocol)?u.href:""}catch(e){return ""}}
 function esc(v){return String(v||"").replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]})}
+function safeRichHtml(v){
+ var box=document.createElement("div"); box.innerHTML=String(v||"");
+ var allowed={P:1,BR:1,H2:1,H3:1,STRONG:1,B:1,EM:1,I:1,UL:1,OL:1,LI:1,A:1,IMG:1,BLOCKQUOTE:1};
+ Array.from(box.querySelectorAll("*")).forEach(function(el){
+   if(!allowed[el.tagName]){el.replaceWith(document.createTextNode(el.textContent||""));return;}
+   Array.from(el.attributes).forEach(function(a){
+     if((el.tagName==="A"&&a.name==="href")||(el.tagName==="IMG"&&a.name==="src")||(el.tagName==="IMG"&&a.name==="alt"))return;
+     el.removeAttribute(a.name);
+   });
+   if(el.tagName==="A"){
+     try{var u=new URL(el.getAttribute("href"),location.href);if(!/^https?:$/i.test(u.protocol))el.removeAttribute("href");else{el.setAttribute("target","_blank");el.setAttribute("rel","noopener noreferrer");}}catch(e){el.removeAttribute("href");}
+   }
+   if(el.tagName==="IMG"){
+     try{var iu=new URL(el.getAttribute("src"),location.href);if(!/^https?:$/i.test(iu.protocol))el.removeAttribute("src");else el.setAttribute("loading","lazy");}catch(e){el.removeAttribute("src");}
+   }
+ });
+ return box.innerHTML.replace(/\n/g,"<br>");
+}
 function date(v){var d=new Date(v);return Number.isNaN(d.getTime())?"":d.toLocaleString("fa-IR",{dateStyle:"long",timeStyle:"short"})}
 function render(x,ed){
 var s=ed&&ed.items&&x?ed.items[x.id]:null;
@@ -51,8 +69,7 @@ html+='<div class="article-source-box">منبع خبر: '+esc(x.source||"نام�
 html+='<div class="ai-republish-warning">این مطلب با کمک هوش مصنوعی از منبع اصلی بازنشر شده است. مسئولیت صحت و سقم محتوا بر عهده منبع اصلی بوده و این صفحه صرفاً بازنشرکننده آن است.</div>';
 html+='<div class="article-meta">'+esc(date(data.published||x.published))+'</div>';
 if(data.image){var im=safeUrl(data.image);if(im)html+='<img class="article-image" src="'+esc(im)+'" alt="'+esc(data.title)+'" loading="eager" referrerpolicy="no-referrer">'}
-var paras=String(data.content||"").split(/\n\s*\n/).filter(Boolean);
-html+='<div class="article-body">'+paras.map(esc).join("\n\n")+'</div>';
+html+='<div class="article-body">'+safeRichHtml(data.content||"")+'</div>';
 html+='<div class="article-source">منبع: '+esc(x.source||"")+"</div>";
 host.innerHTML=html;
 }
