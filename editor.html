@@ -7,56 +7,70 @@
 body{font-family:Tahoma,Arial,sans-serif;background:#f4f5f7;margin:0;color:#222}.wrap{max-width:1100px;margin:20px auto;padding:0 12px}
 h1{font-size:22px;margin:0 0 8px}.sub{color:#666;font-size:12px;margin-bottom:15px}.bar{background:#fff;padding:12px;border-radius:8px;margin-bottom:12px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 input,select,button{font:inherit;padding:8px;border:1px solid #ccc;border-radius:6px}button{cursor:pointer;background:#fff}.primary{background:#111;color:#fff}.card{background:#fff;border-radius:8px;padding:14px;margin-bottom:10px;border:1px solid #ddd}
-.title{font-weight:700;font-size:16px;line-height:1.9}.meta{font-size:11px;color:#777;margin:5px 0 10px}.actions{display:flex;gap:7px;flex-wrap:wrap}.actions button.active{color:#fff}
-.important.active{background:#d89b00}.republish.active{background:#14804a}.reject.active{background:#b42318}.status{font-size:12px;color:#555;margin-right:auto}.empty{text-align:center;padding:30px;color:#777;background:#fff;border-radius:8px}
+.title{font-weight:700;font-size:16px;line-height:1.9}.meta{font-size:11px;color:#777;margin:5px 0 10px}.actions{display:flex;gap:7px;flex-wrap:wrap;align-items:center}.actions button.active{color:#fff}
+.important.active{background:#d89b00}.slider.active{background:#2867c7}.republish.active{background:#14804a}.reject.active{background:#b42318}
+.category{min-width:150px}.status{font-size:12px;color:#555;margin-right:auto}.empty{text-align:center;padding:30px;color:#777;background:#fff;border-radius:8px}
 .info{background:#fff8d8;border:1px solid #e6d36a;padding:10px;margin-bottom:12px;font-size:12px;line-height:2}.output{width:100%;min-height:90px;direction:ltr;text-align:left;font:12px Consolas,monospace}
 </style></head>
 <body><div class="wrap">
 <h1>پنل سردبیری Evren Nexus</h1>
-<div class="sub">تشخیص «مهم» و «بازنشر اختصاصی» فقط با انتخاب شما انجام می‌شود.</div>
-<div class="info">انتخاب‌ها ابتدا در این فرم ذخیره می‌شوند. برای ثبت دائمی در پروژه، روی «کپی انتخاب‌ها» بزن و متن را در همین گفتگو برای من بفرست؛ من آن را در GitHub ثبت می‌کنم. <b>LocalStorage مبنای سایت نیست.</b></div>
+<div class="sub">انتخاب انتشار کاملاً دستی است: مهم، اسلایدر، بازنشر اختصاصی و دسته‌بندی.</div>
+<div class="info">انتخاب‌ها در <b>editorial.json</b> نگهداری می‌شوند. برای ثبت نهایی، «کپی انتخاب‌ها» را بزن و خروجی را همینجا برای من بفرست.</div>
 <div class="bar">
 <input id="q" placeholder="جستجوی عنوان..." style="min-width:260px">
-<select id="cat"><option value="">همه دسته‌ها</option></select>
-<select id="filter"><option value="all">همه</option><option value="important">مهم‌ها</option><option value="republish">بازنشرها</option><option value="unselected">انتخاب‌نشده‌ها</option></select>
+<select id="cat"><option value="">همه دسته‌های فعلی</option></select>
+<select id="filter"><option value="all">همه</option><option value="important">مهم‌ها</option><option value="slider">اسلایدرها</option><option value="republish">بازنشرها</option><option value="unselected">انتخاب‌نشده‌ها</option></select>
 <button onclick="load()">بارگذاری</button><button class="primary" onclick="copyChoices()">کپی انتخاب‌ها برای ChatGPT</button>
 <span id="status" class="status"></span></div>
-<textarea id="output" class="output" readonly placeholder="پس از انتخاب‌ها، خروجی اینجا ساخته می‌شود."></textarea>
+<textarea id="output" class="output" readonly placeholder="بعد از انتخاب، خروجی را اینجا می‌بینی."></textarea>
 <div id="list"></div></div>
 <script>
 let news=[],choices={};
 const $=id=>document.getElementById(id);
+const CATS=[
+ ['economy','اقتصادی'],['markets','بازار و سرمایه‌گذاری'],['currency-gold','ارز و طلا'],['real-estate','مسکن'],
+ ['technology','فناوری'],['ai','هوش مصنوعی'],['science-life','علم و سبک زندگی'],['health','پزشکی و سلامت'],['auto','خودرو']
+];
 async function load(){
  $('status').textContent='در حال دریافت...';
  try{
   const [nr,er]=await Promise.all([fetch('data/news.json?'+Date.now()),fetch('data/editorial.json?'+Date.now())]);
-  const d=await nr.json(), e=await er.json(); news=d.items||[]; choices=e.items||{};
+  const d=await nr.json(),e=await er.json();news=d.items||[];choices=e.items||{};
   const cats=[...new Set(news.map(x=>x.category).filter(Boolean))].sort();
-  $('cat').innerHTML='<option value="">همه دسته‌ها</option>'+cats.map(c=>'<option>'+esc(c)+'</option>').join('');
-  render(); $('status').textContent=news.length+' خبر';
+  $('cat').innerHTML='<option value="">همه دسته‌های فعلی</option>'+cats.map(c=>'<option>'+esc(c)+'</option>').join('');
+  render();$('status').textContent=news.length+' خبر';
  }catch(e){$('status').textContent='خطا در دریافت داده‌ها';}
 }
 function state(n){return choices[n.id]||{}}
 function setChoice(id,key,val){
- choices[id]=choices[id]||{}; choices[id][key]=!!val; choices[id].updated_at=new Date().toISOString();
- if(!choices[id].important&&!choices[id].republish&&!choices[id].reject) delete choices[id];
+ choices[id]=choices[id]||{};choices[id][key]=!!val;choices[id].updated_at=new Date().toISOString();
+ if(!choices[id].important&&!choices[id].slider&&!choices[id].republish&&!choices[id].reject&&!choices[id].category)delete choices[id];
+ render();
+}
+function setCategory(id,val){
+ choices[id]=choices[id]||{};if(val)choices[id].category=val;else delete choices[id].category;
+ choices[id].updated_at=new Date().toISOString();
+ if(!choices[id].important&&!choices[id].slider&&!choices[id].republish&&!choices[id].reject&&!choices[id].category)delete choices[id];
  render();
 }
 function copyChoices(){
  const payload={updated:new Date().toISOString(),items:choices};
  const txt='EVREN_EDITOR\n'+JSON.stringify(payload);
  $('output').value=txt;
- navigator.clipboard?.writeText(txt).then(()=>{$('status').textContent='انتخاب‌ها کپی شد؛ در گفتگو برای من بفرست.'}).catch(()=>{$('status').textContent='متن پایین را کپی کن و برای من بفرست.'});
+ navigator.clipboard?.writeText(txt).then(()=>{$('status').textContent='کپی شد؛ خروجی را در گفتگو برای من بفرست.'}).catch(()=>{$('status').textContent='متن پایین را کپی کن و برای من بفرست.'});
 }
 function render(){
  const q=$('q').value.trim().toLowerCase(),cat=$('cat').value,f=$('filter').value;
  let arr=news.filter(n=>(!q||(n.title||'').toLowerCase().includes(q))&&(!cat||n.category===cat));
- arr=arr.filter(n=>{let s=state(n);return f==='all'||(f==='important'&&s.important)||(f==='republish'&&s.republish)||(f==='unselected'&&!s.important&&!s.republish&&!s.reject)});
+ arr=arr.filter(n=>{let s=state(n);return f==='all'||(f==='important'&&s.important)||(f==='slider'&&s.slider)||(f==='republish'&&s.republish)||(f==='unselected'&&!s.important&&!s.slider&&!s.republish&&!s.reject&&!s.category)});
  if(!arr.length){$('list').innerHTML='<div class="empty">خبری پیدا نشد.</div>';return}
- $('list').innerHTML=arr.map(n=>{let s=state(n);return '<div class="card"><div class="title">'+esc(n.title||'بدون عنوان')+'</div><div class="meta">'+esc(n.source||'')+' · '+fmt(n.published)+'</div><div class="actions">'+
+ $('list').innerHTML=arr.map(n=>{let s=state(n);let opts='<option value="">بدون تغییر</option>'+CATS.map(c=>'<option value="'+c[0]+'" '+(s.category===c[0]?'selected':'')+'>'+c[1]+'</option>').join('');
+ return '<div class="card"><div class="title">'+esc(n.title||'بدون عنوان')+'</div><div class="meta">'+esc(n.source||'')+' · '+fmt(n.published)+' · دسته فعلی: '+esc(n.category||'نامشخص')+'</div><div class="actions">'+
  '<button class="important '+(s.important?'active':'')+'" onclick="setChoice('+JSON.stringify(n.id)+',\'important\','+(!s.important)+')">⭐ مهم</button>'+
+ '<button class="slider '+(s.slider?'active':'')+'" onclick="setChoice('+JSON.stringify(n.id)+',\'slider\','+(!s.slider)+')">🖼 اسلایدر</button>'+
  '<button class="republish '+(s.republish?'active':'')+'" onclick="setChoice('+JSON.stringify(n.id)+',\'republish\','+(!s.republish)+')">✍️ بازنشر اختصاصی</button>'+
  '<button class="reject '+(s.reject?'active':'')+'" onclick="setChoice('+JSON.stringify(n.id)+',\'reject\','+(!s.reject)+')">🗑 رد</button>'+
+ '<select class="category" onchange="setCategory('+JSON.stringify(n.id)+',this.value)">'+opts+'</select>'+
  '</div></div>'}).join('');
 }
 function fmt(x){try{return new Date(x).toLocaleString('fa-IR',{dateStyle:'short',timeStyle:'short'})}catch(e){return ''}}
