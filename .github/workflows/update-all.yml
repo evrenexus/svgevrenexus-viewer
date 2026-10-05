@@ -9,8 +9,8 @@ permissions:
   id-token: write
 
 concurrency:
-  group: evren-nexus-update-all
-  cancel-in-progress: true
+  group: data-writes
+  cancel-in-progress: false
 
 jobs:
   update-data:
