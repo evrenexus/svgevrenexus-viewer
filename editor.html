@@ -73,7 +73,8 @@ function openEditor(id){
     box.querySelector('[data-f="image"]').value=s.image!==undefined?s.image:(n.image||'');
   }
 }
-function publishNews(id){choices[id]=choices[id]||{};choices[id].republish=!choices[id].republish;choices[id].published=choices[id].republish;choices[id].updated_at=new Date().toISOString();$('status').textContent=choices[id].republish?'انتشار داخلی انتخاب شد؛ برای ثبت «ذخیره همه تغییرات» را بزن.':'انتشار داخلی لغو شد؛ برای ثبت «ذخیره همه تغییرات» را بزن.';render();}\nfunction saveEdit(id){
+function publishNews(id){choices[id]=choices[id]||{};choices[id].republish=!choices[id].republish;choices[id].published=choices[id].republish;choices[id].updated_at=new Date().toISOString();$('status').textContent=choices[id].republish?'انتشار داخلی انتخاب شد؛ برای ثبت «ذخیره همه تغییرات» را بزن.':'انتشار داخلی لغو شد؛ برای ثبت «ذخیره همه تغییرات» را بزن.';render();}
+function saveEdit(id){
   const box=document.getElementById('ed_'+id); if(!box)return; choices[id]=choices[id]||{};
   ['title','summary','content','image'].forEach(f=>choices[id][f]=box.querySelector('[data-f="'+f+'"]').value);
   choices[id].edited=true; choices[id].updated_at=new Date().toISOString();
