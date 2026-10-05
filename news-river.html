@@ -31,7 +31,7 @@
 <script>
 (function(){ "use strict";
 var TOPICS={economy:"اقتصادی",markets:"بازار و سرمایه‌گذاری","currency-gold":"ارز و طلا","real-estate":"مسکن",technology:"فناوری",ai:"هوش مصنوعی",health:"پزشکی و سلامت",auto:"خودرو","science-life":"علم و سبک زندگی",sports:"ورزش",war:"جنگ و درگیری"};
-var q=new URLSearchParams(location.search),topic=q.get("topic")||"economy",searchTerm=(q.get("q")||"").trim(),editorialItems={};if(!TOPICS[topic])topic="economy";
+var q=new URLSearchParams(location.search),topic=q.get("topic")||"economy",searchTerm=(q.get("q")||"").trim(),editorialItems={},aiItems={};if(!TOPICS[topic])topic="economy";
 var searchInput=document.getElementById("newsSearchInput"),searchButton=document.getElementById("newsSearchButton"),tagsHost=document.getElementById("newsTags");
 searchInput.value=searchTerm;
 var topicLabel=TOPICS[topic];
@@ -58,10 +58,10 @@ function normalizeEditorial(j){
   if(j.items!==undefined&&(!j.items||typeof j.items!=="object"||Array.isArray(j.items)))return {};
   return j;
 }
-fetch("./data/news.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("news.json HTTP "+r.status);return r.json()}).then(function(data){return fetch("./data/editorial.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("editorial.json HTTP "+r.status);return r.json()}).catch(function(e){console.warn("Editorial data unavailable:",e);return {};}).then(function(editorial){return [data,editorial]});}).then(function(ds){var data=ds[0];editorialItems=(ds[1]||{}).items||{};var all=(data.items||[]).filter(function(x){var es=editorialItems[x.id]||{};return x&&x.title&&x.published&&safeUrl(x.url)&&safeDate(x.published)&&x.publishable!==false&&es.deleted!==true;});all.sort(function(a,b){return safeDate(b.published)-safeDate(a.published)});
+Promise.all([fetch("./data/news.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("news.json HTTP "+r.status);return r.json()}),fetch("./data/editorial.json?v="+Date.now(),{cache:"no-store"}).then(function(r){return r.ok?r.json():{}}),fetch("./data/news-ai.json?v="+Date.now(),{cache:"no-store"}).then(function(r){return r.ok?r.json():{}})]).then(function(ds){var data=ds[0];editorialItems=(ds[1]||{}).items||{};aiItems=(ds[2]||{}).items||{};var all=(data.items||[]).filter(function(x){var es=editorialItems[x.id]||{};return x&&x.title&&x.published&&safeUrl(x.url)&&safeDate(x.published)&&x.publishable!==false&&es.deleted!==true;});all.sort(function(a,b){return safeDate(b.published)-safeDate(a.published)});
 var tagCounts={};all.slice(0,120).forEach(function(x){var s=editorialItems[x.id]||{};var t=s.category||x.category||((Array.isArray(x.topics)&&x.topics[0])||"");if(TOPICS[t])tagCounts[t]=(tagCounts[t]||0)+1});Object.keys(tagCounts).sort(function(a,b){return tagCounts[b]-tagCounts[a]}).forEach(function(t){var a=document.createElement("a");a.className="news-tag";a.href="?topic="+encodeURIComponent(t);a.textContent=TOPICS[t];tagsHost.appendChild(a)});
 var items=searchTerm?all.filter(function(x){var hay=((x.title||"")+" "+(x.summary||"")+" "+(x.source||"")).toLowerCase();return hay.indexOf(searchTerm.toLowerCase())!==-1}):all.filter(function(x){var s=editorialItems[x.id]||{};if(s.category)return s.category===topic;var cats=[];if(x.category)cats.push(x.category);if(Array.isArray(x.topics))cats=cats.concat(x.topics);return cats.indexOf(topic)!==-1;});
-items.sort(function(a,b){return safeDate(b.published)-safeDate(a.published)});document.querySelector("#river .section-title").textContent=searchTerm?"نتایج جستجو":"جدیدترین اخبار";render(items)}).catch(function(){list.innerHTML='<div class="error">دریافت خبرها انجام نشد.</div>';renderBreaking([])});
+items.sort(function(a,b){return safeDate(b.published)-safeDate(a.published)});items._important=items.filter(function(x){var a=aiItems[x.id]||{};return Array.isArray(a.important_topics)&&a.important_topics.indexOf(topic)!==-1&&a.representative!==false});document.querySelector("#river .section-title").textContent=searchTerm?"نتایج جستجو":"جدیدترین اخبار";render(items)}).catch(function(){list.innerHTML='<div class="error">دریافت خبرها انجام نشد.</div>';renderBreaking([])});
 })();
 </script>
 </body>
