@@ -54,10 +54,9 @@ function render(items){list.innerHTML="";importantList.innerHTML="";if(!items.le
 var important=(items._important||[]).slice(0,4),latest=items.slice(0,100);renderBreaking(important);important.forEach(function(x){var el=makeItem(x,true);if(el)importantList.appendChild(el)});latest.forEach(function(x){var el=makeItem(x,false);if(el)list.appendChild(el)})}
 function goSearch(){var value=searchInput.value.trim();var params=new URLSearchParams(location.search);if(value)params.set("q",value);else params.delete("q");location.search=params.toString()}
 searchButton.addEventListener("click",goSearch);searchInput.addEventListener("keydown",function(e){if(e.key==="Enter")goSearch()});
-Promise.all([
-fetch("./data/news.json?v="+Date.now(),{cache:"no-store"}),
-fetch("./data/editorial.json?v="+Date.now(),{cache:"no-store"})
-]).then(function(rs){if(!rs[0].ok||!rs[1].ok)throw Error();return Promise.all([rs[0].json(),rs[1].json()])}).then(function(ds){
+fetch("./data/news.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("news.json HTTP "+r.status);return r.json()}).then(function(data){
+return fetch("./data/editorial.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("editorial.json HTTP "+r.status);return r.json()}).catch(function(e){console.warn("Editorial data unavailable:",e);return {};}).then(function(editorial){return [data,editorial]});
+}).then(function(ds){
 var data=ds[0],ed=ds[1]||{};editorial=ed;var all=(data.items||[]).filter(function(x){var es=(ed.items&&ed.items[x.id])||{};return x&&x.title&&x.published&&safeUrl(x.url)&&safeDate(x.published)&&es.deleted!==true});
 all.sort(function(a,b){return safeDate(b.published)-safeDate(a.published)});
 var tagCounts={};all.slice(0,120).forEach(function(x){(Array.isArray(x.topics)?x.topics:[]).forEach(function(t){if(TOPICS[t])tagCounts[t]=(tagCounts[t]||0)+1})});Object.keys(tagCounts).sort(function(a,b){return tagCounts[b]-tagCounts[a]}).forEach(function(t){var a=document.createElement("a");a.className="news-tag";a.href="./news-river.html?topic="+encodeURIComponent(t);a.textContent=TOPICS[t];tagsHost.appendChild(a)});
