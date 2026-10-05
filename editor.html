@@ -14,8 +14,8 @@ input,select,button{font:inherit;padding:8px;border:1px solid #ccc;border-radius
 </style></head>
 <body><div class="wrap">
 <h1>پنل سردبیری Evren Nexus</h1>
-<div class="sub">انتخاب انتشار کاملاً دستی است: مهم، اسلایدر، بازنشر اختصاصی و دسته‌بندی.</div>
-<div class="info">انتخاب‌ها در <b>editorial.json</b> نگهداری می‌شوند. برای ثبت نهایی، «کپی انتخاب‌ها» را بزن و خروجی را همینجا برای من بفرست.</div>
+<div class="sub">دسته‌بندی ابتدا به‌صورت خودکار انجام می‌شود؛ مدیر می‌تواند هر انتخابی را ویرایش و ذخیره کند.</div>
+<div class="info">انتخاب‌های مدیر در <b>editorial.json</b> ذخیره می‌شوند. اگر دسته‌بندی را تغییر ندهی، همان دسته‌بندی خودکار خبر باقی می‌ماند.</div>
 <div class="bar">
 <input id="q" placeholder="جستجوی عنوان..." style="min-width:260px">
 <select id="cat"><option value="">همه دسته‌های فعلی</option></select>
@@ -73,7 +73,7 @@ function render(){
  let arr=news.filter(n=>(!q||(n.title||'').toLowerCase().includes(q))&&(!cat||n.category===cat));
  arr=arr.filter(n=>{let s=state(n);return f==='all'||(f==='important'&&s.important)||(f==='slider'&&s.slider)||(f==='republish'&&s.republish)||(f==='unselected'&&!s.important&&!s.slider&&!s.republish&&!s.reject&&!s.category)});
  if(!arr.length){$('list').innerHTML='<div class="empty">خبری پیدا نشد.</div>';return}
- $('list').innerHTML=arr.map(n=>{let s=state(n);let opts='<option value="">بدون تغییر</option>'+CATS.map(c=>'<option value="'+c[0]+'" '+(s.category===c[0]?'selected':'')+'>'+c[1]+'</option>').join('');
+ $('list').innerHTML=arr.map(n=>{let s=state(n);let opts='<option value="">خودکار: '+esc(labelCat(n.category||''))+'</option>'+CATS.map(c=>'<option value="'+c[0]+'" '+(s.category===c[0]?'selected':'')+'>'+c[1]+'</option>').join('');
  return '<div class="card"><div class="title">'+esc(n.title||'بدون عنوان')+'</div><div class="meta">'+esc(n.source||'')+' · '+fmt(n.published)+' · دسته فعلی: '+esc(n.category||'نامشخص')+'</div><div class="actions">'+
  '<button class="important '+(s.important?'active':'')+'" onclick="setChoice('+JSON.stringify(n.id)+',\'important\','+(!s.important)+')">⭐ مهم</button>'+
  '<button class="slider '+(s.slider?'active':'')+'" onclick="setChoice('+JSON.stringify(n.id)+',\'slider\','+(!s.slider)+')">🖼 اسلایدر</button>'+
@@ -82,7 +82,7 @@ function render(){
  '<select class="category" onchange="setCategory('+JSON.stringify(n.id)+',this.value)">'+opts+'</select>'+
  '</div></div>'}).join('');
 }
-function fmt(x){try{return new Date(x).toLocaleString('fa-IR',{dateStyle:'short',timeStyle:'short'})}catch(e){return ''}}
+function labelCat(x){let m=CATS.find(c=>c[0]===x);return m?m[1]:(x||'بدون دسته')}\nfunction fmt(x){try{return new Date(x).toLocaleString('fa-IR',{dateStyle:'short',timeStyle:'short'})}catch(e){return ''}}
 function esc(s){return String(s||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
 ['q','cat','filter'].forEach(id=>$(id).addEventListener('input',render));load();
 </script></body></html>
