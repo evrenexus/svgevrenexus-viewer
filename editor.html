@@ -121,7 +121,7 @@ async async function saveOne(id){
     const existing=JSON.parse(atob(current.content.replace(/\s/g,'')));
     const items=existing.items||{};
     if(s&&Object.keys(s).length) items[id]=s; else delete items[id];
-    const content=JSON.stringify({updated:new Date().toISOString(),items},null,2)+'\\n';
+    const content=JSON.stringify({updated:new Date().toISOString(),items},null,2)+'\n';
     const put=await fetch('https://api.github.com/repos/'+repo+'/contents/'+path,{
       method:'PUT',headers:{Authorization:'Bearer '+token,Accept:'application/vnd.github+json','Content-Type':'application/json'},
       body:JSON.stringify({message:'Update editorial item '+id,content:btoa(unescape(encodeURIComponent(content))),sha:current.sha,branch:'main'})
