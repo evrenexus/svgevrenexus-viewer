@@ -123,7 +123,7 @@ async function saveOne(id){
     const existing=JSON.parse(decoded);
     const items=existing.items||{};
     if(s&&Object.keys(s).length) items[id]=s; else delete items[id];
-    const content=JSON.stringify({updated:new Date().toISOString(),items},null,2)+'\\n';
+    const content=JSON.stringify({updated:new Date().toISOString(),items},null,2)+'\n';
     try{ JSON.parse(content); }catch(e){ throw new Error('JSON تولیدشده معتبر نیست؛ ذخیره متوقف شد.'); }
     const encoded=(()=>{const b=new TextEncoder().encode(content);let bin='';for(const byte of b)bin+=String.fromCharCode(byte);return btoa(bin)})();
     const put=await fetch('https://api.github.com/repos/'+repo+'/contents/'+path,{
@@ -156,7 +156,7 @@ function saveDirect(){
     const existing=JSON.parse(decoded);
     const items=existing.items||{};
     Object.entries(changed).forEach(([id,v])=>{if(v&&Object.keys(v).length)items[id]=v;else delete items[id]});
-    const content=JSON.stringify({updated:new Date().toISOString(),items},null,2)+'\\n';
+    const content=JSON.stringify({updated:new Date().toISOString(),items},null,2)+'\n';
     try{ JSON.parse(content); }catch(e){ throw new Error('JSON تولیدشده معتبر نیست؛ ذخیره متوقف شد.'); }
     const encoded=(()=>{const b=new TextEncoder().encode(content);let bin='';for(const byte of b)bin+=String.fromCharCode(byte);return btoa(bin)})();
     const put=await fetch('https://api.github.com/repos/'+repo+'/contents/'+path,{
