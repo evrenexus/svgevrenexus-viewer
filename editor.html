@@ -99,7 +99,8 @@ function render(){
  '<select class="category" onchange="setCategory('+JSON.stringify(n.id)+',this.value)">'+opts+'</select>'+
  '</div><div id="ed_'+n.id+'" class="editor"><input data-f="title" placeholder="عنوان"><input data-f="summary" placeholder="خلاصه"><input data-f="image" placeholder="آدرس تصویر"><textarea data-f="content" placeholder="متن خبر"></textarea><button class="primary" onclick="saveEdit('+JSON.stringify(n.id)+')">ذخیره و آماده انتشار</button></div></div>'}).join('');
 }
-function labelCat(x){let m=CATS.find(c=>c[0]===x);return m?m[1]:(x||'بدون دسته')}\nfunction fmt(x){try{return new Date(x).toLocaleString('fa-IR',{dateStyle:'short',timeStyle:'short'})}catch(e){return ''}}
+function labelCat(x){let m=CATS.find(c=>c[0]===x);return m?m[1]:(x||'بدون دسته')}
+function fmt(x){try{return new Date(x).toLocaleString('fa-IR',{dateStyle:'short',timeStyle:'short'})}catch(e){return ''}}
 function esc(s){return String(s||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
 ['q','cat','filter'].forEach(id=>$(id).addEventListener('input',render));load();
 </script></body></html>
