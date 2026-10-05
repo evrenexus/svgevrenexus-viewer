@@ -23,7 +23,7 @@ input,select,button{font:inherit;padding:8px;border:1px solid #ccc;border-radius
 <select id="filter"><option value="all">همه</option><option value="important">مهم‌ها</option><option value="slider">اسلایدرها</option><option value="republish">بازنشرها</option><option value="deleted">حذف‌شده‌ها</option><option value="unselected">انتخاب‌نشده‌ها</option></select>
 <button onclick="load()">بارگذاری</button><button class="primary" onclick="saveToGitHub()">ثبت واقعی در GitHub</button>
 <span id="status" class="status"></span></div>
-<textarea id="output" class="output" readonly placeholder="بعد از انتخاب، خروجی را اینجا می‌بینی."></textarea>
+<div style="background:#fff;padding:10px;border:1px solid #ddd;border-radius:8px;margin-bottom:12px;font-size:12px"><b>دسترسی ذخیره:</b> برای نوشتن مستقیم در GitHub، یک Fine-grained Token فقط با دسترسی Contents: Read and write برای این مخزن وارد کن. توکن در GitHub ذخیره نمی‌شود و فقط در همین مرورگر نگه‌داری می‌شود.<br><input id="token" type="password" placeholder="GitHub Token" style="width:100%;box-sizing:border-box;margin-top:7px"><button onclick="clearToken()" style="margin-top:7px">پاک کردن توکن</button></div><textarea id="output" class="output" readonly placeholder="گزارش ذخیره اینجا نمایش داده می‌شود."></textarea>
 <div id="list"></div></div>
 <script>
 let news=[],choices={},originalChoices={};
@@ -61,7 +61,7 @@ function setCategory(id,val){
 }
 function toggleDelete(id){
   choices[id]=choices[id]||{}; choices[id].deleted=!choices[id].deleted; choices[id].updated_at=new Date().toISOString();
-  render(); $('status').textContent=choices[id].deleted?'خبر حذف شد؛ برای ثبت دائمی «ثبت واقعی در GitHub» را بزن.':'خبر بازگردانی شد؛ برای ثبت دائمی «ثبت واقعی در GitHub» را بزن.';
+  render(); $('status').textContent=choices[id].deleted?'خبر حذف شد؛ حالا «ذخیره مستقیم در GitHub» را بزن.':'خبر بازگردانی شد؛ حالا «ذخیره مستقیم در GitHub» را بزن.';
 }
 function openEditor(id){
   const n=news.find(x=>x.id===id),box=document.getElementById('ed_'+id); if(!n||!box)return;
@@ -77,7 +77,7 @@ function saveEdit(id){
   const box=document.getElementById('ed_'+id); if(!box)return; choices[id]=choices[id]||{};
   ['title','summary','content','image'].forEach(f=>choices[id][f]=box.querySelector('[data-f="'+f+'"]').value);
   choices[id].published=true; choices[id].edited=true; choices[id].updated_at=new Date().toISOString();
-  $('status').textContent='ویرایش خبر ثبت شد؛ برای ثبت دائمی، «ثبت واقعی در GitHub» را بزن.'; render();
+  $('status').textContent='ویرایش آماده شد؛ برای ثبت دائمی «ذخیره مستقیم در GitHub» را بزن.'; render();
 }
 function render(){
   const q=$('q').value.trim().toLowerCase(),cat=$('cat').value,f=$('filter').value;
@@ -106,13 +106,37 @@ function makeButton(cls,text,active){const b=document.createElement('button');b.
 function labelCat(x){const m=CATS.find(c=>c[0]===x);return m?m[1]:(x||'بدون دسته');}
 function fmt(x){try{return new Date(x).toLocaleString('fa-IR',{dateStyle:'short',timeStyle:'short'});}catch(e){return '';}}
 function esc(s){return String(s||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
-function saveToGitHub(){
-  const changed={};Object.keys(choices).forEach(id=>{if(JSON.stringify(originalChoices[id]||{})!==JSON.stringify(choices[id]||{}))changed[id]=choices[id]});
-  if(!Object.keys(changed).length){$('status').textContent='تغییری برای ثبت وجود ندارد.';return;}
-  const payload={updated:new Date().toISOString(),items:changed},ticks=String.fromCharCode(96);
-  const body='EVREN_EDITOR\n\n'+ticks.repeat(3)+'json\n'+JSON.stringify(payload,null,2)+'\n'+ticks.repeat(3);
-  const url='https://github.com/evrenexus/svgevrenexus-viewer/issues/new?title='+encodeURIComponent('EVREN_EDITOR | ثبت انتخاب سردبیری')+'&body='+encodeURIComponent(body);
-  $('output').value=body;$('status').textContent='GitHub باز شد؛ Issue را ثبت کن.';window.open(url,'_blank');
+async function saveDirect(){
+  const changed={};
+  Object.keys(choices).forEach(id=>{
+    if(JSON.stringify(originalChoices[id]||{})!==JSON.stringify(choices[id]||{}))changed[id]=choices[id]
+  });
+  if(!Object.keys(changed).length){$('status').textContent='تغییری برای ذخیره وجود ندارد.';return;}
+  let token=$('token').value.trim()||sessionStorage.getItem('evren_github_token')||'';
+  if(!token){$('status').textContent='ابتدا GitHub Token را وارد کن.';return;}
+  $('status').textContent='در حال ذخیره مستقیم در GitHub...';
+  try{
+    const repo='evrenexus/svgevrenexus-viewer',path='data/editorial.json';
+    const get=await fetch('https://api.github.com/repos/'+repo+'/contents/'+path,{headers:{Authorization:'Bearer '+token,Accept:'application/vnd.github+json'}});
+    if(!get.ok)throw new Error('دسترسی GitHub رد شد ('+get.status+')');
+    const current=await get.json();
+    const existing=JSON.parse(atob(current.content.replace(/\\n/g,'')));
+    const items=existing.items||{};
+    Object.entries(changed).forEach(([id,v])=>{if(v&&Object.keys(v).length)items[id]=v;else delete items[id]});
+    const content=JSON.stringify({updated:new Date().toISOString(),items},null,2)+'\\n';
+    const put=await fetch('https://api.github.com/repos/'+repo+'/contents/'+path,{
+      method:'PUT',
+      headers:{Authorization:'Bearer '+token,Accept:'application/vnd.github+json','Content-Type':'application/json'},
+      body:JSON.stringify({message:'Update editorial data',content:btoa(unescape(encodeURIComponent(content))),sha:current.sha,branch:'main'})
+    });
+    if(!put.ok){const e=await put.text();throw new Error('ذخیره GitHub شکست خورد ('+put.status+'): '+e.slice(0,180));}
+    sessionStorage.setItem('evren_github_token',token);
+    originalChoices=JSON.parse(JSON.stringify(items));
+    choices=JSON.parse(JSON.stringify(items));
+    $('output').value=content;
+    $('status').textContent='✅ ذخیره واقعی انجام شد؛ data/editorial.json به‌روزرسانی شد.';
+  }catch(e){console.error(e);$('status').textContent='❌ '+e.message;}
 }
-['q','cat','filter'].forEach(id=>$(id).addEventListener(id==='q'?'input':'change',render));load();
+function clearToken(){sessionStorage.removeItem('evren_github_token');$('token').value='';$('status').textContent='توکن پاک شد.';}
+const savedToken=sessionStorage.getItem('evren_github_token');if(savedToken)$('token').value=savedToken;['q','cat','filter'].forEach(id=>$(id).addEventListener(id==='q'?'input':'change',render));load();
 </script></body></html>
