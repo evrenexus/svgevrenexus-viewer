@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-store">
+<title>Evren Nexus — پنل سردبیری V2</title>
+<style>
+body{font-family:Tahoma,Arial,sans-serif;background:#f3f4f6;margin:0;color:#222}.wrap{max-width:1100px;margin:20px auto;padding:0 12px}h1{font-size:22px;margin:0 0 4px}.ver{font-size:11px;color:#777;margin-bottom:14px}.toolbar{background:#fff;border:1px solid #ddd;border-radius:8px;padding:10px;display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}input,select,button,textarea{font:inherit;border:1px solid #ccc;border-radius:6px;padding:8px;box-sizing:border-box}input{min-width:220px}button{cursor:pointer;background:#fff}.primary{background:#111;color:#fff}#status{background:#fff8d8;border:1px solid #e6d36a;border-radius:7px;padding:9px;font-size:12px;margin-bottom:12px}.card{background:#fff;border:1px solid #ddd;border-radius:8px;padding:12px;margin-bottom:9px}.title{font-weight:bold;line-height:1.8}.meta{font-size:11px;color:#777;margin:4px 0 9px}.actions{display:flex;gap:6px;flex-wrap:wrap}.actions button.active{color:#fff}.important.active{background:#d89b00}.slider.active{background:#2867c7}.editor{display:none;margin-top:10px;padding:10px;background:#f7f8fa;border:1px solid #ddd;border-radius:7px}.editor.open{display:block}.editor input,.editor textarea{width:100%;margin:4px 0}.editor textarea{min-height:180px}.save{background:#14804a;color:#fff}.empty{text-align:center;padding:30px;color:#777}.err{color:#b42318}
+</style></head>
+<body><div class="wrap">
+<h1>پنل سردبیری Evren Nexus</h1><div class="ver">نسخه V2 — کنترل‌ها مستقیم اجرا می‌شوند</div>
+<div class="toolbar"><input id="q" placeholder="جستجوی عنوان"><select id="cat"><option value="">همه دسته‌ها</option></select><select id="filter"><option value="all">همه</option><option value="important">مهم</option><option value="slider">اسلایدر</option><option value="edited">ویرایش‌شده</option></select><button id="reload">بارگذاری مجدد</button><button id="github" class="primary">ثبت واقعی در GitHub</button></div>
+<div id="status">در حال بارگذاری...</div><div id="list"></div></div>
+<script>
+'use strict';
+const API='https://raw.githubusercontent.com/evrenexus/svgevrenexus-viewer/main/data/';
+let news=[],editorial={},original={};const $=id=>document.getElementById(id);
+const cats=[['economy','اقتصادی'],['markets','بازار و سرمایه‌گذاری'],['currency-gold','ارز و طلا'],['real-estate','مسکن'],['technology','فناوری'],['ai','هوش مصنوعی'],['science-life','علم و سبک زندگی'],['health','پزشکی و سلامت'],['auto','خودرو']];
+const clone=x=>JSON.parse(JSON.stringify(x||{})),state=id=>editorial[id]||{};
+const ensure=id=>editorial[id]||(editorial[id]={});
+const changed=id=>JSON.stringify(original[id]||{})!==JSON.stringify(editorial[id]||{});
+
+async function load(){ $('status').textContent='در حال دریافت خبرها...'; try{
+const [a,b]=await Promise.all([fetch(API+'news.json?x='+Date.now(),{cache:'no-store'}),fetch(API+'editorial.json?x='+Date.now(),{cache:'no-store'})]);
+if(!a.ok||!b.ok)throw new Error('HTTP '+a.status+'/'+b.status);
+const nd=await a.json(),ed=await b.json();news=Array.isArray(nd.items)?nd.items:[];editorial=clone(ed.items||{});original=clone(ed.items||{});
+const found=[...new Set(news.map(x=>x.category).filter(Boolean))];$('cat').innerHTML='<option value="">همه دسته‌ها</option>'+found.map(x=>'<option value="'+esc(x)+'">'+esc(label(x))+'</option>').join('');
+render();$('status').textContent='بارگذاری شد: '+news.length+' خبر — نسخه V2';
+}catch(e){console.error(e);$('status').innerHTML='<span class="err">خطا: '+esc(e.message)+'</span>';}}
+
+function toggle(id,key){const s=ensure(id);s[key]=!s[key];s.updated_at=new Date().toISOString();render();$('status').textContent=(key==='important'?'مهم':'اسلایدر')+' تغییر کرد؛ برای ثبت دائمی «ثبت واقعی در GitHub» را بزن.';}
+function setCat(id,val){const s=ensure(id);if(val)s.category=val;else delete s.category;s.updated_at=new Date().toISOString();render();$('status').textContent='دسته‌بندی تغییر کرد.';}
+function openEdit(id){const n=news.find(x=>x.id===id),box=$('edit-'+id);if(!n||!box)return;box.classList.toggle('open');if(box.classList.contains('open')){const s=state(id);box.querySelector('[data-f=title]').value=s.title!==undefined?s.title:(n.title||'');box.querySelector('[data-f=summary]').value=s.summary!==undefined?s.summary:(n.summary||'');box.querySelector('[data-f=image]').value=s.image!==undefined?s.image:(n.image||'');box.querySelector('[data-f=content]').value=s.content!==undefined?s.content:(n.content||'');}}
+function saveEdit(id){const box=$('edit-'+id);if(!box)return;const s=ensure(id);['title','summary','image','content'].forEach(k=>s[k]=box.querySelector('[data-f='+k+']').value);s.edited=true;s.published=true;s.updated_at=new Date().toISOString();box.classList.remove('open');render();$('status').textContent='نسخه ویرایش‌شده آماده انتشار شد؛ حالا «ثبت واقعی در GitHub» را بزن.';}
+
+function render(){const q=$('q').value.trim().toLowerCase(),cat=$('cat').value,f=$('filter').value;let arr=news.filter(n=>(!q||(n.title||'').toLowerCase().includes(q))&&(!cat||n.category===cat));arr=arr.filter(n=>{const s=state(n.id);return f==='all'||(f==='important'&&s.important)||(f==='slider'&&s.slider)||(f==='edited'&&s.edited);});const list=$('list');list.innerHTML='';if(!arr.length){list.innerHTML='<div class="empty">خبری پیدا نشد.</div>';return;}for(const n of arr){const s=state(n.id),card=document.createElement('div');card.className='card';const title=document.createElement('div');title.className='title';title.textContent=n.title||'بدون عنوان';card.appendChild(title);const meta=document.createElement('div');meta.className='meta';meta.textContent=(n.source||'')+' · '+(n.category||'نامشخص');card.appendChild(meta);const actions=document.createElement('div');actions.className='actions';
+const b1=button('important','⭐ مهم',!!s.important);b1.onclick=()=>toggle(n.id,'important');const b2=button('slider','🖼 اسلایدر',!!s.slider);b2.onclick=()=>toggle(n.id,'slider');const b3=button('edit','✏️ ویرایش',false);b3.onclick=()=>openEdit(n.id);const b4=button('publish','📰 انتشار نسخه ویرایش‌شده',!!s.published);b4.onclick=()=>openEdit(n.id);actions.append(b1,b2,b3,b4);
+const sel=document.createElement('select');sel.innerHTML='<option value="">خودکار: '+esc(label(n.category||''))+'</option>'+cats.map(c=>'<option value="'+c[0]+'">'+c[1]+'</option>').join('');if(s.category)sel.value=s.category;sel.onchange=()=>setCat(n.id,sel.value);actions.appendChild(sel);card.appendChild(actions);
+const ed=document.createElement('div');ed.id='edit-'+n.id;ed.className='editor';ed.innerHTML='<input data-f="title" placeholder="عنوان"><input data-f="summary" placeholder="خلاصه"><input data-f="image" placeholder="آدرس تصویر"><textarea data-f="content" placeholder="متن خبر"></textarea>';const save=document.createElement('button');save.className='save';save.textContent='ذخیره و آماده انتشار';save.onclick=()=>saveEdit(n.id);ed.appendChild(save);card.appendChild(ed);list.appendChild(card);}}
+
+function button(cls,text,active){const b=document.createElement('button');b.type='button';b.className=cls+(active?' active':'');b.textContent=text;return b;}function label(x){const c=cats.find(c=>c[0]===x);return c?c[1]:(x||'بدون دسته');}function esc(s){return String(s||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
+function saveGithub(){const items={};Object.keys(editorial).forEach(id=>{if(changed(id))items[id]=editorial[id]});if(!Object.keys(items).length){$('status').textContent='تغییری برای ثبت وجود ندارد.';return;}const payload={updated:new Date().toISOString(),items};const fence=String.fromCharCode(96).repeat(3);const body='EVREN_EDITOR\\n\\n'+fence+'json\\n'+JSON.stringify(payload,null,2)+'\\n'+fence;const url='https://github.com/evrenexus/svgevrenexus-viewer/issues/new?title='+encodeURIComponent('EVREN_EDITOR | ثبت انتخاب سردبیری')+'&body='+encodeURIComponent(body);navigator.clipboard?.writeText(body).catch(()=>{});$('status').textContent='Issue گیت‌هاب باز می‌شود؛ آنجا Submit new issue را بزن.';window.open(url,'_blank');}
+$('reload').onclick=load;$('github').onclick=saveGithub;$('q').oninput=render;$('cat').onchange=render;$('filter').onchange=render;load();
+</script></body></html>
