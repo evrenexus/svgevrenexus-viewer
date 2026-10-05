@@ -405,7 +405,7 @@ def extract_article_text(url):
         # Clean residual HTML/CSS fragments.
         text=html.unescape(re.sub(r"<[^>]+>"," ",body))
         text=re.sub(r"(?m)^.*\[[^\n\]]+\].*$"," ",text)
-        text=re.sub(r'(?i)(?:class|className)\s*=\s*["'][^"']*["']'," ",text)
+        text=re.sub(r"(?i)(?:class|className)\s*=\s*[\"'][^\"']*[\"']"," ",text)
 
         # Remove source-attribution and social-promotion lines.
         text=re.sub(r"(?im)^\s*(?:به گزارش|به نقل از|به گفته|به نقل)\s+[^\n]{0,180}(?:،|:|\s-\s)\s*","",text)
