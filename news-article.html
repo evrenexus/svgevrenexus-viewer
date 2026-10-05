@@ -32,16 +32,26 @@ function safeUrl(v){try{var u=new URL(v,location.href);return /^https?:$/i.test(
 function esc(v){return String(v||"").replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]})}
 function date(v){var d=new Date(v);return Number.isNaN(d.getTime())?"":d.toLocaleString("fa-IR",{dateStyle:"long",timeStyle:"short"})}
 function render(x,ed){
-var selected=!!(ed&&ed.items&&x&&ed.items[x.id]&&ed.items[x.id].republish===true);
-if(!x || !selected || !x.allow_internal_republish || !x.content){host.innerHTML='<div class="error">این خبر در نسخه داخلی قابل نمایش نیست.<br><br><a href="'+esc(safeUrl(x&&x.url))+'">مشاهده منبع خبر</a></div>';return}
-document.title=(x.title||"خبر")+" | Evren Nexus";
-var html='<h1 class="article-title">'+esc(x.title)+'</h1>';
+var s=ed&&ed.items&&x?ed.items[x.id]:null;
+var selected=!!(s&&((s.published===true)||(s.republish===true)));
+var allowed=!!(x&&x.allow_internal_republish);
+var edited=!!(s&&s.edited===true);
+var data=Object.assign({},x||{});
+if(edited){
+ if(s.title!==undefined)data.title=s.title;
+ if(s.summary!==undefined)data.summary=s.summary;
+ if(s.content!==undefined)data.content=s.content;
+ if(s.image!==undefined)data.image=s.image;
+}
+if(!x || !selected || (!allowed && !edited) || !data.content){host.innerHTML='<div class="error">این خبر در نسخه داخلی قابل نمایش نیست.<br><br><a href="'+esc(safeUrl(x&&x.url))+'">مشاهده منبع خبر</a></div>';return}
+document.title=(data.title||"خبر")+" | Evren Nexus";
+var html='<h1 class="article-title">'+esc(data.title)+'</h1>';
 var su=safeUrl(x.url),reader=su?"./viewer.html?url="+encodeURIComponent(su):"";
 html+='<div class="article-source-box">منبع خبر: '+esc(x.source||"نامشخص")+(reader?' — <a href="'+esc(reader)+'" target="_blank" rel="noopener noreferrer">مشاهده در خبرخوان Evren Nexus</a>':"")+"</div>";
 html+='<div class="ai-republish-warning">این مطلب با کمک هوش مصنوعی از منبع اصلی بازنشر شده است. مسئولیت صحت و سقم محتوا بر عهده منبع اصلی بوده و این صفحه صرفاً بازنشرکننده آن است.</div>';
-html+='<div class="article-meta">'+esc(date(x.published))+'</div>';
-if(x.image){var im=safeUrl(x.image);if(im)html+='<img class="article-image" src="'+esc(im)+'" alt="'+esc(x.title)+'" loading="eager" referrerpolicy="no-referrer">'}
-var paras=String(x.content||"").split(/\n\s*\n/).filter(Boolean);
+html+='<div class="article-meta">'+esc(date(data.published||x.published))+'</div>';
+if(data.image){var im=safeUrl(data.image);if(im)html+='<img class="article-image" src="'+esc(im)+'" alt="'+esc(data.title)+'" loading="eager" referrerpolicy="no-referrer">'}
+var paras=String(data.content||"").split(/\n\s*\n/).filter(Boolean);
 html+='<div class="article-body">'+paras.map(esc).join("\n\n")+'</div>';
 html+='<div class="article-source">منبع: '+esc(x.source||"")+"</div>";
 host.innerHTML=html;
