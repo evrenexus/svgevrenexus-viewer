@@ -285,6 +285,11 @@ def main():
     requests_used=int(usage.get("requests",0) or 0)
     last_success=float(usage.get("last_success_epoch",0) or 0)
     now=time.time()
+    quota_block_until=float(usage.get("quota_block_until_epoch",0) or 0)
+    if quota_block_until > now:
+        wait=int((quota_block_until-now)/3600)+1
+        print(f"Gemini quota cooldown active. Skipping AI for about {wait} more hour(s).")
+        return
 
     if requests_used >= DAILY_REQUEST_BUDGET:
         print(f"AI budget reached: {requests_used}/{DAILY_REQUEST_BUDGET}. Skipping.")
@@ -365,7 +370,14 @@ def main():
             failed_batches+=1; consecutive_failures+=1
             msg=str(e); print(f"Batch {batch_no}/{total_batches} failed: {msg}")
             if "HTTP 429" in msg:
-                print("Quota exhausted. Stopping immediately; no more requests will be attempted.")
+                import re as _re
+                m = _re.search(r'"retryDelay"\s*:\s*"([0-9]+)s"', msg)
+                retry_seconds = int(m.group(1)) if m else 12 * 3600
+                usage["quota_block_until_epoch"] = time.time() + retry_seconds
+                usage["quota_block_until"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime(time.time()+retry_seconds))
+                ai["usage"] = usage
+                save_ai(ai)
+                print(f"Gemini quota exhausted. Cooldown recorded until {usage['quota_block_until']}.")
                 break
             print(f"Consecutive batch failures: {consecutive_failures}/{MAX_CONSECUTIVE_BATCH_FAILURES}")
             if consecutive_failures>=MAX_CONSECUTIVE_BATCH_FAILURES:
