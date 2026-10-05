@@ -118,13 +118,17 @@ async function saveOne(id){
     const get=await fetch('https://api.github.com/repos/'+repo+'/contents/'+path,{headers:{Authorization:'Bearer '+token,Accept:'application/vnd.github+json'}});
     if(!get.ok)throw new Error('دسترسی GitHub رد شد ('+get.status+')');
     const current=await get.json();
-    const existing=JSON.parse(atob(current.content.replace(/\s/g,'')));
+    const bytes=Uint8Array.from(atob(current.content.replace(/\s/g,'')),c=>c.charCodeAt(0));
+    const decoded=new TextDecoder('utf-8',{fatal:true}).decode(bytes);
+    const existing=JSON.parse(decoded);
     const items=existing.items||{};
     if(s&&Object.keys(s).length) items[id]=s; else delete items[id];
-    const content=JSON.stringify({updated:new Date().toISOString(),items},null,2)+'\n';
+    const content=JSON.stringify({updated:new Date().toISOString(),items},null,2)+'\\n';
+    try{ JSON.parse(content); }catch(e){ throw new Error('JSON تولیدشده معتبر نیست؛ ذخیره متوقف شد.'); }
+    const encoded=(()=>{const b=new TextEncoder().encode(content);let bin='';for(const byte of b)bin+=String.fromCharCode(byte);return btoa(bin)})();
     const put=await fetch('https://api.github.com/repos/'+repo+'/contents/'+path,{
       method:'PUT',headers:{Authorization:'Bearer '+token,Accept:'application/vnd.github+json','Content-Type':'application/json'},
-      body:JSON.stringify({message:'Update editorial item '+id,content:btoa(unescape(encodeURIComponent(content))),sha:current.sha,branch:'main'})
+      body:JSON.stringify({message:'Update editorial item '+id,content:encoded,sha:current.sha,branch:'main'})
     });
     if(!put.ok){const e=await put.text();throw new Error('ذخیره شکست خورد ('+put.status+'): '+e.slice(0,180));}
     originalChoices[id]=JSON.parse(JSON.stringify(s));
@@ -147,14 +151,18 @@ function saveDirect(){
     const get=await fetch('https://api.github.com/repos/'+repo+'/contents/'+path,{headers:{Authorization:'Bearer '+token,Accept:'application/vnd.github+json'}});
     if(!get.ok)throw new Error('دسترسی GitHub رد شد ('+get.status+')');
     const current=await get.json();
-    const existing=JSON.parse(atob(current.content.replace(/\s/g,'')));
+    const bytes=Uint8Array.from(atob(current.content.replace(/\s/g,'')),c=>c.charCodeAt(0));
+    const decoded=new TextDecoder('utf-8',{fatal:true}).decode(bytes);
+    const existing=JSON.parse(decoded);
     const items=existing.items||{};
     Object.entries(changed).forEach(([id,v])=>{if(v&&Object.keys(v).length)items[id]=v;else delete items[id]});
-    const content=JSON.stringify({updated:new Date().toISOString(),items},null,2)+'\n';
+    const content=JSON.stringify({updated:new Date().toISOString(),items},null,2)+'\\n';
+    try{ JSON.parse(content); }catch(e){ throw new Error('JSON تولیدشده معتبر نیست؛ ذخیره متوقف شد.'); }
+    const encoded=(()=>{const b=new TextEncoder().encode(content);let bin='';for(const byte of b)bin+=String.fromCharCode(byte);return btoa(bin)})();
     const put=await fetch('https://api.github.com/repos/'+repo+'/contents/'+path,{
       method:'PUT',
       headers:{Authorization:'Bearer '+token,Accept:'application/vnd.github+json','Content-Type':'application/json'},
-      body:JSON.stringify({message:'Update editorial data',content:btoa(unescape(encodeURIComponent(content))),sha:current.sha,branch:'main'})
+      body:JSON.stringify({message:'Update editorial data',content:encoded,sha:current.sha,branch:'main'})
     });
     if(!put.ok){const e=await put.text();throw new Error('ذخیره GitHub شکست خورد ('+put.status+'): '+e.slice(0,180));}
     sessionStorage.setItem('evren_github_token',token);
