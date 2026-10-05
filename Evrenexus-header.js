@@ -95,8 +95,8 @@ window.open(url,"_blank");
 return false;
 }
 
-function loadTGJU(){return fetch("https://raw.githubusercontent.com/evrenexus/svgevrenexus-viewer/main/market-data/tgju.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw new Error("TGJU "+r.status);return r.json()}).then(function(t){render(metal,"metals",[t.precious||[],t.baseMetals||[],t.energy||[]],t.scrapedAt);render(cur,"currency",[t.currency||[]],t.scrapedAt)})}
-function loadCrypto(){return fetch("https://raw.githubusercontent.com/evrenexus/svgevrenexus-viewer/main/market-data/nobitex.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw new Error("Nobitex "+r.status);return r.json()}).then(function(n){render(crypto,"crypto",[(n.markets||[]).slice().sort(function(a,b){return a.symbol==="USDT"?-1:b.symbol==="USDT"?1:0})],n.scrapedAt)})}
+function loadTGJU(){return fetch("https://evrenexus.github.io/svgevrenexus-viewer/market-data/tgju.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw new Error("TGJU "+r.status);return r.json()}).then(function(t){render(metal,"metals",[t.precious||[],t.baseMetals||[],t.energy||[]],t.scrapedAt);render(cur,"currency",[t.currency||[]],t.scrapedAt)})}
+function loadCrypto(){return fetch("https://evrenexus.github.io/svgevrenexus-viewer/market-data/nobitex.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw new Error("Nobitex "+r.status);return r.json()}).then(function(n){render(crypto,"crypto",[(n.markets||[]).slice().sort(function(a,b){return a.symbol==="USDT"?-1:b.symbol==="USDT"?1:0})],n.scrapedAt)})}
 loadTGJU().catch(function(){stamp("metals");stamp("currency")});
 loadCrypto().catch(function(){stamp("crypto")});
 function nextTehranHour(){var n=new Date(),t=new Date(n.toLocaleString("en-US",{timeZone:"Asia/Tehran"})),d=new Date(t);d.setMinutes(0,0,0);d.setHours(d.getHours()+1);return Math.max(1000,d.getTime()-t.getTime())}function scheduleTGJU(){setTimeout(function(){loadTGJU().catch(function(){});setInterval(function(){loadTGJU().catch(function(){})},60*60*1000)},nextTehranHour())}scheduleTGJU();
