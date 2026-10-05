@@ -34,7 +34,7 @@ var css=`
 @media(max-width:700px){#Evrenxus-header{width:100%;left:0;transform:none;height:96px}#Evrenxus-header-row1{height:66px}.Evrenxus-header-brand{width:92px;height:66px}.Evrenxus-brand{font-size:10px}#Evrenxus-market-tickers{height:66px;margin-right:92px}.Evrenxus-ticker,.Evrenxus-ticker-window,.Evrenxus-ticker-track{height:25px}#Evrenxus-header-row2{height:30px}#Evrenxus-main-menu{height:30px;overflow-x:auto}#Evrenxus-main-menu a{height:30px;padding:0 8px;font-size:9px;background:#d9232e;color:#fff}#Evrenxus-property-search{width:190px;flex-basis:190px;height:28px}}
 @media(max-width:430px){#Evrenxus-header{height:92px}#Evrenxus-header-row1{height:62px}.Evrenxus-header-brand{width:82px;height:62px}#Evrenxus-market-tickers{height:62px;margin-right:82px}.Evrenxus-ticker,.Evrenxus-ticker-window,.Evrenxus-ticker-track{height:25px}.Evrenxus-datetime,#Evrenxus-header-row2{height:46px}#Evrenxus-main-menu{height:30px}#Evrenxus-main-menu a{height:30px;padding:0 7px;font-size:8.5px}#Evrenxus-property-search{width:166px;flex-basis:166px;height:28px}}
 `;
-var style=document.createElement("style");style.id="Evrenxus-header-style";style.textContent=css;document.head.appendChild(style);
+var style=document.createElement("style");style.id="Evrenxus-header-style";style.textContent=css;(document.head||document.documentElement).appendChild(style);
 
 
 // Remove legacy market tickers from the host page.
@@ -56,7 +56,7 @@ function removeLegacyTickers(){
   });
 }
 removeLegacyTickers();
-new MutationObserver(removeLegacyTickers).observe(document.body,{childList:true,subtree:true});
+if(window.MutationObserver&&document.body)new MutationObserver(removeLegacyTickers).observe(document.body,{childList:true,subtree:true});
 })();
 
 var wrap=document.createElement("div");wrap.innerHTML=`
@@ -72,10 +72,10 @@ var wrap=document.createElement("div");wrap.innerHTML=`
 <nav id="Evrenxus-main-menu"><a class="active" target="_top" href="https://evrenexus.github.io/svgevrenexus-viewer/">خانه</a><a target="_top" href="https://evrenexus.github.io/svgevrenexus-viewer/news-river.html?topic=economy" data-topic="economy">اقتصاد</a><a target="_top" href="https://evrenexus.github.io/svgevrenexus-viewer/news-river.html?topic=markets" data-topic="markets">بازار و سرمایه‌گذاری</a><a target="_top" href="https://evrenexus.github.io/svgevrenexus-viewer/news-river.html?topic=currency-gold" data-topic="currency-gold">ارز و طلا</a><a target="_top" href="https://evrenexus.github.io/svgevrenexus-viewer/news-river.html?topic=real-estate" data-topic="real-estate">مسکن</a><a target="_top" href="https://evrenexus.github.io/svgevrenexus-viewer/news-river.html?topic=technology" data-topic="technology">فناوری</a><a target="_top" href="https://evrenexus.github.io/svgevrenexus-viewer/news-river.html?topic=ai" data-topic="ai">هوش مصنوعی</a><a target="_top" href="https://evrenexus.github.io/svgevrenexus-viewer/news-river.html?topic=health" data-topic="health">پزشکی و سلامت</a><a target="_top" href="https://evrenexus.github.io/svgevrenexus-viewer/news-river.html?topic=auto" data-topic="auto">خودرو</a><a target="_top" href="https://evrenexus.github.io/svgevrenexus-viewer/news-river.html?topic=science-life" data-topic="science-life">علم و سبک زندگی</a></nav>
 <div id="Evrenxus-property-search"><div id="Evrenxus-property-search-title"><a target="_blank" href="https://evrenexus.blogfa.com/post/5">موتور جستجوی املاک</a></div><div id="Evrenxus-property-search-form"><input id="Evrenxus-property-budget" type="text" inputmode="decimal" autocomplete="off" placeholder="1-999"><button id="Evrenxus-property-search-button" type="button">بیاب</button></div><div id="Evrenxus-property-search-error">رقم را بر پایه میلیارد تومان وارد کنید</div></div>
 </div></header>`;
-document.body.insertBefore(wrap.firstElementChild,document.body.firstChild);
+function mountHeader(){if(document.getElementById("Evrenxus-header"))return;var header=wrap.firstElementChild;if(!header)return;(document.body||document.documentElement).insertBefore(header,(document.body||document.documentElement).firstChild);}\nif(document.body)mountHeader();else document.addEventListener("DOMContentLoaded",mountHeader,{once:true});
 
 (function(){
-var input=document.getElementById("Evrenxus-property-budget"),button=document.getElementById("Evrenxus-property-search-button"),error=document.getElementById("Evrenxus-property-search-error");
+var input=document.getElementById("Evrenxus-property-budget"),button=document.getElementById("Evrenxus-property-search-button"),error=document.getElementById("Evrenxus-property-search-error");\nif(!input||!button||!error)return;
 function norm(v){return String(v).replace(/[۰-۹]/g,function(d){return"۰۱۲۳۴۵۶۷۸۹".indexOf(d)}).replace(/[٠-٩]/g,function(d){return"٠١٢٣٤٥٦٧٨٩".indexOf(d)}).replace(/,/g,".").trim()}
 function search(){var v=norm(input.value),b=Number(v);if(!v||!isFinite(b)||b<1||b>999){error.style.display="block";input.focus();return}error.style.display="none";window.open("https://evrenexus.github.io/avrin-property-advisor/?budget="+encodeURIComponent(b),"_blank")}
 button.onclick=search;input.onkeydown=function(e){if(e.key==="Enter"){e.preventDefault();search()}};input.oninput=function(){error.style.display="none"}
