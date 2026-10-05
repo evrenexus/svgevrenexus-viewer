@@ -64,6 +64,6 @@ var items=searchTerm?all.filter(function(x){var hay=((x.title||"")+" "+(x.summar
 items.sort(function(a,b){return safeDate(b.published)-safeDate(a.published)});items._important=items.filter(function(x){var a=aiItems[x.id]||{};return Array.isArray(a.important_topics)&&a.important_topics.indexOf(topic)!==-1&&a.representative!==false});document.querySelector("#river .section-title").textContent=searchTerm?"نتایج جستجو":"جدیدترین اخبار";render(items)}).catch(function(){list.innerHTML='<div class="error">دریافت خبرها انجام نشد.</div>';renderBreaking([])});
 })();
 </script>
-<script src="https://evrenexus.github.io/svgevrenexus-viewer/Evrenexus-header.js?v=20261005-8"></script>
+<script src="https://evrenexus.github.io/svgevrenexus-viewer/Evrenexus-header.js?v=20261005-9"></script>
 </body>
 <style>
