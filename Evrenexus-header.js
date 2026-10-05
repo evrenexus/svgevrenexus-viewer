@@ -96,9 +96,7 @@ return false;
 }
 
 function dataURL(file){
-  var base="https://evrenexus.github.io/svgevrenexus-viewer/";
-  try{if(document.currentScript&&document.currentScript.src)base=new URL("./",document.currentScript.src).href}catch(e){}
-  return base+"market-data/"+file+"?v="+Date.now();
+  return "https://raw.githubusercontent.com/evrenexus/svgevrenexus-viewer/main/market-data/"+file+"?v="+Date.now();
 }
 function fetchJSON(file,fallback){
   return fetch(dataURL(file),{cache:"no-store"}).then(function(r){if(!r.ok)throw new Error(file+" "+r.status);return r.json()}).catch(function(){
