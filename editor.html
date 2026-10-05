@@ -80,14 +80,15 @@ async function publishNews(id){
   $('status').textContent=next?'در حال انتشار خبر...':'در حال لغو انتشار خبر...';
   await saveOne(id);
 }
-function saveEdit(id){
+async function saveEdit(id){
   const box=document.getElementById('ed_'+id); if(!box)return; choices[id]=choices[id]||{};
   choices[id].title=box.querySelector('[data-f="title"]').value;
   choices[id].summary=box.querySelector('[data-f="summary"]').value;
   choices[id].content=box.querySelector('[data-f="content"]').innerHTML;
   choices[id].image=box.querySelector('[data-f="image"]').value;
   choices[id].edited=true; choices[id].updated_at=new Date().toISOString();
-  $('status').textContent='ویرایش آماده شد؛ برای ثبت دائمی «ذخیره مستقیم در GitHub» را بزن.'; render();
+  $('status').textContent='در حال ذخیره ویرایش در GitHub...';
+  await saveOne(id);
 }
 function render(){
   const q=$('q').value.trim().toLowerCase(),cat=$('cat').value,f=$('filter').value;
@@ -110,7 +111,7 @@ function render(){
     const select=document.createElement('select');select.className='category';select.innerHTML='<option value="">خودکار: '+esc(labelCat(n.category||''))+'</option>'+CATS.map(c=>'<option value="'+c[0]+'">'+c[1]+'</option>').join('');if(s.category)select.value=s.category;select.onchange=()=>setCategory(n.id,select.value);actions.appendChild(select);card.appendChild(actions);
     const ed=document.createElement('div');ed.id='ed_'+n.id;ed.className='editor';
     ed.innerHTML='<input data-f="title" placeholder="عنوان"><textarea data-f="summary" placeholder="خلاصه"></textarea><input data-f="image" placeholder="آدرس تصویر"><div class="richbar"><button type="button" data-cmd="bold"><b>پررنگ</b></button><button type="button" data-cmd="italic"><i>کج</i></button><button type="button" data-cmd="insertUnorderedList">• فهرست</button><button type="button" data-cmd="insertOrderedList">۱. فهرست</button><button type="button" data-cmd="formatBlock" data-value="h2">عنوان</button><button type="button" data-cmd="formatBlock" data-value="p">پاراگراف</button><button type="button" data-cmd="createLink">لینک</button><button type="button" data-cmd="removeFormat">پاک‌کردن قالب</button></div><div class="richbody" data-f="content" contenteditable="true"></div>';
-    const saveEditButton=document.createElement('button');saveEditButton.className='primary';saveEditButton.textContent='ذخیره و آماده انتشار';saveEditButton.onclick=()=>saveEdit(n.id);ed.appendChild(saveEditButton);
+    const saveEditButton=document.createElement('button');saveEditButton.className='primary';saveEditButton.textContent='💾 ذخیره ویرایش';saveEditButton.onclick=()=>saveEdit(n.id);ed.appendChild(saveEditButton);
     ed.querySelectorAll('[data-cmd]').forEach(function(b){b.addEventListener('click',function(){applyRichCommand(b.dataset.cmd,b.dataset.value,ed);});});card.appendChild(ed);list.appendChild(card);
   });
 }
