@@ -20,7 +20,7 @@ input,select,button{font:inherit;padding:8px;border:1px solid #ccc;border-radius
 <input id="q" placeholder="جستجوی عنوان..." style="min-width:260px">
 <select id="cat"><option value="">همه دسته‌های فعلی</option></select>
 <select id="filter"><option value="all">همه</option><option value="important">مهم‌ها</option><option value="slider">اسلایدرها</option><option value="republish">بازنشرها</option><option value="unselected">انتخاب‌نشده‌ها</option></select>
-<button onclick="load()">بارگذاری</button><button class="primary" onclick="copyChoices()">ثبت واقعی در GitHub</button>
+<button onclick="load()">بارگذاری</button><button class="primary" onclick="saveToGitHub()">ثبت واقعی در GitHub</button>
 <span id="status" class="status"></span></div>
 <textarea id="output" class="output" readonly placeholder="بعد از انتخاب، خروجی را اینجا می‌بینی."></textarea>
 <div id="list"></div></div>
@@ -60,7 +60,7 @@ function saveToGitHub(){
  const ticks=String.fromCharCode(96);
  const body='EVREN_EDITOR\\n\\n'+ticks+ticks+ticks+'json\\n'+JSON.stringify(payload,null,2)+'\\n'+ticks+ticks+ticks;
  const url='https://github.com/evrenexus/svgevrenexus-viewer/issues/new?title='+encodeURIComponent('EVREN_EDITOR | ثبت انتخاب سردبیری')+'&body='+encodeURIComponent(body);
- $('output').value=body;$(`status`).textContent='صفحه GitHub باز شد؛ Issue را ثبت کن.';window.open(url,'_blank');
+ $('output').value=body;$('status').textContent='صفحه GitHub باز شد؛ Issue را ثبت کن.';window.open(url,'_blank');
 }
 function copyChoices(){
  const payload={updated:new Date().toISOString(),items:choices};
