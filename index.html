@@ -70,6 +70,6 @@ items.sort(function(a,b){return safeDate(b.published)-safeDate(a.published)});
 var importantItems=items.filter(function(x){var a=aiItems[x.id]||{};return a.important===true&&a.representative!==false});
 items._important=importantItems;items._articles=searchTerm?[]:Object.values(articlesData.items||{}).filter(function(a){return a&&a.status==="published"}).sort(function(a,b){return new Date(b.updated_at)-new Date(a.updated_at)});document.querySelector("#river .section-title").textContent=searchTerm?"نتایج جستجو":"تمامی اخبار";render(items)}).catch(function(){list.innerHTML='<div class="error">دریافت خبرها انجام نشد.</div>';importantList.innerHTML='<div class="error">دریافت خبرها انجام نشد.</div>';renderBreaking([])});
 })();
-</script><script src="https://evrenexus.github.io/svgevrenexus-viewer/Evrenexus-header.js?v=20261005-14"></script>
+</script><script src="https://evrenexus.github.io/svgevrenexus-viewer/Evrenexus-header.js?v=20261005-15"></script>
 </body>
 </html>
