@@ -11,11 +11,12 @@ input,select,button{font:inherit;padding:8px;border:1px solid #ccc;border-radius
 .important.active{background:#d89b00}.slider.active{background:#2867c7}.republish.active{background:#14804a}.reject.active{background:#b42318}
 .category{min-width:150px}.status{font-size:12px;color:#555;margin-right:auto}.empty{text-align:center;padding:30px;color:#777;background:#fff;border-radius:8px}
 .info{background:#fff8d8;border:1px solid #e6d36a;padding:10px;margin-bottom:12px;font-size:12px;line-height:2}.output{width:100%;min-height:90px;direction:ltr;text-align:left;font:12px Consolas,monospace}
+.editor{display:none;background:#f8f9fa;border:1px solid #ddd;padding:10px;margin-top:10px}.editor.open{display:block}.editor input,.editor textarea{width:100%;box-sizing:border-box;margin:4px 0}.editor textarea{min-height:180px}.publish{background:#14804a;color:#fff}.edit{background:#eee}
 </style></head>
 <body><div class="wrap">
 <h1>پنل سردبیری Evren Nexus</h1>
 <div class="sub">دسته‌بندی ابتدا به‌صورت خودکار انجام می‌شود؛ مدیر می‌تواند هر انتخابی را ویرایش و ذخیره کند.</div>
-<div class="info">انتخاب‌های مدیر در <b>editorial.json</b> ذخیره می‌شوند. اگر دسته‌بندی را تغییر ندهی، همان دسته‌بندی خودکار خبر باقی می‌ماند.</div>
+<div class="info">دسته‌بندی و تحلیل خبرها خودکار است. فقط «مهم» و «اسلایدر» کاملاً دستی‌اند. هر خبر را هم می‌توانی ویرایش و با قالب Evren Nexus منتشر کنی.</div>
 <div class="bar">
 <input id="q" placeholder="جستجوی عنوان..." style="min-width:260px">
 <select id="cat"><option value="">همه دسته‌های فعلی</option></select>
@@ -45,6 +46,22 @@ function state(n){return choices[n.id]||{}}
 function setChoice(id,key,val){
  choices[id]=choices[id]||{};choices[id][key]=!!val;choices[id].updated_at=new Date().toISOString();
  if(!choices[id].important&&!choices[id].slider&&!choices[id].republish&&!choices[id].reject&&!choices[id].category)delete choices[id];
+ render();
+}
+function openEditor(id){
+ const n=news.find(x=>x.id===id),s=state(n); if(!n)return;
+ const box=document.getElementById('ed_'+id); box.classList.toggle('open');
+ if(box.classList.contains('open')){
+  box.querySelector('[data-f=title]').value=s.title!==undefined?s.title:(n.title||'');
+  box.querySelector('[data-f=summary]').value=s.summary!==undefined?s.summary:(n.summary||'');
+  box.querySelector('[data-f=content]').value=s.content!==undefined?s.content:(n.content||'');
+  box.querySelector('[data-f=image]').value=s.image!==undefined?s.image:(n.image||'');
+ }
+}
+function saveEdit(id){
+ const box=document.getElementById('ed_'+id), n=news.find(x=>x.id===id); choices[id]=choices[id]||{};
+ ['title','summary','content','image'].forEach(f=>{choices[id][f]=box.querySelector('[data-f='+f+']').value});
+ choices[id].published=true; choices[id].edited=true; choices[id].updated_at=new Date().toISOString();
  render();
 }
 function setCategory(id,val){
@@ -77,10 +94,10 @@ function render(){
  return '<div class="card"><div class="title">'+esc(n.title||'بدون عنوان')+'</div><div class="meta">'+esc(n.source||'')+' · '+fmt(n.published)+' · دسته فعلی: '+esc(n.category||'نامشخص')+'</div><div class="actions">'+
  '<button class="important '+(s.important?'active':'')+'" onclick="setChoice('+JSON.stringify(n.id)+',\'important\','+(!s.important)+')">⭐ مهم</button>'+
  '<button class="slider '+(s.slider?'active':'')+'" onclick="setChoice('+JSON.stringify(n.id)+',\'slider\','+(!s.slider)+')">🖼 اسلایدر</button>'+
- '<button class="republish '+(s.republish?'active':'')+'" onclick="setChoice('+JSON.stringify(n.id)+',\'republish\','+(!s.republish)+')">✍️ بازنشر اختصاصی</button>'+
- '<button class="reject '+(s.reject?'active':'')+'" onclick="setChoice('+JSON.stringify(n.id)+',\'reject\','+(!s.reject)+')">🗑 رد</button>'+
+ '<button class="edit" onclick="openEditor('+JSON.stringify(n.id)+')">✏️ ویرایش</button>'+
+ '<button class="publish" onclick="openEditor('+JSON.stringify(n.id)+');setTimeout(()=>saveEdit('+JSON.stringify(n.id)+'),0)">📰 انتشار نسخه ویرایش‌شده</button>'+
  '<select class="category" onchange="setCategory('+JSON.stringify(n.id)+',this.value)">'+opts+'</select>'+
- '</div></div>'}).join('');
+ '</div><div id="ed_'+n.id+'" class="editor"><input data-f="title" placeholder="عنوان"><input data-f="summary" placeholder="خلاصه"><input data-f="image" placeholder="آدرس تصویر"><textarea data-f="content" placeholder="متن خبر"></textarea><button class="primary" onclick="saveEdit('+JSON.stringify(n.id)+')">ذخیره و آماده انتشار</button></div></div>'}).join('');
 }
 function labelCat(x){let m=CATS.find(c=>c[0]===x);return m?m[1]:(x||'بدون دسته')}\nfunction fmt(x){try{return new Date(x).toLocaleString('fa-IR',{dateStyle:'short',timeStyle:'short'})}catch(e){return ''}}
 function esc(s){return String(s||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
