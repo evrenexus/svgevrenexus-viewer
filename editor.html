@@ -97,10 +97,10 @@ function render(){
     const slider=makeButton('slider','🖼 اسلایدر',!!s.slider);slider.onclick=()=>setChoice(n.id,'slider',!state(n.id).slider);actions.appendChild(slider);
     const edit=makeButton('edit','✏️ ویرایش',false);edit.onclick=()=>openEditor(n.id);actions.appendChild(edit);
     const publish=makeButton('publish','📰 انتشار داخلی',!!s.republish);publish.onclick=()=>publishNews(n.id);actions.appendChild(publish);
-    const del=makeButton('delete','🗑️ '+(s.deleted?'بازگردانی خبر':'حذف خبر'),!!s.deleted);del.onclick=()=>toggleDelete(n.id);actions.appendChild(del); const save=makeButton('primary','💾 ذخیره',false);save.onclick=()=>saveOne(n.id);actions.appendChild(save);
+    const del=makeButton('delete','🗑️ '+(s.deleted?'بازگردانی خبر':'حذف خبر'),!!s.deleted);del.onclick=()=>toggleDelete(n.id);actions.appendChild(del); const saveButton=makeButton('primary','💾 ذخیره',false);saveButton.onclick=()=>saveOne(n.id);actions.appendChild(saveButton);
     const select=document.createElement('select');select.className='category';select.innerHTML='<option value="">خودکار: '+esc(labelCat(n.category||''))+'</option>'+CATS.map(c=>'<option value="'+c[0]+'">'+c[1]+'</option>').join('');if(s.category)select.value=s.category;select.onchange=()=>setCategory(n.id,select.value);actions.appendChild(select);card.appendChild(actions);
     const ed=document.createElement('div');ed.id='ed_'+n.id;ed.className='editor';ed.innerHTML='<input data-f="title" placeholder="عنوان"><input data-f="summary" placeholder="خلاصه"><input data-f="image" placeholder="آدرس تصویر"><textarea data-f="content" placeholder="متن خبر"></textarea>';
-    const save=document.createElement('button');save.className='primary';save.textContent='ذخیره و آماده انتشار';save.onclick=()=>saveEdit(n.id);ed.appendChild(save);card.appendChild(ed);list.appendChild(card);
+    const saveEditButton=document.createElement('button');saveEditButton.className='primary';saveEditButton.textContent='ذخیره و آماده انتشار';saveEditButton.onclick=()=>saveEdit(n.id);ed.appendChild(saveEditButton);card.appendChild(ed);list.appendChild(card);
   });
 }
 function makeButton(cls,text,active){const b=document.createElement('button');b.className=cls+(active?' active':'');b.type='button';b.textContent=text;return b;}
