@@ -10,9 +10,10 @@ OUT = ROOT / "data" / "news-ai.json"
 EDITORIAL = ROOT / "data" / "editorial.json"
 
 API = "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent"
-BATCH_SIZE = 12
+BATCH_SIZE = 8
 MAX_ITEMS = 300
 MAX_RETRIES = 5
+MAX_CONSECUTIVE_BATCH_FAILURES = 2
 POLICY_VERSION = 3
 RETRY_DELAYS = [5, 15, 30, 60, 90]
 
@@ -41,14 +42,23 @@ def call_gemini(prompt, key):
         try:
             with urlopen(req, timeout=120) as r:
                 data = json.load(r)
+            candidate = (data.get("candidates") or [{}])[0]
+            finish_reason = candidate.get("finishReason", "")
+            if finish_reason:
+                print(f"Gemini finishReason: {finish_reason}")
             text = "".join(
                 p.get("text", "")
                 for c in data.get("candidates", [])
                 for p in c.get("content", {}).get("parts", [])
             ).strip()
             if not text:
-                raise RuntimeError(json.dumps(data, ensure_ascii=False))
-            return json.loads(text)
+                preview = json.dumps(data, ensure_ascii=False)[:500]
+                raise RuntimeError(f"Empty Gemini response; response={preview}")
+            try:
+                return json.loads(text)
+            except json.JSONDecodeError as e:
+                print(f"Gemini JSON parse error: {e}; response preview: {text[:500]}")
+                raise RuntimeError(f"Invalid Gemini JSON: {e}")
         except HTTPError as e:
             body = ""
             try: body = e.read().decode("utf-8", "ignore")[:2000]
@@ -153,8 +163,17 @@ def write_editorial(ai, old):
 def main():
     key = os.environ.get("GEMINI_API_KEY","").strip()
     if not key: raise SystemExit("GEMINI_API_KEY is missing")
-    news = load_json(NEWS, {})
-    items = news.get("items",[]) if isinstance(news,dict) else []
+    if not NEWS.exists():
+        raise SystemExit(f"news.json not found: {NEWS}")
+    try:
+        news = json.loads(NEWS.read_text(encoding="utf-8"))
+    except Exception as e:
+        raise SystemExit(f"news.json is invalid JSON: {e}")
+    if not isinstance(news, dict) or not isinstance(news.get("items"), list):
+        raise SystemExit("news.json has no valid items array")
+    items = news["items"]
+    if not items:
+        raise SystemExit("news.json contains zero news items")
     ai = load_json(OUT, {})
     if ai.get("policy_version") != POLICY_VERSION:
         print(f"Policy changed: {ai.get('policy_version',0)} -> {POLICY_VERSION}; re-analyzing current news.")
@@ -169,8 +188,15 @@ def main():
         "group_id": v.get("group_id",""), "topics": v.get("topics",[])
     } for k,v in list(ai["items"].items())[-400:]]
 
+    successful_batches = 0
+    failed_batches = 0
+    consecutive_failures = 0
+
     for start in range(0,len(new_items),BATCH_SIZE):
         batch = new_items[start:start+BATCH_SIZE]
+        batch_no = start // BATCH_SIZE + 1
+        total_batches = (len(new_items) + BATCH_SIZE - 1) // BATCH_SIZE
+        print(f"Batch {batch_no}/{total_batches}: {len(batch)} news items")
         payload = [{
             "id": item_key(x), "title": x.get("title",""),
             "summary": x.get("summary","")[:900], "source": x.get("source",""),
@@ -200,23 +226,52 @@ JSON فقط:
 """ + json.dumps(existing,ensure_ascii=False)
         try:
             result = call_gemini(prompt,key)
+            rows = result.get("items", []) if isinstance(result, dict) else []
+            if not rows:
+                raise RuntimeError("Gemini returned no items for this batch")
         except RuntimeError as e:
-            print("Batch failed; keeping successful batches:",e)
-            break
+            failed_batches += 1
+            consecutive_failures += 1
+            print(f"Batch {batch_no}/{total_batches} failed: {e}")
+            print(f"Consecutive batch failures: {consecutive_failures}/{MAX_CONSECUTIVE_BATCH_FAILURES}")
+            if consecutive_failures >= MAX_CONSECUTIVE_BATCH_FAILURES:
+                print("Stopping after consecutive batch failures.")
+                break
+            continue
+
+        consecutive_failures = 0
+        successful_batches += 1
         by_id = {x["id"]:x for x in payload}
-        for row in result.get("items",[]):
+        matched = 0
+        for row in rows:
             rid=str(row.get("id",""))
-            if rid in by_id: ai["items"][rid]=normalize_result(by_id[rid],row)
+            if rid in by_id:
+                ai["items"][rid]=normalize_result(by_id[rid],row)
+                matched += 1
         for g in result.get("groups",[]):
             gid=str(g.get("group_id",""))
             if gid: ai["groups"][gid]={"representative_id":str(g.get("representative_id",""))}
+
+        if matched == 0:
+            failed_batches += 1
+            print(f"Batch {batch_no}/{total_batches} returned no matching news IDs.")
+            continue
+
+        print(f"Batch {batch_no}/{total_batches} succeeded: {matched}/{len(batch)} matched")
         save_ai(ai)
+
+    if new_items and successful_batches == 0:
+        print(f"::error::No news were analyzed successfully. {failed_batches} batch(es) failed.")
+        raise SystemExit(1)
+
+    if failed_batches:
+        print(f"::warning::{failed_batches} batch(es) failed; successful batches were preserved.")
 
     rebuild_groups(ai)
     save_ai(ai)
     old_editorial=load_json(EDITORIAL,{"items":{}})
     write_editorial(ai,old_editorial)
-    print(f"AI complete: {len(ai['items'])} items | editorial written: {len(ai['items'])}")
+    print(f"AI complete: {len(ai['items'])} items | successful batches: {successful_batches} | failed batches: {failed_batches} | editorial written: {len(ai['items'])}")
 
 if __name__=="__main__":
     main()
