@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>مطلب | Evren Nexus</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f1f2f3;color:#20272d;font-family:Tahoma,Arial,sans-serif}
+#page{width:850px;max-width:100%;margin:auto;padding:123px 10px 25px;display:flex;gap:10px;direction:rtl}
+#content{width:610px;min-width:0;background:#fff;border:1px solid #dfe2e4;padding:18px}
+#sidebar-host{width:200px}
+.back{display:inline-block;margin-bottom:14px;background:#202c35;color:#fff;text-decoration:none;padding:7px 12px;font-size:10px}
+h1{font-size:21px;line-height:1.9;margin:0 0 8px;color:#20272d}
+.meta{font-size:9px;color:#8a9196;margin-bottom:15px;border-bottom:1px solid #edf0f1;padding-bottom:10px}
+.summary{font-size:11px;line-height:2;color:#596168;background:#f7f8f8;border-right:3px solid #d9232e;padding:10px;margin-bottom:18px}
+.article-body{font-size:12px;line-height:2.25;color:#30383e}
+.article-body h2{font-size:15px;margin:20px 0 8px;border-bottom:1px solid #e5e7e9;padding-bottom:5px}
+.article-body p{margin:0 0 13px}.article-body ul{padding-right:22px}.article-body li{margin-bottom:6px}
+.sources{margin-top:22px;padding-top:12px;border-top:1px solid #dfe2e4;font-size:9px;color:#697177}
+.sources a{color:#b51f29;text-decoration:none}
+@media(max-width:700px){#page{display:block;width:100%;padding:112px 8px 20px}#content{width:100%;padding:13px}#sidebar-host{display:none}h1{font-size:17px}.article-body{font-size:11px;line-height:2.2}}
+</style></head>
+<body>
+<script src="./Evrenexus-header.js"></script>
+<main id="page"><section id="content"><a class="back" href="./">بازگشت به خانه</a><article id="article">در حال دریافت مطلب...</article></section><aside id="sidebar-host"></aside></main>
+<script src="./Evrenexus-sidebar.js?v=1"></script>
+<script>
+(function(){
+"use strict";
+var id=new URLSearchParams(location.search).get("id"),host=document.getElementById("article");
+function esc(v){return String(v||"").replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]})}
+function safeUrl(v){try{var u=new URL(v,location.href);return /^https?:$/i.test(u.protocol)?u.href:""}catch(e){return""}}
+function rich(v){var box=document.createElement("div");box.innerHTML=String(v||"");var ok={P:1,BR:1,H2:1,UL:1,OL:1,LI:1,STRONG:1,B:1,EM:1,I:1,A:1};Array.from(box.querySelectorAll("*")).forEach(function(el){if(!ok[el.tagName]){el.replaceWith(document.createTextNode(el.textContent||""));return}Array.from(el.attributes).forEach(function(a){if(el.tagName==="A"&&a.name==="href")return;el.removeAttribute(a.name)});if(el.tagName==="A"){var u=safeUrl(el.getAttribute("href"));if(!u)el.removeAttribute("href");else{el.setAttribute("href",u);el.setAttribute("target","_blank");el.setAttribute("rel","noopener noreferrer")}}});return box.innerHTML}
+function render(a){if(!a){host.innerHTML="<h1>مطلب پیدا نشد</h1>";return}document.title=(a.title||"مطلب")+" | Evren Nexus";var html="<h1>"+esc(a.title)+"</h1>";html+="<div class='meta'>Evren Nexus • "+esc(new Date(a.updated_at||a.published_at).toLocaleString("fa-IR"))+"</div>";if(a.summary)html+="<div class='summary'>"+esc(a.summary)+"</div>";html+="<div class='article-body'>"+rich(a.content)+"</div>";var ss=Array.isArray(a.sources)?a.sources:[];if(ss.length){html+="<div class='sources'><strong>منابع:</strong><ul>";ss.forEach(function(s){var u=safeUrl(s.url);if(u)html+="<li><a href='"+esc(u)+"' target='_blank' rel='noopener noreferrer'>"+esc(s.name||u)+"</a></li>";});html+="</ul></div>"}host.innerHTML=html}
+fetch("./data/articles.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error();return r.json()}).then(function(d){var a=d&&d.items?d.items[id]:null;render(a)}).catch(function(){host.innerHTML="<h1>دریافت مطلب انجام نشد.</h1>"});
+})();
+</script></body></html>
