@@ -33,7 +33,7 @@ function esc(v){return String(v||"").replace(/[&<>"']/g,function(c){return {"&":
 function date(v){var d=new Date(v);return Number.isNaN(d.getTime())?"":d.toLocaleString("fa-IR",{dateStyle:"long",timeStyle:"short"})}
 function render(x,ed){
 var s=ed&&ed.items&&x?ed.items[x.id]:null;
-var selected=!!(s&&((s.published===true)||(s.republish===true)));
+var selected=!!(s&&((s.published===true)||(s.republish===true))&&s.deleted!==true);
 var allowed=!!(x&&x.allow_internal_republish);
 var edited=!!(s&&s.edited===true);
 var data=Object.assign({},x||{});
