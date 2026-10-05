@@ -21,9 +21,9 @@ input,select,button{font:inherit;padding:8px;border:1px solid #ccc;border-radius
 <input id="q" placeholder="جستجوی عنوان..." style="min-width:260px">
 <select id="cat"><option value="">همه دسته‌های فعلی</option></select>
 <select id="filter"><option value="all">همه</option><option value="important">مهم‌ها</option><option value="slider">اسلایدرها</option><option value="republish">بازنشرها</option><option value="deleted">حذف‌شده‌ها</option><option value="unselected">انتخاب‌نشده‌ها</option></select>
-<button onclick="load()">بارگذاری</button><button class="primary" onclick="saveDirect()">ذخیره همه تغییرات در GitHub</button>
+<button onclick="load()">بارگذاری</button><button class="primary" onclick="saveDirect()">💾 ذخیره همه تغییرات</button>
 <span id="status" class="status"></span></div>
-<div style="background:#fff;padding:10px;border:1px solid #ddd;border-radius:8px;margin-bottom:12px;font-size:12px"><b>دسترسی ذخیره:</b> برای نوشتن مستقیم در GitHub، یک Fine-grained Token فقط با دسترسی Contents: Read and write برای این مخزن وارد کن. توکن در GitHub ذخیره نمی‌شود و فقط در همین مرورگر نگه‌داری می‌شود.<br><input id="token" type="password" placeholder="GitHub Token" style="width:100%;box-sizing:border-box;margin-top:7px"><button onclick="clearToken()" style="margin-top:7px">پاک کردن توکن</button></div><textarea id="output" class="output" readonly placeholder="گزارش ذخیره اینجا نمایش داده می‌شود."></textarea>
+<div style="background:#fff;padding:10px;border:1px solid #ddd;border-radius:8px;margin-bottom:12px;font-size:12px"><b>ذخیره مستقیم:</b> برای ثبت واقعی تغییرات، GitHub Token لازم است. توکن فقط در همین نشست مرورگر نگه‌داری می‌شود.<br><input id="token" type="password" placeholder="GitHub Token" style="width:100%;box-sizing:border-box;margin-top:7px"><button onclick="clearToken()" style="margin-top:7px">پاک کردن توکن</button></div><textarea id="output" class="output" readonly placeholder="گزارش ذخیره اینجا نمایش داده می‌شود."></textarea>
 <div id="list"></div></div>
 <script>
 let news=[],choices={},originalChoices={};
@@ -73,7 +73,7 @@ function openEditor(id){
     box.querySelector('[data-f="image"]').value=s.image!==undefined?s.image:(n.image||'');
   }
 }
-function publishNews(id){choices[id]=choices[id]||{};choices[id].republish=true;choices[id].published=true;choices[id].updated_at=new Date().toISOString();openEditor(id);$('status').textContent='انتشار داخلی فعال شد؛ متن و تصویر را بررسی و سپس «ذخیره در GitHub» بزن.';render();}\nfunction saveEdit(id){
+function publishNews(id){choices[id]=choices[id]||{};choices[id].republish=!choices[id].republish;choices[id].published=choices[id].republish;choices[id].updated_at=new Date().toISOString();$('status').textContent=choices[id].republish?'انتشار داخلی انتخاب شد؛ برای ثبت «ذخیره همه تغییرات» را بزن.':'انتشار داخلی لغو شد؛ برای ثبت «ذخیره همه تغییرات» را بزن.';render();}\nfunction saveEdit(id){
   const box=document.getElementById('ed_'+id); if(!box)return; choices[id]=choices[id]||{};
   ['title','summary','content','image'].forEach(f=>choices[id][f]=box.querySelector('[data-f="'+f+'"]').value);
   choices[id].published=true; choices[id].edited=true; choices[id].updated_at=new Date().toISOString();
