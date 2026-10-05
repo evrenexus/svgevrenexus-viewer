@@ -21,7 +21,7 @@ input,select,button{font:inherit;padding:8px;border:1px solid #ccc;border-radius
 <input id="q" placeholder="جستجوی عنوان..." style="min-width:260px">
 <select id="cat"><option value="">همه دسته‌های فعلی</option></select>
 <select id="filter"><option value="all">همه</option><option value="important">مهم‌ها</option><option value="slider">اسلایدرها</option><option value="republish">بازنشرها</option><option value="deleted">حذف‌شده‌ها</option><option value="unselected">انتخاب‌نشده‌ها</option></select>
-<button onclick="load()">بارگذاری</button><button class="primary" onclick="saveDirect()">💾 ذخیره همه تغییرات</button>
+<button onclick="load()">بارگذاری</button>
 <span id="status" class="status"></span></div>
 <div style="background:#fff;padding:10px;border:1px solid #ddd;border-radius:8px;margin-bottom:12px;font-size:12px"><b>ذخیره مستقیم:</b> برای ثبت واقعی تغییرات، GitHub Token لازم است. توکن فقط در همین نشست مرورگر نگه‌داری می‌شود.<br><input id="token" type="password" placeholder="GitHub Token" style="width:100%;box-sizing:border-box;margin-top:7px"><button onclick="clearToken()" style="margin-top:7px">پاک کردن توکن</button></div><textarea id="output" class="output" readonly placeholder="گزارش ذخیره اینجا نمایش داده می‌شود."></textarea>
 <div id="list"></div></div>
@@ -97,7 +97,7 @@ function render(){
     const slider=makeButton('slider','🖼 اسلایدر',!!s.slider);slider.onclick=()=>setChoice(n.id,'slider',!state(n.id).slider);actions.appendChild(slider);
     const edit=makeButton('edit','✏️ ویرایش',false);edit.onclick=()=>openEditor(n.id);actions.appendChild(edit);
     const publish=makeButton('publish','📰 انتشار داخلی',!!s.republish);publish.onclick=()=>publishNews(n.id);actions.appendChild(publish);
-    const del=makeButton('delete','🗑️ '+(s.deleted?'بازگردانی خبر':'حذف خبر'),!!s.deleted);del.onclick=()=>toggleDelete(n.id);actions.appendChild(del);
+    const del=makeButton('delete','🗑️ '+(s.deleted?'بازگردانی خبر':'حذف خبر'),!!s.deleted);del.onclick=()=>toggleDelete(n.id);actions.appendChild(del); const save=makeButton('primary','💾 ذخیره',false);save.onclick=()=>saveOne(n.id);actions.appendChild(save);
     const select=document.createElement('select');select.className='category';select.innerHTML='<option value="">خودکار: '+esc(labelCat(n.category||''))+'</option>'+CATS.map(c=>'<option value="'+c[0]+'">'+c[1]+'</option>').join('');if(s.category)select.value=s.category;select.onchange=()=>setCategory(n.id,select.value);actions.appendChild(select);card.appendChild(actions);
     const ed=document.createElement('div');ed.id='ed_'+n.id;ed.className='editor';ed.innerHTML='<input data-f="title" placeholder="عنوان"><input data-f="summary" placeholder="خلاصه"><input data-f="image" placeholder="آدرس تصویر"><textarea data-f="content" placeholder="متن خبر"></textarea>';
     const save=document.createElement('button');save.className='primary';save.textContent='ذخیره و آماده انتشار';save.onclick=()=>saveEdit(n.id);ed.appendChild(save);card.appendChild(ed);list.appendChild(card);
@@ -107,7 +107,33 @@ function makeButton(cls,text,active){const b=document.createElement('button');b.
 function labelCat(x){const m=CATS.find(c=>c[0]===x);return m?m[1]:(x||'بدون دسته');}
 function fmt(x){try{return new Date(x).toLocaleString('fa-IR',{dateStyle:'short',timeStyle:'short'});}catch(e){return '';}}
 function esc(s){return String(s||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
-async function saveDirect(){
+async async function saveOne(id){
+  const s=state(id)||{};
+  if(JSON.stringify(originalChoices[id]||{})===JSON.stringify(s)){ $('status').textContent='تغییری برای ذخیره این خبر وجود ندارد.'; return; }
+  let token=$('token').value.trim()||sessionStorage.getItem('evren_github_token')||'';
+  if(!token){$('status').textContent='ابتدا وارد پنل شوید.';return;}
+  $('status').textContent='در حال ذخیره این خبر...';
+  try{
+    const repo='evrenexus/svgevrenexus-viewer',path='data/editorial.json';
+    const get=await fetch('https://api.github.com/repos/'+repo+'/contents/'+path,{headers:{Authorization:'Bearer '+token,Accept:'application/vnd.github+json'}});
+    if(!get.ok)throw new Error('دسترسی GitHub رد شد ('+get.status+')');
+    const current=await get.json();
+    const existing=JSON.parse(atob(current.content.replace(/\s/g,'')));
+    const items=existing.items||{};
+    if(s&&Object.keys(s).length) items[id]=s; else delete items[id];
+    const content=JSON.stringify({updated:new Date().toISOString(),items},null,2)+'\\n';
+    const put=await fetch('https://api.github.com/repos/'+repo+'/contents/'+path,{
+      method:'PUT',headers:{Authorization:'Bearer '+token,Accept:'application/vnd.github+json','Content-Type':'application/json'},
+      body:JSON.stringify({message:'Update editorial item '+id,content:btoa(unescape(encodeURIComponent(content))),sha:current.sha,branch:'main'})
+    });
+    if(!put.ok){const e=await put.text();throw new Error('ذخیره شکست خورد ('+put.status+'): '+e.slice(0,180));}
+    originalChoices[id]=JSON.parse(JSON.stringify(s));
+    $('output').value=content;
+    $('status').textContent='✅ تغییرات این خبر ذخیره شد.';
+    render();
+  }catch(e){console.error(e);$('status').textContent='❌ '+e.message;}
+}
+function saveDirect(){
   const changed={};
   Object.keys(choices).forEach(id=>{
     if(JSON.stringify(originalChoices[id]||{})!==JSON.stringify(choices[id]||{}))changed[id]=choices[id]
