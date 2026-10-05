@@ -95,7 +95,7 @@ function render(){
  '<button class="important '+(s.important?'active':'')+'" onclick="setChoice('+JSON.stringify(n.id)+',\'important\','+(!s.important)+')">⭐ مهم</button>'+
  '<button class="slider '+(s.slider?'active':'')+'" onclick="setChoice('+JSON.stringify(n.id)+',\'slider\','+(!s.slider)+')">🖼 اسلایدر</button>'+
  '<button class="edit" onclick="openEditor('+JSON.stringify(n.id)+')">✏️ ویرایش</button>'+
- '<button class="publish" onclick="openEditor('+JSON.stringify(n.id)+');setTimeout(()=>saveEdit('+JSON.stringify(n.id)+'),0)">📰 انتشار نسخه ویرایش‌شده</button>'+
+ '<button class="publish" onclick="openEditor('+JSON.stringify(n.id)+')">📰 انتشار نسخه ویرایش‌شده</button>'+
  '<select class="category" onchange="setCategory('+JSON.stringify(n.id)+',this.value)">'+opts+'</select>'+
  '</div><div id="ed_'+n.id+'" class="editor"><input data-f="title" placeholder="عنوان"><input data-f="summary" placeholder="خلاصه"><input data-f="image" placeholder="آدرس تصویر"><textarea data-f="content" placeholder="متن خبر"></textarea><button class="primary" onclick="saveEdit('+JSON.stringify(n.id)+')">ذخیره و آماده انتشار</button></div></div>'}).join('');
 }
