@@ -21,7 +21,7 @@ input,select,button{font:inherit;padding:8px;border:1px solid #ccc;border-radius
 <input id="q" placeholder="جستجوی عنوان..." style="min-width:260px">
 <select id="cat"><option value="">همه دسته‌های فعلی</option></select>
 <select id="filter"><option value="all">همه</option><option value="important">مهم‌ها</option><option value="slider">اسلایدرها</option><option value="republish">بازنشرها</option><option value="deleted">حذف‌شده‌ها</option><option value="unselected">انتخاب‌نشده‌ها</option></select>
-<button onclick="load()">بارگذاری</button><button class="primary" onclick="saveToGitHub()">ثبت واقعی در GitHub</button>
+<button onclick="load()">بارگذاری</button><button class="primary" onclick="saveDirect()">ثبت واقعی در GitHub</button>
 <span id="status" class="status"></span></div>
 <div style="background:#fff;padding:10px;border:1px solid #ddd;border-radius:8px;margin-bottom:12px;font-size:12px"><b>دسترسی ذخیره:</b> برای نوشتن مستقیم در GitHub، یک Fine-grained Token فقط با دسترسی Contents: Read and write برای این مخزن وارد کن. توکن در GitHub ذخیره نمی‌شود و فقط در همین مرورگر نگه‌داری می‌شود.<br><input id="token" type="password" placeholder="GitHub Token" style="width:100%;box-sizing:border-box;margin-top:7px"><button onclick="clearToken()" style="margin-top:7px">پاک کردن توکن</button></div><textarea id="output" class="output" readonly placeholder="گزارش ذخیره اینجا نمایش داده می‌شود."></textarea>
 <div id="list"></div></div>
@@ -120,7 +120,7 @@ async function saveDirect(){
     const get=await fetch('https://api.github.com/repos/'+repo+'/contents/'+path,{headers:{Authorization:'Bearer '+token,Accept:'application/vnd.github+json'}});
     if(!get.ok)throw new Error('دسترسی GitHub رد شد ('+get.status+')');
     const current=await get.json();
-    const existing=JSON.parse(atob(current.content.replace(/\\n/g,'')));
+    const existing=JSON.parse(atob(current.content.replace(/\s/g,'')));
     const items=existing.items||{};
     Object.entries(changed).forEach(([id,v])=>{if(v&&Object.keys(v).length)items[id]=v;else delete items[id]});
     const content=JSON.stringify({updated:new Date().toISOString(),items},null,2)+'\\n';
