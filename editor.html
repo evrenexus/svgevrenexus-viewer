@@ -162,6 +162,10 @@ function clearToken(){
   $('login').style.display='flex';
   $('panel').style.display='none';
 }
+function showLoginError(msg){
+  const el=$('loginStatus');
+  if(el)el.textContent=msg||'';
+}
 async function validateToken(t){
   const repo='evrenexus/svgevrenexus-viewer',path='data/editorial.json';
   const r=await fetch('https://api.github.com/repos/'+repo+'/contents/'+path+'?ref=main&t='+Date.now(),{
