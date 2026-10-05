@@ -13,7 +13,7 @@ input,select,button{font:inherit;padding:8px;border:1px solid #ccc;border-radius
 .info{background:#fff8d8;border:1px solid #e6d36a;padding:10px;margin-bottom:12px;font-size:12px;line-height:2}.output{width:100%;min-height:90px;direction:ltr;text-align:left;font:12px Consolas,monospace}
 .editor{display:none;background:#f8f9fa;border:1px solid #ddd;padding:10px;margin-top:10px}.editor.open{display:block}.editor input,.editor textarea{width:100%;box-sizing:border-box;margin:4px 0}.editor textarea{min-height:180px}.publish{background:#14804a;color:#fff}.edit{background:#eee}
 </style></head>
-<body><div id="loginScreen" style="position:fixed;inset:0;background:#f4f5f7;display:flex;align-items:center;justify-content:center;z-index:9999"><div style="background:#fff;width:min(380px,90%);padding:28px;border-radius:12px;box-shadow:0 8px 30px #0002;text-align:center"><h2 style="margin-top:0">ورود به پنل مدیریت</h2><p style="color:#666;font-size:13px">رمز عبور مدیریت را وارد کنید.</p><input id="loginToken" type="password" placeholder="رمز عبور" style="width:100%;box-sizing:border-box;margin:10px 0;padding:11px"><button class="primary" onclick="login()">ورود</button><div id="loginStatus" style="color:#b42318;font-size:12px;margin-top:10px"></div></div></div><div id="panel" style="display:none"><div class="wrap">
+<body><div id="loginScreen" style="position:fixed;inset:0;background:#f4f5f7;display:flex;align-items:center;justify-content:center;z-index:9999"><div style="background:#fff;width:min(380px,90%);padding:28px;border-radius:12px;box-shadow:0 8px 30px #0002;text-align:center"><h2 style="margin-top:0">ورود به پنل مدیریت</h2><p style="color:#666;font-size:13px">رمز عبور مدیریت را وارد کنید.</p><input id="loginToken" type="password" placeholder="رمز عبور" style="width:100%;box-sizing:border-box;margin:10px 0;padding:11px"><button class="primary" onclick="doLogin()">ورود</button><div id="loginStatus" style="color:#b42318;font-size:12px;margin-top:10px"></div></div></div><div id="panel" style="display:none"><div class="wrap">
 <h1>پنل سردبیری Evren Nexus</h1>
 <div class="sub">دسته‌بندی ابتدا به‌صورت خودکار انجام می‌شود؛ مدیر می‌تواند هر انتخابی را ویرایش و ذخیره کند.</div>
 <div class="info">دسته‌بندی و تحلیل خبرها خودکار است. هر خبر دکمه «ذخیره» مستقل دارد و تغییرات همان خبر مستقیماً در GitHub ثبت می‌شود.</div>
@@ -180,7 +180,7 @@ async function validateToken(t){
   if(!j.content)throw new Error('دسترسی به editorial.json تأیید نشد.');
   return true;
 }
-async function login(){
+async function doLogin(){
   const t=$('loginToken').value.trim();
   if(!t){showLoginError('توکن را وارد کنید.');return;}
   const btn=$('loginScreen').querySelector('button');
