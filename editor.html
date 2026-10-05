@@ -53,7 +53,11 @@ function cleanIfEmpty(id){
   if(!s.important&&!s.slider&&!s.republish&&!s.reject&&!s.deleted&&!s.category&&!s.edited&&!s.published) delete choices[id];
 }
 function setChoice(id,key,val){
-  choices[id]=choices[id]||{}; choices[id][key]=!!val; choices[id].updated_at=new Date().toISOString(); cleanIfEmpty(id); render();
+  choices[id]=choices[id]||{};
+  choices[id][key]=!!val;
+  choices[id].updated_at=new Date().toISOString();
+  render();
+  saveOne(id);
 }
 function setCategory(id,val){
   choices[id]=choices[id]||{}; if(val)choices[id].category=val;else delete choices[id].category;
