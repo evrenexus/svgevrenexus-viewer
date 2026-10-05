@@ -76,7 +76,8 @@ function mountHeader(){if(document.getElementById("Evrenxus-header"))return;var 
 if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",mountHeader,{once:true});}else{mountHeader();}
 
 (function(){
-var input=document.getElementById("Evrenxus-property-budget"),button=document.getElementById("Evrenxus-property-search-button"),error=document.getElementById("Evrenxus-property-search-error");\nif(!input||!button||!error)return;
+var input=document.getElementById("Evrenxus-property-budget"),button=document.getElementById("Evrenxus-property-search-button"),error=document.getElementById("Evrenxus-property-search-error");
+if(!input||!button||!error)return;
 function norm(v){return String(v).replace(/[۰-۹]/g,function(d){return"۰۱۲۳۴۵۶۷۸۹".indexOf(d)}).replace(/[٠-٩]/g,function(d){return"٠١٢٣٤٥٦٧٨٩".indexOf(d)}).replace(/,/g,".").trim()}
 function search(){var v=norm(input.value),b=Number(v);if(!v||!isFinite(b)||b<1||b>999){error.style.display="block";input.focus();return}error.style.display="none";window.open("https://evrenexus.github.io/avrin-property-advisor/?budget="+encodeURIComponent(b),"_blank")}
 button.onclick=search;input.onkeydown=function(e){if(e.key==="Enter"){e.preventDefault();search()}};input.oninput=function(){error.style.display="none"}
