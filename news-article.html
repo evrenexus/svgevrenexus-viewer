@@ -31,8 +31,9 @@ var id=new URLSearchParams(location.search).get("id"),host=document.getElementBy
 function safeUrl(v){try{var u=new URL(v,location.href);return /^https?:$/i.test(u.protocol)?u.href:""}catch(e){return ""}}
 function esc(v){return String(v||"").replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]})}
 function date(v){var d=new Date(v);return Number.isNaN(d.getTime())?"":d.toLocaleString("fa-IR",{dateStyle:"long",timeStyle:"short"})}
-function render(x){
-if(!x || !x.allow_internal_republish || !x.content){host.innerHTML='<div class="error">این خبر در نسخه داخلی قابل نمایش نیست.<br><br><a href="'+esc(safeUrl(x&&x.url))+'">مشاهده منبع خبر</a></div>';return}
+function render(x,ed){
+var selected=!!(ed&&ed.items&&x&&ed.items[x.id]&&ed.items[x.id].republish===true);
+if(!x || !selected || !x.allow_internal_republish || !x.content){host.innerHTML='<div class="error">این خبر در نسخه داخلی قابل نمایش نیست.<br><br><a href="'+esc(safeUrl(x&&x.url))+'">مشاهده منبع خبر</a></div>';return}
 document.title=(x.title||"خبر")+" | Evren Nexus";
 var html='<h1 class="article-title">'+esc(x.title)+'</h1>';
 var su=safeUrl(x.url),reader=su?"./viewer.html?url="+encodeURIComponent(su):"";
@@ -45,7 +46,10 @@ html+='<div class="article-body">'+paras.map(esc).join("\n\n")+'</div>';
 html+='<div class="article-source">منبع: '+esc(x.source||"")+"</div>";
 host.innerHTML=html;
 }
-fetch("./data/news.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error();return r.json()}).then(function(data){var x=(data.items||[]).find(function(v){return v&&v.id===id});render(x)}).catch(function(){host.innerHTML='<div class="error">دریافت خبر انجام نشد.</div>'});
+Promise.all([
+fetch("./data/news.json?v="+Date.now(),{cache:"no-store"}),
+fetch("./data/editorial.json?v="+Date.now(),{cache:"no-store"})
+]).then(function(rs){if(!rs[0].ok||!rs[1].ok)throw Error();return Promise.all([rs[0].json(),rs[1].json()])}).then(function(ds){var x=(ds[0].items||[]).find(function(v){return v&&v.id===id});render(x,ds[1]||{})}).catch(function(){host.innerHTML='<div class="error">دریافت خبر انجام نشد.</div>'});
 })();
 </script>
 </body>
