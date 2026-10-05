@@ -267,13 +267,14 @@ def generate_permanent_articles(all_news, ai, key):
     db.setdefault("items", {})
     by_id = {item_key(x): x for x in all_news}
     ranked = []
+    cutoff = time.time() - RECENT_HOURS * 3600
     for nid, row in ai.get("items", {}).items():
         if row.get("analysis_mode") != "ai" or not row.get("publishable", True):
             continue
         if not row.get("representative", True) or not row.get("important_topics"):
             continue
         src = by_id.get(nid)
-        if src:
+        if src and (published_ts(src.get("published", "")) == 0 or published_ts(src.get("published", "")) >= cutoff):
             ranked.append((int(row.get("importance", 0) or 0), nid, row, src))
     ranked.sort(key=lambda z: (z[0], z[3].get("published", "")), reverse=True)
 
