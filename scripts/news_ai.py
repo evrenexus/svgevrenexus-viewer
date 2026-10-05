@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-import json, os, time, hashlib, random
+import json, os, time, hashlib, random, re
+from difflib import SequenceMatcher
 from pathlib import Path
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError, URLError
@@ -10,12 +11,15 @@ OUT = ROOT / "data" / "news-ai.json"
 EDITORIAL = ROOT / "data" / "editorial.json"
 
 API = "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent"
-BATCH_SIZE = 8
-MAX_ITEMS = 300
-MAX_RETRIES = 5
+BATCH_SIZE = 40
+CANDIDATE_LIMIT = 60
+RECENT_HOURS = 48
+DAILY_REQUEST_BUDGET = 14
+MIN_ANALYSIS_INTERVAL_SECONDS = 4 * 60 * 60
+MAX_RETRIES = 3
 MAX_CONSECUTIVE_BATCH_FAILURES = 2
-POLICY_VERSION = 3
-RETRY_DELAYS = [5, 15, 30, 60, 90]
+POLICY_VERSION = 4
+RETRY_DELAYS = [8, 20, 45]
 
 TOPICS = [
     "economy","markets","currency-gold","real-estate","technology",
@@ -65,7 +69,10 @@ def call_gemini(prompt, key):
             except Exception: pass
             last = f"HTTP {e.code}: {body}"
             print(last)
-            if e.code not in (429,500,502,503,504): raise RuntimeError(last)
+            if e.code == 429:
+                raise RuntimeError(last)
+            if e.code not in (500,502,503,504):
+                raise RuntimeError(last)
         except (URLError, TimeoutError, ValueError, RuntimeError) as e:
             last = str(e)
             print("Gemini temporary error:", last)
@@ -74,6 +81,95 @@ def call_gemini(prompt, key):
             print(f"Retry {attempt+1}/{MAX_RETRIES} in {delay:.1f}s...")
             time.sleep(delay)
     raise RuntimeError(last)
+
+
+STOPWORDS = {
+    "از","به","در","برای","با","که","این","آن","را","و","یا","یک","های","است","شد",
+    "خواهد","کرد","کرده","می","شود","درباره","روی","بر","تا","اما","اگر","the","a","an",
+    "of","to","in","for","with","and","or","is","was","on","at","by","from"
+}
+
+STRONG_KEYWORDS = {
+    "جنگ":4,"حمله":4,"موشک":4,"تحریم":3,"بانک مرکزی":3,"دلار":2,"ارز":2,
+    "طلا":2,"تورم":3,"نرخ بهره":3,"بودجه":3,"قانون":2,"مجلس":2,"دولت":2,
+    "استعفا":3,"زلزله":3,"آتش سوزی":2,"انفجار":3,"فوت":2,"درگذشت":2,
+    "هوش مصنوعی":2,"ai":2,"اپل":2,"گوگل":2,"مایکروسافت":2,"خودرو":1,
+    "مسکن":2,"ملک":2,"نفت":2,"بورس":2
+}
+
+def normalize_title(s):
+    s = str(s or "").lower()
+    s = re.sub(r"[\u200c\u200f\u202a-\u202e]", " ", s)
+    s = re.sub(r"[^0-9a-zA-Zآ-ی\s]", " ", s)
+    return re.sub(r"\s+", " ", s).strip()
+
+def title_tokens(s):
+    return {t for t in normalize_title(s).split() if len(t) > 2 and t not in STOPWORDS}
+
+def published_ts(s):
+    if not s: return 0
+    try:
+        from datetime import datetime
+        return datetime.fromisoformat(str(s).replace("Z","+00:00")).timestamp()
+    except Exception:
+        return 0
+
+def local_similarity(a,b):
+    na, nb = normalize_title(a), normalize_title(b)
+    if not na or not nb: return 0
+    seq = SequenceMatcher(None, na, nb).ratio()
+    ta, tb = title_tokens(na), title_tokens(nb)
+    jac = len(ta & tb) / max(1, len(ta | tb))
+    return max(seq, jac)
+
+def local_prepare(items):
+    now = time.time()
+    cutoff = now - RECENT_HOURS * 3600
+    recent = [x for x in items if not published_ts(x.get("published","")) or published_ts(x.get("published","")) >= cutoff]
+    groups, meta = [], {}
+
+    for x in sorted(recent, key=lambda z: published_ts(z.get("published","")), reverse=True):
+        title = x.get("title","")
+        ts = published_ts(x.get("published","")) or now
+        chosen, best = None, 0
+        for g in groups:
+            if abs(ts-g["ts"]) > 36*3600: continue
+            sim = local_similarity(title,g["title"])
+            if sim > best: best, chosen = sim, g
+        if chosen and (best >= .72 or (best >= .48 and len(title_tokens(title)&title_tokens(chosen["title"])) >= 3)):
+            gid = chosen["gid"]; chosen["count"] += 1
+        else:
+            gid = "local-" + hashlib.sha1(normalize_title(title).encode("utf-8")).hexdigest()[:12]
+            chosen = {"gid":gid,"title":title,"ts":ts,"count":1}
+            groups.append(chosen)
+        meta[item_key(x)] = {"group_id":gid}
+
+    for x in recent:
+        k = item_key(x); m = meta[k]
+        text = f"{x.get('title','')} {x.get('summary','')}".lower()
+        keyword_score = min(8, sum(v for k2,v in STRONG_KEYWORDS.items() if k2 in text))
+        ts = published_ts(x.get("published","")) or now
+        freshness = max(0, 6-int(max(0,(now-ts)/3600)/8))
+        dup_count = next((g["count"] for g in groups if g["gid"]==m["group_id"]),1)
+        m["local_score"] = max(0,min(20,freshness+keyword_score+min(4,max(0,dup_count-1)*2)))
+        m["duplicate_count"] = dup_count
+    return recent, meta
+
+def make_local_result(src,meta):
+    topics = [t for t in (src.get("topics") or []) if t in TOPICS]
+    if not topics and src.get("category") in TOPICS: topics=[src["category"]]
+    score=int(meta.get("local_score",0))
+    return {
+        "title":src.get("title",""),"summary":src.get("summary",""),
+        "source":src.get("source",""),"published":src.get("published",""),
+        "topics":topics,"topic_scores":{t:score for t in topics},
+        "importance":score,"important":False,"important_topics":[],
+        "slider_topics":[],"ticker_topics":[],"publishable":True,
+        "exclude_reason":"","group_id":meta.get("group_id",""),
+        "representative":meta.get("duplicate_count",1)==1,
+        "reason":"local candidate ranking","analysis_mode":"local",
+        "local_score":score
+    }
 
 def save_ai(ai):
     ai["updated"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
@@ -112,7 +208,9 @@ def normalize_result(src, row):
         "exclude_reason": str(row.get("exclude_reason",""))[:300],
         "group_id": str(row.get("group_id","")),
         "representative": bool(row.get("representative", True)),
-        "reason": str(row.get("reason",""))[:300]
+        "reason": str(row.get("reason",""))[:300],
+        "analysis_mode": "ai",
+        "local_score": int(src.get("_local_score",0) or 0)
     }
 
 def rebuild_groups(ai):
@@ -163,115 +261,157 @@ def write_editorial(ai, old):
 def main():
     key = os.environ.get("GEMINI_API_KEY","").strip()
     if not key: raise SystemExit("GEMINI_API_KEY is missing")
-    if not NEWS.exists():
-        raise SystemExit(f"news.json not found: {NEWS}")
+    if not NEWS.exists(): raise SystemExit(f"news.json not found: {NEWS}")
     try:
-        news = json.loads(NEWS.read_text(encoding="utf-8"))
+        news=json.loads(NEWS.read_text(encoding="utf-8"))
     except Exception as e:
         raise SystemExit(f"news.json is invalid JSON: {e}")
-    if not isinstance(news, dict) or not isinstance(news.get("items"), list):
+    if not isinstance(news,dict) or not isinstance(news.get("items"),list):
         raise SystemExit("news.json has no valid items array")
-    items = news["items"]
-    if not items:
-        raise SystemExit("news.json contains zero news items")
-    ai = load_json(OUT, {})
+    items=news["items"]
+    if not items: raise SystemExit("news.json contains zero news items")
+
+    ai=load_json(OUT,{})
+    if not isinstance(ai,dict): ai={}
     if ai.get("policy_version") != POLICY_VERSION:
-        print(f"Policy changed: {ai.get('policy_version',0)} -> {POLICY_VERSION}; re-analyzing current news.")
-        ai = {"version":1,"policy_version":POLICY_VERSION,"updated":"","items":{},"groups":{}}
-    ai.setdefault("items",{}); ai["policy_version"] = POLICY_VERSION
+        print(f"Policy changed: {ai.get('policy_version',0)} -> {POLICY_VERSION}; rebuilding recent AI state.")
+        ai={"version":1,"policy_version":POLICY_VERSION,"updated":"","items":{},"groups":{}}
+    ai.setdefault("items",{}); ai.setdefault("groups",{}); ai["policy_version"]=POLICY_VERSION
 
-    new_items = [x for x in items if item_key(x) not in ai["items"]][:MAX_ITEMS]
-    print(f"News total: {len(items)} | Already analyzed: {len(ai['items'])} | This run: {len(new_items)}")
+    usage=ai.get("usage") if isinstance(ai.get("usage"),dict) else {}
+    today=time.strftime("%Y-%m-%d",time.gmtime())
+    if usage.get("date") != today:
+        usage={"date":today,"requests":0,"last_success":usage.get("last_success","")}
+    requests_used=int(usage.get("requests",0) or 0)
+    last_success=float(usage.get("last_success_epoch",0) or 0)
+    now=time.time()
 
-    existing = [{
-        "id": k, "title": v.get("title",""), "summary": v.get("summary",""),
-        "group_id": v.get("group_id",""), "topics": v.get("topics",[])
-    } for k,v in list(ai["items"].items())[-400:]]
+    if requests_used >= DAILY_REQUEST_BUDGET:
+        print(f"AI budget reached: {requests_used}/{DAILY_REQUEST_BUDGET}. Skipping.")
+        return
+    if last_success and now-last_success < MIN_ANALYSIS_INTERVAL_SECONDS:
+        wait=int((MIN_ANALYSIS_INTERVAL_SECONDS-(now-last_success))/60)+1
+        print(f"Analysis interval lock active. Next AI run in about {wait} minutes.")
+        return
 
-    successful_batches = 0
-    failed_batches = 0
-    consecutive_failures = 0
+    recent,local_meta=local_prepare(items)
+    print(f"News total: {len(items)} | Recent ({RECENT_HOURS}h): {len(recent)}")
 
-    for start in range(0,len(new_items),BATCH_SIZE):
-        batch = new_items[start:start+BATCH_SIZE]
-        batch_no = start // BATCH_SIZE + 1
-        total_batches = (len(new_items) + BATCH_SIZE - 1) // BATCH_SIZE
+    for x in recent:
+        k=item_key(x); m=local_meta.get(k,{})
+        if not ai["items"].get(k) or ai["items"][k].get("analysis_mode") != "ai":
+            local_row=dict(x); local_row["_local_score"]=m.get("local_score",0)
+            ai["items"][k]=make_local_result(local_row,m)
+
+    unresolved=[x for x in recent if ai["items"].get(item_key(x),{}).get("analysis_mode") != "ai"]
+    unresolved.sort(key=lambda x:local_meta.get(item_key(x),{}).get("local_score",0),reverse=True)
+    candidates=unresolved[:CANDIDATE_LIMIT]
+
+    if not candidates:
+        rebuild_groups(ai); save_ai(ai)
+        write_editorial(ai,load_json(EDITORIAL,{"items":{}}))
+        print("No AI candidates in the recent window.")
+        return
+
+    max_requests=min(DAILY_REQUEST_BUDGET-requests_used,(len(candidates)+BATCH_SIZE-1)//BATCH_SIZE)
+    candidates=candidates[:max_requests*BATCH_SIZE]
+    print(f"AI candidates: {len(candidates)} | Planned requests: {(len(candidates)+BATCH_SIZE-1)//BATCH_SIZE} | Budget left: {DAILY_REQUEST_BUDGET-requests_used}")
+
+    existing=[{"id":k,"title":v.get("title",""),"summary":v.get("summary",""),
+               "group_id":v.get("group_id",""),"topics":v.get("topics",[])}
+              for k,v in list(ai["items"].items())[-300:]]
+
+    successful_batches=failed_batches=consecutive_failures=0
+
+    for start in range(0,len(candidates),BATCH_SIZE):
+        batch=candidates[start:start+BATCH_SIZE]
+        batch_no=start//BATCH_SIZE+1
+        total_batches=(len(candidates)+BATCH_SIZE-1)//BATCH_SIZE
         print(f"Batch {batch_no}/{total_batches}: {len(batch)} news items")
-        payload = [{
-            "id": item_key(x), "title": x.get("title",""),
-            "summary": x.get("summary","")[:900], "source": x.get("source",""),
-            "published": x.get("published",""), "topics": x.get("topics",[])
-        } for x in batch]
-        prompt = """تو سردبیر هوشمند ارشد Evren Nexus هستی.
-برای هر خبر باید هم «اهمیت کلی» و هم اهمیت آن در هر دسته را تعیین کنی.
+
+        payload=[{"id":item_key(x),"title":x.get("title",""),
+                  "summary":x.get("summary","")[:700],"source":x.get("source",""),
+                  "published":x.get("published",""),"topics":x.get("topics",[])}
+                 for x in batch]
+
+        prompt="""تو سردبیر هوشمند ارشد Evren Nexus هستی.
+برای هر خبر فقط تصمیم‌های ضروری را بده تا خروجی فشرده بماند.
 دسته‌های مجاز: """ + ",".join(TOPICS) + """.
 
 قواعد:
-1) خبرهای چند منبع درباره یک رویداد واقعی را با group_id یکسان گروه‌بندی کن و بهترین/کامل‌ترین گزارش را representative=true کن.
-2) صرف اظهارنظر، مصاحبه، پیش‌بینی، هشدار یا وعده بدون تصمیم/رویداد واقعی معمولاً مهم نیست.
-3) تصمیم دولت، مجلس، بانک مرکزی، تغییر قانون، جنگ/حمله واقعی، اختلال بزرگ، آمار رسمی مهم و رویداد مؤثر بر بازار می‌تواند اهمیت بالا داشته باشد.
-4) اهمیت را برای هر دسته مستقل بسنج؛ یک خبر ممکن است در اقتصاد مهم باشد ولی در فناوری مهم نباشد.
-5) امتیاز 0 تا 20: 16-20 بسیار مهم، 11-15 مهم، 6-10 قابل توجه، 1-5 کم‌اهمیت، 0 بی‌اهمیت.
-6) فقط دسته‌هایی را در topics قرار بده که واقعاً به محتوای خبر مربوط‌اند.
-7) publishable=false برای محتوای تبلیغاتی، حاشیه‌ای یا فاقد ارزش خبری واقعی.
-8) اطلاعات موجود را جعل نکن.
+1) خبرهای چند منبع درباره یک رویداد واقعی را با group_id یکسان گروه‌بندی کن و بهترین گزارش را representative=true کن.
+2) فقط دسته‌های واقعاً مرتبط را در topics قرار بده.
+3) importance امتیاز کلی 0 تا 20 است.
+4) topic_scores فقط برای دسته‌های موجود در topics مقدار بده؛ امتیاز هر دسته مستقل است.
+5) publishable=false برای تبلیغات، حاشیه یا محتوای فاقد ارزش خبری واقعی.
+6) صرف اظهارنظر، مصاحبه، پیش‌بینی یا وعده بدون رویداد/تصمیم واقعی معمولاً اهمیت پایین دارد.
+7) اطلاعات را جعل نکن.
+8) JSON فقط و بدون توضیح اضافی.
 
-JSON فقط:
-{"items":[{"id":"...","topics":["economy"],"importance":0,"topic_scores":{"economy":0,"markets":0,"currency-gold":0,"real-estate":0,"technology":0,"ai":0,"health":0,"auto":0,"science-life":0,"sports":0,"war":0},"publishable":true,"group_id":"","representative":true,"reason":"کوتاه"}],
-"groups":[{"group_id":"...","representative_id":"..."}]}
+ساختار:
+{"items":[{"id":"...","topics":["economy"],"importance":0,"topic_scores":{"economy":0},"publishable":true,"group_id":"...","representative":true,"reason":"کوتاه"}],"groups":[{"group_id":"...","representative_id":"..."}]}
 
-خبرهای جدید:
+خبرهای نامزد:
 """ + json.dumps(payload,ensure_ascii=False) + """
-خبرهای قبلاً تحلیل‌شده برای مقایسه رویدادهای تکراری:
+
+خبرهای قبلاً تحلیل‌شده برای تشخیص تکراری‌های بین اجراها:
 """ + json.dumps(existing,ensure_ascii=False)
+
         try:
-            result = call_gemini(prompt,key)
-            rows = result.get("items", []) if isinstance(result, dict) else []
-            if not rows:
-                raise RuntimeError("Gemini returned no items for this batch")
+            result=call_gemini(prompt,key)
+            rows=result.get("items",[]) if isinstance(result,dict) else []
+            if not rows: raise RuntimeError("Gemini returned no items for this batch")
         except RuntimeError as e:
-            failed_batches += 1
-            consecutive_failures += 1
-            print(f"Batch {batch_no}/{total_batches} failed: {e}")
+            failed_batches+=1; consecutive_failures+=1
+            msg=str(e); print(f"Batch {batch_no}/{total_batches} failed: {msg}")
+            if "HTTP 429" in msg:
+                print("Quota exhausted. Stopping immediately; no more requests will be attempted.")
+                break
             print(f"Consecutive batch failures: {consecutive_failures}/{MAX_CONSECUTIVE_BATCH_FAILURES}")
-            if consecutive_failures >= MAX_CONSECUTIVE_BATCH_FAILURES:
+            if consecutive_failures>=MAX_CONSECUTIVE_BATCH_FAILURES:
                 print("Stopping after consecutive batch failures.")
                 break
             continue
 
-        consecutive_failures = 0
-        successful_batches += 1
-        by_id = {x["id"]:x for x in payload}
-        matched = 0
+        usage["requests"]=int(usage.get("requests",0) or 0)+1
+        requests_used=usage["requests"]
+        consecutive_failures=0
+        by_id={x["id"]:x for x in payload}
+        matched=0
         for row in rows:
             rid=str(row.get("id",""))
             if rid in by_id:
-                ai["items"][rid]=normalize_result(by_id[rid],row)
-                matched += 1
+                src=dict(by_id[rid]); src["_local_score"]=local_meta.get(rid,{}).get("local_score",0)
+                ai["items"][rid]=normalize_result(src,row); matched+=1
+
         for g in result.get("groups",[]):
             gid=str(g.get("group_id",""))
             if gid: ai["groups"][gid]={"representative_id":str(g.get("representative_id",""))}
 
-        if matched == 0:
-            failed_batches += 1
+        if matched==0:
+            failed_batches+=1
             print(f"Batch {batch_no}/{total_batches} returned no matching news IDs.")
             continue
 
-        print(f"Batch {batch_no}/{total_batches} succeeded: {matched}/{len(batch)} matched")
+        successful_batches+=1
+        usage["last_success"]=time.strftime("%Y-%m-%dT%H:%M:%SZ",time.gmtime())
+        usage["last_success_epoch"]=time.time()
+        ai["usage"]=usage
         save_ai(ai)
+        print(f"Batch {batch_no}/{total_batches} succeeded: {matched}/{len(batch)} matched | daily requests: {requests_used}/{DAILY_REQUEST_BUDGET}")
 
-    if new_items and successful_batches == 0:
+    ai["usage"]=usage
+    if candidates and successful_batches==0:
         print(f"::error::No news were analyzed successfully. {failed_batches} batch(es) failed.")
         raise SystemExit(1)
 
     if failed_batches:
         print(f"::warning::{failed_batches} batch(es) failed; successful batches were preserved.")
 
-    rebuild_groups(ai)
-    save_ai(ai)
-    old_editorial=load_json(EDITORIAL,{"items":{}})
-    write_editorial(ai,old_editorial)
-    print(f"AI complete: {len(ai['items'])} items | successful batches: {successful_batches} | failed batches: {failed_batches} | editorial written: {len(ai['items'])}")
+    rebuild_groups(ai); save_ai(ai)
+    write_editorial(ai,load_json(EDITORIAL,{"items":{}}))
+    print(f"AI complete: {len(ai['items'])} items | successful batches: {successful_batches} | failed batches: {failed_batches} | daily requests: {int(usage.get('requests',0) or 0)}/{DAILY_REQUEST_BUDGET} | editorial written: {len(ai['items'])}")
+
 
 if __name__=="__main__":
     main()
