@@ -9,12 +9,14 @@ ROOT = Path(__file__).resolve().parents[1]
 NEWS = ROOT / "data" / "news.json"
 OUT = ROOT / "data" / "news-ai.json"
 EDITORIAL = ROOT / "data" / "editorial.json"
+ARTICLES = ROOT / "data" / "articles.json"
 
 API = "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent"
 BATCH_SIZE = 40
-CANDIDATE_LIMIT = 60
-RECENT_HOURS = 48
-DAILY_REQUEST_BUDGET = 19
+CANDIDATE_LIMIT = 40
+RECENT_HOURS = 4
+DAILY_REQUEST_BUDGET = 12
+ARTICLE_LIMIT = 5
 MIN_ANALYSIS_INTERVAL_SECONDS = 30 * 60
 MAX_RETRIES = 3
 MAX_CONSECUTIVE_BATCH_FAILURES = 2
@@ -258,6 +260,116 @@ def write_editorial(ai, old):
         e["updated_at"] = out["updated"]
     EDITORIAL.write_text(json.dumps(out, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
+def generate_permanent_articles(all_news, ai, key):
+    db = load_json(ARTICLES, {"updated": "", "schema": 1, "items": {}})
+    if not isinstance(db, dict):
+        db = {"updated": "", "schema": 1, "items": {}}
+    db.setdefault("items", {})
+    by_id = {item_key(x): x for x in all_news}
+    ranked = []
+    for nid, row in ai.get("items", {}).items():
+        if row.get("analysis_mode") != "ai" or not row.get("publishable", True):
+            continue
+        if not row.get("representative", True) or not row.get("important_topics"):
+            continue
+        src = by_id.get(nid)
+        if src:
+            ranked.append((int(row.get("importance", 0) or 0), nid, row, src))
+    ranked.sort(key=lambda z: (z[0], z[3].get("published", "")), reverse=True)
+
+    candidates, seen = [], set()
+    for score, nid, row, src in ranked:
+        gid = row.get("group_id") or nid
+        if gid in seen:
+            continue
+        seen.add(gid)
+        members = []
+        for mid, mr in ai.get("items", {}).items():
+            if mr.get("group_id") != gid:
+                continue
+            ms = by_id.get(mid)
+            if not ms:
+                continue
+            members.append({
+                "id": mid, "title": ms.get("title", ""),
+                "summary": ms.get("summary", "")[:1200],
+                "content": str(ms.get("content", "") or ms.get("description", "") or "")[:3500],
+                "source": ms.get("source", ""), "url": ms.get("url", ""),
+                "published": ms.get("published", "")
+            })
+        members.sort(key=lambda x: x.get("published", ""), reverse=True)
+        candidates.append({"group_id": gid, "importance": score,
+                           "topics": row.get("important_topics", []), "sources": members[:3]})
+        if len(candidates) >= ARTICLE_LIMIT:
+            break
+
+    if not candidates:
+        print("No important story groups selected for permanent articles.")
+        return db
+
+    existing = []
+    for aid, article in list(db["items"].items())[-30:]:
+        if isinstance(article, dict):
+            existing.append({"id": aid, "title": article.get("title", ""),
+                             "summary": article.get("summary", ""),
+                             "category": article.get("category", ""),
+                             "updated_at": article.get("updated_at", "")})
+
+    prompt = """تو سردبیر ارشد Evren Nexus هستی.
+از خبرهای خام زیر برای مهم‌ترین رویدادها «مطلب دائمی اختصاصی Evren Nexus» تولید یا به‌روزرسانی کن.
+- خروجی خبرخوان نیست؛ مقاله مستقل و ماندگار است.
+- چند گزارش درباره یک رویداد را در یک مقاله واحد ادغام کن.
+- اگر موضوعی قبلاً در articles موجود است UPDATE کن، مقاله تکراری نساز.
+- فقط بر اساس اطلاعات ورودی بنویس و هیچ واقعیت، عدد یا نقل‌قولی را جعل نکن.
+- متن فارسی روان و اختصاصی باشد؛ کپی‌برداری از متن منابع ممنوع.
+- content فقط HTML ساده: <p>، <h2>، <ul>، <li>، <strong>.
+- مقاله حدود 500 تا 900 کلمه باشد، مگر اینکه اطلاعات کافی نباشد.
+- summary حداکثر 300 کاراکتر.
+- category یکی از economy,markets,currency-gold,real-estate,technology,ai,health,auto,science-life,sports,war باشد.
+- sources فقط از منابع ورودی انتخاب شوند.
+- action یکی از create, update, skip باشد.
+- JSON فقط.
+
+ساختار:
+{"articles":[{"action":"create","article_id":"...","group_id":"...","category":"economy","title":"...","summary":"...","content":"<p>...</p>","source_ids":["..."],"sources":[{"name":"...","url":"..."}]}]}
+
+مطالب دائمی موجود:
+""" + json.dumps(existing, ensure_ascii=False) + """
+
+گروه‌های مهم جدید:
+""" + json.dumps(candidates, ensure_ascii=False)
+
+    result = call_gemini(prompt, key)
+    rows = result.get("articles", []) if isinstance(result, dict) else []
+    changed = 0
+    for row in rows:
+        if not isinstance(row, dict) or row.get("action") == "skip":
+            continue
+        title, content = str(row.get("title", "")).strip(), str(row.get("content", "")).strip()
+        if not title or not content:
+            continue
+        aid = str(row.get("article_id", "")).strip()
+        if not aid:
+            aid = "article-" + hashlib.sha1(normalize_title(title).encode("utf-8")).hexdigest()[:16]
+        old = db["items"].get(aid, {})
+        now_iso = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+        db["items"][aid] = {
+            "id": aid, "title": title, "summary": str(row.get("summary", "")).strip()[:400],
+            "content": content, "category": str(row.get("category", "economy")),
+            "group_id": str(row.get("group_id", "")), "source_ids": row.get("source_ids", []),
+            "sources": row.get("sources", []),
+            "image": str(row.get("image", "") or (old.get("image", "") if isinstance(old, dict) else "")),
+            "created_at": old.get("created_at", now_iso) if isinstance(old, dict) else now_iso,
+            "updated_at": now_iso,
+            "published_at": old.get("published_at", now_iso) if isinstance(old, dict) else now_iso,
+            "status": "published", "ai_managed": True
+        }
+        changed += 1
+    db["updated"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+    ARTICLES.write_text(json.dumps(db, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(f"Permanent articles changed: {changed}")
+    return db
+
 def main():
     key = os.environ.get("GEMINI_API_KEY","").strip()
     if not key: raise SystemExit("GEMINI_API_KEY is missing")
@@ -421,6 +533,15 @@ def main():
         print(f"::warning::{failed_batches} batch(es) failed; successful batches were preserved.")
 
     rebuild_groups(ai); save_ai(ai)
+    if successful_batches > 0 and int(usage.get("requests", 0) or 0) < DAILY_REQUEST_BUDGET:
+        try:
+            generate_permanent_articles(items, ai, key)
+            usage["requests"] = int(usage.get("requests", 0) or 0) + 1
+            usage["last_article_generation"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+            ai["usage"] = usage
+            save_ai(ai)
+        except Exception as e:
+            print(f"Permanent article generation failed: {e}")
     write_editorial(ai,load_json(EDITORIAL,{"items":{}}))
     print(f"AI complete: {len(ai['items'])} items | successful batches: {successful_batches} | failed batches: {failed_batches} | daily requests: {int(usage.get('requests',0) or 0)}/{DAILY_REQUEST_BUDGET} | editorial written: {len(ai['items'])}")
 
