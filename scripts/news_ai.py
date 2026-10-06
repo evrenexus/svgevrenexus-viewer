@@ -33,7 +33,7 @@ TOPIC_KEYWORDS = {
     "economy": ["اقتصاد","اقتصادی","تورم","تولید","تولیدکننده","بودجه","مالیات","رشد اقتصادی","درآمد","هزینه تولید","انرژی","نفت"],
     "markets": ["بورس","بازار سرمایه","بازار سهام","سهام","شاخص کل","فرابورس","عرضه اولیه","سرمایه گذاری","سرمایه‌گذاری","اوراق"],
     "currency-gold": ["دلار","یورو","ارز","طلا","سکه","نرخ ارز","بیت کوین","بیت‌کوین","اتریوم","رمزارز","کریپتو"],
-    "real-estate": ["مسکن","ملک","آپارتمان","اجاره","زمین","خانه","ساختمان","املاک","رهن"],
+    "real-estate": ["مسکن","آپارتمان","اجاره","خانه","ساختمان","املاک","رهن"],
     "technology": ["فناوری","تکنولوژی","اینترنت","موبایل","گوشی","نرم افزار","نرم‌افزار","سخت افزار","سخت‌افزار","اپل","مایکروسافت","گوگل"],
     "ai": ["هوش مصنوعی","یادگیری ماشین","یادگیری ماشینی","چت جی پی تی","chatgpt","gemini","claude","مدل زبانی"],
     "health": ["پزشکی","سلامت","بیماری","بیمار","درمان","دارو","پزشک","بیمارستان","اپیدمی","کرونا"],
@@ -212,7 +212,9 @@ def local_prepare(items):
     return recent, meta
 
 def make_local_result(src,meta):
-    text=text_for_filter(src)
+    raw_summary=str(src.get("summary","") or "")
+    raw_summary=re.sub(r"^[^:]{1,50}:\s*","",raw_summary)
+    text=normalize_title(f"{src.get('title','')} {raw_summary}")
     base_topics=[t for t in (src.get("topics") or []) if t in TOPICS]
     if src.get("category") in TOPICS and src.get("category") not in base_topics:
         base_topics.append(src["category"])
