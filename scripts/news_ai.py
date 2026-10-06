@@ -627,6 +627,12 @@ def generate_permanent_articles(all_news, ai, key):
         if not existing_image:
             existing_image = find_commons_image(row.get("image_query", ""), aid)
 
+        # A permanent Evren Nexus article is publishable only when it has a usable image.
+        # If neither the source group nor Wikimedia Commons provides one, do not publish it.
+        if not existing_image:
+            print(f"Permanent article skipped (no image found): {title}")
+            continue
+
         db["items"][aid] = {
             "id": aid, "title": title, "summary": str(row.get("summary", "")).strip()[:400],
             "content": content, "category": str(row.get("category", "economy")),
@@ -651,7 +657,7 @@ def attach_permanent_article_links(ai, db):
     items = db.get("items", {}) if isinstance(db.get("items", {}), dict) else {}
     by_group = {}
     for aid, article in items.items():
-        if not isinstance(article, dict) or article.get("status") != "published":
+        if not isinstance(article, dict) or article.get("status") != "published" or not article.get("image"):
             continue
         gid = str(article.get("group_id", "") or "")
         if gid:
