@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import json, os, time, hashlib, random, re
+import json, os, time, hashlib, random, re, html
 from difflib import SequenceMatcher
 from pathlib import Path
 from urllib.request import Request, urlopen
