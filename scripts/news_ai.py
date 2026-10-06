@@ -29,6 +29,21 @@ TOPICS = [
     "ai","health","auto","science-life","sports","war"
 ]
 
+TOPIC_KEYWORDS = {
+    "economy": ["اقتصاد","اقتصادی","تورم","تولید","تولیدکننده","بودجه","مالیات","رشد اقتصادی","درآمد","هزینه تولید","انرژی","نفت"],
+    "markets": ["بورس","بازار سرمایه","بازار سهام","سهام","شاخص کل","فرابورس","عرضه اولیه","سرمایه گذاری","سرمایه‌گذاری","اوراق"],
+    "currency-gold": ["دلار","یورو","ارز","طلا","سکه","نرخ ارز","بیت کوین","بیت‌کوین","اتریوم","رمزارز","کریپتو"],
+    "real-estate": ["مسکن","ملک","آپارتمان","اجاره","زمین","خانه","ساختمان","املاک","رهن"],
+    "technology": ["فناوری","تکنولوژی","اینترنت","موبایل","گوشی","نرم افزار","نرم‌افزار","سخت افزار","سخت‌افزار","اپل","مایکروسافت","گوگل"],
+    "ai": ["هوش مصنوعی","یادگیری ماشین","یادگیری ماشینی","چت جی پی تی","chatgpt","gemini","claude","مدل زبانی"],
+    "health": ["پزشکی","سلامت","بیماری","بیمار","درمان","دارو","پزشک","بیمارستان","اپیدمی","کرونا"],
+    "auto": ["خودرو","ماشین","ایران خودرو","ایران‌خودرو","سایپا","خودروساز","خودروسازی","قطعه خودرو","بنزین"],
+    "science-life": ["علم","پژوهش","دانشگاه","فضا","محیط زیست","محیط‌زیست","آزمایش","سبک زندگی","تغذیه","نجوم"],
+    "sports": ["ورزش","فوتبال","بسکتبال","والیبال","تنیس","لیگ","تیم ملی","مسابقه","قهرمانی"],
+    "war": ["جنگ","حمله","موشک","بمباران","درگیری","ارتش","نیروهای مسلح","پهپاد","یمن","اسرائیل","غزه","اوکراین","روسیه","ناتو","عملیات نظامی"]
+}
+
+
 def item_key(x):
     raw = x.get("id") or x.get("url") or x.get("title") or ""
     return hashlib.sha256(raw.encode("utf-8")).hexdigest()[:24]
@@ -111,7 +126,10 @@ POLITICAL_TERMS = [
     "سیاستمدار","سیاست خارجی","سیاست داخلی","مذاکرات سیاسی","مذاکره سیاسی",
     "دیپلمات","سفیر","کاخ سفید","کنگره آمریکا","کمپین انتخاباتی",
     "نامزد انتخابات","رئیس دولت","رییس دولت","رهبر حزب","ائتلاف سیاسی",
-    "اپوزیسیون","پارلمان اروپا","مقام سیاسی"
+    "اپوزیسیون","پارلمان اروپا","مقام سیاسی","دولت","حکومت",
+    "رئیس","رییس","وزیر","قاضی","دادگاه","دیوان","دیوان کیفری",
+    "مقام دولتی","مقام حکومتی","تحریم قضات","انتخابات میان دوره ای",
+    "انتخابات میان‌دوره‌ای"
 ]
 BREAKING_TERMS = [
     "حمله","انفجار","زلزله","سیل","آتش سوزی","آتش‌سوزی","موشک",
@@ -194,14 +212,33 @@ def local_prepare(items):
     return recent, meta
 
 def make_local_result(src,meta):
-    topics = [t for t in (src.get("topics") or []) if t in TOPICS]
-    if not topics and src.get("category") in TOPICS: topics=[src["category"]]
-    score=int(meta.get("local_score",0))
+    text=text_for_filter(src)
+    base_topics=[t for t in (src.get("topics") or []) if t in TOPICS]
+    if src.get("category") in TOPICS and src.get("category") not in base_topics:
+        base_topics.append(src["category"])
+
+    topic_scores={}
+    for topic,keywords in TOPIC_KEYWORDS.items():
+        hits=sum(1 for kw in keywords if normalize_title(kw) in text)
+        if hits:
+            topic_scores[topic]=min(20,int(meta.get("local_score",0))+min(8,hits*2))
+
+    # If the collector supplied a topic but the text has no stronger local
+    # signal, keep it as a fallback. Strong conflicting signals win.
+    for topic in base_topics:
+        topic_scores.setdefault(topic,int(meta.get("local_score",0)))
+
+    if topic_scores:
+        topics=sorted(topic_scores,key=lambda t:(topic_scores[t],t),reverse=True)
+    else:
+        topics=base_topics
+
+    score=max(topic_scores.values()) if topic_scores else int(meta.get("local_score",0))
     political=bool(meta.get("political"))
     return {
         "title":src.get("title",""),"summary":src.get("summary",""),
         "source":src.get("source",""),"published":src.get("published",""),
-        "topics":topics,"topic_scores":{t:score for t in topics},
+        "topics":topics,"topic_scores":topic_scores,
         "importance":score,"important":False,"important_topics":[],
         "slider_topics":[],"ticker_topics":[],"breaking":False,
         "breaking_topics":[],"publishable":not political,
@@ -209,7 +246,8 @@ def make_local_result(src,meta):
         "group_id":meta.get("group_id",""),
         "representative":meta.get("duplicate_count",1)==1,
         "reason":"local rule-based classification","analysis_mode":"local",
-        "local_score":score,"political":political,
+        "local_score":int(meta.get("local_score",0)),
+        "political":political,
         "breaking_signal":bool(meta.get("breaking_signal")),
         "age_hours":float(meta.get("age_hours",99))
     }
