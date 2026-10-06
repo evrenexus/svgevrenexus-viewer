@@ -1,72 +1,63 @@
-// Read-only audit of Evren Nexus data files. Changes nothing.
+// Evren Nexus data audit v2: active news -> AI group -> permanent article group.
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-
-const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const FILES = ["news.json", "news-ai.json", "editorial.json", "articles.json"];
-
-function load(name) {
-  const p = path.join(ROOT, "data", name);
-  if (!fs.existsSync(p)) return { missing: true };
-  const raw = fs.readFileSync(p, "utf8");
-  try { return { data: JSON.parse(raw), bytes: Buffer.byteLength(raw) }; }
-  catch (e) { return { error: String(e.message), bytes: Buffer.byteLength(raw) }; }
-}
-const short = (v) =>
-  typeof v === "string" ? (v.length > 100 ? v.slice(0,100) + "…" : v) :
-  Array.isArray(v) ? `[array:${v.length}]` :
-  v && typeof v === "object" ? `{object:${Object.keys(v).length} keys}` : v;
-const isObj = v => v && typeof v === "object" && !Array.isArray(v);
-
-function entries(d) {
-  if (Array.isArray(d)) return d;
-  if (!isObj(d)) return [];
-  for (const k of ["items","articles"]) {
-    if (Array.isArray(d[k])) return d[k];
-    if (isObj(d[k])) return Object.entries(d[k]).map(([id,v]) => ({__key:id, ...(isObj(v)?v:{value:v})}));
+const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),".."), DATA=path.join(ROOT,"data");
+const read=f=>JSON.parse(fs.readFileSync(path.join(DATA,f),"utf8"));
+const obj=v=>v&&typeof v==="object"&&!Array.isArray(v);
+const entries=d=>{
+  if(Array.isArray(d)) return d.filter(obj);
+  if(!obj(d)) return [];
+  for(const k of ["items","articles"]) {
+    if(Array.isArray(d[k])) return d[k].filter(obj);
+    if(obj(d[k])) return Object.entries(d[k]).map(([id,v])=>({__key:id,...(obj(v)?v:{})}));
   }
-  return Object.entries(d).filter(([,v])=>isObj(v)).map(([id,v])=>({__key:id,...v}));
-}
-function shape(name,d) {
-  const list=entries(d), freq={};
-  for(const it of list.slice(0,500)) if(isObj(it)) for(const k of Object.keys(it)) freq[k]=(freq[k]||0)+1;
-  console.log(`\n== ${name} ==`);
-  console.log("top-level:", Array.isArray(d)?`array(${d.length})`:Object.keys(d||{}).map(k=>`${k}=${short(d[k])}`).join(" | "));
-  console.log("entries:",list.length);
-  console.log("key frequency (first 500 entries):",freq);
-  if(isObj(list[0])) console.log("sample entry:",Object.fromEntries(Object.entries(list[0]).map(([k,v])=>[k,short(v)])));
-  return list;
-}
-const text=(v,n=1)=>typeof v==="string"&&v.trim().length>=n;
+  return Object.entries(d).filter(([,v])=>obj(v)).map(([id,v])=>({__key:id,...v}));
+};
+const key=(o,...ks)=>{for(const k of ks) if(o?.[k]!=null&&String(o[k]).trim()) return String(o[k]).trim();return ""};
 const url=v=>typeof v==="string"&&/^https?:\/\//i.test(v.trim());
-const idOf=a=>String(a.id??a.news_id??a.newsId??a.source_id??a.__key??"");
+const text=v=>typeof v==="string"&&v.trim().length>=200;
+const news=entries(read("news.json")), ai=entries(read("news-ai.json")), articles=entries(read("articles.json")), editorial=entries(read("editorial.json"));
+console.log("\n== SCHEMA news.json ==",Object.keys(news[0]||{}));
+console.log("== SCHEMA news-ai.json ==",Object.keys(ai[0]||{}));
+console.log("== SCHEMA articles.json ==",Object.keys(articles[0]||{}));
+console.log("== SCHEMA editorial.json ==",Object.keys(editorial[0]||{}));
 
-const loaded=Object.fromEntries(FILES.map(f=>[f,load(f)]));
-for(const f of FILES){const r=loaded[f];if(r.missing)console.log(`\n== ${f} == MISSING`);else if(r.error)console.log(`\n== ${f} == INVALID JSON (${r.bytes} bytes): ${r.error}`);}
-const lists={};
-for(const f of FILES) if(loaded[f].data!==undefined) lists[f]=shape(f,loaded[f].data);
+const aiByGroup=new Map(), artByGroup=new Map();
+for(const a of ai){const g=key(a,"group_id","groupId","group");if(g&&!aiByGroup.has(g))aiByGroup.set(g,a);}
+for(const a of articles){const g=key(a,"group_id","groupId","group");if(g&&!artByGroup.has(g))artByGroup.set(g,a);}
 
-const news=(lists["news.json"]||[]).filter(isObj);
-if(news.length){
-  const rows={};
-  const bump=(topic,key)=>{rows[topic]??={total:0,image:0,content200:0,republish:0,important:0,eligible:0};rows[topic][key]++;};
-  for(const it of news){
-    const img=url(it.image), body=text(it.content,200), rep=it.allow_internal_republish===true;
-    const topics=Array.isArray(it.topics)&&it.topics.length?it.topics:["(no-topic)"];
-    for(const t of topics){bump(t,"total");if(img)bump(t,"image");if(body)bump(t,"content200");if(rep)bump(t,"republish");if(it.important===true)bump(t,"important");if(img&&body&&rep)bump(t,"eligible");}
-  }
-  console.log("\n== news.json per topic (an item can count in several topics) ==");
-  console.table(rows);
+const linked=news.map(n=>{const g=key(n,"group_id","groupId","group");return {n,g,a:g?aiByGroup.get(g):null,ar:g?artByGroup.get(g):null};});
+console.log("\n== LINKING ==");
+console.log({
+ active_news:news.length, ai_items:ai.length, ai_groups:aiByGroup.size,
+ permanent_articles:articles.length, article_groups:artByGroup.size,
+ news_with_ai:linked.filter(x=>x.a).length,
+ news_with_published_article:linked.filter(x=>x.ar?.status==="published").length,
+ news_with_article_image:linked.filter(x=>x.ar?.status==="published"&&url(x.ar.image)).length
+});
+
+const topics=[...new Set(news.flatMap(n=>Array.isArray(n.topics)?n.topics:[]))].sort(), rows={};
+for(const t of topics){
+  const s=linked.filter(x=>Array.isArray(x.n.topics)&&x.n.topics.includes(t));
+  const withImage=s.filter(x=>url(x.ar?.image)||url(x.n.image));
+  const withArticle=s.filter(x=>x.ar?.status==="published");
+  const valid=s.filter(x=>x.ar?.status==="published"&&(url(x.ar?.image)||url(x.n.image)));
+  const groups=new Set(valid.map(x=>x.g).filter(Boolean));
+  rows[t]={total:s.length,image:withImage.length,article:withArticle.length,valid:valid.length,distinct_valid_groups:groups.size,enough_for_4:groups.size>=4};
 }
-const articles=(lists["articles.json"]||[]).filter(isObj);
-if(articles.length&&news.length){
-  const articleIds=new Set(articles.map(idOf).filter(Boolean));
-  const matched=news.filter(n=>articleIds.has(String(n.id)));
-  console.log("\n== articles.json vs news.json ==");
-  console.log({articles:articles.length,articlesWithImage:articles.filter(a=>url(a.image)).length,newsIdsFoundInArticles:matched.length,matchedWithImage:matched.filter(n=>url(n.image)).length});
-}
-const editorial=(lists["editorial.json"]||[]).filter(isObj);
-if(editorial.length) console.log("\n== editorial.json ==",{overrides:editorial.length,republishTrue:editorial.filter(e=>e.republish===true||e.published===true).length,withImage:editorial.filter(e=>url(e.image)).length,withContent:editorial.filter(e=>text(e.content,200)).length});
-const ai=loaded["news-ai.json"].data;
-if(isObj(ai)) console.log("\n== news-ai.json ==",{version:ai.version,policy_version:ai.policy_version,items:isObj(ai.items)?Object.keys(ai.items).length:Array.isArray(ai.items)?ai.items.length:0,groups:isObj(ai.groups)?Object.keys(ai.groups).length:0});
+console.log("\n== PER TOPIC ==");
+console.table(rows);
+
+const imp=linked.filter(x=>x.a?.important===true), validImp=imp.filter(x=>x.ar?.status==="published"&&(url(x.ar?.image)||url(x.n.image)));
+console.log("\n== CURRENT IMPORTANT LINKING ==",{
+ ai_important_active_news:imp.length,
+ important_with_published_article:imp.filter(x=>x.ar?.status==="published").length,
+ important_valid_with_image:validImp.length,
+ distinct_valid_groups:new Set(validImp.map(x=>x.g).filter(Boolean)).size
+});
+console.log("\n== COUNTS ==",{
+ news:news.length,ai_items:ai.length,articles:articles.length,editorial:editorial.length,
+ article_published:articles.filter(a=>a.status==="published").length,
+ article_images:articles.filter(a=>url(a.image)).length
+});
