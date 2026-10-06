@@ -1,7 +1,7 @@
 {
   "version": 1,
   "policy_version": 8,
-  "updated": "2026-10-06T16:07:08Z",
+  "updated": "2026-10-06T16:44:25Z",
   "items": {
     "56927672062ac466f3e762c5": {
       "title": "قیمت بیت‌کوین و اتریوم امروز سه‌شنبه ۱۴ مهر ۱۴۰۵",
@@ -755,10 +755,8 @@
         "markets": 20
       },
       "importance": 20,
-      "important": true,
-      "important_topics": [
-        "markets"
-      ],
+      "important": false,
+      "important_topics": [],
       "slider_topics": [
         "markets"
       ],
@@ -1552,9 +1550,7 @@
       "importance": 20,
       "important": false,
       "important_topics": [],
-      "slider_topics": [
-        "markets"
-      ],
+      "slider_topics": [],
       "ticker_topics": [],
       "breaking": false,
       "breaking_topics": [],
@@ -2657,9 +2653,7 @@
       "importance": 14,
       "important": false,
       "important_topics": [],
-      "slider_topics": [
-        "real-estate"
-      ],
+      "slider_topics": [],
       "ticker_topics": [],
       "breaking": false,
       "breaking_topics": [],
@@ -2690,8 +2684,7 @@
       "importance": 20,
       "important": true,
       "important_topics": [
-        "markets",
-        "currency-gold"
+        "markets"
       ],
       "slider_topics": [
         "markets",
@@ -6540,8 +6533,7 @@
         "technology"
       ],
       "slider_topics": [
-        "technology",
-        "ai"
+        "technology"
       ],
       "ticker_topics": [],
       "breaking": false,
@@ -7142,12 +7134,10 @@
       "importance": 20,
       "important": true,
       "important_topics": [
-        "economy",
-        "currency-gold"
+        "economy"
       ],
       "slider_topics": [
-        "economy",
-        "currency-gold"
+        "economy"
       ],
       "ticker_topics": [],
       "breaking": false,
@@ -7388,10 +7378,8 @@
         "real-estate": 15
       },
       "importance": 15,
-      "important": true,
-      "important_topics": [
-        "real-estate"
-      ],
+      "important": false,
+      "important_topics": [],
       "slider_topics": [
         "real-estate"
       ],
@@ -7428,8 +7416,7 @@
         "markets"
       ],
       "slider_topics": [
-        "markets",
-        "currency-gold"
+        "markets"
       ],
       "ticker_topics": [],
       "breaking": false,
@@ -7807,7 +7794,7 @@
       "local_score": 20,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.086176085074743
+      "age_hours": 2.671242390208774
     },
     "21554ca3d2d685d867971ac1": {
       "title": "ترامپ: ایران می تواند لس‌آنجلس و سن‌دیگو را نابود کند!",
@@ -7923,7 +7910,7 @@
       "local_score": 13,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.140620529519187
+      "age_hours": 2.7256868346532186
     },
     "90b82fe2552061bead43e45a": {
       "title": "توضیح سخنگوی قوه قضائیه درباره انتشار تصاویری از عباس ایروانی در بازدید از یک مرکز تست خودرو",
@@ -8067,10 +8054,10 @@
       "representative": false,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 13,
+      "local_score": 12,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.4172871961858537
+      "age_hours": 3.0023535013198854
     },
     "70d59f41a60df19e768189f8": {
       "title": "دریافت دلار از شعب منتخب بانک ملی ایران",
@@ -8125,10 +8112,10 @@
       "representative": false,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 16,
+      "local_score": 15,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.429509418408076
+      "age_hours": 3.0145757235421073
     },
     "bfead028be7f11da10855e1a": {
       "title": "قیمت طلا ۱۸ عیار امروز سه‌شنبه ۱۴ مهر ۱۴۰۵",
@@ -8157,7 +8144,7 @@
       "local_score": 13,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.282842751741409
+      "age_hours": 2.867909056875441
     },
     "314dc2fe583cdf2335d42d97": {
       "title": "وجود ۸۰۰ مدرسه قدیمی در تهران/ ۴۰ درصد رتبه برترهای کنکور تهرانی هستند",
@@ -8246,7 +8233,7 @@
       "local_score": 13,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.1589538628525204
+      "age_hours": 2.744020167986552
     },
     "1b1f05364f1d20c78cf3a3cf": {
       "title": "همراه اول پای سلامت دیجیتال را به کنگره ریوی باز کرد",
@@ -9783,10 +9770,8 @@
         "ai": 18
       },
       "importance": 20,
-      "important": true,
-      "important_topics": [
-        "ai"
-      ],
+      "important": false,
+      "important_topics": [],
       "slider_topics": [
         "ai"
       ],
@@ -10379,9 +10364,13 @@
         "currency-gold": 20
       },
       "importance": 20,
-      "important": false,
-      "important_topics": [],
-      "slider_topics": [],
+      "important": true,
+      "important_topics": [
+        "currency-gold"
+      ],
+      "slider_topics": [
+        "currency-gold"
+      ],
       "ticker_topics": [],
       "breaking": false,
       "breaking_topics": [],
@@ -11084,9 +11073,13 @@
       "important": false,
       "important_topics": [],
       "slider_topics": [],
-      "ticker_topics": [],
-      "breaking": false,
-      "breaking_topics": [],
+      "ticker_topics": [
+        "economy"
+      ],
+      "breaking": true,
+      "breaking_topics": [
+        "economy"
+      ],
       "publishable": true,
       "exclude_reason": "",
       "group_id": "local-d76df02237ff",
@@ -11450,7 +11443,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 3.070620529519187
+      "age_hours": 3.6556868346532188
     },
     "cd1ae1da5c6c53cc3d13d754": {
       "title": "خبر داغ پنجره زمستانی؛ بازگشت سردار به اروپا",
@@ -11479,7 +11472,7 @@
       "local_score": 8,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 3.086176085074743
+      "age_hours": 3.671242390208774
     },
     "808726be97e51275b96301ca": {
       "title": "قطر: رفت‌وآمدها میان طرف‌ها در جریان است",
@@ -11508,7 +11501,7 @@
       "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.086731640630298
+      "age_hours": 3.6717979457643297
     },
     "09b9404569393f1ddf5c8e77": {
       "title": "محسن رضایی، دبیر شورای عالی امنیت ملی خطاب به آمریکا: تنگه هرمز با تهدید یا فشار باز نخواهد شد/ در جنگ اقتصادی هم مانند جنگ نظامی، شکست خواهید خورد/ عمر تبلیغات اخیر وزیر خزانه‌داری شما کوتاه خواهد بود",
@@ -11537,7 +11530,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 3.100620529519187
+      "age_hours": 3.6856868346532186
     },
     "32fd697de701e0a109502a0d": {
       "title": "مدیرعامل آرامکو: حتی اگر بحران جنگ علیه ایران همین الان پایان یابد، امکان دارد جهان برای پر کردن دوباره ذخایر نفتی که در طول جنگ مصرف شده‌اند، تا ۲ سال به حدود ۲ میلیون بشکه نفت بیشتر در روز نیاز داشته باشد",
@@ -11568,7 +11561,7 @@
       "local_score": 13,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.110898307296965
+      "age_hours": 3.695964612430996
     },
     "401c4a2664e6222261514ebc": {
       "title": "معامله ۴.۳ هزار میلیارد ریالی دتولید با شرکت‌های هم‌گروه",
@@ -11599,7 +11592,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.1303427517414093
+      "age_hours": 3.715409056875441
     },
     "057b6366ce5fa8e505b23758": {
       "title": "یک نفتکش در تنگه هرمز هدف حمله قرار گرفت",
@@ -11630,7 +11623,7 @@
       "local_score": 13,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 3.1336760850747427
+      "age_hours": 3.718742390208774
     },
     "8c9758d6131730eb15b09bdb": {
       "title": "اگر شب‌ها نمی‌توانید گوشی را کنار بگذارید، این هشدار را جدی بگیرید",
@@ -11659,7 +11652,7 @@
       "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.1350649739636314
+      "age_hours": 3.720131279097663
     },
     "f2fff05e8ef24e6f97366723": {
       "title": "تصاویری تازه از یحیی السنوار در قلب نبردهای رفح",
@@ -11688,7 +11681,7 @@
       "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.141731640630298
+      "age_hours": 3.72679794576433
     },
     "3bce2fe7e69a92a65e96008b": {
       "title": "بورس در آستانه 8 میلیونی شدن",
@@ -11717,7 +11710,7 @@
       "local_score": 9,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.148398307296965
+      "age_hours": 3.7334646124309963
     },
     "7bfeb3f38d1136d8ce8cf538": {
       "title": "دیگر به بانک‌ها مراجعه نکنید / چگونه از سامانه «حسام» بانک مرکزی استفاده کنیم؟",
@@ -11748,7 +11741,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 3.164509418408076
+      "age_hours": 3.7495757235421077
     },
     "0e71c056e6368caf19c2c365": {
       "title": "عارف در مراسم معارفه سرپرست وزارت نفت: به هیچ‌وجه نگران تحریم‌ها نیستیم",
@@ -11777,7 +11770,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 3.184509418408076
+      "age_hours": 3.7695757235421077
     },
     "6bf442a40a4f03aa9679d7a2": {
       "title": "استقلالی‌ها و چالش زمستان سخت؛ ستاره نگهدار و یار بخر",
@@ -11806,7 +11799,7 @@
       "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.2353427517414093
+      "age_hours": 3.820409056875441
     },
     "a7e7685bb1b4ff899933c906": {
       "title": "جهش سودآوری در کساپا با چراغ سبز سازه گستر",
@@ -11835,7 +11828,7 @@
       "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.2392316406302983
+      "age_hours": 3.8242979457643296
     },
     "6188c1ca1cb9c13ec797167c": {
       "title": "آخرین وضعیت ذخایر سوخت نیروگاه‌ها اعلام شد",
@@ -11864,7 +11857,7 @@
       "local_score": 9,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 3.273120529519187
+      "age_hours": 3.8581868346532184
     },
     "d211ae53f7f7c9867bb3f4df": {
       "title": "همراه اول وارد زیست‌بوم دانشجویان شد",
@@ -11895,7 +11888,7 @@
       "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.274231640630298
+      "age_hours": 3.8592979457643297
     },
     "63b0cdf0d86c55db1cc0a4ea": {
       "title": "ضمانت ۳۶۱ میلیارد ریالی «وامیر» برای تسهیلات شرکت باما",
@@ -11924,7 +11917,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.311731640630298
+      "age_hours": 3.89679794576433
     },
     "e7f3c2b489f6d1b09c3d8759": {
       "title": "فوری/ زلزله شاهرود را لرزاند",
@@ -11953,7 +11946,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 3.3250649739636313
+      "age_hours": 3.910131279097663
     },
     "83377fa31d8a607c50bea9bb": {
       "title": "وزیر خارجه روسیه: وضعیت جنگ علیه ایران، خیلی ما را نگران کرده و تأثیری بسیار منفی بر اقتصاد جهانی گذاشته/ امیدوارم تشریک مساعی که بسیاری از کشورهای منطقه پیشنهاد کرده‌اند، بتواند این وضعیت را در مسیر دیپلماتیک حفظ کند",
@@ -11982,7 +11975,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 3.3275649739636317
+      "age_hours": 3.912631279097663
     },
     "40478fd0abf7adbfbd0a92e1": {
       "title": "باشگاه نخبگان همراه اول میزبان ستاره‌های علم و ورزش",
@@ -12019,7 +12012,7 @@
       "local_score": 9,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.337009418408076
+      "age_hours": 3.9220757235421075
     },
     "b087cb57831ad3480ac44511": {
       "title": "سرپرست وزارت نفت: خودمان را تقریباً از موضوع «تراستی‌ها» جدا کرده‌ایم/ وظیفه ما فروش نفت است؛ کار تراستی انتقال پول بانکی است/ فروش نفت مانند همیشه در حال پیگیری است، اما نمی‌توانم اطلاعات این حوزه را بازگو کنم",
@@ -12214,11 +12207,11 @@
         "currency-gold"
       ],
       "topic_scores": {
-        "currency-gold": 19,
-        "real-estate": 19,
-        "war": 19
+        "currency-gold": 18,
+        "real-estate": 18,
+        "war": 18
       },
-      "importance": 19,
+      "importance": 18,
       "important": true,
       "important_topics": [
         "real-estate"
@@ -12235,10 +12228,10 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 14,
+      "local_score": 13,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.5497871961858536
+      "age_hours": 3.1348535013198853
     },
     "aae490e5240d02dce555be04": {
       "title": "نظارت مکرون بر شلیک موشک بالستیک از زیردریایی هسته‌ای",
@@ -12250,10 +12243,10 @@
         "science-life"
       ],
       "topic_scores": {
-        "science-life": 16,
-        "war": 16
+        "science-life": 15,
+        "war": 15
       },
-      "importance": 16,
+      "importance": 15,
       "important": true,
       "important_topics": [
         "science-life"
@@ -12261,23 +12254,19 @@
       "slider_topics": [
         "science-life"
       ],
-      "ticker_topics": [
-        "science-life"
-      ],
-      "breaking": true,
-      "breaking_topics": [
-        "science-life"
-      ],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
       "publishable": true,
       "exclude_reason": "",
       "group_id": "local-0c32b9ab12e1",
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 11,
+      "local_score": 10,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 2.559509418408076
+      "age_hours": 3.1445757235421077
     },
     "0bbf3288cf45a9218904c944": {
       "title": "پلیس بریتانیا: بازداشت یک نفر در نزدیکی پایگاه فیرفورد",
@@ -12335,7 +12324,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 2.599787196185854
+      "age_hours": 3.184853501319885
     },
     "2e7d9e9d6cfac871bf3d1dad": {
       "title": "پژوهشی جدید درباره تفاوت‌های سیاسی در ادراک ایمنی و اثربخشی واکسن‌ها: چه چیزهایی می‌دانیم و چه معنایی برای بیماران دارد؟",
@@ -12348,11 +12337,11 @@
         "health"
       ],
       "topic_scores": {
-        "health": 12,
-        "science-life": 12,
-        "war": 12
+        "health": 11,
+        "science-life": 11,
+        "war": 11
       },
-      "importance": 12,
+      "importance": 11,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -12365,10 +12354,10 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 7,
+      "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.6436760850747425
+      "age_hours": 3.228742390208774
     },
     "3a4bb78f7c28238d0783dfef": {
       "title": "شعار نویسی روی دیوار خانه ایمان صفا",
@@ -12379,9 +12368,9 @@
         "real-estate"
       ],
       "topic_scores": {
-        "real-estate": 12
+        "real-estate": 11
       },
-      "importance": 12,
+      "importance": 11,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -12394,10 +12383,10 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 7,
+      "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.6600649739636317
+      "age_hours": 3.245131279097663
     },
     "878b159943cc400d663ba0f7": {
       "title": "رضایی: تنگه هرمز با تهدید باز نخواهد شد",
@@ -12455,7 +12444,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 2.7561760850747428
+      "age_hours": 3.341242390208774
     },
     "8887026a8a1b0a508fde14d8": {
       "title": "سیاست خاورمیانه‌ای کاخ سفید تغییر خواهد کرد؟ | پیش‌بینی نقش کنگره در شکل‌دهی دیپلماسی دولت ترامپ بعد از انتخابات",
@@ -12484,7 +12473,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 2.7928427517414094
+      "age_hours": 3.3779090568754406
     },
     "44e10b0b2ec833a83d45b586": {
       "title": "کالابرگ مهر؛ رقم واریزی چقدر است؟",
@@ -12495,9 +12484,9 @@
         "economy"
       ],
       "topic_scores": {
-        "economy": 7
+        "economy": 6
       },
-      "importance": 7,
+      "importance": 6,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -12510,10 +12499,10 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 7,
+      "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.812009418408076
+      "age_hours": 3.3970757235421076
     },
     "325c6b5f4338de2da1433257": {
       "title": "تکذیب شایعه انفجار در فاز یک اندیشه/ هیچ رویداد امنیتی گزارش نشد",
@@ -12586,9 +12575,9 @@
         "economy"
       ],
       "topic_scores": {
-        "economy": 17
+        "economy": 16
       },
-      "importance": 17,
+      "importance": 16,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -12601,10 +12590,10 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 7,
+      "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.9092316406302983
+      "age_hours": 3.4942979457643295
     },
     "21c07ea3aaf4c46b7c1d1df6": {
       "title": "چرا پاها داخل کفش این‌قدر بدبو می‌شوند؟ علت واقعی بوی ناخوشایند چیست؟",
@@ -12615,9 +12604,9 @@
         "economy"
       ],
       "topic_scores": {
-        "economy": 7
+        "economy": 6
       },
-      "importance": 7,
+      "importance": 6,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -12630,10 +12619,10 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 7,
+      "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.9950649739636317
+      "age_hours": 3.580131279097663
     },
     "b2dadca055755a6b140c1516": {
       "title": "نزاع گروهی ۴ مدیرعامل استقلال روی آنتن زنده!",
@@ -12662,7 +12651,7 @@
       "local_score": 8,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 3.0092316406302984
+      "age_hours": 3.5942979457643296
     },
     "4071db3abe872460afaa46c1": {
       "title": "وزیر انرژی عربستان: روزانه ۵.۸ میلیون بشکه نفت را از طریق خط لوله شرق-غرب، منتقل می‌کنیم/ ستون‌نویس بلومبرگ: این نخستین اعلام رسمی، پس از حمله به خط لوله مذکور است/ پیش از حمله، روزانه حدود ۷ میلیون بشکه نفت از طریق این خط لوله منتقل می‌شد",
@@ -12691,7 +12680,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 3.015620529519187
+      "age_hours": 3.6006868346532186
     },
     "f14120938adb91b746cc518b": {
       "title": "دستگیری سارق تلفن همراه سیاوش طهمورث",
@@ -12720,7 +12709,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.0111760850747427
+      "age_hours": 2.5962423902087743
     },
     "bc71c23f7b77ffa4d1f23215": {
       "title": "زنگ مزایده در وتجارت",
@@ -12749,7 +12738,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.061731640630298
+      "age_hours": 2.64679794576433
     },
     "21b5027466fec44c8d860873": {
       "title": "کاتس: ارتش اسرائیل در حال آماده‌سازی برای احتمال جنگ با تشکیلات خودگردان فلسطین است",
@@ -12778,7 +12767,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 2.067009418408076
+      "age_hours": 2.6520757235421075
     },
     "7820a74ba5f5164359c88f96": {
       "title": "ویدیو/ روایت حمزه صفوی از تله «دُن کیشوت‌وار» برای ایران و آمریکا",
@@ -12836,7 +12825,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.1117316406302984
+      "age_hours": 2.6967979457643296
     },
     "d25f8a118849dcf5926ff88b": {
       "title": "وقوع رگبار و وزش باد شدید در راه این استان/کاهش ۴ درجه‌ای دما از جمعه",
@@ -12896,7 +12885,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.234509418408076
+      "age_hours": 2.8195757235421075
     },
     "066feaa76c670d9428130001": {
       "title": "رهبر انقلاب درگذشت برادر حجت‌الاسلام ناطق نوری را تسلیت گفتند",
@@ -13014,7 +13003,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 2.414787196185854
+      "age_hours": 2.999853501319885
     },
     "d8722c4768d4111f04c63616": {
       "title": "نمایشگاه نظام مالی با رویکردی متفاوت / بانک‌های خصوصی با ظرفیت کامل پای کار آمدند",
@@ -13025,9 +13014,9 @@
         "markets"
       ],
       "topic_scores": {
-        "markets": 17
+        "markets": 16
       },
-      "importance": 17,
+      "importance": 16,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -13040,10 +13029,10 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 7,
+      "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.417009418408076
+      "age_hours": 3.0020757235421076
     },
     "8116b61d9c6bb983af79d574": {
       "title": "جزئیات دیدار وزیر کشور با امیر قطر",
@@ -13072,7 +13061,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 2.436731640630298
+      "age_hours": 3.02179794576433
     },
     "14a34706b5e14a007d27a1e5": {
       "title": "اسلام‌آباد ادعای رویترز مبنی بر اعزام نیرو و تجهیزات نظامی به عربستان را رد کرد",
@@ -13083,9 +13072,9 @@
         "currency-gold"
       ],
       "topic_scores": {
-        "currency-gold": 15
+        "currency-gold": 14
       },
-      "importance": 15,
+      "importance": 14,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -13098,10 +13087,10 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 10,
+      "local_score": 9,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.468120529519187
+      "age_hours": 3.0531868346532187
     },
     "d01d77e6d1acf07f8d1370a9": {
       "title": "لجستیک؛ متهم اصلی نفت ۱۰۰ دلاری",
@@ -13132,7 +13121,7 @@
       "local_score": 13,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.5261760850747426
+      "age_hours": 2.111242390208774
     },
     "d281eb56409ee7673b776f58": {
       "title": "سفیر فرانسه در تهران احضار شد/ علت چیست؟",
@@ -13161,7 +13150,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 1.5772871961858537
+      "age_hours": 2.162353501319885
     },
     "244c2e3e3b51c1a140966b8b": {
       "title": "تحول دیجیتال در صنعت ورزش / از رضایت هوادار تا خلق درآمدهای جدید",
@@ -13196,7 +13185,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.6003427517414093,
+      "age_hours": 2.1854090568754407,
       "permanent_article": true,
       "article_id": "article-20ea7144a9ca3129",
       "image": "https://tejaratnews.com/wp-content/uploads/2026/10/IMG_20261006_101325_134-ak.webp"
@@ -13228,7 +13217,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 1.6114538628525203
+      "age_hours": 2.196520167986552
     },
     "b1053591dcc02e0db21f013e": {
       "title": "بررسی جدید: بیشتر زنان عوامل خطر سرطان پستان را می‌دانند اما کمتر اقدام عملی می‌کنند",
@@ -13239,9 +13228,9 @@
         "health"
       ],
       "topic_scores": {
-        "health": 7
+        "health": 8
       },
-      "importance": 7,
+      "importance": 8,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -13250,14 +13239,14 @@
       "breaking_topics": [],
       "publishable": true,
       "exclude_reason": "",
-      "group_id": "local-b292cb22cb58",
-      "representative": true,
+      "group_id": "local-a9fe996910c0",
+      "representative": false,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 7,
+      "local_score": 8,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.6436760850747427
+      "age_hours": 2.228742390208774
     },
     "b984a2786d985576542e12ba": {
       "title": "عارف: از شرمندگی مردم بیرون می‌آییم/ افزایش کالابرگ نزدیک است + فیلم",
@@ -13286,7 +13275,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 1.653398307296965
+      "age_hours": 2.238464612430996
     },
     "f5a816e10b768a3d000a4ed4": {
       "title": "حمله تند ترامپ به فاکس‌نیوز",
@@ -13315,7 +13304,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 1.6653427517414092
+      "age_hours": 2.2504090568754407
     },
     "715b3d826ed70f4e776e8572": {
       "title": "برت اریکسون مدیر ارشد یک شرکت مشاوره ریسک: طی هشت روز گذشته، ۱۳ کشتی توسط ایران هدف قرار گرفته‌ شده‌اند؛ ممکن است تعداد واقعی نیز بیش از موارد گزارش شده باشد/ در چندین مورد هم کشتی‌ها توسط ایران متوقف شده‌اند، سپس از مسیر خود بازگشته‌اند/ روشن است که شرکت‌های کشتیرانی در حال از دست دادن اعتمادشان به توانایی آمریکا برای حفاظت از آن‌ها هستند",
@@ -13344,7 +13333,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.7103427517414094
+      "age_hours": 2.2954090568754406
     },
     "42bcc347557ac9f3f76dec60": {
       "title": "وزارت ارتباطات برای پیشبرد پروژه‌های حیاتی سال ۱۴۰۶ نیازمند حداقل ۱۵۴ همت است",
@@ -13379,7 +13368,7 @@
       "local_score": 11,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.7342316406302982
+      "age_hours": 2.3192979457643297
     },
     "a7c02112b887a2f7b881efed": {
       "title": "سرپرست وزارت نفت: فروش نفت مانند همیشه در حال پیگیری است",
@@ -13437,7 +13426,7 @@
       "local_score": 9,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 1.8350649739636316
+      "age_hours": 2.4201312790976632
     },
     "9aab8769b9b39ace1fb57a87": {
       "title": "تل‌آویو می‌خواست هواپیمای فلای‌دبی را سرنگون کند",
@@ -13466,7 +13455,7 @@
       "local_score": 11,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.8372871961858537
+      "age_hours": 2.4223535013198854
     },
     "c65d2a9e575caa3072656c98": {
       "title": "سقوط هواپیمای نظامی نیجریه با ۲۵ کشته",
@@ -13495,7 +13484,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 1.8611760850747425
+      "age_hours": 2.446242390208774
     },
     "08908871033876a1447be49c": {
       "title": "مدیرعامل آرامکو: تا تنگه هرمز باز نشود، فشار بر بازار نفت ادامه دارد",
@@ -13524,7 +13513,7 @@
       "local_score": 11,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.8650649739636316
+      "age_hours": 2.450131279097663
     },
     "3bca4fb2cd75643751f0f871": {
       "title": "انتصاب محسن پاک‌نژاد به سمت مشاور رئیس جمهور",
@@ -13582,7 +13571,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 1.9106205295191871
+      "age_hours": 2.4956868346532186
     },
     "9322eda4dae382d83ab7cf7d": {
       "title": "صعود قیمت طلا و سکه | طلا به ۲۶.۸ میلیون تومان رسید؛ سکه ۲۷۲.۲ میلیون شد | دلار عقب نشست",
@@ -13611,7 +13600,7 @@
       "local_score": 13,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.925620529519187
+      "age_hours": 2.5106868346532187
     },
     "2264f3d3beeb7e170faec145": {
       "title": "چمران: کالاهای طرح «تورم صفر» به ۱۵ قلم افزایش می‌یابد",
@@ -13640,7 +13629,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 1.9567316406302981
+      "age_hours": 2.54179794576433
     },
     "3fe242718771cef2e70f5ec4": {
       "title": "رئیس سابق سرویس اطلاعاتی آلمان، به اتهام خیانت بازداشت شد/ تلگراف: در بازرسی از خانه «آگوست هانینگ»، اسناد دارای طبقه‌بندی «فوق‌ محرمانه» پیدا شده که اساساً نباید در اختیار وی باشد/ او به مدت ۱۶ سال اسناد محرمانه دولتی را جمع‌آوری می‌کرده و اطلاعاتی را به یک قدرت خارجی می‌فروخته",
@@ -13671,7 +13660,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 1.9850649739636315
+      "age_hours": 2.570131279097663
     },
     "893d4fd77edf13e215c66d45": {
       "title": "احمد الشرع به عربستان سفر کرد",
@@ -13700,7 +13689,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 2.0078427517414092
+      "age_hours": 2.592909056875441
     },
     "c898afc291ad2205daf6bd55": {
       "title": "واکنش محسن رضایی به ادعاهای بسنت/ تنگه هرمز با تهدید یا فشار باز نخواهد شد/ ایران عقب‌ نشینی نخواهد کرد",
@@ -13758,7 +13747,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 0.9928427517414093
+      "age_hours": 1.5779090568754408
     },
     "25ec5a7bd425d8f65ddf0ba5": {
       "title": "ماجرای شایعه آغاز جنگ و انفجار در فاز یک اندیشه چه بود؟",
@@ -13791,7 +13780,7 @@
       "local_score": 15,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 1.0208983072969648
+      "age_hours": 1.6059646124309963
     },
     "c4d966c0bc3495b50b6ddadb": {
       "title": "گفتگوی آمریکا و چین درباره بازدیدهای متقابل از تأسیسات هسته‌ای",
@@ -13820,7 +13809,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.0664538628525204
+      "age_hours": 1.6515201679865519
     },
     "23d15533212a1902bf5ca8d2": {
       "title": "لاوروف: مناقشه پیرامون ایران تأثیر بسیار منفی بر اقتصاد جهانی دارد",
@@ -13851,7 +13840,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 1.1339538628525203
+      "age_hours": 1.719020167986552
     },
     "8204d003d32288a8bb6dc76b": {
       "title": "دسترسی رایگان به هوش مصنوعی پیشرفته گوگل از جمعه قطع می‌شود",
@@ -13890,7 +13879,7 @@
       "local_score": 15,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.1347871961858538,
+      "age_hours": 1.7198535013198852,
       "permanent_article": true,
       "article_id": "article-7bdb5b7fbb835a4a",
       "image": "https://cdn.fararu.com/thumbnail/YEJ48euVi9Tm/bhAl-NkKMlsJW4dsuA5bBqzvDkyLeeZJR78uiGq-zaXFr068Jeb2Mhl2OcJfVdYHGMbAW2KUlLgWM9ru2k90rSaqsisT6rWNh3ib1GwS40ifrz2mdwIzA2WbhNLCMLm_/%D8%AC%D9%85%DB%8C%D9%86%D8%A7%DB%8C.jpg"
@@ -13922,7 +13911,7 @@
       "local_score": 11,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.1361760850747427
+      "age_hours": 1.7212423902087741
     },
     "b2595f24b7eb576c2d4c0f78": {
       "title": "وزیر اقتصاد: تمام ظرفیت‌های قانونی را برای بازسازی و نوسازی دانشگاه‌های آسیب‌دیده از جنگ به‌کار می‌گیریم",
@@ -13951,7 +13940,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 1.1383983072969648
+      "age_hours": 1.7234646124309965
     },
     "6a465450a3bf0f8484a96087": {
       "title": "ورود 1.6 همت نقدینگی به صندوق های طلا / نقره‌ای‌ها درخشان‌تر از طلا شدند",
@@ -13980,7 +13969,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 1.1622871961858539
+      "age_hours": 1.7473535013198853
     },
     "fc0c7f0866d9f47b32f2b2c2": {
       "title": "عربستان؛ برنده بزرگ جنگ ایران و آمریکا؟ | نشریه فورچن: سعودی‌ها در حال کسب یک درآمد کلان بادآورده‌اند | صادرات نفت عربستان به ۵.۵ میلیون بشکه در روز رسید",
@@ -14013,7 +14002,7 @@
       "local_score": 14,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.234509418408076
+      "age_hours": 1.8195757235421075
     },
     "d3059b8668fcec07b6a1a24a": {
       "title": "احضار سفیر فرانسه به وزارت خارجه",
@@ -14042,7 +14031,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 1.2872871961858539
+      "age_hours": 1.8723535013198853
     },
     "a856e0f386546d74e0133904": {
       "title": "بهترین برند کارفرمایی جهان",
@@ -14073,7 +14062,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.3139538628525205
+      "age_hours": 1.899020167986552
     },
     "ace83417a5e6341aa927cc76": {
       "title": "حمید بورد مهم‌ترین برنامه‌های وزارت نفت را اعلام کرد/ فروش نفت با جدیت در حال پیگیری است",
@@ -14102,7 +14091,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.3703427517414093
+      "age_hours": 1.9554090568754408
     },
     "3d480a61033ccc919bd25204": {
       "title": "رویترز به نقل از معامله‌گران: پالایشگاه‌های مستقل چین خرید نفت خام از عراق و قطر را افزایش داده‌اند تا کاهش عرضه از سوی ایران را جبران کنند/ شرکت‌های بازرگانی قیمت‌های پیشنهادی خود را کاهش داده‌اند تا تقاضا از سوی پالایشگاه‌های چینی را تحریک کنند/ بخش عمده خریدها شامل نفت‌ عراق است که از ارزان‌ترین گریدهای نفتی موجود در خاورمیانه محسوب می‌شود",
@@ -14133,7 +14122,7 @@
       "local_score": 13,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.4025649739636314
+      "age_hours": 1.9876312790976631
     },
     "dad5bce29544bc99d7d64c54": {
       "title": "موضع آمریکا درباره عضویت اوکراین در ناتو",
@@ -14162,7 +14151,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 1.4117316406302982
+      "age_hours": 1.9967979457643297
     },
     "9e47a9c0c92c67b64609aa6d": {
       "title": "طاعون ریوی چیست؟ علائم، راه‌های انتقال، پیشگیری و درمان",
@@ -14193,7 +14182,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.4478427517414092
+      "age_hours": 2.032909056875441
     },
     "df50f01f44c0e126caea8b98": {
       "title": "عملیات تعمیرات اساسی توربین و بویلر نیروگاه پتروشیمی تبریز",
@@ -14222,7 +14211,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.4486760850747427
+      "age_hours": 2.0337423902087743
     },
     "85725227b0a11092de7c06dd": {
       "title": "چطور سوراخ یک مته، یک دریاچه را از روی زمین ناپدید کرد؟ گران‌ترین اشتباه تاریخ حفاری",
@@ -14251,7 +14240,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.5136760850747426
+      "age_hours": 2.0987423902087743
     },
     "cb7e3760b9c2a3c6bc4bfe3c": {
       "title": "ترکیبی که بدن پس از خوردن انار می‌سازد، شاید به درمان نارسایی قلبی کمک کند",
@@ -14280,7 +14269,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.5445094184080759
+      "age_hours": 2.1295757235421076
     },
     "b2c0f47b8c1cbe6d987ba81e": {
       "title": "کره جنوبی گربه سیاه ایران را برد",
@@ -14309,7 +14298,7 @@
       "local_score": 9,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 0.47284275174140933
+      "age_hours": 1.0579090568754408
     },
     "dbf76a9826c0a3edc535b19e": {
       "title": "آغاز اعزام هوایی به عتبات",
@@ -14338,7 +14327,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.48673164063029817
+      "age_hours": 1.0717979457643296
     },
     "6113ad08e274cfea7b153d1e": {
       "title": "درخواست مهم گوترش از ایران و آمریکا",
@@ -14367,7 +14356,7 @@
       "local_score": 11,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.5414538628525204
+      "age_hours": 1.126520167986552
     },
     "e8d62b557897a68703046414": {
       "title": "وقوع رگبار و وزش باد شدید در راه تهران",
@@ -14396,7 +14385,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.567009418408076
+      "age_hours": 1.1520757235421075
     },
     "78134e6b9be72b98e0888d50": {
       "title": "علت بازداشت محمدباقر خرازی چه بود؟/ آخرین وضعیت پرونده او از زبان قوه قضاییه",
@@ -14425,7 +14414,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 0.5736760850747427
+      "age_hours": 1.1587423902087741
     },
     "843a92e17dd80e799e3ecaf2": {
       "title": "مسیرهای جایگزین هرمز؛ چالش خطوطی که بشکه‌های نفتی را دور می‌زند؟",
@@ -14454,7 +14443,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.5953427517414093
+      "age_hours": 1.1804090568754408
     },
     "986330b69578efab6de7cf16": {
       "title": "بحران جدی نفت قبل از بازی با پرسپولیس",
@@ -14483,7 +14472,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.6178427517414093
+      "age_hours": 1.2029090568754408
     },
     "535c600ee1b48143e6cefe7d": {
       "title": "کنیا نخستین مرگ ناشی از ابولا را پس از بازگشت یک شهروند از کنگو تایید کرد؛ چه نکاتی باید دانست",
@@ -14520,7 +14509,7 @@
       "local_score": 9,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 0.6436760850747426
+      "age_hours": 1.2287423902087742
     },
     "b6b21193d5d5ed3da8f5710c": {
       "title": "هزینه عجیب پرسپولیس برای خرید ستاره‌ها: ۲ همت!",
@@ -14549,7 +14538,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.6511760850747427
+      "age_hours": 1.2362423902087742
     },
     "8c703581f1d667745a6d6c72": {
       "title": "آخرین وضعیت ترافیکی در محورهای کندوان و هراز",
@@ -14578,7 +14567,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.6561760850747427
+      "age_hours": 1.2412423902087741
     },
     "591a909d79510eed69db9ddd": {
       "title": "وزیر اقتصاد: کنترل نرخ ارز در دستور کار دولت است",
@@ -14609,7 +14598,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 0.6692316406302982
+      "age_hours": 1.2542979457643297
     },
     "0c645e6ba4d1f85fd4a94c07": {
       "title": "ایران کوتاه نمی‌آید و جنگ فرسایشی شاید سال‌ها طول بکشد",
@@ -14638,7 +14627,7 @@
       "local_score": 11,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.7106205295191871
+      "age_hours": 1.2956868346532187
     },
     "db85c11d1c7083d8d8873856": {
       "title": "وضعیت بازگشت لژیونر ملی‌پوش به لیگ برتر مشخص شد",
@@ -14654,9 +14643,7 @@
       "importance": 19,
       "important": false,
       "important_topics": [],
-      "slider_topics": [
-        "sports"
-      ],
+      "slider_topics": [],
       "ticker_topics": [
         "sports"
       ],
@@ -14673,7 +14660,7 @@
       "local_score": 9,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 0.7283983072969649
+      "age_hours": 1.3134646124309963
     },
     "6851f6ce73b88cdf872b1408": {
       "title": "رئیس سابق جاسوسی آلمان بازداشت شد/ پای اسناد محرمانه ایران در میان است",
@@ -14702,7 +14689,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 0.7511760850747426
+      "age_hours": 1.3362423902087741
     },
     "d74bb3d4ededaa5c30c54431": {
       "title": "برنده نوبل فیزیک ۲۰۲۶ معرفی شد",
@@ -14733,7 +14720,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.7608983072969648
+      "age_hours": 1.3459646124309963
     },
     "831d1883b462d1c7937d9e07": {
       "title": "کنعانی به بازی با صنعت نفت می‌رسد؟",
@@ -14764,7 +14751,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.7811760850747427
+      "age_hours": 1.3662423902087741
     },
     "1ca184ce8b78dfa2e64195a5": {
       "title": "ابهام در تصمیم‌گیری نقل‌وانتقالات استقلال",
@@ -14793,7 +14780,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.847009418408076
+      "age_hours": 1.4320757235421075
     },
     "d9997a3239023a087305c3af": {
       "title": "مرشایمر، نظریه‌پرداز برجسته روابط بین‌الملل: ایران را به نقطه‌ای نرسانیم که به پاسخ «روز قیامت» روی بیاورد/ مشکل این است که تهران توانایی ضربه دوم دارد/ الان فقط یک ناو هواپیمابر در منطقه خلیج فارس داریم، نه خود آن؛ زیرا از ترس غرق شدن جرأت نداریم ناوی را نزدیک کنیم/ ترامپ نمی‌تواند با بلوف ایران را به تسلیم وادارد",
@@ -14824,7 +14811,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 0.8561760850747426
+      "age_hours": 1.441242390208774
     },
     "9d89f59ca93a4bdd91dcf810": {
       "title": "مهاجرانی پیام جدید منتشر کرد+ جزئیات",
@@ -14853,7 +14840,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.8711760850747426
+      "age_hours": 1.4562423902087742
     },
     "53ca4ae00b4077ea5390fa9a": {
       "title": "دست نامرئی آدام اسمیت در اقتصاد مدرن",
@@ -14882,7 +14869,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.8747871961858538
+      "age_hours": 1.4598535013198852
     },
     "3e7b0a522efb58394e392846": {
       "title": "«بارگاه شمس تبریزی» ثبت ملی شد",
@@ -14911,7 +14898,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.8781205295191871
+      "age_hours": 1.4631868346532186
     },
     "6462f44e0dfa3f5a0c9bf5db": {
       "title": "واکنش تیم حقوقی استقلال به پرونده شکایت از آسانی در AFC",
@@ -14940,7 +14927,7 @@
       "local_score": 9,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 0.8783983072969649
+      "age_hours": 1.4634646124309965
     },
     "bebe22c0bb906b4fd33bad24": {
       "title": "رئیس سازمان امور دانشجویان: رأی نهایی ۱۴ پرونده انضباطی دانشجویان در اتفاقات سال گذشته، صادر شد",
@@ -14969,7 +14956,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 0.905620529519187
+      "age_hours": 1.4906868346532185
     },
     "e0405366868f73eefe56cf77": {
       "title": "تغییر ساعت دیدار سپاهان و فجرسپاسی در هفته هشتم لیگ برتر",
@@ -15006,7 +14993,7 @@
       "local_score": 9,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 0.9617316406302981,
+      "age_hours": 1.5467979457643297,
       "permanent_article": true,
       "article_id": "article-455495f7a7a550be",
       "image": "https://cdn.fararu.com/thumbnail/atzu9pUt9Rwd/2cZwu-ZRqka6dw-dQEUIP0HFv8eZx_aW5D7wY13_K9_RYrzfY0LgNQ3HhpMYdU0fHgVkuQbste3pZIPz6iETDrZcF1EewW3D1nPRy2E2FAEtm5i3uRi47jtdMHFvpMug/%D8%B3%D9%BE%D8%A7%D9%87%D8%A7%D9%86.jpg"
@@ -15050,7 +15037,7 @@
       "local_score": 14,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.9697871961858537
+      "age_hours": 1.5548535013198852
     },
     "027965fe481b5646b1cab6ca": {
       "title": "پشت پرده تمدید قرارداد ۴ ساله قلعه‌نویی",
@@ -15079,7 +15066,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 0.9864538628525205
+      "age_hours": 1.571520167986552
     },
     "8941b75bc070e67918a69437": {
       "title": "ببینید/ مواجهه سارق موبایل سیاوش طهمورث با این بازیگر پس از دستگیری",
@@ -15108,7 +15095,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.0031205295191872
+      "age_hours": 1.5881868346532186
     },
     "a040ab3910ad374bf7a86417": {
       "title": "شرط عجیب رونالدو برای بازگشت به تیم ملی",
@@ -15125,13 +15112,9 @@
       "important": false,
       "important_topics": [],
       "slider_topics": [],
-      "ticker_topics": [
-        "sports"
-      ],
-      "breaking": true,
-      "breaking_topics": [
-        "sports"
-      ],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
       "publishable": true,
       "exclude_reason": "",
       "group_id": "local-76d14e4971cb",
@@ -15141,7 +15124,7 @@
       "local_score": 9,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 1.027009418408076
+      "age_hours": 1.6120757235421075
     },
     "10baee2e28364090df49bba1": {
       "title": "هدف بانک مرکزی از عرضه 10 هزار دلار چیست؟",
@@ -15170,7 +15153,7 @@
       "local_score": 14,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.09562052951918708
+      "age_hours": 0.6806868346532186
     },
     "6ad3adffcb69c708c1a18f04": {
       "title": "پلیس بریتانیا: یک مرد ۲۲ ساله در ارتباط با حادثه پایگاه فیرفورد دستگیر شد",
@@ -15199,7 +15182,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 0.12756497396363153
+      "age_hours": 0.712631279097663
     },
     "2b2a2594d0031eda6d6c1f69": {
       "title": "هوش مصنوعی؛ فرصتی برای تحول مدل کسب‌وکار کارگزاری‌ها",
@@ -15238,7 +15221,7 @@
       "local_score": 13,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.17200941840807596,
+      "age_hours": 0.7570757235421075,
       "permanent_article": true,
       "article_id": "article-b6f02cf8eb59feeb",
       "image": "https://media.sedayebourse.ir/d/2026/10/06/4/1091313.jpg"
@@ -15270,7 +15253,7 @@
       "local_score": 11,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.23562052951918708
+      "age_hours": 0.8206868346532186
     },
     "12903a8b350fd10d0c4dfb24": {
       "title": "پیام تسلیت مسعود پزشکیان خطاب به جلال رفیع",
@@ -15307,7 +15290,7 @@
       "local_score": 9,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 0.2517316406302982
+      "age_hours": 0.8367979457643298
     },
     "65d5d529a4fc2be43309cc0a": {
       "title": "ارزش سهام عدالت ۷۴ میلیون تومان شد",
@@ -15338,7 +15321,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.27256497396363155
+      "age_hours": 0.857631279097663
     },
     "a6fd11b5499b73f85f5bb07e": {
       "title": "هشدار به طرفداران سامسونگ/ این گوشی از امروز منسوخ شد",
@@ -15367,7 +15350,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.2892316406302982
+      "age_hours": 0.8742979457643297
     },
     "81e3d68a279c543533e87a61": {
       "title": "«شگامرن» به جمع شرکت‌های بازار دوم فرابورس پیوست",
@@ -15396,7 +15379,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.36728719618585376
+      "age_hours": 0.9523535013198853
     },
     "dc42ee4fb5582b7deb7f0279": {
       "title": "آمریکا ویزای تیم ملی کشتی را صادر کرد",
@@ -15425,7 +15408,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.36812052951918706
+      "age_hours": 0.9531868346532186
     },
     "18cad3bce93c6d4a388ec356": {
       "title": "بازگشت پرقدرت خریداران به بازار سرمایه/ سیمان در بورس کالا داغ شد +فیلم",
@@ -15454,7 +15437,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.38367608507474266
+      "age_hours": 0.9687423902087742
     },
     "8b97f7e934c4977f0e1a578c": {
       "title": "آزمایش هسته ای جدید فرانسه/ موشک بالستیک با قابلیت حمل کلاهک هسته‌ای",
@@ -15471,13 +15454,9 @@
       "important": false,
       "important_topics": [],
       "slider_topics": [],
-      "ticker_topics": [
-        "war"
-      ],
-      "breaking": true,
-      "breaking_topics": [
-        "war"
-      ],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
       "publishable": true,
       "exclude_reason": "",
       "group_id": "local-7ec7341f57f2",
@@ -15487,7 +15466,7 @@
       "local_score": 11,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 0.3906205295191871
+      "age_hours": 0.9756868346532186
     },
     "844ff86098853fc0ad43e098": {
       "title": "پیام گوترش به ایران و آمریکا/ به مسیر دیپلماسی بازگردید و به جنگ پایان دهید",
@@ -15516,7 +15495,7 @@
       "local_score": 11,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.44450941840807595
+      "age_hours": 1.0295757235421075
     },
     "26ee3def3f03c5c253b99748": {
       "title": "رویترز: ذخایر نفتی کشورهای غربی تا حد زیادی تخلیه شده‌اند/ بدون خروج روزانه ۱۰ تا ۱۴ میلیون بشکه‌ نفت از خاورمیانه، سناریوی رسیدن قیمت نفت به ۲۰۰ دلار مطرح است/ چین در ماه‌های خرداد و اردیبهشت مانند یک «ریه» برای بازار نفت عمل کرد، زیرا توانست از ذخایر خود برای ادامه فعالیت سیستم پالایشی استفاده کند",
@@ -15547,7 +15526,657 @@
       "local_score": 13,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.6036760850747427
+      "age_hours": 1.1887423902087741
+    },
+    "fe9c8c37c0076c1fcd11f57d": {
+      "title": "محسن پاک‌نژاد مشاور رئیس جمهور شد",
+      "summary": "رئیس جمهور با صدور حکمی مهندس پاک‌نژاد وزیر سابق نفت را به عنوان مشاور خود منصوب کرد. پست محسن پاک‌نژاد مشاور رئیس جمهور شد اولین بار در تجارت نیوز ظاهر شد.",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-06T20:06:14+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 9
+      },
+      "importance": 9,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-c1b57b9a8eb0",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.0929090568754408
+    },
+    "ee4b04366df590eec76892e4": {
+      "title": "کریس مورفی، سناتور دموکرات: پنتاگون در جریان سفر من به خاورمیانه، از دسترسی‌ام به یک پایگاه نظامی مهم آمریکا در قطر جلوگیری کرد/ این اقدام بخشی از تلاش دولت برای پنهان کردن پیامدهای جنگ علیه ایران است",
+      "summary": "کریس مورفی می‌گوید پنتاگون اجازه دسترسی او به پایگاهی در قطر که در جریان جنگ به سبب حملات ایران آسیب دیده را نداده است.",
+      "source": "انتخاب",
+      "published": "2026-10-06T20:05:05+03:30",
+      "topics": [
+        "war"
+      ],
+      "topic_scores": {
+        "war": 14
+      },
+      "importance": 14,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-f9103ebc82c9",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.11207572354210747
+    },
+    "d143d5cba7c061d6dd500f96": {
+      "title": "تشدید نارضایتی آمریکایی‌ها از عملکرد ترامپ/ آیا عددها بر علیه رئیس‌جمهور آمریکا به زبان آمده‌اند؟",
+      "summary": "نتایج نظرسنجی مشترک آسوشیتدپرس و مرکز تحقیقات افکار عمومی آمریکا از تشدید نارضایتی آمریکایی‌ها از عملکرد ترامپ در اقتصاد، هزینه‌های زندگی و نحوه مواجهه با ایران خبر می‌دهد.",
+      "source": "دنیای اقتصاد",
+      "published": "2026-10-06T20:02:16+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 9
+      },
+      "importance": 9,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-59c4a255867e",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.1590201679865519
+    },
+    "1779db2acf441e24fdd877fb": {
+      "title": "نوسان ۱۵ هزار تومانی قیمت تتر | بیت‌کوین در کمین ۸۷ هزار دلار | بازار کریپتو ۲.۹۳ تریلیون دلاری شد",
+      "summary": "اقتصادنیوز: بازار رمزارزها امروز سه‌شنبه با رشد ارزش کل بازار همراه شد؛ تتر پس از نوسان بین ۲۵۴ تا ۲۶۹ هزار تومان به مرز ۲۷۰ هزار تومان نزدیک شد و بیت‌کوین نیز با بازگشت از محدوده ۸۵ هزار دلار وارد کانال ۸۶ هزار دلار شد و حالا چشم به فتح کانال ۸۷ هزار دلاری دارد.",
+      "source": "اقتصادنیوز",
+      "published": "2026-10-06T20:00:54+03:30",
+      "topics": [
+        "currency-gold"
+      ],
+      "topic_scores": {
+        "currency-gold": 20
+      },
+      "importance": 20,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-4d05825b0e2e",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 13,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.1817979457643297
+    },
+    "46487042623d0b600f1f8135": {
+      "title": "پزشکیان و پوتین جمعه با یکدیگر دیدار می‌کنند",
+      "summary": "یوری اوشاکوف، دستیار رئیس‌جمهور روسیه اعلام کرد که ولادیمیر پوتین، رئیس‌جمهور این کشور در جریان سفر خود به ترکمنستان برای شرکت در نشست سران کشورهای مستقل مشترک‌المنافع، روز جمعه نهم اکتبر با مسعود پزشکیان همتای ایرانی خود به صورت دوجانبه دیدار خواهد داشت.",
+      "source": "انتخاب",
+      "published": "2026-10-06T19:59:48+03:30",
+      "topics": [
+        "health"
+      ],
+      "topic_scores": {
+        "health": 17
+      },
+      "importance": 17,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-21c80953c3b2",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.20013127909766304
+    },
+    "79cc20bc4ba7a3488a039611": {
+      "title": "تاثیر اجرای نرخ سوم بنزین بر الگوی مصرف سوخت/ میزات مصرف بنزین چه تغییری کرد؟",
+      "summary": "اقتصادنیوز: مدیرعامل شرکت ملی پالایش و پخش فرآورده‌های نفتی ایران تاکید کرد: بنابراین اگر سوخت یارانه‌ای منحرف شود، این منابع از جیب مردم خارج و نصیب فرد سوءاستفاده‌کننده می‌شود.",
+      "source": "اقتصادنیوز",
+      "published": "2026-10-06T19:58:13+03:30",
+      "topics": [
+        "economy",
+        "auto"
+      ],
+      "topic_scores": {
+        "economy": 15,
+        "auto": 15
+      },
+      "importance": 15,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-4492a86f3e7b",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 10,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.22652016798655192
+    },
+    "910ab88356bfa67f2315d340": {
+      "title": "بررسی جدید: داروی آزمایشی سرطان ممکن است مکانیزم متفاوتی داشته باشد؛ پیامدها برای پژوهش‌های بالینی",
+      "summary": "خلاصه سریع برای خواننده یک مطالعه بین‌المللی به سرپرستی دانشگاه سیدنی نشان می‌دهد که یک داروی ضدسرطان در حال آزمایش ممکن است برخلاف تصور اولیه عمل کند. این یافته‌ها سؤال‌هایی درباره صحت فرضیات مکانیکی پشت طراحی برخی کارآزمایی‌ها ایجاد می‌کند و می‌تواند تأثیر بر انتخاب بیماران و تحلیل نتایج داشته باش",
+      "source": "پزشک سایت",
+      "published": "2026-10-06T19:58:05+03:30",
+      "topics": [
+        "science-life",
+        "health"
+      ],
+      "topic_scores": {
+        "health": 18,
+        "science-life": 20
+      },
+      "importance": 20,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-a9fe996910c0",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 8,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.22874239020877415
+    },
+    "3400cced55c64b94974ab4da": {
+      "title": "بی خبری مسئولان فدراسیون تکواندو از ابطال انتخابات",
+      "summary": "بر اساس رأی شعبه ۴۵ دیوان عدالت اداری، انتخابات فدراسیون تکواندو ابطال شد. پست بی خبری مسئولان فدراسیون تکواندو از ابطال انتخابات اولین بار در تجارت نیوز ظاهر شد.",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-06T19:56:59+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 4
+      },
+      "importance": 4,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-58275145759e",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.24707572354210747
+    },
+    "408bcd9c28070b11d0fed57c": {
+      "title": "چراغ سبز فیفا به تقلب، دستکاری و پنهان‌کاری",
+      "summary": "تخلف کنگو در استفاده از یک بازیکن غیرمجاز در جریان صعود به جام‌جهانی و اطلاع فیفا از این موضوع، بار دیگر انتقادات را به سمت رئیس فدراسیون بین‌المللی فوتبال نشانه رفته است. پست چراغ سبز فیفا به تقلب، دستکاری و پنهان‌کاری اولین بار در تجارت نیوز ظاهر شد.",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-06T19:53:49+03:30",
+      "topics": [
+        "sports",
+        "currency-gold"
+      ],
+      "topic_scores": {
+        "currency-gold": 9,
+        "sports": 9
+      },
+      "importance": 9,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-1ee7fb8dfdc9",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 0.29985350131988525
+    },
+    "bc7c387e045c2c3c51f51b19": {
+      "title": "مدارس آنلاین خارجی درحال جذب دانش آموزان ایرانی هستند",
+      "summary": "دبیر شورای عالی فضای مجازی گفت:امروز متاسفانه مدارس آنلاین خارجی در تمامی مقاطع در داخل کشور در حال جذب دانش آموزان ایرانی هستند و حتی مدارک رسمی و بین‌المللی ارائه می‌کنند بنابراین احتمالاً در سال‌های آینده ماهیت مدارس و آموزش تغییر خواهد کرد و باید از هم‌اکنون درباره شکل حکمرانی بر دانشگاه‌ها و مد",
+      "source": "فرارو",
+      "published": "2026-10-06T19:49:20+03:30",
+      "topics": [
+        "science-life"
+      ],
+      "topic_scores": {
+        "science-life": 12
+      },
+      "importance": 12,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-290bc7aca6d6",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.3745757235421075
+    },
+    "f673eb249adc83e70caaf8c9": {
+      "title": "روایت عارف از استعفای وزیر نفت/ پاک‌نژاد بدقولی کرد",
+      "summary": "حمید بورد فردی خوشنام و مسلط بر مسائل وزارت نفت است و انتظار داریم با مدیریت او، عملکرد این وزارتخانه جهش کند. پست روایت عارف از استعفای وزیر نفت/ پاک‌نژاد بدقولی کرد اولین بار در تجارت نیوز ظاهر شد.",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-06T19:47:40+03:30",
+      "topics": [
+        "real-estate",
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 9,
+        "real-estate": 9
+      },
+      "importance": 9,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-6968fc1b363c",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.40235350131988523
+    },
+    "07f92baa3f9d6b3473beb030": {
+      "title": "موجران برای حفظ معافیت مالیاتی، قرارداد اجاره را ثبت کنند",
+      "summary": "موجران املاک مسکونی مکلفند قرارداد اجاره املاک و مستغلات را در سامانه ثبت معاملات املاک و مستغلات کشور یا در سامانه الکترونیک ثبت اسناد با رعایت قوانین و مقررات مربوط ثبت کنند. پست موجران برای حفظ معافیت مالیاتی، قرارداد اجاره را ثبت کنند اولین بار در تجارت نیوز ظاهر شد.",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-06T19:44:33+03:30",
+      "topics": [
+        "real-estate"
+      ],
+      "topic_scores": {
+        "real-estate": 17
+      },
+      "importance": 17,
+      "important": true,
+      "important_topics": [
+        "real-estate"
+      ],
+      "slider_topics": [
+        "real-estate"
+      ],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-b6c22daca62b",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.4542979457643297
+    },
+    "86fc12e8c5ffb7e61a33a5c1": {
+      "title": "تصویب کلیات طرح تشکیل صندوق توسعه عدالت آموزشی",
+      "summary": "در جلسه شورای عالی انقلاب فرهنگی با حضور رئیس جمهور، کلیات تشکیل صندوق توسعه عدالت آموزشی به تصویب رسید.",
+      "source": "دنیای اقتصاد",
+      "published": "2026-10-06T19:44:22+03:30",
+      "topics": [
+        "real-estate"
+      ],
+      "topic_scores": {
+        "real-estate": 9
+      },
+      "importance": 9,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-ca0476186189",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.4573535013198853
+    },
+    "6b2d6bd04e1801dc0d1a7c48": {
+      "title": "واکنش عجیب ترامپ به اعتراضات فرانسه",
+      "summary": "اقتصادنیوز: رئیس جمهور آمریکا ادعا کرد: آنچه در فرانسه رخ می‌ دهد، ناشی از مهاجرت گسترده‌ای است که از کنترل خارج شده است.",
+      "source": "اقتصادنیوز",
+      "published": "2026-10-06T19:44:11+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 4
+      },
+      "importance": 4,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-37ffc09bcd96",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.4604090568754408
+    },
+    "8776ee10054faec78274e150": {
+      "title": "هیچ موردی از ابتلا به طاعون در سیبری مشاهده نشده است",
+      "summary": "مقامات روسیه در پاسخ رسمی به درخواست سازمان بهداشت جهانی که توسط کریستین لیندمایر، سخنگوی این سازمان، در نشست خبری ژنو قرائت شد اعلام کردند که هیچ موردی از ابتلا به طاعون در شهر ایرکوتسک روسیه ثبت نشده است.",
+      "source": "فرارو",
+      "published": "2026-10-06T19:42:33+03:30",
+      "topics": [
+        "war"
+      ],
+      "topic_scores": {
+        "war": 12
+      },
+      "importance": 12,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-c9de436a2c74",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.487631279097663
+    },
+    "3f5dc6dc4164a81ebe7754aa": {
+      "title": "تغییر بزرگ در فوتبال آسیا؛ مسیر جدید برای صعود به جام‌جهانی!",
+      "summary": "جلسه آنلاین مدیران لیگ و مسابقات کشورهای آسیایی با حضور معاون دبیرکل کنفدراسیون فوتبال قاره کهن برگزار و طی آن از مسیر جدید برای رسیدن به جام‌جهانی، رونمایی شد. پست تغییر بزرگ در فوتبال آسیا؛ مسیر جدید برای صعود به جام‌جهانی! اولین بار در تجارت نیوز ظاهر شد.",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-06T19:42:25+03:30",
+      "topics": [
+        "sports"
+      ],
+      "topic_scores": {
+        "sports": 19
+      },
+      "importance": 19,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [
+        "sports"
+      ],
+      "ticker_topics": [
+        "sports"
+      ],
+      "breaking": true,
+      "breaking_topics": [
+        "sports"
+      ],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-219006d2a8d2",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 9,
+      "political": false,
+      "breaking_signal": true,
+      "age_hours": 0.48985350131988525
+    },
+    "f029412d35e4904584a04b12": {
+      "title": "پالایشگاه‌های چین خرید نفت از ایران را کاهش دادند",
+      "summary": "به گفته معامله‌گران، هم‌زمان با کاهش جریان نفت ایران، پالایشگاه‌های مستقل چینی خرید نفت عراق را افزایش داده‌اند.",
+      "source": "فرارو",
+      "published": "2026-10-06T19:41:57+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 15
+      },
+      "importance": 15,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-1bfeab1e38fc",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 10,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.497631279097663
+    },
+    "2925f021f3563059ff7495ef": {
+      "title": "الجزیره: رهبران دموکرات، شوخی ترامپ درباره اجازه دادن به ایران برای بمباران لس‌آنجلس و سن‌دیگو را محکوم کردند/ آن‌ها رئیس‌جمهور آمریکا را «آشفته و خطرناک» توصیف کردند",
+      "summary": "رئیس‌جمهور آمریکا، دونالد ترامپ، در یک تجمع انتخاباتی در ایالت نبراسکا، با شوخی درباره اجازه دادن به ایران برای بمباران لس‌آنجلس و سن‌دیگو اظهارنظر کرد.",
+      "source": "انتخاب",
+      "published": "2026-10-06T19:41:14+03:30",
+      "topics": [
+        "war"
+      ],
+      "topic_scores": {
+        "war": 9
+      },
+      "importance": 9,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-75f5b4a2b704",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.5095757235421075
+    },
+    "66f7a379ca7bd486b3183dff": {
+      "title": "مرشایمر: برای تصرف تنگه هرمز به 150 هزار نیرو و 6 ماه جنگ نیاز است/ ایران را به نقطه‌ای نرسانیم که به پاسخ «روز قیامت» روی آورد",
+      "summary": "اقتصادنیوز: مرشایمر احتمال حمله زمینی آمریکا به ایران را جدی ندانست و توضیح داد از حدود ۶۰ هزار نیروی آمریکایی در منطقه، فقط نیروهای واحدهای رزمی برای حمله زمینی قابل استفاده‌ هستند که به برآورد او حداکثر ۷۵۰۰ نفرند؛ شامل دو یگان اعزامی تفنگداران دریایی، بخشی از لشکر ۸۲ هوابرد و نیروهای مستقر در اطر",
+      "source": "اقتصادنیوز",
+      "published": "2026-10-06T19:35:15+03:30",
+      "topics": [
+        "war"
+      ],
+      "topic_scores": {
+        "war": 20
+      },
+      "importance": 20,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [
+        "war"
+      ],
+      "breaking": true,
+      "breaking_topics": [
+        "war"
+      ],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-807871eee90a",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 15,
+      "political": false,
+      "breaking_signal": true,
+      "age_hours": 0.6092979457643297
+    },
+    "fa77832c866e8a611cb7b2f6": {
+      "title": "مرگ مشکوک در آزمایشگاه ایرکوتسک روسیه؛ آمریکا از احتمال بروز طاعون ریوی ابراز نگرانی کرد/ وزارت خارجه ایالات متحده: گزارش‌ها را با دقت زیر نظر داریم/ مسکو اطلاعات دقیق را «سریع و شفاف» منتشر کند",
+      "summary": "دولت آمریکا می‌گوید گزارش‌ها درباره مرگ یک کارمند آزمایشگاه در منطقه ایرکوتسک روسیه بر اثر مورد مشکوک به طاعون ریوی را زیر نظر دارد؛ هم‌زمان برخی چهره‌های سیاسی در آمریکا خواستار محدودیت گسترده‌تر سفر در ارتباط با روسیه شده‌اند.",
+      "source": "انتخاب",
+      "published": "2026-10-06T19:30:59+03:30",
+      "topics": [
+        "war",
+        "science-life",
+        "currency-gold"
+      ],
+      "topic_scores": {
+        "currency-gold": 9,
+        "science-life": 9,
+        "war": 9
+      },
+      "importance": 9,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-5def0a812fec",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.6804090568754408
+    },
+    "4276285eaeba391c26d6af07": {
+      "title": "حباب هوش مصنوعی در بازار سرمایه آمریکا | خروج تدریجی سرمایه‌های بزرگ از وال‌استریت | صندوق‌های بازنشستگی جهانی در جست‌و‌جوی تنوع‌بخشی هستند",
+      "summary": "اقتصادنیوز: صندوق‌های بازنشستگی بزرگ جهان با مدیریت صدها میلیارد دلار دارایی، در پی اوج‌گیری نگرانی‌ها از ارزش‌گذاری‌های حبابی و تمرکز بی‌سابقه بازار بر سهام شرکت‌های فعال در حوزه هوش مصنوعی، سرمایه‌گذاری‌های خود را در بورس ایالات متحده کاهش داده‌اند.",
+      "source": "اقتصادنیوز",
+      "published": "2026-10-06T19:30:00+03:30",
+      "topics": [
+        "markets",
+        "currency-gold",
+        "ai"
+      ],
+      "topic_scores": {
+        "markets": 20,
+        "currency-gold": 20,
+        "ai": 20
+      },
+      "importance": 20,
+      "important": true,
+      "important_topics": [
+        "markets",
+        "currency-gold",
+        "ai"
+      ],
+      "slider_topics": [
+        "markets",
+        "currency-gold",
+        "ai"
+      ],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-a051b6a1d760",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 17,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.6967979457643297,
+      "permanent_article": true,
+      "article_id": "article-a051b6a1d760d675",
+      "image": "https://cdn.eghtesadnews.com/thumbnail/sSfV536V8OmK/MFNoOaYJ64twjsV2-ghnB_4MYgVJ--R7FH1MjFKf9m8eYRZvi7hf4fTHcH84-uw8oSETqxT9NJDImYUo-lr-3YjL8QmwZ6nz91Zbgw4NOqk6TyXSbfe8Sh27Ot8HNW4sA1e4hESzQoxXxNN_xssWNMyUNr4JORwn3ZJu7l3uJp6GKdN8BOeZdNGssuYq_ZXE/%D8%B5%D9%86%D8%AF%D9%88%D9%82+%D9%87%D8%A7%DB%8C+%D8%A8%D8%A7%D8%B2%D9%86%D8%B4%D8%B3%D8%AA%DA%AF%DB%8C.jpg"
     }
   },
   "groups": {
@@ -16757,8 +17386,8 @@
     "local-5d5e328e7ab8": {
       "representative_id": "f511bc9f56cde628eb2426f0"
     },
-    "local-b292cb22cb58": {
-      "representative_id": "b1053591dcc02e0db21f013e"
+    "local-a9fe996910c0": {
+      "representative_id": "910ab88356bfa67f2315d340"
     },
     "local-3dd009542eda": {
       "representative_id": "b984a2786d985576542e12ba"
@@ -16978,6 +17607,66 @@
     },
     "local-4bc869aca4a7": {
       "representative_id": "26ee3def3f03c5c253b99748"
+    },
+    "local-c1b57b9a8eb0": {
+      "representative_id": "fe9c8c37c0076c1fcd11f57d"
+    },
+    "local-f9103ebc82c9": {
+      "representative_id": "ee4b04366df590eec76892e4"
+    },
+    "local-59c4a255867e": {
+      "representative_id": "d143d5cba7c061d6dd500f96"
+    },
+    "local-4d05825b0e2e": {
+      "representative_id": "1779db2acf441e24fdd877fb"
+    },
+    "local-21c80953c3b2": {
+      "representative_id": "46487042623d0b600f1f8135"
+    },
+    "local-4492a86f3e7b": {
+      "representative_id": "79cc20bc4ba7a3488a039611"
+    },
+    "local-58275145759e": {
+      "representative_id": "3400cced55c64b94974ab4da"
+    },
+    "local-1ee7fb8dfdc9": {
+      "representative_id": "408bcd9c28070b11d0fed57c"
+    },
+    "local-290bc7aca6d6": {
+      "representative_id": "bc7c387e045c2c3c51f51b19"
+    },
+    "local-6968fc1b363c": {
+      "representative_id": "f673eb249adc83e70caaf8c9"
+    },
+    "local-b6c22daca62b": {
+      "representative_id": "07f92baa3f9d6b3473beb030"
+    },
+    "local-ca0476186189": {
+      "representative_id": "86fc12e8c5ffb7e61a33a5c1"
+    },
+    "local-37ffc09bcd96": {
+      "representative_id": "6b2d6bd04e1801dc0d1a7c48"
+    },
+    "local-c9de436a2c74": {
+      "representative_id": "8776ee10054faec78274e150"
+    },
+    "local-219006d2a8d2": {
+      "representative_id": "3f5dc6dc4164a81ebe7754aa"
+    },
+    "local-1bfeab1e38fc": {
+      "representative_id": "f029412d35e4904584a04b12"
+    },
+    "local-75f5b4a2b704": {
+      "representative_id": "2925f021f3563059ff7495ef"
+    },
+    "local-807871eee90a": {
+      "representative_id": "66f7a379ca7bd486b3183dff"
+    },
+    "local-5def0a812fec": {
+      "representative_id": "fa77832c866e8a611cb7b2f6"
+    },
+    "local-a051b6a1d760": {
+      "representative_id": "4276285eaeba391c26d6af07"
     }
   },
   "usage": {
