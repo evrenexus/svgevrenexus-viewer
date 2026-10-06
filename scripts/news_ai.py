@@ -581,8 +581,43 @@ def generate_permanent_articles(all_news, ai, key):
 گروه‌های مهم جدید:
 """ + json.dumps(candidates, ensure_ascii=False)
 
-    result = call_gemini(prompt, key)
-    rows = result.get("articles", []) if isinstance(result, dict) else []
+    try:
+        result = call_gemini(prompt, key)
+        rows = result.get("articles", []) if isinstance(result, dict) else []
+    except Exception as exc:
+        print(f"Permanent article Gemini unavailable; using local article fallback: {exc}")
+        rows = []
+        for cand in candidates:
+            srcs = cand.get("sources", [])
+            if not srcs:
+                continue
+            lead = srcs[0]
+            title = str(lead.get("title", "") or "").strip()
+            summary = str(lead.get("summary", "") or "").strip()
+            body = str(lead.get("content", "") or "").strip()
+            if not title:
+                continue
+            if not summary:
+                summary = body[:280]
+            paragraphs = []
+            if summary:
+                paragraphs.append("<p>" + html.escape(summary) + "</p>")
+            if body:
+                clean = re.sub(r"<[^>]+>", " ", body)
+                clean = re.sub(r"\\s+", " ", clean).strip()
+                if clean and clean != summary:
+                    paragraphs.append("<p>" + html.escape(clean[:1800]) + "</p>")
+            rows.append({
+                "action": "create",
+                "article_id": "article-" + hashlib.sha1(normalize_title(title).encode("utf-8")).hexdigest()[:16],
+                "group_id": str(cand.get("group_id", "")),
+                "category": (cand.get("topics") or ["economy"])[0] if isinstance(cand.get("topics"), list) else "economy",
+                "title": title,
+                "summary": summary[:300],
+                "content": "".join(paragraphs) or "<p>اطلاعات کافی برای تهیه این مطلب در دسترس نیست.</p>",
+                "image_query": title,
+                "source_ids": [str(s.get("id", "")) for s in srcs if s.get("id")]
+            })
     changed = 0
     for row in rows:
         if not isinstance(row, dict) or row.get("action") == "skip":
@@ -856,10 +891,9 @@ def main():
     ai["usage"]=usage
     if candidates and successful_batches==0:
         if float(usage.get("quota_block_until_epoch",0) or 0) > time.time():
-            print("Gemini quota exhausted; cooldown recorded. No AI analysis was completed in this run, but the workflow will exit successfully.")
-            return
-        print(f"::warning::No news were analyzed successfully. {failed_batches} batch(es) failed.")
-        return
+            print("Gemini quota exhausted; continuing with local editorial/article engine.")
+        else:
+            print(f"::warning::No news were analyzed successfully; continuing with local editorial/article engine.")
 
     if failed_batches:
         print(f"::warning::{failed_batches} batch(es) failed; successful batches were preserved.")
@@ -867,7 +901,7 @@ def main():
     rebuild_groups(ai)
     apply_local_selection(ai)
     save_ai(ai)
-    if successful_batches > 0 and int(usage.get("requests", 0) or 0) < DAILY_REQUEST_BUDGET:
+    if int(usage.get("requests", 0) or 0) < DAILY_REQUEST_BUDGET:
         try:
             article_db = generate_permanent_articles(items, ai, key)
             usage["requests"] = int(usage.get("requests", 0) or 0) + 1
