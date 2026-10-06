@@ -5,7 +5,7 @@ if(document.getElementById("Evrenxus-header")) return;
 
 var css=`
 #Evrenxus-header{width:850px;max-width:100%;height:105px;position:fixed;top:0;left:50%;transform:translateX(-50%);z-index:100000;background:#fff;border-bottom:1px solid #d9dfe3;font-family:Vazir,Tahoma,Arial,sans-serif;box-sizing:border-box;direction:rtl;box-shadow:0 1px 5px rgba(0,0,0,.04)}
-#Evrenxus-header *{box-sizing:border-box}\n
+#Evrenxus-header *{box-sizing:border-box}
 #Evrenxus-header-row1{height:75px;background:#17232d;position:relative;overflow:hidden;direction:rtl}
 .Evrenxus-header-brand{position:absolute;right:0;top:0;width:132px;height:75px;display:flex;align-items:center;justify-content:center;background:#101b23;border-left:1px solid rgba(255,255,255,.08);z-index:5}
 .Evrenxus-brand{color:#fff;text-decoration:none;font-size:14px;font-weight:700}
