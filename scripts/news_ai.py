@@ -20,7 +20,7 @@ ARTICLE_LIMIT = 5
 MIN_ANALYSIS_INTERVAL_SECONDS = 30 * 60
 MAX_RETRIES = 3
 MAX_CONSECUTIVE_BATCH_FAILURES = 2
-POLICY_VERSION = 6
+POLICY_VERSION = 7
 RETRY_DELAYS = [8, 20, 45]
 QUOTA_DEFAULT_COOLDOWN_SECONDS = 6 * 60 * 60
 
@@ -175,6 +175,11 @@ def text_for_filter(x):
 
 def is_political(x):
     text = text_for_filter(x)
+    # پزشکیان is intentionally not blacklisted by name. Gemini must judge
+    # whether the story has real news value instead of suppressing it merely
+    # because he is a political figure.
+    if "پزشکیان" in text:
+        return False
     return any(normalize_title(term) in text for term in POLITICAL_TERMS)
 
 def has_breaking_signal(x):
@@ -366,6 +371,8 @@ def normalize_result(src, row):
     slider_topics = [t for t in topics if scores.get(t, score) >= 14]
     ticker_topics = [t for t in topics if scores.get(t, score) >= 11]
     publishable = bool(row.get("publishable", True))
+    content_type = str(row.get("content_type", "") or "").strip()[:60]
+    reject_reason = str(row.get("reject_reason", row.get("exclude_reason", "")) or "").strip()[:300]
     return {
         "title": src.get("title",""),
         "summary": src.get("summary",""),
@@ -379,7 +386,9 @@ def normalize_result(src, row):
         "slider_topics": slider_topics if publishable else [],
         "ticker_topics": ticker_topics if publishable else [],
         "publishable": publishable,
-        "exclude_reason": str(row.get("exclude_reason",""))[:300],
+        "exclude_reason": str(row.get("exclude_reason", reject_reason))[:300],
+        "content_type": content_type,
+        "reject_reason": reject_reason,
         "group_id": str(row.get("group_id","")),
         "representative": bool(row.get("representative", True)),
         "reason": str(row.get("reason",""))[:300],
@@ -694,22 +703,29 @@ def main():
                   "published":x.get("published",""),"topics":x.get("topics",[])}
                  for x in batch]
 
-        prompt="""تو سردبیر هوشمند ارشد Evren Nexus هستی.
-برای هر خبر فقط تصمیم‌های ضروری را بده تا خروجی فشرده بماند.
+        prompt="""تو سردبیر ارشد و سخت‌گیر Evren Nexus هستی. هدف، انتخاب «خبر واقعی و ارزشمند» برای یک سایت خبری اقتصادی/فناوری/سلامت/علم/خودرو/ورزش است؛ نه بازنشر هر چیزی که خبرگزاری‌ها منتشر کرده‌اند.
 دسته‌های مجاز: """ + ",".join(TOPICS) + """.
 
-قواعد:
-1) خبرهای چند منبع درباره یک رویداد واقعی را با group_id یکسان گروه‌بندی کن و بهترین گزارش را representative=true کن.
+سیاست تحریریه:
+1) چند گزارش درباره یک رویداد واقعی را با group_id یکسان گروه‌بندی کن و بهترین گزارش را representative=true کن.
 2) فقط دسته‌های واقعاً مرتبط را در topics قرار بده.
-3) importance امتیاز کلی 0 تا 20 است.
-4) topic_scores فقط برای دسته‌های موجود در topics مقدار بده؛ امتیاز هر دسته مستقل است.
-5) publishable=false برای تبلیغات، حاشیه یا محتوای فاقد ارزش خبری واقعی.
-6) صرف اظهارنظر، مصاحبه، پیش‌بینی یا وعده بدون رویداد/تصمیم واقعی معمولاً اهمیت پایین دارد.
-7) اطلاعات را جعل نکن.
-8) JSON فقط و بدون توضیح اضافی.
+3) importance امتیاز کلی 0 تا 20 است و باید ارزش خبری واقعی را بسنجد، نه صرفاً وجود کلمات کلیدی.
+4) publishable=false برای تبلیغات، رپورتاژ، حاشیه، شایعه، کلیک‌بیت، محتوای زرد، خبر تکراری یا محتوایی که رویداد/تصمیم واقعی و ارزشمند ندارد.
+5) اظهارنظر، مصاحبه، سخنرانی، وعده، تهدید، پیش‌بینی، تحلیل، تفسیر، «پشت پرده»، «کارشناس می‌گوید»، «مقام اعلام کرد» و حرف‌های مشابه را اگر خودِ آن حرف یک رویداد یا تصمیم مهم و قابل‌سنجش نیست، publishable=false کن.
+6) خبرهایی که فقط درباره زندگی شخصی، ظاهر، لباس، سفر، زمین خوردن، خانواده، رفتار روزمره یا حاشیه یک سیاستمدار/مقام نظامی هستند publishable=false.
+7) صرف اینکه فرد «نماینده مجلس»، «وزیر»، «مقام دولتی»، «مقام نظامی»، «ژنرال»، «فرمانده»، «سناتور» یا سیاستمدار است، دلیل انتشار نیست. اظهارات معمولی این افراد را حذف کن.
+8) اظهارات و مصاحبه‌های مقامات نظامی داخلی و خارجی را، وقتی صرفاً حرف/موضع‌گیری/تهدید/تحلیل است و رویداد واقعی جدیدی پشت آن نیست، حذف کن.
+9) اظهارات نمایندگان مجلس و چهره‌های سیاسی را اگر فقط نظر، واکنش، انتقاد، وعده یا موضع‌گیری است حذف کن.
+10) در موضوع جنگ نیز تحلیل روانی/سیاسی، تهدید لفظی و «آرایش جنگی» را حذف کن؛ اما حمله واقعی، شلیک/اصابت موشک، عملیات نظامی واقعی، انفجار مهم، تلفات واقعی یا تصمیم اجرایی با اثر جدی را می‌توان publishable=true کرد.
+11) پزشکیان استثناست: خبر را فقط به خاطر نام «پزشکیان» حذف نکن. درباره او هم همان معیار ارزش خبری را اعمال کن؛ اگر رویداد واقعی و مهم باشد منتشر شود.
+12) خبر اقتصادی، بازار، ارز و طلا، مسکن، فناوری، هوش مصنوعی، پزشکی و سلامت، خودرو، علم، ورزش و سایر دسته‌های مجاز را بر اساس اثر و اهمیت واقعی ارزیابی کن.
+13) اطلاعات را جعل نکن و از متن ورودی چیزی اضافه نکن.
+14) content_type را یکی از این مقادیر کوتاه انتخاب کن: real_event, economic_news, market_news, technology_news, health_news, science_news, sports_news, auto_news, military_event, political_statement, military_statement, parliamentary_statement, commentary, personal_fluff, advertising, rumor, duplicate, other.
+15) اگر publishable=false است، reject_reason کوتاه و مشخص بنویس.
+16) JSON فقط و بدون توضیح اضافی.
 
 ساختار:
-{"items":[{"id":"...","topics":["economy"],"importance":0,"topic_scores":{"economy":0},"publishable":true,"group_id":"...","representative":true,"reason":"کوتاه"}],"groups":[{"group_id":"...","representative_id":"..."}]}
+{"items":[{"id":"...","topics":["economy"],"importance":0,"topic_scores":{"economy":0},"publishable":true,"content_type":"economic_news","reject_reason":"","group_id":"...","representative":true,"reason":"کوتاه"}],"groups":[{"group_id":"...","representative_id":"..."}]}
 
 خبرهای نامزد:
 """ + json.dumps(payload,ensure_ascii=False) + """
