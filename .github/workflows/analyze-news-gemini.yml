@@ -10,10 +10,6 @@ on:
 permissions:
   contents: write
 
-concurrency:
-  group: data-writes
-  cancel-in-progress: false
-
 jobs:
   analyze:
     name: Analyze news with Gemini
