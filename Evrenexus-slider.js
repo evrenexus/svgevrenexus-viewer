@@ -26,7 +26,7 @@ host.outerHTML='<div id="Evrenxus-slider"><div id="Evrenxus-slides"></div><butto
 var slider=document.getElementById("Evrenxus-slider"),slidesContainer=document.getElementById("Evrenxus-slides"),dotsContainer=document.getElementById("Evrenxus-slider-dots"),current=0;
 function proxy(v){return v?"https://images.weserv.nl/?url="+encodeURIComponent(v)+"&w=1200&q=88&output=webp":""}
 function render(items,aiForFn){
-items=items.slice(0,5);if(!items.length){slider.style.display="none";return}
+items=items.slice(0,4);if(!items.length){slider.style.display="none";return}
 items.forEach(function(x,i){
 var slide=document.createElement("div");slide.className="Evrenxus-slide"+(i===0?" active":"");
 var a=document.createElement("a");var es=(window.EVREN_EDITORIAL||{})[x.id]||{},aix=aiForFn(x),edited=es.edited===true,data=Object.assign({},x);if(edited){if(es.title!==undefined)data.title=es.title;if(es.image!==undefined)data.image=es.image}if(!data.image&&aix&&aix.image)data.image=aix.image;var permanentId=(aix&&aix.article_id)?String(aix.article_id):"";var internal=!!permanentId;if(permanentId){a.href="./article.html?id="+encodeURIComponent(permanentId)}else{internal=es.published===true&&data.content;a.href=internal?"./news-article.html?id="+encodeURIComponent(x.id):"./viewer.html?url="+encodeURIComponent(x.url)}if(!internal){a.target="_blank";a.rel="noopener noreferrer"}
@@ -55,15 +55,17 @@ return x&&x.title&&x.published&&x.url;
 });
 var items=all.filter(function(x){
 var s=edFor(x),a=aiFor(x);
-if(s.deleted===true||a.political===true||s.ai_political===true||a.publishable===false)return false;
-var topics=Array.isArray(a.slider_topics)?a.slider_topics:[];
+if(s.deleted===true||a.auto_publishable===false||a.publishable===false||a.political===true||s.ai_political===true||a.auto_political===true)return false;
+var text=((x.title||"")+" "+(x.summary||"")).replace(/\u200c/g," ").toLowerCase();
+var bad=["انتخابات","انتخاباتی","مجلس","نماینده مجلس","پارلمان","سناتور","رئیس جمهور","رییس جمهور","وزیر","سیاستمدار","دیپلمات","مقام سیاسی","مقام دولتی","اعتراض","اعتراضات","جنبش اعتراضی","تظاهرات","بازداشت","وثیقه","قوه قضائیه","قوه قضاییه","دادگاه","دادسرا","دادستان","زندانی سیاسی","رئیس سازمان زندان","سازمان زندان ها","سازمان زندان‌ها","اظهارات","سخنان","تهدید","مذاکرات سیاسی","موضع گیری","موضع‌گیری"];
+if(a.auto_publishable!==true&&a.publishable!==true&&bad.some(function(k){return text.indexOf(k.toLowerCase())!==-1}))return false;
+var important=s.manual_important===true||s.auto_important===true||a.important===true;
+if(!important)return false;
 var importantTopics=Array.isArray(a.important_topics)?a.important_topics:[];
-var selected=s.manual_slider===true||s.auto_slider===true||topics.length>0||a.important===true||importantTopics.length>0;
-if(!selected)return false;
 var chosenTopic=s.category||x.category||topic;
 var imageAvailable=!!(x.image||(a&&a.image)||(s&&s.image));
 if(!imageAvailable)return false;
-return topic==="all"||topics.indexOf(topic)!==-1||importantTopics.indexOf(topic)!==-1||chosenTopic===topic;
+return topic==="all"||importantTopics.indexOf(topic)!==-1||chosenTopic===topic;
 });
 items.sort(function(a,b){return new Date(b.published)-new Date(a.published)});
 
