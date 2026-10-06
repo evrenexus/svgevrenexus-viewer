@@ -54,7 +54,7 @@ var c=document.createElement("div");c.className=important?"important-content":"c
 if(data.summary){var s=document.createElement("div");s.className=important?"important-summary":"summary";s.textContent=data.summary;c.appendChild(s)}
 var m=document.createElement("div");m.className=important?"important-meta":"meta";var d=safeDate(x.published);m.textContent=(x.source||"")+" • "+(d?d.toLocaleString("fa-IR",{dateStyle:"short",timeStyle:"short"}):"تاریخ نامعتبر");c.appendChild(m);a.appendChild(c);return a}
 function render(items){list.innerHTML="";importantList.innerHTML="";
-var important=(items._important||[]).slice(0,4),breaking=(items._important||[]).slice(0,4);
+var important=(items._important||[]).slice(0,4),breaking=(items._important||[]).slice(0,4);window.EVREN_IMPORTANT_ITEMS=important.slice();
 if(!items.length){list.innerHTML='<div class="error">فعلاً مطلبی در این موضوع پیدا نشد.</div>';importantList.innerHTML='<div class="error">فعلاً مطلب مهمی در این موضوع پیدا نشد.</div>';renderBreaking([]);return}
 renderBreaking((items._important||[]).slice(0,4));
 if(important.length){important.forEach(function(x){var el=makeItem(x,true);if(el)importantList.appendChild(el)})}else{importantList.innerHTML='<div class="error">فعلاً مطلب مهمی در این موضوع انتخاب نشده است.</div>'}
