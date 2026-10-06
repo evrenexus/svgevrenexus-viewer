@@ -20,7 +20,7 @@ input,select,button{font:inherit;padding:8px;border:1px solid #ccc;border-radius
 <div class="bar">
 <input id="q" placeholder="جستجوی عنوان..." style="min-width:260px">
 <select id="cat"><option value="">همه دسته‌های فعلی</option></select>
-<select id="filter"><option value="all">همه</option><option value="important">مهم‌ها</option><option value="slider">اسلایدرها</option><option value="republish">بازنشرها</option><option value="deleted">حذف‌شده‌ها</option><option value="unselected">انتخاب‌نشده‌ها</option></select>
+<select id="filter"><option value="all">همه</option><option value="important">مهم‌ها</option><option value="breaking">خبرهای فوری</option><option value="slider">اسلایدرها</option><option value="republish">بازنشرها</option><option value="deleted">حذف‌شده‌ها</option><option value="unselected">انتخاب‌نشده‌ها</option></select>
 <button onclick="load()">بارگذاری</button>
 <span id="status" class="status"></span></div>
 <div style="background:#fff;padding:10px;border:1px solid #ddd;border-radius:8px;margin-bottom:12px;font-size:12px"><b>ذخیره مستقیم:</b> برای ثبت واقعی تغییرات، GitHub Token لازم است. توکن فقط در همین نشست مرورگر نگه‌داری می‌شود.<br><input id="token" type="password" placeholder="GitHub Token" style="width:100%;box-sizing:border-box;margin-top:7px"><button onclick="clearToken()" style="margin-top:7px">پاک کردن توکن</button></div><textarea id="output" class="output" readonly placeholder="گزارش ذخیره اینجا نمایش داده می‌شود."></textarea>
@@ -50,7 +50,7 @@ async function load(){
 function state(id){return choices[id]||{}}
 function cleanIfEmpty(id){
   const s=choices[id]; if(!s)return;
-  if(!s.important&&!s.slider&&!s.republish&&!s.reject&&!s.deleted&&!s.category&&!s.edited&&!s.published) delete choices[id];
+  if(!s.manual_important&&!s.manual_slider&&!s.manual_breaking&&!s.republish&&!s.reject&&!s.deleted&&!s.category&&!s.edited&&!s.published) delete choices[id];
 }
 function setChoice(id,key,val){
   choices[id]=choices[id]||{};
@@ -98,8 +98,9 @@ function render(){
   const q=$('q').value.trim().toLowerCase(),cat=$('cat').value,f=$('filter').value;
   let arr=news.filter(n=>(!q||(n.title||'').toLowerCase().includes(q))&&(!cat||n.category===cat));
   arr=arr.filter(n=>{const s=state(n.id);
-    return f==='all'||(f==='important'&&s.important)||(f==='slider'&&s.slider)||(f==='republish'&&s.republish)||(f==='deleted'&&s.deleted)||
-      (f==='unselected'&&!s.important&&!s.slider&&!s.republish&&!s.reject&&!s.deleted&&!s.category&&!s.edited&&!s.published);
+    return f==='all'||(f==='important'&&(s.manual_important===true||s.auto_important===true))||(f==='breaking'&&(s.manual_breaking===true||s.auto_breaking===true))||
+      (f==='slider'&&(s.manual_slider===true||s.auto_slider===true))||(f==='republish'&&s.republish)||(f==='deleted'&&s.deleted)||
+      (f==='unselected'&&!s.manual_important&&!s.manual_slider&&!s.manual_breaking&&!s.republish&&!s.reject&&!s.deleted&&!s.category&&!s.edited&&!s.published);
   });
   const list=$('list');list.innerHTML='';if(!arr.length){list.innerHTML='<div class="empty">خبری پیدا نشد.</div>';return;}
   arr.forEach(n=>{
@@ -107,8 +108,10 @@ function render(){
     const title=document.createElement('div');title.className='title';title.textContent=n.title||'بدون عنوان';card.appendChild(title);
     const meta=document.createElement('div');meta.className='meta';meta.textContent=(n.source||'')+' · '+fmt(n.published)+' · دسته فعلی: '+(n.category||'نامشخص')+(s.deleted?' · حذف‌شده':'');card.appendChild(meta);
     const actions=document.createElement('div');actions.className='actions';
-    const important=makeButton('important','⭐ مهم',!!s.important);important.onclick=()=>setChoice(n.id,'important',!state(n.id).important);actions.appendChild(important);
-    const slider=makeButton('slider','🖼 اسلایدر',!!s.slider);slider.onclick=()=>setChoice(n.id,'slider',!state(n.id).slider);actions.appendChild(slider);
+    const aiLabel=document.createElement('span');aiLabel.style.cssText='font-size:11px;color:#666;padding:7px 4px';aiLabel.textContent='AI: '+(s.ai_importance!==undefined?s.ai_importance:'—')+(s.ai_political?' · فیلتر سیاسی':'');actions.appendChild(aiLabel);
+    const important=makeButton('important','⭐ مهم',!!s.manual_important);important.onclick=()=>setChoice(n.id,'manual_important',!state(n.id).manual_important);actions.appendChild(important);
+    const breaking=makeButton('republish','🚨 خبر فوری',!!s.manual_breaking);breaking.onclick=()=>setChoice(n.id,'manual_breaking',!state(n.id).manual_breaking);actions.appendChild(breaking);
+    const slider=makeButton('slider','🖼 اسلایدر',!!s.manual_slider);slider.onclick=()=>setChoice(n.id,'manual_slider',!state(n.id).manual_slider);actions.appendChild(slider);
     const edit=makeButton('edit','✏️ ویرایش',false);edit.addEventListener("click",function(){toggleNewsEditor(n.id);});actions.appendChild(edit);
     const publish=makeButton('publish','📰 انتشار داخلی',!!s.republish);publish.onclick=()=>publishNews(n.id);actions.appendChild(publish);
     const del=makeButton('delete','🗑️ '+(s.deleted?'بازگردانی خبر':'حذف خبر'),!!s.deleted);del.onclick=()=>toggleDelete(n.id);actions.appendChild(del); const saveButton=makeButton('primary','💾 ذخیره',false);saveButton.onclick=()=>saveOne(n.id);actions.appendChild(saveButton);
