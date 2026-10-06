@@ -88,5 +88,6 @@ var breakingItems=items.filter(function(x){var a=aiFor(x),e=edFor(x);return e.de
 items._important=importantItems;items._breaking=breakingItems;items._articles=searchTerm?[]:Object.values(articlesData.items||{}).filter(function(a){var e=(ed.items&&ed.items[a.id])||{};return a&&a.status==="published"&&e.deleted!==true});document.querySelector("#river .section-title").textContent=searchTerm?"نتایج جستجو":"تمامی اخبار";render(items)}).catch(function(){list.innerHTML='<div class="error">دریافت خبرها انجام نشد.</div>';importantList.innerHTML='<div class="error">دریافت خبرها انجام نشد.</div>';renderBreaking([])});
 })();
 </script><script src="https://evrenexus.github.io/svgevrenexus-viewer/Evrenexus-header.js?v=20261005-15"></script>
+<script src="./economic-news.js?v=20261006-1"></script>
 </body>
 </html>
