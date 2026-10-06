@@ -215,38 +215,84 @@ def make_local_result(src,meta):
     }
 
 def apply_local_selection(ai):
-    rows=[(nid,v) for nid,v in ai.get("items",{}).items()
-          if isinstance(v,dict) and v.get("publishable",True)
-          and v.get("representative",True) and not v.get("political",False)]
-    rows.sort(key=lambda kv:(int(kv[1].get("importance",0) or 0),
-                             int(kv[1].get("local_score",0) or 0),
-                             published_ts(kv[1].get("published",""))),reverse=True)
-    for _,v in ai.get("items",{}).items():
-        if not isinstance(v,dict): continue
-        v["important"]=False;v["important_topics"]=[];v["slider_topics"]=[]
-        v["breaking"]=False;v["breaking_topics"]=[];v["ticker_topics"]=[]
+    items=ai.get("items",{}) if isinstance(ai.get("items",{}),dict) else {}
+
+    # Reset automatic editorial flags first.
+    for _,v in items.items():
+        if not isinstance(v,dict):
+            continue
+        v["important"]=False
+        v["important_topics"]=[]
+        v["slider_topics"]=[]
+        v["breaking"]=False
+        v["breaking_topics"]=[]
+        v["ticker_topics"]=[]
         if v.get("political"):
             v["publishable"]=False
             v["exclude_reason"]="political content is excluded"
-    seen=set()
-    for nid,v in rows:
-        if int(v.get("importance",0) or 0)<12: continue
-        gid=v.get("group_id") or nid
-        if gid in seen: continue
-        v["important"]=True;v["important_topics"]=list(v.get("topics") or [])[:3];seen.add(gid)
-        if len(seen)>=4: break
-    seen=set()
-    for nid,v in rows:
-        if int(v.get("importance",0) or 0)<11: continue
-        gid=v.get("group_id") or nid
-        if gid in seen: continue
-        v["slider_topics"]=list(v.get("topics") or [])[:3];seen.add(gid)
-        if len(seen)>=5: break
-    for nid,v in rows:
-        if int(v.get("importance",0) or 0)>=14 and v.get("breaking_signal") and float(v.get("age_hours",99))<=3:
-            v["breaking"]=True;v["breaking_topics"]=list(v.get("topics") or [])[:3]
-            v["ticker_topics"]=v["breaking_topics"]
 
+    # Editorial selection is performed independently for every topic.
+    # This keeps the homepage global while making every topic page local.
+    for topic in TOPICS:
+        candidates=[]
+        for nid,v in items.items():
+            if not isinstance(v,dict):
+                continue
+            if not v.get("publishable",True) or v.get("political",False):
+                continue
+            if not v.get("representative",True):
+                continue
+            if topic not in (v.get("topics") or []):
+                continue
+            score=int((v.get("topic_scores") or {}).get(topic, v.get("importance",0)) or 0)
+            candidates.append((nid,v,score))
+
+        candidates.sort(key=lambda row: (
+            row[2],
+            int(row[1].get("local_score",0) or 0),
+            published_ts(row[1].get("published",""))
+        ), reverse=True)
+
+        seen=set()
+        for nid,v,score in candidates:
+            if score < 12:
+                continue
+            gid=v.get("group_id") or nid
+            if gid in seen:
+                continue
+            v["important_topics"]=list(dict.fromkeys((v.get("important_topics") or [])+[topic]))[:6]
+            v["important"]=True
+            seen.add(gid)
+            if len(seen)>=4:
+                break
+
+        seen=set()
+        for nid,v,score in candidates:
+            if score < 14:
+                continue
+            gid=v.get("group_id") or nid
+            if gid in seen:
+                continue
+            v["slider_topics"]=list(dict.fromkeys((v.get("slider_topics") or [])+[topic]))[:6]
+            seen.add(gid)
+            if len(seen)>=5:
+                break
+
+        seen=set()
+        for nid,v,score in candidates:
+            if score < 14 or not v.get("breaking_signal"):
+                continue
+            if float(v.get("age_hours",99)) > 3:
+                continue
+            gid=v.get("group_id") or nid
+            if gid in seen:
+                continue
+            v["breaking"]=True
+            v["breaking_topics"]=list(dict.fromkeys((v.get("breaking_topics") or [])+[topic]))[:6]
+            v["ticker_topics"]=list(dict.fromkeys((v.get("ticker_topics") or [])+[topic]))[:6]
+            seen.add(gid)
+            if len(seen)>=3:
+                break
 
 def save_ai(ai):
     ai["updated"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
