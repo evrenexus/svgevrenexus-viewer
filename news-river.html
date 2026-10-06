@@ -61,8 +61,7 @@ if(important.length){important.forEach(function(x){var el=makeItem(x,true);if(el
 var latest=items;var pageSize=14,page=1,pagination=document.getElementById("news-pagination"),prevBtn=document.getElementById("news-prev"),nextBtn=document.getElementById("news-next");
 function renderPage(){var total=Math.max(1,Math.ceil(items.length/pageSize));if(page>total)page=total;list.innerHTML="";items.slice((page-1)*pageSize,page*pageSize).forEach(function(x){var el=makeItem(x,false);if(el)list.appendChild(el)});if(pagination){pagination.style.display=total>1?"flex":"none";prevBtn.disabled=page<=1;nextBtn.disabled=page>=total;}
 if(prevBtn)prevBtn.onclick=function(){if(page>1){page--;renderPage();window.scrollTo({top:list.offsetTop-80,behavior:"smooth"})}};
-if(nextBtn)nextBtn.onclick=function(){if(page<Math.ceil(items.length/pageSize)){page++;renderPage();window.scrollTo({top:list.offsetTop-80,behavior:"smooth"})}};
-renderPage()}
+if(nextBtn)nextBtn.onclick=function(){if(page<Math.ceil(items.length/pageSize)){page++;renderPage();window.scrollTo({top:list.offsetTop-80,behavior:"smooth"})}};}
 function goSearch(){var value=searchInput.value.trim();var params=new URLSearchParams(location.search);if(value)params.set("q",value);else params.delete("q");location.search=params.toString()}
 searchButton.addEventListener("click",goSearch);searchInput.addEventListener("keydown",function(e){if(e.key==="Enter")goSearch()});
 function normalizeEditorial(j){
@@ -111,4 +110,4 @@ render(items);
 </script>
 <script src="https://evrenexus.github.io/svgevrenexus-viewer/Evrenexus-header.js?v=20261005-15"></script>
 </body>
-<style>
+</html>
