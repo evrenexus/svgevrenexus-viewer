@@ -17,6 +17,8 @@
 
 @media(max-width:700px){#page{width:100%;max-width:100%;box-sizing:border-box;padding:112px 8px 20px;display:block;overflow-x:hidden}#content{width:100%;max-width:100%;min-width:0;flex:0 0 100%;box-sizing:border-box;overflow:hidden}#sidebar-host{display:none}}
 
+
+.pagination-nav{display:flex;justify-content:center;align-items:center;gap:8px;margin:18px 0 8px;direction:rtl}.pagination-nav button{border:1px solid #dfe2e4;background:#fff;color:#202c35;padding:7px 14px;cursor:pointer;font:10px Vazir,Tahoma,Arial}.pagination-nav button:disabled{opacity:.4;cursor:default}.pagination-nav .page-number{font:10px Vazir,Tahoma,Arial;color:#596168;min-width:60px;text-align:center}
 </style>
 </head>
 <body>
@@ -50,9 +52,13 @@ var c=document.createElement("div");c.className=important?"important-content":"c
 if(!important&&x.summary){var s=document.createElement("div");s.className="summary";s.textContent=x.summary;c.appendChild(s)}
 var m=document.createElement("div");m.className=important?"important-meta":"meta";var d=safeDate(x.published);m.textContent=(x.source||"")+" • "+(d?d.toLocaleString("fa-IR",{dateStyle:"short",timeStyle:"short"}):"تاریخ نامعتبر");c.appendChild(m);a.appendChild(c);return a}
 function render(items){list.innerHTML="";importantList.innerHTML="";if(!items.length){list.innerHTML='<div class="error">فعلاً مطلبی در این موضوع پیدا نشد.</div>';importantList.innerHTML='<div class="error">فعلاً مطلبی در این موضوع پیدا نشد.</div>';renderBreaking([]);return}
-var important=(items._important||[]).slice(0,4),breaking=(items._important||[]).slice(0,8),latest=items.slice(0,100);
+var important=(items._important||[]).slice(0,4),breaking=(items._important||[]).slice(0,8),latest=items.slice(0,14);
 renderBreaking(breaking);
-if(important.length){important.forEach(function(x){var el=makeItem(x,true);if(el)importantList.appendChild(el)})}else{importantList.innerHTML='<div class="error">فعلاً خبر مهمی انتخاب نشده است.</div>'};latest.forEach(function(x){var el=makeItem(x,false);if(el)list.appendChild(el)})}
+if(important.length){important.forEach(function(x){var el=makeItem(x,true);if(el)importantList.appendChild(el)})}else{importantList.innerHTML='<div class="error">فعلاً خبر مهمی انتخاب نشده است.</div>'};var pageSize=14,page=1,pagination=document.getElementById("news-pagination"),prevBtn=document.getElementById("news-prev"),nextBtn=document.getElementById("news-next"),pageNum=document.getElementById("news-page-number");
+function renderPage(){var total=Math.max(1,Math.ceil(latest.length/pageSize));if(page>total)page=total;list.innerHTML="";latest.slice((page-1)*pageSize,page*pageSize).forEach(function(x){var el=makeItem(x,false);if(el)list.appendChild(el)});if(pagination){pagination.style.display=total>1?"flex":"none";pageNum.textContent="صفحه "+page+" از "+total;prevBtn.disabled=page<=1;nextBtn.disabled=page>=total}}
+if(prevBtn)prevBtn.onclick=function(){if(page>1){page--;renderPage();window.scrollTo({top:list.offsetTop-80,behavior:"smooth"})}};
+if(nextBtn)nextBtn.onclick=function(){if(page<Math.ceil(latest.length/pageSize)){page++;renderPage();window.scrollTo({top:list.offsetTop-80,behavior:"smooth"})}};
+renderPage()}
 function goSearch(){var value=searchInput.value.trim();var params=new URLSearchParams(location.search);if(value)params.set("q",value);else params.delete("q");location.search=params.toString()}
 searchButton.addEventListener("click",goSearch);searchInput.addEventListener("keydown",function(e){if(e.key==="Enter")goSearch()});
 function normalizeEditorial(j){
