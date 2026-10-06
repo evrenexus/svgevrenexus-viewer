@@ -235,7 +235,7 @@ def make_local_result(src,meta):
             topic_scores[topic]=base
     else:
         top_score=max(topic_scores.values())
-        topic_scores={t:v for t,v in topic_scores.items() if v>=max(8,top_score*0.60)}
+        topic_scores={t:v for t,v in topic_scores.items() if v>=max(8,top_score*0.85)}
 
     topics=sorted(topic_scores,key=lambda t:(topic_scores[t],t),reverse=True)
     score=max(topic_scores.values()) if topic_scores else base
