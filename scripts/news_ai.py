@@ -508,7 +508,7 @@ def generate_permanent_articles(all_news, ai, key):
     ranked = []
     cutoff = time.time() - RECENT_HOURS * 3600
     for nid, row in ai.get("items", {}).items():
-        if row.get("analysis_mode") != "ai" or not row.get("publishable", True) or row.get("political"):
+        if not row.get("publishable", True) or row.get("political"):
             continue
         if not row.get("representative", True) or not row.get("important"):
             continue
@@ -769,8 +769,15 @@ def main():
     rebuild_groups(ai)
     save_ai(ai)
     if not gemini_allowed:
+        try:
+            article_db = generate_permanent_articles(items, ai, key)
+            attach_permanent_article_links(ai, article_db)
+        except Exception as e:
+            print(f"Local permanent article generation failed: {e}")
+            attach_permanent_article_links(ai, load_json(ARTICLES, {"items": {}}))
+        save_ai(ai)
         write_editorial(ai,load_json(EDITORIAL,{"items":{}}))
-        print("Local editorial engine completed while Gemini was unavailable.")
+        print("Local editorial engine completed while Gemini was unavailable, including permanent-article fallback.")
         return
 
     unresolved=[x for x in recent if ai["items"].get(item_key(x),{}).get("analysis_mode") != "ai"]
