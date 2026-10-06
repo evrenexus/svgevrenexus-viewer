@@ -78,7 +78,7 @@ var tagCounts={};all.slice(0,120).forEach(function(x){(Array.isArray(x.topics)?x
 var items=searchTerm?all.filter(function(x){var hay=((x.title||"")+" "+(x.summary||"")+" "+(x.source||"")).toLowerCase();return hay.indexOf(searchTerm.toLowerCase())!==-1}):all;
 items.sort(function(a,b){return safeDate(b.published)-safeDate(a.published)});
 var importantItems=items.filter(function(x){var a=aiFor(x),e=edFor(x);return e.deleted!==true&&(e.manual_important===true||e.auto_important===true||a.important===true)&&a.political!==true});
-var breakingItems=items.filter(function(x){var a=aiFor(x),e=edFor(x);return e.deleted!==true&&(e.manual_breaking===true||e.auto_breaking===true||a.breaking===true||((a.breaking_topics||[]).length>0))&&a.political!==true});
+var breakingItems=items.filter(function(x){var a=aiFor(x),e=edFor(x);return e.deleted!==true&&(e.manual_breaking===true||e.auto_breaking===true||a.breaking===true||((a.breaking_topics||[]).length>0)||a.important===true||((a.important_topics||[]).length>0))&&a.political!==true});
 items._important=importantItems;items._breaking=breakingItems;items._articles=searchTerm?[]:Object.values(articlesData.items||{}).filter(function(a){var e=(ed.items&&ed.items[a.id])||{};return a&&a.status==="published"&&e.deleted!==true});document.querySelector("#river .section-title").textContent=searchTerm?"نتایج جستجو":"تمامی اخبار";render(items)}).catch(function(){list.innerHTML='<div class="error">دریافت خبرها انجام نشد.</div>';importantList.innerHTML='<div class="error">دریافت خبرها انجام نشد.</div>';renderBreaking([])});
 })();
 </script><script src="https://evrenexus.github.io/svgevrenexus-viewer/Evrenexus-header.js?v=20261005-15"></script>
