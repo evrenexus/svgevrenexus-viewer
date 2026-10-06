@@ -83,7 +83,10 @@ function search(){var v=norm(input.value),b=Number(v);if(!v||!isFinite(b)||b<1||
 button.onclick=search;input.onkeydown=function(e){if(e.key==="Enter"){e.preventDefault();search()}};input.oninput=function(){error.style.display="none"}
 })();
 
-function setActiveTopic(){var p=new URLSearchParams(location.search).get("topic");document.querySelectorAll("#Evrenxus-main-menu a[data-topic]").forEach(function(a){a.classList.toggle("active",a.getAttribute("data-topic")===p)});var home=document.querySelector("#Evrenxus-main-menu a[href=\"https://evrenexus.github.io/svgevrenexus-viewer/\"]");if(home)home.classList.toggle("active",!p);}\nsetActiveTopic();\n\nfunction initTickers(){
+function setActiveTopic(){var p=new URLSearchParams(location.search).get("topic");document.querySelectorAll("#Evrenxus-main-menu a[data-topic]").forEach(function(a){a.classList.toggle("active",a.getAttribute("data-topic")===p)});var home=document.querySelector("#Evrenxus-main-menu a[href=\"https://evrenexus.github.io/svgevrenexus-viewer/\"]");if(home)home.classList.toggle("active",!p);}
+setActiveTopic();
+
+function initTickers(){
 var metal=document.getElementById("Evrenxus-metals-track"),cur=document.getElementById("Evrenxus-currency-track"),crypto=document.getElementById("Evrenxus-crypto-track");
 function stamp(prefix,iso){var n=iso?new Date(iso):new Date(),d=document.getElementById("Evrenxus-"+prefix+"-date"),t=document.getElementById("Evrenxus-"+prefix+"-time");if(!d||!t)return;d.textContent=new Intl.DateTimeFormat("fa-IR-u-ca-persian",{timeZone:"Asia/Tehran",year:"numeric",month:"2-digit",day:"2-digit"}).format(n);t.textContent=new Intl.DateTimeFormat("en-GB",{timeZone:"Asia/Tehran",hour:"2-digit",minute:"2-digit",hour12:false}).format(n)}
 function fmt(v){return v==null?"-":new Intl.NumberFormat("en-US",{maximumFractionDigits:2}).format(Number(v))}
