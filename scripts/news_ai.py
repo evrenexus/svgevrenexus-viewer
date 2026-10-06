@@ -664,6 +664,9 @@ def attach_permanent_article_links(ai, db):
         if aid and row.get("important") and row.get("publishable", True) and not row.get("political"):
             row["permanent_article"] = True
             row["article_id"] = aid
+            article_image = db.get("items", {}).get(aid, {}).get("image", "")
+            if article_image:
+                row["image"] = article_image
         else:
             row.pop("permanent_article", None)
             row.pop("article_id", None)
