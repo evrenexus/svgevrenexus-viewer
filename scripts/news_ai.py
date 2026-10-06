@@ -411,6 +411,12 @@ def write_editorial(ai, old):
         e["ai_importance"]=int(v.get("importance",0) or 0)
         e["ai_political"]=bool(v.get("political",False))
         e["ai_reason"]=str(v.get("reason",""))[:300]
+        if v.get("permanent_article") and v.get("article_id"):
+            e["permanent_article"]=True
+            e["article_id"]=str(v["article_id"])
+        else:
+            e.pop("permanent_article",None)
+            e.pop("article_id",None)
         if v.get("topics"): e["ai_topics"]=v["topics"]
         if v.get("important_topics"): e["ai_important_topics"]=v["important_topics"]
         else: e.pop("ai_important_topics",None)
@@ -434,6 +440,11 @@ def generate_permanent_articles(all_news, ai, key):
         db = {"updated": "", "schema": 1, "items": {}}
     db.setdefault("items", {})
     by_id = {item_key(x): x for x in all_news}
+    by_title = {}
+    for x in all_news:
+        t = normalize_title(x.get("title", ""))
+        if t:
+            by_title[t] = x
     ranked = []
     cutoff = time.time() - RECENT_HOURS * 3600
     for nid, row in ai.get("items", {}).items():
@@ -441,7 +452,7 @@ def generate_permanent_articles(all_news, ai, key):
             continue
         if not row.get("representative", True) or not row.get("important"):
             continue
-        src = by_id.get(nid)
+        src = by_id.get(nid) or by_title.get(normalize_title(row.get("title", "")))
         if src and (published_ts(src.get("published", "")) == 0 or published_ts(src.get("published", "")) >= cutoff):
             ranked.append((int(row.get("importance", 0) or 0), nid, row, src))
     ranked.sort(key=lambda z: (z[0], z[3].get("published", "")), reverse=True)
@@ -456,7 +467,7 @@ def generate_permanent_articles(all_news, ai, key):
         for mid, mr in ai.get("items", {}).items():
             if mr.get("group_id") != gid:
                 continue
-            ms = by_id.get(mid)
+            ms = by_id.get(mid) or by_title.get(normalize_title(mr.get("title", "")))
             if not ms:
                 continue
             members.append({
@@ -558,6 +569,31 @@ def generate_permanent_articles(all_news, ai, key):
     ARTICLES.write_text(json.dumps(db, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Permanent articles changed: {changed}")
     return db
+
+def attach_permanent_article_links(ai, db):
+    """Link AI-selected important stories to their permanent Evren Nexus article."""
+    if not isinstance(db, dict):
+        return
+    items = db.get("items", {}) if isinstance(db.get("items", {}), dict) else {}
+    by_group = {}
+    for aid, article in items.items():
+        if not isinstance(article, dict) or article.get("status") != "published":
+            continue
+        gid = str(article.get("group_id", "") or "")
+        if gid:
+            by_group[gid] = str(aid)
+
+    for _, row in ai.get("items", {}).items():
+        if not isinstance(row, dict):
+            continue
+        aid = by_group.get(str(row.get("group_id", "") or ""))
+        if aid and row.get("important") and row.get("publishable", True) and not row.get("political"):
+            row["permanent_article"] = True
+            row["article_id"] = aid
+        else:
+            row.pop("permanent_article", None)
+            row.pop("article_id", None)
+
 
 def main():
     key = os.environ.get("GEMINI_API_KEY","").strip()
@@ -743,13 +779,19 @@ def main():
     save_ai(ai)
     if successful_batches > 0 and int(usage.get("requests", 0) or 0) < DAILY_REQUEST_BUDGET:
         try:
-            generate_permanent_articles(items, ai, key)
+            article_db = generate_permanent_articles(items, ai, key)
             usage["requests"] = int(usage.get("requests", 0) or 0) + 1
             usage["last_article_generation"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
             ai["usage"] = usage
+            attach_permanent_article_links(ai, article_db)
             save_ai(ai)
         except Exception as e:
             print(f"Permanent article generation failed: {e}")
+            attach_permanent_article_links(ai, load_json(ARTICLES, {"items": {}}))
+            save_ai(ai)
+    else:
+        attach_permanent_article_links(ai, load_json(ARTICLES, {"items": {}}))
+        save_ai(ai)
     write_editorial(ai,load_json(EDITORIAL,{"items":{}}))
     print(f"AI complete: {len(ai['items'])} items | successful batches: {successful_batches} | failed batches: {failed_batches} | daily requests: {int(usage.get('requests',0) or 0)}/{DAILY_REQUEST_BUDGET} | editorial written: {len(ai['items'])}")
 
