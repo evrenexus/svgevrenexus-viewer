@@ -22,14 +22,14 @@
 <body>
 
 <main id="page"><section id="content">
-<div id="Evrenxus-breaking"><div class="Evrenxus-breaking-label"><span id="Evrenxus-live-date"></span><span>&nbsp; | &nbsp;</span><span id="Evrenxus-live-time"></span></div><div class="Evrenxus-breaking-track" id="Evrenxus-breaking-track"><span>در حال دریافت مهم‌ترین اخبار...</span></div></div>
+<div id="Evrenxus-breaking"><div class="Evrenxus-breaking-label">مهم‌ترین اخبار</div><div class="Evrenxus-breaking-track" id="Evrenxus-breaking-track"><span>در حال دریافت مهم‌ترین اخبار...</span></div></div>
 <div class="news-search"><input id="newsSearchInput" type="search" placeholder="جستجو در اخبار..." autocomplete="off"><button id="newsSearchButton" type="button">جستجو</button></div>
 
-<section id="important"><div class="section-title" style="background:#d9232e;color:#fff;border-bottom:0">مهم‌ترین مطالب</div><div id="importantList" class="important-grid"><div class="loading">در حال دریافت مطالب...</div></div></section>
 <div id="Evrenxus-slider-host"></div>
+<section id="important"><div class="section-title" style="background:#d9232e;color:#fff;border-bottom:0">مهم‌ترین مطالب</div><div id="importantList" class="important-grid"><div class="loading">در حال دریافت مطالب...</div></div></section>
 <section id="river"><div class="section-title">جدیدترین اخبار</div><div id="list"><div class="loading">در حال دریافت مطالب...</div></div></section>
 </section><div id="sidebar-host"></div></main><footer class="Evrenxus-home-footer"><div class="footer-tags-title">برچسب‌های خبری</div><div class="news-tags-list" id="newsTags"></div>\n  <div class="footer-copy">© اورین نکسوس</div></footer>
-<script src="./Evrenexus-slider.js?v=4"></script><script src="./Evrenexus-sidebar.js?v=1"></script>
+<script src="./Evrenexus-slider.js?v=5"></script><script src="./Evrenexus-sidebar.js?v=1"></script>
 <script>
 (function(){ "use strict";
 var TOPICS={economy:"اقتصادی",markets:"بازار و سرمایه‌گذاری","currency-gold":"ارز و طلا","real-estate":"مسکن",technology:"فناوری",ai:"هوش مصنوعی",health:"پزشکی و سلامت",auto:"خودرو","science-life":"علم و سبک زندگی"};
@@ -52,7 +52,7 @@ var c=document.createElement("div");c.className=important?"important-content":"c
 if(!important&&x.summary){var s=document.createElement("div");s.className="summary";s.textContent=x.summary;c.appendChild(s)}
 var m=document.createElement("div");m.className=important?"important-meta":"meta";var d=safeDate(x.published);m.textContent=(x.source||"")+" • "+(d?d.toLocaleString("fa-IR",{dateStyle:"short",timeStyle:"short"}):"تاریخ نامعتبر");c.appendChild(m);a.appendChild(c);return a}
 function render(items){list.innerHTML="";importantList.innerHTML="";if(!items.length){list.innerHTML='<div class="error">فعلاً مطلبی در این موضوع پیدا نشد.</div>';importantList.innerHTML='<div class="error">فعلاً مطلبی در این موضوع پیدا نشد.</div>';renderBreaking([]);return}
-var important=(items._important||[]).slice(0,4),breaking=(items._breaking||[]).slice(0,6),latest=items.slice(0,100);
+var important=(items._important||[]).slice(0,4),breaking=(items._important||[]).slice(0,8),latest=items.slice(0,100);
 renderBreaking(breaking);
 if(important.length){important.forEach(function(x){var el=makeItem(x,true);if(el)importantList.appendChild(el)})}else{importantList.innerHTML='<div class="error">فعلاً خبر مهمی انتخاب نشده است.</div>'};latest.forEach(function(x){var el=makeItem(x,false);if(el)list.appendChild(el)})}
 function goSearch(){var value=searchInput.value.trim();var params=new URLSearchParams(location.search);if(value)params.set("q",value);else params.delete("q");location.search=params.toString()}
