@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "policy_version": 4,
-  "updated": "2026-10-06T00:44:42Z",
+  "policy_version": 5,
+  "updated": "2026-10-06T06:18:28Z",
   "items": {
     "f631371ce45c0a241b1c2d2f": {
       "title": "وزیر پیشنهادی دفاع کیست؟ + سوابق مهرداد اخلاقی کتابچی",
@@ -19,13 +19,18 @@
       "important_topics": [],
       "slider_topics": [],
       "ticker_topics": [],
-      "publishable": true,
-      "exclude_reason": "",
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
       "group_id": "local-5f0cb101afbc",
       "representative": true,
       "reason": "local candidate ranking",
       "analysis_mode": "local",
-      "local_score": 6
+      "local_score": 6,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 6.544883333333333,
+      "breaking": false,
+      "breaking_topics": []
     },
     "ec2692a9b429299cf33631ca": {
       "title": "قیمت طلا امروز سه‌شنبه ۱۴ مهر ۱۴۰۵",
@@ -49,7 +54,12 @@
       "representative": false,
       "reason": "local candidate ranking",
       "analysis_mode": "local",
-      "local_score": 12
+      "local_score": 12,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 6.725994444444445,
+      "breaking": false,
+      "breaking_topics": []
     },
     "56927672062ac466f3e762c5": {
       "title": "قیمت بیت‌کوین و اتریوم امروز سه‌شنبه ۱۴ مهر ۱۴۰۵",
@@ -73,7 +83,12 @@
       "representative": false,
       "reason": "local candidate ranking",
       "analysis_mode": "local",
-      "local_score": 10
+      "local_score": 10,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 6.770438888888889,
+      "breaking": false,
+      "breaking_topics": []
     },
     "1f117e1de918fe8e169b470f": {
       "title": "رمزگشایی از انتقال تجهیزات نظامی آمریکا | نیویورک‌تایمز به نقل از دو مقام آمریکایی: واشنگتن پس از تهدیدهای جدید، با شتاب بمب‌افکن‌های B-1 خود را از پایگاه هوایی بریتانیا خارج کرد",
@@ -97,7 +112,12 @@
       "representative": true,
       "reason": "local candidate ranking",
       "analysis_mode": "local",
-      "local_score": 10
+      "local_score": 10,
+      "political": false,
+      "breaking_signal": true,
+      "age_hours": 6.790994444444444,
+      "breaking": false,
+      "breaking_topics": []
     },
     "21017d4693386dce32e2044b": {
       "title": "راهنمای تحلیل شاخص‌های پیشرو در پایش اپیدمی: نکات روش‌شناسی و توصیه‌های کاربردی",
@@ -121,7 +141,12 @@
       "representative": true,
       "reason": "local candidate ranking",
       "analysis_mode": "local",
-      "local_score": 6
+      "local_score": 6,
+      "political": false,
+      "breaking_signal": true,
+      "age_hours": 6.839883333333334,
+      "breaking": false,
+      "breaking_topics": []
     },
     "ab27dc5c81d16a6024740248": {
       "title": "ورود اوباما به انتخابات میان دوره ای سنای آمریکا",
@@ -139,13 +164,18 @@
       "important_topics": [],
       "slider_topics": [],
       "ticker_topics": [],
-      "publishable": true,
-      "exclude_reason": "",
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
       "group_id": "local-77cc3df11514",
       "representative": true,
       "reason": "local candidate ranking",
       "analysis_mode": "local",
-      "local_score": 6
+      "local_score": 6,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 6.932661111111111,
+      "breaking": false,
+      "breaking_topics": []
     },
     "4b7ef0a4a4a58309db3cdde6": {
       "title": "سناتور دموکرات: ترامپ برای جنگ با ایران آمادگی نداشت",
@@ -163,13 +193,18 @@
       "important_topics": [],
       "slider_topics": [],
       "ticker_topics": [],
-      "publishable": true,
-      "exclude_reason": "",
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
       "group_id": "local-8754eeb4d243",
       "representative": true,
       "reason": "local candidate ranking",
       "analysis_mode": "local",
-      "local_score": 10
+      "local_score": 10,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 7.206272222222222,
+      "breaking": false,
+      "breaking_topics": []
     },
     "4c1b8c3cafdf62e6a5127e79": {
       "title": "ادعای آکسیوس درباره تهدید پهپادی ایران برای پایگاه هوایی انگلیس",
@@ -193,7 +228,12 @@
       "representative": true,
       "reason": "local candidate ranking",
       "analysis_mode": "local",
-      "local_score": 10
+      "local_score": 10,
+      "political": false,
+      "breaking_signal": true,
+      "age_hours": 7.499327777777777,
+      "breaking": false,
+      "breaking_topics": []
     },
     "f2f59c65db72861fabd786a0": {
       "title": "هشدار وزارت بهداشت درباره عفونت‌های تنفسی؛ کرونا هنوز بالاتر از آستانه هشدار بالا",
@@ -217,7 +257,12 @@
       "representative": true,
       "reason": "local candidate ranking",
       "analysis_mode": "local",
-      "local_score": 6
+      "local_score": 6,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 7.618494444444444,
+      "breaking": false,
+      "breaking_topics": []
     },
     "5fbf878c01e46c63e03eadc9": {
       "title": "محلول جدید بدون زرده تخم‌مرغ برای فریز اسپرم در مدل موش صحرایی: امکان لقاح آزمایشگاهی و تولد نوزادان زنده",
@@ -241,7 +286,12 @@
       "representative": true,
       "reason": "local candidate ranking",
       "analysis_mode": "local",
-      "local_score": 6
+      "local_score": 6,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 7.839883333333334,
+      "breaking": false,
+      "breaking_topics": []
     },
     "d4e2acba03d420aa7506758a": {
       "title": "اولیانوف: واشنگتن برای رسیدن به راه‌حل دیپلماتیک در رابطه با ایران آمادگی ندارد",
@@ -259,13 +309,18 @@
       "important_topics": [],
       "slider_topics": [],
       "ticker_topics": [],
-      "publishable": true,
-      "exclude_reason": "",
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
       "group_id": "local-b6c64235cf41",
       "representative": true,
       "reason": "local candidate ranking",
       "analysis_mode": "local",
-      "local_score": 6
+      "local_score": 6,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 8.041272222222222,
+      "breaking": false,
+      "breaking_topics": []
     },
     "018ae04ae304c009930a94b8": {
       "title": "هزینه تولید در اروپا به اوج خود رسید",
@@ -279,8 +334,10 @@
         "economy": 13
       },
       "importance": 13,
-      "important": false,
-      "important_topics": [],
+      "important": true,
+      "important_topics": [
+        "economy"
+      ],
       "slider_topics": [],
       "ticker_topics": [],
       "publishable": true,
@@ -289,7 +346,12 @@
       "representative": true,
       "reason": "local candidate ranking",
       "analysis_mode": "local",
-      "local_score": 13
+      "local_score": 13,
+      "political": false,
+      "breaking_signal": true,
+      "age_hours": 8.074605555555555,
+      "breaking": false,
+      "breaking_topics": []
     },
     "fbf73960dcc74159bdc2099d": {
       "title": "تهدید به بمب‌گذاری در فرودگاه شانلی‌اورفا ترکیه/ پروازها متوقف شد",
@@ -313,7 +375,12 @@
       "representative": true,
       "reason": "local candidate ranking",
       "analysis_mode": "local",
-      "local_score": 6
+      "local_score": 6,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 8.305161111111111,
+      "breaking": false,
+      "breaking_topics": []
     },
     "9a7e372aa8944f2df27d20e9": {
       "title": "اعلام وضعیت اضطراری برای بالگرد ارتش آمریکا در منطقه +عکس",
@@ -337,7 +404,12 @@
       "representative": true,
       "reason": "local candidate ranking",
       "analysis_mode": "local",
-      "local_score": 6
+      "local_score": 6,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 8.422105555555556,
+      "breaking": false,
+      "breaking_topics": []
     },
     "5d0d30acd8798093f0df5450": {
       "title": "ماکرون: متعهد به حمایت تمام‌عیار از اوکراین هستم",
@@ -355,13 +427,18 @@
       "important_topics": [],
       "slider_topics": [],
       "ticker_topics": [],
-      "publishable": true,
-      "exclude_reason": "",
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
       "group_id": "local-8ad213b08e67",
       "representative": true,
       "reason": "local candidate ranking",
       "analysis_mode": "local",
-      "local_score": 10
+      "local_score": 10,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 8.554327777777777,
+      "breaking": false,
+      "breaking_topics": []
     },
     "b6c844be5089b8676daf6362": {
       "title": "آتش‌سوزی در ناو هسته‌ای «شارل دو گل» فرانسه",
@@ -385,7 +462,12 @@
       "representative": true,
       "reason": "local candidate ranking",
       "analysis_mode": "local",
-      "local_score": 6
+      "local_score": 6,
+      "political": false,
+      "breaking_signal": true,
+      "age_hours": 8.79155,
+      "breaking": false,
+      "breaking_topics": []
     },
     "9dcde74810c7a697ef2de695": {
       "title": "چه اتفاقی در بدن می‌افتد اگر هفت روز روزه بگیریم؟ یافته‌های جدید و پیامدهای بالینی",
@@ -409,7 +491,12 @@
       "representative": true,
       "reason": "local candidate ranking",
       "analysis_mode": "local",
-      "local_score": 6
+      "local_score": 6,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 8.839883333333333,
+      "breaking": false,
+      "breaking_topics": []
     },
     "6fcf192fa3aaeb66d7d70a67": {
       "title": "یمن به سه هدف در عربستان حمله کرد/ نیروهای مسلح یمن: فقط به مکه و مدینه حمله نمی‌کنیم",
@@ -423,9 +510,13 @@
         "real-estate": 14
       },
       "importance": 14,
-      "important": false,
-      "important_topics": [],
-      "slider_topics": [],
+      "important": true,
+      "important_topics": [
+        "real-estate"
+      ],
+      "slider_topics": [
+        "real-estate"
+      ],
       "ticker_topics": [],
       "publishable": true,
       "exclude_reason": "",
@@ -433,7 +524,12 @@
       "representative": true,
       "reason": "local candidate ranking",
       "analysis_mode": "local",
-      "local_score": 14
+      "local_score": 14,
+      "political": false,
+      "breaking_signal": true,
+      "age_hours": 9.131272222222222,
+      "breaking": false,
+      "breaking_topics": []
     },
     "4f55d6fc97ff5e8305466edc": {
       "title": "فرانسه با زیدان بازی یک بر صفر باخته را ۴ بر یک برد / پیروزی مجدد ایتالیا مقابل ترکیه",
@@ -457,7 +553,12 @@
       "representative": true,
       "reason": "local candidate ranking",
       "analysis_mode": "local",
-      "local_score": 6
+      "local_score": 6,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 9.282383333333334,
+      "breaking": false,
+      "breaking_topics": []
     },
     "16bc1808553be4575bc9981e": {
       "title": "نوجوانان ایران با ۳ گل از سد عراق گذشتند",
@@ -481,7 +582,12 @@
       "representative": true,
       "reason": "local candidate ranking",
       "analysis_mode": "local",
-      "local_score": 8
+      "local_score": 8,
+      "political": false,
+      "breaking_signal": true,
+      "age_hours": 9.298494444444444,
+      "breaking": false,
+      "breaking_topics": []
     },
     "e064b9edacb9ee4d7d017fe5": {
       "title": "یحیی سریع: سه عملیات بزرگ علیه عربستان انجام شد",
@@ -505,7 +611,12 @@
       "representative": true,
       "reason": "local candidate ranking",
       "analysis_mode": "local",
-      "local_score": 8
+      "local_score": 8,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 9.305161111111111,
+      "breaking": false,
+      "breaking_topics": []
     },
     "9e53193085fa447aafea5b25": {
       "title": "واکنش دیوان کیفری بین‌المللی به تحریم‌های آمریکا علیه قضات این نهاد",
@@ -519,9 +630,13 @@
         "economy": 14
       },
       "importance": 14,
-      "important": false,
-      "important_topics": [],
-      "slider_topics": [],
+      "important": true,
+      "important_topics": [
+        "economy"
+      ],
+      "slider_topics": [
+        "economy"
+      ],
       "ticker_topics": [],
       "publishable": true,
       "exclude_reason": "",
@@ -529,7 +644,12 @@
       "representative": true,
       "reason": "local candidate ranking",
       "analysis_mode": "local",
-      "local_score": 14
+      "local_score": 14,
+      "political": false,
+      "breaking_signal": true,
+      "age_hours": 9.30655,
+      "breaking": false,
+      "breaking_topics": []
     },
     "2e7de17dd54bc5e30f3c024a": {
       "title": "عربستان به جزیره کمران و شهری در استان الحدیده یمن حمله کرد",
@@ -553,7 +673,12 @@
       "representative": true,
       "reason": "local candidate ranking",
       "analysis_mode": "local",
-      "local_score": 10
+      "local_score": 10,
+      "political": false,
+      "breaking_signal": true,
+      "age_hours": 9.353772222222222,
+      "breaking": false,
+      "breaking_topics": []
     },
     "280e56acbf56b0eb55c48a97": {
       "title": "باز هم لغو کنسرت در خراسان رضوی؛ این بار کنسرت علیرضا قربانی/ با کنسرت در طرقبه و شاندیز هم مخالفت می‌شود؟",
@@ -577,7 +702,12 @@
       "representative": true,
       "reason": "local candidate ranking",
       "analysis_mode": "local",
-      "local_score": 6
+      "local_score": 6,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 9.438494444444444,
+      "breaking": false,
+      "breaking_topics": []
     }
   },
   "groups": {},
