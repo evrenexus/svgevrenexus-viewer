@@ -2,6 +2,14 @@ name: Audit data (read-only)
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - "data/news.json"
+      - "data/news-ai.json"
+      - "data/editorial.json"
+      - "data/articles.json"
+      - "scripts/audit-data.mjs"
+      - ".github/workflows/audit-data.yml"
 
 permissions:
   contents: read
