@@ -16,7 +16,8 @@ BATCH_SIZE = 40
 CANDIDATE_LIMIT = 40
 RECENT_HOURS = 4
 DAILY_REQUEST_BUDGET = 12
-ARTICLE_LIMIT = 5
+ARTICLE_LIMIT = 4
+ARTICLE_CANDIDATE_POOL = 20
 MIN_ANALYSIS_INTERVAL_SECONDS = 30 * 60
 MAX_RETRIES = 3
 MAX_CONSECUTIVE_BATCH_FAILURES = 2
@@ -522,7 +523,7 @@ def generate_permanent_articles(all_news, ai, key):
     ranked.sort(key=lambda z: (z[0], z[3].get("published", "")), reverse=True)
 
     candidates, seen = [], set()
-    for score, nid, row, src in ranked:
+    for score, nid, row, src in ranked[:ARTICLE_CANDIDATE_POOL]:
         gid = row.get("group_id") or nid
         if gid in seen:
             continue
@@ -545,8 +546,6 @@ def generate_permanent_articles(all_news, ai, key):
         members.sort(key=lambda x: x.get("published", ""), reverse=True)
         candidates.append({"group_id": gid, "importance": score,
                            "topics": row.get("important_topics", []), "sources": members[:3]})
-        if len(candidates) >= ARTICLE_LIMIT:
-            break
 
     if not candidates:
         print("No important story groups selected for permanent articles.")
@@ -573,7 +572,7 @@ def generate_permanent_articles(all_news, ai, key):
 - category یکی از economy,markets,currency-gold,real-estate,technology,ai,health,auto,science-life,sports,war باشد.
 - sources فقط از منابع ورودی انتخاب شوند.
 - اگر گروه خبر تصویر مناسبی ندارد، image_query یک عبارت کوتاه و دقیق برای جستجوی تصویر مرتبط در Wikimedia Commons بده؛ اگر تصویر مناسب از ورودی وجود دارد image_query را خالی بگذار.
-- action یکی از create, update, skip باشد.
+- از بین گروه‌های ورودی حداکثر ۴ مقاله تولید کن؛ اولویت با اهمیت بیشتر و تازگی بیشتر است، اما اگر تصویر یک گروه پیدا نشد، سراغ گروه بعدی برو تا در نهایت ۴ مقاله قابل انتشار با تصویر ساخته شود.\n- action یکی از create, update, skip باشد.
 - JSON فقط.
 
 ساختار:
