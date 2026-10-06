@@ -4,6 +4,7 @@
 if(document.getElementById("Evrenxus-slider")) return;
 var css=`
 #Evrenxus-slider{position:relative;width:100%;height:315px;margin:0 0 20px;background:#15191c;overflow:hidden;box-sizing:border-box;direction:rtl}
+#Evrenxus-slider .Evrenxus-slide.no-image{background:linear-gradient(135deg,#202c35,#0f1418)}
 #Evrenxus-slider .Evrenxus-slide{display:none;position:relative;width:100%;height:315px;overflow:hidden}
 #Evrenxus-slider .Evrenxus-slide.active{display:block}
 #Evrenxus-slider .Evrenxus-slide a{display:block;width:100%;height:100%;color:#fff;text-decoration:none;overflow:hidden}
@@ -29,7 +30,7 @@ items=items.slice(0,5);if(!items.length){slider.style.display="none";return}
 items.forEach(function(x,i){
 var slide=document.createElement("div");slide.className="Evrenxus-slide"+(i===0?" active":"");
 var a=document.createElement("a");var es=(window.EVREN_EDITORIAL||{})[x.id]||{},aix=aiFor(x),edited=es.edited===true,data=Object.assign({},x);if(edited){if(es.title!==undefined)data.title=es.title;if(es.image!==undefined)data.image=es.image}var permanentId=(aix&&aix.article_id)?String(aix.article_id):"";var internal=!!permanentId;if(permanentId){a.href="./article.html?id="+encodeURIComponent(permanentId)}else{internal=es.published===true&&data.content;a.href=internal?"./news-article.html?id="+encodeURIComponent(x.id):"./viewer.html?url="+encodeURIComponent(x.url)}if(!internal){a.target="_blank";a.rel="noopener noreferrer"}
-if(data.image){var im=document.createElement("img");im.src=proxy(data.image);im.alt=data.title||"";im.loading=i===0?"eager":"lazy";im.referrerPolicy="no-referrer";im.onerror=function(){if(!this.dataset.p){this.dataset.p="1";this.src=x.image}else if(!this.dataset.p2){this.dataset.p2="1";this.src=proxy(x.image)}else this.style.display="none"};a.appendChild(im)}
+if(data.image){var im=document.createElement("img");im.src=proxy(data.image);im.alt=data.title||"";im.loading=i===0?"eager":"lazy";im.referrerPolicy="no-referrer";im.onerror=function(){if(!this.dataset.p){this.dataset.p="1";this.src=x.image}else if(!this.dataset.p2){this.dataset.p2="1";this.src=proxy(x.image)}else{this.style.display="none";slide.classList.add("no-image")}};im.onload=function(){slide.classList.remove("no-image")};a.appendChild(im)}else{slide.classList.add("no-image")}
 var cap=document.createElement("div");cap.className="Evrenxus-slide-caption";cap.textContent=data.title||"";a.appendChild(cap);slide.appendChild(a);slidesContainer.appendChild(slide);
 var dot=document.createElement("span");dot.className="Evrenxus-slider-dot"+(i===0?" active":"");dot.onclick=function(){show(i)};dotsContainer.appendChild(dot);
 });
