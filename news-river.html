@@ -25,6 +25,7 @@
 <div id="Evrenxus-breaking"><div class="Evrenxus-breaking-label"><span id="Evrenxus-live-date"></span><span>&nbsp; | &nbsp;</span><span id="Evrenxus-live-time"></span></div><div class="Evrenxus-breaking-track" id="Evrenxus-breaking-track"><span>در حال دریافت مهم‌ترین اخبار...</span></div></div>
 <div class="news-search"><input id="newsSearchInput" type="search" placeholder="جستجوی اخبار..." autocomplete="off"><button id="newsSearchButton" type="button">جستجو</button></div>
 <div id="Evrenxus-slider-host"></div>
+<section id="important"><div class="section-title" style="background:#d9232e;color:#fff;border-bottom:0">مهم‌ترین مطالب ${topicLabel}</div><div id="importantList" class="important-grid"><div class="loading">در حال دریافت مطالب...</div></div></section>
 <section id="river"><div class="section-title">جدیدترین اخبار</div><div id="list"><div class="loading">در حال دریافت مطالب...</div></div></section>
 </section><div id="sidebar-host"></div></main><footer class="Evrenxus-home-footer"><div class="footer-tags-title">برچسب‌های خبری</div><div class="news-tags-list" id="newsTags"></div><div class="footer-copy">© اورین نکسوس</div></footer>
 <script src="./Evrenexus-slider.js?v=3"></script><script src="./Evrenexus-sidebar.js?v=1"></script>
@@ -37,7 +38,7 @@ searchInput.value=searchTerm;
 var topicLabel=TOPICS[topic];
 searchInput.placeholder="جستجوی اخبار "+topicLabel;
 document.title=searchTerm?"نتایج جستجو":TOPICS[topic];
-var list=document.getElementById("list");
+var list=document.getElementById("list"),importantList=document.getElementById("importantList");
 var breakingTrack=document.getElementById("Evrenxus-breaking-track");
 function updateClock(){var n=new Date();document.getElementById("Evrenxus-live-date").textContent=new Intl.DateTimeFormat("fa-IR-u-ca-persian",{timeZone:"Asia/Tehran",year:"numeric",month:"2-digit",day:"2-digit"}).format(n);document.getElementById("Evrenxus-live-time").textContent=new Intl.DateTimeFormat("en-GB",{timeZone:"Asia/Tehran",hour:"2-digit",minute:"2-digit",second:"2-digit",hour12:false}).format(n)}
 updateClock();setInterval(updateClock,1000);
@@ -50,7 +51,12 @@ if(data.image){var im=document.createElement("img");im.src=data.image;im.alt=dat
 var c=document.createElement("div");c.className=important?"important-content":"content";var t=document.createElement("div");t.className=important?"important-title":"title";t.textContent=data.title||"";c.appendChild(t);
 if(!important&&data.summary){var s=document.createElement("div");s.className="summary";s.textContent=data.summary;c.appendChild(s)}
 var m=document.createElement("div");m.className=important?"important-meta":"meta";var d=safeDate(x.published);m.textContent=(x.source||"")+" • "+(d?d.toLocaleString("fa-IR",{dateStyle:"short",timeStyle:"short"}):"تاریخ نامعتبر");c.appendChild(m);a.appendChild(c);return a}
-function render(items){list.innerHTML="";if(!items.length){list.innerHTML='<div class="error">فعلاً مطلبی در این موضوع پیدا نشد.</div>';renderBreaking([]);return}var latest=items.slice(0,100);renderBreaking(items.slice(0,8));latest.forEach(function(x){var el=makeItem(x,false);if(el)list.appendChild(el)})}
+function render(items){list.innerHTML="";importantList.innerHTML="";
+var important=(items._important||[]).slice(0,4),breaking=(items._breaking||[]).slice(0,6);
+if(!items.length){list.innerHTML='<div class="error">فعلاً مطلبی در این موضوع پیدا نشد.</div>';importantList.innerHTML='<div class="error">فعلاً مطلب مهمی در این موضوع پیدا نشد.</div>';renderBreaking([]);return}
+renderBreaking(breaking);
+if(important.length){important.forEach(function(x){var el=makeItem(x,true);if(el)importantList.appendChild(el)})}else{importantList.innerHTML='<div class="error">فعلاً مطلب مهمی در این موضوع انتخاب نشده است.</div>'}
+var latest=items.slice(0,100);latest.forEach(function(x){var el=makeItem(x,false);if(el)list.appendChild(el)})}
 function goSearch(){var value=searchInput.value.trim();var params=new URLSearchParams(location.search);if(value)params.set("q",value);else params.delete("q");location.search=params.toString()}
 searchButton.addEventListener("click",goSearch);searchInput.addEventListener("keydown",function(e){if(e.key==="Enter")goSearch()});
 function normalizeEditorial(j){
@@ -61,7 +67,9 @@ function normalizeEditorial(j){
 Promise.all([fetch("./data/news.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("news.json HTTP "+r.status);return r.json()}),fetch("./data/editorial.json?v="+Date.now(),{cache:"no-store"}).then(function(r){return r.ok?r.json():{}}),fetch("./data/news-ai.json?v="+Date.now(),{cache:"no-store"}).then(function(r){return r.ok?r.json():{}})]).then(function(ds){var data=ds[0];editorialItems=(ds[1]||{}).items||{};aiItems=(ds[2]||{}).items||{};var all=(data.items||[]).filter(function(x){var es=editorialItems[x.id]||{};return x&&x.title&&x.published&&safeUrl(x.url)&&safeDate(x.published)&&x.publishable!==false&&es.deleted!==true;});all.sort(function(a,b){return safeDate(b.published)-safeDate(a.published)});
 var tagCounts={};all.slice(0,120).forEach(function(x){var s=editorialItems[x.id]||{};var t=s.category||x.category||((Array.isArray(x.topics)&&x.topics[0])||"");if(TOPICS[t])tagCounts[t]=(tagCounts[t]||0)+1});Object.keys(tagCounts).sort(function(a,b){return tagCounts[b]-tagCounts[a]}).forEach(function(t){var a=document.createElement("a");a.className="news-tag";a.href="?topic="+encodeURIComponent(t);a.textContent=TOPICS[t];tagsHost.appendChild(a)});
 var items=searchTerm?all.filter(function(x){var hay=((x.title||"")+" "+(x.summary||"")+" "+(x.source||"")).toLowerCase();return hay.indexOf(searchTerm.toLowerCase())!==-1}):all.filter(function(x){var s=editorialItems[x.id]||{};if(s.category)return s.category===topic;var cats=[];if(x.category)cats.push(x.category);if(Array.isArray(x.topics))cats=cats.concat(x.topics);return cats.indexOf(topic)!==-1;});
-items.sort(function(a,b){return safeDate(b.published)-safeDate(a.published)});items._important=items.filter(function(x){var a=aiItems[x.id]||{};return Array.isArray(a.important_topics)&&a.important_topics.indexOf(topic)!==-1&&a.representative!==false});document.querySelector("#river .section-title").textContent=searchTerm?"نتایج جستجو":"جدیدترین اخبار";render(items)}).catch(function(){list.innerHTML='<div class="error">دریافت خبرها انجام نشد.</div>';renderBreaking([])});
+items.sort(function(a,b){return safeDate(b.published)-safeDate(a.published)});
+items._important=items.filter(function(x){var a=aiItems[x.id]||{},e=editorialItems[x.id]||{};return e.deleted!==true&&a.political!==true&&a.representative!==false&&((Array.isArray(a.important_topics)&&a.important_topics.indexOf(topic)!==-1)||(e.manual_important===true&&((e.category||x.category||"")===topic||(Array.isArray(x.topics)&&x.topics.indexOf(topic)!==-1))))});
+items._breaking=items.filter(function(x){var a=aiItems[x.id]||{},e=editorialItems[x.id]||{};return e.deleted!==true&&a.political!==true&&a.representative!==false&&((Array.isArray(a.breaking_topics)&&a.breaking_topics.indexOf(topic)!==-1)||(e.manual_breaking===true&&((e.category||x.category||"")===topic||(Array.isArray(x.topics)&&x.topics.indexOf(topic)!==-1))))};document.querySelector("#river .section-title").textContent=searchTerm?"نتایج جستجو":"جدیدترین اخبار";render(items)}).catch(function(){list.innerHTML='<div class="error">دریافت خبرها انجام نشد.</div>';renderBreaking([])});
 })();
 </script>
 <script src="https://evrenexus.github.io/svgevrenexus-viewer/Evrenexus-header.js?v=20261005-15"></script>
