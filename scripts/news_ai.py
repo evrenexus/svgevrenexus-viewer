@@ -20,7 +20,7 @@ ARTICLE_LIMIT = 5
 MIN_ANALYSIS_INTERVAL_SECONDS = 30 * 60
 MAX_RETRIES = 3
 MAX_CONSECUTIVE_BATCH_FAILURES = 2
-POLICY_VERSION = 4
+POLICY_VERSION = 5
 RETRY_DELAYS = [8, 20, 45]
 QUOTA_DEFAULT_COOLDOWN_SECONDS = 6 * 60 * 60
 
@@ -95,12 +95,29 @@ STOPWORDS = {
 }
 
 STRONG_KEYWORDS = {
-    "جنگ":4,"حمله":4,"موشک":4,"تحریم":3,"بانک مرکزی":3,"دلار":2,"ارز":2,
-    "طلا":2,"تورم":3,"نرخ بهره":3,"بودجه":3,"قانون":2,"مجلس":2,"دولت":2,
-    "استعفا":3,"زلزله":3,"آتش سوزی":2,"انفجار":3,"فوت":2,"درگذشت":2,
-    "هوش مصنوعی":2,"ai":2,"اپل":2,"گوگل":2,"مایکروسافت":2,"خودرو":1,
-    "مسکن":2,"ملک":2,"نفت":2,"بورس":2
+    "جنگ":4,"حمله":4,"موشک":4,"تحریم":3,"بانک مرکزی":4,"دلار":3,"ارز":3,
+    "طلا":3,"تورم":3,"نرخ بهره":4,"بودجه":3,"زلزله":4,"آتش سوزی":3,
+    "انفجار":4,"فوت":2,"درگذشت":2,"هوش مصنوعی":3,"ai":2,"اپل":2,
+    "گوگل":2,"مایکروسافت":2,"خودرو":2,"مسکن":3,"ملک":3,"نفت":3,"بورس":3,
+    "شاخص کل":4,"عرضه اولیه":4,"ورشکستگی":4,"کاهش قیمت":2,"افزایش قیمت":2,
+    "قطع برق":3,"خاموشی":3,"سیل":4,"آتش‌سوزی":3
 }
+
+POLITICAL_TERMS = [
+    "انتخابات","انتخاباتی","رأی گیری","رای گیری","حزب سیاسی","حزب",
+    "مجلس","نماینده مجلس","نماینده پارلمان","پارلمان","سناتور",
+    "رئیس جمهور","رییس جمهور","رئیس‌جمهور","رییس‌جمهور","نخست وزیر",
+    "نخست‌وزیر","وزیر","کابینه","استیضاح","رأی اعتماد","رای اعتماد",
+    "سیاستمدار","سیاست خارجی","سیاست داخلی","مذاکرات سیاسی","مذاکره سیاسی",
+    "دیپلمات","سفیر","کاخ سفید","کنگره آمریکا","کمپین انتخاباتی",
+    "نامزد انتخابات","رئیس دولت","رییس دولت","رهبر حزب","ائتلاف سیاسی",
+    "اپوزیسیون","پارلمان اروپا","مقام سیاسی"
+]
+BREAKING_TERMS = [
+    "حمله","انفجار","زلزله","سیل","آتش سوزی","آتش‌سوزی","موشک",
+    "قطع برق","خاموشی","سقوط","کشته","درگذشت","فوت","توقف پرواز",
+    "تعطیلی","ورشکستگی","تعلیق","فوری","لغو شد","اعلام شد"
+]
 
 def normalize_title(s):
     s = str(s or "").lower()
@@ -127,6 +144,17 @@ def local_similarity(a,b):
     jac = len(ta & tb) / max(1, len(ta | tb))
     return max(seq, jac)
 
+def text_for_filter(x):
+    return normalize_title(f"{x.get('title','')} {x.get('summary','')}")
+
+def is_political(x):
+    text = text_for_filter(x)
+    return any(normalize_title(term) in text for term in POLITICAL_TERMS)
+
+def has_breaking_signal(x):
+    text = text_for_filter(x)
+    return any(normalize_title(term) in text for term in BREAKING_TERMS)
+
 def local_prepare(items):
     now = time.time()
     cutoff = now - RECENT_HOURS * 3600
@@ -151,30 +179,74 @@ def local_prepare(items):
 
     for x in recent:
         k = item_key(x); m = meta[k]
-        text = f"{x.get('title','')} {x.get('summary','')}".lower()
-        keyword_score = min(8, sum(v for k2,v in STRONG_KEYWORDS.items() if k2 in text))
+        text = text_for_filter(x)
+        political = is_political(x)
+        keyword_score = min(10, sum(v for k2,v in STRONG_KEYWORDS.items() if normalize_title(k2) in text))
         ts = published_ts(x.get("published","")) or now
-        freshness = max(0, 6-int(max(0,(now-ts)/3600)/8))
+        age_hours = max(0, (now-ts)/3600)
+        freshness = max(0, 7-int(age_hours/3))
         dup_count = next((g["count"] for g in groups if g["gid"]==m["group_id"]),1)
-        m["local_score"] = max(0,min(20,freshness+keyword_score+min(4,max(0,dup_count-1)*2)))
-        m["duplicate_count"] = dup_count
+        local_score = max(0,min(20,freshness+keyword_score+min(3,max(0,dup_count-1))))
+        if political: local_score = min(local_score,4)
+        m.update({"local_score":local_score,"duplicate_count":dup_count,
+                  "political":political,"breaking_signal":has_breaking_signal(x),
+                  "age_hours":age_hours})
     return recent, meta
 
 def make_local_result(src,meta):
     topics = [t for t in (src.get("topics") or []) if t in TOPICS]
     if not topics and src.get("category") in TOPICS: topics=[src["category"]]
     score=int(meta.get("local_score",0))
+    political=bool(meta.get("political"))
     return {
         "title":src.get("title",""),"summary":src.get("summary",""),
         "source":src.get("source",""),"published":src.get("published",""),
         "topics":topics,"topic_scores":{t:score for t in topics},
         "importance":score,"important":False,"important_topics":[],
-        "slider_topics":[],"ticker_topics":[],"publishable":True,
-        "exclude_reason":"","group_id":meta.get("group_id",""),
+        "slider_topics":[],"ticker_topics":[],"breaking":False,
+        "breaking_topics":[],"publishable":not political,
+        "exclude_reason":"political content is excluded" if political else "",
+        "group_id":meta.get("group_id",""),
         "representative":meta.get("duplicate_count",1)==1,
-        "reason":"local candidate ranking","analysis_mode":"local",
-        "local_score":score
+        "reason":"local rule-based classification","analysis_mode":"local",
+        "local_score":score,"political":political,
+        "breaking_signal":bool(meta.get("breaking_signal")),
+        "age_hours":float(meta.get("age_hours",99))
     }
+
+def apply_local_selection(ai):
+    rows=[(nid,v) for nid,v in ai.get("items",{}).items()
+          if isinstance(v,dict) and v.get("publishable",True)
+          and v.get("representative",True) and not v.get("political",False)]
+    rows.sort(key=lambda kv:(int(kv[1].get("importance",0) or 0),
+                             int(kv[1].get("local_score",0) or 0),
+                             published_ts(kv[1].get("published",""))),reverse=True)
+    for _,v in ai.get("items",{}).items():
+        if not isinstance(v,dict): continue
+        v["important"]=False;v["important_topics"]=[];v["slider_topics"]=[]
+        v["breaking"]=False;v["breaking_topics"]=[];v["ticker_topics"]=[]
+        if v.get("political"):
+            v["publishable"]=False
+            v["exclude_reason"]="political content is excluded"
+    seen=set()
+    for nid,v in rows:
+        if int(v.get("importance",0) or 0)<12: continue
+        gid=v.get("group_id") or nid
+        if gid in seen: continue
+        v["important"]=True;v["important_topics"]=list(v.get("topics") or [])[:3];seen.add(gid)
+        if len(seen)>=4: break
+    seen=set()
+    for nid,v in rows:
+        if int(v.get("importance",0) or 0)<11: continue
+        gid=v.get("group_id") or nid
+        if gid in seen: continue
+        v["slider_topics"]=list(v.get("topics") or [])[:3];seen.add(gid)
+        if len(seen)>=5: break
+    for nid,v in rows:
+        if int(v.get("importance",0) or 0)>=14 and v.get("breaking_signal") and float(v.get("age_hours",99))<=3:
+            v["breaking"]=True;v["breaking_topics"]=list(v.get("topics") or [])[:3]
+            v["ticker_topics"]=v["breaking_topics"]
+
 
 def save_ai(ai):
     ai["updated"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
@@ -238,29 +310,33 @@ def rebuild_groups(ai):
 
 def write_editorial(ai, old):
     old = old if isinstance(old,dict) else {}
-    out = {"updated": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), "_schema": 1, "items": {}}
-    # Preserve non-AI/manual fields, but AI owns importance/slider publication flags.
+    out = {"updated": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), "_schema": 2, "items": {}}
     for nid,e in (old.get("items",{}) if isinstance(old.get("items",{}),dict) else {}).items():
-        if isinstance(e,dict):
-            out["items"][nid] = dict(e)
+        if isinstance(e,dict): out["items"][nid]=dict(e)
     for nid,v in ai["items"].items():
-        e = out["items"].setdefault(nid,{})
-        e["important"] = bool(v.get("important_topics"))
-        e["slider"] = bool(v.get("slider_topics"))
-        e["published"] = bool(v.get("publishable") and v.get("representative",True))
-        e["republish"] = e["published"]
-        if v.get("topics"):
-            e["ai_topics"] = v["topics"]
-        if v.get("important_topics"):
-            e["ai_important_topics"] = v["important_topics"]
-        else:
-            e.pop("ai_important_topics", None)
-        if v.get("slider_topics"):
-            e["ai_slider_topics"] = v["slider_topics"]
-        else:
-            e.pop("ai_slider_topics", None)
-        e["ai_managed"] = True
-        e["updated_at"] = out["updated"]
+        e=out["items"].setdefault(nid,{})
+        e["auto_important"]=bool(v.get("important")) and not v.get("political",False)
+        e["auto_slider"]=bool(v.get("slider_topics")) and not v.get("political",False)
+        e["auto_breaking"]=bool(v.get("breaking")) and not v.get("political",False)
+        e["auto_publishable"]=bool(v.get("publishable",True)) and not v.get("political",False)
+        e["ai_importance"]=int(v.get("importance",0) or 0)
+        e["ai_political"]=bool(v.get("political",False))
+        e["ai_reason"]=str(v.get("reason",""))[:300]
+        if v.get("topics"): e["ai_topics"]=v["topics"]
+        if v.get("important_topics"): e["ai_important_topics"]=v["important_topics"]
+        else: e.pop("ai_important_topics",None)
+        if v.get("slider_topics"): e["ai_slider_topics"]=v["slider_topics"]
+        else: e.pop("ai_slider_topics",None)
+        if v.get("breaking_topics"): e["ai_breaking_topics"]=v["breaking_topics"]
+        else: e.pop("ai_breaking_topics",None)
+        if "manual_important" not in e and "important" in e:
+            e["manual_important"]=bool(e["important"]);e.pop("important",None)
+        if "manual_slider" not in e and "slider" in e:
+            e["manual_slider"]=bool(e["slider"]);e.pop("slider",None)
+        if "manual_breaking" not in e and "breaking" in e:
+            e["manual_breaking"]=bool(e["breaking"]);e.pop("breaking",None)
+        e.pop("ai_managed",None)
+        e["updated_at"]=out["updated"]
     EDITORIAL.write_text(json.dumps(out, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 def generate_permanent_articles(all_news, ai, key):
@@ -272,9 +348,9 @@ def generate_permanent_articles(all_news, ai, key):
     ranked = []
     cutoff = time.time() - RECENT_HOURS * 3600
     for nid, row in ai.get("items", {}).items():
-        if row.get("analysis_mode") != "ai" or not row.get("publishable", True):
+        if row.get("analysis_mode") != "ai" or not row.get("publishable", True) or row.get("political"):
             continue
-        if not row.get("representative", True) or not row.get("important_topics"):
+        if not row.get("representative", True) or not row.get("important"):
             continue
         src = by_id.get(nid)
         if src and (published_ts(src.get("published", "")) == 0 or published_ts(src.get("published", "")) >= cutoff):
@@ -422,18 +498,18 @@ def main():
     last_success=float(usage.get("last_success_epoch",0) or 0)
     now=time.time()
     quota_block_until=float(usage.get("quota_block_until_epoch",0) or 0)
+    gemini_allowed=True
     if quota_block_until > now:
         wait=int((quota_block_until-now)/3600)+1
-        print(f"Gemini quota cooldown active. Skipping AI for about {wait} more hour(s).")
-        return
-
-    if requests_used >= DAILY_REQUEST_BUDGET:
-        print(f"AI budget reached: {requests_used}/{DAILY_REQUEST_BUDGET}. Skipping.")
-        return
-    if last_success and now-last_success < MIN_ANALYSIS_INTERVAL_SECONDS:
+        print(f"Gemini quota cooldown active. Local editorial engine continues; AI skipped for about {wait} more hour(s).")
+        gemini_allowed=False
+    elif requests_used >= DAILY_REQUEST_BUDGET:
+        print(f"AI budget reached: {requests_used}/{DAILY_REQUEST_BUDGET}. Local editorial engine continues.")
+        gemini_allowed=False
+    elif last_success and now-last_success < MIN_ANALYSIS_INTERVAL_SECONDS:
         wait=int((MIN_ANALYSIS_INTERVAL_SECONDS-(now-last_success))/60)+1
-        print(f"Analysis interval lock active. Next AI run in about {wait} minutes.")
-        return
+        print(f"Analysis interval lock active. Local editorial engine continues; AI next in about {wait} minutes.")
+        gemini_allowed=False
 
     recent,local_meta=local_prepare(items)
     print(f"News total: {len(items)} | Recent ({RECENT_HOURS}h): {len(recent)}")
@@ -443,6 +519,14 @@ def main():
         if not ai["items"].get(k) or ai["items"][k].get("analysis_mode") != "ai":
             local_row=dict(x); local_row["_local_score"]=m.get("local_score",0)
             ai["items"][k]=make_local_result(local_row,m)
+
+    apply_local_selection(ai)
+    rebuild_groups(ai)
+    save_ai(ai)
+    if not gemini_allowed:
+        write_editorial(ai,load_json(EDITORIAL,{"items":{}}))
+        print("Local editorial engine completed while Gemini was unavailable.")
+        return
 
     unresolved=[x for x in recent if ai["items"].get(item_key(x),{}).get("analysis_mode") != "ai"]
     unresolved.sort(key=lambda x:local_meta.get(item_key(x),{}).get("local_score",0),reverse=True)
@@ -563,7 +647,9 @@ def main():
     if failed_batches:
         print(f"::warning::{failed_batches} batch(es) failed; successful batches were preserved.")
 
-    rebuild_groups(ai); save_ai(ai)
+    rebuild_groups(ai)
+    apply_local_selection(ai)
+    save_ai(ai)
     if successful_batches > 0 and int(usage.get("requests", 0) or 0) < DAILY_REQUEST_BUDGET:
         try:
             generate_permanent_articles(items, ai, key)
