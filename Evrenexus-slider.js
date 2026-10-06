@@ -55,7 +55,10 @@ return x&&x.title&&x.published&&x.url;
 });
 var items=all.filter(function(x){
 var s=edFor(x),a=aiFor(x);
-if(s.deleted===true||a.auto_publishable===false||a.publishable===false||a.political===true||s.ai_political===true||a.auto_political===true)return false;
+var permanentId=a.article_id||(s&&s.article_id);
+var publishedArticle=!!(a.status==="published"||s.status==="published"||s.published===true);
+var imageAvailable=!!(x.image||(a&&a.image)||(s&&s.image));
+if(s.deleted===true||a.auto_publishable===false||a.publishable===false||a.political===true||s.ai_political===true||a.auto_political===true||!permanentId||!publishedArticle||!imageAvailable)return false;
 var text=((x.title||"")+" "+(x.summary||"")).replace(/\u200c/g," ").toLowerCase();
 var bad=["انتخابات","انتخاباتی","مجلس","نماینده مجلس","پارلمان","سناتور","رئیس جمهور","رییس جمهور","وزیر","سیاستمدار","دیپلمات","مقام سیاسی","مقام دولتی","اعتراض","اعتراضات","جنبش اعتراضی","تظاهرات","بازداشت","وثیقه","قوه قضائیه","قوه قضاییه","دادگاه","دادسرا","دادستان","زندانی سیاسی","رئیس سازمان زندان","سازمان زندان ها","سازمان زندان‌ها","اظهارات","سخنان","تهدید","مذاکرات سیاسی","موضع گیری","موضع‌گیری"];
 if(a.auto_publishable!==true&&a.publishable!==true&&bad.some(function(k){return text.indexOf(k.toLowerCase())!==-1}))return false;
@@ -71,12 +74,6 @@ items.sort(function(a,b){return new Date(b.published)-new Date(a.published)});
 
 // Last-resort recovery: if editorial/AI metadata is temporarily unavailable,
 // keep the slider visible instead of hiding the entire component.
-if(!items.length && all.length){
-  items=all.filter(function(x){
-    var s=edFor(x),a=aiFor(x);
-    return s.deleted!==true&&a.political!==true&&a.publishable!==false&&!!(x.image||(a&&a.image)||(s&&s.image));
-  }).sort(function(a,b){return new Date(b.published)-new Date(a.published)}).slice(0,5);
-}
 render(items,aiFor);
 }).catch(function(){slider.style.display="none"});
 })();
