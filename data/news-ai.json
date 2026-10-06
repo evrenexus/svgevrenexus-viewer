@@ -1,7 +1,7 @@
 {
   "version": 1,
   "policy_version": 5,
-  "updated": "2026-10-06T06:18:28Z",
+  "updated": "2026-10-06T06:19:04Z",
   "items": {
     "f631371ce45c0a241b1c2d2f": {
       "title": "وزیر پیشنهادی دفاع کیست؟ + سوابق مهرداد اخلاقی کتابچی",
@@ -9,12 +9,14 @@
       "source": "دنیای اقتصاد",
       "published": "2026-10-06T03:15:47+03:30",
       "topics": [
+        "science-life",
         "economy"
       ],
       "topic_scores": {
+        "science-life": 8,
         "economy": 6
       },
-      "importance": 6,
+      "importance": 8,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -28,7 +30,7 @@
       "local_score": 6,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 6.544883333333333,
+      "age_hours": 6.554950555555555,
       "breaking": false,
       "breaking_topics": []
     },
@@ -38,12 +40,14 @@
       "source": "اقتصادنیوز",
       "published": "2026-10-06T03:04:55+03:30",
       "topics": [
-        "currency-gold"
+        "currency-gold",
+        "economy"
       ],
       "topic_scores": {
-        "currency-gold": 12
+        "economy": 14,
+        "currency-gold": 16
       },
-      "importance": 12,
+      "importance": 16,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -57,7 +61,7 @@
       "local_score": 12,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 6.725994444444445,
+      "age_hours": 6.736061666666667,
       "breaking": false,
       "breaking_topics": []
     },
@@ -67,12 +71,14 @@
       "source": "اقتصادنیوز",
       "published": "2026-10-06T03:02:15+03:30",
       "topics": [
-        "currency-gold"
+        "currency-gold",
+        "economy"
       ],
       "topic_scores": {
-        "currency-gold": 10
+        "economy": 12,
+        "currency-gold": 18
       },
-      "importance": 10,
+      "importance": 18,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -86,7 +92,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 6.770438888888889,
+      "age_hours": 6.780506111111111,
       "breaking": false,
       "breaking_topics": []
     },
@@ -96,14 +102,18 @@
       "source": "اقتصادنیوز",
       "published": "2026-10-06T03:01:01+03:30",
       "topics": [
-        "economy"
+        "economy",
+        "war"
       ],
       "topic_scores": {
-        "economy": 10
+        "economy": 12,
+        "war": 12
       },
-      "importance": 10,
-      "important": false,
-      "important_topics": [],
+      "importance": 12,
+      "important": true,
+      "important_topics": [
+        "economy"
+      ],
       "slider_topics": [],
       "ticker_topics": [],
       "publishable": true,
@@ -115,7 +125,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 6.790994444444444,
+      "age_hours": 6.801061666666667,
       "breaking": false,
       "breaking_topics": []
     },
@@ -128,9 +138,9 @@
         "health"
       ],
       "topic_scores": {
-        "health": 6
+        "health": 8
       },
-      "importance": 6,
+      "importance": 8,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -144,7 +154,7 @@
       "local_score": 6,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 6.839883333333334,
+      "age_hours": 6.849950555555556,
       "breaking": false,
       "breaking_topics": []
     },
@@ -173,7 +183,7 @@
       "local_score": 6,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 6.932661111111111,
+      "age_hours": 6.942728333333333,
       "breaking": false,
       "breaking_topics": []
     },
@@ -183,12 +193,14 @@
       "source": "اقتصادنیوز",
       "published": "2026-10-06T02:36:06+03:30",
       "topics": [
+        "war",
         "economy"
       ],
       "topic_scores": {
-        "economy": 10
+        "economy": 12,
+        "war": 14
       },
-      "importance": 10,
+      "importance": 14,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -202,7 +214,7 @@
       "local_score": 10,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 7.206272222222222,
+      "age_hours": 7.216339444444444,
       "breaking": false,
       "breaking_topics": []
     },
@@ -212,15 +224,21 @@
       "source": "دنیای اقتصاد",
       "published": "2026-10-06T02:18:31+03:30",
       "topics": [
+        "war",
         "economy"
       ],
       "topic_scores": {
+        "war": 14,
         "economy": 10
       },
-      "importance": 10,
-      "important": false,
-      "important_topics": [],
-      "slider_topics": [],
+      "importance": 14,
+      "important": true,
+      "important_topics": [
+        "war"
+      ],
+      "slider_topics": [
+        "war"
+      ],
       "ticker_topics": [],
       "publishable": true,
       "exclude_reason": "",
@@ -231,7 +249,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 7.499327777777777,
+      "age_hours": 7.509395,
       "breaking": false,
       "breaking_topics": []
     },
@@ -241,14 +259,18 @@
       "source": "اقتصادنیوز",
       "published": "2026-10-06T02:11:22+03:30",
       "topics": [
-        "health"
+        "health",
+        "economy"
       ],
       "topic_scores": {
-        "health": 6
+        "economy": 8,
+        "health": 12
       },
-      "importance": 6,
-      "important": false,
-      "important_topics": [],
+      "importance": 12,
+      "important": true,
+      "important_topics": [
+        "health"
+      ],
       "slider_topics": [],
       "ticker_topics": [],
       "publishable": true,
@@ -260,7 +282,7 @@
       "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 7.618494444444444,
+      "age_hours": 7.628561666666666,
       "breaking": false,
       "breaking_topics": []
     },
@@ -270,12 +292,14 @@
       "source": "پزشک سایت",
       "published": "2026-10-06T01:58:05+03:30",
       "topics": [
+        "science-life",
         "health"
       ],
       "topic_scores": {
+        "science-life": 8,
         "health": 6
       },
-      "importance": 6,
+      "importance": 8,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -289,7 +313,7 @@
       "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 7.839883333333334,
+      "age_hours": 7.849950555555556,
       "breaking": false,
       "breaking_topics": []
     },
@@ -299,12 +323,14 @@
       "source": "دنیای اقتصاد",
       "published": "2026-10-06T01:46:00+03:30",
       "topics": [
+        "war",
         "economy"
       ],
       "topic_scores": {
+        "war": 10,
         "economy": 6
       },
-      "importance": 6,
+      "importance": 10,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -318,7 +344,7 @@
       "local_score": 6,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 8.041272222222222,
+      "age_hours": 8.051339444444444,
       "breaking": false,
       "breaking_topics": []
     },
@@ -328,17 +354,27 @@
       "source": "اقتصادنیوز",
       "published": "2026-10-06T01:44:00+03:30",
       "topics": [
-        "economy"
+        "economy",
+        "currency-gold",
+        "war"
       ],
       "topic_scores": {
-        "economy": 13
+        "economy": 20,
+        "currency-gold": 15,
+        "war": 15
       },
-      "importance": 13,
+      "importance": 20,
       "important": true,
       "important_topics": [
-        "economy"
+        "economy",
+        "currency-gold",
+        "war"
       ],
-      "slider_topics": [],
+      "slider_topics": [
+        "economy",
+        "currency-gold",
+        "war"
+      ],
       "ticker_topics": [],
       "publishable": true,
       "exclude_reason": "",
@@ -349,7 +385,7 @@
       "local_score": 13,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 8.074605555555555,
+      "age_hours": 8.084672777777778,
       "breaking": false,
       "breaking_topics": []
     },
@@ -378,7 +414,7 @@
       "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 8.305161111111111,
+      "age_hours": 8.315228333333334,
       "breaking": false,
       "breaking_topics": []
     },
@@ -388,12 +424,14 @@
       "source": "اقتصادنیوز",
       "published": "2026-10-06T01:23:09+03:30",
       "topics": [
-        "economy"
+        "economy",
+        "war"
       ],
       "topic_scores": {
-        "economy": 6
+        "economy": 8,
+        "war": 8
       },
-      "importance": 6,
+      "importance": 8,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -407,7 +445,7 @@
       "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 8.422105555555556,
+      "age_hours": 8.432172777777778,
       "breaking": false,
       "breaking_topics": []
     },
@@ -417,12 +455,16 @@
       "source": "دنیای اقتصاد",
       "published": "2026-10-06T01:15:13+03:30",
       "topics": [
+        "war",
+        "real-estate",
         "economy"
       ],
       "topic_scores": {
+        "real-estate": 12,
+        "war": 18,
         "economy": 10
       },
-      "importance": 10,
+      "importance": 18,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -436,7 +478,7 @@
       "local_score": 10,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 8.554327777777777,
+      "age_hours": 8.564395,
       "breaking": false,
       "breaking_topics": []
     },
@@ -465,7 +507,7 @@
       "local_score": 6,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 8.79155,
+      "age_hours": 8.801617222222223,
       "breaking": false,
       "breaking_topics": []
     },
@@ -475,12 +517,14 @@
       "source": "پزشک سایت",
       "published": "2026-10-06T00:58:05+03:30",
       "topics": [
+        "war",
         "health"
       ],
       "topic_scores": {
+        "war": 8,
         "health": 6
       },
-      "importance": 6,
+      "importance": 8,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -494,7 +538,7 @@
       "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 8.839883333333333,
+      "age_hours": 8.849950555555555,
       "breaking": false,
       "breaking_topics": []
     },
@@ -504,18 +548,26 @@
       "source": "اقتصادنیوز",
       "published": "2026-10-06T00:40:36+03:30",
       "topics": [
+        "war",
+        "economy",
         "real-estate"
       ],
       "topic_scores": {
-        "real-estate": 14
+        "economy": 16,
+        "real-estate": 16,
+        "war": 20
       },
-      "importance": 14,
+      "importance": 20,
       "important": true,
       "important_topics": [
-        "real-estate"
+        "economy",
+        "real-estate",
+        "war"
       ],
       "slider_topics": [
-        "real-estate"
+        "economy",
+        "real-estate",
+        "war"
       ],
       "ticker_topics": [],
       "publishable": true,
@@ -527,7 +579,7 @@
       "local_score": 14,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 9.131272222222222,
+      "age_hours": 9.141339444444444,
       "breaking": false,
       "breaking_topics": []
     },
@@ -537,12 +589,14 @@
       "source": "انتخاب",
       "published": "2026-10-06T00:31:32+03:30",
       "topics": [
+        "sports",
         "economy"
       ],
       "topic_scores": {
+        "sports": 8,
         "economy": 6
       },
-      "importance": 6,
+      "importance": 8,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -556,7 +610,7 @@
       "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 9.282383333333334,
+      "age_hours": 9.292450555555556,
       "breaking": false,
       "breaking_topics": []
     },
@@ -566,12 +620,14 @@
       "source": "انتخاب",
       "published": "2026-10-06T00:30:34+03:30",
       "topics": [
+        "sports",
         "economy"
       ],
       "topic_scores": {
+        "sports": 10,
         "economy": 8
       },
-      "importance": 8,
+      "importance": 10,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -585,7 +641,7 @@
       "local_score": 8,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 9.298494444444444,
+      "age_hours": 9.308561666666666,
       "breaking": false,
       "breaking_topics": []
     },
@@ -595,12 +651,14 @@
       "source": "فرارو",
       "published": "2026-10-06T00:30:10+03:30",
       "topics": [
+        "war",
         "real-estate"
       ],
       "topic_scores": {
-        "real-estate": 8
+        "real-estate": 10,
+        "war": 12
       },
-      "importance": 8,
+      "importance": 12,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -614,7 +672,7 @@
       "local_score": 8,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 9.305161111111111,
+      "age_hours": 9.315228333333334,
       "breaking": false,
       "breaking_topics": []
     },
@@ -624,30 +682,28 @@
       "source": "دنیای اقتصاد",
       "published": "2026-10-06T00:30:05+03:30",
       "topics": [
+        "war",
         "economy"
       ],
       "topic_scores": {
+        "war": 16,
         "economy": 14
       },
-      "importance": 14,
-      "important": true,
-      "important_topics": [
-        "economy"
-      ],
-      "slider_topics": [
-        "economy"
-      ],
+      "importance": 16,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
       "ticker_topics": [],
-      "publishable": true,
-      "exclude_reason": "",
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
       "group_id": "local-67c90625f8b0",
       "representative": true,
       "reason": "local candidate ranking",
       "analysis_mode": "local",
       "local_score": 14,
-      "political": false,
+      "political": true,
       "breaking_signal": true,
-      "age_hours": 9.30655,
+      "age_hours": 9.316617222222222,
       "breaking": false,
       "breaking_topics": []
     },
@@ -657,15 +713,21 @@
       "source": "انتخاب",
       "published": "2026-10-06T00:27:15+03:30",
       "topics": [
+        "war",
         "economy"
       ],
       "topic_scores": {
+        "war": 14,
         "economy": 10
       },
-      "importance": 10,
-      "important": false,
-      "important_topics": [],
-      "slider_topics": [],
+      "importance": 14,
+      "important": true,
+      "important_topics": [
+        "war"
+      ],
+      "slider_topics": [
+        "war"
+      ],
       "ticker_topics": [],
       "publishable": true,
       "exclude_reason": "",
@@ -676,7 +738,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 9.353772222222222,
+      "age_hours": 9.363839444444444,
       "breaking": false,
       "breaking_topics": []
     },
@@ -689,9 +751,9 @@
         "economy"
       ],
       "topic_scores": {
-        "economy": 6
+        "economy": 8
       },
-      "importance": 6,
+      "importance": 8,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -705,7 +767,7 @@
       "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 9.438494444444444,
+      "age_hours": 9.448561666666667,
       "breaking": false,
       "breaking_topics": []
     }
