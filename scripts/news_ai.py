@@ -20,7 +20,7 @@ ARTICLE_LIMIT = 5
 MIN_ANALYSIS_INTERVAL_SECONDS = 30 * 60
 MAX_RETRIES = 3
 MAX_CONSECUTIVE_BATCH_FAILURES = 2
-POLICY_VERSION = 5
+POLICY_VERSION = 6
 RETRY_DELAYS = [8, 20, 45]
 QUOTA_DEFAULT_COOLDOWN_SECONDS = 6 * 60 * 60
 
@@ -129,7 +129,15 @@ POLITICAL_TERMS = [
     "اپوزیسیون","پارلمان اروپا","مقام سیاسی","دولت","حکومت",
     "رئیس","رییس","وزیر","قاضی","دادگاه","دیوان","دیوان کیفری",
     "مقام دولتی","مقام حکومتی","تحریم قضات","انتخابات میان دوره ای",
-    "انتخابات میان‌دوره‌ای"
+    "انتخابات میان‌دوره‌ای",
+    # Political figures / political personalities whose routine personal
+    # appearances or comments are not useful news for Evren Nexus.
+    "ترامپ","دونالد ترامپ","جی دی ونس","جی‌دی ونس","j d vance","jd vance",
+    "ونس","اوشا ونس","اوشا","ساداتیان",
+    # Political/military commentary and horse-race framing.
+    "پشت پرده","آرایش جنگی","آستانه جنگ","نمایش قدرت","تهدیدهای مکرر",
+    "تهدید نظامی","فشار نظامی","محاصره","امتیاز پیش از انتخابات",
+    "موضع‌گیری سیاسی","اظهارنظر سیاسی","تحلیل سیاسی","کارشناس سیاسی"
 ]
 BREAKING_TERMS = [
     "حمله","انفجار","زلزله","سیل","آتش سوزی","آتش‌سوزی","موشک",
