@@ -487,7 +487,9 @@ def main():
     if not isinstance(ai,dict): ai={}
     if ai.get("policy_version") != POLICY_VERSION:
         print(f"Policy changed: {ai.get('policy_version',0)} -> {POLICY_VERSION}; rebuilding recent AI state.")
-        ai={"version":1,"policy_version":POLICY_VERSION,"updated":"","items":{},"groups":{}}
+        previous_usage = ai.get("usage") if isinstance(ai.get("usage"),dict) else {}
+        ai={"version":1,"policy_version":POLICY_VERSION,"updated":"","items":{},"groups":{},
+            "usage":previous_usage}
     ai.setdefault("items",{}); ai.setdefault("groups",{}); ai["policy_version"]=POLICY_VERSION
 
     usage=ai.get("usage") if isinstance(ai.get("usage"),dict) else {}
