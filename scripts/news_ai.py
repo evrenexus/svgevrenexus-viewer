@@ -451,6 +451,49 @@ def write_editorial(ai, old):
         e["updated_at"]=out["updated"]
     EDITORIAL.write_text(json.dumps(out, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
+def find_commons_image(query, article_id):
+    """Find and download a relevant openly licensed image from Wikimedia Commons."""
+    q = str(query or "").strip()
+    if not q:
+        return ""
+    try:
+        import urllib.parse
+        import urllib.request
+        api = "https://commons.wikimedia.org/w/api.php?" + urllib.parse.urlencode({
+            "action": "query", "format": "json", "generator": "search",
+            "gsrsearch": q, "gsrnamespace": 6, "gsrlimit": 8,
+            "prop": "imageinfo", "iiprop": "url|mime", "iiurlwidth": 1200
+        })
+        req = urllib.request.Request(api, headers={"User-Agent": "EvrenNexus/1.0"})
+        with urllib.request.urlopen(req, timeout=15) as r:
+            data = json.loads(r.read().decode("utf-8"))
+        pages = list((data.get("query", {}).get("pages", {}) or {}).values())
+        allowed = {"image/jpeg": ".jpg", "image/png": ".png", "image/webp": ".webp"}
+        chosen = None
+        for page in pages:
+            info = (page.get("imageinfo") or [{}])[0]
+            mime = info.get("mime", "")
+            thumb = info.get("thumburl") or info.get("url")
+            if thumb and mime in allowed:
+                chosen = (thumb, allowed[mime])
+                break
+        if not chosen:
+            return ""
+        url, ext = chosen
+        out_dir = ROOT / "assets" / "articles"
+        out_dir.mkdir(parents=True, exist_ok=True)
+        path = out_dir / ("article-" + re.sub(r"[^a-zA-Z0-9_-]", "", str(article_id)) + ext)
+        req = urllib.request.Request(url, headers={"User-Agent": "EvrenNexus/1.0"})
+        with urllib.request.urlopen(req, timeout=25) as r:
+            blob = r.read()
+        if len(blob) < 5000:
+            return ""
+        path.write_bytes(blob)
+        return "./assets/articles/" + path.name
+    except Exception as exc:
+        print("Article image search failed:", exc)
+        return ""
+
 def generate_permanent_articles(all_news, ai, key):
     db = load_json(ARTICLES, {"updated": "", "schema": 1, "items": {}})
     if not isinstance(db, dict):
@@ -492,6 +535,7 @@ def generate_permanent_articles(all_news, ai, key):
                 "summary": ms.get("summary", "")[:1200],
                 "content": str(ms.get("content", "") or ms.get("description", "") or "")[:3500],
                 "source": ms.get("source", ""), "url": ms.get("url", ""),
+                "image": ms.get("image", ""),
                 "published": ms.get("published", "")
             })
         members.sort(key=lambda x: x.get("published", ""), reverse=True)
@@ -524,11 +568,12 @@ def generate_permanent_articles(all_news, ai, key):
 - summary حداکثر 300 کاراکتر.
 - category یکی از economy,markets,currency-gold,real-estate,technology,ai,health,auto,science-life,sports,war باشد.
 - sources فقط از منابع ورودی انتخاب شوند.
+- اگر گروه خبر تصویر مناسبی ندارد، image_query یک عبارت کوتاه و دقیق برای جستجوی تصویر مرتبط در Wikimedia Commons بده؛ اگر تصویر مناسب از ورودی وجود دارد image_query را خالی بگذار.
 - action یکی از create, update, skip باشد.
 - JSON فقط.
 
 ساختار:
-{"articles":[{"action":"create","article_id":"...","group_id":"...","category":"economy","title":"...","summary":"...","content":"<p>...</p>","source_ids":["..."],"sources":[{"name":"...","url":"..."}]}]}
+{"articles":[{"action":"create","article_id":"...","group_id":"...","category":"economy","title":"...","summary":"...","content":"<p>...</p>","image_query":"...","source_ids":["..."],"sources":[{"name":"...","url":"..."}]}]}
 
 مطالب دائمی موجود:
 """ + json.dumps(existing, ensure_ascii=False) + """
@@ -570,12 +615,24 @@ def generate_permanent_articles(all_news, ai, key):
                     "name": s.get("source", "") or s.get("name", ""),
                     "url": s.get("url", "")
                 } for s in candidate_sources[:3] if isinstance(s, dict) and (s.get("source") or s.get("name"))]
+        existing_image = str(row.get("image", "") or (old.get("image", "") if isinstance(old, dict) else ""))
+        if not existing_image:
+            for cand in candidates:
+                if str(cand.get("group_id", "")) == str(row.get("group_id", "")):
+                    for src_item in cand.get("sources", []):
+                        if isinstance(src_item, dict) and src_item.get("image"):
+                            existing_image = str(src_item.get("image"))
+                            break
+                    break
+        if not existing_image:
+            existing_image = find_commons_image(row.get("image_query", ""), aid)
+
         db["items"][aid] = {
             "id": aid, "title": title, "summary": str(row.get("summary", "")).strip()[:400],
             "content": content, "category": str(row.get("category", "economy")),
             "group_id": str(row.get("group_id", "")), "source_ids": source_ids,
             "sources": row_sources,
-            "image": str(row.get("image", "") or (old.get("image", "") if isinstance(old, dict) else "")),
+            "image": existing_image,
             "created_at": old.get("created_at", now_iso) if isinstance(old, dict) else now_iso,
             "updated_at": now_iso,
             "published_at": old.get("published_at", now_iso) if isinstance(old, dict) else now_iso,
