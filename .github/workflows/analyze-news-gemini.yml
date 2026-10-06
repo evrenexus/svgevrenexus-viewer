@@ -34,7 +34,7 @@ jobs:
 
           # news_ai.py writes both files. Commit both together so
           # no generated editorial changes remain unstaged during rebase.
-          git add data/news-ai.json data/editorial.json data/articles.json
+          git add data/news-ai.json data/editorial.json data/articles.json assets/articles/
 
           if git diff --cached --quiet; then
             echo "No AI data changes."
