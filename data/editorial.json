@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-06T07:07:44Z",
+  "updated": "2026-10-06T10:41:42Z",
   "_schema": 2,
   "items": {
     "dbd4e48a522940abd046": {
@@ -26,11 +26,11 @@
       "auto_publishable": true,
       "ai_importance": 20,
       "ai_political": false,
-      "ai_reason": "local candidate ranking",
+      "ai_reason": "local rule-based classification",
       "ai_topics": [
         "currency-gold"
       ],
-      "updated_at": "2026-10-06T07:07:44Z"
+      "updated_at": "2026-10-06T10:41:42Z"
     },
     "56927672062ac466f3e762c5": {
       "auto_important": false,
@@ -39,11 +39,11 @@
       "auto_publishable": true,
       "ai_importance": 20,
       "ai_political": false,
-      "ai_reason": "local candidate ranking",
+      "ai_reason": "local rule-based classification",
       "ai_topics": [
         "currency-gold"
       ],
-      "updated_at": "2026-10-06T07:07:44Z"
+      "updated_at": "2026-10-06T10:41:42Z"
     },
     "1f117e1de918fe8e169b470f": {
       "auto_important": false,
@@ -2025,7 +2025,7 @@
       "ai_topics": [
         "economy"
       ],
-      "updated_at": "2026-10-06T07:07:44Z"
+      "updated_at": "2026-10-06T10:41:42Z"
     },
     "bf7fe2b6a9dfbd6f496fd065": {
       "auto_important": false,
@@ -2038,7 +2038,7 @@
       "ai_topics": [
         "sports"
       ],
-      "updated_at": "2026-10-06T07:07:44Z"
+      "updated_at": "2026-10-06T10:41:42Z"
     },
     "712954995ab21d7031a5f7e3": {
       "auto_important": true,
@@ -2084,20 +2084,20 @@
       "ai_topics": [
         "health"
       ],
-      "updated_at": "2026-10-06T07:07:44Z"
+      "updated_at": "2026-10-06T10:41:42Z"
     },
     "24620e0b4b6607df17e5fab8": {
       "auto_important": false,
       "auto_slider": false,
       "auto_breaking": false,
-      "auto_publishable": true,
-      "ai_importance": 7,
-      "ai_political": false,
+      "auto_publishable": false,
+      "ai_importance": 4,
+      "ai_political": true,
       "ai_reason": "local rule-based classification",
       "ai_topics": [
         "economy"
       ],
-      "updated_at": "2026-10-06T07:07:44Z"
+      "updated_at": "2026-10-06T10:41:42Z"
     },
     "2e712e7c56614920065e5e97": {
       "auto_important": false,
@@ -2740,13 +2740,13 @@
       "auto_slider": false,
       "auto_breaking": false,
       "auto_publishable": true,
-      "ai_importance": 12,
+      "ai_importance": 11,
       "ai_political": false,
       "ai_reason": "local rule-based classification",
       "ai_topics": [
         "markets"
       ],
-      "updated_at": "2026-10-06T07:07:44Z"
+      "updated_at": "2026-10-06T10:41:42Z"
     },
     "d0e1927956f5dd607cbd11ca": {
       "auto_important": true,
@@ -2770,7 +2770,7 @@
         "technology",
         "ai"
       ],
-      "updated_at": "2026-10-06T07:07:44Z"
+      "updated_at": "2026-10-06T10:41:42Z"
     },
     "9ef74a27586076d997b815cd": {
       "auto_important": false,
@@ -2783,7 +2783,7 @@
       "ai_topics": [
         "health"
       ],
-      "updated_at": "2026-10-06T07:07:44Z"
+      "updated_at": "2026-10-06T10:41:42Z"
     },
     "ee823eaf45f86f5f21a51bce": {
       "auto_important": true,
@@ -2798,21 +2798,19 @@
         "currency-gold"
       ],
       "ai_important_topics": [
-        "economy",
-        "currency-gold"
+        "economy"
       ],
       "ai_slider_topics": [
-        "economy",
-        "currency-gold"
+        "economy"
       ],
-      "updated_at": "2026-10-06T07:07:44Z"
+      "updated_at": "2026-10-06T10:41:42Z"
     },
     "1991a7ecdebf5b2ed1be9940": {
       "auto_important": true,
       "auto_slider": true,
       "auto_breaking": false,
       "auto_publishable": true,
-      "ai_importance": 20,
+      "ai_importance": 19,
       "ai_political": false,
       "ai_reason": "local rule-based classification",
       "ai_topics": [
@@ -2824,39 +2822,39 @@
       "ai_slider_topics": [
         "science-life"
       ],
-      "updated_at": "2026-10-06T07:07:44Z"
+      "updated_at": "2026-10-06T10:41:42Z"
     },
     "1c05a2957e77760362e6ef06": {
       "auto_important": false,
       "auto_slider": false,
       "auto_breaking": false,
       "auto_publishable": true,
-      "ai_importance": 12,
+      "ai_importance": 11,
       "ai_political": false,
       "ai_reason": "local rule-based classification",
       "ai_topics": [
         "science-life"
       ],
-      "updated_at": "2026-10-06T07:07:44Z"
+      "updated_at": "2026-10-06T10:41:42Z"
     },
     "f8ad66e3db4473f0e9c0e92f": {
       "auto_important": false,
       "auto_slider": false,
       "auto_breaking": false,
       "auto_publishable": true,
-      "ai_importance": 19,
+      "ai_importance": 18,
       "ai_political": false,
       "ai_reason": "local rule-based classification",
       "ai_topics": [
         "war",
         "economy"
       ],
-      "updated_at": "2026-10-06T07:07:44Z"
+      "updated_at": "2026-10-06T10:41:42Z"
     },
     "a153809c41df51c2d83c51eb": {
       "auto_important": true,
       "auto_slider": true,
-      "auto_breaking": true,
+      "auto_breaking": false,
       "auto_publishable": true,
       "ai_importance": 20,
       "ai_political": false,
@@ -2870,55 +2868,46 @@
       "ai_slider_topics": [
         "war"
       ],
-      "ai_breaking_topics": [
-        "war"
-      ],
-      "updated_at": "2026-10-06T07:07:44Z"
+      "updated_at": "2026-10-06T10:41:42Z"
     },
     "0767448277ff548395a99a33": {
       "auto_important": false,
       "auto_slider": false,
       "auto_breaking": false,
       "auto_publishable": true,
-      "ai_importance": 15,
+      "ai_importance": 14,
       "ai_political": false,
       "ai_reason": "local rule-based classification",
       "ai_topics": [
         "markets"
       ],
-      "updated_at": "2026-10-06T07:07:44Z"
+      "updated_at": "2026-10-06T10:41:42Z"
     },
     "0154d1bbae17de41a68c4604": {
-      "auto_important": true,
-      "auto_slider": true,
+      "auto_important": false,
+      "auto_slider": false,
       "auto_breaking": false,
       "auto_publishable": true,
-      "ai_importance": 14,
+      "ai_importance": 13,
       "ai_political": false,
       "ai_reason": "local rule-based classification",
       "ai_topics": [
         "auto"
       ],
-      "ai_important_topics": [
-        "auto"
-      ],
-      "ai_slider_topics": [
-        "auto"
-      ],
-      "updated_at": "2026-10-06T07:07:44Z"
+      "updated_at": "2026-10-06T10:41:42Z"
     },
     "a2f4a181a57f88b016efaabd": {
       "auto_important": false,
       "auto_slider": false,
       "auto_breaking": false,
       "auto_publishable": true,
-      "ai_importance": 12,
+      "ai_importance": 11,
       "ai_political": false,
       "ai_reason": "local rule-based classification",
       "ai_topics": [
         "war"
       ],
-      "updated_at": "2026-10-06T07:07:44Z"
+      "updated_at": "2026-10-06T10:41:42Z"
     },
     "44451c7ae8f584567aef8d31": {
       "auto_important": false,
@@ -2931,34 +2920,34 @@
       "ai_topics": [
         "war"
       ],
-      "updated_at": "2026-10-06T07:07:44Z"
+      "updated_at": "2026-10-06T10:41:42Z"
     },
     "c4ed1b8df06d1b1dc2080102": {
       "auto_important": false,
       "auto_slider": false,
       "auto_breaking": false,
       "auto_publishable": true,
-      "ai_importance": 19,
+      "ai_importance": 18,
       "ai_political": false,
       "ai_reason": "local rule-based classification",
       "ai_topics": [
         "currency-gold"
       ],
-      "updated_at": "2026-10-06T07:07:44Z"
+      "updated_at": "2026-10-06T10:41:42Z"
     },
     "415c39e49cedbcacaf3b6b79": {
       "auto_important": false,
       "auto_slider": false,
       "auto_breaking": false,
       "auto_publishable": true,
-      "ai_importance": 12,
+      "ai_importance": 11,
       "ai_political": false,
       "ai_reason": "local rule-based classification",
       "ai_topics": [
         "science-life",
         "health"
       ],
-      "updated_at": "2026-10-06T07:07:44Z"
+      "updated_at": "2026-10-06T10:41:42Z"
     },
     "96e4f0fe8a400a85569e4234": {
       "auto_important": false,
@@ -2971,11 +2960,11 @@
       "ai_topics": [
         "economy"
       ],
-      "updated_at": "2026-10-06T07:07:44Z"
+      "updated_at": "2026-10-06T10:41:42Z"
     },
     "1a33fc42ca538f7916068ae9": {
-      "auto_important": true,
-      "auto_slider": true,
+      "auto_important": false,
+      "auto_slider": false,
       "auto_breaking": false,
       "auto_publishable": true,
       "ai_importance": 20,
@@ -2984,41 +2973,22 @@
       "ai_topics": [
         "markets"
       ],
-      "ai_important_topics": [
-        "markets"
-      ],
-      "ai_slider_topics": [
-        "markets"
-      ],
-      "updated_at": "2026-10-06T07:07:44Z"
+      "updated_at": "2026-10-06T10:41:42Z"
     },
     "9845429dfa9042e3b9de67bc": {
       "auto_important": false,
       "auto_slider": false,
       "auto_breaking": false,
       "auto_publishable": true,
-      "ai_importance": 12,
+      "ai_importance": 11,
       "ai_political": false,
       "ai_reason": "local rule-based classification",
       "ai_topics": [
         "markets"
       ],
-      "updated_at": "2026-10-06T07:07:44Z"
+      "updated_at": "2026-10-06T10:41:42Z"
     },
     "f818f1114180a4c7155f7311": {
-      "auto_important": false,
-      "auto_slider": false,
-      "auto_breaking": false,
-      "auto_publishable": true,
-      "ai_importance": 12,
-      "ai_political": false,
-      "ai_reason": "local rule-based classification",
-      "ai_topics": [
-        "economy"
-      ],
-      "updated_at": "2026-10-06T07:07:44Z"
-    },
-    "908cd722db530a2c2ea30604": {
       "auto_important": false,
       "auto_slider": false,
       "auto_breaking": false,
@@ -3029,7 +2999,20 @@
       "ai_topics": [
         "economy"
       ],
-      "updated_at": "2026-10-06T07:07:44Z"
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "908cd722db530a2c2ea30604": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 10,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
     },
     "a98a16d1a0d7247131a487d8": {
       "auto_important": false,
@@ -3042,12 +3025,12 @@
       "ai_topics": [
         "markets"
       ],
-      "updated_at": "2026-10-06T07:07:44Z"
+      "updated_at": "2026-10-06T10:41:42Z"
     },
     "1a7c2c8488ae1c9c04c5b6db": {
       "auto_important": true,
       "auto_slider": true,
-      "auto_breaking": true,
+      "auto_breaking": false,
       "auto_publishable": true,
       "ai_importance": 20,
       "ai_political": false,
@@ -3059,7 +3042,6 @@
       ],
       "ai_important_topics": [
         "economy",
-        "currency-gold",
         "war"
       ],
       "ai_slider_topics": [
@@ -3067,12 +3049,7 @@
         "currency-gold",
         "war"
       ],
-      "ai_breaking_topics": [
-        "economy",
-        "currency-gold",
-        "war"
-      ],
-      "updated_at": "2026-10-06T07:07:44Z"
+      "updated_at": "2026-10-06T10:41:42Z"
     },
     "d9decd07ac09c7a21e763992": {
       "auto_important": false,
@@ -3085,7 +3062,7 @@
       "ai_topics": [
         "health"
       ],
-      "updated_at": "2026-10-06T07:07:44Z"
+      "updated_at": "2026-10-06T10:41:42Z"
     },
     "966fe3e5473b629ad0a41ed7": {
       "auto_important": false,
@@ -3096,10 +3073,9 @@
       "ai_political": false,
       "ai_reason": "local rule-based classification",
       "ai_topics": [
-        "economy",
-        "war"
+        "economy"
       ],
-      "updated_at": "2026-10-06T07:07:44Z"
+      "updated_at": "2026-10-06T10:41:42Z"
     },
     "4e87ee66b869ca58acfb2be9": {
       "auto_important": true,
@@ -3118,20 +3094,20 @@
       "ai_slider_topics": [
         "real-estate"
       ],
-      "updated_at": "2026-10-06T07:07:44Z"
+      "updated_at": "2026-10-06T10:41:42Z"
     },
     "659f8090cf9a70821890c398": {
       "auto_important": false,
       "auto_slider": false,
       "auto_breaking": false,
       "auto_publishable": true,
-      "ai_importance": 16,
+      "ai_importance": 14,
       "ai_political": false,
       "ai_reason": "local rule-based classification",
       "ai_topics": [
         "health"
       ],
-      "updated_at": "2026-10-06T07:07:44Z"
+      "updated_at": "2026-10-06T10:41:42Z"
     },
     "010ab9924d61b59c06556fda": {
       "auto_important": true,
@@ -3158,26 +3134,26 @@
       "auto_slider": false,
       "auto_breaking": false,
       "auto_publishable": true,
-      "ai_importance": 17,
+      "ai_importance": 16,
       "ai_political": false,
       "ai_reason": "local rule-based classification",
       "ai_topics": [
         "economy"
       ],
-      "updated_at": "2026-10-06T07:07:44Z"
+      "updated_at": "2026-10-06T10:41:42Z"
     },
     "0b3ae45f0a77b8d34d7a8928": {
       "auto_important": false,
       "auto_slider": false,
       "auto_breaking": false,
-      "auto_publishable": true,
-      "ai_importance": 14,
-      "ai_political": false,
+      "auto_publishable": false,
+      "ai_importance": 9,
+      "ai_political": true,
       "ai_reason": "local rule-based classification",
       "ai_topics": [
         "economy"
       ],
-      "updated_at": "2026-10-06T07:07:44Z"
+      "updated_at": "2026-10-06T10:41:42Z"
     },
     "c7f3265bae39a6c3677956af": {
       "auto_important": false,
@@ -3219,7 +3195,7 @@
         "currency-gold",
         "ai"
       ],
-      "updated_at": "2026-10-06T07:07:44Z"
+      "updated_at": "2026-10-06T10:41:42Z"
     },
     "3bc4b3874edcbfc201470229": {
       "auto_important": false,
@@ -3237,9 +3213,9 @@
     "ff93897783e15e84993d4f5d": {
       "auto_important": true,
       "auto_slider": true,
-      "auto_breaking": true,
+      "auto_breaking": false,
       "auto_publishable": true,
-      "ai_importance": 16,
+      "ai_importance": 15,
       "ai_political": false,
       "ai_reason": "local rule-based classification",
       "ai_topics": [
@@ -3251,10 +3227,7 @@
       "ai_slider_topics": [
         "real-estate"
       ],
-      "ai_breaking_topics": [
-        "real-estate"
-      ],
-      "updated_at": "2026-10-06T07:07:44Z"
+      "updated_at": "2026-10-06T10:41:42Z"
     },
     "b56f36b94267c9bea4e3fe26": {
       "auto_important": true,
@@ -3269,48 +3242,46 @@
         "currency-gold"
       ],
       "ai_important_topics": [
-        "markets",
-        "currency-gold"
+        "markets"
       ],
       "ai_slider_topics": [
-        "markets",
-        "currency-gold"
+        "markets"
       ],
-      "updated_at": "2026-10-06T07:07:44Z"
+      "updated_at": "2026-10-06T10:41:42Z"
     },
     "1de5f6e7ad539603fe245940": {
       "auto_important": false,
       "auto_slider": false,
       "auto_breaking": false,
       "auto_publishable": true,
-      "ai_importance": 18,
+      "ai_importance": 17,
       "ai_political": false,
       "ai_reason": "local rule-based classification",
       "ai_topics": [
         "economy",
         "currency-gold"
       ],
-      "updated_at": "2026-10-06T07:07:44Z"
+      "updated_at": "2026-10-06T10:41:42Z"
     },
     "62091314458fa336804ee537": {
       "auto_important": false,
       "auto_slider": false,
       "auto_breaking": false,
       "auto_publishable": true,
-      "ai_importance": 7,
+      "ai_importance": 6,
       "ai_political": false,
       "ai_reason": "local rule-based classification",
       "ai_topics": [
         "markets"
       ],
-      "updated_at": "2026-10-06T07:07:44Z"
+      "updated_at": "2026-10-06T10:41:42Z"
     },
     "590b348c2848bc72ea664c3b": {
       "auto_important": true,
       "auto_slider": true,
       "auto_breaking": false,
       "auto_publishable": true,
-      "ai_importance": 19,
+      "ai_importance": 18,
       "ai_political": false,
       "ai_reason": "local rule-based classification",
       "ai_topics": [
@@ -3321,15 +3292,13 @@
       ],
       "ai_important_topics": [
         "real-estate",
-        "technology",
-        "health"
+        "technology"
       ],
       "ai_slider_topics": [
         "real-estate",
-        "technology",
-        "health"
+        "technology"
       ],
-      "updated_at": "2026-10-06T07:07:44Z"
+      "updated_at": "2026-10-06T10:41:42Z"
     },
     "287c9a65ba0de8b2d68612fa": {
       "auto_important": false,
@@ -3342,7 +3311,7 @@
       "ai_topics": [
         "markets"
       ],
-      "updated_at": "2026-10-06T07:07:44Z"
+      "updated_at": "2026-10-06T10:41:42Z"
     },
     "e91ee9da89db522bae28a602": {
       "auto_important": false,
@@ -3356,6 +3325,3066 @@
         "war"
       ],
       "updated_at": "2026-10-06T07:07:44Z"
+    },
+    "04d4ae34bd7c84dded97d85c": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 20,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "currency-gold"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "d5163258137efb087794a19c": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 18,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "currency-gold"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "a194427cfaefc25b33295430": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 7,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "markets"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "b8e281841a196e177e2c7ad9": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 15,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "currency-gold"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "32ebe34fe4df8fb8456ad274": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 10,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "currency-gold"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "bbf74a4f5ab6b15e4b7cd67e": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 15,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "currency-gold"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "3c8394849b51d9b222a7d8ce": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 18,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "currency-gold"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "da75beb1ad8fe26c93017eff": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 9,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "currency-gold"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "a606f6d701028bac55cf420c": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 20,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "markets"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "eb2ba1036feb63565859e877": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 9,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "currency-gold"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "753191e0808d07ac328a0460": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": true,
+      "auto_publishable": true,
+      "ai_importance": 19,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "currency-gold"
+      ],
+      "ai_breaking_topics": [
+        "currency-gold"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "75ba0b91ca55e0d5a278a84f": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 17,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "1c8886fb8d9b9889b1a78998": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 4,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "984e4aede11c7d1343740469": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 16,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "war",
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "d74db328fd788210f33e9d9c": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 9,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "war",
+        "science-life"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "d4a592da52cb4af51068b221": {
+      "auto_important": true,
+      "auto_slider": true,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 14,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "science-life",
+        "auto"
+      ],
+      "ai_important_topics": [
+        "auto",
+        "science-life"
+      ],
+      "ai_slider_topics": [
+        "auto",
+        "science-life"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "e79e38f99539e31797a11dc2": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 7,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "850f4bc1ff5c443ba9633ee2": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 9,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "currency-gold",
+        "auto"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "96cdff179c824cfe36d2abad": {
+      "auto_important": false,
+      "auto_slider": true,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 20,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "ai_slider_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "e6b86d674f1d424e5343107c": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 14,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "health"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "2ac9d2a89b626d5025b8fc6c": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 7,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "298e84f9ca118f9da9ead3f0": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 9,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "currency-gold"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "0d33383c217c56513b314c33": {
+      "auto_important": true,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 12,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "sports"
+      ],
+      "ai_important_topics": [
+        "sports"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "c25b5e2e58de67a07ffc239a": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 20,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "markets"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "d6e5a9ec4e7e19668cf737fe": {
+      "auto_important": false,
+      "auto_slider": true,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 14,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "auto"
+      ],
+      "ai_slider_topics": [
+        "auto"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "4812ee7ba430cd78b8454f5c": {
+      "auto_important": false,
+      "auto_slider": true,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 20,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "markets"
+      ],
+      "ai_slider_topics": [
+        "markets"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "ff85a01538745abecc100375": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 18,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "war",
+        "currency-gold"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "369e97239fc35d3bfb17dce0": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 7,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "3cb840b268e88c11b45a27b7": {
+      "auto_important": true,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 12,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "sports"
+      ],
+      "ai_important_topics": [
+        "sports"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "940e431e59ab31c22d8325da": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 7,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "6cd51e5fae6d1a1d6b5db95c": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 7,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "science-life"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "458d97db43fe16488d01dbeb": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 7,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "c111454b8342add0967d0d6d": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 4,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "dec1f8d9d35209661b114114": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 17,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "health"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "d2971351acc8e712d17c28be": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 20,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "war",
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "361a133cd7b5f7e4b3528667": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 7,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "302866db9d1c3ae25817db96": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 12,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "6c7b1248ef94b36f6e71e9c8": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 9,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "war"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "b34037529d5e6a5138254b22": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 18,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "health"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "8e920c0a21deb02c4c37026e": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 18,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "health"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "0bf060441db11e521e23e230": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 15,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "markets"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "74d7eecd74d18448e7490aaa": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 12,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "health"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "a78198c44a2ba9abc528ba01": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 12,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "war"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "a2a2206ef9715ad1f058c43a": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 20,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "markets"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "7f584be47a1ec0ccbd45ca92": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 12,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "auto"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "d3a1ce281aa6018025ac6f05": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 7,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "markets"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "821ab6c60a14382cd217c9c8": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 12,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "real-estate"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "075050853802426ec935a434": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 4,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "d9f902b17e365281f577a628": {
+      "auto_important": true,
+      "auto_slider": true,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 19,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "auto"
+      ],
+      "ai_important_topics": [
+        "auto"
+      ],
+      "ai_slider_topics": [
+        "auto"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "e6ad39f69fa228e3e38604da": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 15,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "currency-gold"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "661c52eb57a4290f58418468": {
+      "auto_important": true,
+      "auto_slider": true,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 20,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "permanent_article": true,
+      "article_id": "article-eece7c42f225dbaf",
+      "ai_topics": [
+        "markets",
+        "currency-gold"
+      ],
+      "ai_important_topics": [
+        "markets",
+        "currency-gold"
+      ],
+      "ai_slider_topics": [
+        "markets",
+        "currency-gold"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "e99831b556c7c05394abc7dd": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 7,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "983c6e6894e75667638a5ca5": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 20,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "markets"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "bc280fee7137ce2b19eac1f2": {
+      "auto_important": true,
+      "auto_slider": true,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 16,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "technology"
+      ],
+      "ai_important_topics": [
+        "technology"
+      ],
+      "ai_slider_topics": [
+        "technology"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "cdadb529bb4805f20d76e64b": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 9,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "real-estate"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "c2ab16dcc266318a90f3414d": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 16,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "war"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "45f3a34dfb7942f587d0e0b1": {
+      "auto_important": true,
+      "auto_slider": true,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 17,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "sports"
+      ],
+      "ai_important_topics": [
+        "sports"
+      ],
+      "ai_slider_topics": [
+        "sports"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "440c42559b7b970142cadf11": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 9,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "real-estate"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "7944aaa8220663243b18e8b7": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 12,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "science-life"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "0b0f92e5630a90139324b60f": {
+      "auto_important": true,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 12,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "war",
+        "sports",
+        "science-life"
+      ],
+      "ai_important_topics": [
+        "sports"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "5bf03468d5d9a143b8ffd4a9": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 20,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "markets",
+        "currency-gold"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "ca3402c1dce9b0fe70433947": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 14,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "health"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "8506a97cd56b92bffc275181": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 15,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "currency-gold"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "c35dcc09a542f4f2c79d70a0": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 9,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "war"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "fdbb353d95e87182255593ab": {
+      "auto_important": true,
+      "auto_slider": true,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 20,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "permanent_article": true,
+      "article_id": "article-a1e9c5f5d5ffa6fa",
+      "ai_topics": [
+        "markets",
+        "currency-gold",
+        "ai"
+      ],
+      "ai_important_topics": [
+        "markets",
+        "currency-gold",
+        "ai"
+      ],
+      "ai_slider_topics": [
+        "markets",
+        "currency-gold",
+        "ai"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "3a843883b496853eabcbd03c": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 4,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "531003b3c68fd626379f2d82": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 4,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "062514cdbda92e8d6d2701a0": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 9,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "war"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "f23bd613aefa4fa0677d15a7": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 12,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "war"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "513882fbc9b63950a243feb0": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 14,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "science-life"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "beb29e6daacd46a711cd5b8a": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 4,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "8319c12abc36cf384bdfdd43": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 4,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "2309d91f4bd54dd2ae091470": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 17,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "ee0dba76b0b10658d830f453": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 7,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "d1acf0ca78df64f104ed4995": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 4,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "e8a710ea96cd53808f8d66df": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 4,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "6bc71612dbc2f42cabafa46e": {
+      "auto_important": true,
+      "auto_slider": true,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 20,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "permanent_article": true,
+      "article_id": "article-7809312005ffe3b8",
+      "ai_topics": [
+        "auto"
+      ],
+      "ai_important_topics": [
+        "auto"
+      ],
+      "ai_slider_topics": [
+        "auto"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "a5385879a6fb6fbbae143b2f": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 9,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "war",
+        "real-estate"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "4642fd9717cc788f67803ea1": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 4,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "science-life"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "e87c39d3e463276be7fddfb8": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 4,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "11fb494fd306c448606ff2f6": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 14,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "health"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "5f3f4d62fd2653c47bb6a4de": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 12,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "health"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "7d74729b14cc876b8555d6c8": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 4,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "80f620c2dc476d824f2fbe1e": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 4,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "technology"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "1ea3f6c23bbec904b9a88262": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 4,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "149824788924d9a9b19a561d": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 7,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "605772aaf1d5561d39f9575b": {
+      "auto_important": true,
+      "auto_slider": true,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 17,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "technology"
+      ],
+      "ai_important_topics": [
+        "technology"
+      ],
+      "ai_slider_topics": [
+        "technology"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "63646af162b48776ec87b7a0": {
+      "auto_important": true,
+      "auto_slider": true,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 15,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "real-estate"
+      ],
+      "ai_important_topics": [
+        "real-estate"
+      ],
+      "ai_slider_topics": [
+        "real-estate"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "9efd84d883571ac8812787b0": {
+      "auto_important": true,
+      "auto_slider": true,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 20,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "markets",
+        "currency-gold"
+      ],
+      "ai_important_topics": [
+        "markets",
+        "currency-gold"
+      ],
+      "ai_slider_topics": [
+        "markets",
+        "currency-gold"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "7a28bf33dd1944b4679ee8dd": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 4,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "991f8f204083476df053d6bb": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 7,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "68d949152d697c2a475d9638": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 12,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "technology",
+        "science-life"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "6f2eb794a74f9bce7dee5b08": {
+      "auto_important": true,
+      "auto_slider": true,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 19,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "health"
+      ],
+      "ai_important_topics": [
+        "health"
+      ],
+      "ai_slider_topics": [
+        "health"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "0778ef5fe707ae60624306e7": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 9,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "war"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "6169dda2446d9dac6548f429": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 12,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "sports"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "0fe273a93c09f5b72213d856": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 15,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "markets",
+        "currency-gold"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "f9e8bbefbe13eb05484a590d": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 12,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "currency-gold"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "3a9f5144e1eed1644d041a55": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 12,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "health"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "8a910639b0f4816b7f6ac5ad": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 16,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "war"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "3122fa70fe170e650d42748d": {
+      "auto_important": true,
+      "auto_slider": true,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 20,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "permanent_article": true,
+      "article_id": "article-cca21cbd91fb4900",
+      "ai_topics": [
+        "health"
+      ],
+      "ai_important_topics": [
+        "health"
+      ],
+      "ai_slider_topics": [
+        "health"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "baf970468b12e715fc6cc98e": {
+      "auto_important": true,
+      "auto_slider": true,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 19,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "auto"
+      ],
+      "ai_important_topics": [
+        "auto"
+      ],
+      "ai_slider_topics": [
+        "auto"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "fcedea696b3ee755033a2b89": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 7,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "0dc751c983c330531766dce2": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 9,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "real-estate",
+        "auto"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "f959189edaf501a23af28812": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 4,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "e3d3cf5a15dbbc2a78a3fc43": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 20,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "markets"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "79dd20900fd572e7844a0e7d": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 4,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "702b8c97216e5ef5e6b13d0b": {
+      "auto_important": true,
+      "auto_slider": true,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 15,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "science-life",
+        "currency-gold"
+      ],
+      "ai_important_topics": [
+        "science-life"
+      ],
+      "ai_slider_topics": [
+        "science-life"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "459115f305f8a3d16c8caebf": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 9,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "war"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "e78b343bfed27e428b4953eb": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 4,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "79686d2bb192824af8d84635": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 12,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "war"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "2c6d7cd239dc2721624dc7d6": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 4,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "science-life"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "99222593b67f04cec50073ca": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": true,
+      "auto_publishable": true,
+      "ai_importance": 19,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "markets"
+      ],
+      "ai_breaking_topics": [
+        "markets"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "b66905df6235ec1314e59f67": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 16,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "currency-gold"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "9cda597e3bfa86de397f71f1": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 16,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "war"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "d7fd9a1b4ba830e56eb6ac2b": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 4,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "b6377078c0f8249728052edb": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 17,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "health"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "a76b68f072b9548bd4631d0a": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 20,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "currency-gold"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "2807523731f09fea53cda818": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 17,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "ba1c6696aa33c29de5e7d127": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 4,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "78980733a12b490760b75e50": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 9,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "a1516c9c1aa39575d3186abb": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 14,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "war"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "a7389e636c0e31cc967f6e15": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 14,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "auto"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "553d88369c7870a4f001a9b5": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 7,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "7b7060fc08342e7ec43cd130": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 16,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "war"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "bedf1e304bc51fd6691f21ac": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 15,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "war",
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "6d780695aca9ffddb4f3fb0a": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 12,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "sports",
+        "science-life",
+        "health"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "3c51dd437a620a31741e4eea": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 16,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "war"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "66713eaa314702b703dda259": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 12,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "science-life",
+        "health"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "1fc060e27e5079ee1eeb4732": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 12,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "health"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "3129f75fdb1a4c1421b71efb": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 7,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "science-life"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "97c7bb9838a38e126af543fc": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 4,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "f302fdd5b8a992351ff065a2": {
+      "auto_important": true,
+      "auto_slider": true,
+      "auto_breaking": true,
+      "auto_publishable": true,
+      "ai_importance": 20,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "war"
+      ],
+      "ai_important_topics": [
+        "war"
+      ],
+      "ai_slider_topics": [
+        "war"
+      ],
+      "ai_breaking_topics": [
+        "war"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "4dfd727c959844eeca64023e": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 19,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "war",
+        "currency-gold"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "19908931b6815ff2807cc4af": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 12,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "health"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "e9d9fcfc7028f8455ceacac8": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 20,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "markets",
+        "currency-gold"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "f5bda4e050d6d67271930f0b": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 9,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "currency-gold"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "f4c5c7511e6aa658e53642e3": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 16,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "health"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "d201a66e28bddc983ce94aa3": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 14,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "currency-gold"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "d8ff1112e0a6c852c6b23e52": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 4,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "d0ebd04785afeafd6ebc5c66": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 4,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "8558fc49a7961fda23ed9c14": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 7,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "science-life"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "bdf74b8c555882e9934dcf45": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 9,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "currency-gold",
+        "auto"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "399c355888a883514fa99b21": {
+      "auto_important": true,
+      "auto_slider": true,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 19,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "health"
+      ],
+      "ai_important_topics": [
+        "health"
+      ],
+      "ai_slider_topics": [
+        "health"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "f40105a7f643c1e4ff836f69": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 9,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "currency-gold"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "91e94621f56d877c4439733b": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 20,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "currency-gold"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "633cb235c8268d8a10ece90b": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 15,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "0ddc8913d7af4fda7ba81feb": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 4,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "2eaeaf789c1c061a9ac83e85": {
+      "auto_important": true,
+      "auto_slider": true,
+      "auto_breaking": true,
+      "auto_publishable": true,
+      "ai_importance": 20,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "health"
+      ],
+      "ai_important_topics": [
+        "health"
+      ],
+      "ai_slider_topics": [
+        "health"
+      ],
+      "ai_breaking_topics": [
+        "health"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "bd0016cd5804210b252d4797": {
+      "auto_important": true,
+      "auto_slider": true,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 20,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "currency-gold"
+      ],
+      "ai_important_topics": [
+        "currency-gold"
+      ],
+      "ai_slider_topics": [
+        "currency-gold"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "286171f620aac19acb5e469a": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 17,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "markets"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "b9d8c887a382fd99100cfdda": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 4,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "900e750647fa24493ef44b9c": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 7,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "health"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "b7b383b5b35e8b3717343306": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 4,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "d417de49115c76157881886d": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 4,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "1e7b2b46c03cf5d46cd08c00": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 15,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "markets",
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "e803097236f7cd44accab629": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 14,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "3a64dcc22aaa9856568281d0": {
+      "auto_important": true,
+      "auto_slider": true,
+      "auto_breaking": true,
+      "auto_publishable": true,
+      "ai_importance": 20,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "war"
+      ],
+      "ai_important_topics": [
+        "war"
+      ],
+      "ai_slider_topics": [
+        "war"
+      ],
+      "ai_breaking_topics": [
+        "war"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "ea595128bc5576a5f350fb2c": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 12,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "sports"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "73e3cfad16cf1fb44699a483": {
+      "auto_important": true,
+      "auto_slider": true,
+      "auto_breaking": true,
+      "auto_publishable": true,
+      "ai_importance": 20,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "war",
+        "economy"
+      ],
+      "ai_important_topics": [
+        "economy"
+      ],
+      "ai_slider_topics": [
+        "economy",
+        "war"
+      ],
+      "ai_breaking_topics": [
+        "economy",
+        "war"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "1828492487681ed86abfa873": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 4,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "b5b386be591624cc5cec9b34": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 7,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "health"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "ba1b928761cf8f3f7cb8a4c4": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 4,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "1cf5f8b702de20e7ae8aa336": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 7,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "markets"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "21c847c82242c2fd1087954b": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 20,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "markets"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "d3c134b4e14ce4573ed4f347": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 4,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "39fe4d97563de65523054b75": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 9,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "currency-gold"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "047e3cfac7c61a93efe31470": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 15,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy",
+        "currency-gold"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "9971482a7621db4d62add722": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 7,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "7224f3f48f96a860945e34b1": {
+      "auto_important": true,
+      "auto_slider": true,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 20,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy",
+        "currency-gold"
+      ],
+      "ai_important_topics": [
+        "economy"
+      ],
+      "ai_slider_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "db11986910358e67c73a3fc8": {
+      "auto_important": false,
+      "auto_slider": true,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 19,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "health"
+      ],
+      "ai_slider_topics": [
+        "health"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "ee0d5a305e314f2ddcd29c33": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 20,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "markets",
+        "currency-gold"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "f828526cbd309649be03c871": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 14,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "3e16b8311cc31f1dd3d203fa": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 6,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "markets"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "86d87bac29c506875658ba81": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 6,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "health"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "757e5c18eb02a793b305e1b6": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 11,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "war"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "de3e2320c26b138664075dbd": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 6,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "a1981143470b3743c0ffaf39": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 9,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "currency-gold"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "cfd3b47520f9eb24bd9463fe": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 14,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "war"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "3343b8198b65d39fc1dd2a5b": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 20,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "markets",
+        "currency-gold"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "d5d1cde744da49cd65e6e444": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 9,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "markets"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "6b7ce3ea8a5c505df61ba398": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 9,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "war"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "da602fa2753c5f1b6ad042f4": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 11,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "health"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "6baf9dc2bf157d3e28882077": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 14,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "7fa1d8a7bbd9f27f16d620f0": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 14,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "8db401baed8410411a05b897": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 14,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "ba217507ff891eb841b0b5ea": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 20,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "markets",
+        "currency-gold"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "5647261bb2d5ad781fd49449": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 8,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "health"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "8eea30fd3d8765dd9a8f91b0": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 4,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "83a9950067220ef906ca7e27": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 4,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "1878b2907f4bcb6170ad6280": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 15,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "war"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "8429273016541fb4df26fdd4": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 6,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "health"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "6505bde13b319e5624cb5488": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 16,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "currency-gold"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "d4398b04407ae52c4693df4e": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 14,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "war"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "eefc6fe7d4be713ed8a3d149": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 16,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "01ee233849be8a3fe62935b0": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 9,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "war"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "253681c9b089f398fdc02808": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 18,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "markets",
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "e7b23d70503cb8251fc5a282": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 6,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "health"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "188aeb7adf938c51c6f4da7d": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 14,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "b18448b9cb2020ea9af539a3": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 6,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "40631a18ff89953ea0a25b73": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 14,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "currency-gold"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "27f14a52ee350312635082d4": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 20,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "markets"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "bcfbaeec3272583aaed6e2e6": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 11,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "health"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "101c1d50c077d1e941dc318a": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 16,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "health"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "2fe663849cf1edb5f37dab1c": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 16,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "markets",
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "3a9426b4480f75ef2d3c9cea": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 14,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "currency-gold"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "a53ca12a278d6006e0ed6756": {
+      "auto_important": true,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 13,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "science-life",
+        "real-estate",
+        "auto"
+      ],
+      "ai_important_topics": [
+        "science-life"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "09ff6d810723b8dcbb49a4d9": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 4,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "d59501fc68fb4d0755b1094c": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 15,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "war"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "85df30eb338263bf84eb9f7e": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 4,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "1a92f4f5cfd0c58b35e15d8c": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 9,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "war"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "268f64b2542e05302c4427e6": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 14,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "a447c1236f328a0a915c2751": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 9,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "war"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "6e5699bf00b1b2c0ae5d5a9f": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 14,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "1978e79334aa0010ef8fadb2": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 9,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "war",
+        "economy",
+        "currency-gold"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "2355da1adeb2e6124b937fbe": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 20,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "markets"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "3ce34781ccde85d677c8683a": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": false,
+      "ai_importance": 14,
+      "ai_political": true,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "war"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "7f30d33a8d6225718500dc98": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 11,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "real-estate"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
+    },
+    "487ea903abb40a5c5ce817a7": {
+      "auto_important": false,
+      "auto_slider": false,
+      "auto_breaking": false,
+      "auto_publishable": true,
+      "ai_importance": 19,
+      "ai_political": false,
+      "ai_reason": "local rule-based classification",
+      "ai_topics": [
+        "economy"
+      ],
+      "updated_at": "2026-10-06T10:41:42Z"
     }
   }
 }
