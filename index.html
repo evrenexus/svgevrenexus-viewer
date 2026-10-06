@@ -64,16 +64,21 @@ function normalizeEditorial(j){
 fetch("./data/news.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("news.json HTTP "+r.status);return r.json()}).then(function(data){
 return Promise.all([fetch("./data/editorial.json?v="+Date.now(),{cache:"no-store"}).then(function(r){return r.ok?r.json():{}}),fetch("./data/news-ai.json?v="+Date.now(),{cache:"no-store"}).then(function(r){return r.ok?r.json():{}}),fetch("./data/articles.json?v="+Date.now(),{cache:"no-store"}).then(function(r){return r.ok?r.json():{}})]).then(function(ds){return [data,ds[0],ds[1],ds[2]]});
 }).then(function(ds){
-var data=ds[0],ed=ds[1]||{},ai=ds[2]||{},articlesData=ds[3]||{};editorial=ed;aiItems=ai.items||{};var all=(data.items||[]).filter(function(x){
-var es=(ed.items&&ed.items[x.id])||{},aa=aiItems[x.id]||{};
+var data=ds[0],ed=ds[1]||{},ai=ds[2]||{},articlesData=ds[3]||{};editorial=ed;aiItems=ai.items||{};
+var aiByTitle={};Object.keys(aiItems).forEach(function(id){var z=aiItems[id];if(z&&z.title)aiByTitle[z.title]=z;});
+var edByTitle={};Object.keys(ed.items||{}).forEach(function(id){var z=ed.items[id];if(z&&z.title)edByTitle[z.title]=z;});
+function aiFor(x){return aiItems[x.id]||aiByTitle[x.title]||{};}
+function edFor(x){return (ed.items&&ed.items[x.id])||edByTitle[x.title]||{};}
+var all=(data.items||[]).filter(function(x){
+var es=edFor(x),aa=aiFor(x);
 return x&&x.title&&x.published&&safeUrl(x.url)&&safeDate(x.published)&&es.deleted!==true&&aa.political!==true&&es.ai_political!==true;
 });
 all.sort(function(a,b){return safeDate(b.published)-safeDate(a.published)});
 var tagCounts={};all.slice(0,120).forEach(function(x){(Array.isArray(x.topics)?x.topics:[]).forEach(function(t){if(TOPICS[t])tagCounts[t]=(tagCounts[t]||0)+1})});Object.keys(tagCounts).sort(function(a,b){return tagCounts[b]-tagCounts[a]}).forEach(function(t){var a=document.createElement("a");a.className="news-tag";a.href="./news-river.html?topic="+encodeURIComponent(t);a.textContent=TOPICS[t];tagsHost.appendChild(a)});
 var items=searchTerm?all.filter(function(x){var hay=((x.title||"")+" "+(x.summary||"")+" "+(x.source||"")).toLowerCase();return hay.indexOf(searchTerm.toLowerCase())!==-1}):all;
 items.sort(function(a,b){return safeDate(b.published)-safeDate(a.published)});
-var importantItems=items.filter(function(x){var a=aiItems[x.id]||{},e=(ed.items&&ed.items[x.id])||{};return e.deleted!==true&&(e.manual_important===true||e.auto_important===true)&&a.political!==true});
-var breakingItems=items.filter(function(x){var a=aiItems[x.id]||{},e=(ed.items&&ed.items[x.id])||{};return e.deleted!==true&&(e.manual_breaking===true||e.auto_breaking===true||a.breaking===true)&&a.political!==true});
+var importantItems=items.filter(function(x){var a=aiFor(x),e=edFor(x);return e.deleted!==true&&(e.manual_important===true||e.auto_important===true||a.important===true)&&a.political!==true});
+var breakingItems=items.filter(function(x){var a=aiFor(x),e=edFor(x);return e.deleted!==true&&(e.manual_breaking===true||e.auto_breaking===true||a.breaking===true||((a.breaking_topics||[]).length>0))&&a.political!==true});
 items._important=importantItems;items._breaking=breakingItems;items._articles=searchTerm?[]:Object.values(articlesData.items||{}).filter(function(a){var e=(ed.items&&ed.items[a.id])||{};return a&&a.status==="published"&&e.deleted!==true});document.querySelector("#river .section-title").textContent=searchTerm?"نتایج جستجو":"تمامی اخبار";render(items)}).catch(function(){list.innerHTML='<div class="error">دریافت خبرها انجام نشد.</div>';importantList.innerHTML='<div class="error">دریافت خبرها انجام نشد.</div>';renderBreaking([])});
 })();
 </script><script src="https://evrenexus.github.io/svgevrenexus-viewer/Evrenexus-header.js?v=20261005-15"></script>
