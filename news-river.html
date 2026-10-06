@@ -84,10 +84,28 @@ items._breaking=Object.keys(aiItems).map(function(id){var a=aiItems[id]||{},x=ne
 document.querySelector("#river .section-title").textContent=searchTerm?"نتایج جستجو":"جدیدترین اخبار";
 render(items);
 }).catch(function(err){
-  list.innerHTML='<div class="error">دریافت خبرها انجام نشد.</div>';
-  importantList.innerHTML='<div class="error">دریافت مطالب انجام نشد.</div>';
-  renderBreaking([]);
   console.error("news-river:",err);
+  list.innerHTML="";
+  importantList.innerHTML='<div class="error">بخش مطالب مهم فعلاً در دسترس نیست.</div>';
+  renderBreaking([]);
+  fetch("./data/news.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("fallback news "+r.status);return r.json()}).then(function(d){
+    var fallback=(d.items||[]).filter(function(x){
+      if(!x||!x.title||!safeDate(x.published)||!safeUrl(x.url)||x.publishable===false)return false;
+      var ts=Array.isArray(x.topics)?x.topics:[];
+      return searchTerm ? (((x.title||"")+" "+(x.summary||"")+" "+(x.source||"")).toLowerCase().indexOf(searchTerm.toLowerCase())!==-1) : ts.indexOf(topic)!==-1;
+    }).sort(function(a,b){return safeDate(b.published)-safeDate(a.published)});
+    list.innerHTML="";
+    if(!fallback.length){list.innerHTML='<div class="error">فعلاً مطلبی در این موضوع پیدا نشد.</div>';return}
+    fallback.slice(0,14).forEach(function(x){
+      var a=document.createElement("a");a.className="item";a.href="./viewer.html?url="+encodeURIComponent(safeUrl(x.url));a.target="_blank";a.rel="noopener noreferrer";
+      if(x.image){var im=document.createElement("img");im.src=x.image;im.loading="lazy";im.referrerPolicy="no-referrer";a.appendChild(im)}
+      var box=document.createElement("div");box.className="content";
+      var t=document.createElement("div");t.className="title";t.textContent=x.title;box.appendChild(t);
+      if(x.summary){var s=document.createElement("div");s.className="summary";s.textContent=x.summary;box.appendChild(s)}
+      var m=document.createElement("div");m.className="meta";m.textContent=(x.source||"")+" • "+safeDate(x.published).toLocaleString("fa-IR",{dateStyle:"short",timeStyle:"short"});box.appendChild(m);
+      a.appendChild(box);list.appendChild(a);
+    });
+  }).catch(function(e){list.innerHTML='<div class="error">دریافت خبرها انجام نشد. لطفاً صفحه را یک‌بار تازه‌سازی کنید.</div>';console.error("news-river fallback:",e)});
 });
 })();
 </script>
