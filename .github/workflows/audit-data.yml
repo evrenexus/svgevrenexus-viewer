@@ -1,0 +1,15 @@
+name: Audit data (read-only)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Print real data shapes and counts
+        run: node scripts/audit-data.mjs
