@@ -218,22 +218,25 @@ def make_local_result(src,meta):
         base_topics.append(src["category"])
 
     topic_scores={}
+    hit_counts={}
+    base=int(meta.get("local_score",0))
     for topic,keywords in TOPIC_KEYWORDS.items():
         hits=sum(1 for kw in keywords if normalize_title(kw) in text)
         if hits:
-            topic_scores[topic]=min(20,int(meta.get("local_score",0))+min(8,hits*2))
+            hit_counts[topic]=hits
+            topic_scores[topic]=min(20,base+min(12,hits*5))
 
-    # If the collector supplied a topic but the text has no stronger local
-    # signal, keep it as a fallback. Strong conflicting signals win.
-    for topic in base_topics:
-        topic_scores.setdefault(topic,int(meta.get("local_score",0)))
-
-    if topic_scores:
-        topics=sorted(topic_scores,key=lambda t:(topic_scores[t],t),reverse=True)
+    # Keep collector topics only as a weak fallback. When the text contains
+    # a strong topical signal, unrelated collector labels must not dominate.
+    if not topic_scores:
+        for topic in base_topics:
+            topic_scores[topic]=base
     else:
-        topics=base_topics
+        top_score=max(topic_scores.values())
+        topic_scores={t:v for t,v in topic_scores.items() if v>=max(8,top_score*0.60)}
 
-    score=max(topic_scores.values()) if topic_scores else int(meta.get("local_score",0))
+    topics=sorted(topic_scores,key=lambda t:(topic_scores[t],t),reverse=True)
+    score=max(topic_scores.values()) if topic_scores else base
     political=bool(meta.get("political"))
     return {
         "title":src.get("title",""),"summary":src.get("summary",""),
