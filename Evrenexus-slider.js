@@ -50,10 +50,8 @@ var aiByTitle={};Object.keys(aii).forEach(function(id){var z=aii[id];if(z&&z.tit
 var edByTitle={};Object.keys(ei).forEach(function(id){var z=ei[id];if(z&&z.title)edByTitle[z.title]=z;});
 function aiFor(x){return aii[x.id]||aiByTitle[x.title]||{};}
 function edFor(x){return ei[x.id]||edByTitle[x.title]||{};}
-var all=(d.items||[]).filter(function(x){
-return x&&x.title&&x.published&&x.url;
-});
-var items=all.filter(function(x){
+var shared=Array.isArray(window.EVREN_IMPORTANT_ITEMS)?window.EVREN_IMPORTANT_ITEMS.slice(0,4):null;
+var items=shared||all.filter(function(x){
 var s=edFor(x),a=aiFor(x);
 var permanentId=a.article_id||(s&&s.article_id);
 var publishedArticle=!!(a.status==="published"||s.status==="published"||s.published===true);
