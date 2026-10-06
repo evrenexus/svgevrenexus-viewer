@@ -93,9 +93,16 @@ jobs:
           echo "Could not push after 3 attempts."
           exit 1
 
+  ai-analysis:
+    name: Run AI Manager immediately after data update
+    needs: update-data
+    uses: ./.github/workflows/analyze-news-gemini.yml
+    secrets:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
   deploy:
     name: Deploy updated site
-    needs: update-data
+    needs: [update-data, ai-analysis]
     runs-on: ubuntu-latest
 
     environment:
