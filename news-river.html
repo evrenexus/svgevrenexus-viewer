@@ -37,6 +37,7 @@ var q=new URLSearchParams(location.search),topic=q.get("topic")||"economy",searc
 var searchInput=document.getElementById("newsSearchInput"),searchButton=document.getElementById("newsSearchButton"),tagsHost=document.getElementById("newsTags");
 searchInput.value=searchTerm;
 var topicLabel=TOPICS[topic];
+document.querySelector("#important .section-title").textContent="مهم‌ترین مطالب "+topicLabel;
 searchInput.placeholder="جستجوی اخبار "+topicLabel;
 document.title=searchTerm?"نتایج جستجو":TOPICS[topic];
 var list=document.getElementById("list"),importantList=document.getElementById("importantList");
@@ -67,7 +68,7 @@ function normalizeEditorial(j){
 }
 Promise.all([fetch("./data/news.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("news.json HTTP "+r.status);return r.json()}),fetch("./data/editorial.json?v="+Date.now(),{cache:"no-store"}).then(function(r){return r.ok?r.json():{}}),fetch("./data/news-ai.json?v="+Date.now(),{cache:"no-store"}).then(function(r){return r.ok?r.json():{}})]).then(function(ds){var data=ds[0];editorialItems=(ds[1]||{}).items||{};aiItems=(ds[2]||{}).items||{};var all=(data.items||[]).filter(function(x){var es=editorialItems[x.id]||{};return x&&x.title&&x.published&&safeUrl(x.url)&&safeDate(x.published)&&x.publishable!==false&&es.deleted!==true;});all.sort(function(a,b){return safeDate(b.published)-safeDate(a.published)});
 var tagCounts={};all.slice(0,120).forEach(function(x){var s=editorialItems[x.id]||{};var t=s.category||x.category||((Array.isArray(x.topics)&&x.topics[0])||"");if(TOPICS[t])tagCounts[t]=(tagCounts[t]||0)+1});Object.keys(tagCounts).sort(function(a,b){return tagCounts[b]-tagCounts[a]}).forEach(function(t){var a=document.createElement("a");a.className="news-tag";a.href="?topic="+encodeURIComponent(t);a.textContent=TOPICS[t];tagsHost.appendChild(a)});
-var items=searchTerm?all.filter(function(x){var hay=((x.title||"")+" "+(x.summary||"")+" "+(x.source||"")).toLowerCase();return hay.indexOf(searchTerm.toLowerCase())!==-1}):all.filter(function(x){var s=editorialItems[x.id]||{};if(s.category)return s.category===topic;var cats=[];if(x.category)cats.push(x.category);if(Array.isArray(x.topics))cats=cats.concat(x.topics);return cats.indexOf(topic)!==-1;});
+var items=searchTerm?all.filter(function(x){var hay=((x.title||"")+" "+(x.summary||"")+" "+(x.source||"")).toLowerCase();return hay.indexOf(searchTerm.toLowerCase())!==-1}):all.filter(function(x){var s=editorialItems[x.id]||{},a=aiItems[x.id]||{},cats=[];if(s.category)cats.push(s.category);if(x.category)cats.push(x.category);if(Array.isArray(x.topics))cats=cats.concat(x.topics);if(Array.isArray(a.topics))cats=cats.concat(a.topics);if(Array.isArray(a.important_topics))cats=cats.concat(a.important_topics);if(Array.isArray(a.slider_topics))cats=cats.concat(a.slider_topics);if(Array.isArray(a.breaking_topics))cats=cats.concat(a.breaking_topics);return cats.indexOf(topic)!==-1;});
 items.sort(function(a,b){return safeDate(b.published)-safeDate(a.published)});
 items._important=items.filter(function(x){
   var a=aiItems[x.id]||{},e=editorialItems[x.id]||{};
