@@ -19,6 +19,8 @@ def split_news(raw):
             if isinstance(raw.get(k), list): return k, raw[k]
     fail('news.json: ساختار شناخته نشد')
 
+from content_policy import out_of_scope
+
 def clean_news(items):
     out, seen, dropped = [], set(), 0
     for it in items:
@@ -30,6 +32,9 @@ def clean_news(items):
         if not ok:
             dropped += 1
             print(f"::warning::خبر نامعتبر حذف شد: {str(it)[:80] if not isinstance(it, dict) else it.get('id')}")
+            continue
+        if out_of_scope(it):
+            dropped += 1
             continue
         seen.add(it['id']); out.append(it)
     return out, dropped
@@ -74,7 +79,9 @@ if dropped_news > max(5, int(len(items) * 0.05)):
 news_out = items if key is None else {**raw_news, key: items}
 ed_out, dropped_ed = clean_editorial(load(ED_IN))
 
-files = {'news.json': dump(news_out), 'editorial.json': dump(ed_out)}
+policy_path = os.path.join(os.path.dirname(__file__), 'policy-terms.json')
+with open(policy_path, encoding='utf-8') as f: policy_out = json.load(f)
+files = {'news.json': dump(news_out), 'editorial.json': dump(ed_out), 'policy-terms.json': dump(policy_out)}
 for text in files.values(): json.loads(text)
 
 os.makedirs(OUT, exist_ok=True)
