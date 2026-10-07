@@ -41,6 +41,11 @@ if(slides.length>1)setInterval(function(){show(current+1)},5000);
 }
 var topic=new URLSearchParams(location.search).get("topic")||"home";
 function aiFor(){return{}}
-function renderFeatured(){return (window.EVREN_FEATURED_READY||Promise.reject(Error("featured loader missing"))).then(function(){return window.EvrenFeatured.getTopic(topic,1)}).then(function(t){var items=(t.featured||[]).slice(0,4);render(items,aiFor)}).catch(function(e){console.error("Evrenexus-slider featured:",e);slider.style.display="none"});}
+function renderFeatured(){
+ return window.EvrenFeatured.getTopic(topic,1).then(function(r){
+  if(!r.ok){console.warn("featured.json:",r.reason);slider.style.display="none";return}
+  render((r.featured||[]).slice(0,4),aiFor);
+ }).catch(function(e){console.error("Evrenexus-slider featured:",e);slider.style.display="none"});
+}
 renderFeatured();
 })();
