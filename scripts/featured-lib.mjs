@@ -85,7 +85,7 @@ export function loadArticleResolver(){
  new Function("module","exports",src)(mod,mod.exports);
  return mod.exports;
 }
-export const pinned=r=>r.ed?.important===true||r.ed?.featured===true||r.ed?.auto_important===true||r.ed?.auto_slider===true;
+export const pinned=r=>r.ed?.important===true||r.ed?.featured===true||r.ed?.auto_important===true;
 export const ts=r=>Date.parse(r.n.published||r.article?.published_at||r.article?.created_at)||0;
 export const inTopic=(r,topic)=>topic===C.HOME||(Array.isArray(r.n.topics)&&r.n.topics.includes(topic));
 const num=v=>typeof v==="number"&&Number.isFinite(v)?v:null;
