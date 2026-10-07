@@ -1,7 +1,7 @@
 {
   "version": 1,
   "policy_version": 8,
-  "updated": "2026-10-07T21:51:31Z",
+  "updated": "2026-10-07T22:06:36Z",
   "items": {
     "56927672062ac466f3e762c5": {
       "title": "قیمت بیت‌کوین و اتریوم امروز سه‌شنبه ۱۴ مهر ۱۴۰۵",
@@ -18623,10 +18623,16 @@
       "importance": 19,
       "important": false,
       "important_topics": [],
-      "slider_topics": [],
-      "ticker_topics": [],
-      "breaking": false,
-      "breaking_topics": [],
+      "slider_topics": [
+        "sports"
+      ],
+      "ticker_topics": [
+        "sports"
+      ],
+      "breaking": true,
+      "breaking_topics": [
+        "sports"
+      ],
       "publishable": true,
       "exclude_reason": "",
       "group_id": "local-6f0735f4f830",
@@ -19223,8 +19229,10 @@
         "sports": 19
       },
       "importance": 19,
-      "important": false,
-      "important_topics": [],
+      "important": true,
+      "important_topics": [
+        "sports"
+      ],
       "slider_topics": [
         "sports"
       ],
@@ -19245,7 +19253,9 @@
       "political": false,
       "breaking_signal": true,
       "age_hours": 0.16337571263313294,
-      "image": "https://cdn.fararu.com/thumbnail/EkxDBnb29XJ6/6HnrTUK3q1FR8Ua02DXQAQo7LT9ZhuNpbxUBsvtMa7NhWSGKjvqb0D8t78sMd4ft5bB2QIi-pqmrnB7V0UWWodCszY_CP4nmpvqq1IWftkuRZm6FH8BpDpMGCneFrypr/%D8%A7%D9%88%D9%84%DB%8C%D9%86+%DA%A9%D8%A7%D9%BE%DB%8C%D8%AA%D8%A7%D9%86.jpg"
+      "image": "https://cdn.fararu.com/thumbnail/EkxDBnb29XJ6/6HnrTUK3q1FR8Ua02DXQAQo7LT9ZhuNpbxUBsvtMa7NhWSGKjvqb0D8t78sMd4ft5bB2QIi-pqmrnB7V0UWWodCszY_CP4nmpvqq1IWftkuRZm6FH8BpDpMGCneFrypr/%D8%A7%D9%88%D9%84%DB%8C%D9%86+%DA%A9%D8%A7%D9%BE%DB%8C%D8%AA%D8%A7%D9%86.jpg",
+      "permanent_article": true,
+      "article_id": "article-e2f8396885fe57a8"
     },
     "382a27b5d80f702483009073": {
       "title": "ادعای ترامپ: عبور نفت از [تنگه هرمز] گاهی از سطح پیش از جنگ هم فراتر رفته/ میلیون‌ها بشکه نفت فقط طی چند روز گذشته تحویل داده شده",
@@ -35850,7 +35860,7 @@
       "local_score": 9,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.350874235563808
+      "age_hours": 3.6078859097427793
     },
     "711a905e708ab24f49f43c23": {
       "title": "قنبری: تثبیت قیمت با اقدام شهرداری به‌تنهایی شدنی نیست | تورم خوراکی‌ها بالای صددرصد است | اینکه شهرداری روی چند قلم کالا تمرکز کند، کارساز نخواهد بود",
@@ -36820,7 +36830,7 @@
       "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.718374235563808
+      "age_hours": 3.975385909742779
     },
     "0039e50f4d6c59495441ce20": {
       "title": "عراقچی: شروط و ملاحظات ایران را در قالب یک طرح دقیق و عملیاتی به میانجی‌ها ارائه کردیم",
@@ -37091,7 +37101,7 @@
       "local_score": 9,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.3080964577860303,
+      "age_hours": 3.5651081319650015,
       "permanent_article": true,
       "article_id": "article-33dff0d09fc5f527",
       "image": "https://cdn.donya-e-eqtesad.com/thumbnail/7h3bXqGu6ZAl/QHn8O9nsSzT8qCU7RegsN6Pbb5v74eEtbKeSOh05RabmfKXQapCoFEt7TZyzEhnm/%D9%85%D8%B3%DA%A9%D9%86.jpg"
@@ -37158,7 +37168,7 @@
       "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.3475409022304747
+      "age_hours": 3.604552576409446
     },
     "dc40b2e5799fdc5861ea0731": {
       "title": "تهران به واشنگتن اعتماد ندارد/ موسویان: بهترین راه‌حل بحران کنونی ایران و آمریکا، بازگشت واشنگتن به تفاهم‌نامه اسلام‌آباد است",
@@ -37245,7 +37255,7 @@
       "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.5453186800082523
+      "age_hours": 3.8023303541872235
     },
     "d887a89fb0fca03c2185f7e3": {
       "title": "ایران و آمریکا؛ محور اصلی رایزنی گوترش و رئیس‌جمهور پاکستان",
@@ -37274,7 +37284,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 3.5975409022304747
+      "age_hours": 3.854552576409446
     },
     "6da1365cdbd3609f03c6893f": {
       "title": "وزارت خارجه آمریکا: احتمال لغو پروازها، بسته‌شدن حریم هوایی و اختلال در رفت‌وآمد‌های هوایی در عربستان وجود دارد / آمریکایی‌ها احتیاط کنید",
@@ -37303,7 +37313,7 @@
       "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.6067075688971415
+      "age_hours": 3.8637192430761127
     },
     "b4a89b2084a561f31ee57304": {
       "title": "عراقچی: شروط و ملاحظات ایران را در قالب طرح دقیق و عملیاتی به میانجی‌ها ارائه کردیم",
@@ -37332,7 +37342,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 2.5689297911193636
+      "age_hours": 2.825941465298335
     },
     "6afe3d62471de1c8606b3b9f": {
       "title": "یافته‌ای نو: مهار گیرنده P۲X۷ می‌تواند التهاب مغزی مرتبط با آلزایمر و پارکینسون را کاهش دهد",
@@ -37361,7 +37371,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.718374235563808
+      "age_hours": 2.975385909742779
     },
     "cab893c13af1bbf6fc8bb52b": {
       "title": "اصلاح نظام بنگاه‌داری صندوق‌های بازنشستگی؛ از بنگاه‌داری تا سهامداری",
@@ -37372,9 +37382,9 @@
         "markets"
       ],
       "topic_scores": {
-        "markets": 12
+        "markets": 11
       },
-      "importance": 12,
+      "importance": 11,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -37387,10 +37397,10 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 7,
+      "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.7839297911193635
+      "age_hours": 3.0409414652983346
     },
     "f6ba18c9c79b6596e7464990": {
       "title": "بارش پراکنده باران در نواحی غرب و شمال کشور",
@@ -37401,9 +37411,9 @@
         "economy"
       ],
       "topic_scores": {
-        "economy": 7
+        "economy": 6
       },
-      "importance": 7,
+      "importance": 6,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -37416,10 +37426,10 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 7,
+      "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.83809645778603
+      "age_hours": 3.0951081319650013
     },
     "377c025ce648fb30ec38758e": {
       "title": "ممنوعیت تردد کارکنان دولت آمریکا در شعاع ۲۰ مایلی مرز یمن",
@@ -37448,7 +37458,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 2.8530964577860303
+      "age_hours": 3.1101081319650015
     },
     "da8414300a42fd2aa0d464a8": {
       "title": "تصویر: کامنت زیبای رونالدو برای مسی با یک بغل گرم!",
@@ -37459,36 +37469,25 @@
         "sports"
       ],
       "topic_scores": {
-        "sports": 19
+        "sports": 18
       },
-      "importance": 19,
-      "important": true,
-      "important_topics": [
-        "sports"
-      ],
-      "slider_topics": [
-        "sports"
-      ],
-      "ticker_topics": [
-        "sports"
-      ],
-      "breaking": true,
-      "breaking_topics": [
-        "sports"
-      ],
+      "importance": 18,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
       "publishable": true,
       "exclude_reason": "",
       "group_id": "local-1f7e8a5e6cb8",
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 9,
+      "local_score": 8,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 2.8975409022304746,
-      "permanent_article": true,
-      "article_id": "article-1f7e8a5e6cb83051",
-      "image": "https://cdn.fararu.com/thumbnail/meptpYZQn0vc/TyVjkE63Pv5eb14tlqKQenaGRtTH37pusSoJfQp2cus5IleD2nXjEbCAF9km-FWdxfZ8zRi7pQ_SqzUnEBzpDfC8E47lrAnewTGcEph-r2j6raPwb_QMHb9-cZH11mMD/%DA%A9%D8%B1%DB%8C%D8%B3.jpg"
+      "age_hours": 3.1545525764094458
     },
     "c8d00b8b741dfbc1e478e16f": {
       "title": "نقش پررنگ قلعه‌نویی در تقابل‌های استقلال و تراکتور",
@@ -37499,9 +37498,9 @@
         "economy"
       ],
       "topic_scores": {
-        "economy": 7
+        "economy": 6
       },
-      "importance": 7,
+      "importance": 6,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -37514,10 +37513,10 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 7,
+      "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.9839297911193636
+      "age_hours": 3.240941465298335
     },
     "b1cd88376e79e22c453e6676": {
       "title": "آیا می‌توان پیری را مثل بیماری درمان کرد؟",
@@ -37546,7 +37545,7 @@
       "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.0150409022304747
+      "age_hours": 3.272052576409446
     },
     "addda2aa44ed07b8d03a33d5": {
       "title": "جانشین مسی در آرژانتین کیست؟",
@@ -37575,7 +37574,7 @@
       "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.032540902230475
+      "age_hours": 3.289552576409446
     },
     "90853c7a8083ef14bf7965ab": {
       "title": "تیم‌ملی ایران در جدول رده بندی جدید فیفا سقوط کرد",
@@ -37604,7 +37603,7 @@
       "local_score": 8,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 3.0653186800082524
+      "age_hours": 3.3223303541872236
     },
     "dc639f2cb949421d46c555e4": {
       "title": "رهبر انصارالله یمن: مذاکره با عربستان بی‌فایده است",
@@ -37633,7 +37632,7 @@
       "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.5917075688971414
+      "age_hours": 3.8487192430761126
     },
     "cb14d7091ebf069932f8b952": {
       "title": "سید حسین موسویان: اگر آمریکا به دنبال توافقی گسترده‌تر است، نخست باید به تفاهم‌نامه اسلام‌آباد بازگردد و سپس درباره توسعه آن مذاکره کند / تجربه چهار دهه گذشته نشان داده است که توافق‌های محدود و مقطعی دوام چندانی ندارند؛ آنچه مورد نیاز است، یک توافق جامع است که علاوه بر برنامه هسته‌ای، به ریشه‌های اصلی بحران نیز بپردازد",
@@ -37662,7 +37661,7 @@
       "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.7314297911193637
+      "age_hours": 3.988441465298335
     },
     "eed4a8253e854c4751260b71": {
       "title": "ایده بزرگ قرن",
@@ -37691,7 +37690,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.25309645778603
+      "age_hours": 2.5101081319650014
     },
     "68d24b193b741297160e0443": {
       "title": "تصمیم ایلان ماسک برای جمع آوری ۴۰ میلیارد دلار برای خرید تراشه‌های انویدیا",
@@ -37720,7 +37719,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.275874235563808
+      "age_hours": 2.532885909742779
     },
     "594031673bc28aba05fa5746": {
       "title": "نگاهی به وضعیت گسل‌ها در ایران؛ کدام گسل‌ها در وضعیت بحرانی‌اند؟",
@@ -37753,7 +37752,7 @@
       "local_score": 11,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 2.532263124452697
+      "age_hours": 2.789274798631668
     },
     "e0d54a66da61f08bb0318851": {
       "title": "آمار باورنکردنی مغانلو مقابل استقلال؛ شهریار بعد از «پیکان» خاموش شد",
@@ -37782,7 +37781,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.0317075688971413
+      "age_hours": 2.2887192430761125
     },
     "284d506ec4bca8cee5793a06": {
       "title": "سه تیم اول تا سوم رنکینگ جدید فیفا مشخص شد/ ایران در رده چندم قرار دارد؟",
@@ -37811,7 +37810,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 2.1030964577860303
+      "age_hours": 2.3601081319650015
     },
     "a45a36aacb335203d801099f": {
       "title": "ال‌نینو ناجی آب ایران می‌شود؟",
@@ -37840,7 +37839,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 2.135040902230475
+      "age_hours": 2.392052576409446
     },
     "5f063f0eb06b04dfc3e8ad69": {
       "title": "موسویان: بازگشت آمریکا به تفاهم‌نامه اسلام‌آباد، بهترین مسیر حل بحران است",
@@ -37869,7 +37868,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 2.2225409022304747
+      "age_hours": 2.479552576409446
     },
     "b5cc4ffd142924f9ecea5184": {
       "title": "بختیاری زاده: با تمام وجود مقابل تراکتور بازی می‌کنیم",
@@ -37898,7 +37897,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.8150409022304748
+      "age_hours": 2.0720525764094457
     },
     "9a2098ce1d3bf669a01eef02": {
       "title": "سقف تسهیلات صندوق‌های قرض‌الحسنه تعیین شد",
@@ -37927,7 +37926,7 @@
       "local_score": 11,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.8419853466749192
+      "age_hours": 2.0989970208538904
     },
     "17322bebab088aca8b738eb5": {
       "title": "قیمت ۱۲ قلم کالای اساسی تا ۶ ماه ثابت می‌ماند؛ از آبان ۱۵ قلم می‌شود",
@@ -37956,7 +37955,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.8497631244526969
+      "age_hours": 2.106774798631668
     },
     "f7b2aac3effdcb35103108d5": {
       "title": "ترکیب احتمالی استقلال مقابل تراکتور / هفته هشتم ورزشگاه یادگار",
@@ -37985,7 +37984,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.8639297911193635
+      "age_hours": 2.1209414652983347
     },
     "e7577521805427d4afe82c89": {
       "title": "نکونام و استقلال پس از 209 هفته، باز هم در هفته هشتم!",
@@ -38014,7 +38013,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.931985346674919
+      "age_hours": 2.1889970208538903
     },
     "76f98d1bdff3fd321358bd14": {
       "title": "شنیده شدن صدای انفجاری مهیب در حیفا",
@@ -38043,7 +38042,7 @@
       "local_score": 11,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 1.9469853466749192
+      "age_hours": 2.2039970208538904
     },
     "105735c14572ab452a85a226": {
       "title": "احتمال تنبیه کیلیان امباپه توسط مورینیو",
@@ -38072,7 +38071,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.9567075688971414
+      "age_hours": 2.2137192430761123
     },
     "be1de3820a14ee4ddaf63e43": {
       "title": "کسی حاضر نیست او را گردن بگیرد؛ چوب حراج به اعتبار قلعه‌نویی",
@@ -38109,7 +38108,7 @@
       "local_score": 9,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 1.9869853466749192,
+      "age_hours": 2.2439970208538904,
       "permanent_article": true,
       "article_id": "article-1d4a01f457e4a515",
       "image": "https://cdn.fararu.com/thumbnail/2oPcI3p29Aar/3MW91HvQyTd-FWL4c3Hi2iEGzf3tR7M3LzHUabIsfMhxkoAgJamWE5PQAdg-J0z081v7doz3ugSqfRsnEbUUjrFHETcx6RZpsaTzEMw3mHMZ-J6xKfYS500tmLpE_f4a/%D9%82%D9%84%D8%B9%D9%87%E2%80%8C%D9%86%D9%88%DB%8C%DB%8C.jpg"
@@ -38141,7 +38140,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.019763124452697
+      "age_hours": 2.276774798631668
     },
     "b722d915dcd5d645c128f351": {
       "title": "پزشکیان: من تصور نمی کردم رئیس جمهور شوم",
@@ -38170,7 +38169,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.038929791119364
+      "age_hours": 2.2959414652983345
     },
     "dc93407f78882d4ce6a9b9e1": {
       "title": "افت دلار با مداخله بازارساز",
@@ -38201,7 +38200,7 @@
       "local_score": 17,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.3530964577860303
+      "age_hours": 1.6101081319650015
     },
     "7a9653d9d453ae44461a1523": {
       "title": "دستمزدهای نجومی برای عبور از هرمز",
@@ -38230,7 +38229,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.3530964577860303
+      "age_hours": 1.6101081319650015
     },
     "472ac236fe4298a8bcec9582": {
       "title": "رشد هفتگی قیمت‌ها در بازار گوشی",
@@ -38259,7 +38258,7 @@
       "local_score": 9,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.3530964577860303
+      "age_hours": 1.6101081319650015
     },
     "b7cc8c7b49804fc16dc16359": {
       "title": "پشت پرده پارانویای بهره‌وری",
@@ -38288,7 +38287,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 1.3530964577860303
+      "age_hours": 1.6101081319650015
     },
     "449420947bfdc6f79a01054d": {
       "title": "و اینک کنسرت قسطی همایون",
@@ -38317,7 +38316,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.3530964577860303
+      "age_hours": 1.6101081319650015
     },
     "3641f1517d9bf81875a52c85": {
       "title": "نفت در جست‌وجوی راه نجات",
@@ -38346,7 +38345,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.3530964577860303
+      "age_hours": 1.6101081319650015
     },
     "37892764715456e6c5ab2eb5": {
       "title": "ورود به ابرکانال 8 میلیونی",
@@ -38381,7 +38380,7 @@
       "local_score": 17,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.3530964577860303,
+      "age_hours": 1.6101081319650015,
       "permanent_article": true,
       "article_id": "article-572501359b06fee3",
       "image": "https://cdn.donya-e-eqtesad.com/thumbnail/x6sE86WefWfh/QHn8O9nsSzT8qCU7RegsN6Pbb5v74eEtbKeSOh05RaZ14_01AY-X0Ut7TZyzEhnm/%D9%86%D9%85%D9%88%D8%AF%D8%A7%D8%B1+9+copy.jpg"
@@ -38413,7 +38412,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.3530964577860303
+      "age_hours": 1.6101081319650015
     },
     "7440e76e35b239dbfb5d18e0": {
       "title": "نسخه کامل شماره امروز روزنامه «دنیای‌ اقتصاد» را اینجا بخوانید",
@@ -38442,7 +38441,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.3530964577860303
+      "age_hours": 1.6101081319650015
     },
     "0bfeef7c7d5723f2ba753b9c": {
       "title": "تلفات برق در ۶ ماه امسال ۱.۸ درصد کاهش یافت",
@@ -38471,7 +38470,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.359485346674919
+      "age_hours": 1.6164970208538902
     },
     "9a7775107830201220d4d22e": {
       "title": "مهدی کروبی: مذاکره به معنای تسلیم نیست",
@@ -38500,7 +38499,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.6944853466749192
+      "age_hours": 1.9514970208538902
     },
     "164a05971fa1a8428f99ad1e": {
       "title": "مرگ سلول‌های چربی به‌صورت فروپتوز؛ حلقه تقویتی التهاب در چاقی یا یک مکانیزم نوظهور؟",
@@ -38529,7 +38528,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.718374235563808
+      "age_hours": 1.9753859097427793
     },
     "84781479ae53a4e58ff05446": {
       "title": "سرمربیگری تیم امید را نمی‌پذیرم!",
@@ -38558,7 +38557,7 @@
       "local_score": 9,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 1.7469853466749192
+      "age_hours": 2.00399702085389
     },
     "dbd1c45e26c4836303304b4e": {
       "title": "پیام اسماعیل بقایی به‌مناسبت زادروز سهراب سپهری",
@@ -38587,7 +38586,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.7586520133415857
+      "age_hours": 2.015663687520557
     },
     "b95016829d88c37db38fe704": {
       "title": "تصویر؛ پست احساسی مسی: از همین حالا دلم تنگ شده",
@@ -38616,7 +38615,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.7717075688971413
+      "age_hours": 2.0287192430761127
     },
     "be12272bb8e49d5d0b955830": {
       "title": "بقائی: پاسخ ایران به پیشنهادهای آمریکا از طریق میانجی‌گران ارائه می‌شود",
@@ -38645,7 +38644,7 @@
       "local_score": 8,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.9455964577860302
+      "age_hours": 1.2026081319650015
     },
     "431a720aa6c6f101e3dab301": {
       "title": "بلومبرگ: چین به دو قطعه حساس اف-۳۵ آمریکا دست پیدا کرده است",
@@ -38676,7 +38675,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.0903186800082525
+      "age_hours": 1.3473303541872237
     },
     "4fa7a87a9073083ddaab1321": {
       "title": "واکنش رونالدو به خداحافظی مسی",
@@ -38705,7 +38704,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.0953186800082524
+      "age_hours": 1.3523303541872236
     },
     "9ae8b6ab3ae96d0b0f9b7134": {
       "title": "تصاویر: مسابقه عکس مسافرتی ۲۰۲۶",
@@ -38734,7 +38733,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.1253186800082524
+      "age_hours": 1.3823303541872236
     },
     "9d79e42b65a86c50d117807a": {
       "title": "پاسخ بقائی به ادعای روبیو درباره از دست رفتن فرصت توافق از سوی ایران",
@@ -38763,7 +38762,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 1.1778186800082524
+      "age_hours": 1.4348303541872236
     },
     "e6cc5b8be5c3ec133292ef2f": {
       "title": "تصاویر: رویداد شهرنوردی با اسکوتر",
@@ -38792,7 +38791,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.8728186800082525
+      "age_hours": 1.1298303541872237
     },
     "ae118cf2e3d19e5dc9a19712": {
       "title": "یک هواپیما در آمریکا سقوط کرد+ جزئیات",
@@ -38821,7 +38820,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 0.6030964577860303
+      "age_hours": 0.8601081319650015
     }
   },
   "groups": {
