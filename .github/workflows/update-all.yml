@@ -118,6 +118,12 @@ jobs:
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
+      - name: Build featured data
+        run: node scripts/build-featured.mjs
+
+      - name: Validate featured data
+        run: node scripts/validate-featured.mjs
+
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:
