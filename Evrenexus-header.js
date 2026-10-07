@@ -74,7 +74,7 @@ var wrap=document.createElement("div");wrap.innerHTML=`
 <div id="Evrenxus-property-search"><div id="Evrenxus-property-search-title"><a target="_blank" href="https://evrenexus.blogfa.com/post/5">موتور جستجوی املاک</a></div><div id="Evrenxus-property-search-form"><input id="Evrenxus-property-budget" type="text" inputmode="decimal" autocomplete="off" placeholder="1-999"><button id="Evrenxus-property-search-button" type="button">بیاب</button></div><div id="Evrenxus-property-search-error">رقم را بر پایه میلیارد تومان وارد کنید</div></div>
 </div></header>`;
 function mountHeader(){if(document.getElementById("Evrenxus-header"))return;var root=document.body||document.documentElement;if(!root)return;var header=wrap.firstElementChild;if(!header)return;root.insertBefore(header,root.firstChild);initTickers();setActiveTopic()}
-if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",mountHeader,{once:true});}else{mountHeader();}
+function ensureHeader(){if(document.getElementById("Evrenxus-header"))return;mountHeader();}\nif(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",ensureHeader,{once:true});window.addEventListener("load",ensureHeader,{once:true});}else{ensureHeader();}\nsetTimeout(ensureHeader,0);setTimeout(ensureHeader,250);
 
 (function(){
 var input=document.getElementById("Evrenxus-property-budget"),button=document.getElementById("Evrenxus-property-search-button"),error=document.getElementById("Evrenxus-property-search-error");
