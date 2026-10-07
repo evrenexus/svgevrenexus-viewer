@@ -9,6 +9,7 @@ on:
       - "data/editorial.json"
       - "data/articles.json"
       - "scripts/audit-data.mjs"
+      - "scripts/audit-potential.mjs"
       - ".github/workflows/audit-data.yml"
 
 permissions:
@@ -21,3 +22,5 @@ jobs:
       - uses: actions/checkout@v4
       - name: Print real data shapes and counts
         run: node scripts/audit-data.mjs
+      - name: Potential featured if articles were generated
+        run: node scripts/audit-potential.mjs
