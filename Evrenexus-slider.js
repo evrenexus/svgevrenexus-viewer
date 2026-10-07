@@ -39,31 +39,8 @@ function show(i){if(!slides.length)return;if(i>=slides.length)i=0;if(i<0)i=slide
 document.getElementById("Evrenxus-slider-prev").onclick=function(){show(current-1)};document.getElementById("Evrenxus-slider-next").onclick=function(){show(current+1)};
 if(slides.length>1)setInterval(function(){show(current+1)},5000);
 }
-var q=new URLSearchParams(location.search),topic=q.get("topic")||(location.pathname.endsWith("/index.html")||location.pathname.endsWith("/")?"all":"economy");
-Promise.all([
-fetch("./data/news.json?v="+Date.now(),{cache:"no-store"}).then(function(r){return r.ok?r.json():{} }).catch(function(){return{}}),
-fetch("./data/editorial.json?v="+Date.now(),{cache:"no-store"}).then(function(r){return r.ok?r.json():{} }).catch(function(){return{}}),
-fetch("./data/news-ai.json?v="+Date.now(),{cache:"no-store"}).then(function(r){return r.ok?r.json():{} }).catch(function(){return{}})
-]).then(function(ds){
-var d=ds[0]||{},ed=ds[1]||{},ai=ds[2]||{},ei=ed.items||{},aii=ai.items||{};window.EVREN_EDITORIAL=ei;
-var aiByTitle={};Object.keys(aii).forEach(function(id){var z=aii[id];if(z&&z.title)aiByTitle[z.title]=z;});
-var edByTitle={};Object.keys(ei).forEach(function(id){var z=ei[id];if(z&&z.title)edByTitle[z.title]=z;});
-function aiFor(x){return aii[x.id]||aiByTitle[x.title]||{};}
-function edFor(x){return ei[x.id]||edByTitle[x.title]||{};}
-var shared=Array.isArray(window.EVREN_IMPORTANT_ITEMS)?window.EVREN_IMPORTANT_ITEMS.slice(0,4):null;
-var items=shared||all.filter(function(x){
-var s=edFor(x),a=aiFor(x);
-var permanentId=a.article_id||(s&&s.article_id);
-var publishedArticle=!!(a.status==="published"||s.status==="published"||s.published===true);
-var imageAvailable=!!(x.image||(a&&a.image)||(s&&s.image));
-if(s.deleted===true||a.important!==true||a.publishable!==true||a.representative===false||!permanentId||!publishedArticle||!imageAvailable)return false;
-var importantTopics=Array.isArray(a.important_topics)?a.important_topics:[];
-return topic==="all"||importantTopics.indexOf(topic)!==-1;
-});
-items.sort(function(a,b){return new Date(b.published)-new Date(a.published)});
-
-// Last-resort recovery: if editorial/AI metadata is temporarily unavailable,
-// keep the slider visible instead of hiding the entire component.
-render(items,aiFor);
-}).catch(function(){slider.style.display="none"});
+var topic=new URLSearchParams(location.search).get("topic")||"home";
+function aiFor(){return{}}
+function renderFeatured(){return (window.EVREN_FEATURED_READY||Promise.reject(Error("featured loader missing"))).then(function(){return window.EvrenFeatured.getTopic(topic,1)}).then(function(t){var items=(t.featured||[]).slice(0,4);render(items,aiFor)}).catch(function(e){console.error("Evrenexus-slider featured:",e);slider.style.display="none"});}
+renderFeatured();
 })();
