@@ -31,7 +31,25 @@ function esc(v){return String(v||"").replace(/[&<>"']/g,function(c){return {"&":
 function safeUrl(v){try{var u=new URL(v,location.href);return /^https?:$/i.test(u.protocol)?u.href:""}catch(e){return""}}
 function rich(v){var box=document.createElement("div");box.innerHTML=String(v||"");var ok={P:1,BR:1,H2:1,UL:1,OL:1,LI:1,STRONG:1,B:1,EM:1,I:1,A:1};Array.from(box.querySelectorAll("*")).forEach(function(el){if(!ok[el.tagName]){el.replaceWith(document.createTextNode(el.textContent||""));return}Array.from(el.attributes).forEach(function(a){if(el.tagName==="A"&&a.name==="href")return;el.removeAttribute(a.name)});if(el.tagName==="A"){var u=safeUrl(el.getAttribute("href"));if(!u)el.removeAttribute("href");else{el.setAttribute("href",u);el.setAttribute("target","_blank");el.setAttribute("rel","noopener noreferrer")}}});return box.innerHTML}
 function render(a){if(!a){host.innerHTML="<h1>مطلب پیدا نشد</h1>";return}document.title=(a.title||"مطلب")+" | Evren Nexus";var html="<h1>"+esc(a.title)+"</h1>";if(a.image&&safeUrl(a.image)){html+="<img class='article-image' src='"+esc(safeUrl(a.image))+"' alt='"+esc(a.title)+"' loading='eager' referrerpolicy='no-referrer'>"}html+="<div class='ai-notice'>این مطلب توسط هوش مصنوعی Evren Nexus بر اساس گزارش‌های خبری موجود در وب بازنشر و تنظیم شده است.</div>";html+="<div class='meta'>Evren Nexus • "+esc(new Date(a.updated_at||a.published_at).toLocaleString("fa-IR"))+"</div>";if(a.summary)html+="<div class='summary'>"+esc(a.summary)+"</div>";html+="<div class='article-body'>"+rich(a.content)+"</div>";host.innerHTML=html}
-fetch("./data/articles.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error();return r.json()}).then(function(d){var a=d&&d.items?d.items[id]:null;render(a)}).catch(function(){host.innerHTML="<h1>دریافت مطلب انجام نشد.</h1>"});
+function entries(d){if(!d)return[];if(Array.isArray(d))return d;var v=d.items||d.articles||d;return Array.isArray(v)?v:Object.keys(v).map(function(k){var x=v[k]||{};x.__key=k;return x})}
+function resolveArticle(articleDoc,editorialDoc,newsDoc){
+ var as=entries(articleDoc), es=entries(editorialDoc), ns=entries(newsDoc), all=as.concat(ns);
+ var a=as.find(function(x){return String(x.id||"")===String(id)||String(x.slug||"")===String(id)||String(x.__key||"")===String(id)||String(x.article_id||"")===String(id)});
+ if(a)return a;
+ var e=es.find(function(x){return String(x.article_id||"")===String(id)||String(x.id||"")===String(id)||String(x.__key||"")===String(id)});
+ if(e){
+   var n=all.find(function(x){return String(x.id||"")===String(e.__key||"")||String(x.id||"")===String(e.original_news_id||"")});
+   return {id:id,title:e.title||(n&&n.title)||"",summary:e.summary||(n&&n.summary)||"",content:e.content||e.article_content||"",image:e.image||(n&&n.image)||"",published_at:e.published_at||(n&&n.published)||"",updated_at:e.updated_at||e.published_at||(n&&n.published)||"",sources:e.sources||(n&&n.source?[{name:n.source,url:n.url||""}]:[])};
+ }
+ var n=all.find(function(x){return String(x.id||"")===String(id)||String(x.article_id||"")===String(id)||String(x.__key||"")===String(id)});
+ if(n)return {id:id,title:n.title||"",summary:n.summary||"",content:n.content||"",image:n.image||"",published_at:n.published||n.published_at||"",updated_at:n.updated_at||n.published||"",sources:n.sources||(n.source?[{name:n.source,url:n.url||""}]:[])};
+ return null;
+}
+Promise.all([
+ fetch("./data/articles.json?v="+Date.now(),{cache:"no-store"}).then(function(r){return r.ok?r.json():{}}).catch(function(){return {}}),
+ fetch("./data/editorial.json?v="+Date.now(),{cache:"no-store"}).then(function(r){return r.ok?r.json():{}}).catch(function(){return {}}),
+ fetch("./data/news.json?v="+Date.now(),{cache:"no-store"}).then(function(r){return r.ok?r.json():{}}).catch(function(){return {}})
+]).then(function(parts){render(resolveArticle(parts[0],parts[1],parts[2]))}).catch(function(){host.innerHTML="<h1>دریافت مطلب انجام نشد.</h1>"});
 })();
 </script><script src="https://evrenexus.github.io/svgevrenexus-viewer/Evrenexus-header.js?v=20261005-15"></script>
 </body></html>
