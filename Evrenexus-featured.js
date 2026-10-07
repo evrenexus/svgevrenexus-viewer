@@ -39,7 +39,7 @@ function getTopic(topic,page){
 }
 function img(v){return typeof v==="string"&&/^https?:\/\//i.test(v.trim())?v.trim():"";}
 function renderOldWay(topic,page,q){
- return loadPolicy().then(function(){return fetch("data/public/news.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("public/news.json HTTP "+r.status);return r.json()}).then(function(d){
+ return loadPolicy().then(function(){return fetch("data/public/news.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("public/news.json HTTP "+r.status);return r.json()}).catch(function(){return fetch("data/news.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("news.json HTTP "+r.status);return r.json()})}).then(function(d){
   var items=filterItems(Array.isArray(d.items)?d.items:(Array.isArray(d)?d:[]));
   if(topic&&topic!=="home")items=items.filter(function(x){return Array.isArray(x.topics)&&x.topics.indexOf(topic)!==-1});
   if(q)items=items.filter(function(x){return((x.title||"")+" "+(x.summary||"")+" "+(x.source||"")).toLowerCase().indexOf(q)!==-1});
