@@ -54,6 +54,7 @@ const stripHtml=(value)=>{
   return s.split("\n").map(x=>x.replace(/[ \t]+/g," ").trim()).filter(Boolean).join("\n\n").trim();
 };
 const clip=(s,n)=>s.length>n?s.slice(0,n-1).trim()+"…":s;
+const linkedAiKey=n=>{for(const fn of aiSchemes){const k=fn(n);if(k&&aiItems[k])return k}return ""};
 const blocked=(n)=>{
   const a=aiItems[n.id];
   const e=editorialItems[n.id];
