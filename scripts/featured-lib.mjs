@@ -1,22 +1,84 @@
+// scripts/featured-lib.mjs — shared loading + linking for build and validate.
 import fs from "node:fs";
 import path from "node:path";
 import {createHash} from "node:crypto";
 import {fileURLToPath} from "node:url";
 import * as C from "./featured-config.mjs";
+
 export const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"..");
-export const isObj=v=>v&&typeof v==="object"&&!Array.isArray(v);
+export const isObj=v=>v!==null&&typeof v==="object"&&!Array.isArray(v);
 export const isUrl=v=>typeof v==="string"&&/^https?:\/\//i.test(v.trim());
-export const sha256=s=>createHash("sha256").update(String(s)).digest("hex").slice(0,24);
-export function readJson(rel,required=true){const p=path.join(ROOT,rel);if(!fs.existsSync(p)){if(required)throw Error(rel+": missing");return null}try{return JSON.parse(fs.readFileSync(p,"utf8"))}catch(e){throw Error(rel+": invalid JSON ("+e.message+")")}}
-export function entries(d){if(Array.isArray(d))return d.filter(isObj);if(!isObj(d))return[];for(const k of["items","articles"]){const v=d[k];if(Array.isArray(v))return v.filter(isObj);if(isObj(v))return Object.entries(v).map(([k,x])=>({__key:k,...x}))}return Object.entries(d).filter(([,x])=>isObj(x)).map(([k,x])=>({__key:k,...x}))}
+export const sha256=s=>createHash("sha256").update(String(s)).digest("hex");
+
+export function readJson(rel,required){
+ const p=path.join(ROOT,rel);
+ if(!fs.existsSync(p)){if(required)throw new Error(rel+": missing");return null}
+ try{return JSON.parse(fs.readFileSync(p,"utf8"))}catch(e){throw new Error(rel+": invalid JSON ("+e.message+")")}
+}
+export function entries(d){
+ if(Array.isArray(d))return d.filter(isObj);
+ if(!isObj(d))return [];
+ for(const k of["items","articles"]){
+  const v=d[k];
+  if(Array.isArray(v))return v.filter(isObj);
+  if(isObj(v))return Object.entries(v).filter(([,x])=>isObj(x)).map(([key,x])=>({__key:key,...x}));
+ }
+ return Object.entries(d).filter(([,x])=>isObj(x)).map(([key,x])=>({__key:key,...x}));
+}
+export function loadAll(){
+ const news=entries(readJson("data/news.json",true));
+ const aiRaw=readJson("data/news-ai.json",false);
+ const aiItems=new Map();
+ if(isObj(aiRaw)&&isObj(aiRaw.items))for(const[k,v]of Object.entries(aiRaw.items))if(isObj(v))aiItems.set(k,v);
+ const articles=entries(readJson("data/articles.json",true));
+ let editorial=new Map(),editorialError=null;
+ try{editorial=new Map(entries(readJson("data/editorial.json",false)).map(e=>[String(e.__key),e]))}
+ catch(e){editorialError=String(e.message)}
+ return{news,aiItems,articles,editorial,editorialError};
+}
+const SCHEMES={
+ "news.id":n=>String(n.id??""),
+ "sha256(news.id)":n=>sha256(n.id??""),
+ "sha256(news.url)":n=>sha256(n.url??"")
+};
 export const gid=o=>{const v=o?.group_id??o?.groupId??o?.group;return v==null||v===""?null:String(v)};
-export function loadAll(){const news=entries(readJson("data/news.json",true)),aiRaw=readJson("data/news-ai.json",true),articles=entries(readJson("data/articles.json",true));const aiItems=new Map();if(isObj(aiRaw?.items))for(const[k,v]of Object.entries(aiRaw.items))if(isObj(v))aiItems.set(k,v);let editorial=new Map(),editorialError=null;try{editorial=new Map(entries(readJson("data/editorial.json",true)).map(e=>[String(e.__key??e.id??""),e]))}catch(e){editorialError=String(e.message)}return{news,aiItems,articles,editorial,editorialError}}
-const schemes={"news.id":n=>String(n.id??""),"sha256(news.id)":n=>sha256(n.id??""),"sha256(news.url)":n=>sha256(n.url??"")};
-export function linkAll({news,aiItems,articles,editorial}){const fn=schemes[C.LINK_SCHEME];if(!fn)throw Error("Unknown LINK_SCHEME: "+C.LINK_SCHEME);const articleByGroup=new Map();for(const a of articles){const g=gid(a);if(g&&!articleByGroup.has(g))articleByGroup.set(g,a)}const rows=news.map(n=>{const ai=aiItems.get(fn(n))??null,g=gid(ai)??gid(n);return{n,ai,ed:editorial.get(String(n.id))??null,group:g??"id:"+n.id,article:g?articleByGroup.get(g)??null:null}});return{rows,scheme:C.LINK_SCHEME,linked:rows.filter(r=>r.ai).length}}
+export function linkAll({news,aiItems,articles,editorial}){
+ let best=null;
+ if(C.LINK_SCHEME&&SCHEMES[C.LINK_SCHEME])best={name:C.LINK_SCHEME,fn:SCHEMES[C.LINK_SCHEME],matched:news.filter(n=>aiItems.has(SCHEMES[C.LINK_SCHEME](n))).length};
+ else for(const[nm,fn]of Object.entries(SCHEMES)){const matched=news.filter(n=>aiItems.has(fn(n))).length;if(!best||matched>best.matched)best={name:nm,fn,matched}}
+ const articleByGroup=new Map(),articleByOriginalId=new Map();
+ for(const a of articles){
+  const g=gid(a);if(g&&!articleByGroup.has(g))articleByGroup.set(g,a);
+  if(a.original_news_id&&!articleByOriginalId.has(String(a.original_news_id)))articleByOriginalId.set(String(a.original_news_id),a);
+ }
+ const rows=[],activeIds=new Set();
+ for(const n of news){
+  const ai=aiItems.get(best.fn(n))??null,g=gid(ai)??gid(n);
+  const article=(g?articleByGroup.get(g):null)??articleByOriginalId.get(String(n.id))??null;
+  rows.push({n,ai,ed:editorial.get(String(n.id))??null,group:g??"id:"+n.id,article,activeNews:true});
+  activeIds.add(String(n.id));
+ }
+ // Permanent generated articles survive the rolling news window and can remain Featured.
+ // They are added only for Featured selection; regular news still comes only from news.json.
+ for(const a of articles){
+  if(a?.status!=="published"||!a.original_news_id||activeIds.has(String(a.original_news_id)))continue;
+  const n={
+   id:String(a.original_news_id),title:a.title||"",summary:a.summary||"",content:a.content||"",
+   image:a.image||"",source:a.sources?.[0]?.name||"",url:a.sources?.[0]?.url||"",
+   published:a.published_at||a.created_at||"",topics:Array.isArray(a.topics)?a.topics:[],
+   importance_score:Number(a.importance_score)||0
+  };
+  rows.push({n,ai:null,ed:null,group:gid(a)??"article:"+a.id,article:a,activeNews:false});
+ }
+ return{rows,scheme:best.name,linked:best.matched};
+}
 export const isBlocked=r=>r.ai?.publishable===false||r.ed?.deleted===true||r.ed?.hidden===true;
-export const imageOf=r=>[r.article?.image,r.ed?.image,r.ai?.image,r.n.image].find(isUrl)??"";
+export const imageOf=r=>[r.article?.image,r.ed?.image,r.n.image].find(isUrl)??"";
 export const pinned=r=>r.ed?.important===true||r.ed?.featured===true;
-export const ts=r=>Date.parse(r.n.published)||0;
-export const inTopic=(r,t)=>t===C.HOME||(Array.isArray(r.n.topics)&&r.n.topics.includes(t));
+export const ts=r=>Date.parse(r.n.published||r.article?.published_at||r.article?.created_at)||0;
+export const inTopic=(r,topic)=>topic===C.HOME||(Array.isArray(r.n.topics)&&r.n.topics.includes(topic));
 const num=v=>typeof v==="number"&&Number.isFinite(v)?v:null;
-export const scoreFor=(r,t)=>num(r.ai?.topic_importance?.[t])??num(r.ai?.importance_by_topic?.[t])??num(r.ai?.topic_scores?.[t])??num(r.ai?.importance)??num(r.ai?.importance_score)??num(r.n.importance_score)??0;
+export function scoreFor(r,topic){
+ const a=r.ai;
+ return num(a?.topic_importance?.[topic])??num(a?.importance_by_topic?.[topic])??num(a?.topic_scores?.[topic])??num(a?.importance)??num(r.n.importance_score)??num(r.article?.importance_score)??0;
+}
