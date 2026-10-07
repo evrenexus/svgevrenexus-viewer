@@ -71,12 +71,26 @@ function render(r){
    var m=document.createElement("div");m.className="important-meta";m.textContent=(x.source||"")+" • "+(x.published?new Date(x.published).toLocaleString("fa-IR",{dateStyle:"short",timeStyle:"short"}):"");c.appendChild(m);a.appendChild(c);ih.appendChild(a);
  });}
 
+ var regular=(r.regular||[]).slice(0,16),list=document.getElementById("list");
+ if(list){
+   list.innerHTML="";
+   regular.forEach(function(x){
+     var a=document.createElement("a");a.className="item";a.href=x.url?"./viewer.html?url="+encodeURIComponent(x.url):"#";a.target="_blank";a.rel="noopener noreferrer";
+     var u=img(x.image);if(u){var im=document.createElement("img");im.src=u;im.alt=x.title||"";im.loading="lazy";im.referrerPolicy="no-referrer";im.onerror=function(){this.remove()};a.appendChild(im)}
+     var cc=document.createElement("div");cc.className="content";
+     var h2=document.createElement("div");h2.className="title";h2.textContent=x.title||"";cc.appendChild(h2);
+     if(x.summary){var sm2=document.createElement("div");sm2.className="summary";sm2.textContent=x.summary;cc.appendChild(sm2)}
+     var m2=document.createElement("div");m2.className="meta";m2.textContent=(x.source||"")+" • "+(x.published?new Date(x.published).toLocaleString("fa-IR",{dateStyle:"short",timeStyle:"short"}):"");cc.appendChild(m2);
+     a.appendChild(cc);list.appendChild(a);
+   });
+   if(!list.children.length)list.innerHTML='<div class="error">فعلاً مطلبی در این بخش پیدا نشد.</div>';
+ }
  var pg=document.getElementById("news-pagination"),prev=document.getElementById("news-prev"),next=document.getElementById("news-next");
  if(pg){pg.style.display=(r.hasPrev||r.hasNext)?"flex":"none";if(prev){prev.disabled=!r.hasPrev;prev.onclick=function(){if(!r.hasPrev)return;var u=new URL(location.href);u.searchParams.set("page",String(r.page-1));location.href=u.href}}if(next){next.disabled=!r.hasNext;next.onclick=function(){if(!r.hasNext)return;var u=new URL(location.href);u.searchParams.set("page",String(r.page+1));location.href=u.href}}}
 }
 function renderPage(){
  var qx=new URLSearchParams(location.search),topic=qx.get("topic")||"home",page=Math.max(1,parseInt(qx.get("page"),10)||1),q=(qx.get("q")||"").trim().toLowerCase();
- getTopic(topic,page).then(function(r){if(!r.ok){console.warn("featured.json:",r.reason);return renderOldWay(topic,page,q)}render(r);return renderOldWay(topic,page,q)}).catch(function(e){console.warn("featured.json:",e);renderOldWay(topic,page,q)});
+ getTopic(topic,page).then(function(r){if(!r.ok){console.warn("featured.json:",r.reason);return renderOldWay(topic,page,q)}render(r)}).catch(function(e){console.warn("featured.json:",e);renderOldWay(topic,page,q)});
 }
 window.EvrenFeatured={load:load,getTopic:getTopic,render:renderPage};
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",renderPage,{once:true});else renderPage();
