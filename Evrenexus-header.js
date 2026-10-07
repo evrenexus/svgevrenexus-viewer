@@ -112,7 +112,7 @@ function renderCars(data){
   popular.forEach(function(name){var x=findCar(name);if(x&&!used[name]){all.push(x);used[name]=true;}});
   function carItem(x){
     var raw=String(x.change||"").trim();
-    var pctMatch=raw.match(/\\(.*?([+-]?[۰-۹0-9]+(?:[.,][۰-۹0-9]+)?)\\s*[%٪].*?\\)/);
+    var pctMatch=raw.match(/\(.*?([+-]?[۰-۹0-9]+(?:[.,][۰-۹0-9]+)?)\s*[%٪].*?\)/);
     var pct=pctMatch?pctMatch[1]:"";
     var ascii=pct.replace(/[۰-۹]/g,function(d){return"۰۱۲۳۴۵۶۷۸۹".indexOf(d)}).replace(",",".");
     var num=parseFloat(ascii);
