@@ -10,6 +10,10 @@ on:
       - "data/articles.json"
       - "scripts/audit-data.mjs"
       - "scripts/audit-potential.mjs"
+      - "scripts/build-internal-articles.mjs"
+      - "scripts/featured-lib.mjs"
+      - "scripts/build-featured.mjs"
+      - "scripts/validate-featured.mjs"
       - ".github/workflows/audit-data.yml"
 
 permissions:
@@ -24,3 +28,9 @@ jobs:
         run: node scripts/audit-data.mjs
       - name: Potential featured if articles were generated
         run: node scripts/audit-potential.mjs
+      - name: Build permanent articles on current data
+        run: node scripts/build-internal-articles.mjs
+      - name: Build featured on current data
+        run: node scripts/build-featured.mjs
+      - name: Validate current featured and articles
+        run: node scripts/validate-featured.mjs
