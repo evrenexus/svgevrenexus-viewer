@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-07T20:06:57Z",
+  "updated": "2026-10-07T20:07:22.505Z",
   "schema": 1,
   "items": {
     "article-eece7c42f225dbaf": {
@@ -12640,6 +12640,286 @@
       "published_at": "2026-10-07T20:06:57Z",
       "status": "published",
       "ai_managed": true
+    },
+    "article-b5cc4ffd142924f9": {
+      "id": "article-b5cc4ffd142924f9",
+      "title": "بختیاری زاده: با تمام وجود مقابل تراکتور بازی می‌کنیم",
+      "summary": "سرمربی استقلال پیش از دیدار مقابل تراکتور گفت: از طرف بچه‌های تیم به هواداران قول می‌دهم که فردا با تمام وجود بازی کنیم.",
+      "content": "۲۳:۳۲ -\n\n۱۵ مهر ۱۴۰۵\n\nبختیاری زاده: با تمام وجود مقابل تراکتور بازی می‌کنیم\n\nسرمربی استقلال پیش از دیدار مقابل تراکتور گفت: از طرف بچه‌های تیم به هواداران قول می‌دهم که فردا با تمام وجود بازی کنیم.\n\nپ\n\n،\n\nپـ\n\nتداخل زمانی پرواز اعضای کاروان استقلال به تبریز با نشست خبری پیش از مسابقه باعث شد تا سهراب بختیاری‌زاده سرمربی تیم فوتبال استقلال نتواند در نشست خبری حاضر شود و به همین دلیل او در ویدیویی درباره شرایط تیمش و بازی فردا صحبت کرد.\n\nسهراب بختیاری زاده گفت: در مورد بازی فردا، به هر حال فکر می‌کنم تراکتور تیم بسیار خوبی است. تیمی منضبط، هماهنگ و باکیفیت که مسابقه سختی را برای ما رقم خواهد زد.\n\nاو ادامه داد: ما شرایط بسیار خوبی داریم و طی یکی دو هفته گذشته تمرینات بسیار خوبی انجام داده‌ایم. خدا را شکر برای این مسابقه آماده هستیم.\n\nسرمربی آبی پوشان درباره تقابل با جواد نکونام گفت: با احترام به تیم تراکتور تبریز و کادر بسیار خوبش، آقای جواد نکونام دوست خوب من است و برای او آرزوی موفقیت دارم\n\nبختیاری‌زاده در پایان خاطرنشان کرد: از طرف بچه‌های تیم به هواداران قول می‌دهم که فردا با تمام وجود بازی کنیم. تلاش می‌کنیم همان ریتم خوب بازی قبل برابر السد را ادامه بدهیم و عملکرد بسیار خوبی داشته باشیم.\n\nمنبع :\n\nباشگاه خبرنگاران جوان\n\nva NewsLis Limi = 5;\n\nاز میان اخبار\n\nقلعه‌نویی گزینه ایده‌آل نبود!\n\nآمریکا ویزای همه ایرانی‌ها را صادر کرد غیر از یک نفر\n\nاظهارات احساسی لیونل مسی پس از خداحافظی از تیم ملی آرژانتین\n\nببینید؛ سنگ‌تمام آرژانتینی‌ها برای خداحافظی لیونل مسی\n\nشما قبلا این خبر را لایک کرده‌اید .\n\nfunc ion oPe sianNumbe (numbe ) {\n\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\n\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\n\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\n\nelemen .addEven Lis ene (\"click\", func ion() {\n\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n\n. hen(func ion( esponse) {\n\nif ( esponse.s a us == 200) {\n\nesponse.json(). hen(func ion(newSco e) {\n\nva likeNumbe Span = elemen .que ySelec o (\".like\");\n\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\n\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\n\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\n\nva hiddenHea = elemen .que ySelec o (\".hidden\");\n\nvisibleHea .classLis .add(\"hidden\");\n\nfavo i eBu on.classLis .add(\"hidden\");\n\nhiddenHea .classLis . emove(\"hidden\");\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}\n\n});\n\n} else {\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis .add(\"hidden_e o \");\n\nse Timeou (func ion() {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}, 3000);\n\n}\n\n}\n\n})\n\n});\n\n});",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "topics": [
+        "economy"
+      ],
+      "group_id": "local-3fa0dba3299c",
+      "original_news_id": "b37084d58e4bd9632931",
+      "source_ids": [],
+      "sources": [
+        {
+          "name": "فرارو",
+          "url": "https://fararu.com/fa/news/1008118/%D8%A8%D8%AE%D8%AA%DB%8C%D8%A7%D8%B1%DB%8C-%D8%B2%D8%A7%D8%AF%D9%87-%D8%A8%D8%A7-%D8%AA%D9%85%D8%A7%D9%85-%D9%88%D8%AC%D9%88%D8%AF-%D9%85%D9%82%D8%A7%D8%A8%D9%84-%D8%AA%D8%B1%D8%A7%DA%A9%D8%AA%D9%88%D8%B1-%D8%A8%D8%A7%D8%B2%DB%8C-%D9%85%DB%8C-%DA%A9%D9%86%DB%8C%D9%85"
+        }
+      ],
+      "image": "https://cdn.fararu.com/thumbnail/EhkyP24lTI0v/CNldQ59wZaFOXKxaO8V8iyRzZi_6Fp3OezVoiwwebmRHE-os_cwTeuD4W-tG-sdik1lfiWVPl8oq0EYUXJkI3WigzLAk62fhA3J4ja-UI1s1akvwuN9rneF35ryYE_kK/%D8%B3%D9%87%D8%B1%D8%A7%D8%A8.jpg",
+      "importance_score": 0,
+      "created_at": "2026-10-07T20:07:22.505Z",
+      "updated_at": "2026-10-07T20:07:22.505Z",
+      "published_at": "2026-10-07T23:32:17+03:30",
+      "status": "published",
+      "ai_managed": false,
+      "generated_by": "internal-republish-v1",
+      "manual_locked": false
+    },
+    "article-9a2098ce1d3bf669": {
+      "id": "article-9a2098ce1d3bf669",
+      "title": "سقف تسهیلات صندوق‌های قرض‌الحسنه تعیین شد",
+      "summary": "دستورالعمل جدید تأسیس، فعالیت، نظارت و انحلال صندوق‌های قرض‌الحسنه با تعیین سقف ۱۵۰ میلیون تومانی تسهیلات و تغییر برخی ضوابط فعالیت و نظارت این صندوق‌ها توسط بانک مرکزی ابلاغ شد. پست سقف تسهیلات صندوق‌های قرض‌الحسنه تعیین شد اولین بار در تجارت نیوز ظاهر شد.",
+      "content": "سقف تسهیلات صندوق‌های قرض‌الحسنه تعیین شد\n\n|\n\nبروزرسانی: 4 دقیقه پیش\n\nکد خبر: 1356055\n\nبانک و بیمه\n\nلینک کوتاه\n\nکپی شد\n\nدستورالعمل جدید تأسیس، فعالیت، نظارت و انحلال صندوق‌های قرض‌الحسنه با تعیین سقف ۱۵۰ میلیون تومانی تسهیلات و تغییر برخی ضوابط فعالیت و نظارت این صندوق‌ها توسط بانک مرکزی ابلاغ شد.\n\nمصوبه زمستان ۱۴۰۳ را به‌روزرسانی کرد.\n\nبر اساس دستورالعمل جدید بانک مرکزی، طبقه‌بندی صندوق‌های قرض‌الحسنه تغییر کرده و عناوین «خرد، کوچک، متوسط و بزرگ» به «نوع اول، نوع دوم، نوع سوم و بزرگ» تغییر یافته است.\n\nامکان استفاده صندوق‌ها از درگاه پرداخت اینترنتی\n\nبنابر اعلام بانک مرکزی یکی از تغییرات دستورالعمل جدید، رفع ممنوعیت استفاده صندوق‌های نوع اول، دوم و سوم از درگاه پرداخت اینترنتی است. این صندوق‌ها می‌توانند در چارچوب ضوابط و مقررات ابلاغی بانک مرکزی از خدمات درگاه پرداخت اینترنتی استفاده کنند.\n\nهمچنین محدودیت مربوط به تعداد مؤسسات اعتباری که صندوق‌های قرض‌الحسنه می‌توانستند منابع نقد خود را نزد آنها سپرده‌گذاری کنند، حذف شده است.\n\nبر اساس مقررات جدید، صندوق‌های نوع اول و دوم می‌توانند حداکثر ۲۰ درصد از منابع نقدی خود را در قالب سپرده سرمایه‌گذاری مدت‌دار نزد مؤسسات اعتباری نگهداری کنند. این سقف پیش از این ۱۰ درصد بود.\n\nسقف تسهیلات هر فرد ۱۵۰ میلیون تومان شد\n\nدر بخش تسهیلات نیز سقف پرداخت به هر شخص برای صندوق‌های نوع اول، دوم و سوم ۱.۵ میلیارد ریال تعیین شده است.\n\nمطابق این دستورالعمل، پرداخت تسهیلات تا ۲۰۰ میلیون ریال در اختیار صندوق قرار دارد و پرداخت مبالغ بالاتر تا سقف ۱.۵ میلیارد ریال به تصویب هیأت‌مدیره و تأیید عامل نظارتی نیاز دارد.\n\nافزایش سرمایه از محل تجدید ارزیابی دارایی‌ها\n\nدستورالعمل جدید همچنین امکان افزایش سرمایه صندوق‌ها از محل مازاد تجدید ارزیابی دارایی‌های ثابت را فراهم کرده است. این افزایش سرمایه حداکثر تا ۳۰ درصد سرمایه ثبتی صندوق امکان‌پذیر خواهد بود.\n\nدر سایر ضوابط نیز حداقل ذخیره نقدی ۵ درصد تعیین شده و حداکثر مدت بازپرداخت تسهیلات برای صندوق‌های نوع اول تا سوم ۳۶ ماه و برای صندوق‌های بزرگ ۶۰ ماه باقی مانده است.\n\nهمچنین سقف ۵۰ شعبه برای صندوق‌های بزرگ بدون تغییر نسبت به مقررات پیشین حفظ شده است.\n\nدستورالعمل جدید از زمان ابلاغ، مبنای فعالیت صندوق‌های قرض‌الحسنه و نظارت بر عملکرد آنها خواهد بود.\n\nمنبع: مهر",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "topics": [
+        "economy"
+      ],
+      "group_id": "local-290105c188d8",
+      "original_news_id": "53d12982d8dd0d01b0b4",
+      "source_ids": [],
+      "sources": [
+        {
+          "name": "تجارت‌نیوز",
+          "url": "https://tejaratnews.com/%d8%b3%d9%82%d9%81-%d8%aa%d8%b3%d9%87%db%8c%d9%84%d8%a7%d8%aa-%d8%b5%d9%86%d8%af%d9%88%d9%82%d9%87%d8%a7%db%8c-%d9%82%d8%b1%d8%b6%d8%a7%d9%84%d8%ad%d8%b3%d9%86%d9%87-%d8%aa%d8%b9"
+        }
+      ],
+      "image": "https://tejaratnews.com/wp-content/uploads/2026/10/5230686-ak-1200x800-1.webp",
+      "importance_score": 0,
+      "created_at": "2026-10-07T20:07:22.505Z",
+      "updated_at": "2026-10-07T20:07:22.505Z",
+      "published_at": "2026-10-07T23:30:40+03:30",
+      "status": "published",
+      "ai_managed": false,
+      "generated_by": "internal-republish-v1",
+      "manual_locked": false
+    },
+    "article-17322bebab088aca": {
+      "id": "article-17322bebab088aca",
+      "title": "قیمت ۱۲ قلم کالای اساسی تا ۶ ماه ثابت می‌ماند؛ از آبان ۱۵ قلم می‌شود",
+      "summary": "شهردار تهران از اجرای طرحی خبر داد که براساس آن قیمت ۱۲ قلم کالای اساسی تا ۶ ماه تغییر نخواهد کرد.",
+      "content": "۲۳:۳۰ -\n\n۱۵ مهر ۱۴۰۵\n\nزاکانی:\n\nقیمت ۱۲ قلم کالای اساسی تا ۶ ماه ثابت می‌ماند؛ از آبان ۱۵ قلم می‌شود\n\nشهردار تهران از اجرای طرحی خبر داد که براساس آن قیمت ۱۲ قلم کالای اساسی تا ۶ ماه تغییر نخواهد کرد.\n\nپ\n\n،\n\nپـ\n\nتبلیغات\n\nتبلیغات\n\nعلیرضا زاکانی، شهردار تهران، گفت: آمریکا جنگ اقتصادی را آغاز کرده و تلاش می‌کند معیشت مردم را تحت تأثیر قرار دهد؛ ما نیز از مدت‌ها قبل برای مقابله با این فشار برنامه‌ریزی کرده‌ایم.\n\nوی افزود: این طرح برنامه‌ریزی‌شده از امروز آغاز شده و قیمت ۱۲ قلم کالای اساسی تا ۶ ماه ثابت خواهد ماند. خانوارها بر اساس بُعد خانوار می‌توانند خرید یک‌ماهه یا دوماهه خود را انجام دهند.\n\nزاکانی تصریح کرد: از آبان‌ماه، مرغ، رب و پنیر نیز به این سبد اضافه می‌شود و تعداد اقلام به ۱۵ قلم می‌رسد. برنج، روغن، گوشت، شکر، سویا، حبوبات و ماکارونی از جمله کالاهای این طرح هستند.\n\nتبلیغات\n\nva NewsLis Limi = 5;\n\nاز میان اخبار\n\nام‌وی‌ام X۵؛ شاسی‌بلند جدید مدیران‌خودرو ارزش خرید دارد؟\n\nنیسان تیانا ۲۰۲۶ با کابین هوشمند هواوی در ایران\n\nفولکس واگن ID.ERA ۹X؛ غول ۵۱۰ اسبی به ایران رسید\n\nراهنمای اجاره آپارتمان در تهران با یک میلیارد بودجه\n\nشما قبلا این خبر را لایک کرده‌اید .\n\nfunc ion oPe sianNumbe (numbe ) {\n\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\n\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\n\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\n\nelemen .addEven Lis ene (\"click\", func ion() {\n\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n\n. hen(func ion( esponse) {\n\nif ( esponse.s a us == 200) {\n\nesponse.json(). hen(func ion(newSco e) {\n\nva likeNumbe Span = elemen .que ySelec o (\".like\");\n\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\n\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\n\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\n\nva hiddenHea = elemen .que ySelec o (\".hidden\");\n\nvisibleHea .classLis .add(\"hidden\");\n\nfavo i eBu on.classLis .add(\"hidden\");\n\nhiddenHea .classLis . emove(\"hidden\");\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}\n\n});\n\n} else {\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis .add(\"hidden_e o \");\n\nse Timeou (func ion() {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}, 3000);\n\n}\n\n}\n\n})\n\n});\n\n});\n\nتبلیغات",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "topics": [
+        "economy"
+      ],
+      "group_id": "local-b5d1fc9071bd",
+      "original_news_id": "9bda2852354687e18b24",
+      "source_ids": [],
+      "sources": [
+        {
+          "name": "فرارو",
+          "url": "https://fararu.com/fa/news/1008117/%D9%82%DB%8C%D9%85%D8%AA-%D9%82%D9%84%D9%85-%DA%A9%D8%A7%D9%84%D8%A7%DB%8C-%D8%A7%D8%B3%D8%A7%D8%B3%DB%8C-%D8%AA%D8%A7-%D9%85%D8%A7%D9%87-%D8%AB%D8%A7%D8%A8%D8%AA-%D9%85%DB%8C-%D9%85%D8%A7%D9%86%D8%AF-%D8%A7%D8%B2-%D8%A2%D8%A8%D8%A7%D9%86-%D9%82%D9%84%D9%85-%D9%85%DB%8C-%D8%B4%D9%88%D8%AF"
+        }
+      ],
+      "image": "https://mcdn.fararu.com/ao/1a117f11e16_d8b239.webp",
+      "importance_score": 0,
+      "created_at": "2026-10-07T20:07:22.505Z",
+      "updated_at": "2026-10-07T20:07:22.505Z",
+      "published_at": "2026-10-07T23:30:12+03:30",
+      "status": "published",
+      "ai_managed": false,
+      "generated_by": "internal-republish-v1",
+      "manual_locked": false
+    },
+    "article-f7b2aac3effdcb35": {
+      "id": "article-f7b2aac3effdcb35",
+      "title": "ترکیب احتمالی استقلال مقابل تراکتور / هفته هشتم ورزشگاه یادگار",
+      "summary": "استقلال با حفظ سیستم سه‌دفاعه، حضور حبیب فرعباسی و تکیه بر مهره‌های موفق دیدار با السد، آماده مسابقه حساس با تراکتور شده و تغییرات زیادی در ترکیبش نخواهد داشت.",
+      "content": "۲۳:۲۹ -\n\n۱۵ مهر ۱۴۰۵\n\nترکیب احتمالی استقلال مقابل تراکتور / هفته هشتم ورزشگاه یادگار\n\nاستقلال با حفظ سیستم سه‌دفاعه، حضور حبیب فرعباسی و تکیه بر مهره‌های موفق دیدار با السد، آماده مسابقه حساس با تراکتور شده و تغییرات زیادی در ترکیبش نخواهد داشت.\n\nپ\n\n،\n\nپـ\n\nاستقلال پس از پیروزی روحیه‌بخش مقابل السد، حالا آماده یکی از دشوارترین مسابقات خود در لیگ برتر می‌شود. آبی‌ها فردا در ورزشگاه یادگار امام مقابل تراکتور قرار می‌گیرند و سهراب بختیاری‌زاده امیدوار است بازیکنانش همان ریتم، تمرکز و کیفیت فنی دیدار آسیایی را در تبریز نیز به نمایش بگذارند.\n\nبازگشت ملی‌پوشان و حضور بازیکنان مصدوم در تمرینات، دست کادر فنی را برای انتخاب ترکیب باز گذاشته است. با توجه به تمرینات روزهای اخیر، انتظار می‌رود استقلال همچنان با سیستم سه‌دفاعه وارد زمین شود و بیشتر بازیکنانی که برابر السد نمایش خوبی داشتند، جایگاه خود را حفظ کنند.\n\nحبیب فرعباسی\n\nحبیب وظیفه حراست از دروازه استقلال را برعهده خواهد داشت. آسیب‌دیدگی این دروازه‌بان در مسابقه مقابل السد، نگرانی‌هایی را درباره حضورش برابر تراکتور ایجاد کرده بود، اما روند درمان و بازگشت او به تمرینات باعث شد این نگرانی برطرف شود. فرعباسی برای مسابقه آماده است و مشکلی برای قرار گرفتن در ترکیب اصلی ندارد.\n\nآقاسی، فلاح و آشورماتوف\n\nسهراب بختیاری‌زاده برای این مسابقه نیز سیستم سه‌دفاعه خود را حفظ خواهد کرد. عارف آقاسی یکی از مدافعان اصلی استقلال است و این مسابقه برای او شرایط متفاوتی دارد، چرا که باید برابر تیم سابقش قرار بگیرد. شناخت آقاسی از فضای تراکتور و بازیکنان این تیم می‌تواند در کنترل مهاجمان میزبان به استقلال کمک کند.\n\nسامان فلاح پس از بازگشت از اردوی تیم ملی در قلب خط دفاعی به میدان خواهد رفت. رستم آشورماتوف نیز ضلع دیگر این خط سه‌نفره است. دعوت نشدن مدافع استقلال به تیم ملی ازبکستان اتفاقی غیرمنتظره بود، اما باعث شد او در تمام روزهای فیفادی در اختیار کادر فنی باشد و بدون وقفه در تمرینات تیمی شرکت کند.\n\nصالح حردانی\n\nصالح پس از پشت سر گذاشتن تنبیه انضباطی خود، بار دیگر به مهره اصلی استقلال در سمت راست تبدیل شده است. او مسابقات مقابل آلومینیوم و پیکان را از دست داد، اما برابر السد به ترکیب بازگشت و نمایش خوبی ارائه کرد. دوندگی، نفوذ و بازگشت سریع حردانی می‌تواند نقش مهمی در اجرای سیستم سه‌دفاعه استقلال داشته باشد.\n\nحسین گودرزی\n\nدر جناح چپ نیز گودرزی بازی خواهد کرد. او در این مسابقه باید تمرکز زیادی روی وظایف دفاعی خود داشته باشد، چرا که تراکتور توانایی بالایی در طراحی حمله از این منطقه دارد. گودرزی در زمان مالکیت توپ نیز باید عرض حمله استقلال را حفظ کند و مسیر نفوذ برای بازیکنان هجومی تیمش بسازد.\n\nرزاقی‌نیا و چشمی\n\nامیرمحمد رزاقی‌نیا گزینه اصلی استقلال در پست هافبک دفاعی است. این بازیکن جوان و آینده‌دار طی فصل جاری به یکی از مهره‌های کلیدی ترکیب بختیاری‌زاده تبدیل شده و در تبریز مسئولیت مهمی در قطع حملات تراکتور، پوشش فضای مقابل مدافعان و آغاز بازی‌سازی آبی‌ها خواهد داشت.\n\nاحتمالاً روزبه چشمی نیز در کنار امیرمحمد رزاقی‌نیا قرار خواهد گرفت. چشمی در دیدار برابر السد نیز در ترکیب اصلی حضور داشت و تجربه، قدرت تخریب و توانایی او در پوشش فضای مقابل مدافعان، تعادل بیشتری به ساختار استقلال بخشید. با توجه به دشواری مسابقه و قدرت خط میانی تراکتور، سهراب بختیاری‌زاده به احتمال زیاد از دو هافبک دفاعی استفاده می‌کند تا مسیر بازی‌سازی میزبان را ببندد. اگر سرمربی استقلال بخواهد آرایش هجومی‌تری انتخاب کند، اسماعیل قلی‌زاده می‌تواند به ترکیب اضافه شود، اما آغاز مسابقه با چنین تصمیمی بعید به نظر می‌رسد و زوج چشمی و رزاقی‌نیا گزینه منطقی‌تری برای مهار هافبک‌های تراکتور است.\n\nعلیرضا کوشکی\n\nکوشکی گزینه اصلی حضور در جناح چپ خط حمله است. عملکرد او در فصل جاری با روزهای درخشان فصل گذشته فاصله داشته و هنوز نتوانسته انتظارات را به طور کامل برآورده کند. مسابقه بزرگ برابر تراکتور می‌تواند فرصت مناسبی برای کوشکی باشد تا بار دیگر توانایی‌هایش را نشان دهد و به روند خوب گذشته بازگردد.\n\nیاسر آسانی\n\nدر سمت راست، آسانی همچنان مهم‌ترین مهره هجومی استقلال خواهد بود. این بازیکن بدون توجه به حواشی و اخبار مربوط به شکایت باشگاه‌های رقیب، تمرکز خود را روی تمرینات و مسابقات حفظ کرده است. توانایی آسانی در عبور از مدافع مستقیم، حرکت به عمق و تمام‌کنندگی، او را به امید اول آبی‌ها برای گلزنی در تبریز تبدیل کرده است.\n\nسعید سحرخیزان\n\nسحرخیزان در نوک خط حمله قرار می‌گیرد. مهاجم استقلال مقابل السد نمایش خوبی داشت و با تحرک زیاد، مدافعان حریف را تحت فشار گذاشت. او اکنون امیدوار است برابر تراکتور نیز برای تیمش مؤثر باشد و فرصت‌های ایجادشده توسط آسانی، کوشکی و قلی‌زاده را به گل تبدیل کند.\n\nترکیب احتمالی استقلال مقابل تراکتور:\n\nحبیب فرعباسی، عارف آقاسی، سامان فلاح، رستم آشورماتوف، صالح حردانی، حسین گودرزی، امیرمحمد رزاقی‌نیا، روزبه چشمی، علیرضا کوشکی، یاسر آسانی و سعید سحرخیزان.\n\nمنبع :\n\nایلنا\n\nva NewsLis Limi = 5;\n\nاز میان اخبار\n\nقلعه‌نویی گزینه ایده‌آل نبود!\n\nآمریکا ویزای همه ایرانی‌ها را صادر کرد غیر از یک نفر\n\nاظهارات احساسی لیونل مسی پس از خداحافظی از تیم ملی آرژانتین\n\nببینید؛ سنگ‌تمام آرژانتینی‌ها برای خداحافظی لیونل مسی\n\nشما قبلا این خبر را لایک کرده‌اید .\n\nfunc ion oPe sianNumbe (numbe ) {\n\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\n\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\n\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\n\nelemen .addEven Lis ene (\"click\", func ion() {\n\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n\n. hen(func ion( esponse) {\n\nif ( esponse.s a us == 200) {\n\nesponse.json(). hen(func ion(newSco e) {\n\nva likeNumbe Span = elemen .que ySelec o (\".like\");\n\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\n\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\n\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\n\nva hiddenHea = elemen .que ySelec o (\".hidden\");\n\nvisibleHea .classLis .add(\"hidden\");\n\nfavo i eBu on.classLis .add(\"hidden\");\n\nhiddenHea .classLis . emove(\"hidden\");\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}\n\n});\n\n} else {\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis .add(\"hidden_e o \");\n\nse Timeou (func ion() {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}, 3000);\n\n}\n\n}\n\n})\n\n});\n\n});",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "topics": [
+        "economy"
+      ],
+      "group_id": "local-1bdc370e0398",
+      "original_news_id": "4fee45aaf441468f6570",
+      "source_ids": [],
+      "sources": [
+        {
+          "name": "فرارو",
+          "url": "https://fararu.com/fa/news/1008116/%D8%AA%D8%B1%DA%A9%DB%8C%D8%A8-%D8%A7%D8%AD%D8%AA%D9%85%D8%A7%D9%84%DB%8C-%D8%A7%D8%B3%D8%AA%D9%82%D9%84%D8%A7%D9%84-%D9%85%D9%82%D8%A7%D8%A8%D9%84-%D8%AA%D8%B1%D8%A7%DA%A9%D8%AA%D9%88%D8%B1-%D9%87%D9%81%D8%AA%D9%87-%D9%87%D8%B4%D8%AA%D9%85-%D9%88%D8%B1%D8%B2%D8%B4%DA%AF%D8%A7%D9%87-%DB%8C%D8%A7%D8%AF%DA%AF%D8%A7%D8%B1"
+        }
+      ],
+      "image": "https://cdn.fararu.com/thumbnail/IGkxrzhOasKj/Z6pSk4WxrMFjhY1-SDz0y2n9EQZOEl8EV0Rdll8odSEhtV4RFPrV_PiHmWRY8p1tdMApuC8DFSJrelObqQZeqA2ybu741uC69ZNflP74yQ0WIOyoUIf3rAqlMqR7_4uz/%D8%A7%D8%B3%D8%AA%D9%82%D9%84%D8%A7%D9%84.jpg",
+      "importance_score": 0,
+      "created_at": "2026-10-07T20:07:22.505Z",
+      "updated_at": "2026-10-07T20:07:22.505Z",
+      "published_at": "2026-10-07T23:29:21+03:30",
+      "status": "published",
+      "ai_managed": false,
+      "generated_by": "internal-republish-v1",
+      "manual_locked": false
+    },
+    "article-e7577521805427d4": {
+      "id": "article-e7577521805427d4",
+      "title": "نکونام و استقلال پس از 209 هفته، باز هم در هفته هشتم!",
+      "summary": "سرمربی فعلی تراکتور پس از چند سال، باز هم در هفته هشتم به استقلال رسید.",
+      "content": "۲۳:۲۵ -\n\n۱۵ مهر ۱۴۰۵\n\nنکونام و استقلال پس از ۲۰۹ هفته، باز هم در هفته هشتم!\n\nسرمربی فعلی تراکتور پس از چند سال، باز هم در هفته هشتم به استقلال رسید.\n\nپ\n\n،\n\nپـ\n\nدو تیم تراکتور و استقلال در هفته هشتم لیگ برتر، در واقع برگزار کننده فینالی زودرس هستند که برنده این دیدار حتی می‌تواند گام بزرگی در مسیر قهرمانی پایان فصل بردارد.\n\nشاید پررنگ‌ترین نکته این مسابقه که حساسیت‌های آن را هم بیشتر می‌کند، تقابل سرمربی فعلی تراکتور با تیم سابقش است. جواد نکونام در فصل اول حضورش در استقلال چالش‌های زیادی را خواسته و ناخواسته برای این تیم درست کرد و پس از آن هم در فاصله ۳ هفته تا پایان فصل موفق به حفظ صدرنشینی نشد تا در نهایت قهرمانی را از دست بدهد!\n\nدر فصل دوم حضور روی نیمکت آبی تهران هم او نتایج خوبی نگرفت تا پس از باخت هفته ششم در دربی و سپس باخت آسیایی مقابل السد قطر، خیلی زود از این تیم کنار گذاشته شود.\n\nحالا سرمربی تراکتور پس از 1463 روز، مقابل تیمی قرار می‌گیرد که روزگاری بازوبند کاپیتانی‌اش را می‌بست. آخرین تقابل او با استقلال ۱۵ مهر ۱۴۰۱ (جمعه) بود. در آن مقطع، نکونام هدایت قرمزهای اهواز را بر عهده داشت و در ورزشگاه خالی از تماشاگر آزادی، استقلال ساپینتو را با تساوی یک‌ - یک متوقف کرد. نکته جالب این مسابقه برگزاری آن در هفته هشتم لیگ بیست و دوم بود!\n\nاستقلال در آن بازی با ترکیب سیدحسین حسینی، رافائل سیلوا، محمد حسین مرادمند، کوین یامگا، جعفر سلمانی (46-ابوالفضل جلالی)، روزبه چشمی (75-زبیر نیک نفس)، مهدی مهدی‌پور، آرش رضاوند (75-سعید مهری)، محمد محبی، مهدی قایدی (75-رضا میرزایی) و پیمان بابایی (85-سجاد شهباززاده)، به زمین رفت.\n\nکریستوفر کنت (46-شهاب گردان)، مهدی شیری، عارف آقاسی، موسی کولیبالی، سعید آقایی، حمید بوحمدان، محمد آبشک (1+90 احمد عبدالله‌زاده)، احسان پهلوان (63-علیرضا کوشکی)، ساسان انصاری، وریا غفوری (63-علی قربانی) و مجید علیاری هم برای فولاد بازی کردند.\n\nفولاد در این مسابقه توسط مجید علیاری در دقیقه 16 روی غفلت مدافعان و با ضربه سر، به گل رسید. استقلال علیرغم حملات زیاد و موقعیت‌های متعددی که داشت و حتی توپ را به تیرک دروازه حریف هم زد، تا اواسط نیمه دوم موفق به جبران گل نخورده نشد تا اینکه در نهایت محمد محبی روی پاسِ با ضربه سر مرادمند، پس از یک کنترل سینه خوب در دقیقه 61 توانست کار را به تساوی بکشد.\n\nبا وجود تلاش‌های شاگردان ساپینتوی محروم و حاضر روی سکوها، دروازه فولاد پس از این هم با دفاع همه جانبه شاگردان نکونام بسته ماند تا این مسابقه برنده‌ای نداشته باشد.\n\nدر آن بازی رضا میرزایی و رافائل سیلوا از استقلال و ساسان انصاری و علیرضا کوشکی از فولاد، کارت زرد گرفتند. داوری جنجالی این مسابقه باعث شد باشگاه استقلال پس از اتمام بازی به سه صحنه مشکوک در محوطه جریمه اعتراض کند و 3 پنالتی خود را سوخته شده بداند!\n\nدرهر حال، لیگ بیست و دوم با قهرمانی پرسپولیس به خاطر یک امتیاز بیشتر نسبت به سپاهان 65 امتیازی، به پایان رسید. استقلال هم با 62 امتیاز در رده سوم قرار گرفت و اگرچه با 52 گل زده، صاحب بهترین خط حمله شد اما چون تیم ساپینتو برخلاف فاز هجومی، شرایط ایده‌آلی در بخش دفاعی نداشت، 22 گل دریافت کرد تا آبی‌ها صاحب بهترین تفاضل گل فصل نشوند. فولاد هم در نهایت با 40 امتیاز و به خاطر گل زده بیشتر نسبت به آلومینیوم اراک، در رده هفتم فصل را به پایان رساند.\n\nمنبع :\n\nفوتبالی\n\nva NewsLis Limi = 5;\n\nاز میان اخبار\n\nقلعه‌نویی گزینه ایده‌آل نبود!\n\nآمریکا ویزای همه ایرانی‌ها را صادر کرد غیر از یک نفر\n\nاظهارات احساسی لیونل مسی پس از خداحافظی از تیم ملی آرژانتین\n\nببینید؛ سنگ‌تمام آرژانتینی‌ها برای خداحافظی لیونل مسی\n\nشما قبلا این خبر را لایک کرده‌اید .\n\nfunc ion oPe sianNumbe (numbe ) {\n\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\n\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\n\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\n\nelemen .addEven Lis ene (\"click\", func ion() {\n\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n\n. hen(func ion( esponse) {\n\nif ( esponse.s a us == 200) {\n\nesponse.json(). hen(func ion(newSco e) {\n\nva likeNumbe Span = elemen .que ySelec o (\".like\");\n\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\n\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\n\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\n\nva hiddenHea = elemen .que ySelec o (\".hidden\");\n\nvisibleHea .classLis .add(\"hidden\");\n\nfavo i eBu on.classLis .add(\"hidden\");\n\nhiddenHea .classLis . emove(\"hidden\");\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}\n\n});\n\n} else {\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis .add(\"hidden_e o \");\n\nse Timeou (func ion() {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}, 3000);\n\n}\n\n}\n\n})\n\n});\n\n});",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "topics": [
+        "economy"
+      ],
+      "group_id": "local-d5ef61a6a40d",
+      "original_news_id": "5c67eecba975bac26ca2",
+      "source_ids": [],
+      "sources": [
+        {
+          "name": "فرارو",
+          "url": "https://fararu.com/fa/news/1008115/%D9%86%DA%A9%D9%88%D9%86%D8%A7%D9%85-%D8%A7%D8%B3%D8%AA%D9%82%D9%84%D8%A7%D9%84-%D9%BE%D8%B3-%D8%A7%D8%B2-209-%D9%87%D9%81%D8%AA%D9%87-%D8%A8%D8%A7%D8%B2-%D9%87%D9%85-%D8%AF%D8%B1-%D9%87%D9%81%D8%AA%D9%87-%D9%87%D8%B4%D8%AA%D9%85"
+        }
+      ],
+      "image": "https://cdn.fararu.com/thumbnail/3v8L7RlJlAo7/mgkhJHbfvgFibIZfa8F8XoThV5sScj-zOqz0C-IOzb2dph5zp7qUOY42iLSCxknnZwdhhJemlFNlCAUtD0ArdO1bOQ4E5onbxi_x4sICgAEcM6NxG98Wxu5IT4IPGcqU/%D8%AC%D9%88%D8%A7%D8%AF+%D9%86%DA%A9%D9%88%D9%86%D8%A7%D9%85.jpg",
+      "importance_score": 0,
+      "created_at": "2026-10-07T20:07:22.505Z",
+      "updated_at": "2026-10-07T20:07:22.505Z",
+      "published_at": "2026-10-07T23:25:16+03:30",
+      "status": "published",
+      "ai_managed": false,
+      "generated_by": "internal-republish-v1",
+      "manual_locked": false
+    },
+    "article-76f98d1bdff3fd32": {
+      "id": "article-76f98d1bdff3fd32",
+      "title": "شنیده شدن صدای انفجاری مهیب در حیفا",
+      "summary": "منابع محلی از شنیده شدن صدای انفجاری مهیب در حیفا خبر دادند.",
+      "content": "۲۳:۲۴ -\n\n۱۵ مهر ۱۴۰۵\n\nشنیده شدن صدای انفجاری مهیب در حیفا\n\nمنابع محلی از شنیده شدن صدای انفجاری مهیب در حیفا خبر دادند.\n\nپ\n\n،\n\nپـ\n\nرسانه‌های محلی گزارش دادند که صدای انفجاری در حیفا واقع در شمال فلسطین شنیده شده است.\n\nبر اساس این گزارش‌ها ماهیت این انفجار مهیب هنوز مشخص نیست.\n\nهمچنین، تاکنون جزئیات بیشتری درباره علت انفجار یا خسارات و تلفات احتمالی آن منتشر نشده است.\n\nva NewsLis Limi = 5;\n\nاز میان اخبار\n\nشنیده شدن صدای انفجاری مهیب در حیفا\n\nنیویورک تایمز: عربستان در نبرد با انصارالله وارد باتلاق گذشته شده است\n\nریاض: دو حمله، تأسیسات فرودگاه‌های بین‌المللی ابها و ملک خالد را هدف قرار داد\n\nتأیید حضور نیروهای نظامی پاکستان در عربستان\n\nشما قبلا این خبر را لایک کرده‌اید .\n\nfunc ion oPe sianNumbe (numbe ) {\n\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\n\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\n\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\n\nelemen .addEven Lis ene (\"click\", func ion() {\n\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n\n. hen(func ion( esponse) {\n\nif ( esponse.s a us == 200) {\n\nesponse.json(). hen(func ion(newSco e) {\n\nva likeNumbe Span = elemen .que ySelec o (\".like\");\n\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\n\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\n\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\n\nva hiddenHea = elemen .que ySelec o (\".hidden\");\n\nvisibleHea .classLis .add(\"hidden\");\n\nfavo i eBu on.classLis .add(\"hidden\");\n\nhiddenHea .classLis . emove(\"hidden\");\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}\n\n});\n\n} else {\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis .add(\"hidden_e o \");\n\nse Timeou (func ion() {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}, 3000);\n\n}\n\n}\n\n})\n\n});\n\n});",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "topics": [
+        "economy"
+      ],
+      "group_id": "local-3a4009462d16",
+      "original_news_id": "b620afc5e6ee6d59ec1e",
+      "source_ids": [],
+      "sources": [
+        {
+          "name": "فرارو",
+          "url": "https://fararu.com/fa/news/1008114/%D8%B4%D9%86%DB%8C%D8%AF%D9%87-%D8%B4%D8%AF%D9%86-%D8%B5%D8%AF%D8%A7%DB%8C-%D8%A7%D9%86%D9%81%D8%AC%D8%A7%D8%B1%DB%8C-%D9%85%D9%87%DB%8C%D8%A8-%D8%AF%D8%B1-%D8%AD%DB%8C%D9%81%D8%A7"
+        }
+      ],
+      "image": "https://cdn.fararu.com/thumbnail/1MrmbLWyIxbh/ZBjG8QJGNSNpmuca6mCL-Np6Jg3KqMLqH_l-6krU50kj_dD5q_2ojlE_sLqPPLC_QxYF-YnH8hTCdPBT1Mo-UtBzi8GOVWGkgwWeHy5uNqQ6RtJW4UGEW6xiykbcYt7d/%D8%B5%D8%AF%D8%A7%DB%8C+%D8%A7%D9%86%D9%81%D8%AC%D8%A7%D8%B1+%D8%AF%D8%B1+%D8%AD%DB%8C%D9%81%D8%A7.jpg",
+      "importance_score": 0,
+      "created_at": "2026-10-07T20:07:22.505Z",
+      "updated_at": "2026-10-07T20:07:22.505Z",
+      "published_at": "2026-10-07T23:24:22+03:30",
+      "status": "published",
+      "ai_managed": false,
+      "generated_by": "internal-republish-v1",
+      "manual_locked": false
+    },
+    "article-105735c14572ab45": {
+      "id": "article-105735c14572ab45",
+      "title": "احتمال تنبیه کیلیان امباپه توسط مورینیو",
+      "summary": "دردسرهای ژوزه مورینیو برای مدیریت ستارگان رئال مادرید آغاز شده است.",
+      "content": "۲۳:۲۳ -\n\n۱۵ مهر ۱۴۰۵\n\nاحتمال تنبیه کیلیان امباپه توسط مورینیو\n\nدردسرهای ژوزه مورینیو برای مدیریت ستارگان رئال مادرید آغاز شده است.\n\nپ\n\n،\n\nپـ\n\nروز گذشته در مرکز تمرینات والدِبِباس رئال مادرید، فضایی متفاوت از روزهای عادی حاکم بود. ژوزه مورینیو، سرمربی پرتغالی باشگاه، کیلیان امباپه را کنار کشید و جلسه‌ای جدی و رودررو با او برگزار کرد. جلسه رنگ‌وبوی توجیهی و انضباطی داشته و بر رفتارهای خارج از زمین مهاجم فرانسوی متمرکز بود.\n\nامباپه از ۲۵ سپتامبر به‌دلیل مصدومیت کپسول خلفی زانوی چپ در بازی تیم ملی فرانسه مقابل ترکیه از میادین دور مانده و روزهای پرحاشیه‌ای را پشت سر گذاشته است. پس از خروج زودهنگام از اردوی ملی، او به پاریس رفت و تصاویری از حضورش در یک باشگاه شبانه همراه با نامزدش استر اکسپوزیتو منتشر شد. باشگاه رئال مادرید این سفر را هماهنگ‌ با کادر فنی و پزشکی دانست اما انتشار ویدئوی دوچرخه‌سواری امباپه در اینستاگرام در ۴ اکتبر، جرقه اصلی تنش را زد.\n\nطعنه به سرمربی؟\n\nدر آن ویدئو، امباپه با کلاه‌ایمنی و لبخند در مسیری روستایی رکاب می‌زند. او این کلیپ را با بخشی از آهنگ قدیمی «Les gen ils, les méchan s» از میشل فوگن همراه کرده که در آن سؤال می‌شود «کی خیلی بدجنس است؟»\n\nچنین انتخابی در فضای رسانه‌ای اسپانیا به‌ عنوان پاسخی غیرمستقیم به اظهارات قبلی مورینیو تعبیر شد. مربی پرتغالی حدود ۱۰ روز پیش در پادکست «بت ایت درایو شو» به‌صراحت گفت: «متأسفانه یک فوتبالیست نمی‌تواند اسکی یا دوچرخه‌سواری کند؛ حتی اگر این کار را پنهانی از باشگاه انجام دهد... قرارداد برایم مهم نیست. نحوه نگرش بازیکن به کارش مهم است. اگر از دوچرخه بیفتی، شاید ۳ بازی را از دست بدهی یا بدتر، پایی بشکند و حتی یک کبودی مانع رسیدن به حداکثر سطح عملکرد شود.»\n\nبه روایت ال‌چیرینگیتو، مورینیو در این جلسه صبحگاهی امباپه را مورد خطاب قرار داد. او با لحنی تند پرسیده چرا بازیکن تا این حد دنبال حاشیه بوده که چنین ویدئویی را منتشر کند. جمله کلیدی مربی این است: «بیرون از باشگاه، وقتی از من سؤال کنند از تو دفاع خواهم کرد، اما اینجا داخل باشگاه توجیهی ندارم.» این رویکرد کلاسیک مورینیو است؛ سپر عمومی در برابر رسانه‌ها و سخت‌گیری داخلی جهت حفظ نظم گروهی.\n\nاحتمال نیمکت‌نشینی\n\nامباپه پس از این جلسه، حدود یک ساعت و نیم در مرکز تمرینی ماند و سپس با جت خصوصی به پاریس رفت و عصر همان روز به مادرید بازگشت. این سفر با اطلاع باشگاه انجام شده اما زمان‌بندی آن، تنها ۴ روز مانده به بازی مقابل ویارئال، بحث‌برانگیز شده. برخی منابع احتمال می‌دهند مورینیو در ترکیب ابتدایی شنبه، امباپه را روی نیمکت بنشاند؛ سناریو در صورت تحقق، پیامی قوی به کل رختکن ارسال خواهد کرد.\n\nاین رویداد، نخستین دردسر جدی انضباطی مورینیو با ستاره اصلی تیم از زمان بازگشتش به نیمکت رئال مادرید محسوب می‌شود. امباپه در مصاحبه‌هایی از هوش و رهبری مربی پرتغالی تمجید کرده و او را یکی از باهوش‌ترین افراد دانسته. رابطه آن‌ها تا پیش از این مثبت توصیف می‌شد اما رفتارهای اخیر بازیکن در دوره ریکاوری، تضاد میان آزادی شخصی ستاره مدرن و فلسفه سخت‌گیرانه مورینیو را آشکار ساخته. مربی همواره تأکید دارد بازیکن رئال مادرید بودن، تعهد ۲۴ ساعته و ۷ روزه است.\n\nمنبع :\n\nفوتبال۳۶۰\n\nva NewsLis Limi = 5;\n\nاز میان اخبار\n\nقلعه‌نویی گزینه ایده‌آل نبود!\n\nآمریکا ویزای همه ایرانی‌ها را صادر کرد غیر از یک نفر\n\nاظهارات احساسی لیونل مسی پس از خداحافظی از تیم ملی آرژانتین\n\nببینید؛ سنگ‌تمام آرژانتینی‌ها برای خداحافظی لیونل مسی\n\nشما قبلا این خبر را لایک کرده‌اید .\n\nfunc ion oPe sianNumbe (numbe ) {\n\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\n\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\n\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\n\nelemen .addEven Lis ene (\"click\", func ion() {\n\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n\n. hen(func ion( esponse) {\n\nif ( esponse.s a us == 200) {\n\nesponse.json(). hen(func ion(newSco e) {\n\nva likeNumbe Span = elemen .que ySelec o (\".like\");\n\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\n\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\n\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\n\nva hiddenHea = elemen .que ySelec o (\".hidden\");\n\nvisibleHea .classLis .add(\"hidden\");\n\nfavo i eBu on.classLis .add(\"hidden\");\n\nhiddenHea .classLis . emove(\"hidden\");\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}\n\n});\n\n} else {\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis .add(\"hidden_e o \");\n\nse Timeou (func ion() {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}, 3000);\n\n}\n\n}\n\n})\n\n});\n\n});",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "topics": [
+        "economy"
+      ],
+      "group_id": "local-463e2086e951",
+      "original_news_id": "f0961159d237598da200",
+      "source_ids": [],
+      "sources": [
+        {
+          "name": "فرارو",
+          "url": "https://fararu.com/fa/news/1008113/%D8%A7%D8%AD%D8%AA%D9%85%D8%A7%D9%84-%D8%AA%D9%86%D8%A8%DB%8C%D9%87-%DA%A9%DB%8C%D9%84%DB%8C%D8%A7%D9%86-%D8%A7%D9%85%D8%A8%D8%A7%D9%BE%D9%87-%D8%AA%D9%88%D8%B3%D8%B7-%D9%85%D9%88%D8%B1%DB%8C%D9%86%DB%8C%D9%88"
+        }
+      ],
+      "image": "https://cdn.fararu.com/thumbnail/kqiLaCKF2y2Y/K6Tmos6tQIu0Z5-NLi4X_XQkn2Qr7PF0SwYMBefiymVWSKGT65MhUPStq5VsEisZEWxN4muHn1mUHKGvUPVncpJDXSyCzuTD0U5JVDDQdyAEMHptAlV8iXRm02aKJhZ6/%D8%A7%D9%85%D8%A8%D8%A7%D9%BE%D9%87.jpg",
+      "importance_score": 0,
+      "created_at": "2026-10-07T20:07:22.505Z",
+      "updated_at": "2026-10-07T20:07:22.505Z",
+      "published_at": "2026-10-07T23:23:47+03:30",
+      "status": "published",
+      "ai_managed": false,
+      "generated_by": "internal-republish-v1",
+      "manual_locked": false
+    },
+    "article-14feb51163f7b89e": {
+      "id": "article-14feb51163f7b89e",
+      "title": "اظهارات جدید زاکانی درباره ثابت ماندن قیمت ۱۲ قلم کالای اساسی +فیلم",
+      "summary": "اقتصادنیوز: علیرضا زاکانی گفت: قیمت ۱۲ قلم کالای اساسی تا ۶ ماه ثابت خواهد ماند. خانوارها بر اساس بُعد خانوار می‌توانند خرید یک‌ماهه یا دوماهه خود را انجام دهند.",
+      "content": "اظهارات جدید زاکانی درباره ثابت ماندن قیمت ۱۲ قلم کالای اساسی +فیلم\n\nسرویس:\n\nاقتصادی\n\nکدخبر:\n\n۸۱۰۸۹۲\n\n۱۴۰۵/۰۷/۱۵ - ۲۳:۲۰\n\nاقتصادنیوز: علیرضا زاکانی گفت: قیمت ۱۲ قلم کالای اساسی تا ۶ ماه ثابت خواهد ماند. خانوارها بر اساس بُعد خانوار می‌توانند خرید یک‌ماهه یا دوماهه خود را انجام دهند.\n\nآمریکا یک جنگ اقتصادی علیه ما شروع کرده و در تلاش است معیشت مردم را تحت تاثیر قرار دهد لذا شهرداری وارد میدان شده است.\n\nوی افزود: این طرح از امروز آغاز شده و قیمت ۱۲ قلم کالای اساسی تا ۶ ماه ثابت خواهد ماند. خانوارها بر اساس بُعد خانوار می‌توانند خرید یک‌ماهه یا دوماهه خود را انجام دهند. از آبان‌ماه، مرغ، رب و پنیر نیز به این سبد اضافه می‌شود و تعداد اقلام به ۱۵ قلم می‌رسد. برنج، روغن، گوشت، شکر، سویا، حبوبات و ماکارونی از جمله کالاهای این طرح هستند.\n\nکپی لینک کوتاه\n\nکپی شد\n\ndocumen .addEven Lis ene ('DOMCon en Loaded', func ion() {\n\ncons sha eBu on = documen .que ySelec o ('.news_sha e_bu on');\n\nif (!sha eBu on) e u n;\n\nif (!naviga o .sha e) {\n\nsha eBu on.s yle.display = 'none';\n\ne u n;\n\n}\n\nsha eBu on.addEven Lis ene ('click', async () => {\n\ny {\n\ncons sha eDa a = {\n\ni le: \" u0627 u0638 u0647 u0627 u0631 u0627 u062a u062c u062f u06cc u062f u0632 u0627 u06a9 u0627 u0646 u06cc u062f u0631 u0628 u0627 u0631 u0647 u062b u0627 u0628 u062a u0645 u0627 u0646 u062f u0646 u0642 u06cc u0645 u062a u06f1 u06f2 u0642 u0644 u0645 u06a9 u0627 u0644 u0627 u06cc u0627 u0633 u0627 u0633 u06cc + u0641 u06cc u0644 u0645\",\n\nex : \" u0627 u0642 u062a u0635 u0627 u062f u0646 u06cc u0648 u0632: u0639 u0644 u06cc u0631 u0636 u0627 u0632 u0627 u06a9 u0627 u0646 u06cc u06af u0641 u062a: u0642 u06cc u0645 u062a u06f1 u06f2 u0642 u0644 u0645 u06a9 u0627 u0644 u0627 u06cc u0627 u0633 u0627 u0633 u06cc u062a u0627 u06f6 u0645 u0627 u0647 u062b u0627 u0628 u062a u062e u0648 u0627 u0647 u062f u0645 u0627 u0646 u062f. u062e u0627 u0646 u0648 u0627 u0631 u0647 u0627 u0628 u0631 u0627 u0633 u0627 u0633 u0628 u064f u0639 u062f u062e u0627 u0646 u0648 u0627 u0631 u0645 u06cc u200c u062a u0648 u0627 u0646 u0646 u062f u062e u0631 u06cc u062f u06cc u06a9 u200c u0645 u0627 u0647 u0647 u06cc u0627 u062f u0648 u0645 u0627 u0647 u0647 u062e u0648 u062f u0631 u0627 u0627 u0646 u062c u0627 u0645 u062f u0647 u0646 u062f.\",\n\nu l: \"h ps: / /www.egh esadnews.com /fa / iny /news-810892\" };\n\nawai naviga o .sha e(sha eDa a);\n\n} ca ch (e o ) {\n\nif (e o .name !== 'Abo E o ') {\n\nconsole.e o ('E o sha ing con en :', e o );\n\n}\n\n}\n\n});\n\n});\n\nva newsMas e IdFo Ra e = \"1865621\";",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "topics": [
+        "economy"
+      ],
+      "group_id": "local-2caca2e9c1aa",
+      "original_news_id": "2515ff4ddc0741ce9883",
+      "source_ids": [],
+      "sources": [
+        {
+          "name": "اقتصادنیوز",
+          "url": "https://www.eghtesadnews.com/%D8%A8%D8%AE%D8%B4-%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF%DB%8C-67/810892-%D8%A7%D8%B8%D9%87%D8%A7%D8%B1%D8%A7%D8%AA-%D8%AC%D8%AF%DB%8C%D8%AF-%D8%B2%D8%A7%DA%A9%D8%A7%D9%86%DB%8C-%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87-%D8%AB%D8%A7%D8%A8%D8%AA-%D9%85%D8%A7%D9%86%D8%AF%D9%86-%D9%82%DB%8C%D9%85%D8%AA-%D9%82%D9%84%D9%85-%DA%A9%D8%A7%D9%84%D8%A7%DB%8C-%D8%A7%D8%B3%D8%A7%D8%B3%DB%8C-%D9%81%DB%8C%D9%84%D9%85"
+        }
+      ],
+      "image": "https://cdn.eghtesadnews.com/thumbnail/03RjRf7cFPit/ZpKwrLt3Fh_pQAm2H-in-jhqg7giTg0rkrIwgdPt3SyYDnxpSX7LnWa3ShNLbu4JQqdJWhW_3HVcA221y1_JR2FbTa7diF8XyCApn0VF5MsAF6QpFUABWVDqgdORaDpEtsYWn_PKo8-VuJdOgo7tN2pyl0ULRCtpNizx_hfjdjqRLLPobHzrDugOhYqCwv3z/%D8%B2%D8%A7%DA%A9%D8%A7%D9%86%DB%8C+%D8%B4%D9%87%D8%B1%D8%AF%D8%A7%D8%B1.jpg",
+      "importance_score": 0,
+      "created_at": "2026-10-07T20:07:22.505Z",
+      "updated_at": "2026-10-07T20:07:22.505Z",
+      "published_at": "2026-10-07T23:20:00+03:30",
+      "status": "published",
+      "ai_managed": false,
+      "generated_by": "internal-republish-v1",
+      "manual_locked": false
+    },
+    "article-e0d54a66da61f08b": {
+      "id": "article-e0d54a66da61f08b",
+      "title": "آمار باورنکردنی مغانلو مقابل استقلال؛ شهریار بعد از «پیکان» خاموش شد",
+      "summary": "شهریار مغانلو هیچ‌گاه در مصاف با استقلال در دوران بازی‌گری‌اش گلی به‌ثمر نرسانده است.",
+      "content": "۲۳:۱۹ -\n\n۱۵ مهر ۱۴۰۵\n\nآمار باورنکردنی مغانلو مقابل استقلال؛ شهریار بعد از «پیکان» خاموش شد\n\nشهریار مغانلو هیچ‌گاه در مصاف با استقلال در دوران بازی‌گری‌اش گلی به‌ثمر نرسانده است.\n\nپ\n\n،\n\nپـ\n\nروز پنجشنبه و از ساعت 17 تیم‌های تراکتور و استقلال، برگزارکننده مهم‌ترین دیدار هفته هشتم لیگ برتر خواهند بود. تی‌تی‌ها با وجود شکست در آخرین بازی خود همچنان با 16 امتیاز صدرنشین هستند و تیم پایتخت‌نشین با اندوخته 15 امتیازی سایه‌به‌سایه پرشورها کار خود را پیش می‌برد. حالا دوئل 6 امتیازی آن‌ها در شرایطی به انجام می‌رسد که تیم تحت هدایت جواد نکونام با مشکل گلزنی مواجه است.\n\nقهرمان لیگ 24 فوتبال ایران پس از شروع قدرتمندانه، طی دیدارهای اخیر خود روند خوبی را پشت سر نگذاشته و 2 بازی انتهایی خود پیش از فرا رسیدن فیفادی را به استقلال خوزستان و شباب‌الاهلی امارات باخت و در زدن گل نیز ناکام بود. شاگردان جواد نکونام در چهار دیدار آخری که به میدان رفته‌اند فقط یک گل به ثمر رسانده‌اند که آن هم گل جنجالی امیرحسین حسین‌زاده برابر گل‌گهر بود که حرف‌وحدیث‌های زیادی را در پی داشت.\n\nدر این میان شهریار مغانلو نیز نتوانسته کمک قابل توجهی در دیدارهای مذکور داشته باشد. او در مصاف با شمس‌آذر دچار مصدومیت شد و بین 2 نیمه تعویض شد و نتوانست برابر گل‌گهر نیز به تیمش یاری برساند. حضور 90 دقیقه‌ای برابر استقلال خوزستان نیز چاره کار تی‌تی‌ها نبود. مهاجم باتجربه تراکتور در جدال با نماینده امارات در لیگ نخبگان نیز حدودا 20 دقیقه به کار گرفته شد و در شرایط ایده‌آل بدنی به سر نمی‌برد و تلاشش در زدن گل بی‌نتیجه بود.\n\nمغانلو به بهترین و باشکوه‌ترین شکل ممکن دوران کاری‌اش در تراکتور را استارت زد. او در همان هفته نخست و مقابل تیم اسبقش پیکان زننده هر 2 گل مسابقه بود و به عنوان مرد اول میدان نام گرفت. با این وجود در 409 دقیقه بعدی‌ای که در مسابقات بعدی فرصت نصیب شهریار شد، نتوانست گل سالم و مورد تاییدی را وارد دروازه رقبا کند و با همان 2 گل هفته اول وارد تعطیلات شد.\n\nعدم دعوت به تیم ملی فوتبال ایران شرایط را به سمتی پیش برد تا مغانلو در کنار تیم باشگاهی‌اش روزهای فیفادی را سپری کند و باید دید از خشکسالی پیش آمده چه‌طور عبور خواهد کرد. نباید از یاد برد که غیبت مهدی ترابی و مهدی هاشم‌نژاد برای عناصر تهاجمی تراکتور بسیار سنگین تمام شده و آن‌ها چندان در موقعیت گلزنی قرار نمی‌گیرند. رویکرد محافظه‌کارانه تیم‌های جواد نکونام و ناآمادگی بدنی مغانلو نیز در ثبت این دقایق بدون گل موثر بوده‌اند و مزید بر علت شده‌اند.\n\nمهاجم اسبق پرسپولیس تا به حال 12 رویارویی با استقلال داشته که ماحصل آن چهار برد، پنج تساوی و سه باخت بوده است. او فقط یک بار در جام حذفی برابر آبی‌پوشان صف‎آرایی داشت که مسابقه تا پایان 120 دقیقه برنده‌‎ای نداشت و در ضربات پنالتی پرسپولیس به حریف سنتی‌اش باخت. بازیکن تیم ملی فوتبال ایران در جام جهانی 2026 نتوانسته در دوئل‌های پرتکرارش با استقلال کار خاصی انجام دهد و دروازه این تیم را باز کند.\n\nمغانلو چهار بار با لباس پیکان، 2 مرتبه به همراه پرسپولیس و 6 دفعه در قامت مهره سپاهان به مصاف تیم آبی‌پوش پایتخت رفته و در گشودن دروازه این تیم یک ناکام مطلق بوده است و باید به انتظار نشست و تماشا کرد که این طلسم بزرگ در مصاف پیش‌رو با چهارمین تیم متفاوتش در هم خواهد شکست یا خیر. لازم به ذکر است تیم تحت هدایت سهراب بختیاری‌زاده در تمام مسابقات رسمی‌اش طی این فصل فقط یک گل دریافت کرده است.\n\nمنبع :\n\nفوتبال۳۶۰\n\nva NewsLis Limi = 5;\n\nاز میان اخبار\n\nقلعه‌نویی گزینه ایده‌آل نبود!\n\nآمریکا ویزای همه ایرانی‌ها را صادر کرد غیر از یک نفر\n\nاظهارات احساسی لیونل مسی پس از خداحافظی از تیم ملی آرژانتین\n\nببینید؛ سنگ‌تمام آرژانتینی‌ها برای خداحافظی لیونل مسی\n\nشما قبلا این خبر را لایک کرده‌اید .\n\nfunc ion oPe sianNumbe (numbe ) {\n\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\n\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\n\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\n\nelemen .addEven Lis ene (\"click\", func ion() {\n\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n\n. hen(func ion( esponse) {\n\nif ( esponse.s a us == 200) {\n\nesponse.json(). hen(func ion(newSco e) {\n\nva likeNumbe Span = elemen .que ySelec o (\".like\");\n\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\n\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\n\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\n\nva hiddenHea = elemen .que ySelec o (\".hidden\");\n\nvisibleHea .classLis .add(\"hidden\");\n\nfavo i eBu on.classLis .add(\"hidden\");\n\nhiddenHea .classLis . emove(\"hidden\");\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}\n\n});\n\n} else {\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis .add(\"hidden_e o \");\n\nse Timeou (func ion() {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}, 3000);\n\n}\n\n}\n\n})\n\n});\n\n});",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "topics": [
+        "economy"
+      ],
+      "group_id": "local-ed4f2afa35a0",
+      "original_news_id": "c3554441563494ec50ec",
+      "source_ids": [],
+      "sources": [
+        {
+          "name": "فرارو",
+          "url": "https://fararu.com/fa/news/1008111/%D8%A2%D9%85%D8%A7%D8%B1-%D8%A8%D8%A7%D9%88%D8%B1%D9%86%DA%A9%D8%B1%D8%AF%D9%86%DB%8C-%D9%85%D8%BA%D8%A7%D9%86%D9%84%D9%88-%D9%85%D9%82%D8%A7%D8%A8%D9%84-%D8%A7%D8%B3%D8%AA%D9%82%D9%84%D8%A7%D9%84-%D8%B4%D9%87%D8%B1%DB%8C%D8%A7%D8%B1-%D8%A8%D8%B9%D8%AF-%D8%A7%D8%B2-%D9%BE%DB%8C%DA%A9%D8%A7%D9%86-%D8%AE%D8%A7%D9%85%D9%88%D8%B4-%D8%B4%D8%AF"
+        }
+      ],
+      "image": "https://cdn.fararu.com/thumbnail/68PPxFGTZVjz/6nebPUzt0ODT6RzZ3CLkycBlXoNhIeaON_OKYKBTQXMvRrEgjKrBZ-uS5dTvVNEB7wJPUGMUcsoa5IEY-MimBsu7T3jo72ilQ6lMX8J5vh-mIxwOIXO45XDWgZKmVUyP/%D8%B4%D9%87%D8%B1%DB%8C%D8%A7%D8%B1.jpg",
+      "importance_score": 0,
+      "created_at": "2026-10-07T20:07:22.505Z",
+      "updated_at": "2026-10-07T20:07:22.505Z",
+      "published_at": "2026-10-07T23:19:17+03:30",
+      "status": "published",
+      "ai_managed": false,
+      "generated_by": "internal-republish-v1",
+      "manual_locked": false
+    },
+    "article-b722d915dcd5d645": {
+      "id": "article-b722d915dcd5d645",
+      "title": "پزشکیان: من تصور نمی کردم رئیس جمهور شوم",
+      "summary": "رئیس جمهور گفت: اصلا تصور اینکه رئیس جمهور بشوم، نداشتم. من برای کشورم، برای مردمم برای اینکه در خدمت این مردم باشم آمدم.",
+      "content": "۲۳:۱۸ -\n\n۱۵ مهر ۱۴۰۵\n\nپزشکیان: من تصور نمی کردم رئیس جمهور شوم\n\nرئیس جمهور گفت: اصلا تصور اینکه رئیس جمهور بشوم، نداشتم. من برای کشورم، برای مردمم برای اینکه در خدمت این مردم باشم آمدم.\n\nپ\n\n،\n\nپـ\n\nتبلیغات\n\nتبلیغات\n\nمسعود پزشکیان در آیین اختتامیه سومین دوره مسابقات ملی و مسئله‌محور «راهی شو» بیان کرد: همه می‌گفتند خودت را نکش، نمی‌شود. ولی شد. برای اینکه میخواستم بشود. ظاهرا من درس خوان نبودم ولی هر انسانی این پتانسیل را دارد. فقط کافیست ببیند.\n\nوی ادامه داد: تصورش را هم نمی‌کردم ولی شد. الان اینجا هستم. اصلا تصور اینکه رئیس جمهور بشوم، نداشتم. من برای کشورم، برای مردمم برای اینکه در خدمت این مردم باشم آمدم.\n\nتبلیغات\n\nva NewsLis Limi = 5;\n\nاز میان اخبار\n\nاز کفن‌پوشی حامیان رسایی تا بلیت قسطی کنسرت شجریان\n\nجزئیات جلسه نمایندگان مجلس با عراقچی\n\nمهاجرانی: مصادره استعفای پاک‌نژاد تقلای بی‌حاصل ترامپ برای پنهان کردن ناکامی‌هاست\n\nپوتین با پزشکیان در ترکمنستان دیدار خواهد کرد\n\nشما قبلا این خبر را لایک کرده‌اید .\n\nfunc ion oPe sianNumbe (numbe ) {\n\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\n\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\n\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\n\nelemen .addEven Lis ene (\"click\", func ion() {\n\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n\n. hen(func ion( esponse) {\n\nif ( esponse.s a us == 200) {\n\nesponse.json(). hen(func ion(newSco e) {\n\nva likeNumbe Span = elemen .que ySelec o (\".like\");\n\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\n\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\n\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\n\nva hiddenHea = elemen .que ySelec o (\".hidden\");\n\nvisibleHea .classLis .add(\"hidden\");\n\nfavo i eBu on.classLis .add(\"hidden\");\n\nhiddenHea .classLis . emove(\"hidden\");\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}\n\n});\n\n} else {\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis .add(\"hidden_e o \");\n\nse Timeou (func ion() {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}, 3000);\n\n}\n\n}\n\n})\n\n});\n\n});\n\nتبلیغات",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "topics": [
+        "economy"
+      ],
+      "group_id": "local-e64ac4227382",
+      "original_news_id": "9598784b8686455568b1",
+      "source_ids": [],
+      "sources": [
+        {
+          "name": "فرارو",
+          "url": "https://fararu.com/fa/news/1008110/%D9%BE%D8%B2%D8%B4%DA%A9%DB%8C%D8%A7%D9%86-%D9%85%D9%86-%D8%AA%D8%B5%D9%88%D8%B1-%D9%86%D9%85%DB%8C-%DA%A9%D8%B1%D8%AF%D9%85-%D8%B1%D8%A6%DB%8C%D8%B3-%D8%AC%D9%85%D9%87%D9%88%D8%B1-%D8%B4%D9%88%D9%85"
+        }
+      ],
+      "image": "https://mcdn.fararu.com/ao/1a117e8e2d7_89e826.webp",
+      "importance_score": 0,
+      "created_at": "2026-10-07T20:07:22.505Z",
+      "updated_at": "2026-10-07T20:07:22.505Z",
+      "published_at": "2026-10-07T23:18:51+03:30",
+      "status": "published",
+      "ai_managed": false,
+      "generated_by": "internal-republish-v1",
+      "manual_locked": false
     }
   }
 }
