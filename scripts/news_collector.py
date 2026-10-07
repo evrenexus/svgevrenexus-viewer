@@ -12,6 +12,7 @@ from urllib.error import HTTPError
 from urllib.parse import urljoin
 from difflib import SequenceMatcher
 import xml.etree.ElementTree as ET
+from content_policy import out_of_scope
 
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/"data"/"news.json"
@@ -334,7 +335,10 @@ def parse(data,source):
                     candidate=x.attrib.get("url","")
                     if re.search(r"\.(?:jpe?g|png|webp|gif)(?:\?|$)",candidate,re.I):
                         image=urljoin(link,candidate); break
-        out.append({"id":hashlib.sha256(link.encode()).hexdigest()[:20],"title":txt(title),"summary":txt(desc)[:300],"content":"","url":link,"image":image,"source":source["name"],"source_site":source["site"],"allow_internal_republish":bool(source.get("allow_internal_republish")),"category":source["category"],"published":parse_date(date),"topics":[]})
+        item={"id":hashlib.sha256(link.encode()).hexdigest()[:20],"title":txt(title),"summary":txt(desc)[:300],"content":"","url":link,"image":image,"source":source["name"],"source_site":source["site"],"allow_internal_republish":bool(source.get("allow_internal_republish")),"category":source["category"],"published":parse_date(date),"topics":[]}
+        if out_of_scope(item):
+            continue
+        out.append(item)
     out.sort(key=lambda x:date_key(x.get("published","")),reverse=True)
     return out[:LATEST_PER_SOURCE]
 
@@ -481,6 +485,8 @@ def main():
     existing={}
     for x in old.get("items",[]):
         if isinstance(x,dict) and is_valid_item(x,now_ts):
+            if out_of_scope(x):
+                continue
             x["published"]=normalize_published(x.get("published",""))
             x["topics"]=assign_topics(x); existing[x["id"]]=x
     def collect_source(s):
@@ -507,6 +513,8 @@ def main():
                 except Exception as e: errors.append(type(e).__name__+": "+str(e)[:180])
         valid=[x for x in got if is_valid_item(x,now_ts)]
         for item in valid:
+            if out_of_scope(item):
+                continue
             item["published"]=normalize_published(item.get("published","")); item["topics"]=assign_topics(item); assign_importance(item)
         latest=max((date_key(x.get("published","")) for x in valid),default=0)
         info={"name":s["name"],"category":s["category"],"ok":bool(valid),"items":len(valid),"attempted_at":attempted_at,"last_success_at":datetime.now(timezone.utc).isoformat() if valid else "","last_article_published":datetime.fromtimestamp(latest,TEHRAN_TZ).isoformat() if latest else "","error":"" if valid else (" | ".join(errors[-3:])[:600] if errors else "no feed found")}
