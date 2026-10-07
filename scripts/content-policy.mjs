@@ -9,9 +9,7 @@ const norm = (s) => String(s ?? "")
   .replace(/\u064a/g, "\u06cc").replace(/\u0643/g, "\u06a9")
   .replace(/[\u064b-\u065f\u0670]/g, "")
   .replace(/\s+/g, " ").trim().toLowerCase();
-const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\const esc = (s) => s.replace(/[.*+?^|[\]\\]/g, "\\$&").replace(/\$/g, "\\$");
-");
-");
+const esc = (s) => s.replace(/[.*+?^${}()|[\\]\\\\]/g, "\\$&");
 const RULES = OUT_OF_SCOPE_TERMS.map((t) => ({
   term: t,
   re: new RegExp("(?<![\\p{L}\\p{N}])" + esc(norm(t)) + "(?![\\p{L}\\p{N}])", "u")
