@@ -5,9 +5,12 @@
 import fs from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";
+import {outOfScope} from "./content-policy.mjs";
+import {imageUsable,loadArticleResolver} from "./featured-lib.mjs";
 
 const ROOT=path.resolve(path.dirname(new URL(import.meta.url).pathname),"..");
 const DATA=path.join(ROOT,"data");
+const Article=loadArticleResolver();
 
 const readJson=(name, fallback)=> {
   const p=path.join(DATA,name);
@@ -73,10 +76,10 @@ const now=new Date().toISOString();
 for(const n of news){
   if(!n?.id) continue;
   if(n.allow_internal_republish!==true){skippedNoPermission++;continue;}
-  if(blocked(n)){skippedBlocked++;continue;}
+  if(blocked(n)||outOfScope(n)!==null){skippedBlocked++;continue;}
   const clean=stripHtml(n.content);
   if(clean.length<300){skippedNoContent++;continue;}
-  if(!isUrl(n.image)){skippedNoImage++;continue;}
+  if(!imageUsable(n.image)){skippedNoImage++;continue;}
 
   const aiKey=linkedAiKey(n), ai=aiKey?aiItems[aiKey]:{};
   const group=String(ai.group_id||n.group_id||"");
@@ -89,7 +92,7 @@ for(const n of news){
   const title=String(n.title||"").trim();
   if(!title||!sourceUrl) continue;
 
-  articleItems[id]={
+  const candidate={
     id,
     title,
     summary:clip(stripHtml(n.summary||clean),300),
@@ -110,6 +113,9 @@ for(const n of news){
     generated_by:"internal-republish-v1",
     manual_locked:false
   };
+  const check=Article.featuredReady(candidate,{imageUsable,outOfScope});
+  if(!check.ok){skippedNoContent++;continue;}
+  articleItems[id]=candidate;
   created++;
 }
 
