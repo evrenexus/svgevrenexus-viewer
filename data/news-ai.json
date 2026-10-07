@@ -1,7 +1,7 @@
 {
   "version": 1,
   "policy_version": 8,
-  "updated": "2026-10-07T10:06:32Z",
+  "updated": "2026-10-07T10:27:35Z",
   "items": {
     "56927672062ac466f3e762c5": {
       "title": "قیمت بیت‌کوین و اتریوم امروز سه‌شنبه ۱۴ مهر ۱۴۰۵",
@@ -1402,7 +1402,7 @@
       "publishable": true,
       "exclude_reason": "",
       "group_id": "local-3ffe948692ca",
-      "representative": true,
+      "representative": false,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
       "local_score": 6,
@@ -4456,7 +4456,7 @@
       "local_score": 16,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.8401063660780588
+      "age_hours": 2.230510439740287
     },
     "286171f620aac19acb5e469a": {
       "title": "نمایشگاه نظام مالی با رویکردی متفاوت / بانک‌های خصوصی با ظرفیت کامل پای کار آمدند",
@@ -6567,10 +6567,8 @@
         "currency-gold": 20
       },
       "importance": 20,
-      "important": true,
-      "important_topics": [
-        "economy"
-      ],
+      "important": false,
+      "important_topics": [],
       "slider_topics": [
         "economy"
       ],
@@ -20309,9 +20307,7 @@
       "importance": 20,
       "important": false,
       "important_topics": [],
-      "slider_topics": [
-        "auto"
-      ],
+      "slider_topics": [],
       "ticker_topics": [],
       "breaking": false,
       "breaking_topics": [],
@@ -22141,7 +22137,7 @@
       "local_score": 8,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 3.1056619216336143
+      "age_hours": 3.4960659952958424
     },
     "47bd89c25f030c556856753f": {
       "title": "کاپیتان‌ های نفتکش‌ ها برای عبور از تنگه هرمز چقدر حقوق و پاداش می‌گیرند؟",
@@ -22170,7 +22166,7 @@
       "local_score": 9,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.12621747718917
+      "age_hours": 3.516621550851398
     },
     "244746bdbdbcf5fc26091536": {
       "title": "آغاز شارژ کالابرگ مهر؛ احتمال افزایش مبلغ فقط برای اقشار حمایتی",
@@ -22199,7 +22195,7 @@
       "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.175106366078059
+      "age_hours": 3.565510439740287
     },
     "b5d76db2f7055bdad685e39a": {
       "title": "جزئیات جدید از ورودی اتباع افغانستانی از مرز دوغارون",
@@ -22228,7 +22224,7 @@
       "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.22871747718917
+      "age_hours": 3.619121550851398
     },
     "d39cc1cc06c35347e914dc04": {
       "title": "توییت غریب‌آبادی پس از دیدار با سفرای هند، ژاپن و اسپانیا",
@@ -22257,7 +22253,7 @@
       "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.2428841438558367
+      "age_hours": 3.6332882175180647
     },
     "ebf0abc544ac8c35d2783674": {
       "title": "احتمال شنیده شدن صدای انفجار در در شهرستان جهرم",
@@ -22321,7 +22317,7 @@
       "local_score": 16,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.293995254966948,
+      "age_hours": 3.684399328629176,
       "permanent_article": true,
       "article_id": "article-baab9ceeb4b36f4a",
       "image": "https://media.salamatnews.com/d/2026/10/07/4/259565.jpg"
@@ -22355,7 +22351,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 3.304828588300281
+      "age_hours": 3.695232661962509
     },
     "717d3fd503e5490b20bc7a68": {
       "title": "لحظه اعلام خبر نوبل به فرزندان؛ من برنده شدم",
@@ -22384,7 +22380,7 @@
       "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.305106366078059
+      "age_hours": 3.695510439740287
     },
     "be45aaa8f999d2d8743c788b": {
       "title": "نصب تور ضدپهپاد روی پل‌های پایتخت اوکراین",
@@ -22413,7 +22409,7 @@
       "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.307328588300281
+      "age_hours": 3.697732661962509
     },
     "9314d6b63f3cea38e02ec911": {
       "title": "اشپیگل: رئیس بازداشت شده پیشین سرویس اطلاعات فدرال آلمان که بیش از ۲ هزار سند محرمانه را به طور غیر قانونی به دست آورده، با یک مأمور اطلاعاتی از جمهوری آذربایجان در ارتباط بوده/ او با استفاده از اسنادی با طبقه‌بندی «محرمانه»، یک تحلیل مکتوب تهیه کرده؛ سفارش دهنده احتمالی این تحلیل، همان مأمور اطلاعاتی آذربایجانی بوده",
@@ -22442,7 +22438,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 3.35121747718917
+      "age_hours": 3.741621550851398
     },
     "ef419b142b1a23f01a061367": {
       "title": "۵۱۶ هزار تن محصول روی میز فروش می‌رود",
@@ -22500,7 +22496,7 @@
       "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.412050810522503
+      "age_hours": 3.802454884184731
     },
     "447462e19011c8d2405fcef2": {
       "title": "پیشنهادهای میلیونی و میلیاردی مؤسسات آمادگی کنکور برای رتبه برترها",
@@ -22529,7 +22525,7 @@
       "local_score": 9,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.430106366078059
+      "age_hours": 3.820510439740287
     },
     "b2fa084487827fe4eb4c224f": {
       "title": "بختک اجاره روی زندگی؛ برای حفظ سقف بالای سر، از زندگی می‌زنند",
@@ -22566,7 +22562,7 @@
       "local_score": 12,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.46371747718917,
+      "age_hours": 3.854121550851398,
       "permanent_article": true,
       "article_id": "article-b3a5b4d78d7c8c0c",
       "image": "https://cdn.fararu.com/thumbnail/3j9YJVOYGFZv/9u95mDZtuVSqGEtxMq-FyjnrpV2YIDn3zkJ0hR2t8SS4BbiM5_7oz93Dew4HB7KnYaXpfFHr46YfqUSM-TkVtTzkE0PwJC13e2lY0s2JPPp8NNaPwtSNAC-_JwtEmUIL/%D8%A7%D8%AC%D8%A7%D8%B1%D9%87+%D8%A8%D9%87%D8%A7.jpg"
@@ -22600,7 +22596,7 @@
       "local_score": 12,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.5178841438558366
+      "age_hours": 3.9082882175180647
     },
     "27619e5a460a8a38bf0fa488": {
       "title": "سراب رشد درآمدزایی در شرکت شیشه و گاز / دنده معکوس 15 درصدی کگاز در فروش ماهانه + نمودار",
@@ -22616,9 +22612,7 @@
       "importance": 20,
       "important": false,
       "important_topics": [],
-      "slider_topics": [
-        "economy"
-      ],
+      "slider_topics": [],
       "ticker_topics": [],
       "breaking": false,
       "breaking_topics": [],
@@ -22631,7 +22625,7 @@
       "local_score": 14,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.5178841438558366
+      "age_hours": 3.9082882175180647
     },
     "e1738112b34148fd6e5aafb9": {
       "title": "گزارش عرضه‌های روزانه بورس انرژی ایران ـ ۱۵ مهرماه ۱۴۰۵",
@@ -22662,7 +22656,7 @@
       "local_score": 9,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.521495254966948
+      "age_hours": 3.911899328629176
     },
     "fed134ab8e1df168d26bce78": {
       "title": "قیمت نفت امروز چهارشنبه 15 مهر 1405",
@@ -22722,7 +22716,7 @@
       "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.5320508105225032
+      "age_hours": 3.9224548841847313
     },
     "ab2a327926d9313e4fa297a7": {
       "title": "تیتر: ۱۲۶ هزار درخواست برداشت، ۶ ساعته در «ملّی‌گلد» تسویه شد",
@@ -22751,7 +22745,7 @@
       "local_score": 13,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.5695508105225033
+      "age_hours": 3.9599548841847314
     },
     "66ea4cac228fe452b0e16476": {
       "title": "هزینه داروی بیماران تالاسمی ماهانه به ۱۰۰ میلیون تومان رسید/ رشد ۶۰۰ برابری پرداخت از جیب",
@@ -22780,7 +22774,7 @@
       "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.5956619216336145
+      "age_hours": 3.9860659952958426
     },
     "5ab3bf488df6d108ebab5b5b": {
       "title": "اختلال زنجیره تأمین تا مطالبه مشتریان؛ کرمان‌موتور در آزمون تحویل خودرو",
@@ -23076,7 +23070,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 2.8942730327447257
+      "age_hours": 3.2846771064069538
     },
     "d26509b75bf14d000ee08fdd": {
       "title": "کشت محصولات محلی می‌تواند دسترسی به درمان سوءتغذیه شدید کودکان را گسترش دهد؛ یافته‌ای امیدوارکننده اما نیازمند بررسی بیشتر",
@@ -23089,11 +23083,11 @@
         "economy"
       ],
       "topic_scores": {
-        "economy": 12,
-        "health": 12,
-        "science-life": 12
+        "economy": 11,
+        "health": 11,
+        "science-life": 11
       },
-      "importance": 12,
+      "importance": 11,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -23106,10 +23100,10 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 7,
+      "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.8976063660780587
+      "age_hours": 3.2880104397402867
     },
     "70b615106d7d406a56cbaa14": {
       "title": "قیمت طلا جهانی امروز چهارشنبه 15 مهر 1405",
@@ -23167,73 +23161,13 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 2.9214952549669477
+      "age_hours": 3.311899328629176
     },
     "363c9eab0c1467e7c6af3d05": {
       "title": "آرامکو به دنبال راهی برای صادرات مازاد گاز عربستان",
       "summary": "تولید گاز در میدان جافوره سال گذشته آغاز شد و انتظار می‌رود فاز دوم این پروژه تا سال ۲۰۳۰ کلید بخورد. آرامکو اعلام کرده است که میزان تولید گاز این شرکت از سال ۲۰۲۱ تا پایان دهه جاری، حدود ۸۰ درصد افزایش خواهد یافت.",
       "source": "فرارو",
       "published": "2026-10-07T10:36:30+03:30",
-      "topics": [
-        "economy"
-      ],
-      "topic_scores": {
-        "economy": 12
-      },
-      "importance": 12,
-      "important": false,
-      "important_topics": [],
-      "slider_topics": [],
-      "ticker_topics": [],
-      "breaking": false,
-      "breaking_topics": [],
-      "publishable": true,
-      "exclude_reason": "",
-      "group_id": "local-c33af4c61222",
-      "representative": true,
-      "reason": "local rule-based classification",
-      "analysis_mode": "local",
-      "local_score": 7,
-      "political": false,
-      "breaking_signal": false,
-      "age_hours": 2.9239952549669477
-    },
-    "8150d445996bec2a23c96a25": {
-      "title": "اطلاعیه عرضه بورس کالا/ عرضه بیش از ۱۵۵ هزار تن محصول فولادی و پتروشیمی",
-      "summary": "تالارهای بورس کالای ایران امروز چهارشنبه میزبان عرضه ۱۵۵ هزار و ۹۱۸ تن محصول فولادی و پتروشیمی است.",
-      "source": "صدای بورس",
-      "published": "2026-10-07T10:35:10+03:30",
-      "topics": [
-        "markets",
-        "currency-gold"
-      ],
-      "topic_scores": {
-        "markets": 19,
-        "currency-gold": 19
-      },
-      "importance": 19,
-      "important": false,
-      "important_topics": [],
-      "slider_topics": [],
-      "ticker_topics": [],
-      "breaking": false,
-      "breaking_topics": [],
-      "publishable": true,
-      "exclude_reason": "",
-      "group_id": "local-f46fd1be91f9",
-      "representative": true,
-      "reason": "local rule-based classification",
-      "analysis_mode": "local",
-      "local_score": 14,
-      "political": false,
-      "breaking_signal": false,
-      "age_hours": 2.94621747718917
-    },
-    "eeee04c52e27a31c7e361d52": {
-      "title": "داریک به سامانه ناظر بانک مرکزی متصل شد",
-      "summary": "داریک با تکمیل الزامات فنی و نظارتی لازم، به سامانه ناظر بانک مرکزی متصل شد.",
-      "source": "اقتصادنیوز",
-      "published": "2026-10-07T10:34:26+03:30",
       "topics": [
         "economy"
       ],
@@ -23249,14 +23183,74 @@
       "breaking_topics": [],
       "publishable": true,
       "exclude_reason": "",
+      "group_id": "local-c33af4c61222",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 6,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 3.3143993286291757
+    },
+    "8150d445996bec2a23c96a25": {
+      "title": "اطلاعیه عرضه بورس کالا/ عرضه بیش از ۱۵۵ هزار تن محصول فولادی و پتروشیمی",
+      "summary": "تالارهای بورس کالای ایران امروز چهارشنبه میزبان عرضه ۱۵۵ هزار و ۹۱۸ تن محصول فولادی و پتروشیمی است.",
+      "source": "صدای بورس",
+      "published": "2026-10-07T10:35:10+03:30",
+      "topics": [
+        "markets",
+        "currency-gold"
+      ],
+      "topic_scores": {
+        "markets": 18,
+        "currency-gold": 18
+      },
+      "importance": 18,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-f46fd1be91f9",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 13,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 3.336621550851398
+    },
+    "eeee04c52e27a31c7e361d52": {
+      "title": "داریک به سامانه ناظر بانک مرکزی متصل شد",
+      "summary": "داریک با تکمیل الزامات فنی و نظارتی لازم، به سامانه ناظر بانک مرکزی متصل شد.",
+      "source": "اقتصادنیوز",
+      "published": "2026-10-07T10:34:26+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 10
+      },
+      "importance": 10,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
       "group_id": "local-943216951408",
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 11,
+      "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.958439699411392
+      "age_hours": 3.3488437730736202
     },
     "95e913a4e4d42b084ece309a": {
       "title": "هیچ مکمل یا فرآورده گیاهی جایگزین درمان استاندارد اعتیاد نیست",
@@ -23267,9 +23261,9 @@
         "health"
       ],
       "topic_scores": {
-        "health": 17
+        "health": 16
       },
-      "importance": 17,
+      "importance": 16,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -23282,10 +23276,10 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 7,
+      "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.9759396994113922
+      "age_hours": 3.3663437730736203
     },
     "76d913b531125a0992b3cac1": {
       "title": "تغییرات مدیریتی در ارکان راهبردی فولاد کاوه جنوب کیش",
@@ -23314,7 +23308,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 3.0453841438558364
+      "age_hours": 3.4357882175180645
     },
     "78e0f1ff66afffaeaa4ceccb": {
       "title": "رکورد جدید شاخص کل بورس؛ ورود به کانال 8 میلیون واحد برای اولین بار | ۳۱۱ صف خرید در برابر ۱۹ صف فروش | 1.7 همت پول جدید وارد بازار شد",
@@ -23343,7 +23337,7 @@
       "local_score": 13,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.045939699411392
+      "age_hours": 3.43634377307362
     },
     "340c42fcb21945471a3a7181": {
       "title": "تحقق ۴۲ درصد از فروش پیش‌بینی‌شده فساپ در نیمه نخست سال",
@@ -23437,7 +23431,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 2.5248285883002812
+      "age_hours": 2.9152326619625093
     },
     "101214f02267ac2c8b2bd10a": {
       "title": "توقیف خودرو حامل یک محموله مواد منفجره در خراسان رضوی",
@@ -23466,7 +23460,7 @@
       "local_score": 9,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.525939699411392
+      "age_hours": 2.91634377307362
     },
     "f78068cbeb31c5c53cdee7de": {
       "title": "هشدار مدیرعامل ویتول درباره کمبود نفتکش و خطر نفت ۲۰۰ دلاری",
@@ -23499,7 +23493,7 @@
       "local_score": 13,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.5295508105225033
+      "age_hours": 2.9199548841847314
     },
     "24d37a1f51321fd54442bae5": {
       "title": "ظرفیت پزشکی باز هم کاهش می‌یابد؟ / ۶۵۰۰ صندلی پزشکی در آستانه حذف",
@@ -23528,7 +23522,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 2.53371747718917
+      "age_hours": 2.9241215508513982
     },
     "14e0e91c1d3274eb19ffb393": {
       "title": "قیمت تتر امروز چهارشنبه ۱۵ مهر ۱۴۰۵",
@@ -23586,7 +23580,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.5556619216336145
+      "age_hours": 2.9460659952958426
     },
     "302c0cb372b28338bc1cdd3e": {
       "title": "تداوم حراج‌های شمش طلا در مرکز مبادله ایران / صنعتگران ۱۹ کیلوگرم دیگر خریداری کردند",
@@ -23615,7 +23609,7 @@
       "local_score": 13,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.5720508105225033
+      "age_hours": 2.9624548841847314
     },
     "9d693cc1b0ab9f15939e25f1": {
       "title": "قیمت درهم امروز چهارشنبه ۱۵ مهر ۱۴۰۵",
@@ -23675,7 +23669,7 @@
       "local_score": 11,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.5756619216336145
+      "age_hours": 2.9660659952958426
     },
     "cf170abfc03f0e8ee07f677d": {
       "title": "افزایش ذخایر طلای چین رکورد ۳ ساله زد",
@@ -23704,7 +23698,7 @@
       "local_score": 16,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.58871747718917
+      "age_hours": 2.979121550851398
     },
     "1952d2417e7b70938acba1a7": {
       "title": "شاخص ۳۹ صنعت بورسی صعود کرد",
@@ -23733,7 +23727,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.5920508105225033
+      "age_hours": 2.9824548841847314
     },
     "6c76c44017780381e80278a4": {
       "title": "قیمت یورو امروز چهارشنبه ۱۵ مهر ۱۴۰۵",
@@ -23793,7 +23787,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 2.6345508105225033
+      "age_hours": 3.0249548841847314
     },
     "f1f110c8debd0425acb02e44": {
       "title": "قیمت دلار امروز چهارشنبه ۱۵ مهر ۱۴۰۵",
@@ -23833,9 +23827,9 @@
         "war"
       ],
       "topic_scores": {
-        "war": 12
+        "war": 11
       },
-      "importance": 12,
+      "importance": 11,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -23848,10 +23842,10 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 7,
+      "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.641495254966948
+      "age_hours": 3.031899328629176
     },
     "432a0d091cf7e1c9f2fb0b05": {
       "title": "نفت در بازار جهانی به بالای ۱۰۰ دلار رسید",
@@ -23863,10 +23857,10 @@
         "currency-gold"
       ],
       "topic_scores": {
-        "economy": 18,
-        "currency-gold": 18
+        "economy": 17,
+        "currency-gold": 17
       },
-      "importance": 18,
+      "importance": 17,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -23879,10 +23873,10 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 13,
+      "local_score": 12,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.6945508105225033
+      "age_hours": 3.0849548841847314
     },
     "e0d3d218ef17af3a249581e9": {
       "title": "10 نکته درباره سامانه «حسام» بانک مرکزی/ بستن ۱۰۰ میلیون حساب در مرحله نخست/ حساب‌های بانکی مازاد را چطور ببندیم؟",
@@ -23893,9 +23887,9 @@
         "economy"
       ],
       "topic_scores": {
-        "economy": 11
+        "economy": 10
       },
-      "importance": 11,
+      "importance": 10,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -23908,10 +23902,10 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 11,
+      "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.7342730327447256
+      "age_hours": 3.1246771064069536
     },
     "7c361ee6a37dff3d3316bb5d": {
       "title": "عراقچی: تداوم گفت‌و‌گو و همکاری با همسایگان، مسیر مورد تأکید ایران است/ همسایگان، اولویت ما هستند",
@@ -23940,7 +23934,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 2.7414952549669476
+      "age_hours": 3.1318993286291756
     },
     "2ada10663d1c804f0133c1c3": {
       "title": "۱۶ بانک گواهی SSL بومی دریافت کردند",
@@ -23951,9 +23945,9 @@
         "technology"
       ],
       "topic_scores": {
-        "technology": 7
+        "technology": 6
       },
-      "importance": 7,
+      "importance": 6,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -23966,10 +23960,10 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 7,
+      "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.743995254966948
+      "age_hours": 3.134399328629176
     },
     "67863008321121876effcbad": {
       "title": "برنامه جامع کنترل و کاهش خودکشی در ۱۶ استان اجرا می‌شود",
@@ -23998,7 +23992,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 2.762606366078059
+      "age_hours": 3.153010439740287
     },
     "d47b930cff146be00929dbe4": {
       "title": "ویدئو؛ لحظه فرود اضطراری هواپیمای سافاری در تانزانیا",
@@ -24009,9 +24003,9 @@
         "economy"
       ],
       "topic_scores": {
-        "economy": 7
+        "economy": 6
       },
-      "importance": 7,
+      "importance": 6,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -24024,10 +24018,10 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 7,
+      "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.7701063660780587
+      "age_hours": 3.160510439740287
     },
     "c72facb9ba35f253d8e88a57": {
       "title": "سازمان جهانی بهداشت: نشانه‌ای از طاعون در روسیه مشاهده نشده است",
@@ -24035,16 +24029,10 @@
       "source": "سلامت نیوز",
       "published": "2026-10-07T10:42:11+03:30",
       "topics": [
-        "health",
-        "war",
-        "science-life",
-        "currency-gold"
+        "health"
       ],
       "topic_scores": {
-        "currency-gold": 17,
-        "health": 20,
-        "science-life": 17,
-        "war": 17
+        "health": 20
       },
       "importance": 20,
       "important": false,
@@ -24059,10 +24047,10 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 12,
+      "local_score": 11,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.8292730327447257
+      "age_hours": 3.219677106406954
     },
     "57b8588c047b4215ebea7ca6": {
       "title": "پزشکیان: اگر به جای ایراد گرفتن و نقد دیگران، گره از کار مردم باز می‌کردیم، روند سرمایه اجتماعی به اینجا نمی‌رسید",
@@ -24073,9 +24061,9 @@
         "health"
       ],
       "topic_scores": {
-        "health": 17
+        "health": 16
       },
-      "importance": 17,
+      "importance": 16,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -24088,10 +24076,10 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 7,
+      "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.8445508105225032
+      "age_hours": 3.2349548841847313
     },
     "abfab209104b1a0c4f320dac": {
       "title": "فروش لوازم خانگی با برند خارجی در بازار",
@@ -24102,9 +24090,9 @@
         "economy"
       ],
       "topic_scores": {
-        "economy": 12
+        "economy": 11
       },
-      "importance": 12,
+      "importance": 11,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -24117,10 +24105,10 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 7,
+      "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.845106366078059
+      "age_hours": 3.235510439740287
     },
     "85d3a9b838c0e2dfd5a77e03": {
       "title": "امکان ثبت اینترنتی درخواست اعزام به خدمت مشمولان",
@@ -24178,7 +24166,7 @@
       "local_score": 13,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.5695508105225033
+      "age_hours": 3.9599548841847314
     },
     "d0c1e0ebbbb11a3ee009436c": {
       "title": "بازارگردانی تابان فردا با هدف تقویت نقدشوندگی",
@@ -24207,7 +24195,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.206495254966948
+      "age_hours": 2.596899328629176
     },
     "155ae62069e7a5b266d20dd7": {
       "title": "قیمت خودرو‌های سایپا - چهارشنبه ۱۵ مهر ۱۴۰۵",
@@ -24265,7 +24253,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.2120508105225034
+      "age_hours": 2.6024548841847315
     },
     "c30f99f2479cc7015c30144d": {
       "title": "صدور هزارمین کد نیروگاهی در بازار برق بورس انرژی",
@@ -24296,7 +24284,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.21621747718917
+      "age_hours": 2.606621550851398
     },
     "4ccb7da00c2b7265a87d9758": {
       "title": "قیمت خودرو‌های ایران خودرو - چهارشنبه ۱۵ مهر ۱۴۰۵",
@@ -24354,7 +24342,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.228439699411392
+      "age_hours": 2.6188437730736203
     },
     "d9ce12c89be5a2c9a014c779": {
       "title": "دادوستد ۱۵۵ هزار تن سیمان در بورس کالا",
@@ -24383,7 +24371,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.2331619216336143
+      "age_hours": 2.6235659952958423
     },
     "2be596c9824dad3e191080db": {
       "title": "هشدار نارنجی وقوع بارش های سیل آسا",
@@ -24412,7 +24400,7 @@
       "local_score": 11,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 2.23871747718917
+      "age_hours": 2.629121550851398
     },
     "802f0e91c291ed5abdedfe65": {
       "title": "شارژ کالابرگ گروه اول انجام شد",
@@ -24423,9 +24411,9 @@
         "markets"
       ],
       "topic_scores": {
-        "markets": 8
+        "markets": 7
       },
-      "importance": 8,
+      "importance": 7,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -24438,10 +24426,10 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 8,
+      "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.254828588300281
+      "age_hours": 2.6452326619625093
     },
     "8bc1af649c2c4de6610255b5": {
       "title": "شاخص بورس قله ۸ میلیون واحدی را فتح کرد",
@@ -24470,7 +24458,7 @@
       "local_score": 14,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.2556619216336142
+      "age_hours": 2.6460659952958423
     },
     "b3675970bc98c66212118e15": {
       "title": "توقف ۲۴ نماد معاملاتی بورس و فرابورس",
@@ -24501,7 +24489,7 @@
       "local_score": 13,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.2592730327447255
+      "age_hours": 2.6496771064069535
     },
     "40d1f99f3171fbb6daae8845": {
       "title": "شتاب تورم خوراکی ها کاهش یافت",
@@ -24588,7 +24576,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 2.266495254966948
+      "age_hours": 2.656899328629176
     },
     "00f5a7f617c3487466ca617b": {
       "title": "تقویت ارزش دلار، طلا را به عقب راند",
@@ -24617,7 +24605,7 @@
       "local_score": 16,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.3053841438558367
+      "age_hours": 2.6957882175180647
     },
     "c90bb0701debe5c3886e8ea8": {
       "title": "پزشکیان: به جای اینکه پرونده بسازیم، فریادرس کسانی باشیم که صدای آن‌ها شنیده نمی‌شود/ نمی‌توان صرفاً با ادبیات دینی خود را متصف به ارزش‌های اسلامی دانست؛ معیار اصلی، نحوه مواجهه با مردم است",
@@ -24715,7 +24703,7 @@
       "local_score": 9,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.3667730327447254
+      "age_hours": 2.7571771064069535
     },
     "d5699925ccace940d3dc1974": {
       "title": "وضعیت ناخوشایند رامین رضاییان",
@@ -24744,7 +24732,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.3789952549669477
+      "age_hours": 2.769399328629176
     },
     "c64833e87a98bdbe77db0b82": {
       "title": "حمله به یک نفتکش در نزدیکی ساحل روسیه",
@@ -24849,10 +24837,10 @@
         "ai"
       ],
       "topic_scores": {
-        "markets": 19,
-        "ai": 19
+        "markets": 18,
+        "ai": 18
       },
-      "importance": 19,
+      "importance": 18,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -24865,10 +24853,10 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 14,
+      "local_score": 13,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.6345508105225033
+      "age_hours": 3.0249548841847314
     },
     "dc52df8ca31c3c463f18dc24": {
       "title": "خاطره مارال فرجاد از فریما فرجامی روی صحنه تئاتر",
@@ -24897,7 +24885,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.897328588300281
+      "age_hours": 2.2877326619625094
     },
     "fef65eba1a928e17b6c6aa75": {
       "title": "مهلت انتخاب رشته کنکور ۱۴۰۵ فردا به پایان می رسد",
@@ -24926,7 +24914,7 @@
       "local_score": 8,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.9359396994113922
+      "age_hours": 2.3263437730736203
     },
     "9684fbd7d76357814bc7a5a7": {
       "title": "پایان موفقیت‌آمیز مزایده خودرویی ولساپا",
@@ -24940,10 +24928,8 @@
         "auto": 19
       },
       "importance": 19,
-      "important": true,
-      "important_topics": [
-        "auto"
-      ],
+      "important": false,
+      "important_topics": [],
       "slider_topics": [
         "auto"
       ],
@@ -24959,10 +24945,7 @@
       "local_score": 9,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.9395508105225032,
-      "permanent_article": true,
-      "article_id": "article-3cd2f7e835490218",
-      "image": "https://media.sedayebourse.ir/d/2022/12/08/4/1024991.jpg"
+      "age_hours": 2.3299548841847315
     },
     "26bd6ca99363ace595430da1": {
       "title": "برخورد دو هواپیمای مسافربری در فرودگاه لس‌آنجلس",
@@ -24991,7 +24974,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.9506619216336145
+      "age_hours": 2.3410659952958426
     },
     "ab5a7b758988f46c7806069a": {
       "title": "کیمیاگری با شیمیایی بورس",
@@ -25020,7 +25003,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.9556619216336144
+      "age_hours": 2.3460659952958425
     },
     "e4ea2a0863bafb69efa71a8f": {
       "title": "قلعه‌نویی گزینه ایده‌آل نبود!",
@@ -25049,7 +25032,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 1.9651063660780588
+      "age_hours": 2.355510439740287
     },
     "4c6ff02b258a7bca8a0c912b": {
       "title": "قتل یک دختر ۷ ساله در خیابانی در شیکاگو",
@@ -25078,7 +25061,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.9681619216336144
+      "age_hours": 2.3585659952958427
     },
     "b8b64d4b4f45eabe12d2ea44": {
       "title": "گام مثبت وملل در مسیر اصلاح ساختار دارایی‌ها",
@@ -25107,7 +25090,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.982328588300281
+      "age_hours": 2.3727326619625093
     },
     "b4acbc6d76f489b5374c53a6": {
       "title": "تغییر چهره احسان علیخانی در دیدار دوباره با مهمان ماه عسل",
@@ -25136,7 +25119,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.0045508105225034
+      "age_hours": 2.3949548841847315
     },
     "67254bebc5ab8b897da1c99e": {
       "title": "تصاویری از رعد و برق و بارش باران شب گذشته در گیلان",
@@ -25165,7 +25148,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.0153841438558366
+      "age_hours": 2.4057882175180647
     },
     "ea9052ac2c669e8038a4e193": {
       "title": "مادران روستایی دارای ۳ فرزند رایگان بیمه می‌شوند",
@@ -25194,7 +25177,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.0245508105225034
+      "age_hours": 2.4149548841847315
     },
     "88e03b5b5ad5b8f04dd70e3e": {
       "title": "وزارت صمت برنامه‌ای برای صرفه‌جویی ارزی ندارد / سیاست تجاری کشور باید خود را با محدودیت منابع ارزی تطبیق دهد",
@@ -25223,7 +25206,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.0292730327447255
+      "age_hours": 2.4196771064069535
     },
     "542bf13af4b23c128dae1459": {
       "title": "واکنش غشوکو به جهش هزینه‌های تولید",
@@ -25254,7 +25237,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.032328588300281
+      "age_hours": 2.422732661962509
     },
     "d225ad3ea22c762f87402bd3": {
       "title": "مدافع ملی‌پوش پرسپولیس بازی با صنعت نفت را از دست داد",
@@ -25283,7 +25266,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.1539952549669477
+      "age_hours": 2.5443993286291757
     },
     "c23901f0dee6db24b28dd6c8": {
       "title": "آغاز پیش‌فروش بک X3 پرو با پرداخت 1.7 میلیارد",
@@ -25312,7 +25295,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 2.1567730327447254
+      "age_hours": 2.5471771064069535
     },
     "23298dd1a5ac2796b112a9ad": {
       "title": "بورس 8میلیونی شد",
@@ -25341,7 +25324,7 @@
       "local_score": 14,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.327606366078059
+      "age_hours": 2.718010439740287
     },
     "dfca23855b0ec1e5b82f9952": {
       "title": "از توسعه ظرفیت تولید تا ساختن تجربه‌ای متفاوت برای مشتری",
@@ -25374,7 +25357,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.5589952549669477
+      "age_hours": 1.9493993286291758
     },
     "bf6b445a63d3b0f478d79da0": {
       "title": "همایون شجریان و بلیت قسطی؟!",
@@ -25403,7 +25386,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.565939699411392
+      "age_hours": 1.9563437730736202
     },
     "88974b1309b2c90d86e8dcf6": {
       "title": "قیمت دلار، طلا و سکه امروز چهارشنبه 15 مهر 1405",
@@ -25468,7 +25451,7 @@
       "local_score": 9,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 1.6959396994113922
+      "age_hours": 2.08634377307362
     },
     "101a811b91398657723907fc": {
       "title": "«چشم‌روشنی» از شهرزاد آغاز شد؛ اعتبار ماهانه برای مادران و کودکان",
@@ -25497,7 +25480,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.7109396994113921
+      "age_hours": 2.10134377307362
     },
     "a8fe3ae7a18923dbd2eb3b77": {
       "title": "درخواست طلاق به دلیل ایرادگرفتن مادرشوهر از دستپخت عروس/ مادرشوهرم در یک مهمانی گفت می‌خواهم برای پسرم زن دیگری بگیرم",
@@ -25526,7 +25509,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.74621747718917
+      "age_hours": 2.136621550851398
     },
     "6d4fb914d2442a682a188f0a": {
       "title": "بورس همه مرزها را شکست/ شاخص ۸ میلیونی تازه شروع ماجراست؟",
@@ -25555,7 +25538,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.7467730327447255
+      "age_hours": 2.137177106406954
     },
     "4594272babfd435dab9b0831": {
       "title": "بازیابی گوگل اتنتیکیتور؛ رفع خطای کد و انتقال به گوشی جدید",
@@ -25586,7 +25569,7 @@
       "local_score": 9,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.7520508105225032
+      "age_hours": 2.1424548841847315
     },
     "c7b4e5f9b2b253afe9058e09": {
       "title": "فدراسیون فوتبال پاسخ AFC را درباره آسانی داد",
@@ -25644,7 +25627,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.7734396994113921
+      "age_hours": 2.16384377307362
     },
     "326f5a3d094eaeb1d179964c": {
       "title": "نوشهر بهتر است یا رامسر؟ مقایسه ۰ تا ۱۰۰ برای انتخاب مقصد",
@@ -25673,7 +25656,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.782328588300281
+      "age_hours": 2.172732661962509
     },
     "0060403806866673e12f7208": {
       "title": "مدیرعامل رایتل: اپراتور رایتل سودده و در مسیر توسعه است؛ واگذاری سهام، فرصتی برای ورود شریک راهبردی و سرمایه هوشمند است",
@@ -25706,7 +25689,7 @@
       "local_score": 14,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 1.8059396994113923
+      "age_hours": 2.1963437730736204
     },
     "0e5297b36d2d2a0ad104d9c5": {
       "title": "امکان ثبت اینترنتی درخواست اعزام به خدمت مشمولان",
@@ -25735,7 +25718,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 1.8217730327447255
+      "age_hours": 2.2121771064069535
     },
     "32d6e62b963a7893d9cb88c1": {
       "title": "جنجال حامیان رسایی؛ صف وثیقه‌گذاری و تهدید به ناامن کردن مهرآباد",
@@ -25764,7 +25747,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 1.8359396994113921
+      "age_hours": 2.22634377307362
     },
     "9fe33e68546e19d8c0ada435": {
       "title": "قیمت جدید میوه و سبزیجات/ موز و نارنگی چند؟+ جدول",
@@ -25793,7 +25776,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.8514952549669477
+      "age_hours": 2.241899328629176
     },
     "94bd6dd79285fcb69ecf2488": {
       "title": "انتخاب رشته بیش از ۷۰ هزار متقاضی کنکور/فردا آخرین مهلت",
@@ -25822,7 +25805,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 1.8539952549669478
+      "age_hours": 2.244399328629176
     },
     "40a3a85f7d2e9bc04a58050e": {
       "title": "سقوط ۷۳ درصدی صادرات کلینکر/ سیمان زیر فشار برق، گاز و مرزهای قفل‌شده",
@@ -25851,7 +25834,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 1.8603841438558366
+      "age_hours": 2.250788217518065
     },
     "75aa48285b06f5ec5ed06d0b": {
       "title": "پزشکی قانونی: جان‌ باختن تمام اعضای یک خانواده‌ ۱۱ نفره بر اثر گاز گرفتگی/ در این حادثه، به دلیل نامناسب بودن دودکش بخاری و عدم خروج گاز، از پیرمرد ۹۰ ساله تا کودک ۹ ماهه جان خود را از دست دادند",
@@ -25911,7 +25894,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.8717730327447255
+      "age_hours": 2.262177106406954
     },
     "c90776cad56e0d0414f24410": {
       "title": "درآمد بانک کارآفرین ۲ برابر شد",
@@ -25940,7 +25923,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.8742730327447255
+      "age_hours": 2.2646771064069537
     },
     "4f343a38f729f6ef619decd7": {
       "title": "عکس آتلیه‌ای «عبدالصمد میرزا، برادر ناصرالدین شاه» در جوانی",
@@ -25969,7 +25952,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.8892730327447256
+      "age_hours": 2.2796771064069534
     },
     "3ff7b6968c31a7ebf94b0be0": {
       "title": "پرتفوی اجتماعی-اکولوژیک در خدمات اکوسیستم: بررسی شیلات سالمون اقیانوس آرام در بریتیش کلمبیا",
@@ -25998,7 +25981,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.8976063660780589
+      "age_hours": 2.2880104397402867
     },
     "c892d5f641e0fc92d1a0589c": {
       "title": "راهنمای انتخاب بهترین هتل تهران بر اساس سبک سفر شما",
@@ -26027,7 +26010,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.917328588300281
+      "age_hours": 2.3077326619625094
     },
     "eefea46edde67cfb980dfbd1": {
       "title": "افزایش سرمایه ۲۰۰ میلیارد تومانی؛ گام بلند «کارگزاری آینده‌نگر خوارزمی» برای جهش توان اعتباردهی",
@@ -26058,7 +26041,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.2548285883002812
+      "age_hours": 1.645232661962509
     },
     "4bea5864e40d96b9fedee4c6": {
       "title": "تکرار یک فاجعه بعد از 16 سال؛ این بار با قلعه‌نویی!",
@@ -26087,7 +26070,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.3370508105225034
+      "age_hours": 1.7274548841847315
     },
     "1448e663fd7f1b36eb213840": {
       "title": "قیمت لیر ترکیه، امروز چهارشنبه ۱۵ مهر ۱۴۰۵",
@@ -26174,7 +26157,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 1.3639952549669478
+      "age_hours": 1.754399328629176
     },
     "ebcf0fe55a825730583ba0c6": {
       "title": "علت دود غلیظ دیده شده در آسمان مشهد مشخص شد",
@@ -26261,7 +26244,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.4156619216336144
+      "age_hours": 1.8060659952958424
     },
     "745e6039e389c4771c134217": {
       "title": "قیمت دلار استرالیا، امروز چهارشنبه ۱۵ مهر ۱۴۰۵",
@@ -26348,7 +26331,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.4848285883002812
+      "age_hours": 1.8752326619625093
     },
     "10e74307fd16818b729ba097": {
       "title": "قیمت پوند انگلیس، امروز چهارشنبه ۱۵ مهر ۱۴۰۵",
@@ -26406,7 +26389,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 1.5164952549669477
+      "age_hours": 1.9068993286291758
     },
     "0ffe3434cc3af21560050e97": {
       "title": "توقف طولانی کامیون‌ها در مرز یکی از اصلی‌ترین مشکلات صادرات سیمان به افغانستان است / یک کامیون در برخی موارد بین 7 تا 8 روز پشت مرز متوقف می‌شود",
@@ -26435,7 +26418,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.5259396994113923
+      "age_hours": 1.9163437730736204
     },
     "b64d875fba4ef034caee1610": {
       "title": "۴ راهکار ساده برای حفظ سلامت دندان‌ها؛ از مسواک تا کاهش مصرف قند",
@@ -26464,7 +26447,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.5292730327447255
+      "age_hours": 1.9196771064069535
     },
     "9eeddf636f49c6b19abc2abd": {
       "title": "قیمت یورو، امروز چهارشنبه ۱۵ مهر ۱۴۰۵",
@@ -26609,7 +26592,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 1.199828588300281
+      "age_hours": 1.5902326619625091
     },
     "e6d1a2d4da6483e9d3ca0c96": {
       "title": "قیمت دینار عراق امروز چهار‌شنبه ۱۵ مهر ۱۴۰۵",
@@ -26638,7 +26621,7 @@
       "local_score": 9,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.2009396994113921
+      "age_hours": 1.5913437730736202
     },
     "e19e45cca6e8b01eddf443b3": {
       "title": "بودجه ایران؛ دخل و خرجی که سال‌هاست با هم جور درنمی‌آیند",
@@ -26669,7 +26652,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 1.2148285883002812
+      "age_hours": 1.6052326619625092
     },
     "d72139545f074514cf500277": {
       "title": "دود غلیظ در آسمان مشهد/ علت چیست؟",
@@ -26698,7 +26681,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.2220508105225034
+      "age_hours": 1.6124548841847315
     },
     "09fdd8a12c83bc26a1e7c38b": {
       "title": "چرخش بزرگ در بازار نفت؛ پالایشگاه‌های مستقل چین در جست‌وجوی نفت بدون تحریم | جای خالی نفت ایران با نفت عراق پر شد",
@@ -26727,7 +26710,7 @@
       "local_score": 13,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.2242730327447255
+      "age_hours": 1.6146771064069536
     },
     "1ce40a2fc5a75f90c1131ee7": {
       "title": "تهران بالاترین ضریب جینی را دارد؛ سهم20%کم‌هزینه‌ترین خانوارها رشد کرد",
@@ -26756,7 +26739,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.6567730327447255
+      "age_hours": 1.0471771064069535
     },
     "0af4ae797d0029d6185541ad": {
       "title": "انعقاد ۵ قرارداد بزرگ در کگاز",
@@ -26787,7 +26770,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.6656619216336145
+      "age_hours": 1.0560659952958424
     },
     "b489f01add19e2c35aae9103": {
       "title": "هزینه دارو فقط یک عدد نیست/ ضرورت تغییر نگاه به قیمت‌گذاری برای حفظ دسترسی بیماران",
@@ -26818,7 +26801,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.66871747718917
+      "age_hours": 1.059121550851398
     },
     "b387836e49abb850a0929fab": {
       "title": "پزشکی قانونی: جان‌ باختن تمام اعضای یک خانواده‌ ۱۱ نفره بر اثر گاز گرفتگی",
@@ -26847,7 +26830,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.6981619216336145
+      "age_hours": 1.0885659952958424
     },
     "f8a91ef11698d3863605a861": {
       "title": "خرید قسطی مانتو اداری؛ راهکاری هوشمند برای سازمان‌ها",
@@ -26876,7 +26859,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.7112174771891699
+      "age_hours": 1.101621550851398
     },
     "b2267b26e0a9672d55cf4d91": {
       "title": "فارس: رقم کالابرگ دهک‌های پایین در مهرماه اضافه نشد",
@@ -26905,7 +26888,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.7539952549669477
+      "age_hours": 1.1443993286291758
     },
     "5a6e33bb444b24cfb515b954": {
       "title": "ازکی‌کراد در پی ایجاد بازار ثانویه در فضای تأمین مالی جمعی",
@@ -26934,7 +26917,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.7828841438558367
+      "age_hours": 1.1732882175180648
     },
     "986fdc6e1fd3e29780d0c899": {
       "title": "تعطیلی کمیسیون قیمت‌گذاری دارو/ واردات فوریتی تا ۱۲ برابر گران‌تر از تولید داخل",
@@ -26967,7 +26950,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 0.8245508105225033
+      "age_hours": 1.2149548841847313
     },
     "5b043f467a6400875a665131": {
       "title": "عیدی مالیاتی برای سهامداران پسهند",
@@ -26998,7 +26981,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.8323285883002811
+      "age_hours": 1.2227326619625092
     },
     "bbab5679849ed83c5635fb7e": {
       "title": "پزشکیان: به‌جای اینکه پرونده بسازیم، فریادرس کسانی باشیم که صدای آن‌ها شنیده نمی‌شود",
@@ -27031,7 +27014,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.8328841438558366,
+      "age_hours": 1.2232882175180646,
       "permanent_article": true,
       "article_id": "article-56ed0e9489124bbd",
       "image": "https://tejaratnews.com/wp-content/uploads/2026/10/پزشکیان-زنان-ایران-توان-ایستادن-بر-قلههای-جهان-را-ak-1200x800-1.webp"
@@ -27063,7 +27046,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.8442730327447255
+      "age_hours": 1.2346771064069535
     },
     "083dc732cbf98ac64b8ad931": {
       "title": "قیمت دلار امروز چهارشنبه ۱۵ مهر ۱۴۰۵ / دلار 2 هزار تومان عقب نشست",
@@ -27092,7 +27075,7 @@
       "local_score": 12,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.8648285883002811
+      "age_hours": 1.2552326619625092
     },
     "9bb0cf7f111afdf189693a8e": {
       "title": "از اجرای سفارش با کنترل قیمت تا تعیین حد سود و ضرر در افزونه معاملات الگوریتمی اکسیر جدید",
@@ -27121,7 +27104,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.8734396994113922
+      "age_hours": 1.2638437730736203
     },
     "1f277ee4861a53a465dab830": {
       "title": "رشد ۱۱۱ درصدی بورس‌های کالایی در نیمه نخست امسال",
@@ -27195,7 +27178,7 @@
       "local_score": 17,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 0.8976063660780589
+      "age_hours": 1.288010439740287
     },
     "22fcaaf8fb7e173dc6b7b572": {
       "title": "بیش از ۶۰ فقره سابقه شکایت و ۲۵ مورد قرار مجرمیت و جلب به دادرسی از رسایی وجود دارد/ در پرونده اخیر، او از فرصت صلح و سازش استفاده نکرد/ جرم وی غیر قابل گذشت است/ او به تحمل ۱۰ ماه حبس محکوم شده که قسمت اعاده حیثیت هنوز انجام نشده/ ۷ نفر از اعضای هیئت منصفه گفته‌اند حمید رسایی مستحق تخفیف نیست/ پرونده فعلی، درباره نشر اکاذیب از طریق نشریه این شخص و انتشار یک صوت در یکی از پیام‌رسان‌های خارجی است",
@@ -27224,7 +27207,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 0.9814952549669478
+      "age_hours": 1.3718993286291759
     },
     "a2f7980c1f6146425c03558b": {
       "title": "یک خبرگزاری دولتی: کالابرگ مهر ماه به روال گذشته شارژ شده و مبلغ آن افزایش نداشته",
@@ -27253,7 +27236,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 1.0656619216336145
+      "age_hours": 1.4560659952958426
     },
     "2dc322f4ee4225308b1062f9": {
       "title": "سازمان جهانی بهداشت: آمار چاقی در کودکان و نوجوانان در دنیا ۴ برابر شده/ ۱۷۰ میلیون کودک و نوجوان با چاقی مزمن زندگی می‌کنند/ دارو‌های کاهش وزن نباید برای درمان کودکان یک تا ۹ ساله مورد استفاده قرار گیرند",
@@ -27282,7 +27265,7 @@
       "local_score": 9,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.4501063660780589
+      "age_hours": 0.8405104397402869
     },
     "a3be4c478ed22be75d2bd73b": {
       "title": "شناسایی سود نجومی در وشهر",
@@ -27313,7 +27296,7 @@
       "local_score": 9,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.4523285883002811
+      "age_hours": 0.8427326619625092
     },
     "fe66ae70c282ff4c1f182594": {
       "title": "احتمال شنیده شدن صدای انفجار کنترل شده در خمین",
@@ -27342,7 +27325,7 @@
       "local_score": 11,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 0.50621747718917
+      "age_hours": 0.896621550851398
     },
     "06c1c37a4c44026e933c69a7": {
       "title": "گام جدید برای تولید داخلی آلبومین و IVIG/ پالایش و پژوهش خون مجوز گرفت",
@@ -27375,7 +27358,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.5248285883002811
+      "age_hours": 0.9152326619625092
     },
     "ddfeb4edbda1cc4f56a6fe8e": {
       "title": "برندگان نخستین قرعه کشی هفتگی جشنواره دیما معرفی شدند",
@@ -27433,7 +27416,7 @@
       "local_score": 9,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 0.5520508105225034
+      "age_hours": 0.9424548841847313
     },
     "c55d2e229e06516132a7788f": {
       "title": "دیدار معاون عراقچی با سفرای هند، ژاپن و اسپانیا/ گفت‌وگوی طرفین درباره تحولات مهم بین‌المللی",
@@ -27462,7 +27445,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.6064952549669478
+      "age_hours": 0.9968993286291759
     },
     "a9ff949557da9773ea3a9713": {
       "title": "پایان هفته خوب بورس با فتح قله‌های جدید | شاخص کل 153 هزار واحد رشد کرد | فاصله تقاضا و عرضه همچنان زیاد است",
@@ -27522,7 +27505,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.6309396994113922
+      "age_hours": 1.0213437730736203
     },
     "70b7bd1ebc300fac05941fd1": {
       "title": "وزیر خارجه آمریکا: موضوع مورد مشکوک به طاعون در روسیه را بسیار دقیق و ساعت به ساعت زیر نظر داریم/ روسیه طبیعتاً موظف است اطلاعات بیشتری را با جهان در میان بگذارد",
@@ -27555,7 +27538,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 0.7095508105225034
+      "age_hours": 1.0999548841847313
     },
     "8e9017f19c9102b3501e2f8a": {
       "title": "قیمت طلا و سکه امروز چهارشنبه ۱۵ مهر ۱۴۰۵/ کاهش قیمت طلا و سکه",
@@ -27642,7 +27625,7 @@
       "local_score": 9,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.06510636607805888
+      "age_hours": 0.45551043974028693
     },
     "6f10f67d713f2a05e64f6040": {
       "title": "پاسخ منفی قطری‌ها به استقلال برای پرواز مستقیم",
@@ -27675,7 +27658,7 @@
       "local_score": 9,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 0.07510636607805887
+      "age_hours": 0.46551043974028694
     },
     "2926769e493578b097c12058": {
       "title": "پایان بورس امروز چهارشنبه 15 مهر 1405 / شاخص کل از 8 میلیون واحد عبور کرد + جدول",
@@ -27704,7 +27687,7 @@
       "local_score": 16,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.08538414385583666
+      "age_hours": 0.4757882175180647
     },
     "a8e2ecca0a303581446a2e54": {
       "title": "حمله به یک نفتکش با پرچم لیبریا",
@@ -27739,7 +27722,7 @@
       "local_score": 14,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 0.09371747718916999
+      "age_hours": 0.484121550851398
     },
     "fb8c19b2f8f1d227fd6ed6b2": {
       "title": "تصاویر؛ برداشت یاقوت سرخ",
@@ -27768,7 +27751,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.10621747718916999
+      "age_hours": 0.49662155085139803
     },
     "9eec08e45880f27d93c10ea6": {
       "title": "۶ماهه‌ها آمدند؛ برندگان واقعی بورس چه کسانی‌اند؟",
@@ -27799,7 +27782,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.12149525496694777
+      "age_hours": 0.5118993286291759
     },
     "3047f7a632a2043c0c6ea1b8": {
       "title": "قیمت سکه پارسیان امروز چهارشنبه ۱۵ مهر ۱۴۰۵",
@@ -27828,7 +27811,7 @@
       "local_score": 9,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.13343969941139222
+      "age_hours": 0.5238437730736203
     },
     "fc28704013030d676fd0ab92": {
       "title": "پیشگیری از خودکشی با اقدامات خطی و تک‌بعدی امکان‌پذیر نیست",
@@ -27857,13 +27840,13 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 0.16399525496694778
+      "age_hours": 0.5543993286291758
     },
     "e119d51214d4d7c872c887e4": {
       "title": "بورس قله جدید فتح کرد/ فاصله تقاضا و عرضه همچنان زیاد است",
       "summary": "ارزش معاملات خرد سهام و صندوق های سهامی به ۳۸ هزار و ۸۴۸ میلیارد تومان رسید و ارزش معاملات کل بازار نیز ۵۶ هزار و ۶۸۳ میلیارد تومان ثبت شد.",
       "source": "دنیای اقتصاد",
-      "published": "2026-10-07T13:21:20+03:30",
+      "published": "2026-10-07T13:18:20+03:30",
       "topics": [
         "markets",
         "currency-gold"
@@ -27888,7 +27871,7 @@
       "local_score": 13,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.17677303274472556
+      "age_hours": 0.6171771064069536
     },
     "07ea304c93f5a3e187b509bc": {
       "title": "کودکم نمی‌خواهد به مدرسه برود؛ لجبازی است یا یک مشکل جدی؟",
@@ -27917,7 +27900,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.17816192163361444
+      "age_hours": 0.5685659952958425
     },
     "b6132f1c76e7826e05ff4953": {
       "title": "تراکتوری‌ها از استانبول به عمان می‌روند",
@@ -27946,7 +27929,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.21177303274472556
+      "age_hours": 0.6021771064069537
     },
     "e571d367da18beffd4658d84": {
       "title": "معاون وزیر بهداشت: دانش‌آموز بیمار را به مدرسه نفرستید",
@@ -27975,7 +27958,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 0.21566192163361445
+      "age_hours": 0.6060659952958425
     },
     "0bd3424d537011d19e319659": {
       "title": "قیمت طلا و سکه امروز چهارشنبه ۱۵ مهر ۱۴۰۵ / ریزش ۵ میلیونی قیمت سکه؛ طلا ۵۰۰ هزار تومان ارزان شد + جدول",
@@ -28004,7 +27987,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 0.2448285883002811
+      "age_hours": 0.6352326619625092
     },
     "5bbbff46bd9ce716626dfab5": {
       "title": "سازمان جهانی بهداشت: آمار چاقی در کودکان و نوجوانان ۴ برابر شده است",
@@ -28033,7 +28016,7 @@
       "local_score": 9,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.25705081052250334
+      "age_hours": 0.6474548841847314
     },
     "6164bee7f7451fbd8a2f821b": {
       "title": "مبلغ کالابرگ مهر اعلام شد",
@@ -28062,7 +28045,610 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 0.29316192163361443
+      "age_hours": 0.6835659952958425
+    },
+    "c6e1bc9612a0c6fb63e0325f": {
+      "title": "از رکورد تورم تا رونق بورس؛ اقتصاد ایران در نیمه نخست ۱۴۰۵",
+      "summary": "اقتصاد ایران در نیمه نخست ۱۴۰۵ با افت ۱۰.۱ درصدی رشد اقتصادی، تورم ۹۰ درصدی و کاهش مصرف خانوار مواجه شد؛ در مقابل، بورس با جهش قابل‌توجه بازدهی، متفاوت از بخش واقعی اقتصاد ظاهر شد.",
+      "source": "صدای بورس",
+      "published": "2026-10-07T13:53:31+03:30",
+      "topics": [
+        "economy",
+        "markets"
+      ],
+      "topic_scores": {
+        "economy": 20,
+        "markets": 18
+      },
+      "importance": 20,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-3e2fbb4c142f",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 13,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.030788217518064712
+    },
+    "947cf677d4d36d9073b85c85": {
+      "title": "پزشکیان: بدون شک مقاومت خواهیم کرد و دشمن را ناامید خواهیم ساخت/ برای احقاق حقوق ملت ایران از موضع عزت و اقتدار سخن می‌گوییم",
+      "summary": "اقتصادنیوز: پزشکیان با اشاره به ضرورت تقویت و گسترش تعاملات چندجانبه با همسایگان تصریح کرد: در حال مذاکره با آنها هستیم تا بخشی از نیازهای موجود را تأمین کنیم، ولی اصل قضیه اتکا به توان داخلی، همدلی و همکاری با یکدیگر است.",
+      "source": "اقتصادنیوز",
+      "published": "2026-10-07T13:52:24+03:30",
+      "topics": [
+        "health"
+      ],
+      "topic_scores": {
+        "health": 17
+      },
+      "importance": 17,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-3804d79f9346",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.04939932862917582
+    },
+    "2ee1a348f828a6d19cee1825": {
+      "title": "کدام نمادها مشکوک معامله شدند؟ ۱۵ مهر ۱۴۰۵",
+      "summary": "بعد از پایان معاملات امروز هفت نماد معاملات مشکوک داشتند.",
+      "source": "صدای بورس",
+      "published": "2026-10-07T13:51:27+03:30",
+      "topics": [
+        "markets"
+      ],
+      "topic_scores": {
+        "markets": 7
+      },
+      "importance": 7,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-3ffe948692ca",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.06523266196250915
+    },
+    "1b2a73f01e420652f1b6cfff": {
+      "title": "محمد طبیبیان: تثبیت نرخ ارز رانت ایجاد می‌کند | ما از افغانستان و عراق هم در ایجاد بازار واقعی ارز عقب‌مانده‌تریم | بانک مرکزی به‌تنهایی قادر به حل تمام مشکلات بازار ارز نیست",
+      "summary": "اقتصادنیوز: محمد طبیبیان، اقتصاددان برجسته، با تأکید بر ضرورت اجرای سیاست‌های اقتصادی بر مبنای ملاحظات علمی، گفت: اگر دولت و بانک مرکزی سیاستی را از نظر اقتصادی قابل‌توجیه می‌دانند، نباید اجازه دهند جنجال‌های سیاسی و رسانه‌ای مانع اجرای آن شود و سیاست تثبیت نرخ ارز نیز می‌تواند زمینه‌ساز ایجاد رانت ",
+      "source": "اقتصادنیوز",
+      "published": "2026-10-07T13:45:37+03:30",
+      "topics": [
+        "economy",
+        "currency-gold"
+      ],
+      "topic_scores": {
+        "economy": 14,
+        "currency-gold": 14
+      },
+      "importance": 14,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-2c0d023b96e9",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.1624548841847314
+    },
+    "aa7c6e360231a86a19a733aa": {
+      "title": "برندگان نوبل شیمی ۲۰۲۶ معرفی شدند",
+      "summary": "اقتصادنیوز: «هنری کاگان» و «کنزو سوآی» برنده جایزه نوبل شیمی ۲۰۲۶ شدند.",
+      "source": "اقتصادنیوز",
+      "published": "2026-10-07T13:41:57+03:30",
+      "topics": [
+        "science-life"
+      ],
+      "topic_scores": {
+        "science-life": 7
+      },
+      "importance": 7,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-e92f0e0504db",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.22356599529584248
+    },
+    "06e2e7250bf2fe4757f4a8d8": {
+      "title": "شرایط ادامه روند پرونده‌های ثبت سفارش فاقد تامین ارز خودروی سواری",
+      "summary": "سازمان توسعه تجارت، شرایط ادامه فرایند برای پرونده‌های ثبت سفارش فاقد تامین ارز خودروی سواری از محل بند (ر) تبصره (۱) ماده واحده قانون بودجه سال ۱۴۰۴ را اعلام کرد. پست شرایط ادامه روند پرونده‌های ثبت سفارش فاقد تامین ارز خودروی سواری اولین بار در تجارت نیوز ظاهر شد.",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-07T13:40:23+03:30",
+      "topics": [
+        "economy",
+        "currency-gold",
+        "auto"
+      ],
+      "topic_scores": {
+        "economy": 20,
+        "currency-gold": 20,
+        "auto": 20
+      },
+      "importance": 20,
+      "important": true,
+      "important_topics": [
+        "economy",
+        "auto"
+      ],
+      "slider_topics": [
+        "economy",
+        "auto"
+      ],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-91db2ae6e797",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 15,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.2496771064069536,
+      "permanent_article": true,
+      "article_id": "article-91db2ae6e797e108",
+      "image": "https://tejaratnews.com/wp-content/uploads/2026/07/حذف-کنترل-سهمیه-ارزی-برای-ثبتسفارش-واردات-خودرو-جا-ak80827-ak47351-1200x800.webp"
+    },
+    "ebce20326c90459efcec0ea0": {
+      "title": "پایان سال پر چالش پردیس",
+      "summary": "پتروشمی پردیس سال مالی اخیر دو پرده کاملا متفاوت داشت، نیمه اول درخشان ظاهر شد، اما در نیمه دوم سال آسیب دید. با همه اوصاف عملکرد شپدیس قابل قبول بود",
+      "source": "بورس‌نیوز",
+      "published": "2026-10-07T13:40:01+03:30",
+      "topics": [
+        "markets"
+      ],
+      "topic_scores": {
+        "markets": 10
+      },
+      "importance": 10,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-f91946f73c96",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 10,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.2557882175180647
+    },
+    "f2fbdb91e263577990ffa4bc": {
+      "title": "موج‌سواری دیدنی پنگوئن کنجکاو",
+      "summary": "یک پنگوئن آفریقایی کنجکاو سوار بر بادی‌بورد شد و با گرفتن چند موج، لحظاتی تماشایی را رقم زد.",
+      "source": "فرارو",
+      "published": "2026-10-07T13:38:52+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 7
+      },
+      "importance": 7,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-2fed23a7c799",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.27495488418473135
+    },
+    "2ba7bb93afcda98bfbe2019d": {
+      "title": "جنجال‌ها نباید مانع اجرای سیاست‌ اقتصادی بانک مرکزی شود/ تثبیت ارز رانت ایجاد می‌کند",
+      "summary": "یک اقتصاددان با تأکید بر ضرورت اجرای سیاست‌های اقتصادی بر مبنای ملاحظات علمی، گفت: اگر دولت و بانک مرکزی سیاستی را از نظر اقتصادی قابل‌توجیه می‌دانند، نباید اجازه دهند جنجال‌های سیاسی و رسانه‌ای مانع اجرای آن شود و سیاست تثبیت نرخ ارز نیز می‌تواند زمینه‌ساز ایجاد رانت باشد. پست جنجال‌ها نباید مانع ا",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-07T13:38:30+03:30",
+      "topics": [
+        "economy",
+        "currency-gold"
+      ],
+      "topic_scores": {
+        "economy": 14,
+        "currency-gold": 14
+      },
+      "importance": 14,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-219c2e9082d7",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.2810659952958425
+    },
+    "ad1a6ae8b79bd09f059081ac": {
+      "title": "هشدار شرکت Nova درباره ارتباط احتمالی نتایج گلوکز با بیمار غیراصلی در دستگاه StatStrip: ضرورت بررسی و احتیاط در بیمارستان‌ها",
+      "summary": "خلاصه سریع برای خواننده Nova Biomedical در 24 ژوئیه 2026 اصلاح جهانی (Medical Device Correction) را برای دستگاه StatStrip Glucose Hospital Meter اعلام کرد. مشکل نرم‌افزاری گزارش‌شده می‌تواند باعث شود نتیجه قند خون به بیمار دیگری نسبت داده شود زمانی که بارکد شناسه بیمار اسکن می‌شود. پیام اصلی: بیمارس",
+      "source": "پزشک سایت",
+      "published": "2026-10-07T13:38:05+03:30",
+      "topics": [
+        "technology",
+        "health"
+      ],
+      "topic_scores": {
+        "technology": 17,
+        "health": 17
+      },
+      "importance": 17,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-4d0f2aeafe57",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.28801043974028695
+    },
+    "385e1388bcee0a4366128330": {
+      "title": "برخورد لبه بال دو هواپیما",
+      "summary": "دو هواپیمای مسافربری در محوطه فرودگاه بین‌المللی لس‌آنجلس با یکدیگر برخورد کردند.",
+      "source": "فرارو",
+      "published": "2026-10-07T13:37:35+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 7
+      },
+      "importance": 7,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-05ddad4051a4",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.29634377307362025
+    },
+    "c407e25ab7550132dde13c87": {
+      "title": "راز کره خوش‌عطر کوهستان‌های ایران",
+      "summary": "تصاویری از شیوه سنتی تهیه کره از ماست در مناطق کوهستانی ایران منتشر شده است.",
+      "source": "فرارو",
+      "published": "2026-10-07T13:37:18+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 7
+      },
+      "importance": 7,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-0ff0747bca30",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.3010659952958425
+    },
+    "892c93bf1fdd419cb1c0c06b": {
+      "title": "تصاویر؛ سرنوشت ده هزار و هفتصد کیلو مخدر",
+      "summary": "صبح امروز با حضور استاندار خراسان رضوی و جمعی از مسئولان استانی، بیش از ۱۰ هزار و هفتصد کیلو انواع مواد مخدر غیردارویی کشف‌شده در استان خراسان رضوی در مشهد امحا شد.",
+      "source": "فرارو",
+      "published": "2026-10-07T13:37:11+03:30",
+      "topics": [
+        "health"
+      ],
+      "topic_scores": {
+        "health": 12
+      },
+      "importance": 12,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-b072fe6171a5",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.3030104397402869
+    },
+    "786070148af7cb4985e2d15e": {
+      "title": "سود سهام عدالت در صف پرداخت؛ ۲ تا ۲.۵ میلیون تومان کی به حساب مردم می‌رسد؟",
+      "summary": "سود سهام عدالت امسال حدود ۲ تا ۲.۵ میلیون تومان برآورد شده است. پست سود سهام عدالت در صف پرداخت؛ ۲ تا ۲.۵ میلیون تومان کی به حساب مردم می‌رسد؟ اولین بار در تجارت نیوز ظاهر شد.",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-07T13:33:37+03:30",
+      "topics": [
+        "markets"
+      ],
+      "topic_scores": {
+        "markets": 12
+      },
+      "importance": 12,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-a14419f67439",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.3624548841847314
+    },
+    "feb23d9b0c295fbc1d3d7c35": {
+      "title": "نجات مسافر از مرگ در مترو",
+      "summary": "تصاویر دوربین مداربسته نشان می‌دهد که راوی کومار هنگام سوار شدن به قطار در ایستگاه راه‌آهنی در هند، تعادل خود را از دست داده و در حالی که قطار حرکت می‌کرد، چند لحظه کشیده می‌شود. یک مامور پلیس به سرعت برای کمک به سوی او می‌دود و با گرفتن یقه‌اش او را از خطر دور می‌کند.",
+      "source": "فرارو",
+      "published": "2026-10-07T13:32:21+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 7
+      },
+      "importance": 7,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-c6226b343384",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.3835659952958425
+    },
+    "de8f1cb625f86b9351cc2596": {
+      "title": "انتقاد یک نماینده از حذف احتمالی 3 دهک مردم از کالابرگ/ اعتماد عمومی و سرمایه اجتماعی دولت را تضعیف می کند",
+      "summary": "اقتصادنیوز: نماینده مشهد در مجلس با اشاره به ایرادات نظام دهک‌بندی اظهار کرد: مدل دهک‌بندی ما دقت لازم را ندارد؛ اینکه فردی در تهران ۳۰ میلیون تومان درآمد داشته باشد، الزاماً به این معنا نیست که آدم متمولی است و بخواهیم او را از حمایت‌ها حذف کنیم.",
+      "source": "اقتصادنیوز",
+      "published": "2026-10-07T13:32:18+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 9
+      },
+      "importance": 9,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-438ff30bbb3b",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.3843993286291758
+    },
+    "5cd630e602e8ff94151ec995": {
+      "title": "راه‌های علمی و قطعی درمان پیری پوست و بازگرداندن طراوت به صورت",
+      "summary": "پیری پوست یکی از فرآیندهای طبیعی، مداوم و اجتناب‌ناپذیر فیزیولوژی بدن انسان است. با گذر زمان، عوامل ژنتیکی و محیطی ساختار بیولوژیک بافت پوست را دگرگون می‌کنند.",
+      "source": "سلامت نیوز",
+      "published": "2026-10-07T13:31:55+03:30",
+      "topics": [
+        "science-life",
+        "health"
+      ],
+      "topic_scores": {
+        "health": 12,
+        "science-life": 12
+      },
+      "importance": 12,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-f580b4df6061",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.3907882175180647
+    },
+    "c832a396d742344f8facd46b": {
+      "title": "ابهام در ترکیب پرسپولیس: کاپیتان کیست؟",
+      "summary": "در صورت غیبت محمدحسین کنعانی و علی علیپور در دیدار مقابل نفت آبادان، نام کاپیتان پرسپولیس هنوز برای هواداران این تیم مشخص نیست.",
+      "source": "فرارو",
+      "published": "2026-10-07T13:31:36+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 15
+      },
+      "importance": 15,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-53366ed6e7df",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 10,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.39606599529584247
+    },
+    "e184c9848c4d6790be763ea5": {
+      "title": "تصاویر؛ دانشجویانی که مقابل پلیس ایستادند و اعتراض کردند",
+      "summary": "دانش‌آموزان و دانشجویان در سراسر فرانسه در اعتراض به نامناسب بودن شرایط مدارس و کمبود معلم، دست به تجمع و مسدود کردن مسیرها زدند.",
+      "source": "فرارو",
+      "published": "2026-10-07T13:31:12+03:30",
+      "topics": [
+        "science-life"
+      ],
+      "topic_scores": {
+        "science-life": 9
+      },
+      "importance": 9,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-a2bf3e22546c",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.4027326619625092
+    },
+    "57f258cfbac0fd439d4c370d": {
+      "title": "تسلط عربستان بر فرودگاه و بندر المخا یمن تکذیب شد",
+      "summary": "خبرنگار العالم در گزارشی ادعاهایی درباره سقوط منطقه المخا یمن و تسلط نیروهای تحت حمایت عربستان بر فرودگاه این منطقه را تکذیب کرد.",
+      "source": "دنیای اقتصاد",
+      "published": "2026-10-07T13:30:54+03:30",
+      "topics": [
+        "war"
+      ],
+      "topic_scores": {
+        "war": 12
+      },
+      "importance": 12,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-80e5723eaff0",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": true,
+      "age_hours": 0.4077326619625092
     }
   },
   "groups": {
@@ -28187,7 +28773,7 @@
       "representative_id": "7f584be47a1ec0ccbd45ca92"
     },
     "local-3ffe948692ca": {
-      "representative_id": "d3a1ce281aa6018025ac6f05"
+      "representative_id": "2ee1a348f828a6d19cee1825"
     },
     "local-739236a71cfe": {
       "representative_id": "821ab6c60a14382cd217c9c8"
@@ -30594,6 +31180,63 @@
     },
     "local-682a5c2728b4": {
       "representative_id": "6164bee7f7451fbd8a2f821b"
+    },
+    "local-3e2fbb4c142f": {
+      "representative_id": "c6e1bc9612a0c6fb63e0325f"
+    },
+    "local-3804d79f9346": {
+      "representative_id": "947cf677d4d36d9073b85c85"
+    },
+    "local-2c0d023b96e9": {
+      "representative_id": "1b2a73f01e420652f1b6cfff"
+    },
+    "local-e92f0e0504db": {
+      "representative_id": "aa7c6e360231a86a19a733aa"
+    },
+    "local-91db2ae6e797": {
+      "representative_id": "06e2e7250bf2fe4757f4a8d8"
+    },
+    "local-f91946f73c96": {
+      "representative_id": "ebce20326c90459efcec0ea0"
+    },
+    "local-2fed23a7c799": {
+      "representative_id": "f2fbdb91e263577990ffa4bc"
+    },
+    "local-219c2e9082d7": {
+      "representative_id": "2ba7bb93afcda98bfbe2019d"
+    },
+    "local-4d0f2aeafe57": {
+      "representative_id": "ad1a6ae8b79bd09f059081ac"
+    },
+    "local-05ddad4051a4": {
+      "representative_id": "385e1388bcee0a4366128330"
+    },
+    "local-0ff0747bca30": {
+      "representative_id": "c407e25ab7550132dde13c87"
+    },
+    "local-b072fe6171a5": {
+      "representative_id": "892c93bf1fdd419cb1c0c06b"
+    },
+    "local-a14419f67439": {
+      "representative_id": "786070148af7cb4985e2d15e"
+    },
+    "local-c6226b343384": {
+      "representative_id": "feb23d9b0c295fbc1d3d7c35"
+    },
+    "local-438ff30bbb3b": {
+      "representative_id": "de8f1cb625f86b9351cc2596"
+    },
+    "local-f580b4df6061": {
+      "representative_id": "5cd630e602e8ff94151ec995"
+    },
+    "local-53366ed6e7df": {
+      "representative_id": "c832a396d742344f8facd46b"
+    },
+    "local-a2bf3e22546c": {
+      "representative_id": "e184c9848c4d6790be763ea5"
+    },
+    "local-80e5723eaff0": {
+      "representative_id": "57f258cfbac0fd439d4c370d"
     }
   },
   "usage": {
