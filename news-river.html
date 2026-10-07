@@ -25,7 +25,7 @@
 <main id="page"><section id="content">
 <div id="Evrenxus-breaking"><div class="Evrenxus-breaking-label">مهم‌ترین اخبار</div><div class="Evrenxus-breaking-track" id="Evrenxus-breaking-track"><span>در حال دریافت مهم‌ترین اخبار...</span></div></div>
 <div id="Evrenxus-slider-host"></div>
-<section id="important"><div class="section-title" style="background:#d9232e;color:#fff;border-bottom:0">مهم‌ترین مطالب ${topicLabel}</div><div id="importantList" class="important-grid"><div class="loading">در حال دریافت مطالب...</div></div></section>
+<section id="important"><div class="section-title" style="background:#d9232e;color:#fff;border-bottom:0">مهم‌ترین مطالب</div><div id="importantList" class="important-grid"><div class="loading">در حال دریافت مطالب...</div></div></section>
 <div class="news-search"><input id="newsSearchInput" type="search" placeholder="جستجوی اخبار..." autocomplete="off"><button id="newsSearchButton" type="button">جستجو</button></div>
 <section id="river"><div class="section-title">جدیدترین اخبار</div><div id="list"><div class="loading">در حال دریافت مطالب...</div></div><div id="news-pagination" class="pagination-nav" style="display:none"><button type="button" id="news-prev">صفحه قبلی</button><button type="button" id="news-next">صفحه بعدی</button></div></section>
 </section><div id="sidebar-host"></div></main><footer class="Evrenxus-home-footer"><div class="footer-tags-title">برچسب‌های خبری</div><div class="news-tags-list" id="newsTags"></div><div class="footer-copy">© اورین نکسوس</div></footer>
@@ -48,7 +48,7 @@ if(input)input.addEventListener("keydown",function(e){if(e.key==="Enter")go();})
 if(tags){
  fetch("./data/news.json?v="+Date.now(),{cache:"no-store"}).then(function(r){return r.ok?r.json():null}).then(function(d){
   if(!d||!Array.isArray(d.items))return;
-  var names={economy:"اقتصادی",markets:"بازار و سرمایه‌گذاری","currency-gold":"ارز و طلا","real-estate":"مسکن",technology:"فناوری",ai:"هوش مصنوعی",health:"پزشکی و سلامت",auto:"خودرو","science-life":"علم و سبک زندگی",sports:"ورزش",war:"جنگ و درگیری"},seen={};
+  var names={economy:"اقتصادی",markets:"بازار و سرمایه‌گذاری","currency-gold":"ارز و طلا","real-estate":"مسکن",technology:"فناوری",ai:"هوش مصنوعی",health:"پزشکی و سلامت",auto:"خودرو","science-life":"علم و سبک زندگی"},seen={};
   d.items.forEach(function(x){(Array.isArray(x.topics)?x.topics:[]).forEach(function(t){if(names[t])seen[t]=true;});});
   Object.keys(names).forEach(function(t){if(seen[t]){var a=document.createElement("a");a.className="news-tag";a.href="?topic="+encodeURIComponent(t);a.textContent=names[t];tags.appendChild(a);}});
  }).catch(function(){});
