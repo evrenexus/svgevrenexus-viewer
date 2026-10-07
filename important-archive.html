@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>آرشیو مطالب مهم | Evren Nexus</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;background:#f1f2f3;color:#20272d;font-family:Vazir,Tahoma,Arial,sans-serif}
+#page{width:850px;max-width:100%;margin:auto;padding:123px 10px 25px;display:flex;gap:10px;direction:rtl}
+#content{width:610px;min-width:0}.archive{background:#fff;border:1px solid #dfe2e4}.head{padding:13px 14px;background:#d9232e;color:#fff}.head h1{font-size:16px;margin:0}.head p{font-size:9px;margin:5px 0 0;opacity:.9}.item{display:flex;gap:10px;padding:11px;border-bottom:1px solid #edf0f1;text-decoration:none;color:#343b40}.item:hover{background:#fafafa}.item img{width:125px;min-width:125px;height:78px;object-fit:cover;background:#eee}.content{min-width:0;flex:1}.title{font-size:11px;font-weight:700;line-height:1.9;color:#20272d}.summary{font-size:9.5px;line-height:1.8;color:#737a7f;margin-top:3px}.meta{font-size:8.5px;color:#969da2;margin-top:6px}.back{display:inline-block;margin-bottom:10px;background:#202c35;color:#fff;text-decoration:none;padding:7px 12px;font-size:9px}.error{padding:25px;text-align:center;color:#777;font-size:10px}
+@media(max-width:700px){#page{width:100%;padding:112px 8px 20px;display:block}#content{width:100%}.item img{width:105px;min-width:105px;height:66px}.title{font-size:10px}}
+</style></head>
+<body>
+<main id="page"><section id="content"><a class="back" href="./">بازگشت به خانه</a><div class="archive"><div class="head"><h1>آرشیو مطالب مهم</h1><p>مطالب مهم بیش از چهار عنوان اصلی صفحه اول</p></div><div id="list"><div class="error">در حال دریافت مطالب...</div></div></div></section></main>
+<script src="./Evrenexus-featured.js?v=20261007-04"></script>
+<script>
+(function(){
+"use strict";
+var q=new URLSearchParams(location.search),topic=q.get("topic")||"home",host=document.getElementById("list");
+function img(v){return typeof v==="string"&&/^https?:\/\//i.test(v)?v:""}
+function render(r){
+ var items=(r.important||[]),html="";
+ items.forEach(function(x){
+  if(!x.articleUrl)return;
+  html+='<a class="item" href="./'+x.articleUrl+'">';
+  var u=img(x.image);if(u)html+='<img src="'+u.replace(/"/g,"&quot;")+'" alt="" loading="lazy" referrerpolicy="no-referrer">';
+  html+='<div class="content"><div class="title">'+esc(x.title)+'</div>';
+  if(x.summary)html+='<div class="summary">'+esc(x.summary)+'</div>';
+  html+='<div class="meta">'+esc(x.source||"")+' • '+(x.published?new Date(x.published).toLocaleString("fa-IR",{dateStyle:"short",timeStyle:"short"}):"")+'</div></div></a>';
+ });
+ host.innerHTML=html||'<div class="error">فعلاً مطلب مهم دیگری وجود ندارد.</div>';
+}
+function esc(v){return String(v||"").replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+window.EvrenFeatured.getTopic(topic,1).then(render).catch(function(){host.innerHTML='<div class="error">دریافت آرشیو انجام نشد.</div>'});
+})();
+</script>
+<script src="./Evrenexus-header.js?v=20261007-10"></script>
+</body></html>
