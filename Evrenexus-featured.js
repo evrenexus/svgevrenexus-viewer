@@ -13,7 +13,7 @@ function blockedByPolicy(x){
  var terms=(window.EvrenxusPolicyTerms&&Array.isArray(window.EvrenxusPolicyTerms))?window.EvrenxusPolicyTerms:FALLBACK_POLICY;
  return terms.some(function(term){
    var t=normPolicy(term); if(!t)return false;
-   var esc=t.replace(/[.*+?^$|[\\]\\\\]/g,"\\\\$&");
+   var esc=t.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\var esc=t.replace(/[.*+?^$|[\\]\\\\]/g,"\\\\$&");");
    try{return new RegExp("(?<![\\\\p{L}\\\\p{N}])"+esc+"(?![\\\\p{L}\\\\p{N}])","u").test(text)}catch(e){return text.indexOf(t)!==-1;}
  });
 }
