@@ -34,7 +34,7 @@ function getTopic(topic,page){
    return buildClientFallback(key,Math.max(1,parseInt(page,10)||1),"");
   }
   var per=(doc.config&&doc.config.regularPerPage)||16,p=Math.max(1,parseInt(page,10)||1),start=(p-1)*per;
-  var ff=filterItems(t.featured), rr=filterItems(t.regular); return{ok:true,featured:ff,regular:rr.slice(start,start+per),page:p,hasPrev:p>1,hasNext:start+per<rr.length};
+  var ff=filterItems(t.featured), rr=filterItems(t.regular); var imp=filterItems(t.important||[]); return{ok:true,featured:ff,important:imp,regular:rr.slice(start,start+per),page:p,hasPrev:p>1,hasNext:start+per<rr.length};
  },function(e){
   return buildClientFallback(key,Math.max(1,parseInt(page,10)||1),"").catch(function(){return empty(String(e&&e.message||e))});
  });
