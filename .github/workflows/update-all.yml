@@ -55,7 +55,7 @@ jobs:
   deploy:
     name: Build and deploy
     needs: [update-data, ai-analysis]
-    if: ${{ always() && needs.update-data.result == "success" }}
+    if: ${{ always() && needs.update-data.result == 'success' }}
     runs-on: ubuntu-latest
     environment:
       name: github-pages
