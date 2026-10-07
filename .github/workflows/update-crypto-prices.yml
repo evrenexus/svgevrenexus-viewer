@@ -1,0 +1,45 @@
+name: Evren Nexus — Update crypto prices
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "market-data/fetch-nobitex.js"
+      - "crypto-prices.html"
+      - ".github/workflows/update-crypto-prices.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: crypto-prices
+  cancel-in-progress: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install market-data dependency
+        run: npm install --no-save cheerio@1.0.0-rc.12
+      - name: Fetch Nobitex prices
+        run: node market-data/fetch-nobitex.js
+      - name: Commit changed price data
+        run: |
+          git config user.name "evrenexus-crypto-price-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add market-data/nobitex.json
+          if git diff --cached --quiet; then
+            echo "No crypto price changes."
+            exit 0
+          fi
+          git commit -m "Update cryptocurrency prices"
+          git push origin HEAD:main
