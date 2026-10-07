@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import * as C from "./featured-config.mjs";
 import{ROOT,loadAll,linkAll,isBlocked,imageOf,imageUsable,pinned,ts,inTopic,scoreFor,loadArticleResolver}from "./featured-lib.mjs";
-import{outOfScope}from "./content-policy.mjs";
+import{outOfScope}from "./content-policy.mjs";\nimport{generateImportantPages}from "./build-important-pages.mjs";
 const data=loadAll();const Article=loadArticleResolver();if(data.editorialError)console.warn("WARNING editorial.json ignored: "+data.editorialError);
 const{rows,scheme,linked}=linkAll(data);console.log("link scheme: "+scheme+" | linked "+linked+"/"+rows.length+" news to news-ai");
 const clip=(s,n)=>{s=String(s??"").trim();return s.length>n?s.slice(0,n-1)+"…":s};
@@ -13,4 +13,4 @@ function pickRegular(topic,featured){const fg=new Set(featured.map(r=>r.group)),
 const doc={version:2,generated:new Date().toISOString(),linkScheme:scheme,config:{featuredCount:C.FEATURED_COUNT,regularPerPage:C.REGULAR_PER_PAGE},topics:{}};
 for(const topic of[C.HOME,...C.TOPICS]){const{picked,poolSize}=pickFeatured(topic),regular=pickRegular(topic,picked);const important=rows.filter(r=>inTopic(r,topic)&&!isBlocked(r)&&r.ai?.publishable!==false&&r.ed?.auto_publishable!==false&&r.article&&r.article.status==="published"&&imageOf(r)&&C.articleUrl(r.article)&&r.ed?.auto_important===true&&Article.featuredReady(r.article,{imageUsable,outOfScope}).ok).sort((a,b)=>ts(b)-ts(a));doc.topics[topic]={featured:picked.map(r=>compact(r,topic)),important:important.map(r=>compact(r,topic)),regular:regular.map(r=>compact(r,topic)),stats:{eligibleFeaturedPool:poolSize,featured:picked.length,important:important.length,regular:regular.length}}}
 const seen=new Set(rows.flatMap(r=>Array.isArray(r.n.topics)?r.n.topics:[])),missing=C.TOPICS.filter(t=>!seen.has(t)),unknown=[...seen].filter(t=>!C.TOPICS.includes(t));if(missing.length)console.warn("WARNING configured topics with no news: "+missing.join(", "));if(unknown.length)console.warn("WARNING topics not in config: "+unknown.join(", "));
-const out=path.join(ROOT,"data/public/featured.json");fs.mkdirSync(path.dirname(out),{recursive:true});fs.writeFileSync(out,JSON.stringify(doc)+"\n");console.log("wrote "+path.relative(ROOT,out)+" ("+fs.statSync(out).size+" bytes)");
+const out=path.join(ROOT,"data/public/featured.json");fs.mkdirSync(path.dirname(out),{recursive:true});fs.writeFileSync(out,JSON.stringify(doc)+"\n");generateImportantPages(rows);console.log("wrote "+path.relative(ROOT,out)+" ("+fs.statSync(out).size+" bytes)");
