@@ -110,7 +110,6 @@ function buildClientFallback(topic,page,q){
   var filtered=topic&&topic!=="home"?rows.filter(function(x){return x.topics.indexOf(topic)!==-1}):rows.slice();
   filtered.sort(function(a,b){return (Number(b.important)-Number(a.important))||(b.score-a.score)||(new Date(b.published)-new Date(a.published));});
   var featured=filtered.filter(function(x){return x.important}).slice(0,4);
-  if(featured.length<4)featured=filtered.slice(0,4);
   var used={};featured.forEach(function(x){used[x.id]=true});
   var regular=filtered.filter(function(x){return !used[x.id]}).slice((Math.max(1,page)-1)*16,Math.max(1,page)*16);
   return {ok:true,featured:featured,regular:regular,page:Math.max(1,page),hasPrev:page>1,hasNext:Math.max(1,page)*16<filtered.length};
