@@ -13,7 +13,8 @@ function blockedByPolicy(x){
  var terms=(window.EvrenxusPolicyTerms&&Array.isArray(window.EvrenxusPolicyTerms))?window.EvrenxusPolicyTerms:FALLBACK_POLICY;
  return terms.some(function(term){
    var t=normPolicy(term); if(!t)return false;
-   try{return new RegExp("(?<![\\p{L}\\p{N}])"+t.replace(/[.*+?^$|[\\]\\]/g,"\\function empty(reason){return{ok:false,reason:reason,featured:[],regular:[],page:1,hasPrev:false,hasNext:false};}")+"(?![\\p{L}\\p{N}])","u").test(text)}catch(e){return text.indexOf(t)!==-1;}
+   var esc=t.replace(/[.*+?^$|[\\]\\\\]/g,"\\\\$&");
+   try{return new RegExp("(?<![\\\\p{L}\\\\p{N}])"+esc+"(?![\\\\p{L}\\\\p{N}])","u").test(text)}catch(e){return text.indexOf(t)!==-1;}
  });
 }
 function filterItems(items){return (Array.isArray(items)?items:[]).filter(function(x){return !blockedByPolicy(x);});}
