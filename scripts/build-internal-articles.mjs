@@ -34,6 +34,9 @@ const editorialItems=editorialRaw?.items&&typeof editorialRaw.items==="object"&&
 const articleItems=articlesRaw?.items&&typeof articlesRaw.items==="object"&&!Array.isArray(articlesRaw.items)?articlesRaw.items:{};
 
 const sha256=s=>crypto.createHash("sha256").update(String(s)).digest("hex");
+const aiSchemes=[n=>String(n.id||""),n=>sha256(n.id||""),n=>sha256(n.url||"")];
+const aiKeyFor=new Map();
+for(const key of Object.keys(aiItems)) aiKeyFor.set(key,key);
 const articleIdFor=n=>"article-"+sha256(n.id).slice(0,16);
 const isUrl=v=>typeof v==="string"&&/^https?:\/\//i.test(v.trim());
 const stripHtml=(value)=>{
@@ -73,7 +76,7 @@ for(const n of news){
   if(clean.length<300){skippedNoContent++;continue;}
   if(!isUrl(n.image)){skippedNoImage++;continue;}
 
-  const ai=aiItems[n.id]||{};
+  const aiKey=linkedAiKey(n), ai=aiKey?aiItems[aiKey]:{};
   const group=String(ai.group_id||n.group_id||"");
   if(group && existingByGroup.has(group)){skippedExisting++;continue;}
 
