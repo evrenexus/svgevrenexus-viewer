@@ -104,9 +104,12 @@ return false;
 function renderCars(data){
   if(!car)return;
   var all=[];
-  (data.groups||[]).forEach(function(g){
-    (g.cars||[]).slice(0,7).forEach(function(x){all.push({group:g.name,name:x.name,market:x.market,change:x.change});});
-  });
+  var used={};
+  var preferred=[["راناپلاس","راناپلاس"],["پژو 207 معمولی","پژو 207 دنده‌ای (هیدرولیک)"],["تارا","تارا دستی V1"],["دنا","دنا پلاس MT6"],["شاهین","شاهین GL"],["ساینا","ساینا S"],["سهند","سهند S"],["کوییک","کوییک S"]];
+  var popular=["جک J4","کی‌ام‌سی X5","آریزو 5","فونیکس FX","فیدلیتی الیت (7 نفره)","مزدا3","لاماری ایما","چانگان CS35 (مونتاژ)"];
+  function findCar(name){var found=null;(data.groups||[]).some(function(g){return (g.cars||[]).some(function(x){if(x.name===name){found={group:g.name,name:x.name,market:x.market,change:x.change};return true;}return false;});});return found;}
+  preferred.forEach(function(p){var x=findCar(p[1]);if(x){x.name=p[0];all.push(x);used[p[1]]=true;}});
+  popular.forEach(function(name){var x=findCar(name);if(x&&!used[name]){all.push(x);used[name]=true;}});
   function carItem(x){
     var html='<span class="symbol">'+x.name+'</span><span class="price">'+(x.market||'-')+' تومان</span>'+(x.change?'<span class="Evrenxus-ticker-update">'+x.change+'</span>':'');
     return '<a class="Evrenxus-ticker-item" href="https://evrenexus.github.io/svgevrenexus-viewer/car-prices.html" target="_top">'+html+'</a>';
