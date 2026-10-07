@@ -6,7 +6,7 @@ import * as C from "./featured-config.mjs";
 export const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"..");
 export const isObj=v=>v&&typeof v==="object"&&!Array.isArray(v);
 export const isUrl=v=>typeof v==="string"&&/^https?:\/\//i.test(v.trim());
-export const sha256=s=>createHash("sha256").update(String(s)).digest("hex");
+export const sha256=s=>createHash("sha256").update(String(s)).digest("hex").slice(0,24);
 export function readJson(rel,required=true){const p=path.join(ROOT,rel);if(!fs.existsSync(p)){if(required)throw Error(rel+": missing");return null}try{return JSON.parse(fs.readFileSync(p,"utf8"))}catch(e){throw Error(rel+": invalid JSON ("+e.message+")")}}
 export function entries(d){if(Array.isArray(d))return d.filter(isObj);if(!isObj(d))return[];for(const k of["items","articles"]){const v=d[k];if(Array.isArray(v))return v.filter(isObj);if(isObj(v))return Object.entries(v).map(([k,x])=>({__key:k,...x}))}return Object.entries(d).filter(([,x])=>isObj(x)).map(([k,x])=>({__key:k,...x}))}
 export const gid=o=>{const v=o?.group_id??o?.groupId??o?.group;return v==null||v===""?null:String(v)};
