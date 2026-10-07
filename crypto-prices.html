@@ -24,7 +24,7 @@ th{background:#f6f7f8;color:#596168;font-weight:700}
 th,td{padding:8px 9px;border-bottom:1px solid #edf0f1;text-align:right}
 td.num{text-align:left;direction:ltr;font-variant-numeric:tabular-nums}
 tr:hover td{background:#fafafa}
-.change-up{color:#16844a}.change-down{color:#c62828}
+.change-up{color:#16844a}.change-down{color:#c62828}.crypto-row{cursor:pointer}.crypto-row:hover td{background:#f4f7f9}
 .note{font-size:8.5px;color:#737a7f;line-height:1.9;padding:11px 13px;background:#fafafa}
 .status{padding:25px;text-align:center;color:#777;font-size:10px}
 @media(max-width:700px){#page{width:100%;padding:112px 8px 20px}.head h1{font-size:16px}.tools{flex-wrap:wrap}table{font-size:8.5px}th,td{padding:7px 6px}}
@@ -44,7 +44,7 @@ tr:hover td{background:#fafafa}
 <div id="prices" class="card"><div class="status">در حال دریافت قیمت‌ها...</div></div>
 <div class="card note">قیمت تومانی مستقیماً از داده بازار نوبیتکس دریافت می‌شود. قیمت تتر نیز به‌صورت مستقل در ستون «قیمت تتر» نمایش داده می‌شود. داده‌ها حداکثر هر ۵ دقیقه به‌روزرسانی می‌شوند.</div>
 </main>
-<script src="./Evrenexus-header.js?v=20261007-08"></script>
+<script src="./Evrenexus-header.js?v=20261007-09"></script>
 <script>
 (function(){
 "use strict";
@@ -53,6 +53,7 @@ var prices=document.getElementById("prices"),search=document.getElementById("sea
 function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
 function num(v){return v==null?null:Number(v)}
 function money(v){return v==null?"-":new Intl.NumberFormat("fa-IR",{maximumFractionDigits:2}).format(v)}
+function tvSymbol(x){return ({BTC:"BINANCE:BTCUSDT",ETH:"BINANCE:ETHUSDT",LTC:"BINANCE:LTCUSDT",USDT:"BINANCE:USDTUSD",XRP:"BINANCE:XRPUSDT",BNB:"BINANCE:BNBUSDT",DOGE:"BINANCE:DOGEUSDT",TRX:"BINANCE:TRXUSDT",ADA:"BINANCE:ADAUSDT",SOL:"BINANCE:SOLUSDT"})[x.symbol]||""}
 function render(){
  var q=(search.value||"").trim().toLocaleLowerCase();
  var rows=items.filter(function(x){return !q||String(x.name||"").toLocaleLowerCase().indexOf(q)!==-1||String(x.symbol||"").toLocaleLowerCase().indexOf(q)!==-1});
@@ -61,7 +62,7 @@ function render(){
  rows.forEach(function(x){
    var ch=num(x.changePercent24h),cls=ch>0?"change-up":ch<0?"change-down":"",arrow=ch>0?"▲":ch<0?"▼":"";
    var toman=x.priceIRT==null?null:x.priceIRT;
-   html+='<tr><td>'+esc(x.name)+'</td><td class="num">'+esc(x.symbol)+'</td><td class="num">'+money(toman)+' تومان</td><td class="num">'+money(x.priceUSDT)+' USDT</td><td class="'+cls+'">'+arrow+(ch!=null?money(ch)+"%":"-")+'</td></tr>';
+   var tv=tvSymbol(x);var link=tv?"./market-chart.html?symbol="+encodeURIComponent(tv)+"&name="+encodeURIComponent(x.name||""):"";html+='<tr class="crypto-row" data-link="'+esc(link)+'" onclick="if(this.dataset.link)location.href=this.dataset.link"><td>'+esc(x.name)+'</td><td class="num">'+esc(x.symbol)+'</td><td class="num">'+money(toman)+' تومان</td><td class="num">'+money(x.priceUSDT)+' USDT</td><td class="'+cls+'">'+arrow+(ch!=null?money(ch)+"%":"-")+'</td></tr>';
  });
  html+='</tbody></table></section>';
  prices.innerHTML=html;
