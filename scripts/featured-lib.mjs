@@ -63,35 +63,20 @@ export function linkAll({news,aiItems,articles,editorial}){
   rows.push({n,ai,ed:editorial.get(String(n.id))??null,group:g??"id:"+n.id,article,activeNews:true});
   activeIds.add(String(n.id));
  }
- // Permanent generated articles survive the rolling news window and can remain Featured.
- // They are added only for Featured selection; regular news still comes only from news.json.
  for(const a of articles){
   if(a?.status!=="published"||!a.original_news_id||activeIds.has(String(a.original_news_id)))continue;
-  const n={
-   id:String(a.original_news_id),title:a.title||"",summary:a.summary||"",content:a.content||"",
-   image:a.image||"",source:a.sources?.[0]?.name||"",url:a.sources?.[0]?.url||"",
-   published:a.published_at||a.created_at||"",topics:Array.isArray(a.topics)?a.topics:[],
-   importance_score:Number(a.importance_score)||0
-  };
+  const n={id:String(a.original_news_id),title:a.title||"",summary:a.summary||"",content:a.content||"",image:a.image||"",source:a.sources?.[0]?.name||"",url:a.sources?.[0]?.url||"",published:a.published_at||a.created_at||"",topics:Array.isArray(a.topics)?a.topics:[],importance_score:Number(a.importance_score)||0};
   rows.push({n,ai:null,ed:null,group:gid(a)??"article:"+a.id,article:a,activeNews:false});
  }
  return{rows,scheme:best.name,linked:best.matched};
 }
 let HEALTH;
 function imageHealth(){
- if(HEALTH===undefined){
-  try{const d=readJson("data/public/image-health.json",false);HEALTH=d?.items?new Map(Object.entries(d.items)):null}
-  catch{HEALTH=null}
- }
+ if(HEALTH===undefined){try{const d=readJson("data/public/image-health.json",false);HEALTH=d?.items?new Map(Object.entries(d.items)):null}catch{HEALTH=null}}
  return HEALTH;
 }
 const httpsOnly=process.env.IMAGE_CHECK_ALLOW_HTTP!=="1";
-export const imageUsable=(u)=>{
- if(!isUrl(u))return false;
- if(httpsOnly&&!/^https:/i.test(u.trim()))return false;
- const h=imageHealth();
- return h?h.get(u.trim())?.ok===true:true;
-};
+export const imageUsable=u=>{if(!isUrl(u))return false;if(httpsOnly&&!/^https:/i.test(u.trim()))return false;const h=imageHealth();return h?h.get(u.trim())?.ok===true:true};
 export const imageOf=r=>[r.article?.image,r.ed?.image,r.n.image].find(imageUsable)??"";
 export const isBlocked=r=>r.ai?.publishable===false||r.ed?.deleted===true||r.ed?.hidden===true||outOfScope(r.n)!==null;
 export function loadArticleResolver(){
@@ -100,7 +85,7 @@ export function loadArticleResolver(){
  new Function("module","exports",src)(mod,mod.exports);
  return mod.exports;
 }
-export const pinned=r=>r.ed?.important===true||r.ed?.featured===true;
+export const pinned=r=>r.ed?.important===true||r.ed?.featured===true||r.ed?.auto_important===true||r.ed?.auto_slider===true;
 export const ts=r=>Date.parse(r.n.published||r.article?.published_at||r.article?.created_at)||0;
 export const inTopic=(r,topic)=>topic===C.HOME||(Array.isArray(r.n.topics)&&r.n.topics.includes(topic));
 const num=v=>typeof v==="number"&&Number.isFinite(v)?v:null;
