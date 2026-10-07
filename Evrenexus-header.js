@@ -111,7 +111,15 @@ function renderCars(data){
   preferred.forEach(function(p){var x=findCar(p[1]);if(x){x.name=p[0];all.push(x);used[p[1]]=true;}});
   popular.forEach(function(name){var x=findCar(name);if(x&&!used[name]){all.push(x);used[name]=true;}});
   function carItem(x){
-    var ch=String(x.change||"").trim(), num=parseFloat(ch.replace(/,/g,"").replace(/٪/g,"%").replace("%","")), cls=num>0?"Evrenxus-up":num<0?"Evrenxus-down":"", arrow=num>0?"▲":num<0?"▼":"", pct=ch.match(/[+-]?[0-9]+(?:[.,][0-9]+)?\s*%|[+-]?[0-9]+(?:[.,][0-9]+)?\s*٪/); var shown=pct?(arrow+" ("+pct[0]+")"):""; var html='<span class="symbol">'+x.name+'</span><span class="price">'+(x.market||'-')+' تومان</span>'+(shown?'<span class="'+cls+'">'+shown+'</span>':'');
+    var raw=String(x.change||"").trim();
+    var pctMatch=raw.match(/\\(.*?([+-]?[۰-۹0-9]+(?:[.,][۰-۹0-9]+)?)\\s*[%٪].*?\\)/);
+    var pct=pctMatch?pctMatch[1]:"";
+    var ascii=pct.replace(/[۰-۹]/g,function(d){return"۰۱۲۳۴۵۶۷۸۹".indexOf(d)}).replace(",",".");
+    var num=parseFloat(ascii);
+    var cls=num>0?"Evrenxus-up":num<0?"Evrenxus-down":"";
+    var arrow=num>0?"▲":num<0?"▼":"";
+    var shown=pct?(arrow+" ("+pct+"%)"):"";
+    var html='<span class="symbol">'+x.name+'</span><span class="price">'+(x.market||'-')+' تومان</span>'+(shown?'<span class="'+cls+'">'+shown+'</span>':'');
     return '<a class="Evrenxus-ticker-item" href="https://evrenexus.github.io/svgevrenexus-viewer/car-prices.html" target="_top">'+html+'</a>';
   }
   var update='';
