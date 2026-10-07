@@ -1,6 +1,7 @@
 // Evrenexus-article-resolver.js — ONE definition of article readiness.
 (function (root) {
   var MIN_CONTENT = 300;
+  function contentText(s) { return String(s || "").replace(/<[^>]*>/g, " ").replace(/&nbsp;/gi, " ").replace(/\s+/g, " ").trim(); }
   function isHttp(u) { return typeof u === "string" && /^https?:\/\//i.test(u.trim()); }
   function nonEmpty(s) { return typeof s === "string" && s.trim().length > 0; }
   function pageCanRender(a) { return !!(a && a.status === "published" && a.content); }
@@ -12,8 +13,7 @@
     if (!nonEmpty(a.title)) p.push("title missing");
     if (!nonEmpty(a.summary)) p.push("summary missing");
     if (typeof a.content === "string") {
-      if (a.content.trim().length < MIN_CONTENT) p.push("content shorter than " + MIN_CONTENT);
-      if (/<\/?[a-z][^>]*>/i.test(a.content)) p.push("content contains HTML tags");
+      if (contentText(a.content).length < MIN_CONTENT) p.push("content shorter than " + MIN_CONTENT);
     }
     var s = a.sources && a.sources[0];
     if (!s || !nonEmpty(s.name)) p.push("sources[0].name missing");
