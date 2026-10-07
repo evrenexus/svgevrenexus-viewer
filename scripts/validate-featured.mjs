@@ -1,7 +1,10 @@
 import fs from "node:fs";
 import * as C from "./featured-config.mjs";
-import {readJson,loadAll,linkAll,isBlocked,isUrl,inTopic} from "./featured-lib.mjs";
+import {readJson,loadAll,linkAll,isBlocked,imageUsable,inTopic,loadArticleResolver} from "./featured-lib.mjs";
+import {outOfScope} from "./content-policy.mjs";
 
+const Article=loadArticleResolver();
+const articlesDoc=readJson("data/articles.json",true);
 const errors=[],warnings=[];
 const err=m=>errors.push(m),warn=m=>warnings.push(m);
 
@@ -52,9 +55,11 @@ for(const topic of[C.HOME,...C.TOPICS]){
   if(!r){err("["+topic+"] featured "+f.id+" missing from news/articles");row.other++;continue}
   if(fIds.has(String(f.id))||fGroups.has(r.group)){err("["+topic+"] duplicate featured "+f.id);row.dupFeatured++}
   fIds.add(String(f.id));fGroups.add(r.group);
-  if(!isUrl(f.image))err("["+topic+"] featured "+f.id+" has no valid image"),row.noImage++;
-  if(!r.article||r.article.status!=="published"||!f.articleId||!f.articleUrl)err("["+topic+"] featured "+f.id+" has no published permanent article"),row.noArticle++;
-  else if(/viewer\.html/i.test(f.articleUrl)||f.articleUrl!==C.articleUrl(r.article))err("["+topic+"] featured "+f.id+" bad article link"),row.badLink++;
+  if(!imageUsable(f.image)){err("["+topic+"] featured "+f.id+" has no usable image");row.noImage++;}
+  const art=Article.find(articlesDoc,f.articleId);
+  const res=Article.featuredReady(art,{imageUsable,outOfScope});
+  if(!res.ok){err("["+topic+"] featured "+f.id+" article "+f.articleId+": "+res.problems.join("; "));row.noArticle++;}
+  else if(/viewer\.html/i.test(f.articleUrl)){err("["+topic+"] featured "+f.id+" links to the reader");row.badLink++;}
   if(isBlocked(r))err("["+topic+"] featured "+f.id+" is blocked/unpublishable");
   if(!inTopic(r,topic))err("["+topic+"] featured "+f.id+" is not in topic");
  }
