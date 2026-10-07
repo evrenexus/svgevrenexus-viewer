@@ -35,7 +35,7 @@ const editorialItems=editorialRaw?.items&&typeof editorialRaw.items==="object"&&
 const articleItems=articlesRaw?.items&&typeof articlesRaw.items==="object"&&!Array.isArray(articlesRaw.items)?articlesRaw.items:{};
 
 const sha256=s=>crypto.createHash("sha256").update(String(s)).digest("hex");
-const aiSchemes=[n=>String(n.id||""),n=>sha256(n.id||""),n=>sha256(n.url||"")];
+const aiSchemes=[n=>String(n.id||""),n=>sha256(n.id||"").slice(0,24),n=>sha256(n.url||"").slice(0,24)];
 const aiKeyFor=new Map();
 for(const key of Object.keys(aiItems)) aiKeyFor.set(key,key);
 const articleIdFor=n=>"article-"+sha256(n.id).slice(0,16);
