@@ -1,27 +1,45 @@
 /* Evren Nexus — shared featured loader and safe page rendering */
 (function(){
 "use strict";
-var URL_="data/public/featured.json",pending=null;
+var URL_="data/public/featured.json",pending=null,policyPending=null;
 function load(){
  if(!pending)pending=fetch(URL_+"?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("featured.json HTTP "+r.status);return r.json()}).catch(function(e){pending=null;throw e});
  return pending;
 }
+var FALLBACK_POLICY=["جنگ","جنگی","نظامی","نظامیان","ارتش","سپاه","موشک","موشکی","پهپاد","بمباران","جنگنده","حمله نظامی","حمله موشکی","حمله هوایی","تسلیحات","سلاح","رزمایش","آتش بس","نیروهای مسلح","غزه","حماس","حزب الله","حوثی","شهید","شهادت","رهبر انقلاب","رهبری","انتخابات","نماینده مجلس","مجلس شورای اسلامی","ترامپ","بایدن","نتانیاهو","پوتین"];
+function normPolicy(s){return String(s||"").replace(/[\u200c\u200d\u200e\u200f]/g," ").replace(/\u064a/g,"\u06cc").replace(/\u0643/g,"\u06a9").replace(/[\u064b-\u065f\u0670]/g,"").replace(/\s+/g," ").trim().toLowerCase();}
+function blockedByPolicy(x){
+ var text=normPolicy((x&&x.title||"")+" "+(x&&x.summary||""));
+ var terms=(window.EvrenxusPolicyTerms&&Array.isArray(window.EvrenxusPolicyTerms))?window.EvrenxusPolicyTerms:FALLBACK_POLICY;
+ return terms.some(function(term){
+   var t=normPolicy(term); if(!t)return false;
+   try{return new RegExp("(?<![\\p{L}\\p{N}])"+t.replace(/[.*+?^$|[\\]\\]/g,"\\function empty(reason){return{ok:false,reason:reason,featured:[],regular:[],page:1,hasPrev:false,hasNext:false};}")+"(?![\\p{L}\\p{N}])","u").test(text)}catch(e){return text.indexOf(t)!==-1;}
+ });
+}
+function filterItems(items){return (Array.isArray(items)?items:[]).filter(function(x){return !blockedByPolicy(x);});}
 function empty(reason){return{ok:false,reason:reason,featured:[],regular:[],page:1,hasPrev:false,hasNext:false};}
+function loadPolicy(){
+ if(!policyPending)policyPending=fetch("data/public/policy-terms.json?v="+Date.now(),{cache:"no-store"}).then(function(r){return r.ok?r.json():null}).then(function(d){
+   if(d&&Array.isArray(d.terms))window.EvrenxusPolicyTerms=d.terms;
+   return true;
+ }).catch(function(){return true});
+ return policyPending;
+}
 function getTopic(topic,page){
  var key=topic||"home";
- return load().then(function(doc){
+ return Promise.all([load(),loadPolicy()]).then(function(parts){var doc=parts[0];
   var t=doc&&doc.topics&&doc.topics[key];
   if(!t||!Array.isArray(t.featured)||!Array.isArray(t.regular)){
    return empty("topic '"+key+"' not found in featured.json (available: "+Object.keys((doc&&doc.topics)||{}).join(", ")+")");
   }
   var per=(doc.config&&doc.config.regularPerPage)||16,p=Math.max(1,parseInt(page,10)||1),start=(p-1)*per;
-  return{ok:true,featured:t.featured,regular:t.regular.slice(start,start+per),page:p,hasPrev:p>1,hasNext:start+per<t.regular.length};
+  var ff=filterItems(t.featured), rr=filterItems(t.regular); return{ok:true,featured:ff,regular:rr.slice(start,start+per),page:p,hasPrev:p>1,hasNext:start+per<rr.length};
  },function(e){return empty(String(e&&e.message||e))});
 }
 function img(v){return typeof v==="string"&&/^https?:\/\//i.test(v.trim())?v.trim():"";}
 function renderOldWay(topic,page,q){
- return fetch("data/news.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("news.json HTTP "+r.status);return r.json()}).then(function(d){
-  var items=Array.isArray(d.items)?d.items:(Array.isArray(d)?d:[]);
+ return loadPolicy().then(function(){return fetch("data/public/news.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("public/news.json HTTP "+r.status);return r.json()}).then(function(d){
+  var items=filterItems(Array.isArray(d.items)?d.items:(Array.isArray(d)?d:[]));
   if(topic&&topic!=="home")items=items.filter(function(x){return Array.isArray(x.topics)&&x.topics.indexOf(topic)!==-1});
   if(q)items=items.filter(function(x){return((x.title||"")+" "+(x.summary||"")+" "+(x.source||"")).toLowerCase().indexOf(q)!==-1});
   var list=document.getElementById("list");if(!list)return;
@@ -36,7 +54,7 @@ function renderOldWay(topic,page,q){
   if(!list.children.length)list.innerHTML='<div class="error">فعلاً مطلبی در این بخش پیدا نشد.</div>';
   var total=Math.max(1,Math.ceil(items.length/16)),pg=document.getElementById("news-pagination"),prev=document.getElementById("news-prev"),next=document.getElementById("news-next");
   if(pg){pg.style.display=total>1?"flex":"none";if(prev){prev.disabled=page<=1;prev.onclick=function(){if(page<=1)return;var u=new URL(location.href);u.searchParams.set("page",String(page-1));location.href=u.href}}if(next){next.disabled=page>=total;next.onclick=function(){if(page>=total)return;var u=new URL(location.href);u.searchParams.set("page",String(page+1));location.href=u.href}}}
- }).catch(function(e){var list=document.getElementById("list");if(list)list.innerHTML='<div class="error">دریافت اخبار انجام نشد.</div>';console.warn("news.json fallback:",e)});
+ });}).catch(function(e){var list=document.getElementById("list");if(list)list.innerHTML='<div class="error">دریافت اخبار انجام نشد.</div>';console.warn("news.json fallback:",e)});
 }
 function render(r){
  var F=(r.featured||[]).slice(0,4),list=document.getElementById("list"),important=document.getElementById("important"),ih=document.getElementById("importantList");
