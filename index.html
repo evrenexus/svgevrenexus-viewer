@@ -50,7 +50,7 @@ if(input)input.addEventListener("keydown",function(e){if(e.key==="Enter")go();})
 if(tags){
  fetch("./data/news.json?v="+Date.now(),{cache:"no-store"}).then(function(r){return r.ok?r.json():null}).then(function(d){
   if(!d||!Array.isArray(d.items))return;
-  var names={economy:"اقتصادی",markets:"بازار و سرمایه‌گذاری","currency-gold":"ارز و طلا","real-estate":"مسکن",technology:"فناوری",ai:"هوش مصنوعی",health:"پزشکی و سلامت",auto:"خودرو","science-life":"علم و سبک زندگی",sports:"ورزش",war:"جنگ و درگیری"},seen={};
+  var names={economy:"اقتصادی",markets:"بازار و سرمایه‌گذاری","currency-gold":"ارز و طلا","real-estate":"مسکن",technology:"فناوری",ai:"هوش مصنوعی",health:"پزشکی و سلامت",auto:"خودرو","science-life":"علم و سبک زندگی"},seen={};
   d.items.forEach(function(x){(Array.isArray(x.topics)?x.topics:[]).forEach(function(t){if(names[t])seen[t]=true;});});
   Object.keys(names).forEach(function(t){if(seen[t]){var a=document.createElement("a");a.className="news-tag";a.href="./news-river.html?topic="+encodeURIComponent(t);a.textContent=names[t];tags.appendChild(a);}});
  }).catch(function(){});
