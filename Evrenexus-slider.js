@@ -43,11 +43,11 @@ var topic=new URLSearchParams(location.search).get("topic")||"home";
 function aiFor(){return{}}
 function renderFeatured(){
  return window.EvrenFeatured.getTopic(topic,1).then(function(r){
-  if(r.ok){render((r.featured||[]).slice(0,4),aiFor);return}
-  return fallbackSlider().then(function(items){render(items,aiFor)}).catch(function(e){console.error("Evrenexus-slider fallback:",e);slider.style.display="none"});
+  if(r&&r.ok){render((r.featured||[]).slice(0,4),aiFor);return}
+  slider.style.display="none";
  }).catch(function(e){
   console.warn("Evrenexus-slider featured:",e);
-  return fallbackSlider().then(function(items){render(items,aiFor)}).catch(function(){slider.style.display="none"});
+  slider.style.display="none";
  });
 }
 renderFeatured();
