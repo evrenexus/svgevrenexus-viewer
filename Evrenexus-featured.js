@@ -88,9 +88,37 @@ function render(r){
  var pg=document.getElementById("news-pagination"),prev=document.getElementById("news-prev"),next=document.getElementById("news-next");
  if(pg){pg.style.display=(r.hasPrev||r.hasNext)?"flex":"none";if(prev){prev.disabled=!r.hasPrev;prev.onclick=function(){if(!r.hasPrev)return;var u=new URL(location.href);u.searchParams.set("page",String(r.page-1));location.href=u.href}}if(next){next.disabled=!r.hasNext;next.onclick=function(){if(!r.hasNext)return;var u=new URL(location.href);u.searchParams.set("page",String(r.page+1));location.href=u.href}}}
 }
+function buildClientFallback(topic,page,q){
+ return Promise.all([
+  fetch("data/news.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("news.json HTTP "+r.status);return r.json()}),
+  fetch("data/editorial.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("editorial.json HTTP "+r.status);return r.json()}).catch(function(){return {items:{}}})
+ ]).then(function(parts){
+  var raw=parts[0], ed=parts[1]||{}, items=Array.isArray(raw)?raw:(Array.isArray(raw.items)?raw.items:[]);
+  var em=ed.items||{}, rows=[];
+  items.forEach(function(n){
+   if(!n||!n.id||blockedByPolicy(n))return;
+   var e=em[n.id]||{};
+   if(e.ai_political===true||e.auto_publishable===false)return;
+   rows.push({
+    id:n.id,title:e.title||n.title,summary:e.summary||n.summary||"",image:e.image||n.image||"",
+    source:n.source||"",published:n.published||"",url:n.url||"",
+    articleId:n.id,articleUrl:"article.html?id="+encodeURIComponent(n.id),
+    topics:Array.isArray(n.topics)?n.topics:(Array.isArray(e.ai_topics)?e.ai_topics:[]),
+    important:e.auto_important===true,score:Number(e.ai_importance)||0
+   });
+  });
+  var filtered=topic&&topic!=="home"?rows.filter(function(x){return x.topics.indexOf(topic)!==-1}):rows.slice();
+  filtered.sort(function(a,b){return (Number(b.important)-Number(a.important))||(b.score-a.score)||(new Date(b.published)-new Date(a.published));});
+  var featured=filtered.filter(function(x){return x.important}).slice(0,4);
+  if(featured.length<4)featured=filtered.slice(0,4);
+  var used={};featured.forEach(function(x){used[x.id]=true});
+  var regular=filtered.filter(function(x){return !used[x.id]}).slice((Math.max(1,page)-1)*16,Math.max(1,page)*16);
+  return {ok:true,featured:featured,regular:regular,page:Math.max(1,page),hasPrev:page>1,hasNext:Math.max(1,page)*16<filtered.length};
+ });
+}
 function renderPage(){
  var qx=new URLSearchParams(location.search),topic=qx.get("topic")||"home",page=Math.max(1,parseInt(qx.get("page"),10)||1),q=(qx.get("q")||"").trim().toLowerCase();
- getTopic(topic,page).then(function(r){if(!r.ok){console.warn("featured.json:",r.reason);return renderOldWay(topic,page,q)}render(r)}).catch(function(e){console.warn("featured.json:",e);renderOldWay(topic,page,q)});
+ getTopic(topic,page).then(function(r){if(!r.ok){console.warn("featured.json:",r.reason);return buildClientFallback(topic,page,q).then(render).catch(function(e){console.warn("client fallback:",e);return renderOldWay(topic,page,q)})}render(r)}).catch(function(e){console.warn("featured.json:",e);buildClientFallback(topic,page,q).then(render).catch(function(){renderOldWay(topic,page,q)});});
 }
 window.EvrenFeatured={load:load,getTopic:getTopic,render:renderPage};
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",renderPage,{once:true});else renderPage();
