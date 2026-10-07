@@ -18,7 +18,7 @@ var css=`
 .Evrenxus-ticker-item .symbol{color:#aeb9c1;margin-left:6px}.Evrenxus-ticker-update{color:#8e9aa3;margin-right:18px;font-size:9px;opacity:.9}.Evrenxus-ticker-item .price{color:#fff;direction:ltr}.Evrenxus-ticker-track{direction:ltr}.Evrenxus-ticker-window{direction:ltr}.Evrenxus-ticker-topic{display:inline-flex;align-items:center;height:25px;margin-right:18px;font-size:10px;color:#fff;font-weight:700;white-space:nowrap}
 .Evrenxus-up{color:#55cf8a;margin-right:5px}.Evrenxus-down{color:#ff7474;margin-right:5px}
 
-@keyframes EvrenxusTickerMove{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+@keyframes EvrenxusTickerMove{from{transform:translateX(-100%)}to{transform:translateX(100%)}}
 
 #Evrenxus-header-row2{height:30px;display:flex;align-items:center;direction:rtl;background:#fff}
 #Evrenxus-main-menu{height:30px;display:flex;align-items:stretch;justify-content:flex-start;direction:rtl;overflow:hidden;white-space:nowrap;flex:1;min-width:0}
@@ -122,7 +122,7 @@ function renderCars(data){
     var time=new Intl.DateTimeFormat("fa-IR",{timeZone:"Asia/Tehran",hour:"2-digit",minute:"2-digit",hour12:false}).format(n);
     update='<a class="Evrenxus-ticker-item" href="https://evrenexus.github.io/svgevrenexus-viewer/car-prices.html" target="_top"><span class="Evrenxus-ticker-topic">🚗 قیمت خودرو</span><span class="Evrenxus-ticker-update">آخرین به‌روزرسانی: '+time+' | '+day+'، '+parts+'</span></a>';
   } else update='<a class="Evrenxus-ticker-item" href="https://evrenexus.github.io/svgevrenexus-viewer/car-prices.html" target="_top"><span class="Evrenxus-ticker-topic">🚗 قیمت خودرو</span></a>';
-  car.innerHTML=update+all.map(carItem).join("");
+  car.innerHTML=update+all.slice().reverse().map(carItem).join("");
   startTicker(car);
 }
 function dataURL(file){
