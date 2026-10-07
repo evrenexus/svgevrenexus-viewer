@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - "data/**"
+      - "market-data/**"
   workflow_dispatch:
   workflow_run:
     workflows: ["Build public data"]
