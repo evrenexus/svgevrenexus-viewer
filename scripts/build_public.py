@@ -34,7 +34,6 @@ def clean_news(items):
             print(f"::warning::خبر نامعتبر حذف شد: {str(it)[:80] if not isinstance(it, dict) else it.get('id')}")
             continue
         if out_of_scope(it):
-            dropped += 1
             continue
         seen.add(it['id']); out.append(it)
     return out, dropped
