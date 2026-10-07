@@ -28,58 +28,94 @@
 (function(){
 "use strict";
 var id=new URLSearchParams(location.search).get("id"),host=document.getElementById("article");
-function safeUrl(v){try{var u=new URL(v,location.href);return /^https?:$/i.test(u.protocol)?u.href:""}catch(e){return ""}}
-function esc(v){return String(v||"").replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]})}
-function safeRichHtml(v){
- var box=document.createElement("div"); box.innerHTML=String(v||"");
- var allowed={P:1,BR:1,H2:1,H3:1,STRONG:1,B:1,EM:1,I:1,UL:1,OL:1,LI:1,A:1,IMG:1,BLOCKQUOTE:1};
- Array.from(box.querySelectorAll("*")).forEach(function(el){
-   if(!allowed[el.tagName]){el.replaceWith(document.createTextNode(el.textContent||""));return;}
-   Array.from(el.attributes).forEach(function(a){
-     if((el.tagName==="A"&&a.name==="href")||(el.tagName==="IMG"&&a.name==="src")||(el.tagName==="IMG"&&a.name==="alt"))return;
-     el.removeAttribute(a.name);
-   });
-   if(el.tagName==="A"){
-     try{var u=new URL(el.getAttribute("href"),location.href);if(!/^https?:$/i.test(u.protocol))el.removeAttribute("href");else{el.setAttribute("target","_blank");el.setAttribute("rel","noopener noreferrer");}}catch(e){el.removeAttribute("href");}
-   }
-   if(el.tagName==="IMG"){
-     try{var iu=new URL(el.getAttribute("src"),location.href);if(!/^https?:$/i.test(iu.protocol))el.removeAttribute("src");else el.setAttribute("loading","lazy");}catch(e){el.removeAttribute("src");}
-   }
+
+function safeUrl(v){
+ try{var u=new URL(v,location.href);return /^https?:$/i.test(u.protocol)?u.href:""}catch(e){return ""}
+}
+function esc(v){
+ return String(v||"").replace(/[&<>"']/g,function(c){
+  return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]
+ })
+}
+function plain(v){
+ return String(v||"").replace(/\r/g,"").trim();
+}
+function date(v){
+ var d=new Date(v);
+ return Number.isNaN(d.getTime())?"":d.toLocaleString("fa-IR",{dateStyle:"long",timeStyle:"short"});
+}
+function renderArticle(a){
+ if(!a||a.status!=="published"||!a.content){
+  host.innerHTML='<div class="error">این مقاله یافت نشد.</div>';
+  return;
+ }
+ document.title=(a.title||"مقاله")+" | Evren Nexus";
+ var src=a.sources&&a.sources[0]?a.sources[0]:{};
+ var sourceUrl=safeUrl(src.url);
+ var html='<h1 class="article-title">'+esc(a.title)+'</h1>';
+ html+='<div class="article-source-box">منبع اصلی: '+esc(src.name||"نامشخص");
+ if(sourceUrl) html+=' — <a href="'+esc(sourceUrl)+'" target="_blank" rel="noopener noreferrer">مشاهده خبر اصلی</a>';
+ html+='</div>';
+ if(a.ai_managed===true){
+  html+='<div class="ai-republish-warning">این مطلب در Evren Nexus با کمک هوش مصنوعی بازنشر شده است. منبع اصلی و لینک آن در همین صفحه درج شده است.</div>';
+ }else{
+  html+='<div class="ai-republish-warning">این مطلب به‌صورت بازنشر داخلی Evren Nexus و بر اساس محتوای خبر اصلی منتشر شده است. منبع اصلی و لینک آن در همین صفحه درج شده است.</div>';
+ }
+ html+='<div class="article-meta">'+esc(date(a.published_at||a.created_at))+'</div>';
+ if(a.image){
+  var im=safeUrl(a.image);
+  if(im) html+='<img class="article-image" src="'+esc(im)+'" alt="'+esc(a.title)+'" loading="eager" referrerpolicy="no-referrer">';
+ }
+ html+='<div class="article-body">';
+ plain(a.content).split(/\n\s*\n/).forEach(function(p){
+  if(p.trim()) html+='<p>'+esc(p.trim()).replace(/\n/g,"<br>")+'</p>';
  });
- return box.innerHTML.replace(/\n/g,"<br>");
+ html+='</div>';
+ html+='<div class="article-source">منبع: '+esc(src.name||"")+(sourceUrl?' — <a href="'+esc(sourceUrl)+'" target="_blank" rel="noopener noreferrer">لینک خبر اصلی</a>':"")+'</div>';
+ host.innerHTML=html;
 }
-function date(v){var d=new Date(v);return Number.isNaN(d.getTime())?"":d.toLocaleString("fa-IR",{dateStyle:"long",timeStyle:"short"})}
-function render(x,ed){
-var s=ed&&ed.items&&x?ed.items[x.id]:null;
-var selected=!!(s&&((s.published===true)||(s.republish===true))&&s.deleted!==true);
-var allowed=true;
-var edited=!!(s&&s.edited===true);
-var data=Object.assign({},x||{});
-if(edited){
- if(s.title!==undefined)data.title=s.title;
- if(s.summary!==undefined)data.summary=s.summary;
- if(s.content!==undefined)data.content=s.content;
- if(s.image!==undefined)data.image=s.image;
+function renderLegacy(x,ed){
+ var s=ed&&ed.items&&x?ed.items[x.id]:null;
+ var selected=!!(s&&((s.published===true)||(s.republish===true))&&s.deleted!==true);
+ if(!x||!selected||!x.content){
+  host.innerHTML='<div class="error">این خبر در نسخه داخلی قابل نمایش نیست.<br><br><a href="'+esc(safeUrl(x&&x.url))+'">مشاهده منبع خبر</a></div>';
+  return;
+ }
+ var data=Object.assign({},x);
+ if(s&&s.edited===true){
+  if(s.title!==undefined)data.title=s.title;
+  if(s.summary!==undefined)data.summary=s.summary;
+  if(s.content!==undefined)data.content=s.content;
+  if(s.image!==undefined)data.image=s.image;
+ }
+ document.title=(data.title||"خبر")+" | Evren Nexus";
+ var su=safeUrl(x.url);
+ var html='<h1 class="article-title">'+esc(data.title)+'</h1>';
+ html+='<div class="article-source-box">منبع خبر: '+esc(x.source||"نامشخص")+(su?' — <a href="'+esc(su)+'" target="_blank" rel="noopener noreferrer">مشاهده خبر اصلی</a>':"")+'</div>';
+ html+='<div class="ai-republish-warning">این صفحه از نسخه قدیمی انتشار داخلی خبر استفاده می‌کند.</div>';
+ html+='<div class="article-meta">'+esc(date(data.published||x.published))+'</div>';
+ if(data.image){var im=safeUrl(data.image);if(im)html+='<img class="article-image" src="'+esc(im)+'" alt="'+esc(data.title)+'" loading="eager" referrerpolicy="no-referrer">'}
+ html+='<div class="article-body">';
+ plain(data.content).split(/\n\s*\n/).forEach(function(p){if(p.trim())html+='<p>'+esc(p.trim()).replace(/\n/g,"<br>")+'</p>'});
+ html+='</div><div class="article-source">منبع: '+esc(x.source||"")+(su?' — <a href="'+esc(su)+'" target="_blank" rel="noopener noreferrer">لینک خبر اصلی</a>':"")+'</div>';
+ host.innerHTML=html;
 }
-if(!x || !selected || (!allowed && !edited) || !data.content){host.innerHTML='<div class="error">این خبر در نسخه داخلی قابل نمایش نیست.<br><br><a href="'+esc(safeUrl(x&&x.url))+'">مشاهده منبع خبر</a></div>';return}
-document.title=(data.title||"خبر")+" | Evren Nexus";
-var html='<h1 class="article-title">'+esc(data.title)+'</h1>';
-var su=safeUrl(x.url),reader=su?"./viewer.html?url="+encodeURIComponent(su):"";
-html+='<div class="article-source-box">منبع خبر: '+esc(x.source||"نامشخص")+(reader?' — <a href="'+esc(reader)+'" target="_blank" rel="noopener noreferrer">مشاهده در خبرخوان Evren Nexus</a>':"")+"</div>";
-html+='<div class="ai-republish-warning">این مطلب با کمک هوش مصنوعی از منبع اصلی بازنشر شده است. مسئولیت صحت و سقم محتوا بر عهده منبع اصلی بوده و این صفحه صرفاً بازنشرکننده آن است.</div>';
-html+='<div class="article-meta">'+esc(date(data.published||x.published))+'</div>';
-if(data.image){var im=safeUrl(data.image);if(im)html+='<img class="article-image" src="'+esc(im)+'" alt="'+esc(data.title)+'" loading="eager" referrerpolicy="no-referrer">'}
-html+='<div class="article-body">'+safeRichHtml(data.content||"")+'</div>';
-html+='<div class="article-source">منبع: '+esc(x.source||"")+"</div>";
-host.innerHTML=html;
-}
-function normalizeEditorial(j){
-  if(!j||typeof j!=="object"||Array.isArray(j))return {};
-  if(j.items!==undefined&&(!j.items||typeof j.items!=="object"||Array.isArray(j.items)))return {};
-  return j;
-}
-fetch("./data/news.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("news.json HTTP "+r.status);return r.json()}).then(function(data){return fetch("./data/editorial.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("editorial.json HTTP "+r.status);return r.json()}).catch(function(e){console.warn("Editorial data unavailable:",e);return {};}).then(function(editorial){return [data,editorial]});}).then(function(ds){var x=(ds[0].items||[]).find(function(v){return v&&v.id===id});render(x,ds[1]||{})}).catch(function(){host.innerHTML='<div class="error">دریافت خبر انجام نشد.</div>'});
+
+fetch("./data/articles.json?v="+Date.now(),{cache:"no-store"})
+.then(function(r){if(!r.ok)throw Error("articles.json HTTP "+r.status);return r.json()})
+.then(function(data){
+ var items=data&&data.items?data.items:{};
+ var article=items[id];
+ if(article){renderArticle(article);return null;}
+ return fetch("./data/news.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("news.json HTTP "+r.status);return r.json()})
+ .then(function(news){
+  var x=(news.items||[]).find(function(v){return v&&v.id===id});
+  return fetch("./data/editorial.json?v="+Date.now(),{cache:"no-store"}).then(function(r){return r.ok?r.json():{}}).catch(function(){return {}}).then(function(ed){renderLegacy(x,ed)});
+ });
+})
+.catch(function(){host.innerHTML='<div class="error">دریافت مقاله انجام نشد.</div>';});
 })();
+</script>
 </script>
 <script src="https://evrenexus.github.io/svgevrenexus-viewer/Evrenexus-header.js?v=20261005-15"></script>
 </body>
