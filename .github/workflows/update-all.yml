@@ -16,7 +16,7 @@ concurrency:
 
 jobs:
   update-data:
-    name: Update News + TGJU + Nobitex
+    name: Update News + Internal Articles + TGJU + Nobitex
     runs-on: ubuntu-latest
 
     steps:
@@ -28,6 +28,9 @@ jobs:
 
       - name: Update news
         run: python scripts/news_collector.py
+
+      - name: Build permanent internal articles
+        run: node scripts/build-internal-articles.mjs
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -48,7 +51,7 @@ jobs:
           git config user.name "evrenexus-update-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add data/news.json market-data/tgju.json market-data/nobitex.json
+          git add data/news.json data/articles.json market-data/tgju.json market-data/nobitex.json
 
           if git diff --cached --quiet; then
             echo "No data changes."
@@ -68,17 +71,17 @@ jobs:
             fi
 
             echo "Push attempt $attempt failed."
-
             git rebase --abort 2>/dev/null || true
 
             if [ "$attempt" -lt 3 ]; then
               git reset --hard origin/main
 
               python scripts/news_collector.py
+              node scripts/build-internal-articles.mjs
               node market-data/fetch-tgju.js
               node market-data/fetch-nobitex.js
 
-              git add data/news.json market-data/tgju.json market-data/nobitex.json
+              git add data/news.json data/articles.json market-data/tgju.json market-data/nobitex.json
 
               if git diff --cached --quiet; then
                 echo "No data changes after refresh."
