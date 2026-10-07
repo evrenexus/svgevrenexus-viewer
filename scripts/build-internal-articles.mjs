@@ -29,7 +29,8 @@ const editorialRaw=readJson("editorial.json",{items:{}});
 const articlesRaw=readJson("articles.json",{updated:new Date().toISOString(),schema:1,items:{}});
 
 const news=entries(newsRaw);
-const aiItems=aiRaw?.items&&typeof aiRaw.items==="object"&&!Array.isArray(aiRaw.items)?aiRaw.items:{};
+const aiItems={};
+for(const v of entries(aiRaw)){const k=String(v.__key??v.id??v.item_id??"");if(k)aiItems[k]=v;}
 const editorialItems=editorialRaw?.items&&typeof editorialRaw.items==="object"&&!Array.isArray(editorialRaw.items)?editorialRaw.items:{};
 const articleItems=articlesRaw?.items&&typeof articlesRaw.items==="object"&&!Array.isArray(articlesRaw.items)?articlesRaw.items:{};
 
