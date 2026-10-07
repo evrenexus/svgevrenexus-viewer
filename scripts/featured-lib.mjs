@@ -29,7 +29,11 @@ export function loadAll(){
  const news=entries(readJson("data/news.json",true));
  const aiRaw=readJson("data/news-ai.json",false);
  const aiItems=new Map();
- if(isObj(aiRaw)&&isObj(aiRaw.items))for(const[k,v]of Object.entries(aiRaw.items))if(isObj(v))aiItems.set(k,v);
+ for(const v of entries(aiRaw)){
+  if(!isObj(v))continue;
+  const k=String(v.__key??v.id??v.item_id??"");
+  if(k)aiItems.set(k,v);
+ }
  const articles=entries(readJson("data/articles.json",true));
  let editorial=new Map(),editorialError=null;
  try{editorial=new Map(entries(readJson("data/editorial.json",false)).map(e=>[String(e.__key),e]))}
