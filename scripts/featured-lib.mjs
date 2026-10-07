@@ -42,7 +42,7 @@ export function loadAll(){
 }
 const SCHEMES={
  "news.id":n=>String(n.id??""),
- "sha256(news.id)":n=>sha256(n.id??""),
+ "sha256(news.id)":n=>sha256(n.id??"").slice(0,24),
  "sha256(news.url)":n=>sha256(n.url??"")
 };
 export const gid=o=>{const v=o?.group_id??o?.groupId??o?.group;return v==null||v===""?null:String(v)};
