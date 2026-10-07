@@ -22,7 +22,7 @@ def split_news(raw):
 from content_policy import out_of_scope
 
 def clean_news(items):
-    out, seen, dropped = [], set(), 0
+    out, seen, dropped, policy_dropped, valid_before_policy = [], set(), 0, 0, 0
     for it in items:
         ok = (isinstance(it, dict)
               and isinstance(it.get('id'), str) and it['id']
@@ -33,10 +33,12 @@ def clean_news(items):
             dropped += 1
             print(f"::warning::خبر نامعتبر حذف شد: {str(it)[:80] if not isinstance(it, dict) else it.get('id')}")
             continue
+        valid_before_policy += 1
         if out_of_scope(it):
+            policy_dropped += 1
             continue
         seen.add(it['id']); out.append(it)
-    return out, dropped
+    return out, dropped, policy_dropped, valid_before_policy
 
 STR = ['category', 'title', 'summary', 'content', 'image', 'updated_at']
 BOOL = ['edited', 'republish', 'published', 'important', 'slider', 'deleted']
@@ -67,12 +69,12 @@ def prev_count():
 
 raw_news = load(NEWS_IN)
 key, items = split_news(raw_news)
-items, dropped_news = clean_news(items)
+items, dropped_news, policy_dropped, valid_before_policy = clean_news(items)
 
 floor = max(MIN_NEWS, prev_count() // 2)
-if len(items) < floor:
-    fail(f'خبر معتبر {len(items)} کمتر از حداقل {floor}؛ انتشار متوقف شد')
-if dropped_news > max(5, int(len(items) * 0.05)):
+if valid_before_policy < floor:
+    fail(f'خبر معتبر قبل از فیلتر سیاستی {valid_before_policy} کمتر از حداقل {floor}؛ انتشار متوقف شد')
+if dropped_news > max(5, int(valid_before_policy * 0.05)):
     fail(f'{dropped_news} خبر نامعتبر؛ انتشار متوقف شد')
 
 news_out = items if key is None else {**raw_news, key: items}
@@ -98,7 +100,7 @@ if changed:
             'dropped_news': dropped_news, 'dropped_editorial': dropped_ed}
     with open(f'{OUT}/meta.json', 'w', encoding='utf-8') as f: f.write(dump(meta))
 
-summary = (f'news={len(items)} dropped_news={dropped_news} '
+summary = (f'news={len(items)} policy_dropped={policy_dropped} dropped_news={dropped_news} '
            f'editorial={len(ed_out["items"])} dropped_editorial={dropped_ed} changed={changed}')
 print(summary)
 if os.environ.get('GITHUB_STEP_SUMMARY'):
