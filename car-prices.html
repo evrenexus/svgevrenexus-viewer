@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>قیمت روز خودرو | Evren Nexus</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#f1f2f3;color:#20272d;font-family:Vazir,Tahoma,Arial,sans-serif}
+#page{width:850px;max-width:100%;margin:0 auto;padding:123px 10px 25px}
+.card{background:#fff;border:1px solid #dfe2e4;margin-bottom:12px;overflow:hidden}
+.head{padding:13px 14px;border-top:3px solid #202c35}
+.head h1{font-size:18px;margin:0;color:#20272d}
+.head p{font-size:9px;color:#858c91;margin:5px 0 0;line-height:1.8}
+.tools{display:flex;gap:7px;padding:9px;border-top:1px solid #edf0f1}
+.tools input,.tools select{height:32px;border:1px solid #dfe2e4;background:#fff;padding:0 9px;font:10px Vazir,Tahoma,Arial}
+.tools input{flex:1;min-width:0}
+.tools select{width:150px}
+.update{font-size:8.5px;color:#858c91;padding:0 10px 9px}
+.group{margin:0 0 12px}
+.group-title{background:#202c35;color:#fff;font-size:12px;font-weight:700;padding:9px 11px}
+table{width:100%;border-collapse:collapse;font-size:9.5px}
+th{background:#f6f7f8;color:#596168;font-weight:700}
+th,td{padding:8px 9px;border-bottom:1px solid #edf0f1;text-align:right}
+td.num{text-align:left;direction:ltr;font-variant-numeric:tabular-nums}
+tr:hover td{background:#fafafa}
+.change-up{color:#16844a}.change-down{color:#c62828}
+.note{font-size:8.5px;color:#737a7f;line-height:1.9;padding:11px 13px;background:#fafafa}
+.status{padding:25px;text-align:center;color:#777;font-size:10px}
+.nav{display:flex;gap:6px;padding:9px}.nav a{font-size:9px;color:#202c35;text-decoration:none;border:1px solid #dfe2e4;padding:6px 10px;background:#fff}
+@media(max-width:700px){#page{width:100%;padding:112px 8px 20px}.head h1{font-size:16px}.tools{flex-wrap:wrap}.tools select{width:100%}table{font-size:8.5px}th,td{padding:7px 6px}}
+</style>
+</head>
+<body>
+<main id="page">
+<div class="card">
+  <div class="head">
+    <h1>قیمت روز خودرو</h1>
+    <p>قیمت بازار و کارخانه خودروهای تولید داخل، بر اساس آخرین داده دریافت‌شده از ایران جیب.</p>
+  </div>
+  <div class="nav"><a href="./">← اخبار خودرو</a><a href="https://www.iranjib.ir/showgroup/45/%D9%82%DB%8C%D9%85%D8%AA-%D8%AE%D9%88%D8%AF%D8%B1%D9%88-%D8%AA%D9%88%D9%84%DB%8C%D8%AF-%D8%AF%D8%A7%D8%AE%D9%84/" target="_blank" rel="noopener">منبع قیمت‌ها</a></div>
+  <div class="tools">
+    <input id="search" type="search" placeholder="جستجوی نام خودرو..." autocomplete="off">
+    <select id="brand"><option value="">همه شرکت‌ها</option></select>
+  </div>
+  <div id="updated" class="update">در حال دریافت قیمت‌ها...</div>
+</div>
+<div id="prices" class="card"><div class="status">در حال دریافت قیمت‌ها...</div></div>
+<div class="card note">قیمت‌های نمایش‌داده‌شده از منبع ایران جیب دریافت می‌شوند. طبق توضیح منبع، قیمت بازار پیشنهادی فروشندگان است و ممکن است با قیمت معامله متفاوت باشد. استفاده از داده‌ها با ذکر منبع و لینک مربوطه مجاز اعلام شده است.</div>
+</main>
+<script src="./Evrenexus-header.js?v=20261005-15"></script>
+<script>
+(function(){
+"use strict";
+var dataUrl="./car-data/car-prices.json?v="+Date.now();
+var prices=document.getElementById("prices"),search=document.getElementById("search"),brand=document.getElementById("brand"),updated=document.getElementById("updated");
+var state={groups:[]};
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
+function money(v){return v==null?"-":new Intl.NumberFormat("fa-IR").format(v)}
+function render(){
+ var q=(search.value||"").trim().toLocaleLowerCase(), b=brand.value;
+ var html="",count=0;
+ state.groups.forEach(function(g){
+   if(b&&g.name!==b)return;
+   var rows=g.cars.filter(function(c){return !q||c.name.toLocaleLowerCase().indexOf(q)!==-1});
+   if(!rows.length)return;
+   count+=rows.length;
+   html+='<section class="group"><div class="group-title">'+esc(g.name)+'</div><table><thead><tr><th>نام خودرو</th><th>قیمت بازار</th><th>قیمت کارخانه</th><th>تغییر</th></tr></thead><tbody>';
+   rows.forEach(function(c){
+     var cls=c.change_value>0?"change-up":c.change_value<0?"change-down":"";
+     var ch=esc(c.change||"-");
+     html+='<tr><td>'+esc(c.name)+'</td><td class="num">'+money(c.market_value)+(c.market_value!=null?" تومان":"")+'</td><td class="num">'+money(c.factory_value)+(c.factory_value!=null?" تومان":"")+'</td><td class="'+cls+'">'+ch+'</td></tr>';
+   });
+   html+='</tbody></table></section>';
+ });
+ prices.innerHTML=html||'<div class="status">خودرویی با این مشخصات پیدا نشد.</div>';
+}
+fetch(dataUrl,{cache:"no-store"}).then(function(r){if(!r.ok)throw new Error("price data unavailable");return r.json()}).then(function(d){
+ state.groups=Array.isArray(d.groups)?d.groups:[];
+ if(!state.groups.length)throw new Error("price data is empty");
+ brand.innerHTML='<option value="">همه شرکت‌ها</option>';
+ state.groups.forEach(function(g){var o=document.createElement("option");o.value=g.name;o.textContent=g.name;brand.appendChild(o)});
+ updated.textContent="آخرین دریافت: "+(d.fetched_at?new Date(d.fetched_at).toLocaleString("fa-IR-u-ca-persian",{timeZone:"Asia/Tehran"}):"-")+(d.source_updated?" | "+d.source_updated:"");
+ render();
+}).catch(function(e){prices.innerHTML='<div class="status">فعلاً اطلاعات قیمت خودرو در دسترس نیست.</div>';updated.textContent="دریافت قیمت‌ها ناموفق بود."});
+search.addEventListener("input",render);brand.addEventListener("change",render);
+})();
+</script>
+</body>
+</html>
