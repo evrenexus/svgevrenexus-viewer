@@ -5,10 +5,6 @@ on:
   push:
     branches: [main]
     paths: ['data/news.json', 'data/editorial.json']
-  workflow_run:
-    workflows: ["Evren Nexus — Update All"]
-    types: [completed]
-
 permissions:
   contents: write
 
