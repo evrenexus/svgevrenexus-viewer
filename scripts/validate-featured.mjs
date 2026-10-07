@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import * as C from "./featured-config.mjs";
-import {readJson,loadAll,linkAll,isBlocked,imageUsable,inTopic,loadArticleResolver} from "./featured-lib.mjs";
+import {readJson,loadAll,linkAll,isBlocked,imageUsable,inTopic,loadArticleResolver,isUrl} from "./featured-lib.mjs";
 import {outOfScope} from "./content-policy.mjs";
 
 const Article=loadArticleResolver();
