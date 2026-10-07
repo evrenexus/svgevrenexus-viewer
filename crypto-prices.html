@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>قیمت روز ارزهای دیجیتال | Evren Nexus</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#f1f2f3;color:#20272d;font-family:Vazir,Tahoma,Arial,sans-serif}
+#page{width:850px;max-width:100%;margin:0 auto;padding:123px 10px 25px}
+.card{background:#fff;border:1px solid #dfe2e4;margin-bottom:12px;overflow:hidden}
+.head{padding:13px 14px;border-top:3px solid #202c35}
+.head h1{font-size:18px;margin:0;color:#20272d}
+.head p{font-size:9px;color:#858c91;margin:5px 0 0;line-height:1.8}
+.nav{display:flex;gap:6px;padding:9px;border-top:1px solid #edf0f1}
+.nav a{font-size:9px;color:#202c35;text-decoration:none;border:1px solid #dfe2e4;padding:6px 10px;background:#fff}
+.tools{display:flex;gap:7px;padding:9px;border-top:1px solid #edf0f1}
+.tools input{height:32px;border:1px solid #dfe2e4;background:#fff;padding:0 9px;font:10px Vazir,Tahoma,Arial;flex:1;min-width:0}
+.update{font-size:8.5px;color:#858c91;padding:0 10px 9px}
+.group{margin:0 0 12px}
+.group-title{background:#202c35;color:#fff;font-size:12px;font-weight:700;padding:9px 11px}
+table{width:100%;border-collapse:collapse;font-size:9.5px}
+th{background:#f6f7f8;color:#596168;font-weight:700}
+th,td{padding:8px 9px;border-bottom:1px solid #edf0f1;text-align:right}
+td.num{text-align:left;direction:ltr;font-variant-numeric:tabular-nums}
+tr:hover td{background:#fafafa}
+.change-up{color:#16844a}.change-down{color:#c62828}
+.note{font-size:8.5px;color:#737a7f;line-height:1.9;padding:11px 13px;background:#fafafa}
+.status{padding:25px;text-align:center;color:#777;font-size:10px}
+@media(max-width:700px){#page{width:100%;padding:112px 8px 20px}.head h1{font-size:16px}.tools{flex-wrap:wrap}table{font-size:8.5px}th,td{padding:7px 6px}}
+</style>
+</head>
+<body>
+<main id="page">
+<div class="card">
+  <div class="head">
+    <h1>قیمت روز ارزهای دیجیتال</h1>
+    <p>قیمت ارزهای دیجیتال بر اساس تومان و تتر، با داده‌های بازار نوبیتکس.</p>
+  </div>
+  <div class="nav"><a href="./">← صفحه اصلی</a><a href="./news-river.html?topic=currency-gold">اخبار ارز و طلا</a><a href="https://nobitex.ir/price/" target="_blank" rel="noopener">منبع قیمت‌ها</a></div>
+  <div class="tools"><input id="search" type="search" placeholder="جستجوی نام ارز دیجیتال..." autocomplete="off"></div>
+  <div id="updated" class="update">در حال دریافت قیمت‌ها...</div>
+</div>
+<div id="prices" class="card"><div class="status">در حال دریافت قیمت‌ها...</div></div>
+<div class="card note">قیمت تومانی از داده بازار نوبیتکس دریافت می‌شود. قیمت تتر نیز به‌صورت مستقل در ستون «قیمت تتر» نمایش داده می‌شود. داده‌ها حداکثر هر ۵ دقیقه به‌روزرسانی می‌شوند.</div>
+</main>
+<script src="./Evrenexus-header.js?v=20261007-08"></script>
+<script>
+(function(){
+"use strict";
+var dataUrl="./market-data/nobitex.json?v="+Date.now();
+var prices=document.getElementById("prices"),search=document.getElementById("search"),updated=document.getElementById("updated"),items=[];
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
+function num(v){return v==null?null:Number(v)}
+function money(v){return v==null?"-":new Intl.NumberFormat("fa-IR",{maximumFractionDigits:2}).format(v)}
+function render(){
+ var q=(search.value||"").trim().toLocaleLowerCase();
+ var rows=items.filter(function(x){return !q||String(x.name||"").toLocaleLowerCase().indexOf(q)!==-1||String(x.symbol||"").toLocaleLowerCase().indexOf(q)!==-1});
+ if(!rows.length){prices.innerHTML='<div class="status">ارزی با این مشخصات پیدا نشد.</div>';return}
+ var html='<section class="group"><div class="group-title">ارزهای دیجیتال</div><table><thead><tr><th>ارز</th><th>نماد</th><th>قیمت تومان</th><th>قیمت تتر</th><th>تغییر ۲۴ ساعت</th></tr></thead><tbody>';
+ rows.forEach(function(x){
+   var ch=num(x.changePercent24h),cls=ch>0?"change-up":ch<0?"change-down":"",arrow=ch>0?"▲":ch<0?"▼":"";
+   var toman=x.priceIRT==null?null:x.priceIRT/10;
+   html+='<tr><td>'+esc(x.name)+'</td><td class="num">'+esc(x.symbol)+'</td><td class="num">'+money(toman)+' تومان</td><td class="num">'+money(x.priceUSDT)+' USDT</td><td class="'+cls+'">'+arrow+(ch!=null?money(ch)+"%":"-")+'</td></tr>';
+ });
+ html+='</tbody></table></section>';
+ prices.innerHTML=html;
+}
+fetch(dataUrl,{cache:"no-store"}).then(function(r){if(!r.ok)throw new Error("data unavailable");return r.json()}).then(function(d){
+ items=Array.isArray(d.markets)?d.markets:[];
+ if(!items.length)throw new Error("empty");
+ var n=d.scrapedAt?new Date(d.scrapedAt):null;
+ updated.textContent="آخرین دریافت از نوبیتکس: "+(n?n.toLocaleString("fa-IR-u-ca-persian",{timeZone:"Asia/Tehran"}):"-");
+ render();
+}).catch(function(){prices.innerHTML='<div class="status">فعلاً اطلاعات قیمت ارزهای دیجیتال در دسترس نیست.</div>';updated.textContent="دریافت قیمت‌ها ناموفق بود."});
+search.addEventListener("input",render);
+})();
+</script>
+</body>
+</html>
