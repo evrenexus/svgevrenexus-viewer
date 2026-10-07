@@ -4,6 +4,7 @@ import path from "node:path";
 import {createHash} from "node:crypto";
 import {fileURLToPath} from "node:url";
 import * as C from "./featured-config.mjs";
+import { outOfScope } from "./content-policy.mjs";
 
 export const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"..");
 export const isObj=v=>v!==null&&typeof v==="object"&&!Array.isArray(v);
@@ -76,8 +77,29 @@ export function linkAll({news,aiItems,articles,editorial}){
  }
  return{rows,scheme:best.name,linked:best.matched};
 }
-export const isBlocked=r=>r.ai?.publishable===false||r.ed?.deleted===true||r.ed?.hidden===true;
-export const imageOf=r=>[r.article?.image,r.ed?.image,r.n.image].find(isUrl)??"";
+let HEALTH;
+function imageHealth(){
+ if(HEALTH===undefined){
+  try{const d=readJson("data/public/image-health.json",false);HEALTH=d?.items?new Map(Object.entries(d.items)):null}
+  catch{HEALTH=null}
+ }
+ return HEALTH;
+}
+const httpsOnly=process.env.IMAGE_CHECK_ALLOW_HTTP!=="1";
+export const imageUsable=(u)=>{
+ if(!isUrl(u))return false;
+ if(httpsOnly&&!/^https:/i.test(u.trim()))return false;
+ const h=imageHealth();
+ return h?h.get(u.trim())?.ok===true:true;
+};
+export const imageOf=r=>[r.article?.image,r.ed?.image,r.n.image].find(imageUsable)??"";
+export const isBlocked=r=>r.ai?.publishable===false||r.ed?.deleted===true||r.ed?.hidden===true||outOfScope(r.n)!==null;
+export function loadArticleResolver(){
+ const src=fs.readFileSync(path.join(ROOT,"Evrenexus-article-resolver.js"),"utf8");
+ const mod={exports:{}};
+ new Function("module","exports",src)(mod,mod.exports);
+ return mod.exports;
+}
 export const pinned=r=>r.ed?.important===true||r.ed?.featured===true;
 export const ts=r=>Date.parse(r.n.published||r.article?.published_at||r.article?.created_at)||0;
 export const inTopic=(r,topic)=>topic===C.HOME||(Array.isArray(r.n.topics)&&r.n.topics.includes(topic));
