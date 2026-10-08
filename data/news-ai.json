@@ -1,7 +1,7 @@
 {
   "version": 1,
   "policy_version": 8,
-  "updated": "2026-10-08T05:27:25Z",
+  "updated": "2026-10-08T05:42:35Z",
   "items": {
     "56927672062ac466f3e762c5": {
       "title": "قیمت بیت‌کوین و اتریوم امروز سه‌شنبه ۱۴ مهر ۱۴۰۵",
@@ -7088,9 +7088,7 @@
       "importance": 20,
       "important": false,
       "important_topics": [],
-      "slider_topics": [
-        "economy"
-      ],
+      "slider_topics": [],
       "ticker_topics": [],
       "breaking": false,
       "breaking_topics": [],
@@ -10784,7 +10782,6 @@
       "importance": 20,
       "important": true,
       "important_topics": [
-        "economy",
         "war"
       ],
       "slider_topics": [
@@ -35129,7 +35126,6 @@
       ],
       "slider_topics": [
         "economy",
-        "currency-gold",
         "war"
       ],
       "ticker_topics": [
@@ -39129,7 +39125,7 @@
       "local_score": 9,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.2425900332795248
+      "age_hours": 3.50823809478018
     },
     "7aab3a40aba15410083381a9": {
       "title": "هفته متفاوت بورس؛ خروج پول در سه روز و ورود سنگین نقدینگی در دو روز پایانی | از فشار فروش تا فتح قله ۸ میلیون واحدی | رشد ۴.۷ درصدی شاخص کل",
@@ -39158,7 +39154,7 @@
       "local_score": 14,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.415090033279525
+      "age_hours": 3.68073809478018
     },
     "99087add858c72a96ee7fba9": {
       "title": "رگبار باران در این مناطق کشور/ کوهنوردان این هشدار ها را جدی بگیرند",
@@ -39216,7 +39212,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 2.1334233666128584
+      "age_hours": 2.3990714281135137
     },
     "046829100d149913a8be4af3": {
       "title": "آیا خوردن قند هنگام مصرف آنتی‌بیوتیک به میکروبیوم روده آسیب می‌زند؟ گزارشی از مطالعه‌ای جدید",
@@ -39245,7 +39241,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.2425900332795248
+      "age_hours": 2.50823809478018
     },
     "9747d76972fcaf7ff1105dec": {
       "title": "هشدار مهم به کوهنوردان و طبیعت‌گردان/ رگباران باران و وزش باد شدید در راه است",
@@ -39274,7 +39270,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.5256455888350806
+      "age_hours": 2.791293650335736
     },
     "25affb774bab8947a1273a5b": {
       "title": "هنوز هیچ مرجع رسمی طاعون روسیه را تایید نکرده است/ طاعون چقدر خطرناک است؟",
@@ -39303,7 +39299,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 2.8031455888350805
+      "age_hours": 3.068793650335736
     },
     "e30e1dfd993a25031e0ccca5": {
       "title": "هفته متفاوت بورس؛ خروج پول در سه روز و ورود سنگین نقدینگی در دو روز پایانی | رشد ۴.۷ درصدی شاخص کل",
@@ -39332,7 +39328,7 @@
       "local_score": 14,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.415090033279525
+      "age_hours": 3.68073809478018
     },
     "0efd40053902fefde5288443": {
       "title": "قیمت خودرو امروز پنجشنبه ۱۶ مهر ۱۴۰۵ / فرمان بازار خودرو چرخید + جدول",
@@ -39349,9 +39345,13 @@
       "important": false,
       "important_topics": [],
       "slider_topics": [],
-      "ticker_topics": [],
-      "breaking": false,
-      "breaking_topics": [],
+      "ticker_topics": [
+        "auto"
+      ],
+      "breaking": true,
+      "breaking_topics": [
+        "auto"
+      ],
       "publishable": true,
       "exclude_reason": "",
       "group_id": "local-3a4d41668b3c",
@@ -39419,7 +39419,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.7403678110573026
+      "age_hours": 2.006015872557958
     },
     "42ecbc258bd91a10e606b103": {
       "title": "اتهام جدید آمریکا علیه مادورو و همسرش",
@@ -39477,7 +39477,7 @@
       "local_score": 11,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 1.8753678110573027
+      "age_hours": 2.1410158725579578
     },
     "fdafc66d45ecb2d6360a23b0": {
       "title": "قیمت میلگرد امروز پنجشنبه ۱۶ مهر ۱۴۰۵ + جدول",
@@ -39535,7 +39535,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.242590033279525
+      "age_hours": 1.5082380947801801
     },
     "6b239699254439829851b966": {
       "title": "نوشیدن آب سرد برای همه مناسب نیست؛ این افراد احتیاط کنند",
@@ -39566,7 +39566,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.2439789221684139
+      "age_hours": 1.509626983669069
     },
     "1a34039a3ef1d70f8a4825f8": {
       "title": "۱۰ رمزارز برتر بازار ارز دیجیتال | دوج‌کوین ۸ درصد ریخت | اتریوم در ۲۵۵۹ دلار ماند",
@@ -39595,7 +39595,7 @@
       "local_score": 13,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.2489789221684138
+      "age_hours": 1.5146269836690691
     },
     "91831c3dbaf6f251d62ea46a": {
       "title": "مهران رجبی درگذشت؟/ پشت‌پرده شایعه جدید در فضای مجازی",
@@ -39624,7 +39624,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 0.8720344777239694
+      "age_hours": 1.1376825392246246
     },
     "35b922c24a45e92484e5e642": {
       "title": "داستان عجیب علیرضا بیرانوند قبل از بازی حساس تراکتور - استقلال",
@@ -39653,7 +39653,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.9084233666128583
+      "age_hours": 1.1740714281135136
     },
     "5f190055d6804ce30d8498ec": {
       "title": "درخواست وزارت صمت برای دسترسی به اطلاعات طلای مردم + متن نامه",
@@ -39682,7 +39682,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.9589789221684138
+      "age_hours": 1.224626983669069
     },
     "854473c9b85ad9f85873dac3": {
       "title": "قاتل یک تاجر بعد از 9سال به دام افتاد/ ادعای قانل: در اربیل عراق برای شنا کنار رودخانه رفتیم و شریکم در آب غرق شد",
@@ -39711,7 +39711,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.018701144390636
+      "age_hours": 1.2843492058912913
     },
     "9b5c32e9d7035d884661966e": {
       "title": "آغاز دوباره لیگ برتر؛ تماشایی مثل تقابل تراکتور - استقلال",
@@ -39748,7 +39748,7 @@
       "local_score": 9,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 1.0945344777239694,
+      "age_hours": 1.3601825392246247,
       "permanent_article": true,
       "article_id": "article-1e17e3395580e411",
       "image": "https://cdn.fararu.com/thumbnail/pZJSHBGUpo8o/NDliGYFYLe5eYn2SnE0SL5V7-mLVaRY_Ww6ih8TzQz-N3NoZo5i0ttLS4r5bIFUqnUsmYm8MMJeMtJLr26dId5H98vmQVSkD6yolSV_Q9TwG1S5neh2g6nrEwoiK8CUd/%D8%B1%D9%88%D8%B2%D8%A8%D9%87+%DA%86%D8%B4%D9%85%DB%8C+%D8%A7%D8%B3%D8%AA%D9%82%D9%84%D8%A7%D9%84+%D8%AA%D8%B1%D8%A7%DA%A9%D8%AA%D9%88%D8%B1.jpg"
@@ -39780,7 +39780,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.1009233666128582
+      "age_hours": 1.3665714281135135
     },
     "cc929a384a64f69f8306d6b8": {
       "title": "ریشه نابرابری‌های مخرب در اقتصاد ایران | کاهش نابرابری می‌تواند ناشی از فقیرتر شدن همه خانوارها باشد نه افزایش درآمد | مقایسه نابرابری در ایران و دیگر کشورها",
@@ -39809,7 +39809,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.1117566999461916
+      "age_hours": 1.3774047614468468
     },
     "84a521f2de4717bac05c4909": {
       "title": "طرح اتهام جدید علیه مادورو توسط آمریکا",
@@ -39838,7 +39838,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.267312255501747
+      "age_hours": 1.5329603170024024
     },
     "c9ee21b617d98275f39adfe2": {
       "title": "قتل تاجر فرش به دلیل اختلافات مالی/ قاتل پس از 9 سال به ایران برگشت",
@@ -39867,7 +39867,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.6009233666128583
+      "age_hours": 0.8665714281135135
     },
     "35969eb0c1b0d93b5c85b86d": {
       "title": "قیمت تیرآهن امروز پنجشنبه ۱۶ مهر 1405 + جدول",
@@ -39925,7 +39925,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.7923122555017471
+      "age_hours": 1.0579603170024023
     },
     "e495fd432fe7ab6d9728827f": {
       "title": "مهران رجبی درگذشت؟",
@@ -39954,7 +39954,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 0.8720344777239694
+      "age_hours": 1.1376825392246246
     },
     "da7085ce2bf6e8a9fbb1ccfa": {
       "title": "قیمت دلار امروز پنجشنبه 16 مهر 1405",
@@ -39965,9 +39965,9 @@
         "currency-gold"
       ],
       "topic_scores": {
-        "currency-gold": 18
+        "currency-gold": 17
       },
-      "importance": 18,
+      "importance": 17,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -39976,14 +39976,14 @@
       "breaking_topics": [],
       "publishable": true,
       "exclude_reason": "",
-      "group_id": "local-8994f56ad4aa",
-      "representative": true,
+      "group_id": "local-066a078d0ecd",
+      "representative": false,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 13,
+      "local_score": 12,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.05449094984266493
+      "age_hours": 0.6226825392246247
     },
     "f69e9febeb31cfe538e9df19": {
       "title": "قیمت دینار عراق امروز پنجشنبه 16 مهر 1405",
@@ -39994,9 +39994,9 @@
         "currency-gold"
       ],
       "topic_scores": {
-        "currency-gold": 18
+        "currency-gold": 17
       },
-      "importance": 18,
+      "importance": 17,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -40005,14 +40005,14 @@
       "breaking_topics": [],
       "publishable": true,
       "exclude_reason": "",
-      "group_id": "local-8994f56ad4aa",
-      "representative": false,
+      "group_id": "local-21323741ea6a",
+      "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 13,
+      "local_score": 12,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.05921317206488715
+      "age_hours": 0.6274047614468469
     },
     "0a2cbf3f70c70bd6f8df47f2": {
       "title": "قیمت لیر ترکیه امروز پنجشنبه 16 مهر 1405",
@@ -40023,9 +40023,9 @@
         "currency-gold"
       ],
       "topic_scores": {
-        "currency-gold": 10
+        "currency-gold": 9
       },
-      "importance": 10,
+      "importance": 9,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -40034,14 +40034,14 @@
       "breaking_topics": [],
       "publishable": true,
       "exclude_reason": "",
-      "group_id": "local-8994f56ad4aa",
+      "group_id": "local-21323741ea6a",
       "representative": false,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 10,
+      "local_score": 9,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.05921317206488715
+      "age_hours": 0.6274047614468469
     },
     "a2962beb2673a336486123c7": {
       "title": "قیمت طلا امروز پنجشنبه 16 مهر 1405",
@@ -40052,9 +40052,9 @@
         "currency-gold"
       ],
       "topic_scores": {
-        "currency-gold": 18
+        "currency-gold": 17
       },
-      "importance": 18,
+      "importance": 17,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -40063,14 +40063,14 @@
       "breaking_topics": [],
       "publishable": true,
       "exclude_reason": "",
-      "group_id": "local-8994f56ad4aa",
+      "group_id": "local-21323741ea6a",
       "representative": false,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 13,
+      "local_score": 12,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.06337983873155383
+      "age_hours": 0.6315714281135135
     },
     "0afd0689eef15ef2eedbce04": {
       "title": "واکنش کریستیانو رونالدو به خداحافظی لیونل مسی",
@@ -40099,7 +40099,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.4228678110573027
+      "age_hours": 0.688515872557958
     },
     "a24911e7846d41881c9c033d": {
       "title": "ویدئو؛ پروازهای بین‌المللی به ایران بازگشت",
@@ -40128,7 +40128,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.4625900332795249
+      "age_hours": 0.7282380947801802
     },
     "88e714ee63d16cd0e28caef7": {
       "title": "نخستین رقیب اینفانتینو برای ریاست فیفا",
@@ -40157,7 +40157,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.46564558883508045
+      "age_hours": 0.7312936503357358
     },
     "3c16444066bf89cc7e4579cd": {
       "title": "قیمت سکه، نیم‌سکه و ربع‌سکه امروز پنجشنبه ۱۶ مهر ۱۴۰۵/ کاهش قیمت سکه",
@@ -40168,9 +40168,9 @@
         "currency-gold"
       ],
       "topic_scores": {
-        "currency-gold": 17
+        "currency-gold": 16
       },
-      "importance": 17,
+      "importance": 16,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -40179,14 +40179,14 @@
       "breaking_topics": [],
       "publishable": true,
       "exclude_reason": "",
-      "group_id": "local-8994f56ad4aa",
+      "group_id": "local-066a078d0ecd",
       "representative": false,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 12,
+      "local_score": 11,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.4247687276204427
+      "age_hours": 0.9929603170024024
     },
     "7a5b3366bfdc196521877095": {
       "title": "سرمایه‌گذاری در حلقه‌های مزیت‌دار فارس؛ از ظرفیت اقتصادی تا پروژه‌های قابل اجرا",
@@ -40217,7 +40217,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.14425669994619159
+      "age_hours": 0.40990476144684684
     },
     "8d502408e7bb12b06467920a": {
       "title": "اگر دهانتان بوی میوه می‌دهد، این هشدار را جدی بگیرید",
@@ -40246,7 +40246,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.17731225550174712
+      "age_hours": 0.4429603170024024
     },
     "94da01954c3051ee5191a75d": {
       "title": "قیمت گوشت قرمز امروز پنجشنبه ۱۶ مهر ۱۴۰۵ + جدول",
@@ -40304,7 +40304,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.2425900332795249
+      "age_hours": 0.5082380947801802
     },
     "f25c5174703035a9e6b74d8f": {
       "title": "قیمت تولوئن در بورس",
@@ -40335,7 +40335,7 @@
       "local_score": 13,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.26036781105730267
+      "age_hours": 0.526015872557958
     },
     "3cfc88e1042d2e555a46afc2": {
       "title": "قیمت آپارتمان در گران‌ترین مناطق تهران",
@@ -40364,7 +40364,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.28175669994619157
+      "age_hours": 0.5474047614468469
     },
     "67462aa14e9b43eb6f9bb278": {
       "title": "واکنش سه‌قلوهای صومعه‌سرایی با رتبه‌های ۱۹، ۱۳۲ و ۱۳۳ به ادعای تقلب در کنکور/ یک بازنشسته چطور می‌خواهد هزینه بچه‌هایش را بدهد؟/ ما دوست نداشتیم این موضوع این‌قدر عمومی و بزرگ شود",
@@ -40393,7 +40393,253 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.4998122555017471
+      "age_hours": 0.7654603170024024
+    },
+    "917579ac2e289976baaa83a1": {
+      "title": "2 غایب قطعی پرسپولیس برابر صنعت",
+      "summary": "حسین کنعانی‌زادگان و دانیال ایری به دلیل مصدومیت، دیدار پرسپولیس مقابل صنعت نفت را از دست می‌دهند.",
+      "source": "فرارو",
+      "published": "2026-10-08T09:05:03+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 15
+      },
+      "importance": 15,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-3b3245382fba",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 10,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.1254603170024024
+    },
+    "17cc0aed2bbdf35a6fd5009b": {
+      "title": "تست ICP در آنالیز روغن دریایی: روش کار، عناصر قابل اندازه‌گیری و محدودیت‌ها",
+      "summary": "در برگهٔ گزارش آنالیز روغن شناور، ستونی از عنصرها و عددهایی بر حسب ppm دیده می‌شود: آهن، مس، سرب، سیلیسیم، سدیم و چند عنصر دیگر. این عددها خروجی یکی از کلیدی‌ترین تجهیزات آزمایشگاهی یعنی دستگاه ICP هستند. اگر مسئول فنی یا مدیر ناوگان باشید، درک اینکه این دستگاه چه پارامترهایی را با دقت رصد می‌کند و ",
+      "source": "دنیای اقتصاد",
+      "published": "2026-10-08T09:00:48+03:30",
+      "topics": [
+        "science-life"
+      ],
+      "topic_scores": {
+        "science-life": 16
+      },
+      "importance": 16,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [
+        "science-life"
+      ],
+      "breaking": true,
+      "breaking_topics": [
+        "science-life"
+      ],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-00e103dba9b7",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 11,
+      "political": false,
+      "breaking_signal": true,
+      "age_hours": 0.19629365033573576
+    },
+    "fea24e9a82667bdef0e838d1": {
+      "title": "تراستی‌ها؛ پازلی که مردم باید خودشان کامل کنند / چه کسی مسئول بازگشت پول نفت به کشور است؟",
+      "summary": "مسئول بازگشت ارز حاصل از صادرات نفت توسط تراستی‌ها تا پیش از این تنها وزارت نفت تلقی می‌شد. اما اخیرا سرپرست وزارت نفت مسئولیت تراستی‌ها را با بانک مرکزی دانسته است. باید پرسید دقیقا مسئولیت هر نهاد چیست؟ پست تراستی‌ها؛ پازلی که مردم باید خودشان کامل کنند / چه کسی مسئول بازگشت پول نفت به کشور است؟ ا",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-08T09:00:15+03:30",
+      "topics": [
+        "economy",
+        "currency-gold"
+      ],
+      "topic_scores": {
+        "economy": 20,
+        "currency-gold": 20
+      },
+      "importance": 20,
+      "important": true,
+      "important_topics": [
+        "economy"
+      ],
+      "slider_topics": [
+        "economy",
+        "currency-gold"
+      ],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-6f35c2221917",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 17,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.20546031700240242,
+      "permanent_article": true,
+      "article_id": "article-6f35c22219173686",
+      "image": "https://tejaratnews.com/wp-content/uploads/2026/10/BankemardomImage-27696-ak-wm.webp"
+    },
+    "cbc848769355622e1630f82a": {
+      "title": "پیش‌بینی قیمت طلا، دلار و سکه امروز پنجشنبه ۱۶ مهر ۱۴۰۵ | رکوردشکنی تمام شد، اصلاح شروع شد؟",
+      "summary": "اقتصادنیوز: نرخ‌های پشت‌خطی بازار طلا و سکه در بامداد پنجشنبه، طلای ۱۸ عیار را در محدوده ۲۶ میلیون و ۲۹۱ هزار تومان و سکه امامی را در سطح ۲۶۷ میلیون تومان نشان می‌دهد؛ طلای آبشده نیز ۱۱۳ میلیون و ۸۹۰ هزار تومان قیمت‌گذاری شده است.",
+      "source": "اقتصادنیوز",
+      "published": "2026-10-08T08:59:28+03:30",
+      "topics": [
+        "currency-gold"
+      ],
+      "topic_scores": {
+        "currency-gold": 20
+      },
+      "importance": 20,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-066a078d0ecd",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 15,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.21851587255795796
+    },
+    "634660a918e5266bc93a907d": {
+      "title": "هوای مشهد آلوده شد",
+      "summary": "معاون محیط زیست انسانی اداره کل حفاظت محیط زیست خراسان رضوی گفت: کیفیت هوای کلانشهر مشهد امروز، شانزدهم مهرماه ۱۴۰۵ با افزایش حجم آلاینده‌ها در شرایط «ناسالم» برای تنفس گروه‌های حساس قرار دارد.",
+      "source": "فرارو",
+      "published": "2026-10-08T08:59:22+03:30",
+      "topics": [
+        "science-life"
+      ],
+      "topic_scores": {
+        "science-life": 17
+      },
+      "importance": 17,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-b1327da2807b",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.22018253922462463
+    },
+    "bc5bf01f828f35284325d989": {
+      "title": "قیمت اونس جهانی طلا چند؟",
+      "summary": "قیمت طلا در معاملات روز پنج‌شنبه بازار جهانی، تحت تاثیر عقب‌نشینی ارزش دلار از اوج ۱۸ ماهه خود، افزایش یافت و از پایین‌ترین سطح دو ماهه فاصله گرفت.",
+      "source": "دنیای اقتصاد",
+      "published": "2026-10-08T08:59:01+03:30",
+      "topics": [
+        "currency-gold"
+      ],
+      "topic_scores": {
+        "currency-gold": 16
+      },
+      "importance": 16,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-18f73c8819dc",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.22601587255795796
+    },
+    "0b0c1f3b52aaca10a5c77472": {
+      "title": "محمد درویش: احیای هورالعظیم نیازمند اصلاح مدیریت منابع آب است",
+      "summary": "یک فعال محیط طیست گفت: مسئله هورالعظیم تنها کمبود آب نیست و پیش از هر بحثی درباره حقابه، نفت یا کشاورزی باید میان بخش‌های مختلف به تفاهم رسید و یکدیگر را به رسمیت شناخت.",
+      "source": "فرارو",
+      "published": "2026-10-08T08:58:58+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 15
+      },
+      "importance": 15,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-ca5e1ee35fba",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 10,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.2268492058912913
+    },
+    "f247f4332ed63b9cef20c40b": {
+      "title": "انتقال هیجان انگیز محمد موسوی در 39 سالگی!",
+      "summary": "محمد موسوی پس از جدایی توافقی از پیکان، به تیم جاکارتا پرسیسی اندونزی پیوست.",
+      "source": "فرارو",
+      "published": "2026-10-08T08:58:09+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 7
+      },
+      "importance": 7,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-6820513ce620",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.24046031700240242
     }
   },
   "groups": {
@@ -44054,8 +44300,11 @@
     "local-8a66518b112f": {
       "representative_id": "6128293824e72ce3955e912c"
     },
-    "local-8994f56ad4aa": {
-      "representative_id": "da7085ce2bf6e8a9fbb1ccfa"
+    "local-066a078d0ecd": {
+      "representative_id": "cbc848769355622e1630f82a"
+    },
+    "local-21323741ea6a": {
+      "representative_id": "f69e9febeb31cfe538e9df19"
     },
     "local-87bfc8ccc7a3": {
       "representative_id": "0afd0689eef15ef2eedbce04"
@@ -44083,6 +44332,27 @@
     },
     "local-a015e3da309d": {
       "representative_id": "67462aa14e9b43eb6f9bb278"
+    },
+    "local-3b3245382fba": {
+      "representative_id": "917579ac2e289976baaa83a1"
+    },
+    "local-00e103dba9b7": {
+      "representative_id": "17cc0aed2bbdf35a6fd5009b"
+    },
+    "local-6f35c2221917": {
+      "representative_id": "fea24e9a82667bdef0e838d1"
+    },
+    "local-b1327da2807b": {
+      "representative_id": "634660a918e5266bc93a907d"
+    },
+    "local-18f73c8819dc": {
+      "representative_id": "bc5bf01f828f35284325d989"
+    },
+    "local-ca5e1ee35fba": {
+      "representative_id": "0b0c1f3b52aaca10a5c77472"
+    },
+    "local-6820513ce620": {
+      "representative_id": "f247f4332ed63b9cef20c40b"
     }
   },
   "usage": {
