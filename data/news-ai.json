@@ -1,7 +1,7 @@
 {
   "version": 1,
   "policy_version": 8,
-  "updated": "2026-10-08T04:53:26Z",
+  "updated": "2026-10-08T05:08:29Z",
   "items": {
     "56927672062ac466f3e762c5": {
       "title": "قیمت بیت‌کوین و اتریوم امروز سه‌شنبه ۱۴ مهر ۱۴۰۵",
@@ -39036,7 +39036,7 @@
       "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.6852171876695423
+      "age_hours": 3.9400465053982203
     },
     "1c24669b5ac90f3a9a68d318": {
       "title": "پس لرزه طرح معیشتی شهرداری تهران | عضو شورای شهر: نمی‌دانیم مابه‌التفاوت قیمت‌ها از کجا می‌آید | بعد از شش ماه چه بلایی بر سر قیمت‌ها می‌آید؟",
@@ -39096,7 +39096,7 @@
       "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.3721616321139867
+      "age_hours": 3.626990949842665
     },
     "b39dd5274a84fac9f17d0727": {
       "title": "مدل‌سازی دقیق و مقیاس‌پذیر کاربری ساختمان‌ها: بررسی یک روش خودکار و چندمنبعی (PLOS One, ۲۰۲۶)",
@@ -39129,7 +39129,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.6852171876695423
+      "age_hours": 2.9400465053982203
     },
     "7aab3a40aba15410083381a9": {
       "title": "هفته متفاوت بورس؛ خروج پول در سه روز و ورود سنگین نقدینگی در دو روز پایانی | از فشار فروش تا فتح قله ۸ میلیون واحدی | رشد ۴.۷ درصدی شاخص کل",
@@ -39155,10 +39155,10 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 15,
+      "local_score": 14,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.857717187669542
+      "age_hours": 3.1125465053982206
     },
     "99087add858c72a96ee7fba9": {
       "title": "رگبار باران در این مناطق کشور/ کوهنوردان این هشدار ها را جدی بگیرند",
@@ -39187,7 +39187,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.2943838543362087
+      "age_hours": 2.549213172064887
     },
     "a6b4505d82a55b675cf1b59e": {
       "title": "طاعون در روسیه؛ بیماری خطرناکی که هنوز تأیید نشده است/ این بیماری چه علائمی دارد؟",
@@ -39216,7 +39216,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 1.5760505210028755
+      "age_hours": 1.830879838731554
     },
     "046829100d149913a8be4af3": {
       "title": "آیا خوردن قند هنگام مصرف آنتی‌بیوتیک به میکروبیوم روده آسیب می‌زند؟ گزارشی از مطالعه‌ای جدید",
@@ -39245,7 +39245,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.685217187669542
+      "age_hours": 1.9400465053982205
     },
     "9747d76972fcaf7ff1105dec": {
       "title": "هشدار مهم به کوهنوردان و طبیعت‌گردان/ رگباران باران و وزش باد شدید در راه است",
@@ -39274,7 +39274,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.9682727432250977
+      "age_hours": 2.223102060953776
     },
     "25affb774bab8947a1273a5b": {
       "title": "هنوز هیچ مرجع رسمی طاعون روسیه را تایید نکرده است/ طاعون چقدر خطرناک است؟",
@@ -39303,7 +39303,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 2.2457727432250976
+      "age_hours": 2.500602060953776
     },
     "e30e1dfd993a25031e0ccca5": {
       "title": "هفته متفاوت بورس؛ خروج پول در سه روز و ورود سنگین نقدینگی در دو روز پایانی | رشد ۴.۷ درصدی شاخص کل",
@@ -39329,10 +39329,10 @@
       "representative": false,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 15,
+      "local_score": 14,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.857717187669542
+      "age_hours": 3.1125465053982206
     },
     "0efd40053902fefde5288443": {
       "title": "قیمت خودرو امروز پنجشنبه ۱۶ مهر ۱۴۰۵ / فرمان بازار خودرو چرخید + جدول",
@@ -39349,9 +39349,13 @@
       "important": false,
       "important_topics": [],
       "slider_topics": [],
-      "ticker_topics": [],
-      "breaking": false,
-      "breaking_topics": [],
+      "ticker_topics": [
+        "auto"
+      ],
+      "breaking": true,
+      "breaking_topics": [
+        "auto"
+      ],
       "publishable": true,
       "exclude_reason": "",
       "group_id": "local-735d17bee0e9",
@@ -39419,7 +39423,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.18299496544732
+      "age_hours": 1.4378242831759982
     },
     "42ecbc258bd91a10e606b103": {
       "title": "اتهام جدید آمریکا علیه مادورو و همسرش",
@@ -39477,7 +39481,7 @@
       "local_score": 11,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 1.31799496544732
+      "age_hours": 1.5728242831759982
     },
     "fdafc66d45ecb2d6360a23b0": {
       "title": "قیمت میلگرد امروز پنجشنبه ۱۶ مهر ۱۴۰۵ + جدول",
@@ -39535,7 +39539,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.6852171876695421
+      "age_hours": 0.9400465053982204
     },
     "6b239699254439829851b966": {
       "title": "نوشیدن آب سرد برای همه مناسب نیست؛ این افراد احتیاط کنند",
@@ -39566,7 +39570,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.686606076558431
+      "age_hours": 0.9414353942871094
     },
     "1a34039a3ef1d70f8a4825f8": {
       "title": "۱۰ رمزارز برتر بازار ارز دیجیتال | دوج‌کوین ۸ درصد ریخت | اتریوم در ۲۵۵۹ دلار ماند",
@@ -39595,7 +39599,7 @@
       "local_score": 13,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.691606076558431
+      "age_hours": 0.9464353942871093
     },
     "91831c3dbaf6f251d62ea46a": {
       "title": "مهران رجبی درگذشت؟/ پشت‌پرده شایعه جدید در فضای مجازی",
@@ -39624,7 +39628,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 0.31466163211398657
+      "age_hours": 0.5694909498426649
     },
     "35b922c24a45e92484e5e642": {
       "title": "داستان عجیب علیرضا بیرانوند قبل از بازی حساس تراکتور - استقلال",
@@ -39653,7 +39657,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.3510505210028754
+      "age_hours": 0.6058798387315538
     },
     "5f190055d6804ce30d8498ec": {
       "title": "درخواست وزارت صمت برای دسترسی به اطلاعات طلای مردم + متن نامه",
@@ -39682,7 +39686,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.401606076558431
+      "age_hours": 0.6564353942871094
     },
     "854473c9b85ad9f85873dac3": {
       "title": "قاتل یک تاجر بعد از 9سال به دام افتاد/ ادعای قانل: در اربیل عراق برای شنا کنار رودخانه رفتیم و شریکم در آب غرق شد",
@@ -39711,7 +39715,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.46132829878065323
+      "age_hours": 0.7161576165093316
     },
     "9b5c32e9d7035d884661966e": {
       "title": "آغاز دوباره لیگ برتر؛ تماشایی مثل تقابل تراکتور - استقلال",
@@ -39748,7 +39752,7 @@
       "local_score": 9,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 0.5371616321139866,
+      "age_hours": 0.7919909498426649,
       "permanent_article": true,
       "article_id": "article-1e17e3395580e411",
       "image": "https://cdn.fararu.com/thumbnail/pZJSHBGUpo8o/NDliGYFYLe5eYn2SnE0SL5V7-mLVaRY_Ww6ih8TzQz-N3NoZo5i0ttLS4r5bIFUqnUsmYm8MMJeMtJLr26dId5H98vmQVSkD6yolSV_Q9TwG1S5neh2g6nrEwoiK8CUd/%D8%B1%D9%88%D8%B2%D8%A8%D9%87+%DA%86%D8%B4%D9%85%DB%8C+%D8%A7%D8%B3%D8%AA%D9%82%D9%84%D8%A7%D9%84+%D8%AA%D8%B1%D8%A7%DA%A9%D8%AA%D9%88%D8%B1.jpg"
@@ -39780,7 +39784,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.5435505210028755
+      "age_hours": 0.7983798387315538
     },
     "cc929a384a64f69f8306d6b8": {
       "title": "ریشه نابرابری‌های مخرب در اقتصاد ایران | کاهش نابرابری می‌تواند ناشی از فقیرتر شدن همه خانوارها باشد نه افزایش درآمد | مقایسه نابرابری در ایران و دیگر کشورها",
@@ -39809,7 +39813,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.5543838543362087
+      "age_hours": 0.8092131720648872
     },
     "84a521f2de4717bac05c4909": {
       "title": "طرح اتهام جدید علیه مادورو توسط آمریکا",
@@ -39838,7 +39842,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.7099394098917643
+      "age_hours": 0.9647687276204427
     },
     "c9ee21b617d98275f39adfe2": {
       "title": "قتل تاجر فرش به دلیل اختلافات مالی/ قاتل پس از 9 سال به ایران برگشت",
@@ -39867,7 +39871,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.04355052100287543
+      "age_hours": 0.2983798387315538
     },
     "35969eb0c1b0d93b5c85b86d": {
       "title": "قیمت تیرآهن امروز پنجشنبه ۱۶ مهر 1405 + جدول",
@@ -39925,7 +39929,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.23493940989176432
+      "age_hours": 0.4897687276204427
     },
     "e495fd432fe7ab6d9728827f": {
       "title": "مهران رجبی درگذشت؟",
@@ -39954,7 +39958,239 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 0.31466163211398657
+      "age_hours": 0.5694909498426649
+    },
+    "da7085ce2bf6e8a9fbb1ccfa": {
+      "title": "قیمت دلار امروز پنجشنبه 16 مهر 1405",
+      "summary": "دلار آزاد با کاهش بیش از پنج هزار تومان در روز گذشته به محدوده 263 هزار تومان بازگشت",
+      "source": "فرارو",
+      "published": "2026-10-08T08:35:13+03:30",
+      "topics": [
+        "currency-gold"
+      ],
+      "topic_scores": {
+        "currency-gold": 18
+      },
+      "importance": 18,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-8994f56ad4aa",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 13,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.05449094984266493
+    },
+    "f69e9febeb31cfe538e9df19": {
+      "title": "قیمت دینار عراق امروز پنجشنبه 16 مهر 1405",
+      "summary": "نرخ دینار عراق در روز گذشته 4.5 تومان کاهش پیدا کرد و اکنون هر اسکناس این ارز 173.6 تومان قیمت خورده است",
+      "source": "فرارو",
+      "published": "2026-10-08T08:34:56+03:30",
+      "topics": [
+        "currency-gold"
+      ],
+      "topic_scores": {
+        "currency-gold": 18
+      },
+      "importance": 18,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-8994f56ad4aa",
+      "representative": false,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 13,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.05921317206488715
+    },
+    "0a2cbf3f70c70bd6f8df47f2": {
+      "title": "قیمت لیر ترکیه امروز پنجشنبه 16 مهر 1405",
+      "summary": "لیر ترکیه معاملات روز گذشته را با کاهش 120 تومانی به پایان رساند و به پنج هزار و 530 تومان رسید",
+      "source": "فرارو",
+      "published": "2026-10-08T08:34:56+03:30",
+      "topics": [
+        "currency-gold"
+      ],
+      "topic_scores": {
+        "currency-gold": 10
+      },
+      "importance": 10,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-8994f56ad4aa",
+      "representative": false,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 10,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.05921317206488715
+    },
+    "a2962beb2673a336486123c7": {
+      "title": "قیمت طلا امروز پنجشنبه 16 مهر 1405",
+      "summary": "قیمت هر گرم طلا 18 عیار با کاهش 457 هزار تومانی در روز گذشته به 26 میلیون و 281 هزار تومان رسید",
+      "source": "فرارو",
+      "published": "2026-10-08T08:34:41+03:30",
+      "topics": [
+        "currency-gold"
+      ],
+      "topic_scores": {
+        "currency-gold": 18
+      },
+      "importance": 18,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-8994f56ad4aa",
+      "representative": false,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 13,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.06337983873155383
+    },
+    "0afd0689eef15ef2eedbce04": {
+      "title": "واکنش کریستیانو رونالدو به خداحافظی لیونل مسی",
+      "summary": "کریستیانو رونالدو با منتشر کردن پیامی به خداحافظی لیونل مسی از بازی های ملی واکنش نشان داد ‌",
+      "source": "فرارو",
+      "published": "2026-10-08T08:31:16+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 7
+      },
+      "importance": 7,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-87bfc8ccc7a3",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.12032428317599826
+    },
+    "a24911e7846d41881c9c033d": {
+      "title": "ویدئو؛ پروازهای بین‌المللی به ایران بازگشت",
+      "summary": "نخستین پرواز بین‌المللی پس از توقف چهل روزه، امروز ساعت ۶:۵۰ صبح در فرودگاه امام خمینی (ره) به زمین نشست. این پرواز که متعلق به شرکت هواپیمایی «العراقیه» بود، از فرودگاه نجف عراق برخاسته و پس از استقبال رسمی، در مسیر برگشت نیز راهی نجف خواهد شد.",
+      "source": "فرارو",
+      "published": "2026-10-08T08:28:53+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 7
+      },
+      "importance": 7,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-471f30c3c042",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.1600465053982205
+    },
+    "88e714ee63d16cd0e28caef7": {
+      "title": "نخستین رقیب اینفانتینو برای ریاست فیفا",
+      "summary": "یک سوئیسی که سابقه بازی کردن در تاتنهام را نیز در کارنامه دارد رسما برای کنار زدن اینفانتینو از ریاست فیفا وارد رقابت شد.",
+      "source": "فرارو",
+      "published": "2026-10-08T08:28:42+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 7
+      },
+      "importance": 7,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-1f950b58fd2f",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.16310206095377605
+    },
+    "3c16444066bf89cc7e4579cd": {
+      "title": "قیمت سکه، نیم‌سکه و ربع‌سکه امروز پنجشنبه ۱۶ مهر ۱۴۰۵/ کاهش قیمت سکه",
+      "summary": "اقتصادنیوز: قیمت سکه امامی امروز با کاهش، در نرخ 267 میلیون تومان در معامله بود.",
+      "source": "اقتصادنیوز",
+      "published": "2026-10-08T08:13:00+03:30",
+      "topics": [
+        "currency-gold"
+      ],
+      "topic_scores": {
+        "currency-gold": 17
+      },
+      "importance": 17,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-8994f56ad4aa",
+      "representative": false,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 12,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.4247687276204427
     }
   },
   "groups": {
@@ -43614,6 +43850,18 @@
     },
     "local-8a66518b112f": {
       "representative_id": "6128293824e72ce3955e912c"
+    },
+    "local-8994f56ad4aa": {
+      "representative_id": "da7085ce2bf6e8a9fbb1ccfa"
+    },
+    "local-87bfc8ccc7a3": {
+      "representative_id": "0afd0689eef15ef2eedbce04"
+    },
+    "local-471f30c3c042": {
+      "representative_id": "a24911e7846d41881c9c033d"
+    },
+    "local-1f950b58fd2f": {
+      "representative_id": "88e714ee63d16cd0e28caef7"
     }
   },
   "usage": {
