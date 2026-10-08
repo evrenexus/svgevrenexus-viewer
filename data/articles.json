@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-08T15:09:48Z",
+  "updated": "2026-10-08T15:10:17.418Z",
   "schema": 1,
   "items": {
     "article-eece7c42f225dbaf": {
@@ -19814,6 +19814,314 @@
       "created_at": "2026-10-08T14:38:12.429Z",
       "updated_at": "2026-10-08T14:38:12.429Z",
       "published_at": "2026-10-08T15:05:00+03:30",
+      "status": "published",
+      "ai_managed": false,
+      "generated_by": "internal-republish-v1",
+      "manual_locked": false
+    },
+    "article-fbadb7b5fbb43077": {
+      "id": "article-fbadb7b5fbb43077",
+      "title": "استقلال نداشتن مجوز خارجی‌ها را پذیرفت!",
+      "summary": "باشگاه استقلال به غیرمجاز بودن نفرات خارجی این تیم واکنش نشان داد.",
+      "content": "۱۸:۳۴ -\n\n۱۶ مهر ۱۴۰۵\n\nاستقلال نداشتن مجوز خارجی‌ها را پذیرفت!\n\nباشگاه استقلال به غیرمجاز بودن نفرات خارجی این تیم واکنش نشان داد.\n\nپ\n\n،\n\nپـ\n\nسعید فتاحی مدیر سازمان فوتبال باشگاه استقلال در گفت‌وگویی درباره شایعه غیر مجازبودن حضور بازیکنان خارجی اظهار کرد: وقتی قصد داشته باشیم نام بازیکن خارجی را برای مجوز کار در سامانه ثبت نام کنیم، مراحل اداری‌ آن ۴۰ تا ۶۰ روز می‌کشد. با این شرایط، بازیکن نمی‌تواند از کشور خارج شود.\n\nاو ادامه داد: ما در لیگ نخبگان آسیا بازی داریم و نتوانستیم مجوز کار بازیکنان را بگیریم. از آنجایی که این فرایند زمان‌بر است اقدامات لازم برای ثبت‌نام بازیکنان جهت دریافت مجوز کار انجام شده و پروسه قانونی در جریان است. در زمان مناسب آن را انجام خواهیم داد و هیچ مشکلی در این باره وجود ندارد.\n\nباشگاه تراکتور پیش از آغاز دیدار با استقلال، پیگیر پایان مجوز کار رستم آشورماتوف، یاسر آسانی و جلال‌الدین ماشاریپوف شده بود.\n\nمنبع :\n\nايسنا\n\nva NewsLis Limi = 5;\n\nاز میان اخبار\n\nببینید؛ گل اول استقلال به تراکتور توسط سحرخیزان دقیقه ۲۸\n\nساعت بازی پرسپولیس مقابل صنعت نفت آبادان /هفته هشتم\n\nواکنش تارتار به شایعه حضور اورونوف در استقلال\n\nداستان عجیب علیرضا بیرانوند قبل از بازی حساس تراکتور - استقلال\n\nشما قبلا این خبر را لایک کرده‌اید .\n\nfunc ion oPe sianNumbe (numbe ) {\n\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\n\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\n\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\n\nelemen .addEven Lis ene (\"click\", func ion() {\n\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n\n. hen(func ion( esponse) {\n\nif ( esponse.s a us == 200) {\n\nesponse.json(). hen(func ion(newSco e) {\n\nva likeNumbe Span = elemen .que ySelec o (\".like\");\n\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\n\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\n\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\n\nva hiddenHea = elemen .que ySelec o (\".hidden\");\n\nvisibleHea .classLis .add(\"hidden\");\n\nfavo i eBu on.classLis .add(\"hidden\");\n\nhiddenHea .classLis . emove(\"hidden\");\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}\n\n});\n\n} else {\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis .add(\"hidden_e o \");\n\nse Timeou (func ion() {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}, 3000);\n\n}\n\n}\n\n})\n\n});\n\n});",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "topics": [
+        "economy"
+      ],
+      "group_id": "local-dea3171a6c0c",
+      "original_news_id": "324bb94731a8491db3f3",
+      "source_ids": [],
+      "sources": [
+        {
+          "name": "فرارو",
+          "url": "https://fararu.com/fa/news/1008294/%D8%A7%D8%B3%D8%AA%D9%82%D9%84%D8%A7%D9%84-%D9%86%D8%AF%D8%A7%D8%B4%D8%AA%D9%86-%D9%85%D8%AC%D9%88%D8%B2-%D8%AE%D8%A7%D8%B1%D8%AC%DB%8C-%D9%87%D8%A7-%D8%B1%D8%A7-%D9%BE%D8%B0%DB%8C%D8%B1%D9%81%D8%AA"
+        }
+      ],
+      "image": "https://cdn.fararu.com/thumbnail/tUu2lvNSE1Ar/35ftvBBDrNmJVOlEGNnt6HB97vHc2kKXxjuGT8xJpE4Dk5QZlZkFUSsv3ejcD4VtVHp-f2FfG9VlpIUHxGqnsnOoa8ugWHWVXXASjjY0-9cn93FVWAoh7-_BOYFY9Fiy/%D9%85%D8%A7%D8%B4%D8%A7%D8%B1%DB%8C%D9%BE%D9%88%D9%81.jpg",
+      "importance_score": 0,
+      "created_at": "2026-10-08T15:10:17.418Z",
+      "updated_at": "2026-10-08T15:10:17.418Z",
+      "published_at": "2026-10-08T18:34:10+03:30",
+      "status": "published",
+      "ai_managed": false,
+      "generated_by": "internal-republish-v1",
+      "manual_locked": false
+    },
+    "article-c3aa0d0e8d5efdef": {
+      "id": "article-c3aa0d0e8d5efdef",
+      "title": "بورد: اجازه نخواهیم داد توهمات دشمنان ایران به واقعیت تبدیل شود",
+      "summary": "سرپرست وزارت نفت با تأکید بر توان صنعت نفت گفت: اجازه نمی‌دهیم توهمات دشمنان به واقعیت تبدیل شود. پست بورد: اجازه نخواهیم داد توهمات دشمنان ایران به واقعیت تبدیل شود اولین بار در تجارت نیوز ظاهر شد.",
+      "content": "بورد: اجازه نخواهیم داد توهمات دشمنان ایران به واقعیت تبدیل شود\n\n|\n\nبروزرسانی: 7 دقیقه پیش\n\nکد خبر: 1356377\n\nسوخت و انرژی\n\nلینک کوتاه\n\nکپی شد\n\nسرپرست وزارت نفت با تأکید بر توان صنعت نفت گفت: اجازه نمی‌دهیم توهمات دشمنان به واقعیت تبدیل شود.\n\nاجازه نخواهیم داد توهمات و محاسبات دشمنان ایران به واقعیت تبدیل شود.\n\nحمید بورد در پیامی که در شبکه اجتماعی منتشر کرد، نوشت: صنعت نفت امروز زنده‌تر، مصمم‌تر و توانمندتر از همیشه پای کار ایران است.\n\nوی افزود: با توکل بر خدا، به پشتوانه مردم و با تکیه بر تخصص و توان کارکنان صنعت نفت، چرخ اقتصاد کشور را با شتاب بیشتری به حرکت درآورده و اجازه نمی‌دهیم توهمات و محاسبات دشمنان ایران به واقعیت برسد.\n\nمنبع: تسنیم",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "topics": [
+        "economy"
+      ],
+      "group_id": "local-1274f58d0ed2",
+      "original_news_id": "bdf1a62be1536d137295",
+      "source_ids": [],
+      "sources": [
+        {
+          "name": "تجارت‌نیوز",
+          "url": "https://tejaratnews.com/%d8%a8%d9%88%d8%b1%d8%af-%d8%a7%d8%ac%d8%a7%d8%b2%d9%87-%d9%86%d8%ae%d9%88%d8%a7%d9%87%db%8c%d9%85-%d8%af%d8%a7%d8%af-%d8%aa%d9%88%d9%87%d9%85%d8%a7%d8%aa-%d8%af%d8%b4%d9%85%d9%86%d8%a7%d9%86-%d8%a7"
+        }
+      ],
+      "image": "https://tejaratnews.com/wp-content/uploads/2026/10/1405070114304080038311334-ak-1200x800-1.webp",
+      "importance_score": 0,
+      "created_at": "2026-10-08T15:10:17.418Z",
+      "updated_at": "2026-10-08T15:10:17.418Z",
+      "published_at": "2026-10-08T18:31:06+03:30",
+      "status": "published",
+      "ai_managed": false,
+      "generated_by": "internal-republish-v1",
+      "manual_locked": false
+    },
+    "article-92e2a208fe81d0c2": {
+      "id": "article-92e2a208fe81d0c2",
+      "title": "به مربی استقلال اجازه نشستن روی نیمکت داده نشد",
+      "summary": "مربی دروازه بان های این تیم اجازه نشستن روی نیمکت را در بازی امروز پیدا نکرد.",
+      "content": "۱۸:۲۸ -\n\n۱۶ مهر ۱۴۰۵\n\nبه مربی استقلال اجازه نشستن روی نیمکت داده نشد\n\nمربی دروازه بان های این تیم اجازه نشستن روی نیمکت را در بازی امروز پیدا نکرد.\n\nپ\n\n،\n\nپـ\n\nبا صلاحدید سهراب بختیاری زاده سرمربی استقلال ، بهزاد غلامپور مربی دروازه بان های این تیم اجازه نشستن روی نیمکت را پیدا نکرد.\n\nغلامپور به دلیل برخی اختلاف نظرات طی دو هفته گذشته در تمرینات استقلال حضور نداشت و پس از گفت‌وگو با بختیاری‌زاده و هماهنگی با او، بار دیگر به جمع اعضای کادر فنی استقلال بازگشت. با این حال امروز در بازی مقابل تراکتور در تبریز از روی سکو بازی را تماشا کرد و به جای او نادر غبیشاوی روی تیمکت حضور داشت.\n\nمنبع :\n\nايسنا\n\nva NewsLis Limi = 5;\n\nاز میان اخبار\n\nببینید؛ گل اول استقلال به تراکتور توسط سحرخیزان دقیقه ۲۸\n\nساعت بازی پرسپولیس مقابل صنعت نفت آبادان /هفته هشتم\n\nواکنش تارتار به شایعه حضور اورونوف در استقلال\n\nداستان عجیب علیرضا بیرانوند قبل از بازی حساس تراکتور - استقلال\n\nشما قبلا این خبر را لایک کرده‌اید .\n\nfunc ion oPe sianNumbe (numbe ) {\n\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\n\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\n\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\n\nelemen .addEven Lis ene (\"click\", func ion() {\n\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n\n. hen(func ion( esponse) {\n\nif ( esponse.s a us == 200) {\n\nesponse.json(). hen(func ion(newSco e) {\n\nva likeNumbe Span = elemen .que ySelec o (\".like\");\n\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\n\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\n\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\n\nva hiddenHea = elemen .que ySelec o (\".hidden\");\n\nvisibleHea .classLis .add(\"hidden\");\n\nfavo i eBu on.classLis .add(\"hidden\");\n\nhiddenHea .classLis . emove(\"hidden\");\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}\n\n});\n\n} else {\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis .add(\"hidden_e o \");\n\nse Timeou (func ion() {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}, 3000);\n\n}\n\n}\n\n})\n\n});\n\n});",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "topics": [
+        "economy"
+      ],
+      "group_id": "local-ca10bcaccc06",
+      "original_news_id": "b78d4bbae90fb0251d33",
+      "source_ids": [],
+      "sources": [
+        {
+          "name": "فرارو",
+          "url": "https://fararu.com/fa/news/1008293/%D8%A8%D9%87-%D9%85%D8%B1%D8%A8%DB%8C-%D8%A7%D8%B3%D8%AA%D9%82%D9%84%D8%A7%D9%84-%D8%A7%D8%AC%D8%A7%D8%B2%D9%87-%D9%86%D8%B4%D8%B3%D8%AA%D9%86-%D8%B1%D9%88%DB%8C-%D9%86%DB%8C%D9%85%DA%A9%D8%AA-%D8%AF%D8%A7%D8%AF%D9%87-%D9%86%D8%B4%D8%AF"
+        }
+      ],
+      "image": "https://cdn.fararu.com/thumbnail/GbQujSyDStfq/RxshIBcbK6F5rUr5vYVo5xoMSsOAehgqBlqTdwfsTQrmhZTqjA4jby2DyL-eV_5bHX-m2tywstPwMKs4_RnAJKCZy97jDdajaYnQvA7xOPPzyQPGTSQLt9KKlwviec0Q/%D8%BA%D9%84%D8%A7%D9%85%D8%A8%D9%BE%D9%88%D8%B1.jpg",
+      "importance_score": 0,
+      "created_at": "2026-10-08T15:10:17.418Z",
+      "updated_at": "2026-10-08T15:10:17.418Z",
+      "published_at": "2026-10-08T18:28:54+03:30",
+      "status": "published",
+      "ai_managed": false,
+      "generated_by": "internal-republish-v1",
+      "manual_locked": false
+    },
+    "article-9ed4fcbdf44ea5da": {
+      "id": "article-9ed4fcbdf44ea5da",
+      "title": "چرا مهرگان زنده ماند؟/ راز جشنی که در گذر قرن‌ها پوست انداخت",
+      "summary": "مهرگان، جشنی کهن در پیوند با پاییز و نام ایزد مهر، در گذر قرن‌ها دگرگون شده اما از حافظه فرهنگی ایرانیان کنار نرفته است.",
+      "content": "۱۸:۲۵ -\n\n۱۶ مهر ۱۴۰۵\n\nاز ایزدِ پیمان تا سرور پاییزی ایرانیان\n\nچرا مهرگان زنده ماند؟/ راز جشنی که در گذر قرن‌ها پوست انداخت\n\nمهرگان، جشنی کهن در پیوند با پاییز و نام ایزد مهر، در گذر قرن‌ها دگرگون شده اما از حافظه فرهنگی ایرانیان کنار نرفته است.\n\nپ\n\n،\n\nپـ\n\nپاییز در گاه‌شماری ایرانی تنها با دگرگونی رنگ برگ‌ها آغاز نمی‌شود، نامی نیز در میانه این فصل ایستاده است که قرن‌هاست با یکی از کهن‌ترین لایه‌های فرهنگ ایرانی پیوند دارد؛ مهر.\n\nمهر کیست؟ از میثره تا مهر\n\nاز همین رو مهر را نمی‌توان تنها با معنای امروزی «محبت» توضیح داد؛ واژه‌ای که در فارسی نو دامنه معنایی گسترده‌ای یافته حامل خاطره‌ای بسیار کهن‌تر از روابط انسانی و اخلاق اجتماعی است. همین نکته ما را به یکی از رایج‌ترین برداشت‌ها درباره مهر می‌رساند «این‌که او را از آغاز و به طور ساده خدای خورشید بدانیم» بی‌تردید میان مهر و خورشید در سنت‌های ایرانی پیوندی نیرومند وجود دارد و این ارتباط در دوره‌های مختلف تاریخی گسترش‌یافته است، اما فروکاستن شخصیت مهر به خورشید نمی‌تواند همه ویژگی‌های او را توضیح دهد.\n\nپس اگر بخواهیم جایگاه مهر را در یک جمله خلاصه کنیم شاید دقیق‌تر باشد بگوییم «مهر در جهان ایرانی تنها با روشنایی و خورشید شناخته نمی‌شد، او پاسدار پیمان و یکی از نگهبانان نظمی بود که وفاداری، راستی و رعایت عهد در آن اهمیت بنیادی داشت.» شناخت چنین ایزدی معنای مهرگان را نیز دگرگون می‌کند. اکنون دیگر با نامی روبه‌رو نیستیم که صرفاً بر یکی از جشن‌های پاییزی گذاشته شده باشد؛ پشت این نام سنتی دینی و اخلاقی قرار دارد که ریشه‌های آن به روزگار بسیار کهن بازمی‌گردد.\n\nجایگاه مهر در ایران باستان\n\nمهرگان؛ نخستین شواهد تاریخی\n\nبنابراین آن‌چه با اطمینان بیشتری می‌توان گفت این است که مهرگان جشنی کهن است که برگزاری آن در دوره هخامنشی شناخته شده بود، اما این‌که جشن هخامنشی بَغَیادی دقیقاً همان نیای مستقیم مهرگان بوده باشد همچنان در قلمروی فرضیه قرار دارد؛ همین احتیاط تصویر تاریخی مهرگان را جذاب‌تر می‌کند. این جشن شاید حاصل یک سنت واحد و یک‌باره نبوده باشد، بلکه در مسیر تحول گاه‌شماری و آیین‌های ایرانی لایه‌های گوناگونی بر آن نشسته و نام مهر سرانجام بر جشنی قرار گرفته که پاییز ایرانی را با یکی از کهن‌ترین ایزدان این سرزمین پیوند می‌دهد.\n\nمهرگان در عصر ساسانی؛ از یک روز تا جشنی چندروزه\n\nدرنتیجه مهرگان در گذر زمان از یک روز مشخص در تقویم به دوره‌ای گسترده‌تر از جشن و آیین بدل شد؛ تحولی که تنها به افزایش شمار روزهای جشن محدود نماند، بلکه دامنه اجتماعی آن را نیز وسیع‌تر کرد. مهرگان اکنون می‌توانست هم در فضای آیینی و دینی معنا داشته باشد و هم در دربار میان سپاهیان و در روابط اجتماعی. این تحول مهرگان را به یکی از نمونه‌های جالب ماندگاری یک جشن ایرانی در میان دگرگونی‌های سیاسی و تقویمی تبدیل کرد، جشنی که شکل برگزاری‌اش تغییر یافت اما نام و جایگاهش در حافظه فرهنگی ایران باقی ماند.\n\nمهرگان، پاییز و مسئله تقویم\n\nاین نکته همچنین توضیح می‌دهد که چرا در بررسی مهرگان باید میان روز تقویمی جشن و جایگاه فصلی آن تفاوت گذاشت، ممکن است نام و جایگاه آیینی جشن حفظ شده باشد؛ اما در اثر جابه‌جایی تدریجی تقویم نسبت آن با فصل و نقطه اعتدال تغییر کرده باشد؛ بنابراین پاییزی بودن مهرگان را نباید تنها از روی نام ماه مهر یا تاریخ امروزی آن فهمید، پشت این جشن تاریخ پیچیده‌ای از تقویم‌های ایرانی قرار دارد؛ تاریخی که نشان می‌دهد حتی یک جشن کهن نیز در گذر زمان همراه با حرکت تقویم جای خود را در سال دوباره تعریف کرده است.\n\nمهرگان در دوره اسلامی؛ جشن ایرانی در جهانی تازه\n\nفرجامِ سُخُن؛ چرا مهرگان ماند؟\n\nمهرگان را نمی‌توان تنها با قدمت آن توضیح داد، بسیاری از آیین‌های کهن در گذر زمان از میان رفته‌اند اما مهرگان توانست از دل دگرگونی‌های دینی، سیاسی و تقویمی عبور کند و نام خود را در حافظه فرهنگی ایران نگه دارد. راز این ماندگاری را شاید بتوان در پیوند چندلایه جست‌وجو کرد؛ مهر، مهرگان و حافظه. در لایه نخست مهر ایزدی است که نامش با پیمان، وفاداری و نظمی اخلاقی و اجتماعی گره‌خورده است؛ مفاهیمی که تنها به یک دوره تاریخی تعلق ندارند.\n\nدر لایه دوم مهرگان جشنی است که با پاییز و ساختار گاه‌شماری ایرانی پیوند خورده و در طول زمان باوجود دگرگونی‌های تقویمی صورت‌های گوناگون خود را حفظ کرده است و در لایه سوم حافظه فرهنگی قرار دارد؛ حافظه‌ای که یک جشن کهن را از جهان باستان به دوره‌های بعد منتقل کرد و حتی برای آن روایت‌های تازه‌ای ساخت. از همین رو ماندگاری مهرگان را نباید صرفاً بقای یک آیین دانست.\n\nآن‌چه باقی‌مانده نام و مجموعه‌ای از معناهاست؛ نام ایزدی کهن، جشنی در آستانه پاییز، خاطره آیین‌ها و روایت‌هایی که نسل‌های بعد درباره آن ساخته‌اند. مهرگان در طول تاریخ یکسان نمانده است؛ شکل برگزاری، جایگاه تقویمی و حتی روایت‌های مربوط به منشأ آن تغییر کرده‌اند، اما همین توانایی برای تغییر و درعین‌حال حفظ هسته‌ای از معنای خود شاید مهم‌ترین راز ماندگاری آن باشد؛ مهرگان ماند زیرا تنها یک روز در تقویم نبود؛ بخشی از حافظه‌ای بود که ایرانیان هر پاییز با نام مهر آن را دوباره به یاد می‌آوردند.\n\nمنابع:\n\nبیرونی، ابوریحان محمد بن احمد. الآثار الباقیة عن القرون الخالیة. تصحیح ادوارد زاخائو. لایپزیگ: F. A. B ockhaus، ۱۹۲۳.\n\nBoyce, Ma y. «Fes ivals i. Zo oas ian.» Encyclopaedia I anica, Vol. IX, Fasc. ۵.۱۹۹۹، pp. ۵۳۴–۵۴۳.\n\nC is ofo e i, Simone. «Meh agān.» Encyclopaedia I anica, Vol. IX, Fasc. ۵.۱۹۹۹، pp. ۵۵۱–۵۵۴.\n\nSchmid , Hanns-Pe e . «Mi h a i. Mi a in Old Indian and Mi h a in Old I anian.» Encyclopaedia I anica, Vol. IX, Fasc. ۲.۱۹۹۹، pp. ۲۰۰–۲۰۴.\n\nTaqizadeh, Sayyed Hasan. «Calenda s i. P e-Islamic Calenda s.» Encyclopaedia I anica, Vol. IV, Fasc. ۶.۱۹۹۰، pp. ۶۵۸–۶۶۸.\n\nAves a. «Mih Yaš (Yash ۱۰).» در: Aves a, ترجمه و تصحیح‌های گوناگون، بخش یشت‌ها، یشت ۱۰\n\nمنبع :\n\nخبرآنلاین\n\nva NewsLis Limi = 5;\n\nاز میان اخبار\n\nطرز تهیه شامی تر بابلی؛ خورش اصیل مازندرانی\n\nروغن گیربکس را کی عوض کنیم؟\n\nوزیر بهداشت: درباره شیوع طاعون نگرانی نداریم\n\nویدئو؛ ماهی عجیب با لب‌های قرمز که روی کف اقیانوس راه می‌رود!\n\nشما قبلا این خبر را لایک کرده‌اید .\n\nfunc ion oPe sianNumbe (numbe ) {\n\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\n\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\n\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\n\nelemen .addEven Lis ene (\"click\", func ion() {\n\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n\n. hen(func ion( esponse) {\n\nif ( esponse.s a us == 200) {\n\nesponse.json(). hen(func ion(newSco e) {\n\nva likeNumbe Span = elemen .que ySelec o (\".like\");\n\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\n\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\n\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\n\nva hiddenHea = elemen .que ySelec o (\".hidden\");\n\nvisibleHea .classLis .add(\"hidden\");\n\nfavo i eBu on.classLis .add(\"hidden\");\n\nhiddenHea .classLis . emove(\"hidden\");\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}\n\n});\n\n} else {\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis .add(\"hidden_e o \");\n\nse Timeou (func ion() {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}, 3000);\n\n}\n\n}\n\n})\n\n});\n\n});",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "topics": [
+        "economy"
+      ],
+      "group_id": "local-849738c62693",
+      "original_news_id": "e1b7e50f5be32bea9fd8",
+      "source_ids": [],
+      "sources": [
+        {
+          "name": "فرارو",
+          "url": "https://fararu.com/fa/news/1008292/%DA%86%D8%B1%D8%A7-%D9%85%D9%87%D8%B1%DA%AF%D8%A7%D9%86-%D8%B2%D9%86%D8%AF%D9%87-%D9%85%D8%A7%D9%86%D8%AF-%D8%B1%D8%A7%D8%B2-%D8%AC%D8%B4%D9%86%DB%8C-%DA%A9%D9%87-%D8%AF%D8%B1-%DA%AF%D8%B0%D8%B1-%D9%82%D8%B1%D9%86-%D9%87%D8%A7-%D9%BE%D9%88%D8%B3%D8%AA-%D8%A7%D9%86%D8%AF%D8%A7%D8%AE%D8%AA"
+        }
+      ],
+      "image": "https://cdn.fararu.com/thumbnail/vV0eebgOqXt6/6M0pQmyaMzUdqBScdvmKvSetb8VbOJnGiYB8jhXQDPCV6RhGYhkkluzCALiMVC_bN6ua-kn417UGpr2uXMkif7Nm_X9HA2CyQjONMS9KpvWj4N_Zoshv6hipKl_QglUt/%D9%85%D9%87%D8%B1%DA%AF%D8%A7%D9%86.jpg",
+      "importance_score": 0,
+      "created_at": "2026-10-08T15:10:17.418Z",
+      "updated_at": "2026-10-08T15:10:17.418Z",
+      "published_at": "2026-10-08T18:25:47+03:30",
+      "status": "published",
+      "ai_managed": false,
+      "generated_by": "internal-republish-v1",
+      "manual_locked": false
+    },
+    "article-47cafe4e3ec818ca": {
+      "id": "article-47cafe4e3ec818ca",
+      "title": "ببینید؛ خلاصه بازی آلومینیوم 1 - ملوان 1",
+      "summary": "در هفته هشتم رقابت‌های لیگ برتر بازی تیم‌های آلومینیوم اراک و ملوان بندر انزلی با تساوی یک بر یک به پایان رسید.",
+      "content": "۱۸:۲۵ -\n\n۱۶ مهر ۱۴۰۵\n\nببینید؛ خلاصه بازی آلومینیوم ۱ - ملوان ۱\n\nدر هفته هشتم رقابت‌های لیگ برتر بازی تیم‌های آلومینیوم اراک و ملوان بندر انزلی با تساوی یک بر یک به پایان رسید.\n\nپ\n\n،\n\nپـ\n\nتبلیغات\n\nتبلیغات\n\nهفته هشتم لیگ برتر فوتبال ایران با تقابل دو تیم سخت‌کوش در اراک پیگیری شد. دیداری که برای پیروز قربانی و آلومینیوم اراک، فرصتی برای تداوم رکورد درخشان‌شان بود و برای ملوانِ مازیار زارع، میدانی برای اثبات بازگشت به روزهای اوج. نتیجه نهایی این نبرد، سهم برابری بود که هر دو تیم را به اهدافشان در جدول نزدیک‌تر کرد.\n\nتبلیغات\n\nva NewsLis Limi = 5;\n\nاز میان اخبار\n\nببینید؛ گل اول استقلال به تراکتور توسط سحرخیزان دقیقه ۲۸\n\nساعت بازی پرسپولیس مقابل صنعت نفت آبادان /هفته هشتم\n\nواکنش تارتار به شایعه حضور اورونوف در استقلال\n\nداستان عجیب علیرضا بیرانوند قبل از بازی حساس تراکتور - استقلال\n\nشما قبلا این خبر را لایک کرده‌اید .\n\nfunc ion oPe sianNumbe (numbe ) {\n\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\n\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\n\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\n\nelemen .addEven Lis ene (\"click\", func ion() {\n\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n\n. hen(func ion( esponse) {\n\nif ( esponse.s a us == 200) {\n\nesponse.json(). hen(func ion(newSco e) {\n\nva likeNumbe Span = elemen .que ySelec o (\".like\");\n\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\n\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\n\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\n\nva hiddenHea = elemen .que ySelec o (\".hidden\");\n\nvisibleHea .classLis .add(\"hidden\");\n\nfavo i eBu on.classLis .add(\"hidden\");\n\nhiddenHea .classLis . emove(\"hidden\");\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}\n\n});\n\n} else {\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis .add(\"hidden_e o \");\n\nse Timeou (func ion() {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}, 3000);\n\n}\n\n}\n\n})\n\n});\n\n});\n\nتبلیغات",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "topics": [
+        "economy"
+      ],
+      "group_id": "local-e6797b920340",
+      "original_news_id": "a0ebd418d1694cd981b7",
+      "source_ids": [],
+      "sources": [
+        {
+          "name": "فرارو",
+          "url": "https://fararu.com/fa/news/1008291/%D8%A8%D8%A8%DB%8C%D9%86%DB%8C%D8%AF-%D8%AE%D9%84%D8%A7%D8%B5%D9%87-%D8%A8%D8%A7%D8%B2%DB%8C-%D8%A2%D9%84%D9%88%D9%85%DB%8C%D9%86%DB%8C%D9%88%D9%85-%D9%85%D9%84%D9%88%D8%A7%D9%86"
+        }
+      ],
+      "image": "https://mcdn.fararu.com/ao/1a11c01ed23_5bef58.webp",
+      "importance_score": 0,
+      "created_at": "2026-10-08T15:10:17.418Z",
+      "updated_at": "2026-10-08T15:10:17.418Z",
+      "published_at": "2026-10-08T18:25:01+03:30",
+      "status": "published",
+      "ai_managed": false,
+      "generated_by": "internal-republish-v1",
+      "manual_locked": false
+    },
+    "article-83206250e4a86b11": {
+      "id": "article-83206250e4a86b11",
+      "title": "فهرست حساب‌های بانکی افراد در سامانه مالیاتی قرار گرفت",
+      "summary": "مدیرکل دفتر توسعه خدمات مالیاتی گفت: فهرست حساب‌های بانکی افراد با همکاری بانک مرکزی در سامانه قرار گرفته است. پست فهرست حساب‌های بانکی افراد در سامانه مالیاتی قرار گرفت اولین بار در تجارت نیوز ظاهر شد.",
+      "content": "فهرست حساب‌های بانکی افراد در سامانه مالیاتی قرار گرفت\n\n|\n\nبروزرسانی: 17 دقیقه پیش\n\nکد خبر: 1356371\n\nاقتصاد کلان\n\nلینک کوتاه\n\nکپی شد\n\nمدیرکل دفتر توسعه خدمات مالیاتی گفت: فهرست حساب‌های بانکی افراد با همکاری بانک مرکزی در سامانه قرار گرفته است.\n\nبخشی از پیش‌نیازهای اجرای قانون با همکاری سایر دستگاه‌ها فراهم شده است. از جمله این موارد، اطلاعات خانوار و اطلاعات مکانی است که در حال حاضر در سامانه قرار گرفته و قابل استفاده است.\n\nوی افزود: موضوع دیگر، اطلاعات حساب‌های اشخاص است که با همکاری بانک مرکزی در سامانه قرار گرفته است. به این ترتیب، زمانی که فرد وارد سامانه شود، فهرست تمامی حساب‌های بانکی وی را مشاهده خواهد کرد.\n\nاسکندری ادامه داد: با توجه به تعداد بالای حساب‌های بانکی، ممکن است افراد با مشاهده فهرست حساب‌های خود متوجه تعداد زیادی از حساب‌هایی شوند که نیازی به آنها ندارند. بر اساس برنامه‌ریزی انجام‌شده، از روزهای آینده این امکان برای افراد فراهم می‌شود تا حساب‌هایی را که به آنها نیاز ندارند، مسدود کنند.\n\nوی گفت: در مجموع، زیرساخت‌های لازم تا حدی فراهم شده و بخشی از خدمات نیز در این سامانه ارائه می‌شود. برای همه افرادی که کد ملی دارند، کارپوشه غیرتجاری ایجاد شده و بستر لازم برای اجرای قانون و ارائه خدمات از طریق این کارپوشه فراهم است.\n\nمنبع: تسنیم",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "topics": [
+        "economy"
+      ],
+      "group_id": "local-2e25c67d19ee",
+      "original_news_id": "bcae159185a09c000690",
+      "source_ids": [],
+      "sources": [
+        {
+          "name": "تجارت‌نیوز",
+          "url": "https://tejaratnews.com/%d9%81%d9%87%d8%b1%d8%b3%d8%aa-%d8%ad%d8%b3%d8%a7%d8%a8%d9%87%d8%a7%db%8c-%d8%a8%d8%a7%d9%86%da%a9%db%8c-%d8%a7%d9%81%d8%b1%d8%a7%d8%af-%d8%af%d8%b1-%d8%b3%d8%a7%d9%85%d8%a7%d9%86%d9%87"
+        }
+      ],
+      "image": "https://tejaratnews.com/wp-content/uploads/2026/10/1405063017274466438277923-ak-1200x800-1.webp",
+      "importance_score": 0,
+      "created_at": "2026-10-08T15:10:17.418Z",
+      "updated_at": "2026-10-08T15:10:17.418Z",
+      "published_at": "2026-10-08T18:20:04+03:30",
+      "status": "published",
+      "ai_managed": false,
+      "generated_by": "internal-republish-v1",
+      "manual_locked": false
+    },
+    "article-6cc82f75bad8f1e3": {
+      "id": "article-6cc82f75bad8f1e3",
+      "title": "ببینید؛ خلاصه بازی نساجی 1 - ذوب آهن 1",
+      "summary": "در دیداری جذاب از هفته هشتم لیگ برتر، تقابل ذوب‌آهن و نساجی با تساوی یک بر یک به پایان رسید.",
+      "content": "۱۸:۱۹ -\n\n۱۶ مهر ۱۴۰۵\n\nببینید؛ خلاصه بازی نساجی ۱ - ذوب آهن ۱\n\nدر دیداری جذاب از هفته هشتم لیگ برتر، تقابل ذوب‌آهن و نساجی با تساوی یک بر یک به پایان رسید.\n\nپ\n\n،\n\nپـ\n\nتبلیغات\n\nتبلیغات\n\nبا پایان وقفه بیش از بیست روزه لیگ برتر، رقابت‌ها در هفته هشتم با هیجان مضاعفی از سر گرفته شد. در یکی از دیدارهای حساس این هفته، ذوب‌آهن اصفهان در حالی به مصاف نساجی مازندران رفت که دو تیم اهداف متفاوتی را دنبال می‌کردند؛ یکی به دنبال بازگشت به مسیر موفقیت پس از حواشی اخیر و دیگری در جستجوی استارتی طوفانی با سرمربی جدید خود، سعید دقیقی.\n\nتبلیغات\n\nva NewsLis Limi = 5;\n\nاز میان اخبار\n\nببینید؛ گل اول استقلال به تراکتور توسط سحرخیزان دقیقه ۲۸\n\nساعت بازی پرسپولیس مقابل صنعت نفت آبادان /هفته هشتم\n\nواکنش تارتار به شایعه حضور اورونوف در استقلال\n\nداستان عجیب علیرضا بیرانوند قبل از بازی حساس تراکتور - استقلال\n\nشما قبلا این خبر را لایک کرده‌اید .\n\nfunc ion oPe sianNumbe (numbe ) {\n\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\n\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\n\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\n\nelemen .addEven Lis ene (\"click\", func ion() {\n\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n\n. hen(func ion( esponse) {\n\nif ( esponse.s a us == 200) {\n\nesponse.json(). hen(func ion(newSco e) {\n\nva likeNumbe Span = elemen .que ySelec o (\".like\");\n\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\n\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\n\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\n\nva hiddenHea = elemen .que ySelec o (\".hidden\");\n\nvisibleHea .classLis .add(\"hidden\");\n\nfavo i eBu on.classLis .add(\"hidden\");\n\nhiddenHea .classLis . emove(\"hidden\");\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}\n\n});\n\n} else {\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis .add(\"hidden_e o \");\n\nse Timeou (func ion() {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}, 3000);\n\n}\n\n}\n\n})\n\n});\n\n});\n\nتبلیغات",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "topics": [
+        "economy"
+      ],
+      "group_id": "local-e6797b920340",
+      "original_news_id": "edff953941b8db484ba4",
+      "source_ids": [],
+      "sources": [
+        {
+          "name": "فرارو",
+          "url": "https://fararu.com/fa/news/1008290/%D8%A8%D8%A8%DB%8C%D9%86%DB%8C%D8%AF-%D8%AE%D9%84%D8%A7%D8%B5%D9%87-%D8%A8%D8%A7%D8%B2%DB%8C-%D9%86%D8%B3%D8%A7%D8%AC%DB%8C-%D8%B0%D9%88%D8%A8-%D8%A2%D9%87%D9%86"
+        }
+      ],
+      "image": "https://mcdn.fararu.com/ao/1a11bfce74f_3324b4.webp",
+      "importance_score": 0,
+      "created_at": "2026-10-08T15:10:17.418Z",
+      "updated_at": "2026-10-08T15:10:17.418Z",
+      "published_at": "2026-10-08T18:19:19+03:30",
+      "status": "published",
+      "ai_managed": false,
+      "generated_by": "internal-republish-v1",
+      "manual_locked": false
+    },
+    "article-9736119bc4ecf320": {
+      "id": "article-9736119bc4ecf320",
+      "title": "تساوی ۱-۱ آلومینیوم مقابل ملوان؛ ناکامی بندرنشینان در اراک",
+      "summary": "در چارچوب هفته هشتم لیگ برتر، دیدار تیم‌های آلومینیوم اراک و ملوان بندر انزلی با تساوی یک بر یک به پایان رسید.",
+      "content": "۱۸:۱۳ -\n\n۱۶ مهر ۱۴۰۵\n\nتساوی ۱-۱ آلومینیوم مقابل ملوان؛ ناکامی بندرنشینان در اراک\n\nدر چارچوب هفته هشتم لیگ برتر، دیدار تیم‌های آلومینیوم اراک و ملوان بندر انزلی با تساوی یک بر یک به پایان رسید.\n\nپ\n\n،\n\nپـ\n\nهفته هشتم لیگ برتر فوتبال ایران با تقابل دو تیم سخت‌کوش در اراک پیگیری شد. دیداری که برای پیروز قربانی و آلومینیوم اراک، فرصتی برای تداوم رکورد درخشان‌شان بود و برای ملوانِ مازیار زارع، میدانی برای اثبات بازگشت به روزهای اوج. نتیجه نهایی این نبرد، سهم برابری بود که هر دو تیم را به اهدافشان در جدول نزدیک‌تر کرد.\n\nملوان با هدایت مازیار زارع، پس از پشت سر گذاشتن سه شکست متوالی، در دو هفته اخیر نشان داده بود که به فرم ایده‌آل خود بازگشته و ۴ امتیاز ارزشمند کسب کرده است. این تیم خیلی زود در دقیقه ۷ توسط شهریاری به گل اول دست یافت تا شوک بزرگی به میزبان وارد کند. در ادامه، ملوان فرصت داشت تا اختلاف را دوبرابر کند، اما موقعیت طلایی دقیقه ۴۰ توسط بازیکنان این تیم از دست رفت تا نیمه نخست با برتری ملوان به پایان برسد.\n\nنیمه دوم با فشار حملات شاگردان پیروز قربانی برای جبران گل خورده همراه بود. آلومینیوم که پیش از این دیدار هفت بازی متوالی را بدون شکست پشت سر گذاشته بود، در دقیقه ۵۴ به آنچه می‌خواست رسید. اشتباه عجیب صداقت، دروازه‌بان ملوان، فرصتی را در اختیار بهرام گودرزی قرار داد تا با گلزنی خود، حساب کار را یک بر یک برابر کند.\n\nپس از به ثمر رسیدن گل تساوی، تلاش دو تیم برای رسیدن به گل پیروزی بی‌ثمر بود و بازی با همان نتیجه یک بر یک به پایان رسید. با این نتیجه، آلومینیوم اراک ۱۳ امتیازی شد تا همچنان به روند خیره‌کننده خود ادامه دهد و ملوان نیز با ۸ امتیاز، به مسیر کسب امتیازات بیشتر در هفته‌های آینده امیدوار ماند.\n\nva NewsLis Limi = 5;\n\nاز میان اخبار\n\nببینید؛ گل اول استقلال به تراکتور توسط سحرخیزان دقیقه ۲۸\n\nساعت بازی پرسپولیس مقابل صنعت نفت آبادان /هفته هشتم\n\nواکنش تارتار به شایعه حضور اورونوف در استقلال\n\nداستان عجیب علیرضا بیرانوند قبل از بازی حساس تراکتور - استقلال\n\nشما قبلا این خبر را لایک کرده‌اید .\n\nfunc ion oPe sianNumbe (numbe ) {\n\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\n\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\n\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\n\nelemen .addEven Lis ene (\"click\", func ion() {\n\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n\n. hen(func ion( esponse) {\n\nif ( esponse.s a us == 200) {\n\nesponse.json(). hen(func ion(newSco e) {\n\nva likeNumbe Span = elemen .que ySelec o (\".like\");\n\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\n\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\n\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\n\nva hiddenHea = elemen .que ySelec o (\".hidden\");\n\nvisibleHea .classLis .add(\"hidden\");\n\nfavo i eBu on.classLis .add(\"hidden\");\n\nhiddenHea .classLis . emove(\"hidden\");\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}\n\n});\n\n} else {\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis .add(\"hidden_e o \");\n\nse Timeou (func ion() {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}, 3000);\n\n}\n\n}\n\n})\n\n});\n\n});",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "topics": [
+        "economy"
+      ],
+      "group_id": "local-1bee5788cded",
+      "original_news_id": "c1b88bfba0ffcf26bd59",
+      "source_ids": [],
+      "sources": [
+        {
+          "name": "فرارو",
+          "url": "https://fararu.com/fa/news/1008288/%D8%AA%D8%B3%D8%A7%D9%88%DB%8C-%D8%A2%D9%84%D9%88%D9%85%DB%8C%D9%86%DB%8C%D9%88%D9%85-%D9%85%D9%82%D8%A7%D8%A8%D9%84-%D9%85%D9%84%D9%88%D8%A7%D9%86-%D9%86%D8%A7%DA%A9%D8%A7%D9%85%DB%8C-%D8%A8%D9%86%D8%AF%D8%B1%D9%86%D8%B4%DB%8C%D9%86%D8%A7%D9%86-%D8%AF%D8%B1-%D8%A7%D8%B1%D8%A7%DA%A9"
+        }
+      ],
+      "image": "https://cdn.fararu.com/thumbnail/CGg6jF4EsLIB/KtfyUqpHZdVEKTKlzXtM6IPucolhztWY4Fm8o-oDRJ3saX824-M7RKd8eH0FW13sUJT88tKNHvOGGfu-2RCywqlngec2XFg3JVmsok-0dk41Pr8Mg94yKbmSQD6gq722/%D9%85%D9%84%D9%88%D8%A7%D9%86.jpg",
+      "importance_score": 0,
+      "created_at": "2026-10-08T15:10:17.418Z",
+      "updated_at": "2026-10-08T15:10:17.418Z",
+      "published_at": "2026-10-08T18:13:48+03:30",
+      "status": "published",
+      "ai_managed": false,
+      "generated_by": "internal-republish-v1",
+      "manual_locked": false
+    },
+    "article-878181189b867464": {
+      "id": "article-878181189b867464",
+      "title": "تساوی ۱-۱ نساجی مقابل ذوب آهن؛ یک امتیاز با جنجال داوری",
+      "summary": "در دیداری جذاب از هفته هشتم لیگ برتر، تقابل ذوب‌آهن و نساجی با تساوی یک بر یک به پایان رسید.",
+      "content": "۱۸:۱۰ -\n\n۱۶ مهر ۱۴۰۵\n\nتساوی ۱-۱ نساجی مقابل ذوب آهن؛ یک امتیاز با جنجال داوری\n\nدر دیداری جذاب از هفته هشتم لیگ برتر، تقابل ذوب‌آهن و نساجی با تساوی یک بر یک به پایان رسید.\n\nپ\n\n،\n\nپـ\n\nبا پایان وقفه بیش از بیست روزه لیگ برتر، رقابت‌ها در هفته هشتم با هیجان مضاعفی از سر گرفته شد. در یکی از دیدارهای حساس این هفته، ذوب‌آهن اصفهان در حالی به مصاف نساجی مازندران رفت که دو تیم اهداف متفاوتی را دنبال می‌کردند؛ یکی به دنبال بازگشت به مسیر موفقیت پس از حواشی اخیر و دیگری در جستجوی استارتی طوفانی با سرمربی جدید خود، سعید دقیقی.\n\nبازی با برتری ذوب‌آهن آغاز شد و شاگردان عبدالله ویسی که پیش از این با شکست مقابل پرسپولیس تا آستانه جدایی پیش رفته بودند، با روحیه‌ای متفاوت به میدان آمدند. در دقیقه ۱۸ بازی، رحمان جعفری توانست با استفاده از موقعیت پیش آمده، گل برتری اصفهانی‌ها را به ثمر برساند. این گل نقطه عطف نیمه اول بود و ذوبی‌ها را تا دقایق پایانی به کسب سه امتیاز امیدوار نگه داشت.\n\nدر حالی که بازی به دقایق حساس پایانی نزدیک می‌شد، نساجی تسلیم نشد و سرانجام در دقیقه ۸۲ توسط سرآبادانی به گل تساوی دست یافت. اما این پایانِ اتفاقات نبود؛ تنها دو دقیقه بعد، در دقیقه ۸۴، ذوب‌آهن موفق شد توسط کاظمی دروازه نساجی را برای بار دوم باز کند که این گل با اعتراض شدید همراه شد. تیم داوری پس از بررسی صحنه، اعلام کرد که این گل «به دلیل خطای مهاجم روی دروازه‌بان» مردود است تا ورق به نفع نساجی برگردد و بازی با همان نتیجه تساوی دنبال شود.\n\nدر نهایت این دیدار با نتیجه تساوی یک بر یک به پایان رسید. با این نتیجه، ذوب‌آهن ۹ امتیازی شد و نساجی مازندران نیز ۷ امتیازی باقی ماند. شروع سعید دقیقی در نساجی با یک امتیاز خارج از خانه همراه شد و عبدالله ویسی نیز در دیداری که تا ثانیه‌های پایانی در آستانه پیروزی بود، به تقسیم امتیازات رضایت داد.\n\nva NewsLis Limi = 5;\n\nاز میان اخبار\n\nببینید؛ گل اول استقلال به تراکتور توسط سحرخیزان دقیقه ۲۸\n\nساعت بازی پرسپولیس مقابل صنعت نفت آبادان /هفته هشتم\n\nواکنش تارتار به شایعه حضور اورونوف در استقلال\n\nداستان عجیب علیرضا بیرانوند قبل از بازی حساس تراکتور - استقلال\n\nشما قبلا این خبر را لایک کرده‌اید .\n\nfunc ion oPe sianNumbe (numbe ) {\n\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\n\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\n\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\n\nelemen .addEven Lis ene (\"click\", func ion() {\n\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n\n. hen(func ion( esponse) {\n\nif ( esponse.s a us == 200) {\n\nesponse.json(). hen(func ion(newSco e) {\n\nva likeNumbe Span = elemen .que ySelec o (\".like\");\n\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\n\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\n\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\n\nva hiddenHea = elemen .que ySelec o (\".hidden\");\n\nvisibleHea .classLis .add(\"hidden\");\n\nfavo i eBu on.classLis .add(\"hidden\");\n\nhiddenHea .classLis . emove(\"hidden\");\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}\n\n});\n\n} else {\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis .add(\"hidden_e o \");\n\nse Timeou (func ion() {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}, 3000);\n\n}\n\n}\n\n})\n\n});\n\n});",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "topics": [
+        "economy"
+      ],
+      "group_id": "local-db055e433df6",
+      "original_news_id": "e7c4154a49703544074d",
+      "source_ids": [],
+      "sources": [
+        {
+          "name": "فرارو",
+          "url": "https://fararu.com/fa/news/1008287/%D8%AA%D8%B3%D8%A7%D9%88%DB%8C-%D9%86%D8%B3%D8%A7%D8%AC%DB%8C-%D9%85%D9%82%D8%A7%D8%A8%D9%84-%D8%B0%D9%88%D8%A8-%D8%A2%D9%87%D9%86-%DB%8C%DA%A9-%D8%A7%D9%85%D8%AA%DB%8C%D8%A7%D8%B2-%D8%A8%D8%A7-%D8%AC%D9%86%D8%AC%D8%A7%D9%84-%D8%AF%D8%A7%D9%88%D8%B1%DB%8C"
+        }
+      ],
+      "image": "https://cdn.fararu.com/thumbnail/SyOJ2HnVq9xQ/BEXPG4bDjO38v-vKhD02HDJSH_JlTQPMZcEV6xyEXFaLbg_1jEaKYrMMjb13AfjGrUECccgdTb_DrSHNTpzNwwr9A-ODldD2XZdCfzPF1J3YhXnSig0FCGzFUF85jagq/%D9%86%D8%B3%D8%A7%D8%AC%DB%8C.jpg",
+      "importance_score": 0,
+      "created_at": "2026-10-08T15:10:17.418Z",
+      "updated_at": "2026-10-08T15:10:17.418Z",
+      "published_at": "2026-10-08T18:10:44+03:30",
+      "status": "published",
+      "ai_managed": false,
+      "generated_by": "internal-republish-v1",
+      "manual_locked": false
+    },
+    "article-e97ac513ec10ef7f": {
+      "id": "article-e97ac513ec10ef7f",
+      "title": "ویدئویی از اجرای همایون شجریان در شیراز",
+      "summary": "در این ویدئو لحظاتی از اجرای همایون شجریان در شیراز را می‌بینید.",
+      "content": "۱۸:۱۰ -\n\n۱۶ مهر ۱۴۰۵\n\nویدئویی از اجرای همایون شجریان در شیراز\n\nدر این ویدئو لحظاتی از اجرای همایون شجریان در شیراز را می‌بینید.\n\nپ\n\n،\n\nپـ\n\nتبلیغات\n\nتبلیغات\n\nتبلیغات\n\nva NewsLis Limi = 5;\n\nاز میان اخبار\n\nویدئویی از اجرای همایون شجریان در شیراز\n\nنقد و بررسی فیلم «گودزیلا منهای یک» 'Godzilla Minus Ze o'\n\nبازگشت شرلوک هولمز؛ نقد و بررسی سریال «مسأله نهایی»\n\nچرا ذهن انسان در اتفاقات تصادفی به دنبال معنا می‌گردد؟\n\nشما قبلا این خبر را لایک کرده‌اید .\n\nfunc ion oPe sianNumbe (numbe ) {\n\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\n\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\n\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\n\nelemen .addEven Lis ene (\"click\", func ion() {\n\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n\n. hen(func ion( esponse) {\n\nif ( esponse.s a us == 200) {\n\nesponse.json(). hen(func ion(newSco e) {\n\nva likeNumbe Span = elemen .que ySelec o (\".like\");\n\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\n\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\n\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\n\nva hiddenHea = elemen .que ySelec o (\".hidden\");\n\nvisibleHea .classLis .add(\"hidden\");\n\nfavo i eBu on.classLis .add(\"hidden\");\n\nhiddenHea .classLis . emove(\"hidden\");\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}\n\n});\n\n} else {\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis .add(\"hidden_e o \");\n\nse Timeou (func ion() {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}, 3000);\n\n}\n\n}\n\n})\n\n});\n\n});\n\nتبلیغات",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "topics": [
+        "economy"
+      ],
+      "group_id": "local-f9ba669207ba",
+      "original_news_id": "07b5a8bebd510a742879",
+      "source_ids": [],
+      "sources": [
+        {
+          "name": "فرارو",
+          "url": "https://fararu.com/fa/news/1008286/%D9%88%DB%8C%D8%AF%D8%A6%D9%88%DB%8C%DB%8C-%D8%A7%D8%B2-%D8%A7%D8%AC%D8%B1%D8%A7%DB%8C-%D9%87%D9%85%D8%A7%DB%8C%D9%88%D9%86-%D8%B4%D8%AC%D8%B1%DB%8C%D8%A7%D9%86-%D8%AF%D8%B1-%D8%B4%DB%8C%D8%B1%D8%A7%D8%B2"
+        }
+      ],
+      "image": "https://mcdn.fararu.com/ao/1a11bf18eaa_c14c83.webp",
+      "importance_score": 0,
+      "created_at": "2026-10-08T15:10:17.418Z",
+      "updated_at": "2026-10-08T15:10:17.418Z",
+      "published_at": "2026-10-08T18:10:38+03:30",
+      "status": "published",
+      "ai_managed": false,
+      "generated_by": "internal-republish-v1",
+      "manual_locked": false
+    },
+    "article-dd57ab7f994ef0f3": {
+      "id": "article-dd57ab7f994ef0f3",
+      "title": "سریع‌ترین اقتصادهای در حال رشد آسیا",
+      "summary": "دنیای اقتصاد؛ تایوان سریع‌ترین اقتصاد در حال رشد آسیا در سال ۲۰۲۶ خواهد بود.",
+      "content": "اینفوگرافی؛\n\nسریع‌ترین اقتصادهای در حال رشد آسیا\n\nتاریخ انتشار :\n\n۱۴۰۵/۰۷/۱۶ ۱۷:۵۲\n\nشماره خبر:\n\n-->\n\n۴۳۰۰۵۱۳\n\nsvg{fill:#fff}\n\nگروه:\n\nگروه آنلاین روزنامه دنیای اقتصاد\n\nبزرگنمایی متن خبر\n\nدنیای اقتصاد؛ تایوان سریع‌ترین اقتصاد در حال رشد آسیا در سال ۲۰۲۶ خواهد بود.\n\nنرخ رشد واقعی تولید ناخالص داخلی این کشور در سال جاری به ۱۱ درصد می‌رسد. پس از تایوان، قرقیزستان با رشد ۸.۹ درصدی و ویتنام با ۷.۸ درصد در رتبه‌های دوم و سوم قرار دارند. تاجیکستان، ازبکستان و هند نیز هر کدام با رشد ۷ درصدی در جایگاه‌های بعدی قرار گرفته‌اند.\n\nدر ادامه این فهرست، بوتان با ۶.۵ درصد، گرجستان و ترکمنستان هر کدام با ۶.۳ درصد و مغولستان با ۵.۷ درصد قرار دارند. چین با رشد پیش‌بینی‌شده ۴.۶ درصدی در رتبه شانزدهم آسیا ایستاده است و پس از آن هنگ‌کنگ و سریلانکا قرار دارند. این پیش‌بینی‌ها بر اساس آخرین گزارش «چشم‌انداز توسعه آسیایی» بانک توسعه آسیایی در سپتامبر ۲۰۲۶ منتشر شده‌اند.\n\n-->\n\ndocumen .addEven Lis ene ('DOMCon en Loaded', func ion() {\n\ncons sha eBu on = documen .que ySelec o ('.news_sha e_bu on');\n\nif (!sha eBu on) e u n;\n\nif (!naviga o .sha e) {\n\nconsole.log('Web Sha e API no suppo ed in his b owse . Hiding he bu on.');\n\nsha eBu on.s yle.display = 'none';\n\ne u n;\n\n}\n\nsha eBu on.addEven Lis ene ('click', async () => {\n\ny {\n\ncons sha eDa a = {\n\ni le: \" u0633 u0631 u06cc u0639 u200c u062a u0631 u06cc u0646 u0627 u0642 u062a u0635 u0627 u062f u0647 u0627 u06cc u062f u0631 u062d u0627 u0644 u0631 u0634 u062f u0622 u0633 u06cc u0627\",\n\nex : \" u062f u0646 u06cc u0627 u06cc u0627 u0642 u062a u0635 u0627 u062f u061b u062a u0627 u06cc u0648 u0627 u0646 u0633 u0631 u06cc u0639 u200c u062a u0631 u06cc u0646 u0627 u0642 u062a u0635 u0627 u062f u062f u0631 u062d u0627 u0644 u0631 u0634 u062f u0622 u0633 u06cc u0627 u062f u0631 u0633 u0627 u0644 u06f2 u06f0 u06f2 u06f6 u062e u0648 u0627 u0647 u062f u0628 u0648 u062f.\",\n\nu l: \"h ps: / /donya-e-eq esad.com /fa / iny /news-4300513\" };\n\nawai naviga o .sha e(sha eDa a);\n\nconsole.log('Con en sha ed successfully!');\n\n} ca ch (e o ) {\n\nif (e o .name !== 'Abo E o ') {\n\nconsole.e o ('E o sha ing con en :', e o );\n\n}\n\n}\n\n});\n\n});\n\nاخبار مرتبط\n\nچتر نظارتی پکن بر سر اتباع بیگانه\n\nآلودگی هوا به چین بازگشت\n\nچرا آمریکایی‌ها با ۱۰۰ هزار دلار در سال خودشان را در طبقه کارگر می‌بینند؟\n\nرقابت تازه در بازار نوشیدنی‌ها\n\nپایان باز ملاقات تاریخی",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "topics": [
+        "economy"
+      ],
+      "group_id": "local-71c2e3f79209",
+      "original_news_id": "6c263f0e69ce87c937e9",
+      "source_ids": [],
+      "sources": [
+        {
+          "name": "دنیای اقتصاد",
+          "url": "https://donya-e-eqtesad.com/%D8%A8%D8%AE%D8%B4-%DA%AF%D8%B1%D9%88%D9%87-%D8%A2%D9%86%D9%84%D8%A7%DB%8C%D9%86-%D8%B1%D9%88%D8%B2%D9%86%D8%A7%D9%85%D9%87-%D8%AF%D9%86%DB%8C%D8%A7%DB%8C-%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF-192/4300513-%D8%B3%D8%B1%DB%8C%D8%B9-%D8%AA%D8%B1%DB%8C%D9%86-%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF%D9%87%D8%A7%DB%8C-%D8%AF%D8%B1-%D8%AD%D8%A7%D9%84-%D8%B1%D8%B4%D8%AF-%D8%A2%D8%B3%DB%8C%D8%A7"
+        }
+      ],
+      "image": "https://cdn.donya-e-eqtesad.com/thumbnail/hUx9I1iUSMTC/QHn8O9nsSzT8qCU7RegsN6Pbb5v74eEtbKeSOh05RaaBOjFf0bvyPEt7TZyzEhnm/IMG_20261008_174955_370.jpg",
+      "importance_score": 0,
+      "created_at": "2026-10-08T15:10:17.418Z",
+      "updated_at": "2026-10-08T15:10:17.418Z",
+      "published_at": "2026-10-08T17:52:04+03:30",
       "status": "published",
       "ai_managed": false,
       "generated_by": "internal-republish-v1",
