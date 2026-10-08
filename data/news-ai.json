@@ -1,7 +1,7 @@
 {
   "version": 1,
   "policy_version": 8,
-  "updated": "2026-10-08T20:09:16Z",
+  "updated": "2026-10-08T20:47:26Z",
   "items": {
     "56927672062ac466f3e762c5": {
       "title": "قیمت بیت‌کوین و اتریوم امروز سه‌شنبه ۱۴ مهر ۱۴۰۵",
@@ -19192,9 +19192,13 @@
       "important": false,
       "important_topics": [],
       "slider_topics": [],
-      "ticker_topics": [],
-      "breaking": false,
-      "breaking_topics": [],
+      "ticker_topics": [
+        "sports"
+      ],
+      "breaking": true,
+      "breaking_topics": [
+        "sports"
+      ],
       "publishable": true,
       "exclude_reason": "",
       "group_id": "local-e2f8396885fe",
@@ -32129,7 +32133,7 @@
       "publishable": true,
       "exclude_reason": "",
       "group_id": "local-d01152dabcd7",
-      "representative": false,
+      "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
       "local_score": 7,
@@ -32158,7 +32162,7 @@
       "publishable": true,
       "exclude_reason": "",
       "group_id": "local-64ece4743100",
-      "representative": false,
+      "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
       "local_score": 10,
@@ -49274,7 +49278,9 @@
       "importance": 19,
       "important": false,
       "important_topics": [],
-      "slider_topics": [],
+      "slider_topics": [
+        "sports"
+      ],
       "ticker_topics": [],
       "breaking": false,
       "breaking_topics": [],
@@ -52095,9 +52101,9 @@
         "health"
       ],
       "topic_scores": {
-        "health": 12
+        "health": 11
       },
-      "importance": 12,
+      "importance": 11,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -52110,10 +52116,10 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 7,
+      "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.9531518271896573
+      "age_hours": 3.5891066741281086
     },
     "ce06468a38b1e0928a8b5bcd": {
       "title": "فوری/ اقدام جدید آمریکا علیه ایران",
@@ -52124,9 +52130,9 @@
         "economy"
       ],
       "topic_scores": {
-        "economy": 11
+        "economy": 10
       },
-      "importance": 11,
+      "importance": 10,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -52139,10 +52145,10 @@
       "representative": false,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 11,
+      "local_score": 10,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 3.1303740494118797
+      "age_hours": 3.766328896350331
     },
     "e6f66508c07f3f5a7729c803": {
       "title": "جواب مرموز بیرانوند به شایعه استقلالی شدن",
@@ -52153,9 +52159,9 @@
         "economy"
       ],
       "topic_scores": {
-        "economy": 9
+        "economy": 8
       },
-      "importance": 9,
+      "importance": 8,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -52168,10 +52174,10 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 9,
+      "local_score": 8,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.488985160522991
+      "age_hours": 3.1249400074614417
     },
     "a876ed0c5e228569978996b7": {
       "title": "١٣٠ هزار تن برنج در انتظار ترخیص است",
@@ -52182,9 +52188,9 @@
         "markets"
       ],
       "topic_scores": {
-        "markets": 7
+        "markets": 6
       },
-      "importance": 7,
+      "importance": 6,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -52197,10 +52203,10 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 7,
+      "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.502596271634102
+      "age_hours": 3.138551118572553
     },
     "d92bc1ed3614d8299f18f74e": {
       "title": "واکنش بقائی به ادعاهای تازه روبیو",
@@ -52240,9 +52246,9 @@
         "markets"
       ],
       "topic_scores": {
-        "markets": 17
+        "markets": 16
       },
-      "importance": 17,
+      "importance": 16,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -52255,10 +52261,10 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 7,
+      "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.561207382745213
+      "age_hours": 3.197162229683664
     },
     "6ab8ab7dc868268bd236e903": {
       "title": "صنعت خودروی آلمان تحت فشار تهدیدهای تجاری است",
@@ -52269,9 +52275,9 @@
         "auto"
       ],
       "topic_scores": {
-        "auto": 14
+        "auto": 13
       },
-      "importance": 14,
+      "importance": 13,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -52284,10 +52290,10 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 9,
+      "local_score": 8,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.573985160522991
+      "age_hours": 3.2099400074614417
     },
     "cfccc711fe9cea207858ba5d": {
       "title": "قیمت دلار توافقی - ۱۶ مهر ۱۴۰۵",
@@ -52298,9 +52304,9 @@
         "currency-gold"
       ],
       "topic_scores": {
-        "currency-gold": 16
+        "currency-gold": 15
       },
-      "importance": 16,
+      "importance": 15,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -52313,10 +52319,10 @@
       "representative": false,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 11,
+      "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.5798184938563242
+      "age_hours": 3.215773340794775
     },
     "aef989ac86ac115a88ff0648": {
       "title": "حساب جدید برای وام؛ بانک‌ها چه می‌کنند؟",
@@ -52327,9 +52333,9 @@
         "markets"
       ],
       "topic_scores": {
-        "markets": 7
+        "markets": 6
       },
-      "importance": 7,
+      "importance": 6,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -52342,10 +52348,10 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 7,
+      "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.5867629383007684
+      "age_hours": 3.2227177852392197
     },
     "e808210352c61c4ad5bc54ba": {
       "title": "قیمت دلار و سایر ارز‌ها - ۱۶ مهر ۱۴۰۵",
@@ -52371,10 +52377,10 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 14,
+      "local_score": 13,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.592318493856324
+      "age_hours": 3.2282733407947752
     },
     "adcc3b159b685d9903eed849": {
       "title": "قیمت انواع سکه- ۱۶ مهر ۱۴۰۵",
@@ -52385,9 +52391,9 @@
         "currency-gold"
       ],
       "topic_scores": {
-        "currency-gold": 12
+        "currency-gold": 11
       },
-      "importance": 12,
+      "importance": 11,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -52397,13 +52403,13 @@
       "publishable": true,
       "exclude_reason": "",
       "group_id": "local-d01152dabcd7",
-      "representative": true,
+      "representative": false,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 7,
+      "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.598707382745213
+      "age_hours": 3.2346622296836642
     },
     "2e76414058ea3da8c259fba4": {
       "title": "قیمت طلا ۱۸ عیار - ۱۶ مهر ۱۴۰۵",
@@ -52414,9 +52420,9 @@
         "currency-gold"
       ],
       "topic_scores": {
-        "currency-gold": 15
+        "currency-gold": 14
       },
-      "importance": 15,
+      "importance": 14,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -52426,13 +52432,13 @@
       "publishable": true,
       "exclude_reason": "",
       "group_id": "local-64ece4743100",
-      "representative": true,
+      "representative": false,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 10,
+      "local_score": 9,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.603429604967435
+      "age_hours": 3.2393844519058863
     },
     "c3d90d5d62915f561e3db913": {
       "title": "بازده اوراق خزانه آمریکا افزایش یافت",
@@ -52443,9 +52449,9 @@
         "markets"
       ],
       "topic_scores": {
-        "markets": 12
+        "markets": 11
       },
-      "importance": 12,
+      "importance": 11,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -52458,10 +52464,10 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 7,
+      "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.6081518271896575
+      "age_hours": 3.2441066741281084
     },
     "79ce3e46710e974831fde099": {
       "title": "منچسترسیتی ابوظبی را بی‌اعتبار می‌کند؟",
@@ -52472,31 +52478,25 @@
         "sports"
       ],
       "topic_scores": {
-        "sports": 19
+        "sports": 18
       },
-      "importance": 19,
+      "importance": 18,
       "important": false,
       "important_topics": [],
-      "slider_topics": [
-        "sports"
-      ],
-      "ticker_topics": [
-        "sports"
-      ],
-      "breaking": true,
-      "breaking_topics": [
-        "sports"
-      ],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
       "publishable": true,
       "exclude_reason": "",
       "group_id": "local-e57ebd1a8834",
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 9,
+      "local_score": 8,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 2.641207382745213
+      "age_hours": 3.277162229683664
     },
     "950c6e4169f497bb6f55e390": {
       "title": "تحریم‌های جدید آمریکا علیه ناوگان سایه ایران",
@@ -52545,9 +52545,9 @@
         "economy"
       ],
       "topic_scores": {
-        "economy": 7
+        "economy": 6
       },
-      "importance": 7,
+      "importance": 6,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -52560,10 +52560,10 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 7,
+      "local_score": 6,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 2.8120407160785463
+      "age_hours": 3.4479955630169976
     },
     "4aea8121347ece8d2d9d32d0": {
       "title": "شگفتی‌های IPO",
@@ -52594,7 +52594,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.2378740494118796
+      "age_hours": 2.873828896350331
     },
     "5cefbfc1e4fbb32eab78d399": {
       "title": "ببینید؛ خلاصه بازی سپاهان 6 - فجرسپاسی 1",
@@ -52623,7 +52623,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 2.2567629383007684
+      "age_hours": 2.8927177852392196
     },
     "e5e832c5fd8041dd1cfdfb0a": {
       "title": "جزئیات تحریم‌ های جدید آمریکا علیه ایران",
@@ -52634,9 +52634,9 @@
         "economy"
       ],
       "topic_scores": {
-        "economy": 12
+        "economy": 11
       },
-      "importance": 12,
+      "importance": 11,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -52649,10 +52649,10 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 12,
+      "local_score": 11,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.2792629383007683
+      "age_hours": 2.9152177852392196
     },
     "c8adc1f3f0b6032e46047e94": {
       "title": "برد ۶-۱ سپاهان مقابل فجرسپاسی؛ شاگردان نویدکیا رحم نداشتند",
@@ -52689,7 +52689,7 @@
       "local_score": 9,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 2.2978740494118797,
+      "age_hours": 2.933828896350331,
       "permanent_article": true,
       "article_id": "article-8c1c3ae812dffd9a",
       "image": "https://cdn.fararu.com/thumbnail/jrxQhLpXTXWw/a9oXBC-DTNii2Vk6RSR-MPM3Bj-QNbJ1X-0JPzzD9QB6IduFAOgy0UvdCXfQtJmsySYj6JoyRCV6f4t8TcrSXnDusO8x3cuOa3FsgZm_FnSx8g7iX56_0yRoy5yhcfv-/%D8%AD%D8%A7%D8%AC+%D8%B5%D9%81%DB%8C.jpg"
@@ -52721,7 +52721,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 2.3045407160785465
+      "age_hours": 2.9404955630169973
     },
     "bc57dbecd1d59ad93f5ab6a3": {
       "title": "واکنش سخنگوی وزارت امور خارجه به اظهارات روبیو",
@@ -52750,7 +52750,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 2.3153740494118797
+      "age_hours": 2.9513288963503306
     },
     "10996d364f52f5bf1036cf65": {
       "title": "ترافیک سنگین در چند محور اصلی کشور",
@@ -52761,9 +52761,9 @@
         "economy"
       ],
       "topic_scores": {
-        "economy": 7
+        "economy": 6
       },
-      "importance": 7,
+      "importance": 6,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -52776,10 +52776,10 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 7,
+      "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.393429604967435
+      "age_hours": 3.0293844519058863
     },
     "e9bbc72ab608cdd8de36b64e": {
       "title": "نکونام بعد از بازی با استقلال: باید با دو گل به رختکن می‌رفتیم",
@@ -52790,9 +52790,9 @@
         "economy"
       ],
       "topic_scores": {
-        "economy": 7
+        "economy": 6
       },
-      "importance": 7,
+      "importance": 6,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -52805,10 +52805,10 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 7,
+      "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.4203740494118797
+      "age_hours": 3.0563288963503306
     },
     "1de90f70dca11b56051a640c": {
       "title": "کمبود فناوری نداریم؛ مشکل در حکمرانی فناوری است/ هوش مصنوعی باید تصمیم‌یار مدیر شهری باشد",
@@ -52837,7 +52837,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 2.4300962716341017
+      "age_hours": 3.066051118572553
     },
     "c69da243e92be99b78f0e79b": {
       "title": "تصمیم بزرگ بیرانوند برای احتمال استقلالی شدن با جواب مرموز",
@@ -52848,9 +52848,9 @@
         "economy"
       ],
       "topic_scores": {
-        "economy": 9
+        "economy": 8
       },
-      "importance": 9,
+      "importance": 8,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -52863,10 +52863,10 @@
       "representative": false,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 9,
+      "local_score": 8,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.488985160522991
+      "age_hours": 3.1249400074614417
     },
     "dfeffc546fd614af7553d30b": {
       "title": "کارشناسی داوری صحنه‌های جنجالی؛ گل تراکتور و پنالتی استقلال",
@@ -52895,7 +52895,7 @@
       "local_score": 9,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 1.5328740494118795
+      "age_hours": 2.168828896350331
     },
     "139dafcb953e5a9dc9e09954": {
       "title": "پایداری کامل شبکه برق در پایتخت",
@@ -52924,7 +52924,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.5489851605229907
+      "age_hours": 2.184940007461442
     },
     "ac3a4e07fd17d7671b46c344": {
       "title": "تساوی تراکتور و استقلال به نفع پرسپولیس تمام شد",
@@ -52953,7 +52953,7 @@
       "local_score": 9,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 1.6531518271896575
+      "age_hours": 2.2891066741281088
     },
     "35642c59e033a1070fda19fb": {
       "title": "تیم گل‌محمدی برد و از بحران خارج شد",
@@ -52990,7 +52990,7 @@
       "local_score": 9,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 1.6650962716341018,
+      "age_hours": 2.301051118572553,
       "permanent_article": true,
       "article_id": "article-546ca4b28c3e1693",
       "image": "https://cdn.fararu.com/thumbnail/8o6jIuJylWsa/35Lwjblw0AHQLfKiqYkyZFSgKU0bCmMLBhTEHWh8ABZRZn73Fu7K2c4-bYpmlhgsyFEe8TarnB_ZRuGy0AEfqjkHRSU0d1D5z6ajzjPh54VblXt9yH2OHFNksEjq786g/%D8%AF%D9%87%D9%88%DA%A9.jpg"
@@ -53022,7 +53022,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.6850962716341018
+      "age_hours": 2.321051118572553
     },
     "c02bdccd3d1d2af03ac1fdeb": {
       "title": "تصویر؛ حمایت شجاع از زنوزی و کنایه به مصاحبه بیرانوند",
@@ -53051,7 +53051,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.714818493856324
+      "age_hours": 2.3507733407947753
     },
     "c72265c6c41ba6953e37c9f8": {
       "title": "باشگاه تراکتورسازی: بیرانوند به علت انجام مصاحبه خلاف واقع پس از تساوی تراکتور و استقلال، از تیم اخراج شد",
@@ -53080,7 +53080,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.7831518271896574
+      "age_hours": 2.4191066741281086
     },
     "aac753fd66d18afe5a445378": {
       "title": "دست رد عراق به درخواست سوریه درباره عناصر داعش",
@@ -53109,7 +53109,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.8678740494118797
+      "age_hours": 2.503828896350331
     },
     "a33593af331b6eee492e1fe7": {
       "title": "مطالعه دوقلوها: آیا ارتباط زمان صفحه‌نمایش با سلامت روان نوجوانان کمتر از آنچه فکر می‌کنیم است؟",
@@ -53138,7 +53138,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.9531518271896575
+      "age_hours": 2.5891066741281086
     },
     "033f374cd2b97a1219c76cc3": {
       "title": "بمب تراکتور در رختکن؛ اخراج بیرانوند بعد از مصاحبه جنجالی",
@@ -53167,7 +53167,7 @@
       "local_score": 8,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.9606518271896574
+      "age_hours": 2.5966066741281084
     },
     "d6ecaa1fc59abf1e572036e3": {
       "title": "ببینید؛ خلاصه بازی فولاد 2 - مس شهربابک 1",
@@ -53196,7 +53196,7 @@
       "local_score": 8,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.008985160522991
+      "age_hours": 2.6449400074614418
     },
     "0cd62e2562588bdfc42c1d8a": {
       "title": "افشاگری بزرگ درباره فوتبالیست‌ها؛ با معافیت پزشکی به سربازی نرفتند!",
@@ -53229,7 +53229,7 @@
       "local_score": 9,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 2.062318493856324
+      "age_hours": 2.6982733407947754
     },
     "0a20a163b0bc3faba3076e23": {
       "title": "هشدار امنیتی آمریکا به شهروندانش در عربستان",
@@ -53287,7 +53287,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.12287404941188
+      "age_hours": 2.7588288963503307
     },
     "9932ab40557c925782117ea1": {
       "title": "برد ۲-۱ فولاد مقابل مس شهربابک؛ همچنان برنده در خانه",
@@ -53318,7 +53318,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.158429604967435
+      "age_hours": 2.7943844519058865
     },
     "d3caab37f6fea215cf01751f": {
       "title": "وزارت خزانه‌داری آمریکا: اعمال تحریم‌های جدید علیه ۶ فرد، ۲۷ شرکت و ۲۲ کشتی مرتبط با ناوگان نفتی ایران",
@@ -53347,7 +53347,7 @@
       "local_score": 13,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.2578740494118796
+      "age_hours": 2.893828896350331
     },
     "b40830d5aaa62fa7bf76a6af": {
       "title": "تصمیم بزرگ بیرانوند برای استقلالی شدن با جواب مرموز",
@@ -53358,9 +53358,9 @@
         "economy"
       ],
       "topic_scores": {
-        "economy": 9
+        "economy": 8
       },
-      "importance": 9,
+      "importance": 8,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -53373,10 +53373,10 @@
       "representative": false,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 9,
+      "local_score": 8,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.488985160522991
+      "age_hours": 3.1249400074614417
     },
     "0218c8c9886aabebf5f4bc6c": {
       "title": "مدیرعامل تراکتور کار بیرانوند را یکسره کرد؛ بعد از سربازی در خدمتیم!",
@@ -53405,7 +53405,7 @@
       "local_score": 8,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.2350962716341018
+      "age_hours": 1.871051118572553
     },
     "3c2cd376a3b67d1a09d66f04": {
       "title": "ببینید/ ویدیوهای نگران کننده از نابودی درختان چیتگر / شهرداری زاکانی چه بر سر پارک چیتگر آورده؟",
@@ -53434,7 +53434,7 @@
       "local_score": 11,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.370929604967435
+      "age_hours": 2.0068844519058864
     },
     "6447e7282d33eacee7219e39": {
       "title": "هشدار امنیتی آمریکا به شهروندانش در عربستان/ چه افرادی باید مجوز ویژه دریافت کنند؟",
@@ -53463,7 +53463,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 1.4798184938563241
+      "age_hours": 2.1157733407947754
     },
     "d78bdfb02e17aa0568853474": {
       "title": "نخستین سفر رسمی رئیس‌جمهور آلمان به فرانسه پس از ۱۳ سال/ مکرون: اگر آلمان و فرانسه با هم پیش نروند، اروپا پیشرفتی نخواهد کرد",
@@ -53492,7 +53492,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 1.6425962716341018
+      "age_hours": 2.278551118572553
     },
     "7977ddf7c829b3d50e91fc68": {
       "title": "هوش مصنوعی به حکومت‌ها قدرت بیشتری می‌دهد؟",
@@ -53521,7 +53521,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 1.646207382745213
+      "age_hours": 2.282162229683664
     },
     "5547b36ceefbe7c7fa8764fa": {
       "title": "پ.ک.ک از خروج تمام نیروهای خود از ترکیه و مناطق مرزی خبر داد",
@@ -53550,7 +53550,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 1.1395407160785462
+      "age_hours": 1.7754955630169975
     },
     "5ceae611a02e84748677b6ce": {
       "title": "تمدید مهلت انتخاب رشته آزمون‌های سراسری و پذیرش دانشجو معلم تا ۱۹ مهرماه",
@@ -53579,7 +53579,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 0.6470407160785463
+      "age_hours": 1.2829955630169974
     },
     "7dfc57abf222baa975b3eeb3": {
       "title": "پارلمان اروپا از تصویب یک قطعنامه ضدایرانی خبر داد",
@@ -53608,7 +53608,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 0.6967629383007685
+      "age_hours": 1.3327177852392196
     },
     "42bcc5a155a7a4bd68d0ee31": {
       "title": "تکرار مزایده کدما برای فروش کنسانتره سرب",
@@ -53637,7 +53637,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.721207382745213
+      "age_hours": 1.357162229683664
     },
     "3c3bc6a87edc4b01a7df2e6c": {
       "title": "چرا صفت داسی ممکن است از مالاریا محافظت کند؛ نگاهی به یافته‌های تازه دربارهٔ انگل‌های متمایز مالاریا",
@@ -53666,7 +53666,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.9531518271896574
+      "age_hours": 1.5891066741281086
     },
     "288eeaffd1f2801060081bc7": {
       "title": "تمدید مهلت انتخاب رشته کنکور ۱۴۰۵",
@@ -53724,7 +53724,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 0.3956518271896574
+      "age_hours": 1.0316066741281085
     },
     "5ff02b32d1dcc6f497fe3c33": {
       "title": "مدارس کیش یک هفته غیرحضوری شد",
@@ -53754,6 +53754,211 @@
       "political": false,
       "breaking_signal": false,
       "age_hours": 0.5984296049674352
+    },
+    "fda8b679262927b9719684e4": {
+      "title": "افزایش نرخ حمل نفت به مسیرهای دور از خاورمیانه هم سرایت کرد",
+      "summary": "خاویر بلاس، ستون‌نویس بلومبرگ، می‌گوید جهش هزینه حمل نفتکش‌ها دیگر محدود به مسیرهای مرتبط با خاورمیانه نیست.",
+      "source": "فرارو",
+      "published": "2026-10-09T00:06:45+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 15
+      },
+      "importance": 15,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-62cc2a21a7f6",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 10,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.17799556301699745
+    },
+    "51ac20a44b503c3aaa27ca33": {
+      "title": "وزش باد شدید در تهران",
+      "summary": "مدیرکل پیش بینی سازمان هواشناسی گفت:بیشترین سرعت ثبت‌شده باد در فرودگاه مهرآباد و فرودگاه امام خمینی(ره) به ۸۴ کیلومتر بر ساعت رسیده است. پست وزش باد شدید در تهران اولین بار در تجارت نیوز ظاهر شد.",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-08T23:59:13+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 7
+      },
+      "importance": 7,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-ab2ff00ba25e",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.303551118572553
+    },
+    "d21e06be1375f1c7f3cc0bde": {
+      "title": "سهم بازار شسپا به ۳۷ درصد رسید",
+      "summary": "صنعت روانکار ایران در شش ماهه نخست سال ۱۴۰۵ عرصه رقابتی سنگین میان چهار شرکت اصلی فعال در این حوزه بود، اما در این میان، شرکت نفت سپاهان با ثبت رکوردهای کم‌سابقه در تولید، فروش، صادرات و سهم بازار، جایگاه خود را به عنوان بازیگر اصلی این صنعت تثبیت کرد.",
+      "source": "صدای بورس",
+      "published": "2026-10-08T23:57:48+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 20
+      },
+      "importance": 20,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-a527f65358ac",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 10,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.3271622296836641
+    },
+    "ee25070c32c5b18de0b5362f": {
+      "title": "خبر مهم برای دانش آموزان/ مدارس این منطقه یک هفته غیرحضوری شد",
+      "summary": "رئیس اداره آموزش و پرورش کیش گفت: تمامی مقاطع تحصیلی در کیش، از ۱۸ مهر به مدت یک هفته به صورت غیرحضوری فعالیت خواهند کرد.",
+      "source": "اقتصادنیوز",
+      "published": "2026-10-08T23:45:07+03:30",
+      "topics": [
+        "science-life"
+      ],
+      "topic_scores": {
+        "science-life": 4
+      },
+      "importance": 4,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-06d6f06c1a18",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.538551118572553
+    },
+    "1f3b876995c12c93f8c1ff58": {
+      "title": "رژیم غنی از پتاسیمِ DASH برای افراد تحت درمان فشارخون: آیا نگرانی‌های هایپراکالمی موجه است؟",
+      "summary": "خلاصه سریع برای خواننده تحقیق مقدماتی ارائه‌شده در نشست علمی فشارخون انجمن قلب آمریکا (AHA) 2026 نشان می‌دهد افزایش مصرف غذاهای سرشار از پتاسیم در چارچوب رژیم DASH معمولاً منجر به افزایش ایمن پتاسیم خون در بزرگسالانی که داروهای متداول کنترل فشارخون مصرف می‌کنند، نمی‌شود. داده‌ها هنوز مقدماتی‌اند و د",
+      "source": "پزشک سایت",
+      "published": "2026-10-08T23:42:05+03:30",
+      "topics": [
+        "health"
+      ],
+      "topic_scores": {
+        "health": 17
+      },
+      "importance": 17,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-2a75a1c3f386",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.5891066741281086
+    },
+    "69ecd5b614deca4c482c1aeb": {
+      "title": "جهش ۲۳۲ درصدی صادرات و پیشنهاد تقسیم سود ۳۵ درصدی در فساپ",
+      "summary": "شرکت سازه پوشش ماموت (فساپ) در پاسخ به پرسش‌های سامانه عرضه اولیه (IPO)، ضمن تشریح استراتژی‌های عملیاتی و مالی خود، از رشد چشمگیر ۲۳۲ درصدی درآمدهای صادراتی در نیمه نخست سال ۱۴۰۵ و هدف‌گذاری برای تقسیم سود ۳۵ درصدی خبر داد.",
+      "source": "صدای بورس",
+      "published": "2026-10-08T23:42:00+03:30",
+      "topics": [
+        "markets",
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 16,
+        "markets": 16
+      },
+      "importance": 16,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-b58a8b4d548a",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 11,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.5904955630169975
+    },
+    "ea923162d1c3371dd64b4480": {
+      "title": "یک رسانه: طبق تصمیم باشگاه تراکتور، «بیرانوند» پس از اخراج از تیم هم تا روز اعزام به خدمت، باید در تبریز حضور داشته باشد و هر روز به صورت انفرادی تمرین کند/ این یعنی او نمی‌تواند فصل آینده به استقلال برود و باید در تراکتورسازی بماند",
+      "summary": "علیرضا بیرانوند دروازه بان تیم فوتبال تراکتور پس از تساوی امروز تیمش مقابل استقلال انتقادات تندی را علیه مدیریت باشگاه تراکتور انجام داد و اعلام کرد بازیکنان این تیم تاکنون فقط ۷ درصد از مبلغ قرارداد خود را در فصل جاری دریافت کرده‌اند.",
+      "source": "انتخاب",
+      "published": "2026-10-08T23:37:16+03:30",
+      "topics": [
+        "sports"
+      ],
+      "topic_scores": {
+        "sports": 14
+      },
+      "importance": 14,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-24c757d31eb9",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 9,
+      "political": false,
+      "breaking_signal": true,
+      "age_hours": 0.6693844519058864
     }
   },
   "groups": {
@@ -56689,10 +56894,10 @@
       "representative_id": "42ed63e985934a04c9f49181"
     },
     "local-d01152dabcd7": {
-      "representative_id": "adcc3b159b685d9903eed849"
+      "representative_id": "82abf7067e7fd4458bfc3d99"
     },
     "local-64ece4743100": {
-      "representative_id": "2e76414058ea3da8c259fba4"
+      "representative_id": "26c7bdbda3c72ed7a70572d7"
     },
     "local-105a8b57b5e7": {
       "representative_id": "b6e855c0e2d9c3ca0dfc968b"
@@ -58589,6 +58794,27 @@
     },
     "local-eb8e80115481": {
       "representative_id": "5ff02b32d1dcc6f497fe3c33"
+    },
+    "local-62cc2a21a7f6": {
+      "representative_id": "fda8b679262927b9719684e4"
+    },
+    "local-ab2ff00ba25e": {
+      "representative_id": "51ac20a44b503c3aaa27ca33"
+    },
+    "local-a527f65358ac": {
+      "representative_id": "d21e06be1375f1c7f3cc0bde"
+    },
+    "local-06d6f06c1a18": {
+      "representative_id": "ee25070c32c5b18de0b5362f"
+    },
+    "local-2a75a1c3f386": {
+      "representative_id": "1f3b876995c12c93f8c1ff58"
+    },
+    "local-b58a8b4d548a": {
+      "representative_id": "69ecd5b614deca4c482c1aeb"
+    },
+    "local-24c757d31eb9": {
+      "representative_id": "ea923162d1c3371dd64b4480"
     }
   },
   "usage": {
