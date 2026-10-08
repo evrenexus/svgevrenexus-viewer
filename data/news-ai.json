@@ -1,7 +1,7 @@
 {
   "version": 1,
   "policy_version": 8,
-  "updated": "2026-10-08T05:59:39Z",
+  "updated": "2026-10-08T06:20:09Z",
   "items": {
     "56927672062ac466f3e762c5": {
       "title": "قیمت بیت‌کوین و اتریوم امروز سه‌شنبه ۱۴ مهر ۱۴۰۵",
@@ -7454,8 +7454,10 @@
         "health": 18
       },
       "importance": 18,
-      "important": false,
-      "important_topics": [],
+      "important": true,
+      "important_topics": [
+        "technology"
+      ],
       "slider_topics": [
         "technology"
       ],
@@ -20055,7 +20057,7 @@
       "title": "قیمت موبایل‌ | جدول کامل قیمت گوشی‌های بازار امروز",
       "summary": "آخرین قیمت انواع گوشی سامسونگ، اپل، شیائومی، هواوی و برندهای دیگر + جدول کامل و نوسانات امروز بازار موبایل ایران.",
       "source": "فرارو",
-      "published": "2026-10-07T09:37:07+03:30",
+      "published": "2026-10-08T09:37:45+03:30",
       "topics": [
         "technology"
       ],
@@ -20063,13 +20065,9 @@
         "technology": 20
       },
       "importance": 20,
-      "important": true,
-      "important_topics": [
-        "technology"
-      ],
-      "slider_topics": [
-        "technology"
-      ],
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
       "ticker_topics": [],
       "breaking": false,
       "breaking_topics": [],
@@ -20079,13 +20077,10 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 8,
+      "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.91371747718917,
-      "permanent_article": true,
-      "article_id": "article-00fdd87981a07cc6",
-      "image": "https://cdn.fararu.com/thumbnail/z5jjygkFimEl/v4L6wR_XM1M6xWd-vtcqMeb4StfmYgabQUc9gI4uHMBV1f8hBANndt9a2eSPqJGVeLtZhE5kcljBv_A9owUg1bcmQ0ZDeK5n4shuKoNpSmhmtKZFzs8WzJQweZWf8Nt2/%D8%A2%DB%8C%D9%81%D9%88%D9%86+16.jpg"
+      "age_hours": 0.2065648820002874
     },
     "616756f5847a0ae69f8add35": {
       "title": "داروهای ضدافسردگی رایج ممکن است نقشی غیرمنتظره در بقای بیماران مبتلا به سرطان داشته باشند",
@@ -20945,9 +20940,9 @@
         "auto"
       ],
       "topic_scores": {
-        "auto": 17
+        "auto": 15
       },
-      "importance": 17,
+      "importance": 15,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -20956,14 +20951,14 @@
       "breaking_topics": [],
       "publishable": true,
       "exclude_reason": "",
-      "group_id": "local-ae43852c1bf1",
+      "group_id": "local-00fdd87981a0",
       "representative": false,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 12,
+      "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.3025632607936859
+      "age_hours": 0.6440648820002873
     },
     "a95902bec0ae1aa5ff739f2b": {
       "title": "عامل انتشار بوی نامطبوع در مسیر فرودگاه امام (ره) چیست؟",
@@ -25498,7 +25493,9 @@
       "importance": 18,
       "important": false,
       "important_topics": [],
-      "slider_topics": [],
+      "slider_topics": [
+        "technology"
+      ],
       "ticker_topics": [],
       "breaking": false,
       "breaking_topics": [],
@@ -37534,7 +37531,7 @@
       "publishable": true,
       "exclude_reason": "",
       "group_id": "local-c44037851aa9",
-      "representative": true,
+      "representative": false,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
       "local_score": 6,
@@ -39221,9 +39218,9 @@
         "science-life"
       ],
       "topic_scores": {
-        "science-life": 12
+        "science-life": 11
       },
-      "importance": 12,
+      "importance": 11,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -39236,10 +39233,10 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 7,
+      "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.7928410385714635
+      "age_hours": 3.1343426597780653
     },
     "9747d76972fcaf7ff1105dec": {
       "title": "هشدار مهم به کوهنوردان و طبیعت‌گردان/ رگباران باران و وزش باد شدید در راه است",
@@ -39268,7 +39265,7 @@
       "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.0758965941270193
+      "age_hours": 3.4173982153336206
     },
     "25affb774bab8947a1273a5b": {
       "title": "هنوز هیچ مرجع رسمی طاعون روسیه را تایید نکرده است/ طاعون چقدر خطرناک است؟",
@@ -39349,7 +39346,7 @@
       "publishable": true,
       "exclude_reason": "",
       "group_id": "local-ae43852c1bf1",
-      "representative": false,
+      "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
       "local_score": 12,
@@ -39413,7 +39410,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.2906188163492414
+      "age_hours": 2.632120437555843
     },
     "42ecbc258bd91a10e606b103": {
       "title": "اتهام جدید آمریکا علیه مادورو و همسرش",
@@ -39471,7 +39468,7 @@
       "local_score": 11,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 2.4256188163492416
+      "age_hours": 2.767120437555843
     },
     "fdafc66d45ecb2d6360a23b0": {
       "title": "قیمت میلگرد امروز پنجشنبه ۱۶ مهر ۱۴۰۵ + جدول",
@@ -39529,7 +39526,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.7928410385714637
+      "age_hours": 2.1343426597780653
     },
     "6b239699254439829851b966": {
       "title": "نوشیدن آب سرد برای همه مناسب نیست؛ این افراد احتیاط کنند",
@@ -39560,7 +39557,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.7942299274603526
+      "age_hours": 2.135731548666954
     },
     "1a34039a3ef1d70f8a4825f8": {
       "title": "۱۰ رمزارز برتر بازار ارز دیجیتال | دوج‌کوین ۸ درصد ریخت | اتریوم در ۲۵۵۹ دلار ماند",
@@ -39589,7 +39586,7 @@
       "local_score": 13,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.7992299274603525
+      "age_hours": 2.1407315486669543
     },
     "91831c3dbaf6f251d62ea46a": {
       "title": "مهران رجبی درگذشت؟/ پشت‌پرده شایعه جدید در فضای مجازی",
@@ -39618,7 +39615,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 1.4222854830159082
+      "age_hours": 1.7637871042225095
     },
     "35b922c24a45e92484e5e642": {
       "title": "داستان عجیب علیرضا بیرانوند قبل از بازی حساس تراکتور - استقلال",
@@ -39647,7 +39644,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.458674371904797
+      "age_hours": 1.8001759931113985
     },
     "5f190055d6804ce30d8498ec": {
       "title": "درخواست وزارت صمت برای دسترسی به اطلاعات طلای مردم + متن نامه",
@@ -39676,7 +39673,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.5092299274603527
+      "age_hours": 1.850731548666954
     },
     "854473c9b85ad9f85873dac3": {
       "title": "قاتل یک تاجر بعد از 9سال به دام افتاد/ ادعای قانل: در اربیل عراق برای شنا کنار رودخانه رفتیم و شریکم در آب غرق شد",
@@ -39705,7 +39702,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.568952149682575
+      "age_hours": 1.9104537708891762
     },
     "9b5c32e9d7035d884661966e": {
       "title": "آغاز دوباره لیگ برتر؛ تماشایی مثل تقابل تراکتور - استقلال",
@@ -39742,7 +39739,7 @@
       "local_score": 9,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 1.644785483015908,
+      "age_hours": 1.9862871042225096,
       "permanent_article": true,
       "article_id": "article-1e17e3395580e411",
       "image": "https://cdn.fararu.com/thumbnail/pZJSHBGUpo8o/NDliGYFYLe5eYn2SnE0SL5V7-mLVaRY_Ww6ih8TzQz-N3NoZo5i0ttLS4r5bIFUqnUsmYm8MMJeMtJLr26dId5H98vmQVSkD6yolSV_Q9TwG1S5neh2g6nrEwoiK8CUd/%D8%B1%D9%88%D8%B2%D8%A8%D9%87+%DA%86%D8%B4%D9%85%DB%8C+%D8%A7%D8%B3%D8%AA%D9%82%D9%84%D8%A7%D9%84+%D8%AA%D8%B1%D8%A7%DA%A9%D8%AA%D9%88%D8%B1.jpg"
@@ -39774,7 +39771,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.651174371904797
+      "age_hours": 1.9926759931113984
     },
     "cc929a384a64f69f8306d6b8": {
       "title": "ریشه نابرابری‌های مخرب در اقتصاد ایران | کاهش نابرابری می‌تواند ناشی از فقیرتر شدن همه خانوارها باشد نه افزایش درآمد | مقایسه نابرابری در ایران و دیگر کشورها",
@@ -39803,7 +39800,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.6620077052381304
+      "age_hours": 2.003509326444732
     },
     "84a521f2de4717bac05c4909": {
       "title": "طرح اتهام جدید علیه مادورو توسط آمریکا",
@@ -39832,7 +39829,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.817563260793686
+      "age_hours": 2.1590648820002873
     },
     "c9ee21b617d98275f39adfe2": {
       "title": "قتل تاجر فرش به دلیل اختلافات مالی/ قاتل پس از 9 سال به ایران برگشت",
@@ -39861,7 +39858,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.151174371904797
+      "age_hours": 1.4926759931113984
     },
     "35969eb0c1b0d93b5c85b86d": {
       "title": "قیمت تیرآهن امروز پنجشنبه ۱۶ مهر 1405 + جدول",
@@ -39919,7 +39916,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.342563260793686
+      "age_hours": 1.6840648820002875
     },
     "e495fd432fe7ab6d9728827f": {
       "title": "مهران رجبی درگذشت؟",
@@ -39948,7 +39945,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 1.4222854830159082
+      "age_hours": 1.7637871042225095
     },
     "da7085ce2bf6e8a9fbb1ccfa": {
       "title": "قیمت دلار امروز پنجشنبه 16 مهر 1405",
@@ -40093,7 +40090,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.9731188163492415
+      "age_hours": 1.314620437555843
     },
     "a24911e7846d41881c9c033d": {
       "title": "ویدئو؛ پروازهای بین‌المللی به ایران بازگشت",
@@ -40122,7 +40119,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.0128410385714637
+      "age_hours": 1.3543426597780652
     },
     "88e714ee63d16cd0e28caef7": {
       "title": "نخستین رقیب اینفانتینو برای ریاست فیفا",
@@ -40151,7 +40148,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.0158965941270193
+      "age_hours": 1.3573982153336208
     },
     "3c16444066bf89cc7e4579cd": {
       "title": "قیمت سکه، نیم‌سکه و ربع‌سکه امروز پنجشنبه ۱۶ مهر ۱۴۰۵/ کاهش قیمت سکه",
@@ -40162,9 +40159,9 @@
         "currency-gold"
       ],
       "topic_scores": {
-        "currency-gold": 16
+        "currency-gold": 15
       },
-      "importance": 16,
+      "importance": 15,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -40177,10 +40174,10 @@
       "representative": false,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 11,
+      "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.9929603170024024
+      "age_hours": 1.6190648820002873
     },
     "7a5b3366bfdc196521877095": {
       "title": "سرمایه‌گذاری در حلقه‌های مزیت‌دار فارس؛ از ظرفیت اقتصادی تا پروژه‌های قابل اجرا",
@@ -40211,7 +40208,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.6945077052381303
+      "age_hours": 1.0360093264447319
     },
     "8d502408e7bb12b06467920a": {
       "title": "اگر دهانتان بوی میوه می‌دهد، این هشدار را جدی بگیرید",
@@ -40240,7 +40237,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.7275632607936859
+      "age_hours": 1.0690648820002873
     },
     "94da01954c3051ee5191a75d": {
       "title": "قیمت گوشت قرمز امروز پنجشنبه ۱۶ مهر ۱۴۰۵ + جدول",
@@ -40298,7 +40295,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.7928410385714637
+      "age_hours": 1.1343426597780653
     },
     "f25c5174703035a9e6b74d8f": {
       "title": "قیمت تولوئن در بورس",
@@ -40329,7 +40326,7 @@
       "local_score": 13,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.8106188163492415
+      "age_hours": 1.152120437555843
     },
     "3cfc88e1042d2e555a46afc2": {
       "title": "قیمت آپارتمان در گران‌ترین مناطق تهران",
@@ -40358,7 +40355,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.8320077052381304
+      "age_hours": 1.1735093264447318
     },
     "67462aa14e9b43eb6f9bb278": {
       "title": "واکنش سه‌قلوهای صومعه‌سرایی با رتبه‌های ۱۹، ۱۳۲ و ۱۳۳ به ادعای تقلب در کنکور/ یک بازنشسته چطور می‌خواهد هزینه بچه‌هایش را بدهد؟/ ما دوست نداشتیم این موضوع این‌قدر عمومی و بزرگ شود",
@@ -40416,7 +40413,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.41006326079368594
+      "age_hours": 0.7515648820002874
     },
     "17cc0aed2bbdf35a6fd5009b": {
       "title": "تست ICP در آنالیز روغن دریایی: روش کار، عناصر قابل اندازه‌گیری و محدودیت‌ها",
@@ -40449,7 +40446,7 @@
       "local_score": 11,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 0.48089659412701924
+      "age_hours": 0.8223982153336207
     },
     "fea24e9a82667bdef0e838d1": {
       "title": "تراستی‌ها؛ پازلی که مردم باید خودشان کامل کنند / چه کسی مسئول بازگشت پول نفت به کشور است؟",
@@ -40470,8 +40467,7 @@
         "economy"
       ],
       "slider_topics": [
-        "economy",
-        "currency-gold"
+        "economy"
       ],
       "ticker_topics": [],
       "breaking": false,
@@ -40485,7 +40481,7 @@
       "local_score": 17,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.4900632607936859,
+      "age_hours": 0.8315648820002873,
       "permanent_article": true,
       "article_id": "article-6f35c22219173686",
       "image": "https://tejaratnews.com/wp-content/uploads/2026/10/BankemardomImage-27696-ak-wm.webp"
@@ -40514,10 +40510,10 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 15,
+      "local_score": 14,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.21851587255795796
+      "age_hours": 0.8446204375558429
     },
     "634660a918e5266bc93a907d": {
       "title": "هوای مشهد آلوده شد",
@@ -40546,7 +40542,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.5047854830159081
+      "age_hours": 0.8462871042225096
     },
     "bc5bf01f828f35284325d989": {
       "title": "قیمت اونس جهانی طلا چند؟",
@@ -40575,7 +40571,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 0.5106188163492414
+      "age_hours": 0.8521204375558429
     },
     "0b0c1f3b52aaca10a5c77472": {
       "title": "محمد درویش: احیای هورالعظیم نیازمند اصلاح مدیریت منابع آب است",
@@ -40604,7 +40600,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.5114521496825748
+      "age_hours": 0.8529537708891762
     },
     "f247f4332ed63b9cef20c40b": {
       "title": "انتقال هیجان انگیز محمد موسوی در 39 سالگی!",
@@ -40633,7 +40629,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.5250632607936859
+      "age_hours": 0.8665648820002874
     },
     "2c7973d176779ff0b960b90b": {
       "title": "قیمت محصولات ایران‌خودرو و سایپا امروز پنجشنبه 16 مهر 1405",
@@ -40655,14 +40651,14 @@
       "breaking_topics": [],
       "publishable": true,
       "exclude_reason": "",
-      "group_id": "local-ae43852c1bf1",
+      "group_id": "local-f967c2cdb8df",
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 14,
+      "local_score": 12,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.04784103857146369
+      "age_hours": 0.38934265977806515
     },
     "378e977623b0f830f94278da": {
       "title": "رنو کلیو؛ هاچبک اقتصادی فرانسوی به ایران می‌آید",
@@ -40691,7 +40687,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.06034103857146369
+      "age_hours": 0.40184265977806516
     },
     "9393060ba9e3979abec911f2": {
       "title": "روبیو از پاسخ درباره پذیرش غنی‌سازی جمهوری اسلامی خودداری کرد",
@@ -40720,7 +40716,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.06200770523813036
+      "age_hours": 0.4035093264447318
     },
     "63a9b1eacb164e9503fb4f96": {
       "title": "قائم پناه: آمریکایی‌ها تلاش می‌کنند تا در جنوب کشور شکافی عمیق ایجاد کنند تا غارت نفت ایران را به انجام برسانند",
@@ -40749,7 +40745,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 0.07728548301590814
+      "age_hours": 0.4187871042225096
     },
     "32054a8896664f28070311f4": {
       "title": "کاهش سطح آب دریای خزر؛ پیشنهاد تشکیل کمیسیون ویژه کشورهای ساحلی",
@@ -40778,7 +40774,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.0889521496825748
+      "age_hours": 0.43045377088917625
     },
     "f645e626cc8bf4d62f25943d": {
       "title": "۲ مشتری جدید برای صادرات نفت ایران |‌ حملات اوکراین به زیرساخت‌های انرژی روسیه فرصت جدیدی برای ایران فراهم کرد | آیا صادرات نفت به آسیای مرکزی به نفع ایران خواهد بود؟",
@@ -40809,7 +40805,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.1950632607936859
+      "age_hours": 0.5365648820002874
     },
     "c63a3ba0ab40df8d4cb1557b": {
       "title": "قیمت دام زنده امروز پنجشنبه ۱۶ مهر ۱۴۰۵ + جدول",
@@ -40867,7 +40863,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.23534103857146368
+      "age_hours": 0.5768426597780651
     },
     "b9ed82cce931056056eada10": {
       "title": "چرا نفت ۱۰۰ دلاری ماندگار شد؟",
@@ -40898,7 +40894,7 @@
       "local_score": 13,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.23728548301590813
+      "age_hours": 0.5787871042225096
     },
     "ae313fc62e459cffe0f68f1e": {
       "title": "مینو محرز، متخصص بیماری‌های عفونی: هیچ منبع رسمی و علمی درباره شیوع طاعون در روسیه اظهار نظر نکرده و اطلاعات دقیقی در دسترس نیست/ این بیماری می‌تواند سبب گرفتاری ریوی شود",
@@ -40929,7 +40925,427 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.2847854830159081
+      "age_hours": 0.6262871042225095
+    },
+    "b9b566945ad78fe635c55a09": {
+      "title": "چرا باران در عظیمیه کرج منجر به سیلاب شد؟",
+      "summary": "«در منطقه عظیمیه و دامنه‌های شمالی و غربی آن، پوشش گیاهی نیمه‌خشک طبیعی و باغات حاشیه‌ای به سرعت جای خود را به ساختمان‌های مسکونی، خیابان‌کشی‌ها و دیوارهای حائل داده‌اند. این پوشش گیاهی نقش کلیدی در کاهش سرعت قطرات باران و جلوگیری از فرسایش اولیه خاک داشت.»",
+      "source": "فرارو",
+      "published": "2026-10-08T09:47:14+03:30",
+      "topics": [
+        "real-estate"
+      ],
+      "topic_scores": {
+        "real-estate": 16
+      },
+      "importance": 16,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [
+        "real-estate"
+      ],
+      "breaking": true,
+      "breaking_topics": [
+        "real-estate"
+      ],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-dd3937c3b6dc",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 11,
+      "political": false,
+      "breaking_signal": true,
+      "age_hours": 0.04850932644473182
+    },
+    "76e59a34e93316cb890f94c1": {
+      "title": "آیا می‌توان پیری را مثل بیماری درمان کرد؟",
+      "summary": "پژوهشگران می‌گویند پیری فقط گذر زمان نیست؛ سازوکارهای زیستی مشخصی دارد. حالا آن‌ها در حال بررسی این هستند که آیا می‌توان پیش از تبدیل شدن این فرایندها به بیماری، در آن‌ها مداخله کرد یا خیر.",
+      "source": "سلامت نیوز",
+      "published": "2026-10-08T09:45:28+03:30",
+      "topics": [
+        "health"
+      ],
+      "topic_scores": {
+        "health": 19
+      },
+      "importance": 19,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-c44037851aa9",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.07795377088917627
+    },
+    "c25e799525df05573641131f": {
+      "title": "ماجرای جاده‌کشی اختصاصی شرکت‌ هواپیمایی در بیابان لوت",
+      "summary": "به گفته بهمن ایزدی ادامه برخی عملیات‌های عمرانی و جاده‌سازی در محدوده گندم‌بریان و کال‌شور می‌تواند این میراث جهانی را وارد مرحله‌ای خطرناک کند؛ مرحله‌ای که حتی احتمال قرارگرفتن آن در وضعیت هشدار و دریافت کارت قرمز و در نهایت خروج از فهرست میراث جهانی را به دنبال دارد. پیش‌تر نیز موضوع طرح گردشگری ه",
+      "source": "فرارو",
+      "published": "2026-10-08T09:45:26+03:30",
+      "topics": [
+        "science-life"
+      ],
+      "topic_scores": {
+        "science-life": 7
+      },
+      "importance": 7,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-a8c2c562bbfb",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.07850932644473183
+    },
+    "1b46b62bd2eb57874367e16d": {
+      "title": "قیمت گوشی سامسونگ، شیائومی و آیفون امروز پنجشنبه 16 مهر 1405",
+      "summary": "خرید ارزان‌ترین گوشی سامسونگ به 43 میلیون تومان بودجه نیاز دارد",
+      "source": "فرارو",
+      "published": "2026-10-08T09:42:19+03:30",
+      "topics": [
+        "technology",
+        "economy",
+        "currency-gold"
+      ],
+      "topic_scores": {
+        "economy": 19,
+        "currency-gold": 19,
+        "technology": 19
+      },
+      "importance": 19,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-f967c2cdb8df",
+      "representative": false,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 14,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.13045377088917626
+    },
+    "811d27d5b3b3f6e5f1985ff6": {
+      "title": "تولید سلول‌های CAR‑T داخل بدن؛ پژوهشی از UCSF و امیدها و محدودیت‌های آن",
+      "summary": "خلاصه سریع برای خواننده محققان دانشگاه UCSF روشی گزارش کردند که می‌تواند سلول‌های T را مستقیماً داخل بدن به سلول‌های CAR‑T تبدیل کند. روش از یک سیستم دوذره‌ای برای رساندن ابزارهای CRISPR و DNA هدف‌گذاری‌کننده سرطان به داخل سلول‌های T استفاده می‌کند و DNA را در یک محل مشخص ژنومی وارد می‌کند. این رویک",
+      "source": "پزشک سایت",
+      "published": "2026-10-08T09:42:05+03:30",
+      "topics": [
+        "science-life"
+      ],
+      "topic_scores": {
+        "science-life": 17
+      },
+      "importance": 17,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-6ba45f4d2d23",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.13434265977806514
+    },
+    "d61c0d6c3312b64534d9d1d1": {
+      "title": "طلای جهانی به مسیر افزایش قیمت بازگشت",
+      "summary": "قیمت طلا در معاملات روز پنج‌شنبه بازار جهانی، تحت تاثیر عقب‌نشینی ارزش دلار از اوج ۱۸ ماهه خود، افزایش یافت و از پایین‌ترین سطح دو ماهه فاصله گرفت. پست طلای جهانی به مسیر افزایش قیمت بازگشت اولین بار در تجارت نیوز ظاهر شد.",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-08T09:40:05+03:30",
+      "topics": [
+        "currency-gold"
+      ],
+      "topic_scores": {
+        "currency-gold": 20
+      },
+      "importance": 20,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [
+        "currency-gold"
+      ],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-3b500ff305ca",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 17,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.1676759931113985
+    },
+    "94b5ac7fdcb2aedc57acd14e": {
+      "title": "ساعت دقیق بازی تراکتور و استقلال امروز پنج‌شنبه ۱۶ مهر ۱۴۰۵/ برنامه بازی‌های هفته هشتم لیگ برتر مشخص شد",
+      "summary": "ساعت دقیق بازی تراکتور و استقلال امروز پنج‌شنبه ۱۶ مهر در هفته هشتم لیگ برتر مشخص شد.",
+      "source": "اقتصادنیوز",
+      "published": "2026-10-08T09:39:12+03:30",
+      "topics": [
+        "sports"
+      ],
+      "topic_scores": {
+        "sports": 12
+      },
+      "importance": 12,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-d42ec9671586",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.18239821533362072
+    },
+    "3d73d93a6509512bdf7b3f26": {
+      "title": "پیش‌بینی زمان پیک آنفلوانزا در ایران",
+      "summary": "ویروس آنفلوانزا به عنوان یکی از بیماری های حاد تنفسی در فصول پاییز و زمستان شناخته می شود که همه ساله تعدادی از هموطنان را درگیر و زمین گیر می کند.",
+      "source": "سلامت نیوز",
+      "published": "2026-10-08T09:38:18+03:30",
+      "topics": [
+        "health"
+      ],
+      "topic_scores": {
+        "health": 17
+      },
+      "importance": 17,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-82915da8b820",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.1973982153336207
+    },
+    "09ef68a2f0094af5e33fd8ce": {
+      "title": "روند صعودی قیمت نفت ادامه یافت",
+      "summary": "قیمت نفت در معاملات روز پنج‌شنبه بازار جهانی، افزایش یافت و بهای معاملات آتی نفت برنت به دلیل تداوم ریسک‌های عرضه در خاورمیانه و حرکت یک توفان به سمت مناطق نفت‌خیز آمریکا، بالاتر از ۱۰۰ دلار در هر بشکه باقی ماند. پست روند صعودی قیمت نفت ادامه یافت اولین بار در تجارت نیوز ظاهر شد.",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-08T09:36:16+03:30",
+      "topics": [
+        "economy",
+        "currency-gold"
+      ],
+      "topic_scores": {
+        "economy": 18,
+        "currency-gold": 18
+      },
+      "importance": 18,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-613c3321060c",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 13,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.2312871042225096
+    },
+    "546a9cf81919f224af9767e1": {
+      "title": "تصویر؛ پاسخ وینیسیوس به شایعات مرگ و دزدیده شدنش",
+      "summary": "ستاره برزیلی رئال مادرید با منتشر کردن یک پست به اتهام بزرگی که اخیرا به او زده شده واکنش نشان داد.",
+      "source": "فرارو",
+      "published": "2026-10-08T09:36:07+03:30",
+      "topics": [
+        "science-life"
+      ],
+      "topic_scores": {
+        "science-life": 7
+      },
+      "importance": 7,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-18366bd009ed",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.2337871042225096
+    },
+    "83f4a1fb2c297282c97b3c4d": {
+      "title": "ساماندهی هوش مصنوعی در ۳ مسیر متفاوت",
+      "summary": "همزمان با افزایش درخواست‌ها برای مهار قدرتمندترین سامانه‌های هوش مصنوعی در سراسر جهان، آمریکا، چین و اتحادیه اروپا مسیرهای متفاوتی را برای ساماندهی هوش مصنوعی در پیش گرفته‌اند. پست ساماندهی هوش مصنوعی در ۳ مسیر متفاوت اولین بار در تجارت نیوز ظاهر شد.",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-08T09:35:19+03:30",
+      "topics": [
+        "ai"
+      ],
+      "topic_scores": {
+        "ai": 15
+      },
+      "importance": 15,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-13cbb19469f6",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 10,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.24712043755584293
+    },
+    "a1d620ed0c5a91b7e8d48c93": {
+      "title": "طاعون در روسیه؛ خبری که هنوز هیچ مرجع رسمی تاییدش نکرده است",
+      "summary": "مرگ یک فرد در روسیه و ادعای ارتباط آن با طاعون، طی روزهای اخیر خبرساز شده و نگرانی‌هایی را در افکار عمومی ایجاد کرده است؛ این درحالیست که به اذعان متخصصان و مسئولان نظام سلامت کشورمان، تاکنون هیچ منبع رسمی و معتبر از جمله سازمان جهانی بهداشت، شیوع طاعون در روسیه را تایید نکرده است.",
+      "source": "سلامت نیوز",
+      "published": "2026-10-08T09:34:41+03:30",
+      "topics": [
+        "war",
+        "health"
+      ],
+      "topic_scores": {
+        "health": 12,
+        "war": 12
+      },
+      "importance": 12,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-a9f4effec622",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.2576759931113985
+    },
+    "2e79716a13ae44d46610a644": {
+      "title": "تعویض بخاری‌های فرسوده بدون هزینه برای مشترکان",
+      "summary": "مدیرعامل شرکت بازرگانی گاز ایران از اجرای طرح تعویض بخاری‌های معمولی و کم‌بازده با بخاری‌های پربازده خبر داد و گفت: مشترکان در این طرح هزینه‌ای پرداخت نمی‌کنند و بخاری‌های فرسوده آنها با بخاری‌های دارای راندمان بالاتر جایگزین می‌شود. پست تعویض بخاری‌های فرسوده بدون هزینه برای مشترکان اولین بار در تج",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-08T09:34:06+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 7
+      },
+      "importance": 7,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-ebbc84b4a5f3",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.2673982153336207
+    },
+    "28c7b92d6b682636eddee51e": {
+      "title": "قائم پناه: آمریکایی‌ها تلاش می‌کنند در جنوب کشور شکافی عمیق ایجاد کنند تا نفت ایران را غارت کند",
+      "summary": "معاون اجرایی رئیس جمهور گفت: آمریکایی‌ها تلاش می‌کنند تا در جنوب کشور شکافی عمیق ایجاد کنند تا غارت نفت ایران را به انجام برسانند در حالی که اجازه نمی‌دهیم پای یک آمریکایی به خاک این کشور باز شود.",
+      "source": "دنیای اقتصاد",
+      "published": "2026-10-08T09:25:01+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 9
+      },
+      "importance": 9,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-7d1312a2d565",
+      "representative": false,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.4187871042225096
     }
   },
   "groups": {
@@ -42865,9 +43281,6 @@
     "local-4570b48298bd": {
       "representative_id": "e97cc65da0821d136453554b"
     },
-    "local-ae43852c1bf1": {
-      "representative_id": "2c7973d176779ff0b960b90b"
-    },
     "local-1dcd9d91a961": {
       "representative_id": "a95902bec0ae1aa5ff739f2b"
     },
@@ -44366,7 +44779,7 @@
       "representative_id": "c8d00b8b741dfbc1e478e16f"
     },
     "local-c44037851aa9": {
-      "representative_id": "b1cd88376e79e22c453e6676"
+      "representative_id": "76e59a34e93316cb890f94c1"
     },
     "local-ab01ad29ce3f": {
       "representative_id": "addda2aa44ed07b8d03a33d5"
@@ -44539,6 +44952,9 @@
     "local-8f0d8d6798d5": {
       "representative_id": "25affb774bab8947a1273a5b"
     },
+    "local-ae43852c1bf1": {
+      "representative_id": "0efd40053902fefde5288443"
+    },
     "local-3a4d41668b3c": {
       "representative_id": "94da01954c3051ee5191a75d"
     },
@@ -44644,6 +45060,9 @@
     "local-6820513ce620": {
       "representative_id": "f247f4332ed63b9cef20c40b"
     },
+    "local-f967c2cdb8df": {
+      "representative_id": "2c7973d176779ff0b960b90b"
+    },
     "local-eb2dabfe53af": {
       "representative_id": "378e977623b0f830f94278da"
     },
@@ -44667,6 +45086,39 @@
     },
     "local-076baf9a9622": {
       "representative_id": "ae313fc62e459cffe0f68f1e"
+    },
+    "local-dd3937c3b6dc": {
+      "representative_id": "b9b566945ad78fe635c55a09"
+    },
+    "local-a8c2c562bbfb": {
+      "representative_id": "c25e799525df05573641131f"
+    },
+    "local-6ba45f4d2d23": {
+      "representative_id": "811d27d5b3b3f6e5f1985ff6"
+    },
+    "local-3b500ff305ca": {
+      "representative_id": "d61c0d6c3312b64534d9d1d1"
+    },
+    "local-d42ec9671586": {
+      "representative_id": "94b5ac7fdcb2aedc57acd14e"
+    },
+    "local-82915da8b820": {
+      "representative_id": "3d73d93a6509512bdf7b3f26"
+    },
+    "local-613c3321060c": {
+      "representative_id": "09ef68a2f0094af5e33fd8ce"
+    },
+    "local-18366bd009ed": {
+      "representative_id": "546a9cf81919f224af9767e1"
+    },
+    "local-13cbb19469f6": {
+      "representative_id": "83f4a1fb2c297282c97b3c4d"
+    },
+    "local-a9f4effec622": {
+      "representative_id": "a1d620ed0c5a91b7e8d48c93"
+    },
+    "local-ebbc84b4a5f3": {
+      "representative_id": "2e79716a13ae44d46610a644"
     }
   },
   "usage": {
