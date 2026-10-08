@@ -1,6 +1,134 @@
 {
-  "updated": "2026-10-08T20:08:28.029495+00:00",
+  "updated": "2026-10-08T20:46:34.036532+00:00",
   "items": [
+    {
+      "id": "6c4aaf84ecbed9ac9472",
+      "title": "افزایش نرخ حمل نفت به مسیرهای دور از خاورمیانه هم سرایت کرد",
+      "summary": "خاویر بلاس، ستون‌نویس بلومبرگ، می‌گوید جهش هزینه حمل نفتکش‌ها دیگر محدود به مسیرهای مرتبط با خاورمیانه نیست.",
+      "content": "۰۰:۰۶ - \n۱۷ مهر ۱۴۰۵ \n\nبلومبرگ: \n\nافزایش نرخ حمل نفت به مسیرهای دور از خاورمیانه هم سرایت کرد \n\nخاویر بلاس، ستون‌نویس بلومبرگ، می‌گوید جهش هزینه حمل نفتکش‌ها دیگر محدود به مسیرهای مرتبط با خاورمیانه نیست. \n\nپ\n\n،\n\nپـ\n\nفرارو - خاویر بلاس، ستون‌نویس بلومبرگ، با اشاره به افزایش نرخ حمل‌ونقل نفت اعلام کرد این جهش به مسیرهایی در فاصله زیادی از درگیری‌های خاورمیانه، از جمله ساحل خلیج مکزیک آمریکا و ساحل غربی آفریقا، نیز سرایت کرده است.\nخاویر بلاس در گزارشی درباره تحولات بازار نفت نوشت نرخ‌های حمل‌ونقل نفت همچنان در حال افزایش است و آثار اختلال در مسیرهای کشتیرانی خاورمیانه به سایر بازارهای نفتی نیز منتقل شده است.\n\r\n\r\n\nبلاس نوشت این افزایش هزینه تنها به مسیرهای نزدیک به خاورمیانه محدود نمانده و به مسیرهایی که فاصله زیادی از منطقه درگیری دارند، از جمله ساحل خلیج مکزیک آمریکا و ساحل غربی آفریقا، نیز سرایت کرده است.\n\r\n\r\n\nافزایش نرخ کرایه نفتکش‌ها در شرایطی رخ داده که اختلال در مسیرهای معمول انتقال نفت، زمان سفر کشتی‌ها را افزایش داده و بخشی از ظرفیت نفتکش‌های بزرگ جهان را درگیر کرده است.\n\r\n\r\n\nدر همین حال، گزارش‌های بازار نشان می‌دهد هزینه انتقال نفت آمریکا به آسیا به سطوح بی‌سابقه‌ای رسیده است. بر اساس داده‌های بورس بالتیک که بلومبرگ به آن استناد کرده، هزینه اجاره یک نفتکش بسیار بزرگ برای انتقال نفت آمریکا به آسیا در ۷ اکتبر به حدود ۷۷ میلیون دلار رسیده؛ در حالی که میانگین این هزینه در سال ۲۰۲۵ حدود ۹.۲ میلیون دلار بوده است.\n\r\n\r\n\nافزایش هزینه حمل‌ونقل همچنین بازار نفت غرب آفریقا را تحت تأثیر قرار داده و برخی فروشندگان برای جبران افزایش هزینه انتقال، ناچار به ارائه تخفیف برای محموله‌های خود شده‌اند.\n\r\n\nva NewsLis Limi = 5;\n\nاز میان اخبار \n\nواکنش ترامپ به جنجال حمله ایران به لس‌آنجلس و سن‌دیگو \n\nعقب افتادن هگست از سربازان در جریان تمرین دو \n\nافزایش نرخ حمل نفت به مسیرهای دور از خاورمیانه هم سرایت کرد \n\nحمله پهپادی به اربیل عراق \n\nشما قبلا این خبر را لایک کرده‌اید . \n\nfunc ion oPe sianNumbe (numbe ) {\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\nelemen .addEven Lis ene (\"click\", func ion() {\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n. hen(func ion( esponse) {\nif ( esponse.s a us == 200) {\nesponse.json(). hen(func ion(newSco e) {\nva likeNumbe Span = elemen .que ySelec o (\".like\");\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\nva hiddenHea = elemen .que ySelec o (\".hidden\");\nvisibleHea .classLis .add(\"hidden\");\nfavo i eBu on.classLis .add(\"hidden\");\nhiddenHea .classLis . emove(\"hidden\");\nva e o Message = elemen .que ySelec o (\".e o _message\");\nif (e o Message) {\ne o Message.classLis . emove(\"hidden_e o \");\n}\n});\n} else {\nva e o Message = elemen .que ySelec o (\".e o _message\");\nif (e o Message) {\ne o Message.classLis .add(\"hidden_e o \");\nse Timeou (func ion() {\ne o Message.classLis . emove(\"hidden_e o \");\n}, 3000);\n}\n}\n})\n});\n});",
+      "url": "https://fararu.com/fa/news/1008354/%D8%A7%D9%81%D8%B2%D8%A7%DB%8C%D8%B4-%D9%86%D8%B1%D8%AE-%D8%AD%D9%85%D9%84-%D9%86%D9%81%D8%AA-%D8%A8%D9%87-%D9%85%D8%B3%DB%8C%D8%B1%D9%87%D8%A7%DB%8C-%D8%AF%D9%88%D8%B1-%D8%A7%D8%B2-%D8%AE%D8%A7%D9%88%D8%B1%D9%85%DB%8C%D8%A7%D9%86%D9%87-%D9%87%D9%85-%D8%B3%D8%B1%D8%A7%DB%8C%D8%AA-%DA%A9%D8%B1%D8%AF",
+      "image": "https://cdn.fararu.com/thumbnail/RHhSbgqfuRET/_HYpaNggPNwp898Z4dlzjOMD_sIX5gSKObhfHr4KOQncLuwulTJOT3toLyEHWjmjvPj8oO-IaRCXU8PaseME9DNZtQJtDTXVXGCtqlWOZk7UaWKoXoERmj5loDvL8OT-/%DA%A9%D8%B4%D8%AA%DB%8C%D8%B1%D8%A7%D9%86%DB%8C.jpg",
+      "source": "فرارو",
+      "source_site": "https://fararu.com/",
+      "allow_internal_republish": true,
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "published": "2026-10-09T00:06:45+03:30",
+      "topics": [
+        "economy"
+      ],
+      "importance_score": 10,
+      "important": true
+    },
+    {
+      "id": "bf4018fb8e7c59456899",
+      "title": "وزش باد شدید در تهران",
+      "summary": "مدیرکل پیش بینی سازمان هواشناسی گفت:بیشترین سرعت ثبت‌شده باد در فرودگاه مهرآباد و فرودگاه امام خمینی(ره) به ۸۴ کیلومتر بر ساعت رسیده است. پست وزش باد شدید در تهران اولین بار در تجارت نیوز ظاهر شد.",
+      "content": "وزش باد شدید در تهران\n\n|\n\nبروزرسانی: 17 دقیقه پیش \n\nکد خبر: 1356449 \n\nجامعه \n\nلینک کوتاه\n\nکپی شد \n\nمدیرکل پیش بینی سازمان هواشناسی گفت:بیشترین سرعت ثبت‌شده باد در فرودگاه مهرآباد و فرودگاه امام خمینی(ره) به ۸۴ کیلومتر بر ساعت رسیده است.\r\nاین شرایط جوی از شمال استان مرکزی آغاز شده و به سمت جنوب‌غرب تهران، البرز و مسیر شمال‌شرق تهران گسترش یافته است.\n\nوی افزود: بیشترین سرعت ثبت‌شده باد در فرودگاه مهرآباد و فرودگاه امام خمینی(ره) به ۸۴ کیلومتر بر ساعت رسیده است.\n\nضیائیان با بیان اینکه این شرایط جوی طی مدت کوتاهی ادامه خواهد داشت، اظهار کرد: نهایتاً تا یک ساعت آینده از شدت وزش باد کاسته خواهد شد.\n\nمدیرکل پیش‌بینی سازمان هواشناسی کشور تأکید کرد:پیش از وقوع این شرایط، هشدار سطح زرد هواشناسی صادر شده بود و دستگاه‌های مربوطه نیز در جریان وضعیت جوی قرار داشتند.\n\nوی همچنین درباره وضعیت فردا گفت: برای فردا نیز احتمال تداوم یا وقوع شرایط ناپایدار جوی در برخی مناطق وجود دارد و جزئیات آن در اطلاعیه‌های هواشناسی اعلام خواهد شد.\n\nمنبع: باشگاه خبرنگاران جوان",
+      "url": "https://tejaratnews.com/%d9%88%d8%b2%d8%b4-%d8%a8%d8%a7%d8%af-%d8%b4%d8%af%db%8c%d8%af-%d8%af%d8%b1-%d8%aa%d9%87%d8%b1%d8%a7%d9%86-3",
+      "image": "https://tejaratnews.com/wp-content/uploads/2026/10/21692222_121-ak-1200x800-1.webp",
+      "source": "تجارت‌نیوز",
+      "source_site": "https://tejaratnews.com/",
+      "allow_internal_republish": true,
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "published": "2026-10-08T23:59:13+03:30",
+      "topics": [
+        "economy"
+      ],
+      "importance_score": 0,
+      "important": false
+    },
+    {
+      "id": "b988122aefc1316dce4d",
+      "title": "سهم بازار شسپا به ۳۷ درصد رسید",
+      "summary": "صنعت روانکار ایران در شش ماهه نخست سال ۱۴۰۵ عرصه رقابتی سنگین میان چهار شرکت اصلی فعال در این حوزه بود، اما در این میان، شرکت نفت سپاهان با ثبت رکوردهای کم‌سابقه در تولید، فروش، صادرات و سهم بازار، جایگاه خود را به عنوان بازیگر اصلی این صنعت تثبیت کرد.",
+      "content": "h ps://sedayebou se.i /x6Ljh\n\n۱۶ مهر ۱۴۰۵ - ۲۳:۵۷\n\nکد مطلب 557731 \n\n۱۶ مهر ۱۴۰۵ - ۲۳:۵۷ \n\nنفت سپاهان رهبر بلامنازع صنعت روانکار ایران؛ \n\nسهم بازار شسپا به ۳۷ درصد رسید \n\nصنعت روانکار ایران در شش ماهه نخست سال ۱۴۰۵ عرصه رقابتی سنگین میان چهار شرکت اصلی فعال در این حوزه بود، اما در این میان، شرکت نفت سپاهان با ثبت رکوردهای کم‌سابقه در تولید، فروش، صادرات و سهم بازار، جایگاه خود را به عنوان بازیگر اصلی این صنعت تثبیت کرد.\nشرکت نفت سپاهان با ثبت رکوردهای کم‌سابقه در تولید، فروش، صادرات و سهم بازار، جایگاه خود را به عنوان بازیگر اصلی این صنعت تثبیت کرد. \n\nبررسی آمارهای عملکردی نشان می‌دهد نفت سپاهان در تمامی شاخص‌های کلیدی نه تنها از رقبای خود یعنی نفت پارس، نفت بهران و ایرانول پیشی گرفته، بلکه در برخی بخش‌ها رشدهای چشمگیر دو رقمی و حتی نزدیک به سه رقمی را نیز تجربه کرده است. این عملکرد درخشان در شرایطی محقق شده که صنعت روانکار با چالش‌هایی نظیر نوسانات نرخ ارز، محدودیت‌های تأمین مواد اولیه و تغییرات تقاضای بازار مواجه بوده است.نفت سپاهان در شش ماهه نخست سال جاری موفق شد با تولید ۳۵۴ هزار تن انواع محصولات، بیشترین تناژ تولید را در میان چهار شرکت اصلی روانکار کشور به خود اختصاص دهد. \n\nاین رقم نه تنها در مقایسه با رقبا بی‌رقیب است، بلکه نسبت به مدت مشابه سال گذشته نیز رشد ۲۰ درصدی را نشان می‌دهد. کارشناسان معتقدند این موفقیت ناشی از بهینه‌سازی فرآیندهای تولید، سرمایه‌گذاری در خطوط جدید و مدیریت هوشمندانه زنجیره تأمین در نفت سپاهان است. \n\nدر حالی که رقبا با محدودیت‌های ظرفیت تولید دست‌وپنجه نرم می‌کردند، نفت سپاهان توانست با برنامه‌ریزی دقیق، هم نیاز بازار داخلی را تأمین کند و هم سهم خود را در بازارهای صادراتی افزایش دهد.در بخش فروش کل نیز نفت سپاهان عملکردی مشابه تولید داشته و با فروش ۳۹۶ هزار تن انواع محصولات به ارزش ریالی ۴۵۰ هزار میلیارد ریال، رتبه نخست را در میان چهار روانکار اصلی کشور از آن خود کرده است. این رقم نسبت به مدت مشابه سال قبل رشد ۵۰ درصدی را تجربه کرده؛ رشدی که به گفته تحلیلگران، نتیجه مستقیم توسعه شبکه توزیع، تنوع سبد محصولات و تقویت حضور در بازارهای هدف است. \n\nدر حالی که رقبا در این بخش نیز عملکرد منفی داشته اند، نفت سپاهان توانست فاصله خود را با نزدیک‌ترین رقیب نیز به طور محسوسی افزایش دهد. این عملکرد نشان می‌دهد استراتژی فروش این شرکت مبتنی بر شناخت دقیق نیاز مشتریان و پاسخگویی سریع به تغییرات بازار بوده است.در بازار داخلی، نفت سپاهان با فروش حدود ۱۶۵ هزار تن انواع محصولات به ارزش ۱۹۳ هزار میلیارد ریال، رشد ۸۶ درصدی را نسبت به شش ماهه نخست سال گذشته ثبت کرد. \n\nاین عملکرد درخشان، نفت سپاهان را به بهترین بازیگر این بخش در میان روانکاران تبدیل کرده است. در بخش صادرات نیز این شرکت با رشد ۳۲ درصدی نسبت به پارسال، بهترین عملکرد را در میان چهار روانکار اصلی کشور داشته است. نکته قابل توجه آنکه نفت سپاهان در ارزآوری نیز پیشتاز بوده و با ۱۵۹ میلیون دلار فروش صادراتی و رشد ۴۵ درصدی، بالاترین میزان ارزآوری را در این صنعت به ثبت رسانده است. \n\nاین ارقام نشان می‌دهد استراتژی توسعه صادرات نفت سپاهان به بازارهای منطقه‌ای و فرامنطقه‌ای به نتایج ملموس رسیده و این شرکت توانسته است جایگاه خود را به عنوان یک بازیگر قابل اتکا در بازارهای بین‌المللی تثبیت کند.شاید چشمگیرترین دستاورد نفت سپاهان در نیمه نخست ۱۴۰۵، تسلط بی‌سابقه آن بر سهم بازار باشد. این شرکت با کسب ۳۷ درصد سهم کل بازار داخلی و صادراتی، رتبه نخست را در میان چهار روانکار اصلی به دست آورده است. در بازار داخل، سهم ۳۳ درصدی و در بازار صادراتی، سهم ۴۲ درصدی را از آن خود کرده؛ ارقامی که نشان‌دهنده قدرت برند، کیفیت محصولات و توان رقابتی بالای این شرکت در هر دو جبهه است. این تسلط بازار، موقعیت نفت سپاهان را به عنوان رهبر بلامنازع صنعت روانکار ایران بیش از پیش تثبیت کرده است. \n\nعملکرد نفت سپاهان در شش ماهه نخست ۱۴۰۵ را می‌توان الگویی موفق برای کل صنعت روانکار کشور دانست. ترکیب رشد همزمان تولید، فروش داخلی، صادرات و ارزآوری، همراه با تسلط بر سهم بازار، نشان‌دهنده یک استراتژی منسجم و اجرای دقیق آن است. در شرایطی که رقبای اصلی همچون نفت پارس، نفت بهران و ایرانول نتوانسته‌اند همپای نفت سپاهان رشد کنند، به نظر می‌رسد این شرکت مسیر خود را برای تثبیت جایگاه نخست در سال‌های آینده نیز ادامه خواهد داد. بی‌شک تداوم این روند می‌تواند نقش مهمی در ارزآوری، اشتغال‌زایی و توسعه صادرات غیرنفتی کشور ایفا کند و الگویی برای سایر صنایع تولیدی باشد. \n\nکد مطلب 557731 \n\nسمانه باقری \n\nاخبار مرتبط \n\nوصول قسط ۴ میلیون دلاری شسپا از شرکت ملی نفت ایران \n\nشرکت نفت سپاهان با انتشار اطلاعیه‌ای، از وصول و ثبت دومین قسط مطالبات ارزی خود از شرکت ملی نفت ایران به ارزش ۴ میلیون دلار خبر داد.",
+      "url": "https://www.sedayebourse.ir/news/557731/%D8%B3%D9%87%D9%85-%D8%A8%D8%A7%D8%B2%D8%A7%D8%B1-%D8%B4%D8%B3%D9%BE%D8%A7-%D8%A8%D9%87-%DB%B3%DB%B7-%D8%AF%D8%B1%D8%B5%D8%AF-%D8%B1%D8%B3%DB%8C%D8%AF",
+      "image": "https://media.sedayebourse.ir/d/2026/10/08/4/1091410.jpg",
+      "source": "صدای بورس",
+      "source_site": "https://sedayebourse.ir/",
+      "allow_internal_republish": true,
+      "category": "بورس و بازار سرمایه",
+      "published": "2026-10-08T23:57:48+03:30",
+      "topics": [
+        "economy"
+      ],
+      "importance_score": 3,
+      "important": false
+    },
+    {
+      "id": "7bca36ac76084d8b9bd8",
+      "title": "خبر مهم برای دانش آموزان/ مدارس این منطقه یک هفته غیرحضوری شد",
+      "summary": "رئیس اداره آموزش و پرورش کیش گفت: تمامی مقاطع تحصیلی در کیش، از ۱۸ مهر به مدت یک هفته به صورت غیرحضوری فعالیت خواهند کرد.",
+      "content": "خبر مهم برای دانش آموزان/ مدارس این منطقه یک هفته غیرحضوری شد \n\nسرویس:\nاخبار سایر رسانه‌ها \n\nکدخبر:\n۸۱۱۰۳۹ \n\n۱۴۰۵/۰۷/۱۶ - ۲۳:۴۵ \n\nرئیس اداره آموزش و پرورش کیش گفت: تمامی مقاطع تحصیلی در کیش، از ۱۸ مهر به مدت یک هفته به صورت غیرحضوری فعالیت خواهند کرد.\r\nفعالیت آموزشی و تربیتی مدارس کیش در هفته آینده، براساس ابلاغیه، غیرحضوری انجام خواهد شد.\n\r\n\r\n\nوی افزود: مدیران مدارس با رعایت کامل ضوابط و مقررات مربوط، نسبت به برنامه‌ریزی و اتخاذ تمهیدات لازم به منظور استمرار منظم فعالیت‌های آموزشی، پرورشی و اجرایی مدرسه اقدام کنند.\n\r\n\r\n\nرئیس اداره آموزش و پرورش کیش، خاطرنشان کرد: برنامه و نحوه برگزاری کلاس‌های آموزشی، شیوه ارائه محتوا و تکالیف درسی، زمان‌بندی فعالیت‌های آموزشی و سایر موارد مرتبط، به اطلاع دانش‌آموزان و اولیا رسانده خواهد شد و بر حسن اجرای برنامه‌های پیش‌بینی‌شده نظارت مستمر می شود.\n\r\n\r\n\nرجائی فرد تصریح کرد: مدیران مدارس با بهره‌گیری از ظرفیت‌های موجود، زمینه مشارکت و حضور مؤثر دانش‌آموزان در فرآیند آموزش غیرحضوری را فراهم کرده و با پیگیری مستمر روند فعالیت‌های آموزشی، نسبت به شناسایی و رفع موانع و مشکلات احتمالی اقدام لازم را انجام دهند.\n\nکپی لینک کوتاه\n\nکپی شد \n\nمنبع:\nمهر \n\ndocumen .addEven Lis ene ('DOMCon en Loaded', func ion() {\ncons sha eBu on = documen .que ySelec o ('.news_sha e_bu on');\n\nif (!sha eBu on) e u n;\n\nif (!naviga o .sha e) {\nsha eBu on.s yle.display = 'none';\ne u n;\n}\n\nsha eBu on.addEven Lis ene ('click', async () => {\ny {\ncons sha eDa a = {\ni le: \" u062e u0628 u0631 u0645 u0647 u0645 u0628 u0631 u0627 u06cc u062f u0627 u0646 u0634 u0622 u0645 u0648 u0632 u0627 u0646 / u0645 u062f u0627 u0631 u0633 u0627 u06cc u0646 u0645 u0646 u0637 u0642 u0647 u06cc u06a9 u0647 u0641 u062a u0647 u063a u06cc u0631 u062d u0636 u0648 u0631 u06cc u0634 u062f\",\nex : \" u0631 u0626 u06cc u0633 u0627 u062f u0627 u0631 u0647 u0622 u0645 u0648 u0632 u0634 u0648 u067e u0631 u0648 u0631 u0634 u06a9 u06cc u0634 u06af u0641 u062a: u062a u0645 u0627 u0645 u06cc u0645 u0642 u0627 u0637 u0639 u062a u062d u0635 u06cc u0644 u06cc u062f u0631 u06a9 u06cc u0634 u060c u0627 u0632 u06f1 u06f8 u0645 u0647 u0631 u0628 u0647 u0645 u062f u062a u06cc u06a9 u0647 u0641 u062a u0647 u0628 u0647 u0635 u0648 u0631 u062a u063a u06cc u0631 u062d u0636 u0648 u0631 u06cc u0641 u0639 u0627 u0644 u06cc u062a u062e u0648 u0627 u0647 u0646 u062f u06a9 u0631 u062f. n n\",\nu l: \"h ps: / /www.egh esadnews.com /fa / iny /news-811039\" };\n\nawai naviga o .sha e(sha eDa a);\n} ca ch (e o ) {\nif (e o .name !== 'Abo E o ') {\nconsole.e o ('E o sha ing con en :', e o );\n}\n}\n});\n});\n\nva newsMas e IdFo Ra e = \"1865956\";",
+      "url": "https://www.eghtesadnews.com/%D8%A8%D8%AE%D8%B4-%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1-%D8%B3%D8%A7%DB%8C%D8%B1-%D8%B1%D8%B3%D8%A7%D9%86%D9%87-%D9%87%D8%A7-61/811039-%D8%AE%D8%A8%D8%B1-%D9%85%D9%87%D9%85-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AF%D8%A7%D9%86%D8%B4-%D8%A2%D9%85%D9%88%D8%B2%D8%A7%D9%86-%D9%85%D8%AF%D8%A7%D8%B1%D8%B3-%D8%A7%DB%8C%D9%86-%D9%85%D9%86%D8%B7%D9%82%D9%87-%DB%8C%DA%A9-%D9%87%D9%81%D8%AA%D9%87-%D8%BA%DB%8C%D8%B1%D8%AD%D8%B6%D9%88%D8%B1%DB%8C-%D8%B4%D8%AF",
+      "image": "https://cdn.eghtesadnews.com/thumbnail/x81bOhOcn1Yt/Ax-8MNdpbQJ-hZjTYlITOPMoywRNHPk_1ygdIIpepfikRK0jn2pgm6PxubSeooxAPjd0i-dLV1-gstiMuQCvN6UsB0BWTeAWTVC5XY-HJebF62eavnAEvh6EJk2RFEtZf7-xmqpsEf_WKznaimJ4877s7zjBOqwSsRJf2Zwmyj_A8GJSyCT_BEGD_tY331qU/%D9%85%D8%AC%D8%A7%D8%B2%DB%8C+%D8%B4%D8%AF+%2A.jpg",
+      "source": "اقتصادنیوز",
+      "source_site": "https://www.eghtesadnews.com/",
+      "allow_internal_republish": true,
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "published": "2026-10-08T23:45:07+03:30",
+      "topics": [
+        "science-life"
+      ],
+      "importance_score": 0,
+      "important": false
+    },
+    {
+      "id": "50d8fae6cee51a9820a6",
+      "title": "رژیم غنی از پتاسیمِ DASH برای افراد تحت درمان فشارخون: آیا نگرانی‌های هایپراکالمی موجه است؟",
+      "summary": "خلاصه سریع برای خواننده تحقیق مقدماتی ارائه‌شده در نشست علمی فشارخون انجمن قلب آمریکا (AHA) 2026 نشان می‌دهد افزایش مصرف غذاهای سرشار از پتاسیم در چارچوب رژیم DASH معمولاً منجر به افزایش ایمن پتاسیم خون در بزرگسالانی که داروهای متداول کنترل فشارخون مصرف می‌کنند، نمی‌شود. داده‌ها هنوز مقدماتی‌اند و د",
+      "content": "",
+      "url": "https://www.pezeshk-site.ir/2026/10/08/رژیم-غنی-از-پتاسیمِ-dash-برای-افراد-تحت-درم/",
+      "image": "",
+      "source": "پزشک سایت",
+      "source_site": "https://www.pezeshk-site.ir/",
+      "allow_internal_republish": true,
+      "category": "پزشکی و سلامت",
+      "published": "2026-10-08T23:42:05+03:30",
+      "topics": [
+        "health"
+      ],
+      "importance_score": 0,
+      "important": false,
+      "image_tries": 1
+    },
+    {
+      "id": "eccf9011868dfd2e3fa1",
+      "title": "جهش ۲۳۲ درصدی صادرات و پیشنهاد تقسیم سود ۳۵ درصدی در فساپ",
+      "summary": "شرکت سازه پوشش ماموت (فساپ) در پاسخ به پرسش‌های سامانه عرضه اولیه (IPO)، ضمن تشریح استراتژی‌های عملیاتی و مالی خود، از رشد چشمگیر ۲۳۲ درصدی درآمدهای صادراتی در نیمه نخست سال ۱۴۰۵ و هدف‌گذاری برای تقسیم سود ۳۵ درصدی خبر داد.",
+      "content": "h ps://sedayebou se.i /x6Lj8\n\n۱۶ مهر ۱۴۰۵ - ۲۳:۴۲\n\nکد مطلب 557724 \n\n۱۶ مهر ۱۴۰۵ - ۲۳:۴۲ \n\nشفاف‌سازی در مسیر عرضه اولیه؛ \n\nجهش ۲۳۲ درصدی صادرات و پیشنهاد تقسیم سود ۳۵ درصدی در فساپ \n\nشرکت سازه پوشش ماموت (فساپ) در پاسخ به پرسش‌های سامانه عرضه اولیه (IPO)، ضمن تشریح استراتژی‌های عملیاتی و مالی خود، از رشد چشمگیر ۲۳۲ درصدی درآمدهای صادراتی در نیمه نخست سال ۱۴۰۵ و هدف‌گذاری برای تقسیم سود ۳۵ درصدی خبر داد.\nاز رشد چشمگیر ۲۳۲ درصدی درآمدهای صادراتی در نیمه نخست سال ۱۴۰۵ و هدف‌گذاری برای تقسیم سود ۳۵ درصدی خبر داد. \n\nشرکت سازه پوشش ماموت که در مسیر عرضه اولیه سهام قرار دارد، در تازه‌ترین شفاف‌سازی خود جزئیات مهمی از عملکرد عملیاتی، وضعیت بازارها و سیاست‌های مالی را منتشر کرد. بر اساس پاسخ‌های ارائه شده به سامانه IPO، محورهای اصلی فعالیت این شرکت در ادامه می‌آید: \n\n۱. جهش در بازارهای صادراتی؛ \n\nفساپ با تمرکز بر بازارهای همسایه (به‌ویژه عراق، افغانستان، ارمنستان و ترکمنستان)، موفق شده است درآمد صادراتی خود را در ۶ ماهه نخست سال ۱۴۰۵ به مبلغ ۵,۳۷۸,۰۲۵ میلیون ریال برساند که این رقم نسبت به دوره مشابه سال قبل، حدود ۲۳۲ درصد رشد داشته است. \n\n۲. سیاست تقسیم سود؛ \n\nمدیریت شرکت برای سال مالی ۱۴۰۵ پیشنهاد تقسیم سود ۳۵ درصدی را مطرح کرده است. این رویکرد با هدف ایجاد تعادل میان تقاضای نقدی سهامداران و نیاز شرکت به حفظ منابع برای تأمین مالی طرح‌های توسعه‌ای اتخاذ شده است. \n\n۳. برنامه‌های تولید و توسعه؛ \n\nاهداف تولید: شرکت تولید ۱۵ هزار تن سازه فلزی را برای سال ۱۴۰۵ هدف‌گذاری کرده است. \n\nپروژه‌های توسعه‌ای: تکمیل خطوط تولید (شامل دستگاه‌های برش و پانچ)، توسعه پروژه‌های کلیدتحویل و ورود به حوزه طراحی و مهندسی نیروگاه‌های خورشیدی، از جمله برنامه‌های اصلی برای حفظ و ارتقای رقابت‌پذیری شرکت است. \n\nحاشیه سود: مدیریت هزینه‌ها و تمرکز بر محصولات با ارزش افزوده بالاتر، حاشیه سود ناخالص شرکت را در ۶ ماهه نخست ۱۴۰۵ به حدود ۱۶.۶ درصد رسانده است. \n\n۴. بهبود شاخص‌های مالی؛ \n\nبررسی عملکرد شرکت نشان می‌دهد که دوره وصول مطالبات از ۴۳ روز در سال ۱۴۰۴ به ۳۹ روز در نیمه نخست سال ۱۴۰۵ بهبود یافته است، که نشان‌دهنده تقویت چرخه نقدینگی در عملیات جاری شرکت است. \n\nاین شفاف‌سازی نشان می‌دهد که «فساپ» با تکیه بر تنوع‌بخشی به سبد محصولات (پنل، سازه فلزی، کانکس) و گسترش بازارهای صادراتی، در پی ایجاد ثبات در درآمدهای عملیاتی و ارتقای حاشیه سود خود در مسیر ورود به بازار سرمایه است. \n\nکد مطلب 557724 \n\nسمانه باقری \n\nاخبار مرتبط \n\nتحقق ۴۲ درصد از فروش پیش‌بینی‌شده فساپ در نیمه نخست سال \n\nشرکت سازه پوشش ماموت (فساپ) در اصلاحیه اطلاعیه پیشین خود، توضیحات تکمیلی درباره برنامه تحقق فروش پیش‌بینی‌شده سال ۱۴۰۵ را با توجه به عملکرد شش‌ماهه نخست ارائه کرد و بر دستیابی به اهداف فروش سال تأکید کرد.\n\n«فساپ» ارزشمندتر از قیمت ارزش‌گذاری \n\nمعاون مالی «فساپ» در مورد ارزش‌گذاری فساپ توضیح می‌دهد.",
+      "url": "https://www.sedayebourse.ir/news/557724/%D8%AC%D9%87%D8%B4-%DB%B2%DB%B3%DB%B2-%D8%AF%D8%B1%D8%B5%D8%AF%DB%8C-%D8%B5%D8%A7%D8%AF%D8%B1%D8%A7%D8%AA-%D9%88-%D9%BE%DB%8C%D8%B4%D9%86%D9%87%D8%A7%D8%AF-%D8%AA%D9%82%D8%B3%DB%8C%D9%85-%D8%B3%D9%88%D8%AF-%DB%B3%DB%B5-%D8%AF%D8%B1%D8%B5%D8%AF%DB%8C-%D8%AF%D8%B1-%D9%81%D8%B3%D8%A7%D9%BE",
+      "image": "https://media.sedayebourse.ir/d/2026/10/07/4/1091320.jpg",
+      "source": "صدای بورس",
+      "source_site": "https://sedayebourse.ir/",
+      "allow_internal_republish": true,
+      "category": "بورس و بازار سرمایه",
+      "published": "2026-10-08T23:42:00+03:30",
+      "topics": [
+        "economy"
+      ],
+      "importance_score": 3,
+      "important": false
+    },
+    {
+      "id": "e2e31c6550de31ae9542",
+      "title": "یک رسانه: طبق تصمیم باشگاه تراکتور، «بیرانوند» پس از اخراج از تیم هم تا روز اعزام به خدمت، باید در تبریز حضور داشته باشد و هر روز به صورت انفرادی تمرین کند/ این یعنی او نمی‌تواند فصل آینده به استقلال برود و باید در تراکتورسازی بماند",
+      "summary": "علیرضا بیرانوند دروازه بان تیم فوتبال تراکتور پس از تساوی امروز تیمش مقابل استقلال انتقادات تندی را علیه مدیریت باشگاه تراکتور انجام داد و اعلام کرد بازیکنان این تیم تاکنون فقط ۷ درصد از مبلغ قرارداد خود را در فصل جاری دریافت کرده‌اند.",
+      "content": "",
+      "url": "https://www.entekhab.ir/fa/news/942733/یک-رسانه-طبق-تصمیم-باشگاه-تراکتور-بیرانوند-پس-از-اخراج-از-تیم-هم-تا-روز-اعزام-به-خدمت-باید-در-تبریز-حضور-داشته-باشد-و-هر-روز-به-صورت-انفرادی-تمرین-کند-این-یعنی-او-نمی-تواند-فصل-آینده-به-استقلال-برود-و-باید-در-تراکتورسازی-بماند",
+      "image": "",
+      "source": "انتخاب",
+      "source_site": "https://www.entekhab.ir/",
+      "allow_internal_republish": true,
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "published": "2026-10-08T23:37:16+03:30",
+      "topics": [
+        "economy"
+      ],
+      "importance_score": 0,
+      "important": false,
+      "image_tries": 1
+    },
     {
       "id": "cf4ba9b2329d96b9b2db",
       "title": "صالحی: ۲۰۰ هزار مترمربع به زیرساخت های فرهنگی کشور افزوده شد",
@@ -17,24 +145,6 @@
         "science-life"
       ],
       "importance_score": 3,
-      "important": false
-    },
-    {
-      "id": "1e7e4abdc42b600c7969",
-      "title": "مدارس کیش یک هفته غیرحضوری شد",
-      "summary": "آموزش تمامی مقاطع تحصیلی در جزیره کیش از ۱۸ تا ۲۴ مهرماه به‌صورت غیرحضوری ادامه خواهد داشت.",
-      "content": "۲۳:۰۳ - \n۱۶ مهر ۱۴۰۵ \n\nمدارس کیش یک هفته غیرحضوری شد \n\nآموزش تمامی مقاطع تحصیلی در جزیره کیش از ۱۸ تا ۲۴ مهرماه به‌صورت غیرحضوری ادامه خواهد داشت. \n\nپ\n\n،\n\nپـ\n\n رئیس اداره آموزش‌وپرورش کیش از ادامه فعالیت غیرحضوری مدارس این جزیره برای یک هفته دیگر خبر داد.\nاعلام کرد تمامی مقاطع تحصیلی این جزیره از ۱۸ مهرماه به مدت یک هفته به‌صورت غیرحضوری فعالیت خواهند کرد.\n\r\n\r\n\nاو گفت این تصمیم با توجه به ابلاغیه شورای تأمین درباره نحوه فعالیت مدارس و با هدف استمرار فرآیند آموزش و پرورش اتخاذ شده است.\nنحوه ارائه محتوای آموزشی و تکالیف درسی و زمان‌بندی فعالیت‌ها را به دانش‌آموزان و خانواده‌ها اطلاع دهند.\n\r\n\r\n\nآموزش مدارس کیش طی دو هفته گذشته نیز به‌صورت غیرحضوری برگزار شده بود.\n\r\n\nva NewsLis Limi = 5;\n\nاز میان اخبار \n\nمدارس کیش یک هفته غیرحضوری شد \n\nاختلال برق ناشی از طوفان در مناطق جنوبی و غربی تهران رفع شد \n\nتمدید مهلت انتخاب رشته آزمون‌های سراسری و پذیرش دانشجو معلم تا ۱۹ مهرماه \n\nطوفان در تهران و وضعیت دریاچه چیتگر \n\nشما قبلا این خبر را لایک کرده‌اید . \n\nfunc ion oPe sianNumbe (numbe ) {\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\nelemen .addEven Lis ene (\"click\", func ion() {\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n. hen(func ion( esponse) {\nif ( esponse.s a us == 200) {\nesponse.json(). hen(func ion(newSco e) {\nva likeNumbe Span = elemen .que ySelec o (\".like\");\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\nva hiddenHea = elemen .que ySelec o (\".hidden\");\nvisibleHea .classLis .add(\"hidden\");\nfavo i eBu on.classLis .add(\"hidden\");\nhiddenHea .classLis . emove(\"hidden\");\nva e o Message = elemen .que ySelec o (\".e o _message\");\nif (e o Message) {\ne o Message.classLis . emove(\"hidden_e o \");\n}\n});\n} else {\nva e o Message = elemen .que ySelec o (\".e o _message\");\nif (e o Message) {\ne o Message.classLis .add(\"hidden_e o \");\nse Timeou (func ion() {\ne o Message.classLis . emove(\"hidden_e o \");\n}, 3000);\n}\n}\n})\n});\n});",
-      "url": "https://fararu.com/fa/news/1008349/%D9%85%D8%AF%D8%A7%D8%B1%D8%B3-%DA%A9%DB%8C%D8%B4-%DB%8C%DA%A9-%D9%87%D9%81%D8%AA%D9%87-%D8%BA%DB%8C%D8%B1%D8%AD%D8%B6%D9%88%D8%B1%DB%8C-%D8%B4%D8%AF",
-      "image": "https://cdn.fararu.com/thumbnail/WsylfmOX0S8s/8jPDMttbxei3-JxN2ZyDphEpRIxnEd2-y1HkQ5SIMBaOdGM-3imJbMdpxN3g8d56N3Rd4rmgQFv7LPeDz0xO0fYYarFJxVH4ZS3Ecdca4GzLFGrqJUaChXrbPArAaZFy/%D8%BA%DB%8C%D8%B1+%D8%AD%D8%B6%D9%88%D8%B1%DB%8C.jpg",
-      "source": "فرارو",
-      "source_site": "https://fararu.com/",
-      "allow_internal_republish": true,
-      "category": "اقتصاد و سرمایه‌گذاری",
-      "published": "2026-10-08T23:03:22+03:30",
-      "topics": [
-        "economy"
-      ],
-      "importance_score": 0,
       "important": false
     },
     {
@@ -61,7 +171,7 @@
       "summary": "پارلمان اروپا روز پنج‌شنبه سه قطعنامه را به ادعای آنچه که «نقض حقوق بشر» در ایران، گرجستان و جمهوری آذربایجان خواند، تصویب کرد.",
       "content": "۲۲:۵۷ - \n۱۶ مهر ۱۴۰۵ \n\nپارلمان اروپا از تصویب یک قطعنامه ضدایرانی خبر داد\r\n\nپارلمان اروپا روز پنج‌شنبه سه قطعنامه را به ادعای آنچه که «نقض حقوق بشر» در ایران، گرجستان و جمهوری آذربایجان خواند، تصویب کرد.\r\n\r\n\nپ\n\n،\n\nپـ\n\n نمایندگان پارلمان اروپا بدون ارائه هیچ‌گونه شواهد و مدارکی، ایران را به «خشونت» علیه غیرنظامیان محکوم کردند. \n\r\n\r\n\nپارلمان اروپا همچنین در اظهاراتی مداخله‌جویانه خواستار لغو مجازات اعدام در ایران شدند. این پارلمان در ادامه ایران را به آنچه که «آزار و اذیت اقلیت‌های مذهبی و قومی» و «سرکوب فرامرزی»، محکوم کرد.\n\r\n\r\n\nنمایندگان پارلمان اروپا همچنین خواستار اعمال تحریم‌های گسترده‌تر علیه تهران و ارجاع ایران به دیوان کیفری بین‌المللی شدند.\n\r\n\r\n\nقطعنامه مربوط به ایران با ۵۴۱ رای موافق، ۱۱ رای مخالف و ۲۵ رای ممتنع به تصویب رسید.\n\r\n\r\n\nاین پارلمان دو قطعنامه دیگر به اتهامات حقوق بشری دیگر علیه گرجستان و جمهوری آذربایجان تصویب کرد.\n\r\n\nمنبع :\n\nايسنا \n\nva NewsLis Limi = 5;\n\nاز میان اخبار \n\nآمریکا آماده حمله به ایران در سه هفته آینده؟ \n\nدیدار پزشکیان و پوتین در ترکمنستان \n\nایران چگونه آمریکا را در وضعیت آماده‌باش نگه می‌دارد؟ \n\nرهبر انقلاب اسلامی: نشانه‌های تأثیر فراجا در جنگ‌های اخیر آشکارتر شد \n\nشما قبلا این خبر را لایک کرده‌اید . \n\nfunc ion oPe sianNumbe (numbe ) {\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\nelemen .addEven Lis ene (\"click\", func ion() {\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n. hen(func ion( esponse) {\nif ( esponse.s a us == 200) {\nesponse.json(). hen(func ion(newSco e) {\nva likeNumbe Span = elemen .que ySelec o (\".like\");\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\nva hiddenHea = elemen .que ySelec o (\".hidden\");\nvisibleHea .classLis .add(\"hidden\");\nfavo i eBu on.classLis .add(\"hidden\");\nhiddenHea .classLis . emove(\"hidden\");\nva e o Message = elemen .que ySelec o (\".e o _message\");\nif (e o Message) {\ne o Message.classLis . emove(\"hidden_e o \");\n}\n});\n} else {\nva e o Message = elemen .que ySelec o (\".e o _message\");\nif (e o Message) {\ne o Message.classLis .add(\"hidden_e o \");\nse Timeou (func ion() {\ne o Message.classLis . emove(\"hidden_e o \");\n}, 3000);\n}\n}\n})\n});\n});",
       "url": "https://fararu.com/fa/news/1008348/%D9%BE%D8%A7%D8%B1%D9%84%D9%85%D8%A7%D9%86-%D8%A7%D8%B1%D9%88%D9%BE%D8%A7-%D8%A7%D8%B2-%D8%AA%D8%B5%D9%88%DB%8C%D8%A8-%DB%8C%DA%A9-%D9%82%D8%B7%D8%B9%D9%86%D8%A7%D9%85%D9%87-%D8%B6%D8%AF%D8%A7%DB%8C%D8%B1%D8%A7%D9%86%DB%8C-%D8%AE%D8%A8%D8%B1-%D8%AF%D8%A7%D8%AF",
-      "image": "https://cdn.fararu.com/thumbnail/1RzY8k1dKpud/GEozaApq9ZRPHlJoBToMsyFBF2go7fqYH488qyrYLmQGRqV9XmkyKxvcz4XE8kAkN7H4gg1HrMwBTgkNPoXGSbiPcLRrYkaJbhMuZvL_y1ysbNgih3CTeORBKR_t4Ob5/%D9%BE%D8%A7%D8%B1%D9%84%D9%85%D8%A7%D9%86+%D8%A7%D8%B1%D9%88%D9%BE%D8%A7.jpg",
+      "image": "https://cdn.fararu.com/thumbnail/1RzY8k1dKpud/c42TAA3XZuu44QL00WupRClLiG2UECuZ67GbG9Gyh1HHuHh_bBbfZxGId2aW72X66afYcrwS3-FsPct-PGV9sFRHefbkn5ZsaZMvNx3PbuejBVrF7N-Wtc3krw_o_NFW/%D9%BE%D8%A7%D8%B1%D9%84%D9%85%D8%A7%D9%86+%D8%A7%D8%B1%D9%88%D9%BE%D8%A7.jpg",
       "source": "فرارو",
       "source_site": "https://fararu.com/",
       "allow_internal_republish": true,
@@ -297,7 +407,7 @@
       "summary": "تیم‌های لژیونرهای ایرانی در لیگ کاپ امارات برابر حریفا‌ن‌ خود به پیروزی و تساوی رسیدند.",
       "content": "۲۱:۵۸ - \n۱۶ مهر ۱۴۰۵ \n\nپیروزی شباب الاهلی والوصل و تساوی کلبا/ گلزنی طارمی و قدوس\r\n\nتیم‌های لژیونرهای ایرانی در لیگ کاپ امارات برابر حریفا‌ن‌ خود به پیروزی و تساوی رسیدند.\r\n\r\n\nپ\n\n،\n\nپـ\n\nدر هفته سوم لیگ کاپ فوتبال امارات تیم الوصل در خانه خورفکان به پیروزی 2 بر یک دست یافت.\n\r\n\r\n\nسارکی در دقیقه 57 برای خورفکان گل زد و گل‌های الوصل را مهدی طارمی (78) و سفیان یوتیفینی (4+90) به ثمر رساندند.\n\r\n\r\n\nدر دیگر دیدار امشب تیم شباب الاهلی دبی با حضور سعید عزت‌اللهی و سردار آزمون 2 بر یک یونایتد اف‌سی را از پیش‌رو برداشت.\n\r\n\r\n\nبرای شباب الاهلی المنصوری (7) و کاساردولموس (68 روی پاس سردار آزمون) گل زدند. تک گل تیم یونایتد اف‌سی نیز توسط ماوهوب در دقیقه 88 به دست آمد.\n\r\n\r\n\nهمچنین تیم کلبا در خانه العین به تساوی 2 – 2 دست یافت. گل‌های العین را حسین رحیمی (43) و کاکو (88) به ثمر رساندند. سامان قدوس (45) و بنجامین تته (63) زننده گل‌های کلبا بودند.\n\r\n\r\n\nدر جدول رده‌بندی لیگ کاپ امارات تیم‌های الوصل (7 امتیاز) شباب الاهلی (5 امتیاز) و کلبا (4 امتیاز) به ترتیب رتبه‌های دوم، ششم و هفتم را در اختیار دارند.\n\r\n\r\n\n \n\r\n\nمنبع :\n\nتسنیم \n\nva NewsLis Limi = 5;\n\nاز میان اخبار \n\nببینید؛ گل اول استقلال به تراکتور توسط سحرخیزان دقیقه ۲۸ \n\nساعت بازی پرسپولیس مقابل صنعت نفت آبادان /هفته هشتم \n\nواکنش تارتار به شایعه حضور اورونوف در استقلال \n\nداستان عجیب علیرضا بیرانوند قبل از بازی حساس تراکتور - استقلال \n\nشما قبلا این خبر را لایک کرده‌اید . \n\nfunc ion oPe sianNumbe (numbe ) {\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\nelemen .addEven Lis ene (\"click\", func ion() {\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n. hen(func ion( esponse) {\nif ( esponse.s a us == 200) {\nesponse.json(). hen(func ion(newSco e) {\nva likeNumbe Span = elemen .que ySelec o (\".like\");\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\nva hiddenHea = elemen .que ySelec o (\".hidden\");\nvisibleHea .classLis .add(\"hidden\");\nfavo i eBu on.classLis .add(\"hidden\");\nhiddenHea .classLis . emove(\"hidden\");\nva e o Message = elemen .que ySelec o (\".e o _message\");\nif (e o Message) {\ne o Message.classLis . emove(\"hidden_e o \");\n}\n});\n} else {\nva e o Message = elemen .que ySelec o (\".e o _message\");\nif (e o Message) {\ne o Message.classLis .add(\"hidden_e o \");\nse Timeou (func ion() {\ne o Message.classLis . emove(\"hidden_e o \");\n}, 3000);\n}\n}\n})\n});\n});",
       "url": "https://fararu.com/fa/news/1008342/%D9%BE%DB%8C%D8%B1%D9%88%D8%B2%DB%8C-%D8%B4%D8%A8%D8%A7%D8%A8-%D8%A7%D9%84%D8%A7%D9%87%D9%84%DB%8C-%D9%88%D8%A7%D9%84%D9%88%D8%B5%D9%84-%D8%AA%D8%B3%D8%A7%D9%88%DB%8C-%DA%A9%D9%84%D8%A8%D8%A7-%DA%AF%D9%84%D8%B2%D9%86%DB%8C-%D8%B7%D8%A7%D8%B1%D9%85%DB%8C-%D9%82%D8%AF%D9%88%D8%B3",
-      "image": "https://cdn.fararu.com/thumbnail/ArLAdNZoyTkM/0qkIDRBYeKx6yq5V6jwWlp-SLrAmztqCQfsmnUjv_ppxTYUqgauxjDmVzJLSrNIGXHouokIOTq3aYIzMaBELM52bXPerBi1_Hdy4baVYpxRzWeFfIsKBn_yYUyru1IHK/%D8%A7%D9%85%D8%A7%D8%B1%D8%A7%D8%AA.jpg",
+      "image": "https://cdn.fararu.com/thumbnail/ArLAdNZoyTkM/DpT1stJF-mvY5RR1eBdueD0IHLgv0fYgVinLl5xXWmPU0FMDKuueXiryhTNt6_hqjNNWFbdN-tSlTmTQ7jpLEaeqERUw91rR9gQGOpCy3h0qafyq5Hoe-JLTgaBolfwQ/%D8%A7%D9%85%D8%A7%D8%B1%D8%A7%D8%AA.jpg",
       "source": "فرارو",
       "source_site": "https://fararu.com/",
       "allow_internal_republish": true,
@@ -316,7 +426,7 @@
       "summary": "شجاع خلیل‌زاده درحالی بابت پرداخت کامل حقوق بازیکنان از زنوزی تشکر کرده که بیرانوند مدعی دریافت تنها ۷ درصد دستمزد شده بود.",
       "content": "۲۱:۵۶ - \n۱۶ مهر ۱۴۰۵ \n\nتصویر؛ حمایت شجاع از زنوزی و کنایه به مصاحبه بیرانوند \n\nشجاع خلیل‌زاده درحالی بابت پرداخت کامل حقوق بازیکنان از زنوزی تشکر کرده که بیرانوند مدعی دریافت تنها ۷ درصد دستمزد شده بود. \n\nپ\n\n،\n\nپـ\n\nتبلیغات\n\nتبلیغات\n\nشجاع خلیل‌زاده درحالی بابت پرداخت کامل حقوق بازیکنان از زنوزی تشکر کرده که بیرانوند مدعی دریافت تنها ۷ درصد دستمزد شده بود.\n\r\n\r\n\n\r\n\r\n\n \n\r\n\nتبلیغات\n\nva NewsLis Limi = 5;\n\nاز میان اخبار \n\nببینید؛ گل اول استقلال به تراکتور توسط سحرخیزان دقیقه ۲۸ \n\nساعت بازی پرسپولیس مقابل صنعت نفت آبادان /هفته هشتم \n\nواکنش تارتار به شایعه حضور اورونوف در استقلال \n\nداستان عجیب علیرضا بیرانوند قبل از بازی حساس تراکتور - استقلال \n\nشما قبلا این خبر را لایک کرده‌اید . \n\nfunc ion oPe sianNumbe (numbe ) {\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\nelemen .addEven Lis ene (\"click\", func ion() {\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n. hen(func ion( esponse) {\nif ( esponse.s a us == 200) {\nesponse.json(). hen(func ion(newSco e) {\nva likeNumbe Span = elemen .que ySelec o (\".like\");\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\nva hiddenHea = elemen .que ySelec o (\".hidden\");\nvisibleHea .classLis .add(\"hidden\");\nfavo i eBu on.classLis .add(\"hidden\");\nhiddenHea .classLis . emove(\"hidden\");\nva e o Message = elemen .que ySelec o (\".e o _message\");\nif (e o Message) {\ne o Message.classLis . emove(\"hidden_e o \");\n}\n});\n} else {\nva e o Message = elemen .que ySelec o (\".e o _message\");\nif (e o Message) {\ne o Message.classLis .add(\"hidden_e o \");\nse Timeou (func ion() {\ne o Message.classLis . emove(\"hidden_e o \");\n}, 3000);\n}\n}\n})\n});\n});\n\nتبلیغات",
       "url": "https://fararu.com/fa/news/1008341/%D8%AA%D8%B5%D9%88%DB%8C%D8%B1-%D8%AD%D9%85%D8%A7%DB%8C%D8%AA-%D8%B4%D8%AC%D8%A7%D8%B9-%D8%A7%D8%B2-%D8%B2%D9%86%D9%88%D8%B2%DB%8C-%DA%A9%D9%86%D8%A7%DB%8C%D9%87-%D8%A8%D9%87-%D9%85%D8%B5%D8%A7%D8%AD%D8%A8%D9%87-%D8%A8%DB%8C%D8%B1%D8%A7%D9%86%D9%88%D9%86%D8%AF",
-      "image": "https://cdn.fararu.com/thumbnail/jXN0ma3BYiqr/cMfGouC0gELtbyW4ovKolurWhLCIHryW_pJ4YeYUsXk2i9_DC40E-kScG_PUv7PxToFZwjllCk7iVSWMq60HwouRi960yQx7Fsari0HxQdlcPYYTAz2nCSYekR4k05b2/%D8%B4%D8%AC%D8%A7%D8%B9.jpg",
+      "image": "https://cdn.fararu.com/thumbnail/jXN0ma3BYiqr/VbqqwLvxhwomDrEXp0oanSuBXZ0Zd8uTWY-40F1qxSEn31v3EZlrcl7GKUiVxqATW0zNytp4xqcUDH_HW0cIZE_0Qt79vFo1jtwZiBBd78lXwAq0W-HA4WHyeBH1aJ-_/%D8%B4%D8%AC%D8%A7%D8%B9.jpg",
       "source": "فرارو",
       "source_site": "https://fararu.com/",
       "allow_internal_republish": true,
@@ -426,7 +536,7 @@
       "summary": "علیرضا بیرانوند می‌گوید بعضی از بازیکنان با وجود معافیت به دلیل مشکلات دیسک کمر یا روانی، همچنان در مسابقات فوتبال حضور دارند.",
       "content": "۲۱:۳۵ - \n۱۶ مهر ۱۴۰۵ \n\nافشاگری بزرگ درباره فوتبالیست‌ها؛ با معافیت پزشکی به سربازی نرفتند! \n\nعلیرضا بیرانوند می‌گوید بعضی از بازیکنان با وجود معافیت به دلیل مشکلات دیسک کمر یا روانی، همچنان در مسابقات فوتبال حضور دارند.\r\n\r\n\nپ\n\n،\n\nپـ\n\nتبلیغات\n\nتبلیغات\n\nموضوع سربازی علیرضا بیرانوند طی هفته‌های اخیر به یکی از سوژه‌های بحث‌برانگیز فوتبال ایران تبدیل شده است‌. دروازه‌بان تراکتور که طبق اعلام سازمان نظام وظیفه مشمول خدمت شده، پس از طی مراحل مربوط به اعزام، پرونده‌اش وارد روند بررسی پزشکی شد و همین مسئله زمان اعزام او را نیز تحت تأثیر قرار داد.\n\r\n\r\n\nبیرانوند که پیش از این نیز تأکید کرده بود قصد فرار از خدمت یا دریافت معافیت پزشکی ندارد، این بار بعد از دیدار تراکتور و استقلال جزئیات بیشتری از روند پرونده‌اش ارائه کرد. او با اشاره به انجام MRI از کتف خود، مدعی شد که این بررسی به درخواست نظام وظیفه انجام شده و خودش برای معافیت پزشکی اقدامی نکرده است. او همچنین صحبت‌های جالبی درباره برخی بازیکنان شاغل در لیگ مطرح کرد و گفت افرادی هستند که مشکلات اعصاب و روان یا دیسک کمر از سربازی معاف شده‌اند اما به فوتبال ادامه می‌دهند‌.\n\r\n\r\n\nدروازه‌بان ملی‌پوش تراکتور درباره حواشی مربوط به خدمت سربازی‌اش گفت: «برای مردم عزیزم که موضوع را پیگیری می‌کنند و حتی هوش مصنوعی هم در این ماجرا فعال شده، توضیح می‌دهم که امروز آخرین ام‌آر‌آی کتفم را انجام دادم. این ام‌آر‌آی به درخواست خود نظام وظیفه انجام شد. به هیچ وجه من علیرضا بیرانوند برای معافیت پزشکی اقدام نکرده‌ام. وقتی فردی برای اعزام به خدمت اقدام می‌کند، نخستین کاری که پلیس+۱۰ انجام می‌دهد، معرفی او به پزشک اولیه است. در آن مرحله از من پرسیدند آیا مشکلی دارم یا نه و من گفتم کتفم آسیب قدیمی دارد. به همین دلیل برای بررسی بیشتر به ام‌آر‌آی معرفی شدم.»\n\r\n\r\n\nاو در ادامه گفت: «من خودم روز ۱۷ شهریور برای سربازی اقدام کرده بودم و منتظر برگ اعزام بودم. پس از آن، پلیس+۱۰ این روند را به من اعلام کرد. امروز هم ام‌آر‌آی دادم و هیچ مشکلی ندارم. آماده خدمت هستم. این همان آسیب قدیمی است که نزدیک به سه جام جهانی با آن بازی کرده‌ام. تاندون کتف چپم کمی مشکل دارد و همچنان روی آن کار می‌کنم. چون قرار بود از کتفم ام‌آر‌آی بگیرند، این موضوع را اعلام کردم، اما به هیچ عنوان دنبال معافیت پزشکی نیستم.»\n\r\n\r\n\nاو با اشاره به شرایط برخی از بازیکنان شاغل در لیگ برتر گفت: «به جان دو فرزندم، هیچ‌وقت دنبال معافیت پزشکی نبوده‌ام. بسیاری از بازیکنان با مشکلات پزشکی مختلف فوتبال بازی می‌کنند. بازیکنانی هستند که مشکلات روانی و یا دیسک کمر دارند و همچنان در مسابقات حاضر می‌شوند. من هم مشکلی با خدمت ندارم و آماده‌ام وظیفه‌ام را انجام بدهم.»\n\r\n\r\n\n \n\r\n\nتبلیغات\n\nمنبع :\n\nورزش3 \n\nva NewsLis Limi = 5;\n\nاز میان اخبار \n\nببینید؛ گل اول استقلال به تراکتور توسط سحرخیزان دقیقه ۲۸ \n\nساعت بازی پرسپولیس مقابل صنعت نفت آبادان /هفته هشتم \n\nواکنش تارتار به شایعه حضور اورونوف در استقلال \n\nداستان عجیب علیرضا بیرانوند قبل از بازی حساس تراکتور - استقلال \n\nشما قبلا این خبر را لایک کرده‌اید . \n\nfunc ion oPe sianNumbe (numbe ) {\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\nelemen .addEven Lis ene (\"click\", func ion() {\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n. hen(func ion( esponse) {\nif ( esponse.s a us == 200) {\nesponse.json(). hen(func ion(newSco e) {\nva likeNumbe Span = elemen .que ySelec o (\".like\");\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\nva hiddenHea = elemen .que ySelec o (\".hidden\");\nvisibleHea .classLis .add(\"hidden\");\nfavo i eBu on.classLis .add(\"hidden\");\nhiddenHea .classLis . emove(\"hidden\");\nva e o Message = elemen .que ySelec o (\".e o _message\");\nif (e o Message) {\ne o Message.classLis . emove(\"hidden_e o \");\n}\n});\n} else {\nva e o Message = elemen .que ySelec o (\".e o _message\");\nif (e o Message) {\ne o Message.classLis .add(\"hidden_e o \");\nse Timeou (func ion() {\ne o Message.classLis . emove(\"hidden_e o \");\n}, 3000);\n}\n}\n})\n});\n});\n\nتبلیغات",
       "url": "https://fararu.com/fa/news/1008336/%D8%A7%D9%81%D8%B4%D8%A7%DA%AF%D8%B1%DB%8C-%D8%A8%D8%B2%D8%B1%DA%AF-%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87-%D9%81%D9%88%D8%AA%D8%A8%D8%A7%D9%84%DB%8C%D8%B3%D8%AA-%D9%87%D8%A7-%D8%A8%D8%A7-%D9%85%D8%B9%D8%A7%D9%81%DB%8C%D8%AA-%D9%BE%D8%B2%D8%B4%DA%A9%DB%8C-%D8%A8%D9%87-%D8%B3%D8%B1%D8%A8%D8%A7%D8%B2%DB%8C-%D9%86%D8%B1%D9%81%D8%AA%D9%86%D8%AF",
-      "image": "https://cdn.fararu.com/thumbnail/nMzUfS6amNam/tazzf6wE4PKALUENKmOoVGWc2BPR96FBLdUWoTOGyP4F8_YujKbP8TEL3GaaG4Tes9-QjaMIMWzOJRxaHdBjIrV8iQu3cECW-Vwh73xl4wHTnJqgRpJq5CwPNTHO8iUx/%D9%84%DB%8C%DA%AF+%D8%A8%D8%B1%D8%AA%D8%B1.jpg",
+      "image": "https://cdn.fararu.com/thumbnail/nMzUfS6amNam/W4Fc4uvDuZykrIumKK5czjHLRqYTesLArCWcFag277XAREUz24DHCqERo-l-qWWpnH0Vfk78BH_s69kR23HsgU-giR4j_Th0varBpk5xBZtZrDpGSQln2CtgJUrv3H_A/%D9%84%DB%8C%DA%AF+%D8%A8%D8%B1%D8%AA%D8%B1.jpg",
       "source": "فرارو",
       "source_site": "https://fararu.com/",
       "allow_internal_republish": true,
@@ -535,7 +645,7 @@
       "summary": "وزارت خزانه‌داری آمریکا از اعمال تحریم‌های جدید علیه ایران خبر داد.",
       "content": "جزئیات تحریم‌ های جدید آمریکا علیه ایران \n\nسرویس:\nاخبار سیاسی \n\nکدخبر:\n۸۱۱۰۱۷ \n\n۱۴۰۵/۰۷/۱۶ - ۲۱:۲۲ \n\nوزارت خزانه‌داری آمریکا از اعمال تحریم‌های جدید علیه ایران خبر داد.\r\nوزارت خزانه داری آمریکا از اعمال تحریم‌های جدید علیه ایران خبر داد.\n\r\n\r\n\nالجزیره گزارش داد، این وزارتخانه با صدور بیانیه‌ای مدعی شد که چند کشتی فعال در «ناوگان سایه ایران» تحت تحریم قرار گرفتند و کشتی‌های مشمول تحریم، نفتی به ارزش میلیاردها دلار را برای ایران به بازارهای خارجی منتقل می‌کنند.\n\r\n\r\n\nدر بیانیه وزارت خزانه داری آمریکا آمده است که نام ۶ فرد، ۲۷ شرکت و ۲۲ کشتی در فهرست تحریم‌های ضدایرانی قرار گرفت.\n\r\n\r\n\nاین تحریم ها در حالی علیه ایران اعمال شده است که ترامپ در تازه ترین سخنان خود مدعی شده است که آنها در حال مذاکرات ثمربخش با جمهوری اسلامی ایران هستند.\n\nکپی لینک کوتاه\n\nکپی شد \n\ndocumen .addEven Lis ene ('DOMCon en Loaded', func ion() {\ncons sha eBu on = documen .que ySelec o ('.news_sha e_bu on');\n\nif (!sha eBu on) e u n;\n\nif (!naviga o .sha e) {\nsha eBu on.s yle.display = 'none';\ne u n;\n}\n\nsha eBu on.addEven Lis ene ('click', async () => {\ny {\ncons sha eDa a = {\ni le: \" u062c u0632 u0626 u06cc u0627 u062a u062a u062d u0631 u06cc u0645 u200c u0647 u0627 u06cc u062c u062f u06cc u062f u0622 u0645 u0631 u06cc u06a9 u0627 u0639 u0644 u06cc u0647 u0627 u06cc u0631 u0627 u0646\",\nex : \" u0648 u0632 u0627 u0631 u062a u062e u0632 u0627 u0646 u0647 u200c u062f u0627 u0631 u06cc u0622 u0645 u0631 u06cc u06a9 u0627 u0627 u0632 u0627 u0639 u0645 u0627 u0644 u062a u062d u0631 u06cc u0645 u200c u0647 u0627 u06cc u062c u062f u06cc u062f u0639 u0644 u06cc u0647 u0627 u06cc u0631 u0627 u0646 u062e u0628 u0631 u062f u0627 u062f. n n\",\nu l: \"h ps: / /www.egh esadnews.com /fa / iny /news-811017\" };\n\nawai naviga o .sha e(sha eDa a);\n} ca ch (e o ) {\nif (e o .name !== 'Abo E o ') {\nconsole.e o ('E o sha ing con en :', e o );\n}\n}\n});\n});\n\nva newsMas e IdFo Ra e = \"1865926\";",
       "url": "https://www.eghtesadnews.com/%D8%A8%D8%AE%D8%B4-%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1-%D8%B3%DB%8C%D8%A7%D8%B3%DB%8C-57/811017-%D8%AC%D8%B2%D8%A6%DB%8C%D8%A7%D8%AA-%D8%AA%D8%AD%D8%B1%DB%8C%D9%85-%D9%87%D8%A7%DB%8C-%D8%AC%D8%AF%DB%8C%D8%AF-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D8%B9%D9%84%DB%8C%D9%87-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86",
-      "image": "https://cdn.eghtesadnews.com/thumbnail/OZaEWyIDMdwt/8xAuSXDaVAcgDRNb_BgMMQBly3vCY1KYf8a2jqo7WiBdx9mhrSFJxAH4zCKoQ6oPPl1muqOjl2yhrrSm0pxoTYlNR4S6avi4LgfSFfijgQLdl6PuM7fLIkEHShD9YN_s5b-zOhnh3ChR_pSWTUgoZ0Yr-0iifGfv4BH6eZQI4vkARYBLphey6xQEAmHGxRRo/%D8%A7%DB%8C%D8%B1%D8%A7%D9%86+%D9%88+%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7.jpg",
+      "image": "https://cdn.eghtesadnews.com/thumbnail/OZaEWyIDMdwt/gaRu4XybGht-8o0E-pVFl7nWHtx83JNeXpvXrjiL_vOvHKPMgXoRK8YKULgrngDSLFXjIfYW36MgTeivyuUl5phYuwHc1XmyXs9cK5LoPnonEFgF_lS74kniH6oDXBqhnr6a4B0aMYI14C3dYnv0rI9Ctfq17tk1oOvi49EnYsDKTJ4ghfJLILSJQryMWL2H/%D8%A7%DB%8C%D8%B1%D8%A7%D9%86+%D9%88+%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7.jpg",
       "source": "اقتصادنیوز",
       "source_site": "https://www.eghtesadnews.com/",
       "allow_internal_republish": true,
@@ -563,7 +673,8 @@
         "economy"
       ],
       "importance_score": 0,
-      "important": false
+      "important": false,
+      "image_tries": 1
     },
     {
       "id": "0fc8fba609fafef5105b",
@@ -636,7 +747,7 @@
       ],
       "importance_score": 0,
       "important": false,
-      "image_tries": 1
+      "image_tries": 2
     },
     {
       "id": "380a0c213f386b8d7caa",
@@ -711,7 +822,7 @@
       ],
       "importance_score": 0,
       "important": false,
-      "image_tries": 2
+      "image_tries": 3
     },
     {
       "id": "18dbe6f6457d61760c75",
@@ -945,7 +1056,7 @@
       "summary": "وزارت خزانه‌داری آمریکا تحریم‌های جدیدی را علیه ایران اعمال کرد.",
       "content": "فوری/ اقدام جدید آمریکا علیه ایران \n\nسرویس:\nاخبار سیاسی \n\nکدخبر:\n۸۱۱۰۱۴ \n\n۱۴۰۵/۰۷/۱۶ - ۲۰:۳۱ \n\nوزارت خزانه‌داری آمریکا تحریم‌های جدیدی را علیه ایران اعمال کرد. \nتحریم‌های جدیدی را علیه ایران اعمال کرد.\n\nکپی لینک کوتاه\n\nکپی شد \n\ndocumen .addEven Lis ene ('DOMCon en Loaded', func ion() {\ncons sha eBu on = documen .que ySelec o ('.news_sha e_bu on');\n\nif (!sha eBu on) e u n;\n\nif (!naviga o .sha e) {\nsha eBu on.s yle.display = 'none';\ne u n;\n}\n\nsha eBu on.addEven Lis ene ('click', async () => {\ny {\ncons sha eDa a = {\ni le: \" u0641 u0648 u0631 u06cc / u0627 u0642 u062f u0627 u0645 u062c u062f u06cc u062f u0622 u0645 u0631 u06cc u06a9 u0627 u0639 u0644 u06cc u0647 u0627 u06cc u0631 u0627 u0646 \",\nex : \" u0648 u0632 u0627 u0631 u062a u062e u0632 u0627 u0646 u0647 u200c u062f u0627 u0631 u06cc u0622 u0645 u0631 u06cc u06a9 u0627 u062a u062d u0631 u06cc u0645 u200c u0647 u0627 u06cc u062c u062f u06cc u062f u06cc u0631 u0627 u0639 u0644 u06cc u0647 u0627 u06cc u0631 u0627 u0646 u0627 u0639 u0645 u0627 u0644 u06a9 u0631 u062f.\",\nu l: \"h ps: / /www.egh esadnews.com /fa / iny /news-811014\" };\n\nawai naviga o .sha e(sha eDa a);\n} ca ch (e o ) {\nif (e o .name !== 'Abo E o ') {\nconsole.e o ('E o sha ing con en :', e o );\n}\n}\n});\n});\n\nva newsMas e IdFo Ra e = \"1865918\";",
       "url": "https://www.eghtesadnews.com/%D8%A8%D8%AE%D8%B4-%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1-%D8%B3%DB%8C%D8%A7%D8%B3%DB%8C-57/811014-%D9%81%D9%88%D8%B1%DB%8C-%D8%A7%D9%82%D8%AF%D8%A7%D9%85-%D8%AC%D8%AF%DB%8C%D8%AF-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D8%B9%D9%84%DB%8C%D9%87-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86",
-      "image": "https://cdn.eghtesadnews.com/thumbnail/DteF8bEP4Ivo/nR6PXMIc8FKp1phNyHlqwI2TMKs8TssRUm7DLRLWkXVm8Bvg6N9Q8Ae4g33uS_E_2yqQvI78lyjt-JLFPlSkLI_PsLnm1b-b8leZW3q80NKk7lE07XGUz1MCeYHZKfr4kPBTIJA08cXX0X0YYy0We4DgXpF8ixQoCG3trqZrCYgj9G74tmw6aK-ZXAxymc6C/%D8%A8%D8%B1%D8%AC%D8%A7%D9%85+%2F+%D9%85%D8%B0%D8%A7%DA%A9%D8%B1%D8%A7%D8%AA+%2F+%D8%AA%D9%88%D8%A7%D9%81%D9%82+%D9%87%D8%B3%D8%AA%D9%87%E2%80%8C%D8%A7%DB%8C+%2F+%D8%A7%DB%8C%D8%B1%D8%A7%D9%86+%D9%88+%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7+%2F+%D8%AA%D8%AD%D8%B1%DB%8C%D9%85%E2%80%8C%D9%87%D8%A7.jpg",
+      "image": "https://cdn.eghtesadnews.com/thumbnail/DteF8bEP4Ivo/IWu_TiCMjQsHet1cP0cStZP_V_ZGCvoGtFjHdS1yT8k9KYw4NOnfcRC0UIgOMQTNf3O1h7IuprzgTjUNWrFi5EfzSNgZ1ZGnvGaP79fn5puol9i7ccUG_px_9LaKctZFsanOC1fVItd02qBzkTdOWSikdQmCiHFh20iddJ28pITYIfLGS7wdUQ2nbzk8Iewu/%D8%A8%D8%B1%D8%AC%D8%A7%D9%85+%2F+%D9%85%D8%B0%D8%A7%DA%A9%D8%B1%D8%A7%D8%AA+%2F+%D8%AA%D9%88%D8%A7%D9%81%D9%82+%D9%87%D8%B3%D8%AA%D9%87%E2%80%8C%D8%A7%DB%8C+%2F+%D8%A7%DB%8C%D8%B1%D8%A7%D9%86+%D9%88+%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7+%2F+%D8%AA%D8%AD%D8%B1%DB%8C%D9%85%E2%80%8C%D9%87%D8%A7.jpg",
       "source": "اقتصادنیوز",
       "source_site": "https://www.eghtesadnews.com/",
       "allow_internal_republish": true,
@@ -1259,7 +1370,7 @@
       "summary": "اقتصادنیوز: بازار رمزارزها در معاملات پنج‌شنبه با تشدید فشار فروش همراه شد؛ ارزش بازار ۲.۱۵ درصد افت کرد و شاخص ترس و طمع از محدوده طمع به وضعیت خنثی رسید. بیت‌کوین پس از ناکامی در عبور از ۸۳ هزار و ۳۰۰ دلار تا محدوده ۸۱ هزار و ۹۴۰ دلار عقب نشست و تتر نیز در آستانه ورود دوباره به کانال ۲۷۰ هزار توما",
       "content": "«اقتصادنیوز» گزارش می‌دهد؛ \n\nتلاش تتر برای بازگشت به کانال ۲۷۰ هزار تومان | تداوم افت بیت‌کوین تا ۸۱ هزار دلار | ترس به بازار رمزارزها برگشت \n\nوحید حاتمی \n\nسرویس:\nاخبار ارز دیجیتال \n\nکدخبر:\n۸۱۱۰۰۷ \n\n۱۴۰۵/۰۷/۱۶ - ۱۹:۳۳ \n\nاقتصادنیوز: بازار رمزارزها در معاملات پنج‌شنبه با تشدید فشار فروش همراه شد؛ ارزش بازار ۲.۱۵ درصد افت کرد و شاخص ترس و طمع از محدوده طمع به وضعیت خنثی رسید. بیت‌کوین پس از ناکامی در عبور از ۸۳ هزار و ۳۰۰ دلار تا محدوده ۸۱ هزار و ۹۴۰ دلار عقب نشست و تتر نیز در آستانه ورود دوباره به کانال ۲۷۰ هزار تومان قرار گرفت. \nبا کاهش ارزش بازار همراه شده است؛ ارزش کل بازار رمزارزها با افت ۲.۱۵ درصدی به حدود ۲.۷۶ تریلیون دلار رسیده و شاخص CMC20 نیز ۲.۸۶ درصد کاهش داشته است. همزمان، شاخص ترس و طمع با عقب‌نشینی از محدوده طمع به عدد ۵۶ رسیده و در وضعیت خنثی قرار گرفته است؛ موضوعی که از افزایش احتیاط معامله‌گران و کاهش ریسک‌پذیری در بازار حکایت دارد.\n\r\n\r\n\nدر بازار ارزهای دیجیتال، تتر طی ۲۴ ساعت گذشته در محدوده ۲۶۳ هزار و ۶۶۰ تومان تا ۲۶۸ هزار و ۵۰۰ تومان در معامله بود. تتر پس از برخورد با کف روزانه بار دیگر به سمت سقف حرکت کرده و در فاصله محدودی از مرز ۲۷۰ هزار تومان قرار گرفته است؛ محدوده‌ای که می‌تواند در ادامه معاملات نقش مهمی در تعیین مسیر قیمت داشته باشد.\n\r\n\r\n\nبیت‌کوین نیز در ادامه کاهش‌های روزهای اخیر، معاملات امروز را در محدوده ۸۲ هزار و ۶۳۰ دلار آغاز کرد و پس از تلاش برای صعود تا ۸۳ هزار و ۳۱۵ دلار، با افزایش فشار فروش از این محدوده عقب نشست و تا حوالی ۸۱ هزار و ۹۴۰ دلار پایین آمد. در واقع، مقاومت در محدوده ۸۳ هزار و ۳۰۰ دلار بار دیگر مانع ادامه حرکت صعودی بیت‌کوین شد و قیمت را به سمت محدوده حمایتی ۸۲ هزار دلار بازگرداند.\n\r\n\r\n\nدر سایر ارزهای دیجیتال نیز فضای غالب بازار نزولی بود و بیشتر رمزارزهای بزرگ با افت قیمت در بازه‌های روزانه، هفتگی و ماهانه مواجه شدند. اتریوم، ریپل، بایننس کوین، سولانا، دوج کوین، کاردانو، بیت‌کوین کش، شیبا و گرام همگی کاهش قیمت را ثبت کردند؛ در این میان دوج کوین و شیبا افت قابل‌توجهی داشتند و ترون با کاهش تنها ۰.۳۴ درصدی، عملکرد مقاوم‌تری نسبت به دیگر رمزارزهای این فهرست نشان داد.\n\r\n\r\n\nتتر در مسیر بازپس‌گیری سقف ۲۷۰ هزار تومانی؛ مقاومت اصلی کجاست؟ \n\r\n\r\n\nقیمت تتر در 24 ساعت گذشته بین محدوده263 هزار و 660 تومان و 268 هزار و 500 تومان در معامله بود و در ساعت 18:50 در نرخ 268 هزار و 400 تومان قرار داشت. رفتار قیمت نشان می‌دهد تتر پس از برخورد با کف 263 هزار و 660 تومانی بار دیگر تقاضای بالاتری را تجربه کرده و در نزدیکی سقف روزانه قرار گرفته است. با این حال، ماندن قیمت در زیر محدوده 268 هزار و 500 تا 270 هزار تومان نشان می‌دهد فروشندگان همچنان در این محدوده فعال هستند.\n\r\n\r\n\nاز نگاه تحلیلگران تکنیکال، روند کوتاه‌مدت تتر همچنان متمایل به صعود است، اما رسیدن قیمت به مقاومت‌های روانی بالاتر می‌تواند نوسان بازار را افزایش دهد. در تحلیل‌های اخیر نیز روند تتر در بازار ایران صعودی ارزیابی شده و تأکید شده است که در صورت تداوم تقاضای داخلی ارز، عبور از سقف‌های قبلی می‌تواند مسیر رشد جدیدی ایجاد کند.\n\r\n\r\n\nدر سناریوی صعودی، محدوده 268 هزار و 500 تا 270 هزار تومان نخستین مقاومت مهم تتر محسوب می‌شود و تثبیت بالای 270 هزار تومان می‌تواند راه را برای حرکت به سمت 272 هزار تا 275 هزار تومان باز کند. در مقابل، تحلیلگران محدوده 265 هزار تا 263 هزار و 600 تومان را حمایت کوتاه‌مدت می‌دانند؛ به‌طوری که حفظ این محدوده می‌تواند زمینه بازگشت تقاضا را فراهم کند.\n\r\n\r\n\nبا این حال، اگر تتر نتواند از مقاومت 270 هزار تومان عبور کند و فشار فروش افزایش یابد، احتمال برگشت قیمت به محدوده 265 هزار تومان وجود دارد. از دست رفتن کف 263 هزار و 660 تومان نیز می‌تواند اصلاح را عمیق‌تر کرده و قیمت را وارد محدوده 260 هزار تا 262 هزار تومان کند؛ بنابراین در کوتاه‌مدت، واکنش تتر به مرز 270 هزار تومان و نحوه رفتار آن در محدوده حمایتی 263 تا 265 هزار تومان، جهت حرکت بعدی را مشخص خواهد کرد.\n\r\n\r\n\nبیت‌کوین زیر فشار مقاومت ۸۳ هزار و ۳۰۰ دلاری؛ حمایت ۸۱ هزار و ۸۰۰ دلار تعیین‌کننده است \n\r\n\r\n\nبیت کوین در ابتدای روز در محدوده 82 هزار و 630 دلار در معامله بود و با افزایش تا نرخ 83 هزار و 315 دلار بالا رفت و با مقاومت از این مرز نزولی شد و در ساعت 18:55 در نرخ 81 هزار و 940 دلار در معامله بود. این رفتار قیمتی نشان می‌دهد تلاش خریداران برای عبور از محدوده 83 هزار و 300 دلار با عرضه فروشندگان مواجه شده و بیت‌کوین بخش قابل‌توجهی از رشد ابتدای روز را پس گرفته است.\n\r\n\r\n\nتحلیلگران بازار رمزارز محدوده 82 هزار تا 83 هزار دلار را در شرایط فعلی منطقه بسیار مهمی برای بیت‌کوین می‌دانند. در تحلیل‌های روزهای اخیر نیز حمایت 83 هزار دلار به‌عنوان سطح کلیدی مطرح شده و شکست پایدار محدوده 82 تا 83 هزار دلار می‌تواند ساختار صعودی کوتاه‌مدت را تحت فشار قرار دهد؛ در مقابل، حفظ این ناحیه می‌تواند زمینه شکل‌گیری دوباره تقاضا را فراهم کند.\n\r\n\r\n\nدر سناریوی صعودی، اولین مقاومت بیت‌کوین همان محدوده 83 هزار و 300 تا 83 هزار و 500 دلار است و عبور و تثبیت بالای آن می‌تواند قیمت را به سمت 84 هزار و 500 تا 85 هزار دلار هدایت کند. در صورت بازگشت قدرت خریداران و عبور از این محدوده، مقاومت مهم بعدی حوالی 86 هزار تا 87 هزار دلار قرار دارد؛ محدوده‌ای که در روزهای اخیر نیز مانع ادامه رشد بیت‌کوین شده است.\n\r\n\r\n\nدر سمت مقابل، 81 هزار و 800 تا 82 هزار دلار حمایت فوری بیت‌کوین محسوب می‌شود و از دست رفتن آن می‌تواند فشار فروش را افزایش دهد. در این صورت، محدوده 80 هزار تا 81 هزار و 500 دلار مقصد احتمالی بعدی اصلاح خواهد بود؛ محدوده‌ای که در تحلیل‌های اخیر نیز به‌عنوان حمایت پایین‌تر مطرح شده است. بنابراین در کوتاه‌مدت، حفظ مرز 82 هزار دلار برای بیت‌کوین اهمیت زیادی دارد و عبور دوباره از 83 هزار و 300 دلار می‌تواند نخستین نشانه بازگشت خریداران باشد.\n\r\n\r\n\n\r\n\r\n\nاتریوم زیر فشار فروش؛ بازدهی هفتگی به منفی ۳.۸۴ درصد رسید \n\r\n\r\n\nاتریوم با قیمت ۲ هزار و ۴۶۲ دلار و ۴۳ سنت معامله می‌شود و در ۲۴ ساعت گذشته ۲.۱۵ درصد کاهش قیمت داشته است. بازدهی هفتگی این رمزارز نیز به منفی ۳.۸۴ درصد رسیده و عملکرد ماهانه آن با افت ۸.۴۳ درصدی همراه بوده است. این ارقام نشان می‌دهد فشار فروش در اتریوم تنها به معاملات کوتاه‌مدت محدود نمانده و در بازه‌های زمانی بزرگ‌تر نیز ادامه پیدا کرده است.\n\r\n\r\n\nارزش بازار اتریوم در حال حاضر حدود ۳۰۰.۷ میلیارد دلار است و حجم معاملات ۲۴ ساعته آن به ۱۴.۶۹ میلیارد دلار می‌رسد. حجم معاملات بالا در کنار افت قیمت، نشان‌دهنده فعال بودن سمت فروش بازار است. عرضه در گردش اتریوم نیز ۱۲۲.۱۱ میلیون واحد اعلام شده است.\n\r\n\r\n\nریپل؛ افت ۳.۲۹ درصدی در ۲۴ ساعت \n\r\n\r\n\nریپل با قیمت ۱ دلار و ۳۵ سنت در حال معامله است و در ۲۴ ساعت گذشته ۳.۲۹ درصد کاهش داشته است. بازدهی هفتگی XRP به منفی ۴.۷۲ درصد رسیده و این رمزارز در بازه یک‌ماهه نیز افت ۸.۸۷ درصدی را ثبت کرده است. بنابراین ریپل در هر سه بازه کوتاه‌مدت، هفتگی و ماهانه با کاهش قیمت مواجه بوده است.\n\r\n\r\n\nارزش بازار ریپل حدود ۸۵.۶۶ میلیارد دلار و حجم معاملات ۲۴ ساعته آن ۳.۲۱ میلیارد دلار است. تعداد XRP در گردش نیز ۶۳.۰۹ میلیارد واحد گزارش شده است. نسبت حجم معاملات به ارزش بازار نشان می‌دهد با وجود کاهش قیمت، نقدشوندگی ریپل همچنان در سطح قابل‌توجهی قرار دارد.\n\r\n\r\n\nبایننس کوین؛ BNB در یک ماه ۳.۸۳ درصد پایین آمد \n\r\n\r\n\nبایننس کوین با قیمت ۷۳۸ دلار و ۳۷ سنت معامله می‌شود و در ۲۴ ساعت گذشته ۲.۵۳ درصد کاهش قیمت داشته است. بازدهی هفتگی این رمزارز نیز منفی ۳.۵۸ درصد بوده و در بازه یک‌ماهه افت آن به ۳.۸۳ درصد رسیده است.\n\r\n\r\n\nارزش بازار BNB حدود ۹۸.۳۲ میلیارد دلار است و معامله‌گران در ۲۴ ساعت گذشته حدود ۱.۴۱ میلیارد دلار از این رمزارز را خریدوفروش کرده‌اند. عرضه در گردش بایننس کوین نیز ۱۳۳.۱۵ میلیون واحد اعلام شده است. داده‌های قیمتی نشان می‌دهد BNB اگرچه نسبت به برخی آلت‌کوین‌های بزرگ افت کمتری داشته، اما همچنان تحت تأثیر فضای منفی بازار قرار دارد.\n\r\n\r\n\nسولانا؛ افت نزدیک به ۳ درصدی در یک روز \n\r\n\r\n\nسولانا با قیمت ۱۰۹ دلار و ۱۵ سنت معامله می‌شود و افت روزانه آن به ۲.۹۰ درصد رسیده است. SOL در یک هفته گذشته نیز ۵.۹۱ درصد از ارزش خود را از دست داده و بازدهی ماهانه آن منفی ۷.۲۴ درصد بوده است.\n\r\n\r\n\nارزش بازار سولانا حدود ۶۴.۳۱ میلیارد دلار است و حجم معاملات ۲۴ ساعته آن به ۳.۴۵ میلیارد دلار می‌رسد. عرضه در گردش این رمزارز ۵۸۹.۱۶ میلیون واحد است. افت همزمان قیمت در بازه‌های روزانه، هفتگی و ماهانه نشان می‌دهد سولانا در حال حاضر با فشار فروش گسترده‌تری نسبت به برخی رمزارزهای بزرگ بازار مواجه است.\n\r\n\r\n\nدوج کوین؛ افت ۴ درصدی قیمت و کاهش ۱۱.۵۱ درصدی ماهانه \n\r\n\r\n\nدوج کوین با قیمت ۸ سنت و ۳۷ صدم دلار معامله می‌شود و در ۲۴ ساعت گذشته ۴.۰۲ درصد کاهش داشته است. بازدهی هفتگی DOGE به منفی ۴.۹۹ درصد رسیده و افت ماهانه آن به ۱۱.۵۱ درصد افزایش یافته است؛ رقمی که دوج کوین را در میان رمزارزهای این فهرست در زمره ضعیف‌ترین عملکردهای ماهانه قرار می‌دهد.\n\r\n\r\n\nارزش بازار دوج کوین حدود ۱۴.۳۹ میلیارد دلار و حجم معاملات ۲۴ ساعته آن ۱.۱۶ میلیارد دلار است. تعداد DOGE در گردش نیز ۱۷۱.۹۵ میلیارد واحد اعلام شده است. افزایش حجم معاملات در کنار افت قیمت نشان می‌دهد نوسانات و فشار فروش در این رمزارز همچنان بالاست.\n\r\n\r\n\nکاردانو؛ ADA بیش از ۵ درصد در ۲۴ ساعت افت کرد \n\r\n\r\n\nکاردانو با قیمت ۲۳ سنت معامله می‌شود و در ۲۴ ساعت گذشته ۵.۴۰ درصد کاهش داشته است. ADA در یک هفته گذشته نیز ۶.۹۷ درصد افت کرده، در حالی که بازدهی ماهانه آن منفی ۴.۶۱ درصد بوده است.\n\r\n\r\n\nارزش بازار کاردانو حدود ۸.۶۵ میلیارد دلار است و حجم معاملات ۲۴ ساعته آن به ۵۹۰.۹۲ میلیون دلار می‌رسد. عرضه در گردش این رمزارز ۳۶.۷۹ میلیارد واحد گزارش شده است. در مجموع، عملکرد روزانه و هفتگی کاردانو نشان می‌دهد این رمزارز در حال حاضر یکی از آلت‌کوین‌های تحت فشار بازار است.\n\r\n\r\n\nبیت کوین کش؛ کاهش ۳.۹۵ درصدی در معاملات ۲۴ ساعته \n\r\n\r\n\nبیت کوین کش با قیمت ۲۸۵ دلار و ۱۷ سنت معامله می‌شود و در ۲۴ ساعت گذشته ۳.۹۵ درصد افت کرده است. بازدهی هفتگی BCH نیز به منفی ۵.۰۱ درصد رسیده و این رمزارز در بازه یک‌ماهه ۷.۴۹ درصد کاهش داشته است.\n\r\n\r\n\nارزش بازار بیت کوین کش حدود ۵.۷۳ میلیارد دلار و حجم معاملات روزانه آن ۱۸۵.۵۶ میلیون دلار است. تعداد BCH در گردش نیز ۲۰.۱ میلیون واحد اعلام شده است. همزمانی افت روزانه، هفتگی و ماهانه نشان می‌دهد روند کوتاه‌مدت بیت کوین کش همچنان تحت فشار فروش قرار دارد.\n\r\n\r\n\nشیبا اینو؛ افت بیش از ۴ درصدی و بازدهی ماهانه منفی ۹.۵۲ درصد \n\r\n\r\n\nشیبا اینو با قیمت ۰.۰۰۰۰۰۵۵۱۸۸ دلار معامله می‌شود و در ۲۴ ساعت گذشته ۴.۲۳ درصد کاهش داشته است. بازدهی هفتگی SHIB نیز منفی ۳.۵۳ درصد و بازدهی ماهانه آن منفی ۹.۵۲ درصد بوده است.\n\r\n\r\n\nارزش بازار شیبا اینو حدود ۳.۰۵ میلیارد دلار است و حجم معاملات ۲۴ ساعته آن به ۶۹.۳۱ میلیون دلار می‌رسد. تعداد SHIB در گردش نیز ۵۸۹.۲۳ تریلیون واحد گزارش شده است. افت قیمت در کنار کاهش بازدهی ماهانه نشان می‌دهد شیبا همچنان در محدوده تحت فشار فروش معامله می‌شود.\n\r\n\r\n\nترون؛ کمترین افت روزانه در میان رمزارزهای اصلی این فهرست \n\r\n\r\n\nترون با قیمت ۰.۳۳۳۳ دلار معامله می‌شود و در ۲۴ ساعت گذشته تنها ۰.۳۴ درصد کاهش داشته است. بازدهی هفتگی TRX نیز منفی ۰.۳۱ درصد بوده، در حالی که بازدهی ماهانه آن تقریباً بدون تغییر و معادل منفی ۰.۰۵ درصد ثبت شده است.\n\r\n\r\n\nارزش بازار ترون حدود ۳۱.۶۵ میلیارد دلار و حجم معاملات ۲۴ ساعته آن ۴۵۱.۸۶ میلیون دلار است. عرضه در گردش TRX نیز ۹۴.۹۸ میلیارد واحد اعلام شده است. عملکرد ترون در مقایسه با سایر رمزارزهای این فهرست نشان می‌دهد این رمزارز در برابر موج فروش بازار مقاومت بیشتری داشته است.\n\r\n\r\n\nتون کوین؛ افت ۳.۶۸ درصدی گرام در ۲۴ ساعت \n\r\n\r\n\nگرام با نام قبلی تون‌کوین، با قیمت ۱ دلار و ۳۶ سنت معامله می‌شود. این رمزارز در ۲۴ ساعت گذشته ۳.۶۸ درصد کاهش داشته و بازدهی هفتگی آن منفی ۳.۴۳ درصد بوده است. افت ماهانه گرام نیز به ۱۰.۵۴ درصد رسیده است.\n\r\n\r\n\nارزش بازار این رمزارز حدود ۳.۸۶ میلیارد دلار است و حجم معاملات ۲۴ ساعته آن ۷۱.۹۲ میلیون دلار گزارش شده است. عرضه در گردش نیز ۲.۸۲ میلیارد واحد GRAM اعلام شده و وضعیت شاخص روند آن در داده ارائه‌شده خنثی است.\n\r\n\r\n\nبازار رمزارزها زیر فشار فروش؛ ارزش بازار ۲.۷۶ تریلیون دلار شد \n\r\n\r\n\nبازار رمزارزها در معاملات روز پنجشنبه با کاهش ارزش بازار همراه است و ارزش کل بازار با افت ۲.۱۵ درصدی به حدود ۲.۷۶ تریلیون دلار رسیده است. شاخص CMC20 نیز با کاهش ۲.۸۶ درصدی در سطح ۱۶۸.۰۳ واحد قرار دارد که نشان‌دهنده افت گسترده قیمت در میان رمزارزهای بزرگ بازار است.\n\r\n\r\n\nدر بازار آلت‌کوین‌ها، شاخص Al coin Season روی عدد ۵۸ قرار دارد. همچنین جریان سرمایه صندوق‌های قابل معامله بورسی (ETF) در این بازار با خروج خالص ۶۴۴.۳۰ میلیون دلار همراه بوده و در داده‌های کوین‌مارکت‌کپ، تغییر این شاخص ۴ واحد ثبت شده است.\n\r\n\r\n\nدر بازار مشتقه، مجموع نقدشوندگی‌ها در ۳۰ روز گذشته به ۸۱۵.۰۹ میلیون دلار رسیده که از این میزان، ۷۵۳.۹۸ میلیون دلار مربوط به موقعیت‌های خرید (Long) و ۶۱.۱۱ میلیون دلار مربوط به موقعیت‌های فروش (Sho ) بوده است. بالا بودن سهم موقعیت‌های خرید در میان معاملات لیکوئیدشده نشان می‌دهد بخش قابل‌توجهی از معامله‌گران صعودی در جریان افت اخیر بازار از موقعیت‌های خود خارج شده‌اند.\n\r\n\r\n\nهمچنین ارزش موقعیت‌های باز بازار مشتقه به ۴۰۶.۹۲ میلیارد دلار رسیده که نسبت به قبل ۱۲.۶۸ درصد افزایش داشته است. حجم معاملات ۲۴ ساعته بازار مشتقه نیز حدود ۸۳۱.۷۶ میلیارد دلار بوده و با افت ۰.۷۱ درصدی همراه شده است.\n\r\n\r\n\nشاخص ترس و طمع رمزارزها به ۵۶ رسید؛ احساسات بازار از طمع فاصله گرفت \n\r\n\r\n\nشاخص ترس و طمع بازار رمزارزها در روز پنجشنبه روی عدد ۵۶ قرار گرفته و در وضعیت خنثی (Neu al) است. این شاخص روز گذشته عدد ۶۱ و در محدوده طمع قرار داشت؛ بنابراین احساسات معامله‌گران طی یک روز ۵ واحد کاهش پیدا کرده و بازار از محدوده طمع به وضعیت خنثی وارد شده است.\n\r\n\r\n\nدر مقایسه با هفته و ماه گذشته نیز کاهش محسوسی دیده می‌شود؛ شاخص در هفته گذشته ۶۹ و در محدوده طمع و یک ماه قبل ۷۲ بوده است. بالاترین سطح شاخص در سال جاری در ۲۷ اوت ۲۰۲۶ با عدد ۸۲ و در وضعیت طمع شدید ثبت شده، در حالی که پایین‌ترین سطح سال در ۶ فوریه ۲۰۲۶ با عدد ۵ و در محدوده ترس شدید قرار داشته است.\n\nکپی لینک کوتاه\n\nکپی شد \n\ndocumen .addEven Lis ene ('DOMCon en Loaded', func ion() {\ncons sha eBu on = documen .que ySelec o ('.news_sha e_bu on');\n\nif (!sha eBu on) e u n;\n\nif (!naviga o .sha e) {\nsha eBu on.s yle.display = 'none';\ne u n;\n}\n\nsha eBu on.addEven Lis ene ('click', async () => {\ny {\ncons sha eDa a = {\ni le: \" u062a u0644 u0627 u0634 u062a u062a u0631 u0628 u0631 u0627 u06cc u0628 u0627 u0632 u06af u0634 u062a u0628 u0647 u06a9 u0627 u0646 u0627 u0644 u06f2 u06f7 u06f0 u0647 u0632 u0627 u0631 u062a u0648 u0645 u0627 u0646 | u062a u062f u0627 u0648 u0645 u0627 u0641 u062a u0628 u06cc u062a u200c u06a9 u0648 u06cc u0646 u062a u0627 u06f8 u06f1 u0647 u0632 u0627 u0631 u062f u0644 u0627 u0631 | u062a u0631 u0633 u0628 u0647 u0628 u0627 u0632 u0627 u0631 u0631 u0645 u0632 u0627 u0631 u0632 u0647 u0627 u0628 u0631 u06af u0634 u062a\",\nex : \" u0627 u0642 u062a u0635 u0627 u062f u0646 u06cc u0648 u0632: u0628 u0627 u0632 u0627 u0631 u0631 u0645 u0632 u0627 u0631 u0632 u0647 u0627 u062f u0631 u0645 u0639 u0627 u0645 u0644 u0627 u062a u067e u0646 u062c u200c u0634 u0646 u0628 u0647 u0628 u0627 u062a u0634 u062f u06cc u062f u0641 u0634 u0627 u0631 u0641 u0631 u0648 u0634 u0647 u0645 u0631 u0627 u0647 u0634 u062f u061b u0627 u0631 u0632 u0634 u0628 u0627 u0632 u0627 u0631 u06f2. u06f1 u06f5 u062f u0631 u0635 u062f u0627 u0641 u062a u06a9 u0631 u062f u0648 u0634 u0627 u062e u0635 u062a u0631 u0633 u0648 u0637 u0645 u0639 u0627 u0632 u0645 u062d u062f u0648 u062f u0647 u0637 u0645 u0639 u0628 u0647 u0648 u0636 u0639 u06cc u062a u062e u0646 u062b u06cc u0631 u0633 u06cc u062f. u0628 u06cc u062a u200c u06a9 u0648 u06cc u0646 u067e u0633 u0627 u0632 u0646 u0627 u06a9 u0627 u0645 u06cc u062f u0631 u0639 u0628 u0648 u0631 u0627 u0632 u06f8 u06f3 u0647 u0632 u0627 u0631 u0648 u06f3 u06f0 u06f0 u062f u0644 u0627 u0631 u062a u0627 u0645 u062d u062f u0648 u062f u0647 u06f8 u06f1 u0647 u0632 u0627 u0631 u0648 u06f9 u06f4 u06f0 u062f u0644 u0627 u0631 u0639 u0642 u0628 u0646 u0634 u0633 u062a u0648 u062a u062a u0631 u0646 u06cc u0632 u062f u0631 u0622 u0633 u062a u0627 u0646 u0647 u0648 u0631 u0648 u062f u062f u0648 u0628 u0627 u0631 u0647 u0628 u0647 u06a9 u0627 u0646 u0627 u0644 u06f2 u06f7 u06f0 u0647 u0632 u0627 u0631 u062a u0648 u0645 u0627 u0646 u0642 u0631 u0627 u0631 u06af u0631 u0641 u062a.\",\nu l: \"h ps: / /www.egh esadnews.com /fa / iny /news-811007\" };\n\nawai naviga o .sha e(sha eDa a);\n} ca ch (e o ) {\nif (e o .name !== 'Abo E o ') {\nconsole.e o ('E o sha ing con en :', e o );\n}\n}\n});\n});\n\nva newsMas e IdFo Ra e = \"1865899\";",
       "url": "https://www.eghtesadnews.com/%D8%A8%D8%AE%D8%B4-%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1-%D8%A7%D8%B1%D8%B2-%D8%AF%DB%8C%D8%AC%DB%8C%D8%AA%D8%A7%D9%84-124/811007-%D8%AA%D9%84%D8%A7%D8%B4-%D8%AA%D8%AA%D8%B1-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%A8%D8%A7%D8%B2%DA%AF%D8%B4%D8%AA-%D8%A8%D9%87-%DA%A9%D8%A7%D9%86%D8%A7%D9%84-%D9%87%D8%B2%D8%A7%D8%B1-%D8%AA%D9%88%D9%85%D8%A7%D9%86-%D8%AA%D8%AF%D8%A7%D9%88%D9%85-%D8%A7%D9%81%D8%AA-%D8%A8%DB%8C%D8%AA-%DA%A9%D9%88%DB%8C%D9%86-%D8%AA%D8%A7-%D9%87%D8%B2%D8%A7%D8%B1-%D8%AF%D9%84%D8%A7%D8%B1-%D8%AA%D8%B1%D8%B3-%D8%A8%D9%87-%D8%A8%D8%A7%D8%B2%D8%A7%D8%B1-%D8%B1%D9%85%D8%B2%D8%A7%D8%B1%D8%B2%D9%87%D8%A7-%D8%A8%D8%B1%DA%AF%D8%B4%D8%AA",
-      "image": "https://cdn.eghtesadnews.com/thumbnail/EYgBbww97q5Q/zXmjTLNOe8_q_f-x2arlZStIoyrUbE5FP_sfDGy_MUF_OnbQzDZqNb-iWufSf58wzSqiG3ett_QMQ9j3RXyRdLoXUCywFCWM3z1_UbSSwysb5O8dLOF1ebcmlgRG6TO62KwCu_kPdUC_Y5jgxbURIYY4VHfWk7UPRTwci2zTaLwRKV2DPwcwBzPOss0XHTp3/%D9%82%DB%8C%D9%85%D8%AA+%D8%A8%DB%8C%D8%AA+%DA%A9%D9%88%DB%8C%D9%86+%D9%88+%D8%AA%D8%AA%D8%B1.jpg",
+      "image": "https://cdn.eghtesadnews.com/thumbnail/EYgBbww97q5Q/WK_2vDyA2IYDeA4MnSYd9PBWvUdHjHpQOEEID8FapYQkJZVQsdUkuZjlGopnhYul4Q8qm-Kehoug5Q5Vvsbd74iU2VobUq2F_qvZfpyIYuP-Wl1AbsO4oNn12qZNmImk4Cx35QmgdCqNjiBnh4XvhFZT8Xo-ogTuJFAN0y_2CIHBoT6CaHBsB9gdQpe6pGCH/%D9%82%DB%8C%D9%85%D8%AA+%D8%A8%DB%8C%D8%AA+%DA%A9%D9%88%DB%8C%D9%86+%D9%88+%D8%AA%D8%AA%D8%B1.jpg",
       "source": "اقتصادنیوز",
       "source_site": "https://www.eghtesadnews.com/",
       "allow_internal_republish": true,
@@ -1547,7 +1658,8 @@
         "economy"
       ],
       "importance_score": 0,
-      "important": false
+      "important": false,
+      "image_tries": 1
     },
     {
       "id": "d6cbd07fee82a2b04411",
@@ -1842,7 +1954,7 @@
       ],
       "importance_score": 0,
       "important": false,
-      "image_tries": 1
+      "image_tries": 2
     },
     {
       "id": "bcae159185a09c000690",
@@ -2101,7 +2213,7 @@
       ],
       "importance_score": 0,
       "important": false,
-      "image_tries": 1
+      "image_tries": 2
     },
     {
       "id": "f142b63931128c8998f8",
@@ -2232,7 +2344,7 @@
       ],
       "importance_score": 0,
       "important": false,
-      "image_tries": 1
+      "image_tries": 2
     },
     {
       "id": "4beb5f87fe90526836f4",
@@ -2270,7 +2382,7 @@
       ],
       "importance_score": 0,
       "important": false,
-      "image_tries": 1
+      "image_tries": 2
     },
     {
       "id": "d576f9016264e977bee3",
@@ -2296,7 +2408,7 @@
       "summary": "اقتصادنیوز: قیمت سکه امامی امروز با افزایش، در نرخ 268 میلیون و 600 هزار تومان در معامله بود.",
       "content": "قیمت سکه، نیم‌سکه و ربع‌سکه امروز پنجشنبه ۱۶ مهر ۱۴۰۵/ افزایش قیمت سکه \n\nسرویس:\nاخبار طلا و ارز \n\nکدخبر:\n۸۱۰۹۰۸ \n\n۱۴۰۵/۰۷/۱۶ - ۱۷:۰۵ \n\nاقتصادنیوز: قیمت سکه امامی امروز با افزایش، در نرخ 268 میلیون و 600 هزار تومان در معامله بود. \nشاهد افزایش  قیمت‌‌‌‌ سکه  نسبت به روز گذشته است.\n\nقیمت سکه امامی امروز\n\nقیمت سکه امامی امروز با افزایش، در نرخ 268 میلیون و 600 هزار تومان در معامله بود.\n\nخبر مرتبط \n\nافزایش قیمت طلا و ارز در بازار | طلا به ۲۶.۳ میلیون تومان رسید | قیمت سکه ۲۶۹ میلیون شد\n\nاقتصادنیوز: بازار طلا، سکه و ارز در آخرین روز معاملاتی هفته پس از اصلاح روز چهارشنبه، کمی رو به بالا برگشت؛ دلار به ۲۶۷ هزار و ۷۷۰ تومان رسید، طلای ۱۸ عیار در محدوده ۲۶ میلیون و ۳۹۰ هزار تومان ایستاد و سکه امامی تا ۲۶۹ میلیون و ۱۰۰ هزار تومان بالا رفت.\n\nآخرین نرخ نیم سکه\n\nنیم سکه امروز با افزایش با 143 میلیون تومان نرخ‌گذاری شد.\n\nآخرین نرخ ربع سکه\n\nربع سکه امروز با افزایش، 77 میلیون و 200 هزار تومان نرخ‌گذاری شد.\n\nآخرین نرخ سکه گرمی\n\nسکه گرمی نیز بدون تغییر نسبت به روز گذشته، 37 میلیون تومان فروخته شد.\n\nکپی لینک کوتاه\n\nکپی شد \n\ndocumen .addEven Lis ene ('DOMCon en Loaded', func ion() {\ncons sha eBu on = documen .que ySelec o ('.news_sha e_bu on');\n\nif (!sha eBu on) e u n;\n\nif (!naviga o .sha e) {\nsha eBu on.s yle.display = 'none';\ne u n;\n}\n\nsha eBu on.addEven Lis ene ('click', async () => {\ny {\ncons sha eDa a = {\ni le: \" u0642 u06cc u0645 u062a u0633 u06a9 u0647 u060c u0646 u06cc u0645 u200c u0633 u06a9 u0647 u0648 u0631 u0628 u0639 u200c u0633 u06a9 u0647 u0627 u0645 u0631 u0648 u0632 u067e u0646 u062c u0634 u0646 u0628 u0647 u06f1 u06f6 u0645 u0647 u0631 u06f1 u06f4 u06f0 u06f5 / u0627 u0641 u0632 u0627 u06cc u0634 u0642 u06cc u0645 u062a u0633 u06a9 u0647\",\nex : \" u0627 u0642 u062a u0635 u0627 u062f u0646 u06cc u0648 u0632: u0642 u06cc u0645 u062a u0633 u06a9 u0647 u0627 u0645 u0627 u0645 u06cc u0627 u0645 u0631 u0648 u0632 u0628 u0627 u0627 u0641 u0632 u0627 u06cc u0634 u060c u062f u0631 u0646 u0631 u062e 268 u0645 u06cc u0644 u06cc u0648 u0646 u0648 600 u0647 u0632 u0627 u0631 u062a u0648 u0645 u0627 u0646 u062f u0631 u0645 u0639 u0627 u0645 u0644 u0647 u0628 u0648 u062f.\",\nu l: \"h ps: / /www.egh esadnews.com /fa / iny /news-810908\" };\n\nawai naviga o .sha e(sha eDa a);\n} ca ch (e o ) {\nif (e o .name !== 'Abo E o ') {\nconsole.e o ('E o sha ing con en :', e o );\n}\n}\n});\n});\n\nva newsMas e IdFo Ra e = \"1865644\";",
       "url": "https://www.eghtesadnews.com/%D8%A8%D8%AE%D8%B4-%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1-%D8%B7%D9%84%D8%A7-%D8%A7%D8%B1%D8%B2-40/810908-%D9%82%DB%8C%D9%85%D8%AA-%D8%B3%DA%A9%D9%87-%D9%86%DB%8C%D9%85-%D8%B3%DA%A9%D9%87-%D8%B1%D8%A8%D8%B9-%D8%B3%DA%A9%D9%87-%D8%A7%D9%85%D8%B1%D9%88%D8%B2-%D9%BE%D9%86%D8%AC%D8%B4%D9%86%D8%A8%D9%87-%D9%85%D9%87%D8%B1-%D8%A7%D9%81%D8%B2%D8%A7%DB%8C%D8%B4-%D9%82%DB%8C%D9%85%D8%AA-%D8%B3%DA%A9%D9%87",
-      "image": "https://cdn.eghtesadnews.com/thumbnail/PoSjtYsYJ4FC/X8fJEvsEUuVZbDOjOGBuRsXxsDvnM5vkUwAQCDRkvuujKu-M6KZNwlsgGymATNs227BS0j363rlgxpBSAwIDYj7d8rD4d6P3lOoQZFqP5GuSMdOBqHZ1P5d937_UgqoCDZKOkk9z95nw9V-_rW4pBqps_BIDna3FJ8zRir-h1HNur0DVsDQDwfTyTLABKX1R/%D9%82%DB%8C%D9%85%D8%AA+%D8%B3%DA%A9%D9%87+.jpg",
+      "image": "https://cdn.eghtesadnews.com/thumbnail/PoSjtYsYJ4FC/DSNlSDmDHjP8mT_4ZOWCJhWcxVeR7LkVPZFFnNPjni7tOBsZQnJi4RQBtJBwINeo0x1iz5wy3OOv5m9dRuO-wmCM44dRxX3lIrAZ_EOTRkOPNP0k0uLmcH8c4aw8_AmLgoqSEN8tPrC84aKelcmRhNl3IKHtBir_c4H9KhF8flHGcgj4IEMAgl0fDVArF41r/%D9%82%DB%8C%D9%85%D8%AA+%D8%B3%DA%A9%D9%87+.jpg",
       "source": "اقتصادنیوز",
       "source_site": "https://www.eghtesadnews.com/",
       "allow_internal_republish": true,
@@ -2333,7 +2445,7 @@
       "summary": "پرسپولیس در اولین مسابقه بعد از تعطیلات طولانی فیفادی و در هفته هشتم رقابت‌های لیگ برتر به مصاف صنعت نفت آبادان می‌رود",
       "content": "۱۷:۰۳ - \n۱۶ مهر ۱۴۰۵ \n\nساعت بازی پرسپولیس مقابل صنعت نفت آبادان /هفته هشتم \n\nپرسپولیس در اولین مسابقه بعد از تعطیلات طولانی فیفادی و در هفته هشتم رقابت‌های لیگ برتر به مصاف صنعت نفت آبادان می‌رود \n\nپ\n\n،\n\nپـ\n\n \n\r\n\r\n\nفرارو - پرسپولیس که آخرین مسابقه خود در لیگ برتر را با پیروزی ۲ بر صفر مقابل ذوب‌آهن پشت سر گذاشته، آماده بازگشت به مسابقات رسمی است. سرخپوشان در شرایطی برابر صنعت نفت قرار می‌گیرند که فاصله تیم‌های بالای جدول کم است و کسب امتیاز در ادامه رقابت‌ها اهمیت زیادی دارد.\n\r\n\r\n\nدیدار پرسپولیس و صنعت نفت آبادان ساعت ۱۷ جمعه هفدهم مهر ۱۴۰۵ در ورزشگاه شهر قدس برگزار می‌شود. \n\r\n\r\n\nپرسپولیس در آخرین مسابقه لیگ برتری خود مقابل ذوب‌آهن به پیروزی ۲ بر صفر رسید و با توجه به نتایج قبلی، در جمع تیم‌های بالای جدول قرار دارد. طبق آخرین جدول منتشرشده، سرخپوشان پس از انجام ۶ بازی، ۱۳ امتیاز کسب کرده‌اند.\n\r\n\r\n\nیکی از اخبار مهم پیش از مسابقه، بازگشت تعدادی از بازیکنان مصدوم به تمرینات گروهی است. طبق گزارش منتشرشده، علی علیپور، پویا پورعلی، ابوالفضل جلالی و دانیال گرای در آستانه دیدار با صنعت نفت به تمرینات گروهی بازگشته‌اند.\n\r\n\r\n\nعلی علیپور نیز در تمرینات گروهی پرسپولیس حضور پیدا کرده و روند بازگشت او به مسابقات با توجه رسانه‌های ورزشی دنبال می‌شود.\n\r\n\r\n\nصنعت نفت آبادان نیز برای این مسابقه آماده شده است. خشایار زبرجد، هافبک صنعت نفت، اعلام کرده که تیمش با انگیزه زیادی مقابل پرسپولیس بازی خواهد کرد و قصد ندارد حریف دست‌وپا بسته‌ای باشد. او همچنین از برگزاری دو بازی دوستانه در اردوی تیم خبر داده است.\n\r\n\r\n\n \n\r\n\nva NewsLis Limi = 5;\n\nاز میان اخبار \n\nساعت بازی پرسپولیس مقابل صنعت نفت آبادان /هفته هشتم \n\nواکنش تارتار به شایعه حضور اورونوف در استقلال \n\nداستان عجیب علیرضا بیرانوند قبل از بازی حساس تراکتور - استقلال \n\nآغاز دوباره لیگ برتر؛ تماشایی مثل تقابل تراکتور - استقلال\r\n\r\n\nشما قبلا این خبر را لایک کرده‌اید . \n\nfunc ion oPe sianNumbe (numbe ) {\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\nelemen .addEven Lis ene (\"click\", func ion() {\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n. hen(func ion( esponse) {\nif ( esponse.s a us == 200) {\nesponse.json(). hen(func ion(newSco e) {\nva likeNumbe Span = elemen .que ySelec o (\".like\");\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\nva hiddenHea = elemen .que ySelec o (\".hidden\");\nvisibleHea .classLis .add(\"hidden\");\nfavo i eBu on.classLis .add(\"hidden\");\nhiddenHea .classLis . emove(\"hidden\");\nva e o Message = elemen .que ySelec o (\".e o _message\");\nif (e o Message) {\ne o Message.classLis . emove(\"hidden_e o \");\n}\n});\n} else {\nva e o Message = elemen .que ySelec o (\".e o _message\");\nif (e o Message) {\ne o Message.classLis .add(\"hidden_e o \");\nse Timeou (func ion() {\ne o Message.classLis . emove(\"hidden_e o \");\n}, 3000);\n}\n}\n})\n});\n});",
       "url": "https://fararu.com/fa/news/1008274/%D8%B3%D8%A7%D8%B9%D8%AA-%D8%A8%D8%A7%D8%B2%DB%8C-%D9%BE%D8%B1%D8%B3%D9%BE%D9%88%D9%84%DB%8C%D8%B3-%D9%85%D9%82%D8%A7%D8%A8%D9%84-%D8%B5%D9%86%D8%B9%D8%AA-%D9%86%D9%81%D8%AA-%D8%A2%D8%A8%D8%A7%D8%AF%D8%A7%D9%86-%D9%87%D9%81%D8%AA%D9%87-%D9%87%D8%B4%D8%AA%D9%85",
-      "image": "https://cdn.fararu.com/thumbnail/lkLjx2IQeC6Q/ynrjjux3vbrstgyA3XmSz5t92-7AQ4DMpeT2xpHgCzuTN8MXKc41MgVbJNBoJ9KHMhf6K7agtm1QCxT2L6lHx1hjLYtVJxpB6jhjRkSs6fBXbqM0kw46e_OHvpHX4FL6/%D9%BE%D8%B1%D8%B3%D9%BE%D9%88%D9%84%DB%8C%D8%B3.jpg",
+      "image": "https://cdn.fararu.com/thumbnail/lkLjx2IQeC6Q/Iz-RM785-P0p-WqI2ikcyYqcGJPGTQ8cQSszpy6GeMLNtLwuC3zrWqYxwndaJcWkwS0GlA_cP9zYhFr5bFDsGkZ69AIVHjZyoaE5WiwusBt8yWZJf5DfI3lVOsfsIr0W/%D9%BE%D8%B1%D8%B3%D9%BE%D9%88%D9%84%DB%8C%D8%B3.jpg",
       "source": "فرارو",
       "source_site": "https://fararu.com/",
       "allow_internal_republish": true,
@@ -2363,7 +2475,7 @@
       ],
       "importance_score": 0,
       "important": false,
-      "image_tries": 1
+      "image_tries": 2
     },
     {
       "id": "3f159f882cfadb2fb451",
@@ -5243,97 +5355,6 @@
       "importance_score": 8,
       "important": true,
       "image_tries": 3
-    },
-    {
-      "id": "de99452ece07b1a532c1",
-      "title": "فروش ۱۰۲ هزار تن محصولات فولادی در بورس کالا",
-      "summary": "بورس کالا روز گذشته روز چهارشنبه ۱۵ مهرماه میزبان معامله ۲۳۲ هزار و ۵۵۸ تن انواع محصول بود.",
-      "content": "",
-      "url": "https://www.boursenews.ir/fa/news/308396/فروش-102-هزار-تن-محصولات-فولادی-در-بورس-کالا",
-      "image": "",
-      "source": "بورس‌نیوز",
-      "source_site": "https://www.boursenews.ir/",
-      "allow_internal_republish": true,
-      "category": "بورس و بازار سرمایه",
-      "published": "2026-10-08T11:30:48+03:30",
-      "topics": [
-        "markets"
-      ],
-      "importance_score": 1,
-      "important": false,
-      "image_tries": 3
-    },
-    {
-      "id": "63057712c74d4c731a27",
-      "title": "روایت یک کارگر از مشقت‌های دریافت بیمه بیکاری",
-      "summary": "یک کارگر می‌گوید: از خردادماه تاکنون حقوقی دریافت نکرده و در همین مدت برای پیگیری پرونده نیز متحمل هزینه شده است. مراجعه به دفاتر خدمات الکترونیک و کافی‌نت و رفت‌وآمد میان اداره کار، سازمان تأمین اجتماعی و شرکت، بخشی از هزینه‌هایی بوده که به گفته او در دوره بیکاری از جیبش پرداخت کرده است.",
-      "content": "۱۱:۲۹ - \n۱۶ مهر ۱۴۰۵ \n\nروایت یک کارگر از مشقت‌های دریافت بیمه بیکاری \n\nیک کارگر می‌گوید: از خردادماه تاکنون حقوقی دریافت نکرده و در همین مدت برای پیگیری پرونده نیز متحمل هزینه شده است. مراجعه به دفاتر خدمات الکترونیک و کافی‌نت و رفت‌وآمد میان اداره کار، سازمان تأمین اجتماعی و شرکت، بخشی از هزینه‌هایی بوده که به گفته او در دوره بیکاری از جیبش پرداخت کرده است. \n\nپ\n\n،\n\nپـ\n\nیک کارگر ۴۰ساله با ۱۸ سال سابقه کار که می‌گوید از خرداد امسال از ادامه کار در یک شرکت در شرق تهران بازمانده، از ماه‌ها پیگیری برای دریافت بیمه بیکاری و مشکلاتی می‌گوید که در نبود نامه «عدم نیاز» با آن مواجه شده است. \n\r\n\r\n\nاین در حالی است که هیأت عمومی دیوان عدالت اداری در رأی شماره ۷۴۹ مورخ ۲۱ تیر ۱۴۰۱، بخشنامه‌ای را که ارائه نامه‌عدم نیاز از سوی کارفرما را برای برخورداری کارگران شاغل در کارهای با ماهیت دائم از بیمه بیکاری الزامی کرده بود، ابطال کرده است. \n\r\n\r\n\nامتناع شرکت از ارائه نامه‌عدم نیاز \n\r\n\r\n\nاین کارگر که خود را تعمیرکار دستگاه‌های کارخانه‌ها معرفی می‌کند، درباره ماجرا می‌گوید: «از خردادماه به من گفتند دیگر سر کار نیا، اما نامه‌عدم نیاز به من ندادند.» \nشرکت با وی تماس گرفته تا وسایل و تجهیزاتش را تحویل دهد و پس از آن دیگر امکان ادامه کار برایش فراهم نشده است. \n\r\n\r\n\nاو پس از این اتفاق به اداره تعاون، کار و رفاه اجتماعی مراجعه و شکایت خود را ثبت می‌کند؛ با این حال، رسیدگی به پرونده به گفته وی با فاصله زمانی انجام شده و حدود سه ماه بعد جلسه رسیدگی برگزار می‌شود. در این جلسه نماینده شرکت نیز حضور داشته و بنا بر روایت این کارگر، موضوع بازگشت او به محل کار مطرح می‌شود؛ اما عنوان شده که در صورت بازگشت ممکن است دیگر به عنوان نیروی فنی مشغول به کار نشود و وظایف دیگری از جمله نگهبانی یا جاروکشی به او واگذار شود. \n\r\n\r\n\nاین کارگر که می‌گوید نزدیک به دو دهه در حوزه فنی فعالیت کرده است، چنین شرایطی را نپذیرفته و در نهایت، پرونده با رأی به خاتمه رابطه کاری به پایان می‌رسد. \n\r\n\r\n\nرأی دیوان درباره نامه‌عدم نیاز چه می‌گوید؟  \n\r\n\r\n\nماجرای این کارگر با یک سابقه مهم قضایی در زمینه بیمه بیکاری ارتباط پیدا می‌کند. هیأت عمومی دیوان عدالت اداری در سال ۱۴۰۱، در رسیدگی به شکایت درباره بخشنامه شماره ۲۳۱۷۷۸ وزارت تعاون، کار و رفاه اجتماعی، الزام کارگران شاغل در کارهای با ماهیت دائم به ارائه نامه‌عدم نیاز برای برخورداری از بیمه بیکاری را مغایر مقررات تشخیص داد و آن بخشنامه را ابطال کرد. \n\r\n\r\n\nدر این پرونده استدلال شده بود که مواد ۶ و ۱۴ قانون بیمه بیکاری و مواد ۷ و ۸ آیین‌نامه اجرایی آن، تشکیل پرونده و رسیدگی به درخواست بیمه‌شده را به ارائه نامه‌عدم نیاز از سوی کارفرما مشروط نکرده‌اند. \n\r\n\r\n\nبر اساس رأی دیوان، بنابراین نمی‌توان ارائه این نامه را به عنوان شرطی اضافی برای برخورداری کارگران شاغل در کارهای با ماهیت دائم از بیمه بیکاری مقرر کرد. با این حال، این موضوع به معنای استحقاق خودکار هر فرد فاقد نامه‌عدم نیاز برای دریافت مقرری نیست و شرایط قانونی از جمله احراز بیکاری بدون میل و اراده فرد همچنان باید بررسی شود. \n\r\n\r\n\nعلت ماه‌ها پیگیری چه بود؟  \n\r\n\r\n\nروایت این کارگر نشان می‌دهد که در عمل، نبود نامه‌عدم نیاز می‌تواند در روند پیگیری پرونده به یک مسئله تبدیل شود؛ هرچند مطابق رأی هیأت عمومی دیوان عدالت اداری، ارائه این نامه نمی‌تواند به عنوان یک شرط الزامی برای کارگران مشمول رأی قرار گیرد. \n\r\n\r\n\nپس از رسیدگی در اداره کار، او برای طی مراحل دریافت بیمه بیکاری پیگیری‌های خود را ادامه می‌دهد. در جریان بررسی پرونده نیز موضوع دیگری مطرح می‌شود: برای او در میانه دوره مورد اختلاف، یک ماه سابقه بیمه از سوی همان شرکت ثبت شده است. \n\r\n\r\n\nاین کارگر می‌گوید هر بار درباره این سابقه از شرکت سؤال کرده، به او گفته‌اند که بیمه آن ماه «اشتباهی» رد شده است. همین موضوع باعث شده بررسی وضعیت بیمه بیکاری طولانی‌تر شود و برای روشن شدن وضعیت آن سابقه، پیگیری‌های بیشتری انجام دهد. \n\r\n\r\n\nدر نهایت، بنا بر اظهارات این کارگر، شرکت اعلام کرده که بیمه آن ماه به اشتباه برای وی ارسال شده است؛ اما تا رسیدن پرونده به این مرحله، او چندین بار میان دستگاه‌های مختلف برای پیگیری وضعیت خود رفت‌وآمد کرده است. \n\r\n\r\n\nبیکاری بدون حقوق، پیگیری با هزینه شخصی \n\r\n\r\n\nمسئله برای این کارگر فقط طولانی شدن روند اداری نیست. وی می‌گوید: از خردادماه تاکنون حقوقی دریافت نکرده و در همین مدت برای پیگیری پرونده نیز متحمل هزینه شده است. مراجعه به دفاتر خدمات الکترونیک و کافی‌نت و رفت‌وآمد میان اداره کار، سازمان تأمین اجتماعی و شرکت، بخشی از هزینه‌هایی بوده که به گفته او در دوره بیکاری از جیبش پرداخت کرده است. \n\r\n\r\n\nاو می‌گوید: «من چند ماه است حقوق نگرفته‌ام. در این شرایط باید هزینه رفت‌وآمد و کارهای اداری را هم بدهم تا ثابت کنم بیکار شده‌ام.» این وضعیت این پرسش را مطرح می‌کند که در مواردی که بیکاری فرد غیرارادی تشخیص داده می‌شود، آیا روند رسیدگی و برقراری حمایت بیمه‌ای می‌تواند با سرعت بیشتری انجام شود تا فاصله میان زمان بیکاری و دریافت مقرری به حداقل برسد؟ \n\r\n\r\n\nحمایت از کارگر یا آزمون صبر او؟  \n\r\n\r\n\nقانون بیمه بیکاری برای حمایت از بیمه‌شدگانی پیش‌بینی شده که بدون میل و اراده خود بیکار شده‌اند و شرایط مقرر قانونی را دارند. بر اساس قانون و آیین‌نامه اجرایی، احراز شرایط فرد و بررسی غیرارادی بودن بیکاری، بخشی از فرآیند برقراری مقرری بیمه بیکاری است. \n\r\n\r\n\nدر این میان، رأی هیأت عمومی دیوان عدالت اداری درباره نامه‌عدم نیاز نیز یک نکته مهم را روشن کرده است: نمی‌توان برای کارگران شاغل در کارهای با ماهیت دائم، ارائه نامه‌عدم نیاز از سوی کارفرما را به عنوان شرطی اضافی برای برخورداری از بیمه بیکاری مقرر کرد. با این حال، روایت این کارگر نشان می‌دهد که فاصله میان مقررات حمایتی و اجرای آن‌ها در عمل می‌تواند برای فرد بیکار هزینه‌بر و زمان‌بر باشد. \n\r\n\r\n\nپرونده این کارگر در نهایت یک پرسش فراتر از اختلاف میان یک کارگر و کارفرما را مطرح می‌کند: آیا سازوکارهای حمایتی قانون بیمه بیکاری در عمل نیز می‌توانند به همان سرعتی که برای حمایت از کارگر طراحی شده‌اند، پاسخگوی نیاز فردی باشند که از ادامه اشتغال خود بازمانده و همزمان باید هزینه‌های زندگی و پیگیری اداری را نیز تامین کند.\n\r\n\nمنبع :\n\nایسنا \n\nva NewsLis Limi = 5;\n\nاز میان اخبار \n\nعکسی از کنکور که در رسانه‌های خارجی وایرال شد \n\nجزئیات حمله به خودروی پلیس در زاهدان \n\nرئیس سازمان انرژی اتمی ایران: ۷۸ رادیودارو در کشور به‌طور مستمر تولید می‌شود \n\nبازگشت ام‌دی‌ها به آسمان ایران \n\nشما قبلا این خبر را لایک کرده‌اید . \n\nfunc ion oPe sianNumbe (numbe ) {\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\nelemen .addEven Lis ene (\"click\", func ion() {\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n. hen(func ion( esponse) {\nif ( esponse.s a us == 200) {\nesponse.json(). hen(func ion(newSco e) {\nva likeNumbe Span = elemen .que ySelec o (\".like\");\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\nva hiddenHea = elemen .que ySelec o (\".hidden\");\nvisibleHea .classLis .add(\"hidden\");\nfavo i eBu on.classLis .add(\"hidden\");\nhiddenHea .classLis . emove(\"hidden\");\nva e o Message = elemen .que ySelec o (\".e o _message\");\nif (e o Message) {\ne o Message.classLis . emove(\"hidden_e o \");\n}\n});\n} else {\nva e o Message = elemen .que ySelec o (\".e o _message\");\nif (e o Message) {\ne o Message.classLis .add(\"hidden_e o \");\nse Timeou (func ion() {\ne o Message.classLis . emove(\"hidden_e o \");\n}, 3000);\n}\n}\n})\n});\n});",
-      "url": "https://fararu.com/fa/news/1008196/%D8%B1%D9%88%D8%A7%DB%8C%D8%AA-%DB%8C%DA%A9-%DA%A9%D8%A7%D8%B1%DA%AF%D8%B1-%D8%A7%D8%B2-%D9%85%D8%B4%D9%82%D8%AA-%D9%87%D8%A7%DB%8C-%D8%AF%D8%B1%DB%8C%D8%A7%D9%81%D8%AA-%D8%A8%DB%8C%D9%85%D9%87-%D8%A8%DB%8C%DA%A9%D8%A7%D8%B1%DB%8C",
-      "image": "https://cdn.fararu.com/thumbnail/YuyXn0obQCus/mJwLDwRZMWyshZBF0W-wwr-pCy7XBVM1Ie6WBpTnY7UFcjg-Mlyrx4NnocJzezoopsEPRFc10QW1yUEZXLIPDY1GQ3y6XFBQM_rNIzH4yuH-Oiu4xmK-VtR4kkOvxwDQ/%DA%A9%D8%A7%D8%B1%DA%AF%D8%B1%D8%A7%D9%86.jpg",
-      "source": "فرارو",
-      "source_site": "https://fararu.com/",
-      "allow_internal_republish": true,
-      "category": "اقتصاد و سرمایه‌گذاری",
-      "published": "2026-10-08T11:29:19+03:30",
-      "topics": [
-        "economy"
-      ],
-      "importance_score": 0,
-      "important": false
-    },
-    {
-      "id": "13f95a14b0ddce4639b8",
-      "title": "هشدار برای طبیعت",
-      "summary": "مقایسه این گزارش با وضعیت سدهای کشور در هفته پایانی شهریور پارسال نشان می‌دهد که در سال جاری به سبب بارش‌هایی که رخ داده، از تعداد سدهای با وضعیت بحرانی کاسته شده اگرچه که بحران آب، همچنان مهم‌ترین معضل تمام استان‌های کشور است، اما در گزارش هفته پایانی شهریور پارسال، 21 سد در 13 استان کشور بابت کاهش",
-      "content": "کد خبر 402336 \n\n۱۶ مهر ۱۴۰۵ - ۱۱:۲۳\n\nاخبار سلامت / اخبار محیط زیست\n\nh ps://salama news.com/x5 zX\n\nپنجشنبه ۱۶ مهر ۱۴۰۵ - ۱۱:۲۳ \n\nکد خبر: 402336 \n\nهشدار برای طبیعت \n\nمقایسه این گزارش با وضعیت سدهای کشور در هفته پایانی شهریور پارسال نشان می‌دهد که در سال جاری به سبب بارش‌هایی که رخ داده، از تعداد سدهای با وضعیت بحرانی کاسته شده اگرچه که بحران آب، همچنان مهم‌ترین معضل تمام استان‌های کشور است، اما در گزارش هفته پایانی شهریور پارسال، 21 سد در 13 استان کشور بابت کاهش ذخیره مخزن در وضع بحرانی بودند که حالا این تعداد به 3 سد در دو استان کاهش یافته است. \nخراسان شمالی (بارزو)، حوضه قمرود (پانزده خرداد)، خراسان رضوی (دوستی و طرق)، تهران و البرز (لار) کمتر از 10درصد پر شدگی دارند.\n\nطبق این گزارش، سدهای استان خراسان رضوی (دوستی و طرق) و یک سد در استان خراسان شمالی (بارزو) بیشترین درصد تغییرات نسبت به متوسط 10 ساله بابت کاهش حجم آب نسبت به بقیه سدهای کشور را داشته‌اند چنانکه سد دوستی در استان خراسان رضوی با 93درصد تغییر منفی و سد طرق در استان خراسان رضوی با 92درصد تغییر منفی و سد بارزو با 87درصد تغییر منفی، در بدترین وضعیت قرار گرفته‌اند.\n\nمقایسه این گزارش با وضعیت سدهای کشور در هفته پایانی شهریور پارسال نشان می‌دهد که در سال جاری به سبب بارش‌هایی که رخ داده، از تعداد سدهای با وضعیت بحرانی کاسته شده اگرچه که بحران آب، همچنان مهم‌ترین معضل تمام استان‌های کشور است، اما در گزارش هفته پایانی شهریور پارسال، 21 سد در 13 استان کشور بابت کاهش ذخیره مخزن در وضع بحرانی بودند که حالا این تعداد به 3 سد در دو استان کاهش یافته است. \n\nابتدای هفته جاری، سخنگوی آبفای تهران در گفت‌وگو با باشگاه خبرنگاران جوان اعلام کرد که  «مجموع میزان ذخایر پشت سدهای تهران ۴۱۲ میلیون مترمکعب و حدود 22درصد است که در شرایط مطلوب باید حدود ۶۰۵ میلیون مترمکعب ذخیره آب پشت سدهای پنج‌گانه تهران داشته باشیم.» \n\nاین مقام مسوول در وزارت نیرو گفته بود: «استان تهران، سال آبی 1405 - 1404 را با بیش از 100 میلی‌متر کسری با ۱۷۶ میلی‌متر بارندگی به پایان رسانده و اگرچه وضعیت فعلی سدهای تهران نسبت به پارسال بهتر است و میزان ذخایر نسبت به پارسال، حدود ۱۵۰ میلیون مترمکعب بیشتر است، اما همچنان نسبت به بلندمدت و شرایط ایده‌آل حدود ۱۹۰ میلیون مترمکعب کسری در این ذخایر داریم.» \n\nگزارش پایگاه مطالعات و پژوهش‌های راهبردی محیط‌زیست از وضعیت بارش‌های کشور از ابتدای سال آبی 1405 - 1404 (اول مهر 1404) تا پایان خرداد امسال نشان می‌دهد که بهترین وضعیت بارش‌ها در این مدت در سه شهر یاسوج (731.4 میلی‌متر)، ایلام (802.1 میلی‌متر) و رشت (884.7 میلی‌متر) ثبت شده و وضعیت بارش در شهرهای گرگان (427.5 میلی‌متر)، کرمانشاه (438 میلی‌متر)، ساری (487.7 میلی‌متر) و خرم‌آباد (492.8 میلی‌متر) هم قابل توجه بوده، اما 5 مرکز استان (کرمان، قم، سمنان، زاهدان و یزد) کمتر از 100 میلی‌متر و 4 مرکز استان (اهواز، بیرجند، تهران و اصفهان) بین 100 تا کمتر از 143 میلی‌متر بارندگی داشتند. طبق همین گزارش، بدترین وضعیت بارش از اول مهر 1404 تا پایان خرداد امسال مربوط به شهرهای یزد با 37.8 میلی‌متر و سپس، زاهدان با 47.8 میلی‌متر، سمنان با 57.2 میلی‌متر، قم با 74.4 میلی‌متر و کرمان با 78.8 میلی‌متر است. \n\nنیمه اول سال آبی جدید چگونه خواهد بود؟ \n\nهفته قبل، احد وظیفه که ریاست مرکز ملی اقلیم و مدیریت بحران خشکسالی سازمان هواشناسی کشور را برعهده دارد، از آغاز فعالیت سامانه‌های بارشی پاییز با بارندگی‌های شمال و غرب کشور در مناطق شمالی حوزه رودخانه ارس، شمال آذربایجان غربی، آذربایجان شرقی، اردبیل و سواحل گیلان و مازندران خبر داد و گفت که بارش‌ها در روزهای آینده هم ادامه خواهد داشت. \n\nوظیفه در گفت‌وگو با مهر، وضعیت بارش‌ها در میانگین کشوری سال آبی 1405 - 1404 را مناسب ارزیابی کرد و گفت که میزان بارش دریافتی در میانگین کشور، تقریبا به اندازه میانگین بلندمدت ۳۰ ساله، یعنی نرمال بارندگی، بوده و در برخی استان‌ها شامل کرمان، بوشهر، هرمزگان، استان‌های غربی مانند کردستان و آذربایجان غربی هم بارندگی‌ها بیش از نرمال ثبت شد، اما در سوی مقابل، بارندگی در استان‌های فلات مرکزی شامل یزد، اصفهان، مرکزی، قم، تهران، خراسان رضوی، سمنان، قزوین و حتی سواحل شمالی کشور زیر حد نرمال بوده و به‌ خصوص تهران حدود ۴۰ درصد زیر نرمال بارندگی داشته و گیلان و مازندران حدود ۱۰ تا ۱۵درصد کمتر از نرمال بارندگی دریافت کرده‌اند.\n\nریاست مرکز ملی اقلیم و مدیریت بحران خشکسالی سازمان هواشناسی کشور، در گفت‌وگو با «اعتماد» هم یک پیش‌بینی درباره وضعیت جوی و بارش‌های هفته جاری و پیش‌رو دارد و می‌گوید: «طی همین هفته پیش‌رو، پدیده غالب منجر به بارش سنگین نداریم. البته مناطق مرکزی تا شرقی کشورمان، نابهنجاری دما خواهد داشت و بسیار گرم‌تر از معمول خواهد بود و بنابراین، فلات مرکزی تا نیمه شرقی کشور با دمای بین 3 تا 5 درجه، تقریبا گرم‌تر از نرمال خواهد بود.\n\nبا این پیش‌بینی می‌توان گفت که این هفته به‌طور نسبی با هوای گرم‌تر از معمول در اغلب مناطق ایران به خصوص فلات مرکزی تا نیمه شرقی و جنوب شرق کشور یعنی استان‌هایی مثل یزد، اصفهان، کرمان، خراسان جنوبی، سیستان و بلوچستان و هرمزگان مواجهیم. اما هفته آینده به‌طور نسبی سواحل شمالی‌مان و دامنه‌های البرز شاهد بارندگی است و فکر می‌کنم به خصوص بارندگی‌های جدی‌ترمان به دهه سوم مهر ماه کشیده می‌شود و به‌طور کلی هم انتظار داریم طی پاییز، بارندگی‌ها در حد معمول باشد یا برخی نقاط به خصوص استان‌های غرب کشورمان بارشی بیشتر از میانگین بلندمدت یا میان معمول سال دریافت کنند.» \n\nطی روزهای دوشنبه و سه‌شنبه، سازمان هواشناسی کشور در پیش‌بینی‌هایی با هشدار نارنجی اعلام کرد که به دنبال ورود سامانه بارشی به کشور، بارش باران و رگبار و تگرگ در شرق اردبیل، گیلان و برخی نقاط مازندران و گلستان رخ خواهد داد و در همین پیش‌بینی‌ها، از احتمال وقوع سیلاب و آبگرفتگی در 5 استان غرب کشور (آذربایجان‌غربی، آذربایجان شرقی، کردستان، اردبیل و زنجان) خبر داد. \n\nاحد وظیفه  درباره احتمال وقوع سیل در هفته‌های آتی باتوجه به پیش‌بینی‌های سازمان هواشناسی می‌گوید: «پیش‌بینی وقوع سیل از الان هیچ معنایی ندارد و کسی نمی‌تواند سیل بیشتر از بازه هفته را پیش‌بینی کند. سیل یک پدیده مخرب و غیر قابل پیش‌بینی است و بنابراین نمی‌توانیم از امروز درباره وقوع سیل در ماه بعد یا فصل زمستان پیش‌بینی داشته باشیم. پیش‌بینی‌های فصلی درباره احتمال وقوع شرایط میانگین است و به عنوان نمونه، احتمال بالای بارندگی فراتر از نرمال را پیش‌بینی می‌کند، اما هیچ پیش‌بینی درباره توزیع زمانی بارش، شدت یا حتی روز بارش هم ممکن نیست، چون پیش‌بینی‌های فصلی، قادر به پیش‌بینی شرایط هستی نیست، بلکه فقط می‌توانند نابهنجاری یا بی‌هنجاری بارش و دما را به‌طور میانگین، برای ماه یا فصل پیش‌بینی کنند.» \n\nوظیفه در واکنش  درباره بارش‌های سیل‌آسای استان‌های گیلان و مازندران و گلستان در اواخر شهریور امسال و وقوع سیلاب و خسارات گسترده و همچنین ماهیت غافلگیرکننده این‌ بارش‌ها می‌گوید: «پیش‌بینی فصلی قادر به تخمین چنین سیلاب‌هایی نیست. این‌گونه سیلاب‌ها صرفا با استفاده از پیش‌بینی‌های روزانه و حداکثر تا چند روز قبل از وقوع سیلاب قابل پیش‌بینی است و البته هر چه به زمان وقوع نزدیک‌تر شویم هم، پیش‌بینی دقیق‌تر می‌شود. به عنوان نمونه از یک هفته قبل از وقوع سیلاب می‌توان احتمال بارش سنگین در منطقه را پیش‌بینی کرد و با گذشت هر روز، ویژگی‌ها و تاثیرات این ‌بارش، بیشتر قابل شناسایی است، اما پیش‌بینی وقوع سیل در منطقه‌ای مشخص آن‌هم برای یک ماه آینده به‌طور کلی غیرممکن است.» \n\nاحد وظیفه با توضیح درباره وضعیت منابع آبی کشور باتوجه به وضعیت بارش‌های پاییزی هم می‌گوید: «در حال حاضر منابع آبی‌مان با محدودیت‌های بسیار جدی مواجه است و فلات مرکزی تا شمال شرق کشور و استان‌های خراسان رضوی، سمنان، تهران، قزوین، البرز و مرکزی از نظر منابع آبی در وضعیت نابسامانی قرار گرفته‌اند که وضع استان‌های مرکزی و تهران و خراسان رضوی نسبت به بقیه استان‌های فلات مرکزی تا شمال شرق، بدتر است.\n\nاستان‌های اصفهان و یزد هم با کمبود جدی و نابسامانی در توزیع آب و مصرف آب و تامین آب مواجهند. در بسیاری از مناطقی که نام بردم و به خصوص در استان‌های تهران و خراسان‌رضوی، وضع منابع آب به گونه‌ای است که طبیعت، قادر به تامین تقاضای استان نیست، چون میزان تقاضای ایجاد شده، بیش از توان طبیعت از نظر جایگزینی و تامین است.\n\nبنابر این، در استان‌های تهران و خراسان رضوی، حتی در یک‌سال پربارش هم به احتمال زیاد، امکان برآورده شدن تقاضای آب توسط طبیعت وجود ندارد. ظرفیت طبیعی شهر تهران با توجه به منابع آبی پایتخت، حداکثر 3 الی 5 میلیون نفر جمعیت بوده اما امروز، پایتخت باید به 10 تا 15 میلیون نفر پاسخگو باشد و طبیعی است که نیاز این تعداد جمعیت با حجم طبیعی منابع آبی تهران قابل برآورده شدن نیست. بنابراین، باید از منابع زیرزمینی مصرف شود درحالی که منابع زیرزمینی هم پایان‌پذیر هستند و دیر یا زود، تمام می‌شوند و آن‌وقت، شرایط واقعا ناخوشایند خواهد شد.» \n\n احد وظیفه می‌گوید: «الان داریم از سرمایه و پس‌انداز طبیعت که همان آب‌های زیرزمینی است، مصرف می‌کنیم در حالی که این میزان برداشت و مصرف، جایگزین نمی‌شود و بنابراین، سطح آب‌های زیرزمینی روز به روز افت می‌کند و البته منجر به فرونشست زمین می‌شود. این‌گونه برداشت از منابع زیرزمینی، قطعا ناپایدار است و در آینده، با تبعات این الگوی مصرف مواجه خواهیم شد و حتما شرایط ناگوارتری رقم خواهد خورد. اگر امسال هم شانس بیاوریم و طبیعت یاری کند و میزان بارندگی در اغلب مناطق کشور، خوب باشد که احتمالا همین طور خواهد بود، اما هیچ قابل تضمین نیست که خشکسالی‌های دوره بعدی، طولانی‌تر از این خشکسالی 6 ساله در فلات مرکزی نباشد.» \n\nاحد وظیفه این هشدار جدی را دارد که با استمرار افت سطح منابع زیرزمینی، صرفا با کمبود آب مصرفی مواجه نخواهیم بود، بلکه تاثیر جدی‌تر این کاهش را باید در کیفیت آب تامین شده از منابع زیرزمینی ببینیم و می‌گوید: «به موازات کاهش کمیت، کیفیت آب هم بدتر می‌شود، چون آب‌ها در سطح عمیق‌تر شورترند و بنابراین برای مصرف به تدریج نامناسب‌تر می‌شوند که مشهودترین نمونه کاهش کیفیت این است که حتی سطح خاک کشاورزی را هم شورتر می‌کنند.\n\nمعضل کمبود آب، معضل اغلب استان‌های کشور است و طبیعی است که وقتی مصارف و تقاضا، زیادتر از توان تجدیدپذیری طبیعت باشد، به تدریج به بحران خواهیم رسید. معضل کمبود آب، در تمام استان‌های واقع در فلات مرکزی و حاشیه‌های آن و استان‌هایی از جمله تهران، قم، مرکزی، قزوین، خراسان رضوی، کرمان، شمال سیستان و بلوچستان و یزد قابل مشاهده است. این استان‌ها، همگی در حوزه بزرگ فلات مرکزی هستند؛ منطقه‌ای که یک اقلیم بسیار کم بارش است و در عین حال، شهرهای بسیار پرجمعیتی مثل تهران و اصفهان و مشهد را در خود جای داده است.» \n\nاز اواخر بهار پارسال، مناطقی در شهر تهران، با قطع آب در ساعات شامگاهی تا بامداد مواجه شدند و این قطع آب به سرعت در سراسر پایتخت فراگیر شد. وزارت نیرو البته عنوان «قطع و جیره‌بندی» را نپذیرفت، بلکه گفت که با توجه به هدردهی از شبکه فرسوده انتقال آب، فشار آبرسانی در ساعات کم مصرفی آب که همان ساعات نیمه شب تا بامداد است، کاهش یافته تا به این طریق، از نشت آب از شبکه فرسوده آبرسانی جلوگیری شود. \n\nمرداد پارسال اعلام شده بود که مجموع هدررفت آب در کشور، حدود 31درصد و در شهر تهران حدود 22درصد است که 11درصد از این هدررفت در پایتخت، به دلیل فرسودگی شبکه انتقال آبرسانی است. \n\n اردیبهشت امسال، هاشم اورعی که ریاست اتحادیه انجمن‌های علمی انرژی ایران را برعهده دارد، در گفت‌وگو با ایرنا از فرسودگی ۳۰درصدی شبکه توزیع آب در تهران گفت و تاکید داشت با مصرف خانگی فقط 6درصد مصرف آب کشور را تشکیل می‌دهد، اما 90درصد آب موجود، در بخش کشاورزی مصرف می‌شود و بنابراین، ضروری است که الگوی کشت سنتی در کشاورزی، به‌طور کامل کنار گذاشته شود و توصیه به صرفه‌جویی شهروندان و راهکارهای مقطعی، مشکل بی‌آبی را حل نمی‌کند. اورعی همچنین می‌گفت که «صرفه‌جویی بخشی از اقتصاد رفتاری است و علم اقتصاد رفتاری می‌گوید رفتار مردم، بازتاب سیاست‌های دولت است و بنابراین، اگر در هر حوزه‌ای ازجمله مصرف انرژی رفتار درستی وجود ندارد، بیش از آنکه تقصیر مردم باشد، ناشی از سیاستگذاری نادرست دولت و نیازمند اصلاح مدل حکمرانی است.» \n\nاحد وظیفه هم  درباره تاثیر جیره‌بندی آب در بهبود وضعیت منابع آبی تهران و کشور می‌گوید: «تاثیر این جیره‌بندی را باید مسوولان مربوطه و وزارت نیرو پاسخ دهند ولی قطعا تمام این اقدامات، نوعی درمان مقطعی و بسیار موضعی است.\n\nموضوع کلی این است که تقاضای فعال برای آب، بسیار بیشتر از آن چیزی است که طبیعت و بارش‌های مناطق بالا دستمان می‌توانند فراهم کنند. امروز تقاضا و مصرف آب در مقابل کمبود آب، بسیار زیاد است ولی کمبود را با برداشت از منابع زیرزمینی جبران می‌کنیم درحالی‌که میزان جایگزینی بسیار کمتر از میزان برداشت‌هاست. بنابراین، چه در سال پر بارشی و چه در سال کم بارشی، شواهد نشان می‌دهد که سطح آب‌های زیرزمینی همواره در حال افت و کاهش است و البته درنهایت یک روز هم سطح این منابع به انتها خواهد رسید.»",
-      "url": "https://www.salamatnews.com/news/402336/%D9%87%D8%B4%D8%AF%D8%A7%D8%B1-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%B7%D8%A8%DB%8C%D8%B9%D8%AA",
-      "image": "https://media.salamatnews.com/d/2026/10/08/4/259580.jpg",
-      "source": "سلامت نیوز",
-      "source_site": "https://www.salamatnews.com/",
-      "allow_internal_republish": true,
-      "category": "پزشکی و سلامت",
-      "published": "2026-10-08T11:23:32+03:30",
-      "topics": [
-        "health"
-      ],
-      "importance_score": 0,
-      "important": false
-    },
-    {
-      "id": "0a7e61051f914522e456",
-      "title": "ادعای ان‌بی‌سی نیوز: آمریکا و ایران در نیویورک مذاکرات هسته‌ای غیرمستقیم انجام دادند",
-      "summary": "رسانه‌های آمریکایی مدعی شده‌اند آمریکا و ایران در نیویورک مذاکرات هسته‌ای غیرمستقیم انجام دادند.",
-      "content": "ادعای ان‌بی‌سی نیوز: آمریکا و ایران در نیویورک مذاکرات هسته‌ای غیرمستقیم انجام دادند\r\n\nسایت خوان روزنامه دنیای اقتصاد \n\nتاریخ انتشار : \n\n۱۴۰۵/۰۷/۱۶ ۱۱:۱۹ \n\nشماره خبر : \n\n۴۳۰۰۴۵۸ \n\nشفقنا :\n\nرسانه‌های آمریکایی مدعی شده‌اند آمریکا و ایران در نیویورک مذاکرات هسته‌ای غیرمستقیم انجام دادند. \n\n\r\n\r\n\nالجزیره نوشت: شبکه خبری «ان‌بی‌سی نیوز» به نقل از یک مقام آمریکایی، یک مقام خاورمیانه‌ای و یک مقام ایرانی مدعی شد: آمریکا و ایران در ماه جاری در نیویورک و در چارچوب مذاکرات غیرمستقیم، درباره برنامه هسته‌ای تهران گفتگو کرده‌اند.\n\r\n\r\n\r\n\r\n\r\n\r\n\nبر اساس این گزارش، دولت ترامپ خواهان آن است که هرگونه توافق با تهران، به مسائل حیاتی و حل‌نشده‌ای که خود آن‌ها را چنین توصیف می‌کند – از جمله برنامه هسته‌ای ایران – بپردازد.\n\r\n\r\n\nاین گزارش می‌افزاید که واشنگتن تمایلی به انعقاد یک تفاهم‌نامه موقت دیگر که پیش از آغاز مذاکرات هسته‌ای، صرفاً بر مسئله تنگه هرمز متمرکز باشد، ندارد.\n\r\n\r\n\nایران طرحی هفت‌روزه پیشنهاد کرده بود که طبق آن، در ازای بازگشایی تنگه هرمز، آمریکا روند لغو تحریم‌ها و آزادسازی دارایی‌های مسدودشده ایران را آغاز کند و مذاکرات هسته‌ای به‌صورت جداگانه در مرحله‌ای دیگر انجام شود؛ اما دونالد ترامپ، رئیس‌جمهور آمریکا، این پیشنهاد را رد کرده است.\n\r\n\r\n\r\n\nبخش\n\nسایت‌خوان،\n\nصرفا بازتاب‌دهنده اخبار رسانه‌های رسمی کشور است.\n\n-->\n\ndocumen .addEven Lis ene ('DOMCon en Loaded', func ion() {\ncons sha eBu on = documen .que ySelec o ('.news_sha e_bu on');\n\nif (!sha eBu on) e u n;\n\nif (!naviga o .sha e) {\nconsole.log('Web Sha e API no suppo ed in his b owse . Hiding he bu on.');\nsha eBu on.s yle.display = 'none';\ne u n;\n}\n\nsha eBu on.addEven Lis ene ('click', async () => {\ny {\ncons sha eDa a = {\ni le: \" u0627 u062f u0639 u0627 u06cc u0627 u0646 u200c u0628 u06cc u200c u0633 u06cc u0646 u06cc u0648 u0632: u0622 u0645 u0631 u06cc u06a9 u0627 u0648 u0627 u06cc u0631 u0627 u0646 u062f u0631 u0646 u06cc u0648 u06cc u0648 u0631 u06a9 u0645 u0630 u0627 u06a9 u0631 u0627 u062a u0647 u0633 u062a u0647 u200c u0627 u06cc u063a u06cc u0631 u0645 u0633 u062a u0642 u06cc u0645 u0627 u0646 u062c u0627 u0645 u062f u0627 u062f u0646 u062f n\",\nex : \" u0631 u0633 u0627 u0646 u0647 u200c u0647 u0627 u06cc u0622 u0645 u0631 u06cc u06a9 u0627 u06cc u06cc u0645 u062f u0639 u06cc u0634 u062f u0647 u200c u0627 u0646 u062f u0622 u0645 u0631 u06cc u06a9 u0627 u0648 u0627 u06cc u0631 u0627 u0646 u062f u0631 u0646 u06cc u0648 u06cc u0648 u0631 u06a9 u0645 u0630 u0627 u06a9 u0631 u0627 u062a u0647 u0633 u062a u0647 u200c u0627 u06cc u063a u06cc u0631 u0645 u0633 u062a u0642 u06cc u0645 u0627 u0646 u062c u0627 u0645 u062f u0627 u062f u0646 u062f.\",\nu l: \"h ps: / /donya-e-eq esad.com /fa / iny /news-4300458\" };\n\nawai naviga o .sha e(sha eDa a);\nconsole.log('Con en sha ed successfully!');\n} ca ch (e o ) {\nif (e o .name !== 'Abo E o ') {\nconsole.e o ('E o sha ing con en :', e o );\n}\n}\n});\n});\n\nاخبار مرتبط \n\nفرمول بازگشت ایران و آلمان به دیپلماسی \n\nپهپادهای روسی با هدایت ماهواره چینی برمی‌خیزند\r\n\r\n\nپیام تنش‌زدایی از تهران به ابوظبی \n\nرقیب استارلینک به کمک روسیه می آید \n\nاعلام وضعیت اضطراری در نیویورک آمریکا/ ماجرا چیست؟",
-      "url": "https://donya-e-eqtesad.com/%D8%A8%D8%AE%D8%B4-%D8%B3%D8%A7%DB%8C%D8%AA-%D8%AE%D9%88%D8%A7%D9%86-62/4300458-%D8%A7%D8%AF%D8%B9%D8%A7%DB%8C-%D8%A7%D9%86-%D8%A8%DB%8C-%D8%B3%DB%8C-%D9%86%DB%8C%D9%88%D8%B2-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%AF%D8%B1-%D9%86%DB%8C%D9%88%DB%8C%D9%88%D8%B1%DA%A9-%D9%85%D8%B0%D8%A7%DA%A9%D8%B1%D8%A7%D8%AA-%D9%87%D8%B3%D8%AA%D9%87-%D8%A7%DB%8C-%D8%BA%DB%8C%D8%B1%D9%85%D8%B3%D8%AA%D9%82%DB%8C%D9%85-%D8%A7%D9%86%D8%AC%D8%A7%D9%85-%D8%AF%D8%A7%D8%AF%D9%86%D8%AF",
-      "image": "https://cdn.donya-e-eqtesad.com/thumbnail/N8uO2h5XG1mp/CjRxp5qG1cmEWIlhaH818SDXWP2hNFnwfxyAiaICmUsGadYJ8OFNnlSj37wf3nzT_KglO0XoLDej22-b--HhLWynkjodOUWmHq5nYzuHYJ9Le02csxIZ5g,,/rXTAvhSTJay9.jpg",
-      "source": "دنیای اقتصاد",
-      "source_site": "https://donya-e-eqtesad.com/",
-      "allow_internal_republish": true,
-      "category": "اقتصاد و سرمایه‌گذاری",
-      "published": "2026-10-08T11:19:55+03:30",
-      "topics": [
-        "economy"
-      ],
-      "importance_score": 0,
-      "important": false
-    },
-    {
-      "id": "82a4bf7e9f7b0d7e7ef0",
-      "title": "ارتباط آمادگی جسمانی در کودکی و افسردگی کمتر در بزرگسالی",
-      "summary": "مطالعه‌ای جدید نشان می‌دهد کودکانی که می‌دوند و بازی می‌کنند، تا دوران میانسالی از مزایای سلامت روان بهره‌مند خواهند شد.",
-      "content": "",
-      "url": "https://www.salamatnews.com/news/402334/%D8%A7%D8%B1%D8%AA%D8%A8%D8%A7%D8%B7-%D8%A2%D9%85%D8%A7%D8%AF%DA%AF%DB%8C-%D8%AC%D8%B3%D9%85%D8%A7%D9%86%DB%8C-%D8%AF%D8%B1-%DA%A9%D9%88%D8%AF%DA%A9%DB%8C-%D9%88-%D8%A7%D9%81%D8%B3%D8%B1%D8%AF%DA%AF%DB%8C-%DA%A9%D9%85%D8%AA%D8%B1-%D8%AF%D8%B1-%D8%A8%D8%B2%D8%B1%DA%AF%D8%B3%D8%A7%D9%84%DB%8C",
-      "image": "https://media.salamatnews.com/d/2025/05/27/4/249159.jpg",
-      "source": "سلامت نیوز",
-      "source_site": "https://www.salamatnews.com/",
-      "allow_internal_republish": true,
-      "category": "پزشکی و سلامت",
-      "published": "2026-10-08T10:53:30+03:30",
-      "topics": [
-        "health"
-      ],
-      "importance_score": 0,
-      "important": false
     }
   ],
   "sources": [
@@ -5341,30 +5362,10 @@
       "name": "دنیای اقتصاد",
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
-      "items": 11,
-      "attempted_at": "2026-10-08T20:08:28.593705+00:00",
-      "last_success_at": "2026-10-08T20:08:29.816303+00:00",
+      "items": 10,
+      "attempted_at": "2026-10-08T20:46:34.767970+00:00",
+      "last_success_at": "2026-10-08T20:46:36.021072+00:00",
       "last_article_published": "2026-10-08T23:00:00+03:30",
-      "error": ""
-    },
-    {
-      "name": "اقتصادنیوز",
-      "category": "اقتصاد و سرمایه‌گذاری",
-      "ok": true,
-      "items": 12,
-      "attempted_at": "2026-10-08T20:08:28.594313+00:00",
-      "last_success_at": "2026-10-08T20:08:30.576133+00:00",
-      "last_article_published": "2026-10-08T21:47:12+03:30",
-      "error": ""
-    },
-    {
-      "name": "فرارو",
-      "category": "اقتصاد و سرمایه‌گذاری",
-      "ok": true,
-      "items": 14,
-      "attempted_at": "2026-10-08T20:08:28.608559+00:00",
-      "last_success_at": "2026-10-08T20:08:30.678301+00:00",
-      "last_article_published": "2026-10-08T23:03:22+03:30",
       "error": ""
     },
     {
@@ -5372,9 +5373,29 @@
       "category": "پزشکی و سلامت",
       "ok": true,
       "items": 10,
-      "attempted_at": "2026-10-08T20:08:28.607934+00:00",
-      "last_success_at": "2026-10-08T20:08:30.751866+00:00",
-      "last_article_published": "2026-10-08T22:42:05+03:30",
+      "attempted_at": "2026-10-08T20:46:34.781934+00:00",
+      "last_success_at": "2026-10-08T20:46:36.934704+00:00",
+      "last_article_published": "2026-10-08T23:42:05+03:30",
+      "error": ""
+    },
+    {
+      "name": "فرارو",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "ok": true,
+      "items": 14,
+      "attempted_at": "2026-10-08T20:46:34.784917+00:00",
+      "last_success_at": "2026-10-08T20:46:37.134720+00:00",
+      "last_article_published": "2026-10-09T00:06:45+03:30",
+      "error": ""
+    },
+    {
+      "name": "اقتصادنیوز",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "ok": true,
+      "items": 11,
+      "attempted_at": "2026-10-08T20:46:34.768641+00:00",
+      "last_success_at": "2026-10-08T20:46:37.234834+00:00",
+      "last_article_published": "2026-10-08T23:45:07+03:30",
       "error": ""
     },
     {
@@ -5382,19 +5403,9 @@
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
       "items": 14,
-      "attempted_at": "2026-10-08T20:08:28.594590+00:00",
-      "last_success_at": "2026-10-08T20:08:31.092963+00:00",
-      "last_article_published": "2026-10-08T23:15:32+03:30",
-      "error": ""
-    },
-    {
-      "name": "پیوست",
-      "category": "فناوری و علم",
-      "ok": true,
-      "items": 7,
-      "attempted_at": "2026-10-08T20:08:28.599910+00:00",
-      "last_success_at": "2026-10-08T20:08:32.240436+00:00",
-      "last_article_published": "2026-10-08T12:57:47+03:30",
+      "attempted_at": "2026-10-08T20:46:34.769167+00:00",
+      "last_success_at": "2026-10-08T20:46:37.591157+00:00",
+      "last_article_published": "2026-10-08T23:59:13+03:30",
       "error": ""
     },
     {
@@ -5402,8 +5413,8 @@
       "category": "بورس و بازار سرمایه",
       "ok": true,
       "items": 14,
-      "attempted_at": "2026-10-08T20:08:28.594843+00:00",
-      "last_success_at": "2026-10-08T20:08:33.164222+00:00",
+      "attempted_at": "2026-10-08T20:46:34.769714+00:00",
+      "last_success_at": "2026-10-08T20:46:39.165420+00:00",
       "last_article_published": "2026-10-08T21:09:07+03:30",
       "error": ""
     },
@@ -5412,19 +5423,9 @@
       "category": "بورس و بازار سرمایه",
       "ok": true,
       "items": 14,
-      "attempted_at": "2026-10-08T20:08:28.595697+00:00",
-      "last_success_at": "2026-10-08T20:08:34.231535+00:00",
+      "attempted_at": "2026-10-08T20:46:34.770698+00:00",
+      "last_success_at": "2026-10-08T20:46:40.242069+00:00",
       "last_article_published": "2026-10-08T17:23:08+03:30",
-      "error": ""
-    },
-    {
-      "name": "انتخاب",
-      "category": "اقتصاد و سرمایه‌گذاری",
-      "ok": true,
-      "items": 14,
-      "attempted_at": "2026-10-08T20:08:28.608263+00:00",
-      "last_success_at": "2026-10-08T20:08:35.024349+00:00",
-      "last_article_published": "2026-10-08T22:17:01+03:30",
       "error": ""
     },
     {
@@ -5432,9 +5433,29 @@
       "category": "پزشکی و سلامت",
       "ok": true,
       "items": 14,
-      "attempted_at": "2026-10-08T20:08:28.602862+00:00",
-      "last_success_at": "2026-10-08T20:08:35.199842+00:00",
+      "attempted_at": "2026-10-08T20:46:34.772312+00:00",
+      "last_success_at": "2026-10-08T20:46:40.546727+00:00",
       "last_article_published": "2026-10-08T13:02:33+03:30",
+      "error": ""
+    },
+    {
+      "name": "پیوست",
+      "category": "فناوری و علم",
+      "ok": true,
+      "items": 7,
+      "attempted_at": "2026-10-08T20:46:34.771071+00:00",
+      "last_success_at": "2026-10-08T20:46:40.840877+00:00",
+      "last_article_published": "2026-10-08T12:57:47+03:30",
+      "error": ""
+    },
+    {
+      "name": "انتخاب",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "ok": true,
+      "items": 14,
+      "attempted_at": "2026-10-08T20:46:34.782451+00:00",
+      "last_success_at": "2026-10-08T20:46:41.254452+00:00",
+      "last_article_published": "2026-10-08T23:37:16+03:30",
       "error": ""
     },
     {
@@ -5442,15 +5463,15 @@
       "category": "بورس و بازار سرمایه",
       "ok": true,
       "items": 14,
-      "attempted_at": "2026-10-08T20:08:28.595271+00:00",
-      "last_success_at": "2026-10-08T20:08:38.606627+00:00",
-      "last_article_published": "2026-10-08T22:56:00+03:30",
+      "attempted_at": "2026-10-08T20:46:34.770252+00:00",
+      "last_success_at": "2026-10-08T20:46:45.355284+00:00",
+      "last_article_published": "2026-10-08T23:57:48+03:30",
       "error": ""
     }
   ],
   "dedup": {
     "enabled": true,
     "window_hours": 48,
-    "removed": 10
+    "removed": 9
   }
 }
