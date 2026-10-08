@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-08T11:00:24Z",
+  "updated": "2026-10-08T11:00:57.035Z",
   "schema": 1,
   "items": {
     "article-eece7c42f225dbaf": {
@@ -18222,6 +18222,146 @@
       "created_at": "2026-10-08T10:43:47.836Z",
       "updated_at": "2026-10-08T10:43:47.836Z",
       "published_at": "2026-10-08T13:57:00+03:30",
+      "status": "published",
+      "ai_managed": false,
+      "generated_by": "internal-republish-v1",
+      "manual_locked": false
+    },
+    "article-da5ad235c70a20cc": {
+      "id": "article-da5ad235c70a20cc",
+      "title": "کدام استان‌ها بیشترین تورم را در شهریور تجربه کردند؟",
+      "summary": "بالاترین نرخ تورم نقطه به نقطه در شهریور متعلق به ایلام با 114.3 درصد است",
+      "content": "۱۴:۲۲ -\n\n۱۶ مهر ۱۴۰۵\n\nکدام استان‌ها بیشترین تورم را در شهریور تجربه کردند؟\n\nبالاترین نرخ تورم نقطه به نقطه در شهریور متعلق به ایلام با ۱۱۴.۳ درصد است\n\nپ\n\n،\n\nپـ\n\nفرارو- براساس داده‌های مرکز آمار ایران نرخ تورم نقطه به نقطه در شهریور به ۸۹.۸ درصد رسید.\n\nبه گزارش فرارو؛ گزارش مرکز آمار نشان می‌دهد ایلام با ۱۱۴.۳ درصد بالاترین و تهران با ۷۴.۶ درصد پایین‌ترین نرخ تورم نقطه به نقطه را در شهریور ثبت کردند.\n\nپس از ایلام هرمزگان با ۱۱۳.۸ درصد، کردستان با ۱۰۸.۳ درصد، گلستان با ۱۰۷.۸ درصد و آذربایجان غربی با ۱۰۷.۷ درصد بیشترین تورم نقطه‌ به نقطه را در شهریور داشته‌اند.\n\nپایین‌ترین نرخ تورم نقطه به نقطه در شهریور پس از تهران به البرز با ۸۲.۹ درصد، سیستان و بلوچستان با ۸۳.۸ درصد، اصفهان با ۸۳.۹ درصد و سمنان با ۸۵ درصد تعلق دارد.\n\nگفتنی است نرخ تورم نقطه به نقطه 9 استان در شهریور سه رقمی ثبت شد.\n\nva NewsLis Limi = 5;\n\nاز میان اخبار\n\nکدام استان‌ها بیشترین تورم را در شهریور تجربه کردند؟\n\nقیمت سکه پارسیان امروز پنجشنبه ۱۶ مهر ۱۴۰۵\n\nقیمت طلا ۲۴ عیار امروز پنجشنبه ۱۶ مهر ۱۴۰۵\n\nلیپ موتور T۰۳؛ فروش کوچک‌ترین هاچ‌بک برقی کلید خورد\n\nشما قبلا این خبر را لایک کرده‌اید .\n\nfunc ion oPe sianNumbe (numbe ) {\n\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\n\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\n\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\n\nelemen .addEven Lis ene (\"click\", func ion() {\n\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n\n. hen(func ion( esponse) {\n\nif ( esponse.s a us == 200) {\n\nesponse.json(). hen(func ion(newSco e) {\n\nva likeNumbe Span = elemen .que ySelec o (\".like\");\n\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\n\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\n\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\n\nva hiddenHea = elemen .que ySelec o (\".hidden\");\n\nvisibleHea .classLis .add(\"hidden\");\n\nfavo i eBu on.classLis .add(\"hidden\");\n\nhiddenHea .classLis . emove(\"hidden\");\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}\n\n});\n\n} else {\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis .add(\"hidden_e o \");\n\nse Timeou (func ion() {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}, 3000);\n\n}\n\n}\n\n})\n\n});\n\n});",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "topics": [
+        "economy"
+      ],
+      "group_id": "local-fdcad74780f2",
+      "original_news_id": "8aeb713e00b8475a2b2c",
+      "source_ids": [],
+      "sources": [
+        {
+          "name": "فرارو",
+          "url": "https://fararu.com/fa/news/1008234/%DA%A9%D8%AF%D8%A7%D9%85-%D8%A7%D8%B3%D8%AA%D8%A7%D9%86-%D9%87%D8%A7-%D8%A8%DB%8C%D8%B4%D8%AA%D8%B1%DB%8C%D9%86-%D8%AA%D9%88%D8%B1%D9%85-%D8%B1%D8%A7-%D8%AF%D8%B1-%D8%B4%D9%87%D8%B1%DB%8C%D9%88%D8%B1-%D8%AA%D8%AC%D8%B1%D8%A8%D9%87-%DA%A9%D8%B1%D8%AF%D9%86%D8%AF"
+        }
+      ],
+      "image": "https://cdn.fararu.com/thumbnail/pl2dFtF9cZWh/tUM7d8n7Vu825Cw6l1REh7_mhLpP2tWFEYjUabFSPK5G1SsPqmeUXSWEA_Gwj_aCU7rAn-MZZDrEoCEf75PuFNMA2nnjL8T31NhLJQG948F2WtQ_4kpXpwd_2qX8dX85/%D9%86%D8%B1%D8%AE+%D8%AA%D9%88%D8%B1%D9%85.jpg",
+      "importance_score": 8,
+      "created_at": "2026-10-08T11:00:57.035Z",
+      "updated_at": "2026-10-08T11:00:57.035Z",
+      "published_at": "2026-10-08T14:22:19+03:30",
+      "status": "published",
+      "ai_managed": false,
+      "generated_by": "internal-republish-v1",
+      "manual_locked": false
+    },
+    "article-73213addd36e9b10": {
+      "id": "article-73213addd36e9b10",
+      "title": "پرواز نجف به تهران روزانه شد",
+      "summary": "معاون شهر فرودگاهی امام از ازسرگیری پروازهای العراقیه در مسیر تهران-نجف با برنامه روزانه یک پرواز خبر داد. پست پرواز نجف به تهران روزانه شد اولین بار در تجارت نیوز ظاهر شد.",
+      "content": "پرواز نجف به تهران روزانه شد\n\n|\n\nبروزرسانی: 11 دقیقه پیش\n\nکد خبر: 1356304\n\nحمل و نقل\n\nلینک کوتاه\n\nکپی شد\n\nمعاون شهر فرودگاهی امام از ازسرگیری پروازهای العراقیه در مسیر تهران-نجف با برنامه روزانه یک پرواز خبر داد.\n\nنخستین پرواز این شرکت پس از ماه‌ها توقف، ساعت 7:30 روز پنجشنبه 16 مهرماه از نجف وارد شهر فرودگاهی امام خمینی(ره) شد و ساعت 8:30 نیز تهران را به مقصد نجف ترک کرد.\n\nوی افزود: بر اساس برنامه‌ریزی انجام‌شده، شرکت هواپیمایی العراقیه روزانه یک پرواز در شهر فرودگاهی امام خمینی(ره) خواهد داشت و جابجایی مسافران در مسیر تهران ـ نجف و بالعکس انجام می‌شود.\n\nمعاون بهره‌برداری شهر فرودگاهی امام خمینی(ره) با اشاره به اهمیت ازسرگیری پروازهای خارجی ادامه داد: این اقدام گامی در مسیر بازگشت و توسعه تدریجی پروازهای خارجی در شهر فرودگاهی است و امیدواریم با فراهم شدن شرایط، تعداد پروازها افزایش یابد و مسیرهای بین‌المللی بیشتری فعال شود.\n\nوی یادآور شد: شهر فرودگاهی امام (ره) از حضور شرکت‌های هواپیمایی و توسعه مسیرهای پروازی استقبال می‌کند و افزایش پروازهای خارجی و تنوع‌بخشی به شبکه پروازی از محورهای مهم در حوزه بهره‌برداری این مجموعه است.\n\nمنبع: تسنیم",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "topics": [
+        "economy"
+      ],
+      "group_id": "local-ab74fd0eaba5",
+      "original_news_id": "569fa247869f91b6ec4a",
+      "source_ids": [],
+      "sources": [
+        {
+          "name": "تجارت‌نیوز",
+          "url": "https://tejaratnews.com/%d9%be%d8%b1%d9%88%d8%a7%d8%b2-%d9%86%d8%ac%d9%81-%d8%a8%d9%87-%d8%aa%d9%87%d8%b1%d8%a7%d9%86-%d8%b1%d9%88%d8%b2%d8%a7%d9%86%d9%87-%d8%b4%d8%af"
+        }
+      ],
+      "image": "https://tejaratnews.com/wp-content/uploads/2026/09/وضعیتپروازهایخارجیاعلامشدتوقفپروازهاینجفتأییدشد-ak-1200x800-1.webp",
+      "importance_score": 0,
+      "created_at": "2026-10-08T11:00:57.035Z",
+      "updated_at": "2026-10-08T11:00:57.035Z",
+      "published_at": "2026-10-08T14:19:03+03:30",
+      "status": "published",
+      "ai_managed": false,
+      "generated_by": "internal-republish-v1",
+      "manual_locked": false
+    },
+    "article-a64367b32eb03b23": {
+      "id": "article-a64367b32eb03b23",
+      "title": "مرزهای بارندگی چگونه در آسمان دستکاری می‌شوند؟",
+      "summary": "در معادلات کلاسیک امنیت آب، تمام توجه ناظران به سدسازی روی رودخانه‌های مشترک زمینی یا انحراف سفره‌های زیرزمینی معطوف بوده است؛ غافل از اینکه بخش عمده جابه‌جایی آب شیرین جهان در کریدورهای هوایی پرفشار موسوم به «رودخانه‌های اتمسفری» رخ می‌دهد.",
+      "content": "۱۴:۱۶ -\n\n۱۶ مهر ۱۴۰۵\n\nمرزهای بارندگی چگونه در آسمان دستکاری می‌شوند؟\n\nدر معادلات کلاسیک امنیت آب، تمام توجه ناظران به سدسازی روی رودخانه‌های مشترک زمینی یا انحراف سفره‌های زیرزمینی معطوف بوده است؛ غافل از اینکه بخش عمده جابه‌جایی آب شیرین جهان در کریدورهای هوایی پرفشار موسوم به «رودخانه‌های اتمسفری» رخ می‌دهد.\n\nپ\n\n،\n\nپـ\n\nتبلیغات\n\nتبلیغات\n\nتبلیغات\n\nva NewsLis Limi = 5;\n\nاز میان اخبار\n\nکاهش نسبی دمای تهران از شنبه\n\nجزئیات حمله به خودروی پلیس در زاهدان\n\nجزئیات حمله مسلحانه به مینی‌بوس حامل کارکنان نزاجا\n\nفرجام‌خواهی «کلثوم اکبری» رد شد\n\nشما قبلا این خبر را لایک کرده‌اید .\n\nfunc ion oPe sianNumbe (numbe ) {\n\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\n\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\n\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\n\nelemen .addEven Lis ene (\"click\", func ion() {\n\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n\n. hen(func ion( esponse) {\n\nif ( esponse.s a us == 200) {\n\nesponse.json(). hen(func ion(newSco e) {\n\nva likeNumbe Span = elemen .que ySelec o (\".like\");\n\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\n\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\n\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\n\nva hiddenHea = elemen .que ySelec o (\".hidden\");\n\nvisibleHea .classLis .add(\"hidden\");\n\nfavo i eBu on.classLis .add(\"hidden\");\n\nhiddenHea .classLis . emove(\"hidden\");\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}\n\n});\n\n} else {\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis .add(\"hidden_e o \");\n\nse Timeou (func ion() {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}, 3000);\n\n}\n\n}\n\n})\n\n});\n\n});\n\nتبلیغات",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "topics": [
+        "economy"
+      ],
+      "group_id": "local-59ce97401e03",
+      "original_news_id": "e6f5b95e5ec1145fe2a4",
+      "source_ids": [],
+      "sources": [
+        {
+          "name": "فرارو",
+          "url": "https://fararu.com/fa/news/1008242/%D9%85%D8%B1%D8%B2%D9%87%D8%A7%DB%8C-%D8%A8%D8%A7%D8%B1%D9%86%D8%AF%DA%AF%DB%8C-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%AF%D8%B1-%D8%A2%D8%B3%D9%85%D8%A7%D9%86-%D8%AF%D8%B3%D8%AA%DA%A9%D8%A7%D8%B1%DB%8C-%D9%85%DB%8C-%D8%B4%D9%88%D9%86%D8%AF"
+        }
+      ],
+      "image": "https://mcdn.fararu.com/ao/1a11b1f0bf7_fcdfdf.webp",
+      "importance_score": 0,
+      "created_at": "2026-10-08T11:00:57.035Z",
+      "updated_at": "2026-10-08T11:00:57.035Z",
+      "published_at": "2026-10-08T14:16:29+03:30",
+      "status": "published",
+      "ai_managed": false,
+      "generated_by": "internal-republish-v1",
+      "manual_locked": false
+    },
+    "article-428b518bd0fc6321": {
+      "id": "article-428b518bd0fc6321",
+      "title": "تکیه‌گاه لرزان اسکناس سبز",
+      "summary": "دنیای اقتصاد: فروش گسترده در بازار اوراق قرضه به دلار کمک می‌کند، اما قدرت اسکناس سبز دیگر مانند گذشته قابل اتکا نیست.",
+      "content": "تکیه‌گاه لرزان اسکناس سبز\n\nتاریخ انتشار :\n\n۱۴۰۵/۰۷/۱۶ ۱۴:۰۰\n\nشماره خبر:\n\n-->\n\n۴۳۰۰۴۸۵\n\nsvg{fill:#fff}\n\nگروه:\n\nگروه آنلاین روزنامه دنیای اقتصاد\n\nبزرگنمایی متن خبر\n\nدنیای اقتصاد: فروش گسترده در بازار اوراق قرضه به دلار کمک می‌کند، اما قدرت اسکناس سبز دیگر مانند گذشته قابل اتکا نیست.\n\nاما قدرت اسکناس سبز دیگر مانند گذشته قابل اتکا نیست.\n\nدر بازارهای مالی هیچ پیش‌بینی و چشم‌اندازی با اجماع کامل همراه نیست، اما گاهی نظرات به این اجماع نزدیک می‌شوند. اواخر سال ۲۰۲۵، پیش‌بینی تضعیف دلار یکی از همین موارد بود. در آن زمان کمتر کسی به رشد دلار امید داشت و تحلیلگران بیشتر بانک‌های سرمایه‌گذاری بزرگ و شرکت‌های مدیریت دارایی، آینده بدبینانه‌ای را برای آن متصور بودند. نشریه اکونومیست هم در ماه فوریه نوشته بود که اسکناس سبز پس از عملکرد ضعیف خود در سال ۲۰۲۵ و با کم‌رنگ شدن جایگاهش به‌عنوان یک پناهگاه امن مالی، احتمالا سقوط بیشتری را تجربه خواهد کرد.\n\nبا این حال، به نوشته اکونومیست، دلار تاکنون خط بطلانی بر تمام این تردیدها کشیده است. شاخص دلار، که ارزش این ارز را در برابر سبدی از ارزهای اقتصادهای توسعه‌یافته می‌سنجد، در سال ۲۰۲۶ حدود ۴ درصد رشد کرده است. این شاخص اکنون به بالاترین سطح خود از آوریل سال گذشته، یعنی زمان آغاز جنگ تجاری جهانی دونالد ترامپ رسیده است. عوامل متعددی، و در راس آن‌ها اشتیاق جهانی به بازار سهام آمریکا، پیش‌بینی‌های بدبینانه درباره دلار را نقش بر آب کرده‌اند. البته این عوامل نمی‌توانند حامی همیشگی اسکناس سبز باشند.\n\nنوسانات دیگر ارزها نیز در این میان نقش دارند. سرمایه‌گذاران به‌طور خاص از یورو رویگردان شده‌اند. ارزش پول واحد اروپا به دلیل افزایش نگرانی‌ها درباره ثبات سیاسی و مالی این اتحادیه، از ۱.۱۷ دلار به محدوده ۱.۱۲ دلار کاهش یافته است. امسال در پی نگرانی از بروز آشفتگی‌های مالی، بازده اوراق قرضه دولتی ده‌ساله فرانسه از ۳.۵ درصد به ۴.۸ درصد رسید که حدود ۱.۳ تا ۱.۴ واحد درصد بالاتر از اوراق مشابه آلمانی است. سرمایه‌گذارانی که یورو می‌فروشند، مقاصد امن زیادی پیش رو ندارند و دلار یکی از پناهگاه‌های بدیهی آن‌هاست. فراموش نکنیم که یورو در سال جاری در برابر پوند انگلیس و ین ژاپن نیز تضعیف شده است.\n\nدلیل دیگر تقویت دلار، طنزی تلخ در خود نهفته دارد و آن افزایش قیمت انرژی ناشی از جنگ آمریکا و ایران است. در گذشته، قیمت بالای نفت معمولا ارز آمریکا را تضعیف می‌کرد. آمریکا واردکننده نفت بود و با وجود قیمت‌گذاری نفت خام به دلار، بخش عمده‌ای از دلارهای پرداختی به فروشندگان خارجی در نهایت به ارزهای دیگر تبدیل می‌شد. اما از اواخر دهه ۲۰۱۰ و با شکوفایی استخراج نفت شیل، آمریکا به صادرکننده خالص انرژی تبدیل شد و این روند کاملا معکوس گشت. شاید بنزین و گازوئیل گران، آن هم یک ماه مانده به انتخابات میان‌دوره‌ای، دردسر سیاسی بزرگی برای حزب جمهوری‌خواه ترامپ باشد، اما برای اسکناس سبز به نقطه قوتی جدی تبدیل شده است.\n\nموتور محرک اقتصاد آمریکا\n\nریشه عمیق‌تر قدرت دلار را باید در اقتصاد آمریکا جست‌وجو کرد. این اقتصاد همچنان خوش‌بین‌ترین تحلیلگران را هم شگفت‌زده می‌کند. اواخر سال گذشته، انتظار اقتصاددانان این بود که رشد اقتصادی سالانه در هر فصل از سال جاری بین ۱.۶ تا ۱.۹ درصد باشد. اما در عمل، رشد سه‌ماهه اول و دوم به ترتیب به ۲.۵ و ۲.۲ درصد رسید. مصرف بالای خانوارها و سرمایه‌گذاری‌های تجاری در زیرساخت‌های هوش مصنوعی، محرک اصلی این رشد بود. احتمالا رشد سه‌ماهه سوم از این هم فراتر رفته است. نظرسنجی‌های فدرال رزرو عدد ۲.۵ درصد را نشان می‌دهند و هم‌زمان، برخی شاخص‌ها حاکی از رشد سالانه بالای ۳ درصد هستند.\n\nاقتصاد پررونق ممکن است فدرال رزرو را به تداوم افزایش نرخ بهره وادار کند که همین امر، خرید اوراق قرضه خزانه‌داری و دیگر دارایی‌های سودآور آمریکایی را جذاب‌تر می‌کند. در دوازده ماه منتهی به ژوئیه، خریداران خارجی حدود ۴۵۰ میلیارد دلار از بدهی‌های شرکتی آمریکا را خریدند. این رقم حتی با احتساب تورم، در دو دهه اخیر بی‌سابقه بوده است. اشتهای سرمایه‌گذاران خارجی برای بازار سهام آمریکا از این هم بیشتر است. در همان بازه زمانی، خالص خرید سهام و واحدهای صندوق‌های سرمایه‌گذاری آمریکایی از سوی آن‌ها به مرز ۹۰۰ میلیارد دلار رسید. این عدد برای یک دوره دوازده‌ماهه رکورد تاریخی محسوب می‌شود و ۸۰ درصد بالاتر از نقطه اوج قبلی در سال ۲۰۲۱ است.\n\nاما مشکل فعلی دلار این است که منابع قدرت آن محدودتر از گذشته شده است. از نظر تاریخی، ارزش ارز آمریکا هم‌زمان با رونق اقتصادی این کشور و همچنین در دوران آشفتگی اقتصاد جهانی افزایش می‌یافت. استیون جن، استراتژیست ارزی و سرمایه‌گذار، این پدیده را «لبخند دلار» نام‌گذاری کرده بود.\n\nاکنون اما این لبخند بیشتر به یک پوزخند کج شبیه شده است. هرچند نوسانات دلار در برابر یورو نشان می‌دهد جذابیت آن به‌عنوان یک پناهگاه امن ارزی کاملا از بین نرفته است، اما این ویژگی در سایه جذابیت بالای دارایی‌های پرخطر آمریکایی، کمتر به چشم می‌آید. اگر این دارایی‌ها ناامیدکننده ظاهر شوند و برای مثال، تب هوش مصنوعی به حبابی تبدیل شود و بترکد، سرمایه‌گذارانِ سودجو به همان سرعتی که این دارایی‌ها را خریده‌اند، آن‌ها و دلار را رها خواهند کرد. با این اوصاف، معامله‌گران ارزی باید خود را برای نوسانات شدیدتری در بازار آماده کنند.\n\n-->\n\ndocumen .addEven Lis ene ('DOMCon en Loaded', func ion() {\n\ncons sha eBu on = documen .que ySelec o ('.news_sha e_bu on');\n\nif (!sha eBu on) e u n;\n\nif (!naviga o .sha e) {\n\nconsole.log('Web Sha e API no suppo ed in his b owse . Hiding he bu on.');\n\nsha eBu on.s yle.display = 'none';\n\ne u n;\n\n}\n\nsha eBu on.addEven Lis ene ('click', async () => {\n\ny {\n\ncons sha eDa a = {\n\ni le: \" u062a u06a9 u06cc u0647 u200c u06af u0627 u0647 u0644 u0631 u0632 u0627 u0646 u0627 u0633 u06a9 u0646 u0627 u0633 u0633 u0628 u0632\",\n\nex : \" u062f u0646 u06cc u0627 u06cc u0627 u0642 u062a u0635 u0627 u062f: u0641 u0631 u0648 u0634 u06af u0633 u062a u0631 u062f u0647 u062f u0631 u0628 u0627 u0632 u0627 u0631 u0627 u0648 u0631 u0627 u0642 u0642 u0631 u0636 u0647 u0628 u0647 u062f u0644 u0627 u0631 u06a9 u0645 u06a9 u0645 u06cc u200c u06a9 u0646 u062f u060c u0627 u0645 u0627 u0642 u062f u0631 u062a u0627 u0633 u06a9 u0646 u0627 u0633 u0633 u0628 u0632 u062f u06cc u06af u0631 u0645 u0627 u0646 u0646 u062f u06af u0630 u0634 u062a u0647 u0642 u0627 u0628 u0644 u0627 u062a u06a9 u0627 u0646 u06cc u0633 u062a.\",\n\nu l: \"h ps: / /donya-e-eq esad.com /fa / iny /news-4300485\" };\n\nawai naviga o .sha e(sha eDa a);\n\nconsole.log('Con en sha ed successfully!');\n\n} ca ch (e o ) {\n\nif (e o .name !== 'Abo E o ') {\n\nconsole.e o ('E o sha ing con en :', e o );\n\n}\n\n}\n\n});\n\n});\n\nاخبار مرتبط\n\nچرا بازار اوراق قرضه هیجانی رفتار می‌کند؟\n\nجنگ روایت‌ها درباره میزان نفت خروجی از تنگه هرمز\n\nچگونه کانادا می تواند در جنگ تجاری به آمریکا ضربه بزند\n\nترامپ، شریک درآمد یک گذرگاه مرزی شد\n\nخاورمیانه؛ میان مذاکره و میدان",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "topics": [
+        "economy"
+      ],
+      "group_id": "local-0df63b63afee",
+      "original_news_id": "48cf62a83f03446afb9c",
+      "source_ids": [],
+      "sources": [
+        {
+          "name": "دنیای اقتصاد",
+          "url": "https://donya-e-eqtesad.com/%D8%A8%D8%AE%D8%B4-%DA%AF%D8%B1%D9%88%D9%87-%D8%A2%D9%86%D9%84%D8%A7%DB%8C%D9%86-%D8%B1%D9%88%D8%B2%D9%86%D8%A7%D9%85%D9%87-%D8%AF%D9%86%DB%8C%D8%A7%DB%8C-%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF-192/4300485-%D8%AA%DA%A9%DB%8C%D9%87-%DA%AF%D8%A7%D9%87-%D9%84%D8%B1%D8%B2%D8%A7%D9%86-%D8%A7%D8%B3%DA%A9%D9%86%D8%A7%D8%B3-%D8%B3%D8%A8%D8%B2"
+        }
+      ],
+      "image": "https://cdn.donya-e-eqtesad.com/thumbnail/zJ1jGb0lW4mN/QHn8O9nsSzT8qCU7RegsN6Pbb5v74eEtbKeSOh05RaawE34P5HVs4kt7TZyzEhnm/IMG_20261008_141105_884.jpg",
+      "importance_score": 0,
+      "created_at": "2026-10-08T11:00:57.035Z",
+      "updated_at": "2026-10-08T11:00:57.035Z",
+      "published_at": "2026-10-08T14:00:49+03:30",
+      "status": "published",
+      "ai_managed": false,
+      "generated_by": "internal-republish-v1",
+      "manual_locked": false
+    },
+    "article-009165584176bc29": {
+      "id": "article-009165584176bc29",
+      "title": "پروازهای هواپیمایی عراق به ایران ازسرگرفته شد",
+      "summary": "یک شرکت هواپیمایی ملی عراق اعلام کرد که پروازهای منظم روزانه از فرودگاه بین‌المللی نجف به مقاصد تهران، مشهد و اصفهان انجام خواهد شد.",
+      "content": "۱۴:۰۰ -\n\n۱۶ مهر ۱۴۰۵\n\nپروازهای هواپیمایی عراق به ایران ازسرگرفته شد\n\nیک شرکت هواپیمایی ملی عراق اعلام کرد که پروازهای منظم روزانه از فرودگاه بین‌المللی نجف به مقاصد تهران، مشهد و اصفهان انجام خواهد شد.\n\nپ\n\n،\n\nپـ\n\nفرارو- شرکت هواپیمایی عراق روز پنج‌شنبه پروازهای مستقیم خود به ایران را از سر گرفت؛ این پروازها پس از وقفه‌ای هفت‌ماهه که در پی آغاز جنگ آمریکا و اسرائیل علیه ایران در اوایل ماه مارس ایجاد شده بود، دوباره برقرار شدند.\n\nمشهد و اصفهان انجام خواهد شد.\n\nاین شرکت افزود که ازسرگیری پروازها در پی تلاش‌های «علی الزیدی»، نخست‌وزیر عراق، و «وهاب الحسنی»، وزیر حمل‌ونقل، و پس از تکمیل الزامات قانونی و فنی لازم صورت گرفته است.\n\nهمچنین اعلام شد که هدف از برقراری مجدد این مسیرها، تسهیل سفر مسافران و گسترش ارتباطات هوایی منطقه‌ای عراق، به‌ویژه برای اهداف زیارتی، درمانی و آموزشی است.\n\nشرکت هواپیمایی عراق در اوایل ماه مارس و به عنوان اقدامی احتیاطی، در پی آغاز جنگ آمریکا و اسرائیل علیه ایران در ۲۸ فوریه، پروازهای خود به ایران را متوقف کرده بود. عراق همچنین هم‌زمان با تشدید تنش‌های نظامی در منطقه، حریم هوایی خود را بسته بود.\n\nva NewsLis Limi = 5;\n\nاز میان اخبار\n\nپروازهای هواپیمایی عراق به ایران ازسرگرفته شد\n\nآمریکا و ایران در نیویورک مذاکرات هسته‌ای غیرمستقیم انجام دادند\n\nواکنش متکی به اظهارات نماینده آلمان: اراجیف رادیو اسرائیل را نشخوار می‌کند\n\nتلاش‌های میانجی‌گری در مذاکرات ایران و آمریکا به بن‌بست رسیده است\n\nشما قبلا این خبر را لایک کرده‌اید .\n\nfunc ion oPe sianNumbe (numbe ) {\n\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\n\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\n\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\n\nelemen .addEven Lis ene (\"click\", func ion() {\n\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n\n. hen(func ion( esponse) {\n\nif ( esponse.s a us == 200) {\n\nesponse.json(). hen(func ion(newSco e) {\n\nva likeNumbe Span = elemen .que ySelec o (\".like\");\n\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\n\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\n\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\n\nva hiddenHea = elemen .que ySelec o (\".hidden\");\n\nvisibleHea .classLis .add(\"hidden\");\n\nfavo i eBu on.classLis .add(\"hidden\");\n\nhiddenHea .classLis . emove(\"hidden\");\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}\n\n});\n\n} else {\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis .add(\"hidden_e o \");\n\nse Timeou (func ion() {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}, 3000);\n\n}\n\n}\n\n})\n\n});\n\n});",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "topics": [
+        "economy"
+      ],
+      "group_id": "local-b34831d3ebef",
+      "original_news_id": "72f2c429951da87941de",
+      "source_ids": [],
+      "sources": [
+        {
+          "name": "فرارو",
+          "url": "https://fararu.com/fa/news/1008241/%D9%BE%D8%B1%D9%88%D8%A7%D8%B2%D9%87%D8%A7%DB%8C-%D9%87%D9%88%D8%A7%D9%BE%DB%8C%D9%85%D8%A7%DB%8C%DB%8C-%D8%B9%D8%B1%D8%A7%D9%82-%D8%A8%D9%87-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%A7%D8%B2%D8%B3%D8%B1%DA%AF%D8%B1%D9%81%D8%AA%D9%87-%D8%B4%D8%AF"
+        }
+      ],
+      "image": "https://cdn.fararu.com/thumbnail/OjYX5fKYr5j8/Yo0CxGddZSPnpA8JJDw_fYVm8Yr-sSR074S-cH6HS595SrrYYblrAMXQTEcEW5u4JP-kylYQpFb34B6kVnH57OSBw45-6SQU490qF5BlslK1Yg28I8dyww8Do_lLlF0g/%D9%BE%D8%B1%D9%88%D8%A7%D8%B2%D9%87%D8%A7%DB%8C+%D8%A7%DB%8C%D8%B1%D8%A7%D9%86+%D9%88+%D8%B9%D8%B1%D8%A7%D9%82.jpg",
+      "importance_score": 0,
+      "created_at": "2026-10-08T11:00:57.035Z",
+      "updated_at": "2026-10-08T11:00:57.035Z",
+      "published_at": "2026-10-08T14:00:38+03:30",
       "status": "published",
       "ai_managed": false,
       "generated_by": "internal-republish-v1",
