@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-08T19:53:13Z",
+  "updated": "2026-10-08T19:53:47.875Z",
   "schema": 1,
   "items": {
     "article-eece7c42f225dbaf": {
@@ -21744,6 +21744,62 @@
       "created_at": "2026-10-08T19:34:18.368Z",
       "updated_at": "2026-10-08T19:34:18.368Z",
       "published_at": "2026-10-08T22:56:00+03:30",
+      "status": "published",
+      "ai_managed": false,
+      "generated_by": "internal-republish-v1",
+      "manual_locked": false
+    },
+    "article-5ff02b32d1dcc6f4": {
+      "id": "article-5ff02b32d1dcc6f4",
+      "title": "مدارس کیش یک هفته غیرحضوری شد",
+      "summary": "آموزش تمامی مقاطع تحصیلی در جزیره کیش از ۱۸ تا ۲۴ مهرماه به‌صورت غیرحضوری ادامه خواهد داشت.",
+      "content": "۲۳:۰۳ -\n\n۱۶ مهر ۱۴۰۵\n\nمدارس کیش یک هفته غیرحضوری شد\n\nآموزش تمامی مقاطع تحصیلی در جزیره کیش از ۱۸ تا ۲۴ مهرماه به‌صورت غیرحضوری ادامه خواهد داشت.\n\nپ\n\n،\n\nپـ\n\nرئیس اداره آموزش‌وپرورش کیش از ادامه فعالیت غیرحضوری مدارس این جزیره برای یک هفته دیگر خبر داد.\n\nاعلام کرد تمامی مقاطع تحصیلی این جزیره از ۱۸ مهرماه به مدت یک هفته به‌صورت غیرحضوری فعالیت خواهند کرد.\n\nاو گفت این تصمیم با توجه به ابلاغیه شورای تأمین درباره نحوه فعالیت مدارس و با هدف استمرار فرآیند آموزش و پرورش اتخاذ شده است.\n\nنحوه ارائه محتوای آموزشی و تکالیف درسی و زمان‌بندی فعالیت‌ها را به دانش‌آموزان و خانواده‌ها اطلاع دهند.\n\nآموزش مدارس کیش طی دو هفته گذشته نیز به‌صورت غیرحضوری برگزار شده بود.\n\nva NewsLis Limi = 5;\n\nاز میان اخبار\n\nمدارس کیش یک هفته غیرحضوری شد\n\nاختلال برق ناشی از طوفان در مناطق جنوبی و غربی تهران رفع شد\n\nتمدید مهلت انتخاب رشته آزمون‌های سراسری و پذیرش دانشجو معلم تا ۱۹ مهرماه\n\nطوفان در تهران و وضعیت دریاچه چیتگر\n\nشما قبلا این خبر را لایک کرده‌اید .\n\nfunc ion oPe sianNumbe (numbe ) {\n\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\n\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\n\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\n\nelemen .addEven Lis ene (\"click\", func ion() {\n\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n\n. hen(func ion( esponse) {\n\nif ( esponse.s a us == 200) {\n\nesponse.json(). hen(func ion(newSco e) {\n\nva likeNumbe Span = elemen .que ySelec o (\".like\");\n\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\n\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\n\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\n\nva hiddenHea = elemen .que ySelec o (\".hidden\");\n\nvisibleHea .classLis .add(\"hidden\");\n\nfavo i eBu on.classLis .add(\"hidden\");\n\nhiddenHea .classLis . emove(\"hidden\");\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}\n\n});\n\n} else {\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis .add(\"hidden_e o \");\n\nse Timeou (func ion() {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}, 3000);\n\n}\n\n}\n\n})\n\n});\n\n});",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "topics": [
+        "economy"
+      ],
+      "group_id": "local-eb8e80115481",
+      "original_news_id": "1e7e4abdc42b600c7969",
+      "source_ids": [],
+      "sources": [
+        {
+          "name": "فرارو",
+          "url": "https://fararu.com/fa/news/1008349/%D9%85%D8%AF%D8%A7%D8%B1%D8%B3-%DA%A9%DB%8C%D8%B4-%DB%8C%DA%A9-%D9%87%D9%81%D8%AA%D9%87-%D8%BA%DB%8C%D8%B1%D8%AD%D8%B6%D9%88%D8%B1%DB%8C-%D8%B4%D8%AF"
+        }
+      ],
+      "image": "https://cdn.fararu.com/thumbnail/WsylfmOX0S8s/8jPDMttbxei3-JxN2ZyDphEpRIxnEd2-y1HkQ5SIMBaOdGM-3imJbMdpxN3g8d56N3Rd4rmgQFv7LPeDz0xO0fYYarFJxVH4ZS3Ecdca4GzLFGrqJUaChXrbPArAaZFy/%D8%BA%DB%8C%D8%B1+%D8%AD%D8%B6%D9%88%D8%B1%DB%8C.jpg",
+      "importance_score": 0,
+      "created_at": "2026-10-08T19:53:47.875Z",
+      "updated_at": "2026-10-08T19:53:47.875Z",
+      "published_at": "2026-10-08T23:03:22+03:30",
+      "status": "published",
+      "ai_managed": false,
+      "generated_by": "internal-republish-v1",
+      "manual_locked": false
+    },
+    "article-4c19b4c68c980704": {
+      "id": "article-4c19b4c68c980704",
+      "title": "تمرکززایی تجاری در پرسپولیس",
+      "summary": "شرکت فرهنگی ورزشی پرسپولیس (پرسپولیس) با هدف چابک‌سازی ساختار درآمدی و ارتقای شفافیت در فرآیندهای مالی، قرارداد واگذاری حق انحصاری بهره‌برداری تجاری، بازاریابی و فروش تبلیغات باشگاه را با شرکت زیرمجموعه خود نهایی کرد.",
+      "content": "h ps://sedayebou se.i /x6Lj4\n\n۱۶ مهر ۱۴۰۵ - ۱۷:۰۵\n\nکد مطلب 557720\n\n۱۶ مهر ۱۴۰۵ - ۱۷:۰۵\n\nتمرکززایی تجاری در پرسپولیس\n\nشرکت فرهنگی ورزشی پرسپولیس (پرسپولیس) با هدف چابک‌سازی ساختار درآمدی و ارتقای شفافیت در فرآیندهای مالی، قرارداد واگذاری حق انحصاری بهره‌برداری تجاری، بازاریابی و فروش تبلیغات باشگاه را با شرکت زیرمجموعه خود نهایی کرد.\n\nبازاریابی و فروش تبلیغات باشگاه را با شرکت زیرمجموعه خود نهایی کرد.\n\nبر اساس جدیدترین شفاف‌سازی منتشر شده، باشگاه پرسپولیس به منظور مدیریت متمرکز دارایی‌های برند و بهره‌برداری بهینه از فرصت‌های تجاری، مدیریت این بخش‌ها را به شرکت «توسعه کسب و کار پرسپولیس» محول کرده است.\n\nاین قرارداد که به عنوان اصلاحیه و تکمیل‌کننده فرآیند اداری قراردادهای تجاری باشگاه محسوب می‌شود، سه حوزه کلیدی را پوشش می‌دهد؛\n\n۱. حقوق رسانه‌ای: مدیریت و تجاری‌سازی سامانه تلویزیون اینترنتی و VOD باشگاه.\n\n۲. محصولات هواداری: بهره‌برداری از برند «هارد استایل» و فروش محصولات هواداری از طریق فروشگاه‌های فیزیکی و آنلاین.\n\n۳. اسپانسرینگ تیم بزرگسالان: واگذاری حق انحصاری تبلیغات روی پیراهن تیم فوتبال بزرگسالان در تمامی مسابقات رسمی و دوستانه.\n\nاین اقدام استراتژیک که در پاسخ به الزامات نظارتی فرابورس صورت گرفته، نشان‌دهنده اراده مدیریت باشگاه برای تفکیک وظایف اجرایی و نظارتی است تا ضمن ایجاد درآمدهای پایدار برای مجموعه، شفافیت مالی و گزارش‌دهی در قراردادهای تبلیغاتی بهبود یابد. با این تفویض اختیار، شرکت مادر (فرهنگی ورزشی پرسپولیس) به عنوان ناظر بر عملیات شرکت زیرمجموعه عمل کرده و بر تمامی جریان‌های درآمدی حاصل از این قراردادها اشراف کامل خواهد داشت.\n\nکد مطلب 557720\n\nسمانه باقری\n\nاخبار مرتبط\n\nهدف‌گذاری برای قهرمانی در رده‌های پایه؛\n\nتوسعه آکادمی پرسپولیس با خرید امتیاز تیم نونهالان\n\nشرکت فرهنگی ورزشی پرسپولیس (پرسپولیس) در راستای تقویت ساختار آکادمی خود، اقدام به خرید امتیاز تیم فوتبال نونهالان «ستاره سرخ صدرا» کرد.\n\nقرارداد ۲۴ میلیاردی پرسپولیس برای تجاری‌سازی برند و دارایی‌های نامشهود\n\nباشگاه فرهنگی ورزشی پرسپولیس از انعقاد قرارداد تجاری‌سازی نام و نشان تجاری خود با شرکت فرعی توسعه کسب‌وکار پرسپولیس به ارزش ۲۴۰ میلیارد ریال خبر داد.",
+      "category": "بورس و بازار سرمایه",
+      "topics": [
+        "markets"
+      ],
+      "group_id": null,
+      "original_news_id": "b678779d0078209a18c9",
+      "source_ids": [],
+      "sources": [
+        {
+          "name": "صدای بورس",
+          "url": "https://www.sedayebourse.ir/news/557720/%D8%AA%D9%85%D8%B1%DA%A9%D8%B2%D8%B2%D8%A7%DB%8C%DB%8C-%D8%AA%D8%AC%D8%A7%D8%B1%DB%8C-%D8%AF%D8%B1-%D9%BE%D8%B1%D8%B3%D9%BE%D9%88%D9%84%DB%8C%D8%B3"
+        }
+      ],
+      "image": "https://media.sedayebourse.ir/d/2025/08/18/4/1076316.jpg",
+      "importance_score": 0,
+      "created_at": "2026-10-08T19:53:47.875Z",
+      "updated_at": "2026-10-08T19:53:47.875Z",
+      "published_at": "2026-10-08T17:05:00+03:30",
       "status": "published",
       "ai_managed": false,
       "generated_by": "internal-republish-v1",
