@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-08T14:12:09Z",
+  "updated": "2026-10-08T14:12:38.092Z",
   "schema": 1,
   "items": {
     "article-eece7c42f225dbaf": {
@@ -19646,6 +19646,90 @@
       "created_at": "2026-10-08T13:57:06.884Z",
       "updated_at": "2026-10-08T13:57:06.884Z",
       "published_at": "2026-10-08T17:10:29+03:30",
+      "status": "published",
+      "ai_managed": false,
+      "generated_by": "internal-republish-v1",
+      "manual_locked": false
+    },
+    "article-f4de2106d8ff09b1": {
+      "id": "article-f4de2106d8ff09b1",
+      "title": "ببینید؛ گل اول استقلال به تراکتور توسط سحرخیزان دقیقه 28",
+      "summary": "اولین گل استقلال در دقیقه ۲۸ توسط سعید سحرخیزان وارد دروازه بیرانوند شد",
+      "content": "۱۷:۳۶ -\n\n۱۶ مهر ۱۴۰۵\n\nببینید؛ گل اول استقلال به تراکتور توسط سحرخیزان دقیقه ۲۸\n\nاولین گل استقلال در دقیقه ۲۸ توسط سعید سحرخیزان وارد دروازه بیرانوند شد\n\nپ\n\n،\n\nپـ\n\nتبلیغات\n\nتبلیغات\n\nتبلیغات\n\nva NewsLis Limi = 5;\n\nاز میان اخبار\n\nببینید؛ گل اول استقلال به تراکتور توسط سحرخیزان دقیقه ۲۸\n\nساعت بازی پرسپولیس مقابل صنعت نفت آبادان /هفته هشتم\n\nواکنش تارتار به شایعه حضور اورونوف در استقلال\n\nداستان عجیب علیرضا بیرانوند قبل از بازی حساس تراکتور - استقلال\n\nشما قبلا این خبر را لایک کرده‌اید .\n\nfunc ion oPe sianNumbe (numbe ) {\n\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\n\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\n\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\n\nelemen .addEven Lis ene (\"click\", func ion() {\n\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n\n. hen(func ion( esponse) {\n\nif ( esponse.s a us == 200) {\n\nesponse.json(). hen(func ion(newSco e) {\n\nva likeNumbe Span = elemen .que ySelec o (\".like\");\n\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\n\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\n\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\n\nva hiddenHea = elemen .que ySelec o (\".hidden\");\n\nvisibleHea .classLis .add(\"hidden\");\n\nfavo i eBu on.classLis .add(\"hidden\");\n\nhiddenHea .classLis . emove(\"hidden\");\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}\n\n});\n\n} else {\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis .add(\"hidden_e o \");\n\nse Timeou (func ion() {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}, 3000);\n\n}\n\n}\n\n})\n\n});\n\n});\n\nتبلیغات",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "topics": [
+        "economy"
+      ],
+      "group_id": "local-5fe64cf9ba47",
+      "original_news_id": "dce21fb8ba1c7d271502",
+      "source_ids": [],
+      "sources": [
+        {
+          "name": "فرارو",
+          "url": "https://fararu.com/fa/news/1008279/%D8%A8%D8%A8%DB%8C%D9%86%DB%8C%D8%AF-%DA%AF%D9%84-%D8%A7%D9%88%D9%84-%D8%A7%D8%B3%D8%AA%D9%82%D9%84%D8%A7%D9%84-%D8%A8%D9%87-%D8%AA%D8%B1%D8%A7%DA%A9%D8%AA%D9%88%D8%B1-%D8%AA%D9%88%D8%B3%D8%B7-%D8%B3%D8%AD%D8%B1%D8%AE%DB%8C%D8%B2%D8%A7%D9%86-%D8%AF%D9%82%DB%8C%D9%82%D9%87-28"
+        }
+      ],
+      "image": "https://mcdn.fararu.com/ao/1a11bd59f6b_45f1f9.webp",
+      "importance_score": 0,
+      "created_at": "2026-10-08T14:12:38.092Z",
+      "updated_at": "2026-10-08T14:12:38.092Z",
+      "published_at": "2026-10-08T17:36:24+03:30",
+      "status": "published",
+      "ai_managed": false,
+      "generated_by": "internal-republish-v1",
+      "manual_locked": false
+    },
+    "article-53456974ced76e83": {
+      "id": "article-53456974ced76e83",
+      "title": "کالابرگ جدید در مهرماه به صورت جداگانه پرداخت خواهد شد",
+      "summary": "سازمان برنامه و بودجه از پرداخت رقم جدید کالابرگ در ماه جاری خبر داد.",
+      "content": "۱۷:۲۰ -\n\n۱۶ مهر ۱۴۰۵\n\nسازمان برنامه و بودجه:\n\nکالابرگ جدید در مهرماه به صورت جداگانه پرداخت خواهد شد\n\nسازمان برنامه و بودجه از پرداخت رقم جدید کالابرگ در ماه جاری خبر داد.\n\nپ\n\n،\n\nپـ\n\nروابط عمومی، امور بین‌الملل و مدیریت دانش سازمان برنامه و بودجه کشور، با صدور اطلاعیه‌ای اعلام کرد: فرآیندهای مربوط به کالابرگ جدید برای حدود ۴۰ میلیون نفر در حال انجام است.\n\nدر ادامه این اطلاعیه آمده است: با تکمیل مراحل اجرایی، اعتبار مربوطه در مهرماه به‌صورت جداگانه پرداخت خواهد شد.\n\nva NewsLis Limi = 5;\n\nاز میان اخبار\n\nکالابرگ جدید در مهرماه به صورت جداگانه پرداخت خواهد شد\n\nمزدا CX-۹۰؛ قوی‌ترین شاسی‌بلند مزدا چه آپشن‌هایی دارد؟\n\nهاوال H۷ مکس؛ محصول جدید بهمن موتور چه مشخصاتی دارد؟\n\nکدام استان‌ها بیشترین تورم را در شهریور تجربه کردند؟\n\nشما قبلا این خبر را لایک کرده‌اید .\n\nfunc ion oPe sianNumbe (numbe ) {\n\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\n\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\n\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\n\nelemen .addEven Lis ene (\"click\", func ion() {\n\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n\n. hen(func ion( esponse) {\n\nif ( esponse.s a us == 200) {\n\nesponse.json(). hen(func ion(newSco e) {\n\nva likeNumbe Span = elemen .que ySelec o (\".like\");\n\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\n\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\n\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\n\nva hiddenHea = elemen .que ySelec o (\".hidden\");\n\nvisibleHea .classLis .add(\"hidden\");\n\nfavo i eBu on.classLis .add(\"hidden\");\n\nhiddenHea .classLis . emove(\"hidden\");\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}\n\n});\n\n} else {\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis .add(\"hidden_e o \");\n\nse Timeou (func ion() {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}, 3000);\n\n}\n\n}\n\n})\n\n});\n\n});",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "topics": [
+        "economy"
+      ],
+      "group_id": "local-3ea104ad8a29",
+      "original_news_id": "de6ccc30c248f06a6d3b",
+      "source_ids": [],
+      "sources": [
+        {
+          "name": "فرارو",
+          "url": "https://fararu.com/fa/news/1008277/%DA%A9%D8%A7%D9%84%D8%A7%D8%A8%D8%B1%DA%AF-%D8%AC%D8%AF%DB%8C%D8%AF-%D8%AF%D8%B1-%D9%85%D9%87%D8%B1%D9%85%D8%A7%D9%87-%D8%A8%D9%87-%D8%B5%D9%88%D8%B1%D8%AA-%D8%AC%D8%AF%D8%A7%DA%AF%D8%A7%D9%86%D9%87-%D9%BE%D8%B1%D8%AF%D8%A7%D8%AE%D8%AA-%D8%AE%D9%88%D8%A7%D9%87%D8%AF-%D8%B4%D8%AF"
+        }
+      ],
+      "image": "https://cdn.fararu.com/thumbnail/4moznhQaH1u0/1e3u3qR26XwiEIF0swZEmEV7WZDqHwXvqpEGvoqnjH_uwf3K2qpAEaZPLC9ag70Lh5mR45qfewWzoJySHcPwPtlGWVTP7nX1Q5kYxHafSW6TbKBPRd4KeH4KvZ6Qkzav/%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86+%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87+%D9%88+%D8%A8%D9%88%D8%AF%D8%AC%D9%87.jpg",
+      "importance_score": 0,
+      "created_at": "2026-10-08T14:12:38.092Z",
+      "updated_at": "2026-10-08T14:12:38.092Z",
+      "published_at": "2026-10-08T17:20:04+03:30",
+      "status": "published",
+      "ai_managed": false,
+      "generated_by": "internal-republish-v1",
+      "manual_locked": false
+    },
+    "article-0074552f5568107a": {
+      "id": "article-0074552f5568107a",
+      "title": "راز ابر عظیمی که هر صبح در مریخ ظاهر می‌شود/ ابر ۱۸۰۰ کیلومتری آرسیا مانس در سیاره سرخ",
+      "summary": "دانشمندان یک قدم به کشف راز یکی از عجیب‌ترین ابرهای مریخ نزدیک‌تر شده‌اند. ابری که صبح ظاهر می‌شود، تا حدود هزار و ۸۰۰ کیلومتر امتداد پیدا می‌کند و چند ساعت بعد کاملا ناپدید می‌شود.",
+      "content": "۱۷:۱۰ -\n\n۱۶ مهر ۱۴۰۵\n\nراز ابر عظیمی که هر صبح در مریخ ظاهر می‌شود/ ابر ۱۸۰۰ کیلومتری آرسیا مانس در سیاره سرخ\n\nدانشمندان یک قدم به کشف راز یکی از عجیب‌ترین ابرهای مریخ نزدیک‌تر شده‌اند. ابری که صبح ظاهر می‌شود، تا حدود هزار و ۸۰۰ کیلومتر امتداد پیدا می‌کند و چند ساعت بعد کاملا ناپدید می‌شود.\n\nپ\n\n،\n\nپـ\n\nتبلیغات\n\nتبلیغات\n\nابری مریخی به طول ۱۶۰۰ کیلومتر (۱۰۰۰ مایل) که تقریباً هر روز از آسمان سیاره سرخ پدیدار و سپس به سرعت ناپدید می‌شود، حتی عجیب‌تر از آن چیزی است که دانشمندان تصور می‌کردند. شبیه‌سازی‌های جدید نشان می‌دهد که این پدیده وهم‌آور را تنها می‌توان با استفاده از «فیزیک عجیب و غریب» که به صورت تئوری مطرح شده‌اند اما هرگز روی زمین یا هیچ جای دیگری در منظومه شمسی دیده نشده‌اند، توضیح داد.\n\nیک آتشفشان خاموش به ارتفاع ۲۰ کیلومتر (۱۲ مایل) واقع در منطقه تارسیس، درست در جنوب خط استوای سیاره سرخ، پدیدار می‌شود. این ابر بخار آب اولین بار در سال ۲۰۱۸ توسط مدارگرد مارس اکسپرس آژانس فضایی اروپا مشاهده شد و از آن زمان تقریباً هر روز صبح در طول بهار و تابستان مریخ، زمانی که افزایش تابش خورشیدی باعث ایجاد بادهای شدید سطحی می‌شود، ظاهر شده است. اما این ابر فقط چند ساعت در هر روز دوام می‌آورد و سپس به طور کامل تبخیر می‌شود.\n\nطول AMEC می‌تواند به ۱۱۰۰ مایل (۱۸۰۰ کیلومتر) برسد که تقریباً یک‌دوازدهمِ محیط کره مریخ است. برای مقایسه، این مسافت تقریباً دو برابر طول بریتانیا یا معادل فاصله میان شهرهای نیویورک و میامی است.\n\nاگرچه سیاره سرخ با ابرهای غبار غول‌پیکر و گاهی اوقات «رگه‌های رنگین‌کمانی» دی‌اکسید کربن غریبه نیست، اما تقریباً کاملاً عاری از بخار آب جوی است. این امر تشکیل ابرهای پف‌کرده و شبیه زمین را در آنجا بسیار نادر می‌کند، چه برسد به ابرهای بسیار وسیع. در نتیجه، دانشمندان برای توضیح این آب و هوای عجیب و غریب تلاش کرده‌اند.\n\nاما در یک مطالعه جدید که روز چهارشنبه (۷ اکتبر) در مجله Na u e Geoscience منتشر شد، محققان از داده‌های Ma s Exp ess برای ایجاد شبیه‌سازی‌های جدید در تلاش برای توضیح نهایی AMEC استفاده کردند. در ابتدا، این تیم برای بازآفرینی این پدیده گیج‌کننده تلاش کرد. اما وقتی اصول هواشناسی سنتی را به نفع توضیحی غیرمعمول‌تر کنار گذاشتند، در نهایت موفق شدند.\n\nخورخه هرناندز-برنال، نویسنده اصلی این پژوهش و دانشمند علوم سیاره‌ای در دانشگاه «باسک» اسپانیا (که در زمان انجام مطالعه با دانشگاه سوربن پاریس همکاری می‌کرد)، در بیانیه‌ای گفت: «برای ایجاد پدیده AMEC در مدل‌سازی‌مان، دریافتیم که باید برخی مباحث فیزیکی غیرمعمول را در نظر بگیریم؛ مباحثی که اگرچه در کتاب‌های درسی آمده‌اند، اما ماهیتی صرفاً نظری دارند و معمولاً تصور می‌شود که در طبیعت رخ نمی‌دهند. با این حال، به محض اینکه این مفاهیم فیزیکی را در شبیه‌سازی‌های خود گنجاندیم، پدیده AMEC دقیقاً همان‌طور که انتظار داشتیم، پدیدار شد.»\n\nکاملاً غیرمنتظره\n\nپدیده AMEC نوعی ابر «اوروگرافیک» (کوه-زاد) است؛ بدین معنا که بر اثر رانده شدن بخار آب توسط بادهای شدید به سمت بالا و عبور آن از روی یک عارضه مرتفع، مانند کوه، شکل می‌گیرد. ابرهای مشابهی نیز در زمین وجود دارند، از جمله ابر «لوانتر» (Levan e ) که گاهی بر فراز صخره جبل‌الطارق در جنوب اروپا تشکیل می‌شود. با این حال، نمونه مریخی این پدیده را نمی‌توان با همان فرآیندهایی که در سیاره ما رخ می‌دهند، توضیح داد.\n\nدر زمین، ابرها طی فرآیندی به نام «هسته‌زایی ناهمگن» شکل می‌گیرند؛ در این فرآیند، هوای مرطوب سرد شده و به شکل کریستال‌های یخ درمی‌آید که حول ذرات ریز معلق در جو — مانند گرد و غبار، نمک، گرده گیاهان یا دوده — تشکیل می‌شوند. اما با وجود فراوانی گرد و غبار در جو مریخ، چنین اتفاقی در آنجا رخ نمی‌دهد.\n\nپژوهشگران این پدیده را «هسته‌زایی همگن» می‌نامند و می‌گویند که پیش از این، چنین فرآیندی در جو هیچ سیاره‌ای مشاهده نشده بود. هرناندز-برنال می‌افزاید: «این موضوع کاملاً غیرمنتظره است.»\n\nدانشمندان پیش‌تر پیش‌بینی کرده بودند که پدیده «هسته‌زایی همگن» (homogeneous nuclea ion) ممکن است در جو فوقانی زمین یا در آسمان سیاره ناهید (زهره) رخ دهد. با این حال، وقوع این پدیده بسیار بعید دانسته می‌شد، زیرا نیازمند سطوح رطوبتی است که تقریباً ۱۰۰ هزار برابر بیشتر از میزان رطوبت سطح سیاره ماست.\n\nبا توجه به اینکه مریخِ امروزی تقریباً فاقد آب است، شاید بعید به نظر برسد که میزان رطوبت آن بتواند به چنین سطوح بالایی برسد؛ اما داده‌های کاوشگر «مارس اکسپرس» (Ma s Exp ess) روایت متفاوتی را بیان می‌کنند.\n\nهنگامی که باد از دامنه‌های کوه «آرسیا مونس» (A sia Mons) — که ارتفاع آن بیش از دو برابر قله اورست است — بالا می‌رود، موجی قدرتمند ایجاد می‌کند که هوا را با سرعتی بسیار زیاد به لایه‌های بالایی جو پرتاب می‌کند. پژوهشگران محاسبه کرده‌اند که دمای این توده هوا می‌تواند تنها در عرض ۱۰ دقیقه تا ۵۴ درجه فارنهایت (۳۰ درجه سانتی‌گراد) کاهش یابد. نتایج شبیه‌سازی‌ها نشان می‌دهد که این افت دما نه تنها انجماد سریع هوا را تسهیل می‌کند، بلکه رطوبت درون موج را نیز به شدت افزایش می‌دهد و شرایط را برای وقوع هسته‌زایی همگن فراهم می‌سازد.\n\nاما منشأ این حجم از آب کجاست؟ به گفته پژوهشگران، بخشی از آن در جو موجود است، اما بخش دیگری احتمالاً از قله «آرسیا مونس» سرچشمه می‌گیرد؛ قله‌ای که با لایه‌ای ضخیم از یخ‌زدگی (شبنم یخ‌زده) پوشیده شده است.\n\nیک موفقیت بزرگ\n\nشبیه‌سازی‌های جدید گامی بزرگ در جهت درک بهتر پدیده AMEC و به‌طور کلی هواشناسی مریخ محسوب می‌شوند.\n\nهرناندز-برنال (He nández-Be nal) گفت: ما اطلاعاتی درباره جو مریخ نداریم که حتی نزدیک به حجم اطلاعاتمان درباره جو زمین باشد؛ بنابراین، بازسازی پدیده AMEC با این دقت و جزئیات، موفقیتی بزرگ برای این مدل به شمار می‌رود.\n\nدستیابی به این یافته‌ها بدون وجود مدارگرد «مارس اکسپرس» (Ma s Exp ess) امکان‌پذیر نبود؛ کاوشگری که با بهره‌گیری از سه ابزار — شامل دوربین پایش بصری (VMC)، دوربین استریوی با وضوح بالا (HRSC) و ابزار OMEGA — چگونگی شکل‌گیری و تحول روزانه‌ی پدیده‌ی AMEC را نقشه‌برداری کرد. این فضاپیما همچنین یکی از معدود کاوشگرهای مریخ است که می‌تواند «آرسیا مونس» (A sia Mons) را در روشنایی روز مشاهده کند.\n\nکالین ویلسون، دانشمند پروژه «مارس اکسپرس» (Ma s Exp ess) که در این مطالعه جدید مشارکت نداشته است، در بیانیه‌ای گفت: فضاپیمای مارس اکسپرس پدیده AMEC را کشف کرد، سال‌ها آن را زیر نظر داشت و اکنون به آشکار شدن اسرار شکل‌گیری آن کمک می‌کند.\n\nاین کشف همچنین یادآور آن است که با وجود اشتراک در اصول بنیادین، رفتار سامانه‌های آب‌وهوایی در سایر جهان‌ها با آنچه در زمین می‌بینیم متفاوت است؛ موضوعی که می‌تواند پیامدهای مهمی برای کاوش در منظومه شمسی و جستجوی حیات فرازمینی در سیارات دوردست (سیارات فراخورشیدی) داشته باشد.\n\nویلسون افزود: اگرچه به نظر می‌رسد ابرها در زمین و مریخ از «قوانین» یکسانی پیروی می‌کنند، اما درک این ابر عجیب مریخی نیازمند فیزیکی متفاوت و خاص بود؛ و این مسئله ممکن است در سایر نقاط کیهان نیز صدق کند.\n\nتبلیغات\n\nva NewsLis Limi = 5;\n\nاز میان اخبار\n\nراز ابر عظیمی که هر صبح در مریخ ظاهر می‌شود/ ابر ۱۸۰۰ کیلومتری آرسیا مانس در سیاره سرخ\n\nراز طول عمر زنان در یک شهرک ایتالیایی\n\nآیا می‌توان پیری را مثل بیماری درمان کرد؟\n\nنزدیک‌ترین فاصله‌ی یک جرم به خورشید تا کنون چقدر بوده است؟\n\nشما قبلا این خبر را لایک کرده‌اید .\n\nfunc ion oPe sianNumbe (numbe ) {\n\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\n\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\n\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\n\nelemen .addEven Lis ene (\"click\", func ion() {\n\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n\n. hen(func ion( esponse) {\n\nif ( esponse.s a us == 200) {\n\nesponse.json(). hen(func ion(newSco e) {\n\nva likeNumbe Span = elemen .que ySelec o (\".like\");\n\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\n\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\n\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\n\nva hiddenHea = elemen .que ySelec o (\".hidden\");\n\nvisibleHea .classLis .add(\"hidden\");\n\nfavo i eBu on.classLis .add(\"hidden\");\n\nhiddenHea .classLis . emove(\"hidden\");\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}\n\n});\n\n} else {\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis .add(\"hidden_e o \");\n\nse Timeou (func ion() {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}, 3000);\n\n}\n\n}\n\n})\n\n});\n\n});\n\nتبلیغات",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "topics": [
+        "science-life"
+      ],
+      "group_id": "local-85474078d0d6",
+      "original_news_id": "d576f9016264e977bee3",
+      "source_ids": [],
+      "sources": [
+        {
+          "name": "فرارو",
+          "url": "https://fararu.com/fa/news/1008275/%D8%B1%D8%A7%D8%B2-%D8%A7%D8%A8%D8%B1-%D8%B9%D8%B8%DB%8C%D9%85%DB%8C-%DA%A9%D9%87-%D9%87%D8%B1-%D8%B5%D8%A8%D8%AD-%D8%AF%D8%B1-%D9%85%D8%B1%DB%8C%D8%AE-%D8%B8%D8%A7%D9%87%D8%B1-%D9%85%DB%8C-%D8%B4%D9%88%D8%AF-%D8%A7%D8%A8%D8%B1-%DA%A9%DB%8C%D9%84%D9%88%D9%85%D8%AA%D8%B1%DB%8C-%D8%A2%D8%B1%D8%B3%DB%8C%D8%A7-%D9%85%D8%A7%D9%86%D8%B3-%D8%AF%D8%B1-%D8%B3%DB%8C%D8%A7%D8%B1%D9%87-%D8%B3%D8%B1%D8%AE"
+        }
+      ],
+      "image": "https://mcdn.fararu.com/ao/1a11bbc0195_5f97cb.webp",
+      "importance_score": 0,
+      "created_at": "2026-10-08T14:12:38.092Z",
+      "updated_at": "2026-10-08T14:12:38.092Z",
+      "published_at": "2026-10-08T17:10:00+03:30",
       "status": "published",
       "ai_managed": false,
       "generated_by": "internal-republish-v1",
