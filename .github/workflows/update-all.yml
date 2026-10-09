@@ -38,12 +38,39 @@ jobs:
         run: node market-data/fetch-nobitex.js
       - name: Commit collected news
         run: |
+          set -e
           git config user.name "evrenexus-update-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/news.json market-data/tgju.json market-data/nobitex.json
-          if git diff --cached --quiet; then echo "No news changes."; exit 0; fi
-          git commit -m "Update collected news"
-          git push origin HEAD:main
+
+          # Other scheduled workflows may update main at the same time.
+          # If a push loses that race, refresh from main and regenerate the
+          # data before retrying so concurrent market-data updates are kept.
+          for attempt in 1 2 3 4 5; do
+            git add data/news.json market-data/tgju.json market-data/nobitex.json
+            if git diff --cached --quiet; then
+              echo "No news or market-data changes."
+              exit 0
+            fi
+
+            git commit -m "Update collected news"
+            if git push origin HEAD:main; then
+              echo "Collected news and market data committed successfully."
+              exit 0
+            fi
+
+            if [ "$attempt" -eq 5 ]; then
+              echo "Push failed after 5 attempts."
+              exit 1
+            fi
+
+            echo "Push race detected; refreshing main and regenerating data (attempt $attempt/5)."
+            git fetch origin main
+            git reset --hard origin/main
+            python3 scripts/news_collector.py
+            node market-data/fetch-tgju.js
+            node market-data/fetch-nobitex.js
+            sleep $((attempt * 3))
+          done
 
   ai-analysis:
     name: AI analysis (non-blocking)
