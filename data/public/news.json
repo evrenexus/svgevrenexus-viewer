@@ -1,6 +1,136 @@
 {
-  "updated": "2026-10-09T14:09:12.578832+00:00",
+  "updated": "2026-10-09T14:31:35.583846+00:00",
   "items": [
+    {
+      "id": "0d5ce4b61682ebd1f8c6",
+      "title": "اردوغان: تلاش‌ها برای بازگشایی تنگه هرمز ناکام ماند",
+      "summary": "رئیس‌جمهور ترکیه با ابراز تأسف از ناکامی تلاش‌های چندماهه برای بازگشایی تنگه هرمز، از کاهش کارآمدی توافق‌های بین‌المللی و اجرا نشدن احکام دادگاه‌های جهانی انتقاد کرد.",
+      "content": "۱۷:۵۱ - \n۱۷ مهر ۱۴۰۵ \n\nاردوغان: تلاش‌ها برای بازگشایی تنگه هرمز ناکام ماند \n\nرئیس‌جمهور ترکیه با ابراز تأسف از ناکامی تلاش‌های چندماهه برای بازگشایی تنگه هرمز، از کاهش کارآمدی توافق‌های بین‌المللی و اجرا نشدن احکام دادگاه‌های جهانی انتقاد کرد. \n\nپ\n\n،\n\nپـ\n\nرجب طیب اردوغان،  رئیس‌جمهور ترکیه، روز جمعه ۱۷ مهرماه در سخنان خود در اجلاس بین‌المللی عدالت در استانبول، از ناکامی تلاش‌ها برای پایان دادن به اختلال در تنگه هرمز ابراز تأسف کرد.\nاما به نتیجه مورد انتظار نرسیده است.\n\r\n\r\n\nرئیس‌جمهور ترکیه در بخش دیگری از سخنان خود از عملکرد نظام بین‌المللی نیز انتقاد کرد و به تحولات غزه پرداخت.\n\r\n\nva NewsLis Limi = 5;\n\nاز میان اخبار \n\nاردوغان: تلاش‌ها برای بازگشایی تنگه هرمز ناکام ماند \n\nبقائی: چرا بازدارندگی هسته‌ای برای فرانسه حق است، اما برای ایران تهدید؟ \n\nعراقچی به لاوروف: سه جزیره ایرانی در قلب من هستند! \n\nتریتا پارسی: بعید می‌دانم جنگ سوم از جنس جنگ اول و دوم آمریکا باشد که به بن‌بست خورد \n\nشما قبلا این خبر را لایک کرده‌اید . \n\nfunc ion oPe sianNumbe (numbe ) {\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\nelemen .addEven Lis ene (\"click\", func ion() {\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n. hen(func ion( esponse) {\nif ( esponse.s a us == 200) {\nesponse.json(). hen(func ion(newSco e) {\nva likeNumbe Span = elemen .que ySelec o (\".like\");\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\nva hiddenHea = elemen .que ySelec o (\".hidden\");\nvisibleHea .classLis .add(\"hidden\");\nfavo i eBu on.classLis .add(\"hidden\");\nhiddenHea .classLis . emove(\"hidden\");\nva e o Message = elemen .que ySelec o (\".e o _message\");\nif (e o Message) {\ne o Message.classLis . emove(\"hidden_e o \");\n}\n});\n} else {\nva e o Message = elemen .que ySelec o (\".e o _message\");\nif (e o Message) {\ne o Message.classLis .add(\"hidden_e o \");\nse Timeou (func ion() {\ne o Message.classLis . emove(\"hidden_e o \");\n}, 3000);\n}\n}\n})\n});\n});",
+      "url": "https://fararu.com/fa/news/1008492/%D8%A7%D8%B1%D8%AF%D9%88%D8%BA%D8%A7%D9%86-%D8%AA%D9%84%D8%A7%D8%B4-%D9%87%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%A8%D8%A7%D8%B2%DA%AF%D8%B4%D8%A7%DB%8C%DB%8C-%D8%AA%D9%86%DA%AF%D9%87-%D9%87%D8%B1%D9%85%D8%B2-%D9%86%D8%A7%DA%A9%D8%A7%D9%85-%D9%85%D8%A7%D9%86%D8%AF",
+      "image": "https://cdn.fararu.com/thumbnail/WZ9dCY5Pvfkx/MROx4jU41RZ_eiLIeeoUXQQR5sLDTnItUb8B3YI1hyorUzckXHOBV8C0RDNs8fyTQ8lTHUBpGuvwmh3DD39SXt5lO8-aEj4eWGOJad-BSt4mZ_JE7bzjV0krwrAN3pgc/%D8%B1%D8%AC%D8%A8+%D8%B7%DB%8C%D8%A8+%D8%A7%D8%B1%D8%AF%D9%88%D8%BA%D8%A7%D9%86.jpg",
+      "source": "فرارو",
+      "source_site": "https://fararu.com/",
+      "allow_internal_republish": true,
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "published": "2026-10-09T17:51:48+03:30",
+      "topics": [
+        "economy"
+      ],
+      "importance_score": 0,
+      "important": false
+    },
+    {
+      "id": "9e61a5d7dd732aca3dea",
+      "title": "میرسلیم: تیبا با خودروهای خارجی قابلیت رقابت دارد/ لگن بودن خودروها مغلطه است/ با میرحسین موسوی رابطه‌ام خیلی صمیمانه نبود",
+      "summary": "عضو مجمع تشخیص مصلحت نظام گفت: معتقدم واردات خودرو باید در حد یک یا دو در هزار باشد؛ آن‌هم برای اینکه ببینیم چه ابتکاراتی در دنیای صنعت خودرو انجام دهیم.",
+      "content": "میرسلیم: تیبا با خودروهای خارجی قابلیت رقابت دارد/ لگن بودن خودروها مغلطه است/ با میرحسین موسوی رابطه‌ام خیلی صمیمانه نبود \n\nسایت خوان روزنامه دنیای اقتصاد \n\nتاریخ انتشار : \n\n۱۴۰۵/۰۷/۱۷ ۱۷:۵۰ \n\nشماره خبر : \n\n۴۳۰۰۶۴۳ \n\nعضو مجمع تشخیص مصلحت نظام گفت: معتقدم واردات خودرو باید در حد یک یا دو در هزار باشد؛ آن‌هم برای اینکه ببینیم چه ابتکاراتی در دنیای صنعت خودرو انجام دهیم. \n\nمصطفی میرسلیم، عضو مجمع تشخیص مصلحت نظام  با انتقاد از اظهارات کارشناسان درباره نقش خودروها در افزایش آمار تصادفات و تلفات جاده‌ای، این دیدگاه را اشتباه دانست و گفت نمی‌توان بخش عمده حوادث را به خودروها نسبت داد.\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\nمیرسلیم با اشاره به قیمت سوخت در ایران، معتقد است تا زمانی که بنزین با قیمت پایین عرضه می‌شود، نمی‌توان انتظار داشت مردم به سمت خرید خودروهای گران‌تر بروند. او همچنین با رد انتقادها درباره کیفیت خودروهای داخلی و ارتباط آن با تلفات جاده‌ای، تأکید کرد که نحوه رانندگی و شرایط نامناسب رانندگی از عوامل وقوع این حوادث است.\n\r\n\r\n\nمصطفی میرسلیم به خبرفوری گفت: خودروهایی داریم که با خودروهای خارجی قابلیت رقابت دارند مانند تیبا. البته از نظر قیمتی قابلیت رقابت دارند، اما از نظر فنی پیشرفت نکرده چون توجیه اقتصادی پیدا نکرده است.\n\r\n\r\n\nروایت مصطفی میرسلیم از پشت‌پرده اختلافات رهبر شهید و میرحسین موسوی/ اختلافاتی که از اقتصاد آغاز شد و به سیاست رسید\n\r\n\r\n\nوی ادامه داد: با میرحسین موسوی رابطه‌ام خیلی صمیمانه نبود.\n\r\n\r\n\nمیرسلیم گفت: در شورای مرکزی حزب، دوستان مرا به عنوان نامزد نخست‌وزیری معرفی کردند. یکی از مخالفان میرحسین موسوی بود و دوستان ایشان هم بعد در مجلس مخالفت کردند.\n\r\n\r\n\n عضو مجمع تشخیص مصلحت نظام ادامه داد: مهندس موسوی معتقد بود کارهای اقتصادی باید در اختیار دولت باشد و ارایه امور اقتصادی کشور را کامل در دست گرفت.\n\r\n\r\n\nاعتقاد مرحوم خامنه‌ای هم این بود که مردم نباید کنار گذاشته شوند. میرحسین موسوی کسانی را که به این موضوع اعتقاد نداشتند از دولت کنار گذاشت مانند آقای عسگر اولادی.\n\r\n\r\n\r\n\r\n  \r\n\r\n\r\n\r\n  \r\n\r\n\r\n\r\n\nبخش\n\nسایت‌خوان،\n\nصرفا بازتاب‌دهنده اخبار رسانه‌های رسمی کشور است.\n\n-->\n\ndocumen .addEven Lis ene ('DOMCon en Loaded', func ion() {\ncons sha eBu on = documen .que ySelec o ('.news_sha e_bu on');\n\nif (!sha eBu on) e u n;\n\nif (!naviga o .sha e) {\nconsole.log('Web Sha e API no suppo ed in his b owse . Hiding he bu on.');\nsha eBu on.s yle.display = 'none';\ne u n;\n}\n\nsha eBu on.addEven Lis ene ('click', async () => {\ny {\ncons sha eDa a = {\ni le: \" u0645 u06cc u0631 u0633 u0644 u06cc u0645: u062a u06cc u0628 u0627 u0628 u0627 u062e u0648 u062f u0631 u0648 u0647 u0627 u06cc u062e u0627 u0631 u062c u06cc u0642 u0627 u0628 u0644 u06cc u062a u0631 u0642 u0627 u0628 u062a u062f u0627 u0631 u062f / u0644 u06af u0646 u0628 u0648 u062f u0646 u062e u0648 u062f u0631 u0648 u0647 u0627 u0645 u063a u0644 u0637 u0647 u0627 u0633 u062a / u0628 u0627 u0645 u06cc u0631 u062d u0633 u06cc u0646 u0645 u0648 u0633 u0648 u06cc u0631 u0627 u0628 u0637 u0647 u200c u0627 u0645 u062e u06cc u0644 u06cc u0635 u0645 u06cc u0645 u0627 u0646 u0647 u0646 u0628 u0648 u062f\",\nex : \" u0639 u0636 u0648 u0645 u062c u0645 u0639 u062a u0634 u062e u06cc u0635 u0645 u0635 u0644 u062d u062a u0646 u0638 u0627 u0645 u06af u0641 u062a: u0645 u0639 u062a u0642 u062f u0645 u0648 u0627 u0631 u062f u0627 u062a u062e u0648 u062f u0631 u0648 u0628 u0627 u06cc u062f u062f u0631 u062d u062f u06cc u06a9 u06cc u0627 u062f u0648 u062f u0631 u0647 u0632 u0627 u0631 u0628 u0627 u0634 u062f u061b u0622 u0646 u200c u0647 u0645 u0628 u0631 u0627 u06cc u0627 u06cc u0646 u06a9 u0647 u0628 u0628 u06cc u0646 u06cc u0645 u0686 u0647 u0627 u0628 u062a u06a9 u0627 u0631 u0627 u062a u06cc u062f u0631 u062f u0646 u06cc u0627 u06cc u0635 u0646 u0639 u062a u062e u0648 u062f u0631 u0648 u0627 u0646 u062c u0627 u0645 u062f u0647 u06cc u0645.\",\nu l: \"h ps: / /donya-e-eq esad.com /fa / iny /news-4300643\" };\n\nawai naviga o .sha e(sha eDa a);\nconsole.log('Con en sha ed successfully!');\n} ca ch (e o ) {\nif (e o .name !== 'Abo E o ') {\nconsole.e o ('E o sha ing con en :', e o );\n}\n}\n});\n});\n\nاخبار مرتبط \n\nانتقاد نماینده مجلس از تعلل در واردات خودرو \n\nصنعت خودرو در تله مونتاژ؟ \n\nپارادایم شیفت بازار خودرو \n\nماه واردات خودرو \n\nدومینوی صادرات صوری‌، این بار در خودرو",
+      "url": "https://donya-e-eqtesad.com/%D8%A8%D8%AE%D8%B4-%D8%B3%D8%A7%DB%8C%D8%AA-%D8%AE%D9%88%D8%A7%D9%86-62/4300643-%D9%85%DB%8C%D8%B1%D8%B3%D9%84%DB%8C%D9%85-%D8%AA%DB%8C%D8%A8%D8%A7-%D8%A8%D8%A7-%D8%AE%D9%88%D8%AF%D8%B1%D9%88%D9%87%D8%A7%DB%8C-%D8%AE%D8%A7%D8%B1%D8%AC%DB%8C-%D9%82%D8%A7%D8%A8%D9%84%DB%8C%D8%AA-%D8%B1%D9%82%D8%A7%D8%A8%D8%AA-%D8%AF%D8%A7%D8%B1%D8%AF-%D9%84%DA%AF%D9%86-%D8%A8%D9%88%D8%AF%D9%86-%D8%AE%D9%88%D8%AF%D8%B1%D9%88%D9%87%D8%A7-%D9%85%D8%BA%D9%84%D8%B7%D9%87-%D8%A7%D8%B3%D8%AA-%D8%A8%D8%A7-%D9%85%DB%8C%D8%B1%D8%AD%D8%B3%DB%8C%D9%86-%D9%85%D9%88%D8%B3%D9%88%DB%8C-%D8%B1%D8%A7%D8%A8%D8%B7%D9%87-%D8%A7%D9%85-%D8%AE%DB%8C%D9%84%DB%8C-%D8%B5%D9%85%DB%8C%D9%85%D8%A7%D9%86%D9%87-%D9%86%D8%A8%D9%88%D8%AF",
+      "image": "https://cdn.donya-e-eqtesad.com/thumbnail/9greaAaAw1ET/QHn8O9nsSzT8qCU7RegsN6Pbb5v74eEtbKeSOh05RaYY6HL38kwrzEt7TZyzEhnm/%D9%85%D8%B5%D8%B7%D9%81%DB%8C+%D9%85%DB%8C%D8%B1%D8%B3%D9%84%DB%8C%D9%85+%2A.jpg",
+      "source": "دنیای اقتصاد",
+      "source_site": "https://donya-e-eqtesad.com/",
+      "allow_internal_republish": true,
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "published": "2026-10-09T17:50:05+03:30",
+      "topics": [
+        "auto"
+      ],
+      "importance_score": 0,
+      "important": false
+    },
+    {
+      "id": "73aa3ea4642633b5ba12",
+      "title": "فردای بازارها/ الگوی شکست ابرکانال‌های بورس",
+      "summary": "مجله هفتگی فردای بازارها- ۴۱ صفحه شنبه ۱۸ مهر - شماره ۲۰ مرجع فرصت‌های سرمایه‌گذاری",
+      "content": "h ps://fa dayeegh esad.com/xn J\n\n۱۷ مهر ۱۴۰۵ - ۱۷:۵۰\n\nکد مطلب 41831 \n\nفردای بازارها/ الگوی شکست ابرکانال‌های بورس \n\n۱۷ مهر ۱۴۰۵ - ۱۷:۵۰ \n\nمجله هفتگی فردای بازارها- ۴۱ صفحه\nشنبه ۱۸ مهر - شماره ۲۰\nمرجع فرصت‌های سرمایه‌گذاری\n\n▪️برای دریافت فایل هفتگی «فردای بازارها» اینجا کلیک کنید \n\n◻️الگوی شکست ابرکانال‌های بورس\n\n◻️پیام دماسنج رونق بورس\n\n◻️۱۶ نکته کلیدی این هفته در بازارها\n\n◻️ردیابی پول در سه گزینه بورسی\n\n◻️درجه هراس از سرعت بورس\n\n◻️سبقت بورس از پناهگاه طلا و ‌سکه\n\n◻️ردیابی پول حقیقی‌ در بازار سهام\n\n◻️مناطق پرسود برای اجاره‌داری\n\n◻️مقایسه سود اجاره تهران و دوبی\n\n◻️مشت بسته بانک مرکزی برای رانت\n\n◻️بدهی اقتصاد ایران زیاد است؟\n\n◻️تغییر الگوی خرید کالای خانگی\n\n✅پرونده هفته: دلار\n\n◻️هشدار همتی به خریداران دلار\n\n◻️شناسایی بدترین زمان خرید دلار\n\n◻️نرخ اقتصادی دلار در سه پارادایم\n\n◻️دو مغالطه در فروش دلار به مردم\n\n◻️پیام ناهمسویی تورم و نقدینگی\n\n◻️حراج هلندی یا دم اسب؟\n\n◻️پناهگاه ضدتورمی صندوق ارزی\n\n✅سیگنال‌های جهانی\n\n◻️شاخص آکسفورد علیه طلا\n\n◻️واکنش بازارها به عقبگرد ترامپ\n\n◻️۱۰ دلیل رکوردشکنی بهره جهانی\n\n◻️سبقت موتور انگلیسی طلا از چین\n\n◻️آزمون سخت طلا در اکتبر\n\n◻️خودنمایی حامی بزرگ طلا\n\n◻️بانک‌های مرکزی کی طلا می‌خرند؟\n\n◻️اثر هوش مصنوعی بر آینده طلا\n\n◻️دروغ قیمت‌ها در بازار نفت\n\n◻️آینده هرمز از نگاه سه مرجع نفتی\n\n◻️هشدار حباب در بورس آمریکا\n\n◻️برنده رالی بعدی طلا، نقره و مس\n\n◻️ضرر یک میلیاردی گاوهای بیت‌کوین\n\n✅مدرسه سرمایه‌گذاری\n\n◻️تله بزرگ کی بخرم کی بفروشم\n\n◻️سوگیری حسابداری ذهنی\n\n◻️با ۵۰۰ میلیون تومان چه بخریم\n\n◻️روند بازارها از نگاه خبرگان\n\n◻️فرصت‌های سرمایه‌گذاری این هفته\n\n🔗 مجله هفتگی «فردای بازارها» عصر هر جمعه منتشر می‌شود تا شما را برای تصمیمات بهتر در هفته بعدی آماده کند. بررسی روندهای آینده بازارهای مهم (اعم از طلا، سهام، دلار، مسکن و کریپتو) همراه با معرفی فرصت‌های سرمایه‌گذاری درهفته آتی از اهداف اصلی این مجله است. \n\nلینک کوتاه \n\nنام و نام خانوادگی \n\nآدرس ایمیل \n\nنظر شما * \n\n* لطفا عدد مقابل را در جعبه متن وارد کنید \n\nارسال",
+      "url": "https://www.fardayeeghtesad.com/news/41831/%D9%81%D8%B1%D8%AF%D8%A7%DB%8C-%D8%A8%D8%A7%D8%B2%D8%A7%D8%B1%D9%87%D8%A7-%D8%A7%D9%84%DA%AF%D9%88%DB%8C-%D8%B4%DA%A9%D8%B3%D8%AA-%D8%A7%D8%A8%D8%B1%DA%A9%D8%A7%D9%86%D8%A7%D9%84-%D9%87%D8%A7%DB%8C-%D8%A8%D9%88%D8%B1%D8%B3",
+      "image": "https://media.fardayeeghtesad.com/d/2026/10/09/4/38806.jpg",
+      "source": "فردای اقتصاد",
+      "source_site": "https://www.fardayeeghtesad.com/",
+      "allow_internal_republish": true,
+      "category": "بورس و بازار سرمایه",
+      "published": "2026-10-09T17:50:00+03:30",
+      "topics": [
+        "markets"
+      ],
+      "importance_score": 0,
+      "important": false
+    },
+    {
+      "id": "ba1bf65b767ba9ffa539",
+      "title": "شب‌زنده‌داری فقط به دیر بیدارشدن ختم نمی‌شود؛ هزینه اصلی شاید مربوط به شغل باشد",
+      "summary": "برای بعضی افراد، شب بهترین زمان برای تمرکز و انجام کارهای مهم است. درست وقتی دیگران آماده‌ی خواب می‌شوند، ذهن آن‌ها تازه به اوج هوشیاری می‌رسد. اما مشکل زمانی آغاز می‌شود که صبح زود باید از خواب بیدار شوند و با وجود خستگی، روز کاری خود را شروع کنند.",
+      "content": "",
+      "url": "https://www.entekhab.ir/fa/news/942806/شب-زنده-داری-فقط-به-دیر-بیدارشدن-ختم-نمی-شود-هزینه-اصلی-شاید-مربوط-به-شغل-باشد",
+      "image": "",
+      "source": "انتخاب",
+      "source_site": "https://www.entekhab.ir/",
+      "allow_internal_republish": true,
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "published": "2026-10-09T17:46:48+03:30",
+      "topics": [
+        "economy"
+      ],
+      "importance_score": 0,
+      "important": false,
+      "image_tries": 1
+    },
+    {
+      "id": "dbc7fe7d085eeb04b257",
+      "title": "نتایج مطالعه روی ۶ میلیون نفر: زنان در سراسر بدن خود بیشتر از مردان درد را تجربه می‌کنند",
+      "summary": "یک پژوهش جهانی که داده‌های بیش از ۶ میلیون نفر از ۱۱۸ کشور را بررسی کرده است، نشان می‌دهد زنان در تمام نواحی بدن خود درد بیشتری نسبت به مردان گزارش می‌کنند. این تفاوت به‌ویژه در سردرد، درد صورت و درد شکمی دیده می‌شود و بیشترین افزایش درد در هر دو جنس پیش از ۵۵ سالگی رخ می‌دهد.",
+      "content": "",
+      "url": "https://www.entekhab.ir/fa/news/942805/نتایج-مطالعه-روی-6-میلیون-نفر-زنان-در-سراسر-بدن-خود-بیشتر-از-مردان-درد-را-تجربه-می-کنند",
+      "image": "",
+      "source": "انتخاب",
+      "source_site": "https://www.entekhab.ir/",
+      "allow_internal_republish": true,
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "published": "2026-10-09T17:46:33+03:30",
+      "topics": [
+        "science-life"
+      ],
+      "importance_score": 1,
+      "important": false,
+      "image_tries": 1
+    },
+    {
+      "id": "210cf6007c9a77b64d85",
+      "title": "فناوری الهام‌گرفته از چاپ سه‌بعدی: راهی نو برای تهیه داروهای شخصی‌سازی‌شده در بیمارستان‌ها و داروخانه‌ها",
+      "summary": "خلاصه سریع برای خواننده فناوری‌هایی برگرفته از چاپ سه‌بعدی اکنون در برخی بیمارستان‌ها و داروخانه‌های تخصصی برای تولید داروهای شخصی‌سازی‌شده به کار می‌روند. رساله دکتری ماهسا بهمن در دانشگاه Åbo Akademi نشان می‌دهد این رویکرد می‌تواند دقت دوز را بهتر کند و دسترسی به درمان‌های سفارشی را افزایش دهد. مز",
+      "content": "",
+      "url": "https://www.pezeshk-site.ir/2026/10/09/فناوری-الهامگرفته-از-چاپ-سهبعدی-را/",
+      "image": "",
+      "source": "پزشک سایت",
+      "source_site": "https://www.pezeshk-site.ir/",
+      "allow_internal_republish": true,
+      "category": "پزشکی و سلامت",
+      "published": "2026-10-09T17:38:04+03:30",
+      "topics": [
+        "health"
+      ],
+      "importance_score": 0,
+      "important": false,
+      "image_tries": 1
+    },
+    {
+      "id": "e7f5af3cd1b64ee7935f",
+      "title": "ظریف: روبیو آن‌قدر قدرت چشمانش را کور کرده که نمی‌تواند درک کند ایران چگونه مهاجمان را در فرهنگ غنی خود جذب و هضم کرده / ایران از امپراتوری رو به افول روبیو نیز بیشتر دوام خواهد آورد",
+      "summary": "ظریف در واکنش به اظهارات روبیو، وزیر خارجه امریکا تاکید کرد که روبیو آن‌قدر نادان است و قدرت چشمانش را کور کرده که نمی‌تواند درک کند ایران چگونه مهاجمان را در فرهنگ غنی خود جذب و هضم کرده است.",
+      "content": "",
+      "url": "https://www.entekhab.ir/fa/news/942804/ظریف-روبیو-آن-قدر-قدرت-چشمانش-را-کور-کرده-که-نمی-تواند-درک-کند-ایران-چگونه-مهاجمان-را-در-فرهنگ-غنی-خود-جذب-و-هضم-کرده-ایران-از-امپراتوری-رو-به-افول-روبیو-نیز-بیشتر-دوام-خواهد-آورد",
+      "image": "",
+      "source": "انتخاب",
+      "source_site": "https://www.entekhab.ir/",
+      "allow_internal_republish": true,
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "published": "2026-10-09T17:37:44+03:30",
+      "topics": [
+        "science-life"
+      ],
+      "importance_score": 0,
+      "important": false,
+      "image_tries": 1
+    },
     {
       "id": "a927c7fe3927b40165a5",
       "title": "دیدار پزشکیان با همتای ترکمنستانی خود + فیلم",
@@ -36,6 +166,25 @@
       ],
       "importance_score": 0,
       "important": false
+    },
+    {
+      "id": "774890636c75408e7d32",
+      "title": "ولی نصر، مشاور سابق اوباما: به نظر می‌رسد روبیو در حال طرح نسخهٔ دوم نظریهٔ «برخورد تمدن‌ها»ی هانتینگتون است / به‌جای تقابل اسلام و غرب، او تقابل تمدنی میان ایران و غرب را مطرح می‌کند؛ دوران اسلام‌هراسی در حال جایگزین شدن با «ایران‌هراسی» است",
+      "summary": "ولی نصر، مشاور سابق اوباما در واکنش به اظهارات وزیر خارجه امریکا نوشت: به نظر می‌رسد روبیو در حال طرح نسخهٔ دوم نظریهٔ «برخورد تمدن‌ها»ی هانتینگتون است. به‌جای تقابل اسلام و غرب، او تقابل تمدنی میان ایران و غرب را مطرح می‌کند. دوران اسلام‌هراسی در حال جایگزین شدن با «ایران‌هراسی» است.",
+      "content": "",
+      "url": "https://www.entekhab.ir/fa/news/942803/ولی-نصر-مشاور-سابق-اوباما-به-نظر-می-رسد-روبیو-در-حال-طرح-نسخه-دوم-نظریه-برخورد-تمدن-ها-ی-هانتینگتون-است-به-جای-تقابل-اسلام-و-غرب-او-تقابل-تمدنی-میان-ایران-و-غرب-را-مطرح-می-کند-دوران-اسلام-هراسی-در-حال-جایگزین-شدن-با-ایران-هراسی-است",
+      "image": "",
+      "source": "انتخاب",
+      "source_site": "https://www.entekhab.ir/",
+      "allow_internal_republish": true,
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "published": "2026-10-09T17:33:22+03:30",
+      "topics": [
+        "economy"
+      ],
+      "importance_score": 0,
+      "important": false,
+      "image_tries": 1
     },
     {
       "id": "a1d8a5d34c0e66a9f970",
@@ -1122,7 +1271,8 @@
         "economy"
       ],
       "importance_score": 0,
-      "important": false
+      "important": false,
+      "image_tries": 1
     },
     {
       "id": "aa86185af424c3c81a12",
@@ -1235,7 +1385,7 @@
       ],
       "importance_score": 0,
       "important": false,
-      "image_tries": 2
+      "image_tries": 3
     },
     {
       "id": "92d0c44b9c28475a818e",
@@ -1291,7 +1441,8 @@
         "economy"
       ],
       "importance_score": 0,
-      "important": false
+      "important": false,
+      "image_tries": 1
     },
     {
       "id": "31b465e64c038f0405dd",
@@ -1310,7 +1461,7 @@
       ],
       "importance_score": 0,
       "important": false,
-      "image_tries": 2
+      "image_tries": 3
     },
     {
       "id": "f19d82b1cfee726aebe2",
@@ -1329,7 +1480,7 @@
       ],
       "importance_score": 0,
       "important": false,
-      "image_tries": 1
+      "image_tries": 2
     },
     {
       "id": "d945f56ed09a420102c7",
@@ -1366,7 +1517,7 @@
       ],
       "importance_score": 0,
       "important": false,
-      "image_tries": 2
+      "image_tries": 3
     },
     {
       "id": "257279a75f896e8d1c80",
@@ -1393,7 +1544,7 @@
       "summary": "اقتصادنیوز: در مقابل قیمت نفت برنت، نرخ نفت اوپک نسبت به روز قبل افزایش یافته و از هر بشکه ۱۰۸.۵۹ دلار به ۱۰۹.۵ دلار رسیده است.",
       "content": "قیمت نفت کاهشی شد \n\nسرویس:\nاقتصادی \n\nکدخبر:\n۸۱۱۰۹۹ \n\n۱۴۰۵/۰۷/۱۷ - ۱۳:۵۴ \n\nاقتصادنیوز: در مقابل قیمت نفت برنت، نرخ نفت اوپک نسبت به روز قبل افزایش یافته و از هر بشکه ۱۰۸.۵۹ دلار به ۱۰۹.۵ دلار رسیده است. \nامروز جمعه ۱۷ مهر ۱۴۰۵ قیمت نفت برنت در بازار جهانی نسبت به روز گذشته تا حدودی کاهش یافت.\n\r\n\r\n\r\n\r\n\r\n\nروز گذشته (۱۶ مهر) هر بشکه نفت برنت به مبلغ ۱۰۴.۴۱۹ دلار معامله شد (البته با نوسان) در حالی که امروز (تا تنظیم گزارش) این قیمت ۱۰۳.۰۰۴ دلار است.\n\r\n\r\n\nدر مقابل قیمت نفت برنت، نرخ نفت اوپک نسبت به روز قبل افزایش یافته و از هر بشکه ۱۰۸.۵۹ دلار به ۱۰۹.۵ دلار رسیده است.\n\r\n\r\n\nنفت خام (WTI) نیز در این بازار روند کاهشی داشته است. در بازار معاملاتی قیمت نفت خام از ۹۱.۹۷۴ دلار به ۹۰.۵۲۲ دلار رسیده است. همچنین نفت کوره بدون تغییر محسوسی با نرخ ۴.۸۲۱۵ دلار در حال معامله است.\n\r\n\r\n\nامروز قیمت بنزین در بازار جهانی نیز ۳.۲۹۴۸ دلار بوده و گاز طبیعی با قیمت ۳.۱۲۷۶ دلار معامله می‌شود.\n\nکپی لینک کوتاه\n\nکپی شد \n\ndocumen .addEven Lis ene ('DOMCon en Loaded', func ion() {\ncons sha eBu on = documen .que ySelec o ('.news_sha e_bu on');\n\nif (!sha eBu on) e u n;\n\nif (!naviga o .sha e) {\nsha eBu on.s yle.display = 'none';\ne u n;\n}\n\nsha eBu on.addEven Lis ene ('click', async () => {\ny {\ncons sha eDa a = {\ni le: \" u0642 u06cc u0645 u062a u0646 u0641 u062a u06a9 u0627 u0647 u0634 u06cc u0634 u062f\",\nex : \" u0627 u0642 u062a u0635 u0627 u062f u0646 u06cc u0648 u0632: u062f u0631 u0645 u0642 u0627 u0628 u0644 u0642 u06cc u0645 u062a u0646 u0641 u062a u0628 u0631 u0646 u062a u060c u0646 u0631 u062e u0646 u0641 u062a u0627 u0648 u067e u06a9 u0646 u0633 u0628 u062a u0628 u0647 u0631 u0648 u0632 u0642 u0628 u0644 u0627 u0641 u0632 u0627 u06cc u0634 u06cc u0627 u0641 u062a u0647 u0648 u0627 u0632 u0647 u0631 u0628 u0634 u06a9 u0647 u06f1 u06f0 u06f8. u06f5 u06f9 u062f u0644 u0627 u0631 u0628 u0647 u06f1 u06f0 u06f9. u06f5 u062f u0644 u0627 u0631 u0631 u0633 u06cc u062f u0647 u0627 u0633 u062a.\",\nu l: \"h ps: / /www.egh esadnews.com /fa / iny /news-811099\" };\n\nawai naviga o .sha e(sha eDa a);\n} ca ch (e o ) {\nif (e o .name !== 'Abo E o ') {\nconsole.e o ('E o sha ing con en :', e o );\n}\n}\n});\n});\n\nva newsMas e IdFo Ra e = \"1866074\";",
       "url": "https://www.eghtesadnews.com/%D8%A8%D8%AE%D8%B4-%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF%DB%8C-67/811099-%D9%82%DB%8C%D9%85%D8%AA-%D9%86%D9%81%D8%AA-%DA%A9%D8%A7%D9%87%D8%B4%DB%8C-%D8%B4%D8%AF",
-      "image": "https://cdn.eghtesadnews.com/thumbnail/WEjSmI4qsPZI/_ZvL7j_22_IPwSX_CHc2vLj1b6EyEWgKjXFZeVVYz-H3ovNDKAgqQUZf-XigS8D7pHh5PYtXVWKPYaHAgAqm_0pE9ARQ88c6L4ja2Ds27ztRa3cLDwtVfG3jqr9xf-bng8_e-SQrqHMWWgx0hrDylTOpA0ymTupQzk5pqCvFQOXcnu6lpsZgKddVC5DTnKVr/1667794.jpg",
+      "image": "https://cdn.eghtesadnews.com/thumbnail/WEjSmI4qsPZI/m5CN-WLuRxpGpaineVGs6EXp-Aby4COD2UxtBIj0fMMQiUypVnXE5TontjwbB1YPcuhFnlMEP1nlPX30Et6O5pbNGWHzuwwe-YMg5LlPG2wUsyKToZDdf83PTimdYTknC15njTZpEdWGdqrr2JEnnCahP2moZWC_uLdgVHdou_QzaaxFMAZ4gyf0QN7jTVY6/1667794.jpg",
       "source": "اقتصادنیوز",
       "source_site": "https://www.eghtesadnews.com/",
       "allow_internal_republish": true,
@@ -1697,25 +1848,6 @@
       "allow_internal_republish": true,
       "category": "اقتصاد و سرمایه‌گذاری",
       "published": "2026-10-09T13:07:22+03:30",
-      "topics": [
-        "economy"
-      ],
-      "importance_score": 0,
-      "important": false,
-      "image_tries": 3
-    },
-    {
-      "id": "6330ec4e469f774350b3",
-      "title": "ابراز تأسف اردوغان از ناکامی تلاش‌ها برای بازگشایی تنگه هرمز",
-      "summary": "رجب طیب اردوغان، رئیس‌جمهور ترکیه، در سخنانی از ناکامی تلاش‌هایی که طی ماه‌های گذشته برای پایان دادن به اختلال در تنگه هرمز انجام شده است، ابراز تأسف کرد.",
-      "content": "",
-      "url": "https://www.entekhab.ir/fa/news/942776/ابراز-تأسف-اردوغان-از-ناکامی-تلاش-ها-برای-بازگشایی-تنگه-هرمز",
-      "image": "",
-      "source": "انتخاب",
-      "source_site": "https://www.entekhab.ir/",
-      "allow_internal_republish": true,
-      "category": "اقتصاد و سرمایه‌گذاری",
-      "published": "2026-10-09T13:05:47+03:30",
       "topics": [
         "economy"
       ],
@@ -5188,120 +5320,6 @@
       ],
       "importance_score": 0,
       "important": false
-    },
-    {
-      "id": "4f6142c89717292be452",
-      "title": "تصمیم بزرگ بیرانوند برای احتمال استقلالی شدن با جواب مرموز",
-      "summary": "علیرضا بیرانوند، دروازه‌بان تراکتور، پس از دیدار مقابل استقلال با انتقاد از وضعیت مدیریتی باشگاه، از پرداخت تنها هفت درصد از قراردادها خبر داد.",
-      "content": "۲۱:۰۹ - \n۱۶ مهر ۱۴۰۵ \n\nتصمیم بزرگ بیرانوند برای احتمال استقلالی شدن با جواب مرموز \n\nعلیرضا بیرانوند، دروازه‌بان تراکتور، پس از دیدار مقابل استقلال با انتقاد از وضعیت مدیریتی باشگاه، از پرداخت تنها هفت درصد از قراردادها خبر داد. \n\nپ\n\n،\n\nپـ\n\nاظهارات علیرضا بیرانوند پس از مصاف حساس تراکتور مقابل استقلال، بار دیگر فضای فوتبال ایران را تحت‌الشعاع قرار داد. دروازه‌بان ملی‌پوش تراکتور که این روزها در مرکز اخبار قرار دارد، از مشکلات داخلی باشگاه پرده برداشت و در خصوص وضعیت سربازی و آینده فوتبالی خود شفاف‌سازی کرد.\n\r\n\r\n\nپرده‌برداری از بحران مالی در اردوی تبریزی‌ها\n\r\n\r\n\nبیرانوند در بخش مهمی از صحبت‌های خود با انتقاد صریح از مدیریت باشگاه تراکتور گفت: «تراکتور از داخل مریض است. زنوزی به داد بچه‌ها برسد. بازیکنان ما فقط هفت درصد پول گرفته‌اند.» او همچنین خطاب به حجت کریمی، مدیرعامل باشگاه، افزود: «از مدیرعامل می‌خواهم به جای اینکه حاشیه وارد تیم کند و به این مربی یا مدیرعامل بپرد، به فکر تیم باشد.»\n\r\n\r\n\nشفاف‌سازی پیرامون پرونده معافیت پزشکی\n\r\n\r\n\nدروازه‌بان تراکتور درباره شایعات مربوط به معافیت پزشکی خود تأکید کرد: «من هیچ‌وقت درخواست معافیت پزشکی نداده بودم و دنبال معافیت نیستم. بیشتر بازیکنان با معافیت پزشکی بازی می‌کنند! افرادی داریم که معافیت روانی دارند و بازی می‌کنند.» وی از نظام وظیفه خواست اجازه دهد او از حق شهروندی‌اش استفاده کند و افزود: «کسی که برگه اعزامش صادر می‌شود، می‌تواند آن را به تعویق بیندازد.»\n\r\n\r\n\nابهام در آینده؛ از سربازی تا تصمیم بزرگ\n\r\n\r\n\nبیرانوند در پاسخ به سوالی درباره شایعات پیوستن به استقلال در فصل آینده، رویکردی مرموزانه داشت و تصریح کرد: «تصمیمی گرفته‌ام و پای آن هستم. نمی‌گویم چه اتفاقی می‌افتد، اما از نیم‌فصل سرباز می‌شوم و به جایی می‌روم که آرامش داشته باشم. بعد از آن بازیکن آزاد هستم و تصمیم بزرگی می‌گیرم که به آینده من کمک کند.»\n\r\n\r\n\nاو همچنین در بخش دیگری از اظهاراتش با اشاره به وضعیت تیم ملی گفت: «هشتاد درصد تیم ملی آخرین جام ملت‌های آسیا را تجربه می‌کنند.» بیرانوند در پایان با لحنی خاص افزود: «خدا اینقدر به من کمک کرده که یک نردبان درست کردم و همه از آن بالا می‌روند!»\n\r\n\r\n\n \n\r\n\nمنبع :\n\nفوتبال برتر \n\nva NewsLis Limi = 5;\n\nاز میان اخبار \n\nببینید؛ گل اول استقلال به تراکتور توسط سحرخیزان دقیقه ۲۸ \n\nساعت بازی پرسپولیس مقابل صنعت نفت آبادان /هفته هشتم \n\nواکنش تارتار به شایعه حضور اورونوف در استقلال \n\nداستان عجیب علیرضا بیرانوند قبل از بازی حساس تراکتور - استقلال \n\nشما قبلا این خبر را لایک کرده‌اید . \n\nfunc ion oPe sianNumbe (numbe ) {\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\nelemen .addEven Lis ene (\"click\", func ion() {\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n. hen(func ion( esponse) {\nif ( esponse.s a us == 200) {\nesponse.json(). hen(func ion(newSco e) {\nva likeNumbe Span = elemen .que ySelec o (\".like\");\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\nva hiddenHea = elemen .que ySelec o (\".hidden\");\nvisibleHea .classLis .add(\"hidden\");\nfavo i eBu on.classLis .add(\"hidden\");\nhiddenHea .classLis . emove(\"hidden\");\nva e o Message = elemen .que ySelec o (\".e o _message\");\nif (e o Message) {\ne o Message.classLis . emove(\"hidden_e o \");\n}\n});\n} else {\nva e o Message = elemen .que ySelec o (\".e o _message\");\nif (e o Message) {\ne o Message.classLis .add(\"hidden_e o \");\nse Timeou (func ion() {\ne o Message.classLis . emove(\"hidden_e o \");\n}, 3000);\n}\n}\n})\n});\n});",
-      "url": "https://fararu.com/fa/news/1008328/%D8%AA%D8%B5%D9%85%DB%8C%D9%85-%D8%A8%D8%B2%D8%B1%DA%AF-%D8%A8%DB%8C%D8%B1%D8%A7%D9%86%D9%88%D9%86%D8%AF-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%A7%D8%AD%D8%AA%D9%85%D8%A7%D9%84-%D8%A7%D8%B3%D8%AA%D9%82%D9%84%D8%A7%D9%84%DB%8C-%D8%B4%D8%AF%D9%86-%D8%A8%D8%A7-%D8%AC%D9%88%D8%A7%D8%A8-%D9%85%D8%B1%D9%85%D9%88%D8%B2",
-      "image": "https://cdn.fararu.com/thumbnail/R7F4FiJti6gV/JB_T-oXGRFI-iOG2Ba2W_b9xDx7SWc7TVIl9_QUqq5jx9LnGB25D_AO8pyUXO9wsx2QrMGFXSDLQfbdt3lCsd8lciJBb90Yuq3W_oFfaWFtWtLlQQrJNcgUoFCWdiAsS/%D8%A8%DB%8C%D8%B1%D8%A7%D8%AA%D9%86%D9%88%D9%86%D8%AF.jpg",
-      "source": "فرارو",
-      "source_site": "https://fararu.com/",
-      "allow_internal_republish": true,
-      "category": "اقتصاد و سرمایه‌گذاری",
-      "published": "2026-10-08T21:09:56+03:30",
-      "topics": [
-        "economy"
-      ],
-      "importance_score": 0,
-      "important": false,
-      "image_tries": 3
-    },
-    {
-      "id": "ef879bb8d279be96d680",
-      "title": "تصمیم بزرگ بیرانوند برای استقلالی شدن با جواب مرموز",
-      "summary": "علیرضا بیرانوند، دروازه‌بان تراکتور، پس از دیدار مقابل استقلال با انتقاد از وضعیت مدیریتی باشگاه، از پرداخت تنها هفت درصد از قراردادها خبر داد.",
-      "content": "۲۱:۰۹ - \n۱۶ مهر ۱۴۰۵ \n\nتصمیم بزرگ بیرانوند برای استقلالی شدن با جواب مرموز \n\nعلیرضا بیرانوند، دروازه‌بان تراکتور، پس از دیدار مقابل استقلال با انتقاد از وضعیت مدیریتی باشگاه، از پرداخت تنها هفت درصد از قراردادها خبر داد. \n\nپ\n\n،\n\nپـ\n\nتبلیغات\n\nتبلیغات\n\nاظهارات علیرضا بیرانوند پس از مصاف حساس تراکتور مقابل استقلال، بار دیگر فضای فوتبال ایران را تحت‌الشعاع قرار داد. دروازه‌بان ملی‌پوش تراکتور که این روزها در مرکز اخبار قرار دارد، از مشکلات داخلی باشگاه پرده برداشت و در خصوص وضعیت سربازی و آینده فوتبالی خود شفاف‌سازی کرد.\n\r\n\r\n\nپرده‌برداری از بحران مالی در اردوی تبریزی‌ها\n\r\n\r\n\nبیرانوند در بخش مهمی از صحبت‌های خود با انتقاد صریح از مدیریت باشگاه تراکتور گفت: «تراکتور از داخل مریض است. زنوزی به داد بچه‌ها برسد. بازیکنان ما فقط هفت درصد پول گرفته‌اند.» او همچنین خطاب به حجت کریمی، مدیرعامل باشگاه، افزود: «از مدیرعامل می‌خواهم به جای اینکه حاشیه وارد تیم کند و به این مربی یا مدیرعامل بپرد، به فکر تیم باشد.»\n\r\n\r\n\nشفاف‌سازی پیرامون پرونده معافیت پزشکی\n\r\n\r\n\nدروازه‌بان تراکتور درباره شایعات مربوط به معافیت پزشکی خود تأکید کرد: «من هیچ‌وقت درخواست معافیت پزشکی نداده بودم و دنبال معافیت نیستم. بیشتر بازیکنان با معافیت پزشکی بازی می‌کنند! افرادی داریم که معافیت روانی دارند و بازی می‌کنند.» وی از نظام وظیفه خواست اجازه دهد او از حق شهروندی‌اش استفاده کند و افزود: «کسی که برگه اعزامش صادر می‌شود، می‌تواند آن را به تعویق بیندازد.»\n\r\n\r\n\nابهام در آینده؛ از سربازی تا تصمیم بزرگ\n\r\n\r\n\nبیرانوند در پاسخ به سوالی درباره شایعات پیوستن به استقلال در فصل آینده، رویکردی مرموزانه داشت و تصریح کرد: «تصمیمی گرفته‌ام و پای آن هستم. نمی‌گویم چه اتفاقی می‌افتد، اما از نیم‌فصل سرباز می‌شوم و به جایی می‌روم که آرامش داشته باشم. بعد از آن بازیکن آزاد هستم و تصمیم بزرگی می‌گیرم که به آینده من کمک کند.»\n\r\n\r\n\nاو همچنین در بخش دیگری از اظهاراتش با اشاره به وضعیت تیم ملی گفت: «هشتاد درصد تیم ملی آخرین جام ملت‌های آسیا را تجربه می‌کنند.» بیرانوند در پایان با لحنی خاص افزود: «خدا اینقدر به من کمک کرده که یک نردبان درست کردم و همه از آن بالا می‌روند!»\n\r\n\r\n\n \n\r\n\nتبلیغات\n\nمنبع :\n\nفوتبال برتر \n\nva NewsLis Limi = 5;\n\nاز میان اخبار \n\nببینید؛ گل اول استقلال به تراکتور توسط سحرخیزان دقیقه ۲۸ \n\nساعت بازی پرسپولیس مقابل صنعت نفت آبادان /هفته هشتم \n\nواکنش تارتار به شایعه حضور اورونوف در استقلال \n\nداستان عجیب علیرضا بیرانوند قبل از بازی حساس تراکتور - استقلال \n\nشما قبلا این خبر را لایک کرده‌اید . \n\nfunc ion oPe sianNumbe (numbe ) {\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\nelemen .addEven Lis ene (\"click\", func ion() {\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n. hen(func ion( esponse) {\nif ( esponse.s a us == 200) {\nesponse.json(). hen(func ion(newSco e) {\nva likeNumbe Span = elemen .que ySelec o (\".like\");\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\nva hiddenHea = elemen .que ySelec o (\".hidden\");\nvisibleHea .classLis .add(\"hidden\");\nfavo i eBu on.classLis .add(\"hidden\");\nhiddenHea .classLis . emove(\"hidden\");\nva e o Message = elemen .que ySelec o (\".e o _message\");\nif (e o Message) {\ne o Message.classLis . emove(\"hidden_e o \");\n}\n});\n} else {\nva e o Message = elemen .que ySelec o (\".e o _message\");\nif (e o Message) {\ne o Message.classLis .add(\"hidden_e o \");\nse Timeou (func ion() {\ne o Message.classLis . emove(\"hidden_e o \");\n}, 3000);\n}\n}\n})\n});\n});\n\nتبلیغات",
-      "url": "https://fararu.com/fa/news/1008328/%D8%AA%D8%B5%D9%85%DB%8C%D9%85-%D8%A8%D8%B2%D8%B1%DA%AF-%D8%A8%DB%8C%D8%B1%D8%A7%D9%86%D9%88%D9%86%D8%AF-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%A7%D8%B3%D8%AA%D9%82%D9%84%D8%A7%D9%84%DB%8C-%D8%B4%D8%AF%D9%86-%D8%A8%D8%A7-%D8%AC%D9%88%D8%A7%D8%A8-%D9%85%D8%B1%D9%85%D9%88%D8%B2",
-      "image": "https://cdn.fararu.com/thumbnail/R7F4FiJti6gV/IdyJEN5H6pJrPri81FAOa5KCn_soedjeCL5b3SiTR6UIigGEp32f9l5mLkSD0K8IAFCQ7aH02DH_14GRVOf80rbUzxfns8WkAGkTKZfg57La3ZXVg_TW2aab71aSSMt8/%D8%A8%DB%8C%D8%B1%D8%A7%D8%AA%D9%86%D9%88%D9%86%D8%AF.jpg",
-      "source": "فرارو",
-      "source_site": "https://fararu.com/",
-      "allow_internal_republish": true,
-      "category": "اقتصاد و سرمایه‌گذاری",
-      "published": "2026-10-08T21:09:56+03:30",
-      "topics": [
-        "economy"
-      ],
-      "importance_score": 0,
-      "important": false,
-      "image_tries": 3
-    },
-    {
-      "id": "18dbe6f6457d61760c75",
-      "title": "١٣٠ هزار تن برنج در انتظار ترخیص است",
-      "summary": "دبیر انجمن واردکنندگان برنج ایران با اشاره به توقف بخشی از محموله‌های برنج وارداتی در بنادر و گمرکات، خواستار تمدید تسهیلات ترخیص کالا‌های اساسی تا پایان سال شد و گفت: در حال حاضر حدود ۱۳۰ هزار تن برنج وارداتی در انتظار دریافت مجوز‌های لازم برای خروج است.",
-      "content": "",
-      "url": "https://www.boursenews.ir/fa/news/308408/130-هزار-تن-برنج-در-انتظار-ترخیص-است",
-      "image": "",
-      "source": "بورس‌نیوز",
-      "source_site": "https://www.boursenews.ir/",
-      "allow_internal_republish": true,
-      "category": "بورس و بازار سرمایه",
-      "published": "2026-10-08T21:09:07+03:30",
-      "topics": [
-        "markets"
-      ],
-      "importance_score": 1,
-      "important": false,
-      "image_tries": 3
-    },
-    {
-      "id": "55d250d15979519ac8b8",
-      "title": "بخوانید/ آخرین تغییرات ساعات معاملات بازار سرمایه",
-      "summary": "ساعات معاملات بازار سرمایه در ماه‌های اخیر تغییر کرده است؛ سهام و صندوق‌های سهامی در حالی تا ساعت ۱۲:۳۰ معامله می‌شوند که معاملات برخی صندوق‌ها و ابزار‌های مالی تا ساعت ۱۸ فعال هستند.",
-      "content": "",
-      "url": "https://www.boursenews.ir/fa/news/308409/بخوانید-آخرین-تغییرات-ساعات-معاملات-بازار-سرمایه",
-      "image": "",
-      "source": "بورس‌نیوز",
-      "source_site": "https://www.boursenews.ir/",
-      "allow_internal_republish": true,
-      "category": "بورس و بازار سرمایه",
-      "published": "2026-10-08T21:05:36+03:30",
-      "topics": [
-        "markets"
-      ],
-      "importance_score": 0,
-      "important": false,
-      "image_tries": 3
-    },
-    {
-      "id": "e4ac0d96527187bb3f86",
-      "title": "صنعت خودروی آلمان تحت فشار تهدیدهای تجاری است",
-      "summary": "صنعت خودروی آلمان که سال‌ها به دلیل توانمندی مهندسی و قدرت بازاریابی خود شهرت داشت، اکنون تحت فشار رقابت فزاینده، تهدید‌های تجاری و تغییر سلیقه مصرف‌کنندگان قرار گرفته است.",
-      "content": "",
-      "url": "https://www.boursenews.ir/fa/news/308410/صنعت-خودروی-آلمان-تحت-فشار-تهدیدهای-تجاری-است",
-      "image": "",
-      "source": "بورس‌نیوز",
-      "source_site": "https://www.boursenews.ir/",
-      "allow_internal_republish": true,
-      "category": "بورس و بازار سرمایه",
-      "published": "2026-10-08T21:04:50+03:30",
-      "topics": [
-        "economy"
-      ],
-      "importance_score": 0,
-      "important": false,
-      "image_tries": 3
-    },
-    {
-      "id": "cace279ba0b68a812a95",
-      "title": "حساب جدید برای وام؛ بانک‌ها چه می‌کنند؟",
-      "summary": "بانک‌ها از مشتری می‌خواهند حساب‌های مازاد را ببندد؛ اما برای وام دوباره حساب می‌خواهند.",
-      "content": "",
-      "url": "https://www.boursenews.ir/fa/news/308412/حساب-جدید-برای-وام-بانک-ها-چه-می-کنند",
-      "image": "",
-      "source": "بورس‌نیوز",
-      "source_site": "https://www.boursenews.ir/",
-      "allow_internal_republish": true,
-      "category": "بورس و بازار سرمایه",
-      "published": "2026-10-08T21:04:04+03:30",
-      "topics": [
-        "markets"
-      ],
-      "importance_score": 0,
-      "important": false,
-      "image_tries": 3
     }
   ],
   "sources": [
@@ -5310,9 +5328,19 @@
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
       "items": 14,
-      "attempted_at": "2026-10-09T14:09:13.586588+00:00",
-      "last_success_at": "2026-10-09T14:09:15.073860+00:00",
-      "last_article_published": "2026-10-09T17:20:47+03:30",
+      "attempted_at": "2026-10-09T14:31:36.579920+00:00",
+      "last_success_at": "2026-10-09T14:31:38.059317+00:00",
+      "last_article_published": "2026-10-09T17:50:05+03:30",
+      "error": ""
+    },
+    {
+      "name": "اقتصادنیوز",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "ok": true,
+      "items": 12,
+      "attempted_at": "2026-10-09T14:31:36.580950+00:00",
+      "last_success_at": "2026-10-09T14:31:38.858797+00:00",
+      "last_article_published": "2026-10-09T17:35:06+03:30",
       "error": ""
     },
     {
@@ -5320,29 +5348,9 @@
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
       "items": 13,
-      "attempted_at": "2026-10-09T14:09:13.609546+00:00",
-      "last_success_at": "2026-10-09T14:09:15.802212+00:00",
-      "last_article_published": "2026-10-09T17:33:54+03:30",
-      "error": ""
-    },
-    {
-      "name": "اقتصادنیوز",
-      "category": "اقتصاد و سرمایه‌گذاری",
-      "ok": true,
-      "items": 13,
-      "attempted_at": "2026-10-09T14:09:13.588600+00:00",
-      "last_success_at": "2026-10-09T14:09:15.858726+00:00",
-      "last_article_published": "2026-10-09T17:35:06+03:30",
-      "error": ""
-    },
-    {
-      "name": "پزشک سایت",
-      "category": "پزشکی و سلامت",
-      "ok": true,
-      "items": 10,
-      "attempted_at": "2026-10-09T14:09:13.603564+00:00",
-      "last_success_at": "2026-10-09T14:09:16.086352+00:00",
-      "last_article_published": "2026-10-09T16:38:04+03:30",
+      "attempted_at": "2026-10-09T14:31:36.602362+00:00",
+      "last_success_at": "2026-10-09T14:31:39.015914+00:00",
+      "last_article_published": "2026-10-09T17:51:48+03:30",
       "error": ""
     },
     {
@@ -5350,9 +5358,19 @@
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
       "items": 14,
-      "attempted_at": "2026-10-09T14:09:13.590554+00:00",
-      "last_success_at": "2026-10-09T14:09:16.806629+00:00",
+      "attempted_at": "2026-10-09T14:31:36.581459+00:00",
+      "last_success_at": "2026-10-09T14:31:39.488953+00:00",
       "last_article_published": "2026-10-09T17:03:54+03:30",
+      "error": ""
+    },
+    {
+      "name": "پزشک سایت",
+      "category": "پزشکی و سلامت",
+      "ok": true,
+      "items": 10,
+      "attempted_at": "2026-10-09T14:31:36.591404+00:00",
+      "last_success_at": "2026-10-09T14:31:40.700448+00:00",
+      "last_article_published": "2026-10-09T17:38:04+03:30",
       "error": ""
     },
     {
@@ -5360,8 +5378,8 @@
       "category": "بورس و بازار سرمایه",
       "ok": true,
       "items": 14,
-      "attempted_at": "2026-10-09T14:09:13.592482+00:00",
-      "last_success_at": "2026-10-09T14:09:18.579027+00:00",
+      "attempted_at": "2026-10-09T14:31:36.582358+00:00",
+      "last_success_at": "2026-10-09T14:31:41.585096+00:00",
       "last_article_published": "2026-10-09T15:39:34+03:30",
       "error": ""
     },
@@ -5370,9 +5388,9 @@
       "category": "بورس و بازار سرمایه",
       "ok": true,
       "items": 14,
-      "attempted_at": "2026-10-09T14:09:13.599539+00:00",
-      "last_success_at": "2026-10-09T14:09:19.439062+00:00",
-      "last_article_published": "2026-10-08T17:23:08+03:30",
+      "attempted_at": "2026-10-09T14:31:36.583454+00:00",
+      "last_success_at": "2026-10-09T14:31:42.143967+00:00",
+      "last_article_published": "2026-10-09T17:50:00+03:30",
       "error": ""
     },
     {
@@ -5380,8 +5398,8 @@
       "category": "فناوری و علم",
       "ok": true,
       "items": 7,
-      "attempted_at": "2026-10-09T14:09:13.600116+00:00",
-      "last_success_at": "2026-10-09T14:09:20.072296+00:00",
+      "attempted_at": "2026-10-09T14:31:36.583966+00:00",
+      "last_success_at": "2026-10-09T14:31:42.805154+00:00",
       "last_article_published": "2026-10-08T12:57:47+03:30",
       "error": ""
     },
@@ -5390,9 +5408,9 @@
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
       "items": 14,
-      "attempted_at": "2026-10-09T14:09:13.606627+00:00",
-      "last_success_at": "2026-10-09T14:09:21.321211+00:00",
-      "last_article_published": "2026-10-09T17:26:32+03:30",
+      "attempted_at": "2026-10-09T14:31:36.597346+00:00",
+      "last_success_at": "2026-10-09T14:31:43.524247+00:00",
+      "last_article_published": "2026-10-09T17:46:48+03:30",
       "error": ""
     },
     {
@@ -5400,8 +5418,8 @@
       "category": "پزشکی و سلامت",
       "ok": true,
       "items": 14,
-      "attempted_at": "2026-10-09T14:09:13.601556+00:00",
-      "last_success_at": "2026-10-09T14:09:22.480812+00:00",
+      "attempted_at": "2026-10-09T14:31:36.588326+00:00",
+      "last_success_at": "2026-10-09T14:31:44.264786+00:00",
       "last_article_published": "2026-10-09T11:34:25+03:30",
       "error": ""
     },
@@ -5410,8 +5428,8 @@
       "category": "بورس و بازار سرمایه",
       "ok": true,
       "items": 14,
-      "attempted_at": "2026-10-09T14:09:13.596547+00:00",
-      "last_success_at": "2026-10-09T14:09:25.453960+00:00",
+      "attempted_at": "2026-10-09T14:31:36.582857+00:00",
+      "last_success_at": "2026-10-09T14:31:47.260473+00:00",
       "last_article_published": "2026-10-09T17:19:00+03:30",
       "error": ""
     }
@@ -5419,6 +5437,6 @@
   "dedup": {
     "enabled": true,
     "window_hours": 48,
-    "removed": 13
+    "removed": 12
   }
 }
