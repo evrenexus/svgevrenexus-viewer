@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-08T23:53:26.499863+00:00",
+  "updated": "2026-10-09T00:09:29.403910+00:00",
   "items": [
     {
       "id": "af91860171b6804eb9cf",
@@ -169,7 +169,7 @@
       "summary": "خاویر بلاس، ستون‌نویس بلومبرگ، می‌گوید جهش هزینه حمل نفتکش‌ها دیگر محدود به مسیرهای مرتبط با خاورمیانه نیست.",
       "content": "۰۰:۰۶ - \n۱۷ مهر ۱۴۰۵ \n\nبلومبرگ: \n\nافزایش نرخ حمل نفت به مسیرهای دور از خاورمیانه هم سرایت کرد \n\nخاویر بلاس، ستون‌نویس بلومبرگ، می‌گوید جهش هزینه حمل نفتکش‌ها دیگر محدود به مسیرهای مرتبط با خاورمیانه نیست. \n\nپ\n\n،\n\nپـ\n\nفرارو - خاویر بلاس، ستون‌نویس بلومبرگ، با اشاره به افزایش نرخ حمل‌ونقل نفت اعلام کرد این جهش به مسیرهایی در فاصله زیادی از درگیری‌های خاورمیانه، از جمله ساحل خلیج مکزیک آمریکا و ساحل غربی آفریقا، نیز سرایت کرده است.\nخاویر بلاس در گزارشی درباره تحولات بازار نفت نوشت نرخ‌های حمل‌ونقل نفت همچنان در حال افزایش است و آثار اختلال در مسیرهای کشتیرانی خاورمیانه به سایر بازارهای نفتی نیز منتقل شده است.\n\r\n\r\n\nبلاس نوشت این افزایش هزینه تنها به مسیرهای نزدیک به خاورمیانه محدود نمانده و به مسیرهایی که فاصله زیادی از منطقه درگیری دارند، از جمله ساحل خلیج مکزیک آمریکا و ساحل غربی آفریقا، نیز سرایت کرده است.\n\r\n\r\n\nافزایش نرخ کرایه نفتکش‌ها در شرایطی رخ داده که اختلال در مسیرهای معمول انتقال نفت، زمان سفر کشتی‌ها را افزایش داده و بخشی از ظرفیت نفتکش‌های بزرگ جهان را درگیر کرده است.\n\r\n\r\n\nدر همین حال، گزارش‌های بازار نشان می‌دهد هزینه انتقال نفت آمریکا به آسیا به سطوح بی‌سابقه‌ای رسیده است. بر اساس داده‌های بورس بالتیک که بلومبرگ به آن استناد کرده، هزینه اجاره یک نفتکش بسیار بزرگ برای انتقال نفت آمریکا به آسیا در ۷ اکتبر به حدود ۷۷ میلیون دلار رسیده؛ در حالی که میانگین این هزینه در سال ۲۰۲۵ حدود ۹.۲ میلیون دلار بوده است.\n\r\n\r\n\nافزایش هزینه حمل‌ونقل همچنین بازار نفت غرب آفریقا را تحت تأثیر قرار داده و برخی فروشندگان برای جبران افزایش هزینه انتقال، ناچار به ارائه تخفیف برای محموله‌های خود شده‌اند.\n\r\n\nva NewsLis Limi = 5;\n\nاز میان اخبار \n\nواکنش ترامپ به جنجال حمله ایران به لس‌آنجلس و سن‌دیگو \n\nعقب افتادن هگست از سربازان در جریان تمرین دو \n\nافزایش نرخ حمل نفت به مسیرهای دور از خاورمیانه هم سرایت کرد \n\nحمله پهپادی به اربیل عراق \n\nشما قبلا این خبر را لایک کرده‌اید . \n\nfunc ion oPe sianNumbe (numbe ) {\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\nelemen .addEven Lis ene (\"click\", func ion() {\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n. hen(func ion( esponse) {\nif ( esponse.s a us == 200) {\nesponse.json(). hen(func ion(newSco e) {\nva likeNumbe Span = elemen .que ySelec o (\".like\");\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\nva hiddenHea = elemen .que ySelec o (\".hidden\");\nvisibleHea .classLis .add(\"hidden\");\nfavo i eBu on.classLis .add(\"hidden\");\nhiddenHea .classLis . emove(\"hidden\");\nva e o Message = elemen .que ySelec o (\".e o _message\");\nif (e o Message) {\ne o Message.classLis . emove(\"hidden_e o \");\n}\n});\n} else {\nva e o Message = elemen .que ySelec o (\".e o _message\");\nif (e o Message) {\ne o Message.classLis .add(\"hidden_e o \");\nse Timeou (func ion() {\ne o Message.classLis . emove(\"hidden_e o \");\n}, 3000);\n}\n}\n})\n});\n});",
       "url": "https://fararu.com/fa/news/1008354/%D8%A7%D9%81%D8%B2%D8%A7%DB%8C%D8%B4-%D9%86%D8%B1%D8%AE-%D8%AD%D9%85%D9%84-%D9%86%D9%81%D8%AA-%D8%A8%D9%87-%D9%85%D8%B3%DB%8C%D8%B1%D9%87%D8%A7%DB%8C-%D8%AF%D9%88%D8%B1-%D8%A7%D8%B2-%D8%AE%D8%A7%D9%88%D8%B1%D9%85%DB%8C%D8%A7%D9%86%D9%87-%D9%87%D9%85-%D8%B3%D8%B1%D8%A7%DB%8C%D8%AA-%DA%A9%D8%B1%D8%AF",
-      "image": "https://cdn.fararu.com/thumbnail/RHhSbgqfuRET/htU9asX7vXUectAFEagtfGMKgAWrioUIfNJ1hymHOuqFd2WTrrzeF1AIZ3a9QVFHn6f3D5C_sCaNJ1tB2KLMlNbpFv7-se3NSj0bHeGd0A9ua8LF7dmEVbQrXDzSJLhI/%DA%A9%D8%B4%D8%AA%DB%8C%D8%B1%D8%A7%D9%86%DB%8C.jpg",
+      "image": "https://cdn.fararu.com/thumbnail/RHhSbgqfuRET/4qxRmqCwYTrn7f4XmNFKgeelq2iDL6M1DjB07lVFd5MdnLnnqVOc0OXRgjBiZwxHtBXJO-PViulpE2LWLQb2eyXcGfmt4fJmK3yKUiK2JXgEaK9zL8cTfyL3RXgt-Fqd/%DA%A9%D8%B4%D8%AA%DB%8C%D8%B1%D8%A7%D9%86%DB%8C.jpg",
       "source": "فرارو",
       "source_site": "https://fararu.com/",
       "allow_internal_republish": true,
@@ -333,7 +333,7 @@
       "summary": "پارلمان اروپا روز پنج‌شنبه سه قطعنامه را به ادعای آنچه که «نقض حقوق بشر» در ایران، گرجستان و جمهوری آذربایجان خواند، تصویب کرد.",
       "content": "۲۲:۵۷ - \n۱۶ مهر ۱۴۰۵ \n\nپارلمان اروپا از تصویب یک قطعنامه ضدایرانی خبر داد\r\n\nپارلمان اروپا روز پنج‌شنبه سه قطعنامه را به ادعای آنچه که «نقض حقوق بشر» در ایران، گرجستان و جمهوری آذربایجان خواند، تصویب کرد.\r\n\r\n\nپ\n\n،\n\nپـ\n\n نمایندگان پارلمان اروپا بدون ارائه هیچ‌گونه شواهد و مدارکی، ایران را به «خشونت» علیه غیرنظامیان محکوم کردند. \n\r\n\r\n\nپارلمان اروپا همچنین در اظهاراتی مداخله‌جویانه خواستار لغو مجازات اعدام در ایران شدند. این پارلمان در ادامه ایران را به آنچه که «آزار و اذیت اقلیت‌های مذهبی و قومی» و «سرکوب فرامرزی»، محکوم کرد.\n\r\n\r\n\nنمایندگان پارلمان اروپا همچنین خواستار اعمال تحریم‌های گسترده‌تر علیه تهران و ارجاع ایران به دیوان کیفری بین‌المللی شدند.\n\r\n\r\n\nقطعنامه مربوط به ایران با ۵۴۱ رای موافق، ۱۱ رای مخالف و ۲۵ رای ممتنع به تصویب رسید.\n\r\n\r\n\nاین پارلمان دو قطعنامه دیگر به اتهامات حقوق بشری دیگر علیه گرجستان و جمهوری آذربایجان تصویب کرد.\n\r\n\nمنبع :\n\nايسنا \n\nva NewsLis Limi = 5;\n\nاز میان اخبار \n\nآمریکا آماده حمله به ایران در سه هفته آینده؟ \n\nدیدار پزشکیان و پوتین در ترکمنستان \n\nایران چگونه آمریکا را در وضعیت آماده‌باش نگه می‌دارد؟ \n\nرهبر انقلاب اسلامی: نشانه‌های تأثیر فراجا در جنگ‌های اخیر آشکارتر شد \n\nشما قبلا این خبر را لایک کرده‌اید . \n\nfunc ion oPe sianNumbe (numbe ) {\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\nelemen .addEven Lis ene (\"click\", func ion() {\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n. hen(func ion( esponse) {\nif ( esponse.s a us == 200) {\nesponse.json(). hen(func ion(newSco e) {\nva likeNumbe Span = elemen .que ySelec o (\".like\");\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\nva hiddenHea = elemen .que ySelec o (\".hidden\");\nvisibleHea .classLis .add(\"hidden\");\nfavo i eBu on.classLis .add(\"hidden\");\nhiddenHea .classLis . emove(\"hidden\");\nva e o Message = elemen .que ySelec o (\".e o _message\");\nif (e o Message) {\ne o Message.classLis . emove(\"hidden_e o \");\n}\n});\n} else {\nva e o Message = elemen .que ySelec o (\".e o _message\");\nif (e o Message) {\ne o Message.classLis .add(\"hidden_e o \");\nse Timeou (func ion() {\ne o Message.classLis . emove(\"hidden_e o \");\n}, 3000);\n}\n}\n})\n});\n});",
       "url": "https://fararu.com/fa/news/1008348/%D9%BE%D8%A7%D8%B1%D9%84%D9%85%D8%A7%D9%86-%D8%A7%D8%B1%D9%88%D9%BE%D8%A7-%D8%A7%D8%B2-%D8%AA%D8%B5%D9%88%DB%8C%D8%A8-%DB%8C%DA%A9-%D9%82%D8%B7%D8%B9%D9%86%D8%A7%D9%85%D9%87-%D8%B6%D8%AF%D8%A7%DB%8C%D8%B1%D8%A7%D9%86%DB%8C-%D8%AE%D8%A8%D8%B1-%D8%AF%D8%A7%D8%AF",
-      "image": "https://cdn.fararu.com/thumbnail/1RzY8k1dKpud/vepc4rxzAcUjiquzF9iY8flKK_xQdMcNzLEdObvv3JjI4ndqbbYTRPVzeSg6cMGJBlN5oihUl4ExaDJXrPIc1R4seOQ3CfMNRE3ANWup2hzGKQSQkzDE_XsQ44MTZeu9/%D9%BE%D8%A7%D8%B1%D9%84%D9%85%D8%A7%D9%86+%D8%A7%D8%B1%D9%88%D9%BE%D8%A7.jpg",
+      "image": "https://cdn.fararu.com/thumbnail/1RzY8k1dKpud/PzUICcpbKpaAn1fuNS07uUfR_p75LjSvaspkQwD0N1U6i-OcDdwWuZqDZt6CeQM0b_DVq43kgdFJJItgX5j5hvUjftnzakV6phBtHDfoN08Dr9oL6S4l3ogY6pJV9MPG/%D9%BE%D8%A7%D8%B1%D9%84%D9%85%D8%A7%D9%86+%D8%A7%D8%B1%D9%88%D9%BE%D8%A7.jpg",
       "source": "فرارو",
       "source_site": "https://fararu.com/",
       "allow_internal_republish": true,
@@ -588,7 +588,7 @@
       "summary": "شجاع خلیل‌زاده درحالی بابت پرداخت کامل حقوق بازیکنان از زنوزی تشکر کرده که بیرانوند مدعی دریافت تنها ۷ درصد دستمزد شده بود.",
       "content": "۲۱:۵۶ - \n۱۶ مهر ۱۴۰۵ \n\nتصویر؛ حمایت شجاع از زنوزی و کنایه به مصاحبه بیرانوند \n\nشجاع خلیل‌زاده درحالی بابت پرداخت کامل حقوق بازیکنان از زنوزی تشکر کرده که بیرانوند مدعی دریافت تنها ۷ درصد دستمزد شده بود. \n\nپ\n\n،\n\nپـ\n\nتبلیغات\n\nتبلیغات\n\nشجاع خلیل‌زاده درحالی بابت پرداخت کامل حقوق بازیکنان از زنوزی تشکر کرده که بیرانوند مدعی دریافت تنها ۷ درصد دستمزد شده بود.\n\r\n\r\n\n\r\n\r\n\n \n\r\n\nتبلیغات\n\nva NewsLis Limi = 5;\n\nاز میان اخبار \n\nببینید؛ گل اول استقلال به تراکتور توسط سحرخیزان دقیقه ۲۸ \n\nساعت بازی پرسپولیس مقابل صنعت نفت آبادان /هفته هشتم \n\nواکنش تارتار به شایعه حضور اورونوف در استقلال \n\nداستان عجیب علیرضا بیرانوند قبل از بازی حساس تراکتور - استقلال \n\nشما قبلا این خبر را لایک کرده‌اید . \n\nfunc ion oPe sianNumbe (numbe ) {\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\nelemen .addEven Lis ene (\"click\", func ion() {\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n. hen(func ion( esponse) {\nif ( esponse.s a us == 200) {\nesponse.json(). hen(func ion(newSco e) {\nva likeNumbe Span = elemen .que ySelec o (\".like\");\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\nva hiddenHea = elemen .que ySelec o (\".hidden\");\nvisibleHea .classLis .add(\"hidden\");\nfavo i eBu on.classLis .add(\"hidden\");\nhiddenHea .classLis . emove(\"hidden\");\nva e o Message = elemen .que ySelec o (\".e o _message\");\nif (e o Message) {\ne o Message.classLis . emove(\"hidden_e o \");\n}\n});\n} else {\nva e o Message = elemen .que ySelec o (\".e o _message\");\nif (e o Message) {\ne o Message.classLis .add(\"hidden_e o \");\nse Timeou (func ion() {\ne o Message.classLis . emove(\"hidden_e o \");\n}, 3000);\n}\n}\n})\n});\n});\n\nتبلیغات",
       "url": "https://fararu.com/fa/news/1008341/%D8%AA%D8%B5%D9%88%DB%8C%D8%B1-%D8%AD%D9%85%D8%A7%DB%8C%D8%AA-%D8%B4%D8%AC%D8%A7%D8%B9-%D8%A7%D8%B2-%D8%B2%D9%86%D9%88%D8%B2%DB%8C-%DA%A9%D9%86%D8%A7%DB%8C%D9%87-%D8%A8%D9%87-%D9%85%D8%B5%D8%A7%D8%AD%D8%A8%D9%87-%D8%A8%DB%8C%D8%B1%D8%A7%D9%86%D9%88%D9%86%D8%AF",
-      "image": "https://cdn.fararu.com/thumbnail/jXN0ma3BYiqr/TCgCPKBzM0TKpydmWFzq4nbPwyNqdgwXsn4sOONo_Tp7GJnOiWWVCXl2yqb7RdwuOP3q4QPl577r4K51Rv3ccGyXZryvgWrJACR43Iw9Xfn12iVXQ9UQSrIi6uVEVPyR/%D8%B4%D8%AC%D8%A7%D8%B9.jpg",
+      "image": "https://cdn.fararu.com/thumbnail/jXN0ma3BYiqr/vlIKUPziZRzMWZnxgmTl9KPWk891bDcsxEL7f9TABG38kN7YLta-LKmlMiS27soffgPhp75WGddxz_9dFRuWm8vFYHE3UgegEh1nsoUxB1CX7X24c-KVTqGJ1FSq0PuI/%D8%B4%D8%AC%D8%A7%D8%B9.jpg",
       "source": "فرارو",
       "source_site": "https://fararu.com/",
       "allow_internal_republish": true,
@@ -1221,7 +1221,7 @@
       "summary": "وزارت خزانه‌داری آمریکا تحریم‌های جدیدی را علیه ایران اعمال کرد.",
       "content": "فوری/ اقدام جدید آمریکا علیه ایران \n\nسرویس:\nاخبار سیاسی \n\nکدخبر:\n۸۱۱۰۱۴ \n\n۱۴۰۵/۰۷/۱۶ - ۲۰:۳۱ \n\nوزارت خزانه‌داری آمریکا تحریم‌های جدیدی را علیه ایران اعمال کرد. \nتحریم‌های جدیدی را علیه ایران اعمال کرد.\n\nکپی لینک کوتاه\n\nکپی شد \n\ndocumen .addEven Lis ene ('DOMCon en Loaded', func ion() {\ncons sha eBu on = documen .que ySelec o ('.news_sha e_bu on');\n\nif (!sha eBu on) e u n;\n\nif (!naviga o .sha e) {\nsha eBu on.s yle.display = 'none';\ne u n;\n}\n\nsha eBu on.addEven Lis ene ('click', async () => {\ny {\ncons sha eDa a = {\ni le: \" u0641 u0648 u0631 u06cc / u0627 u0642 u062f u0627 u0645 u062c u062f u06cc u062f u0622 u0645 u0631 u06cc u06a9 u0627 u0639 u0644 u06cc u0647 u0627 u06cc u0631 u0627 u0646 \",\nex : \" u0648 u0632 u0627 u0631 u062a u062e u0632 u0627 u0646 u0647 u200c u062f u0627 u0631 u06cc u0622 u0645 u0631 u06cc u06a9 u0627 u062a u062d u0631 u06cc u0645 u200c u0647 u0627 u06cc u062c u062f u06cc u062f u06cc u0631 u0627 u0639 u0644 u06cc u0647 u0627 u06cc u0631 u0627 u0646 u0627 u0639 u0645 u0627 u0644 u06a9 u0631 u062f.\",\nu l: \"h ps: / /www.egh esadnews.com /fa / iny /news-811014\" };\n\nawai naviga o .sha e(sha eDa a);\n} ca ch (e o ) {\nif (e o .name !== 'Abo E o ') {\nconsole.e o ('E o sha ing con en :', e o );\n}\n}\n});\n});\n\nva newsMas e IdFo Ra e = \"1865918\";",
       "url": "https://www.eghtesadnews.com/%D8%A8%D8%AE%D8%B4-%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1-%D8%B3%DB%8C%D8%A7%D8%B3%DB%8C-57/811014-%D9%81%D9%88%D8%B1%DB%8C-%D8%A7%D9%82%D8%AF%D8%A7%D9%85-%D8%AC%D8%AF%DB%8C%D8%AF-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D8%B9%D9%84%DB%8C%D9%87-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86",
-      "image": "https://cdn.eghtesadnews.com/thumbnail/DteF8bEP4Ivo/WE4393C5xBRzb7PAefqGnV9ijIH1P8KpNdZ-sZj8efxtKLh6z7VbMqUl_AXw-jHEXqxLzH8BOWEfC1gZNKHA1RnjhFwdUBnzQCKu3lvUgjs4ZmU91ehVjZwyBXZu-zsGh-xj5fpexW3nehh23VHejqe8ivE6f9hsOYs_MUvt4CFqiQ8dTgK-u-MktiTo7Wzk/%D8%A8%D8%B1%D8%AC%D8%A7%D9%85+%2F+%D9%85%D8%B0%D8%A7%DA%A9%D8%B1%D8%A7%D8%AA+%2F+%D8%AA%D9%88%D8%A7%D9%81%D9%82+%D9%87%D8%B3%D8%AA%D9%87%E2%80%8C%D8%A7%DB%8C+%2F+%D8%A7%DB%8C%D8%B1%D8%A7%D9%86+%D9%88+%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7+%2F+%D8%AA%D8%AD%D8%B1%DB%8C%D9%85%E2%80%8C%D9%87%D8%A7.jpg",
+      "image": "https://cdn.eghtesadnews.com/thumbnail/DteF8bEP4Ivo/Zognyeq0TVizGlcohoVutQUhjpGPlNQPBE1SJEH5uwXZCmuopRSTWVsNAcE9Rv52unQ5XqE_uHW-wPqDGkARRGOZZcr0e0Bdra4qRlMFPnUCT7gWmjJSQjbrx-PXu169GhaeyJdglmsMvaOleH4HHuUV19b88bNM7Cdzw33qNkXN2L7WcUhI6h9Jb4KGLSRB/%D8%A8%D8%B1%D8%AC%D8%A7%D9%85+%2F+%D9%85%D8%B0%D8%A7%DA%A9%D8%B1%D8%A7%D8%AA+%2F+%D8%AA%D9%88%D8%A7%D9%81%D9%82+%D9%87%D8%B3%D8%AA%D9%87%E2%80%8C%D8%A7%DB%8C+%2F+%D8%A7%DB%8C%D8%B1%D8%A7%D9%86+%D9%88+%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7+%2F+%D8%AA%D8%AD%D8%B1%DB%8C%D9%85%E2%80%8C%D9%87%D8%A7.jpg",
       "source": "اقتصادنیوز",
       "source_site": "https://www.eghtesadnews.com/",
       "allow_internal_republish": true,
@@ -1314,7 +1314,7 @@
       "summary": "نیکلاس مادورو و همسرش با اتهام کیفری دیگری در آمریکا مواجه شده اند.",
       "content": "اتهام زنی تازه آمریکا علیه مادورو و همسرش+ جزئیات \n\nسرویس:\nاخبار سیاسی \n\nکدخبر:\n۸۱۱۰۱۲ \n\n۱۴۰۵/۰۷/۱۶ - ۲۰:۰۶ \n\nنیکلاس مادورو و همسرش با اتهام کیفری دیگری در آمریکا مواجه شده اند. \n«نیکلاس مادورو» رئیس‌جمهور زندانی ونزوئلا و همسرش «سیلیا فلورس» روز پنجشنبه با اتهام کیفری دیگری در آمریکا مواجه شدند که از اتهامات مربوط به شکنجه مخالفان سیاسی ناشی می‌شود.\n\r\n\r\n\nرویترز گزارش داد، بر اساس کیفرخواست اصلاحی که در دادگاه فدرال منهتن ثبت شد، مادورو و فلورس علاوه بر اتهامات قاچاق مواد مخدر که پیش‌تر با آن مواجه بودند، به یک فقره توطئه برای ارتکاب شکنجه نیز متهم شده‌اند.\n\r\n\r\n\nمادورو و همسرش در تاریخ ۳ ژانویه طی عملیاتی غیرقانونی توسط ارتش آمریکا در خانه خود در کاراکاس ربوده شده و برای مواجهه با اتهامات ادعایی قاچاق مواد مخدر به نیویورک منتقل شدند.\n\r\n\r\n\nمادورو و فلورس در برابر اتهامات قاچاق مواد مخدر اعلام بی‌گناهی کرده‌اند و از زمان بازداشت در مرکز بازداشت متروپولیتن در بروکلین نگهداری می‌شوند. محاکمه آن‌ها برای اول ژوئن ۲۰۲۷ برنامه‌ریزی شده است.\n\r\n\r\n\nدر پرونده‌ای جداگانه، انتظار می‌رود فلورس روز پنجشنبه در دادگاهی در آمریکا حاضر شود تا از یک قاضی فدرال بخواهد به دلایل پزشکی - در حالی که منتظر محاکمه قاچاق مواد مخدر خود در سال آینده است - او را از زندان آزاد کند.\n\r\n\r\n\nدر جلسه‌ای که قرار است ساعت ۱۰:۳۰ صبح به وقت شرقی در دادگاه فدرال منهتن آغاز شود، انتظار می‌رود وکلای فلورس از «آلوین هلرشتاین» قاضی منطقه‌ای آمریکا بخواهند با آزادی موکل‌شان با قرار وثیقه موافقت کند تا او بتواند تحت یک عمل قلبی قرار گرفته و دوران نقاهت خود را در محیطی راحت‌تر سپری کند.\n\r\n\r\n\nوکلای فلورس پیشنهاد کرده‌اند او به اقامتگاهی در منطقه نیویورک منتقل شود که به‌صورت شبانه‌روزی تحت حفاظت امنیتی خصوصی باشد و گفته‌اند او خطری برای جامعه محسوب نمی‌شود. وکلا همچنین گفته‌اند دولت ونزوئلا هزینه‌های این اقامت را نیز پرداخت خواهد کرد.\n\r\n\r\n\nدادستان‌های دفتر دادستانی آمریکا در منهتن با آزادی فلورس مخالفت کرده‌اند.\n\r\n\r\n\nآن‌ها مدعی شدند فلورس در مرکز بازداشت مراقبت پزشکی کافی دریافت کرده است و در صورت آزادی، «خطری شدید» از نظر فرار از کشور و تهدید علیه امنیت عمومی از جمله احتمال ارعاب شاهدان خواهد داشت.\n\r\n\r\n\nدادستان‌ها همچنین گفته‌اند قضات دیگری تشخیص داده‌اند که اجازه دادن به برخی متهمان پرونده‌های کیفری برای پرداخت هزینه نظارت بر خود در خارج از زندان ناعادلانه است، زیرا متهمانی که توان مالی کمتری دارند قادر به پرداخت چنین هزینه‌ای نیستند.\n\r\n\r\n\nتصمیم هلرشتاین درباره وثیقه، بر محاکمه فلورس یا مجازات احتمالی او تاثیری نخواهد داشت. در صورت محکومیت، او با حداقل مجازات اجباری ۴۰ سال حبس مواجه است.\n\nکپی لینک کوتاه\n\nکپی شد \n\ndocumen .addEven Lis ene ('DOMCon en Loaded', func ion() {\ncons sha eBu on = documen .que ySelec o ('.news_sha e_bu on');\n\nif (!sha eBu on) e u n;\n\nif (!naviga o .sha e) {\nsha eBu on.s yle.display = 'none';\ne u n;\n}\n\nsha eBu on.addEven Lis ene ('click', async () => {\ny {\ncons sha eDa a = {\ni le: \" u0627 u062a u0647 u0627 u0645 u0632 u0646 u06cc u062a u0627 u0632 u0647 u0622 u0645 u0631 u06cc u06a9 u0627 u0639 u0644 u06cc u0647 u0645 u0627 u062f u0648 u0631 u0648 u0648 u0647 u0645 u0633 u0631 u0634+ u062c u0632 u0626 u06cc u0627 u062a\",\nex : \" u0646 u06cc u06a9 u0644 u0627 u0633 u0645 u0627 u062f u0648 u0631 u0648 u0648 u0647 u0645 u0633 u0631 u0634 u0628 u0627 u0627 u062a u0647 u0627 u0645 u06a9 u06cc u0641 u0631 u06cc u062f u06cc u06af u0631 u06cc u062f u0631 u0622 u0645 u0631 u06cc u06a9 u0627 u0645 u0648 u0627 u062c u0647 u0634 u062f u0647 u0627 u0646 u062f.\",\nu l: \"h ps: / /www.egh esadnews.com /fa / iny /news-811012\" };\n\nawai naviga o .sha e(sha eDa a);\n} ca ch (e o ) {\nif (e o .name !== 'Abo E o ') {\nconsole.e o ('E o sha ing con en :', e o );\n}\n}\n});\n});\n\nva newsMas e IdFo Ra e = \"1865915\";",
       "url": "https://www.eghtesadnews.com/%D8%A8%D8%AE%D8%B4-%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1-%D8%B3%DB%8C%D8%A7%D8%B3%DB%8C-57/811012-%D8%A7%D8%AA%D9%87%D8%A7%D9%85-%D8%B2%D9%86%DB%8C-%D8%AA%D8%A7%D8%B2%D9%87-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D8%B9%D9%84%DB%8C%D9%87-%D9%85%D8%A7%D8%AF%D9%88%D8%B1%D9%88-%D9%87%D9%85%D8%B3%D8%B1%D8%B4-%D8%AC%D8%B2%D8%A6%DB%8C%D8%A7%D8%AA",
-      "image": "https://cdn.eghtesadnews.com/thumbnail/UYucRhBLj8cB/0ZgXDsW8N6vaJa0-04Df_hgy_K71lvEjP_Cc0NeX5NWVSDelCBmk1I4omUAam8kA-UCvMN4nQhrTn61p2Y8aS8X_UiXRG5DeyJ3KSOXdk_yV7M67u5WfRSqf1OLPNYcej5X-qRGBaj0zr4gbUAgM_9VFVTOp2xLb1G8l5aXtDyAtqiqHsWIO69g-0SpxLe9L/%D9%85%D8%A7%D8%AF%D9%88%D8%B1%D9%88.jpg",
+      "image": "https://cdn.eghtesadnews.com/thumbnail/UYucRhBLj8cB/FqWsDkiNoiJyOg0n2nX8l_j4loNuLLbGDG41PK6_rO4X00RwfhJDE0QO-wtHj1LXJmjQBvZD-RWz02rfhXgqvagpuWGKCe4vUlnlV4bf25anWen7k8e7LRzHih9IRLchuozTK2jebZEiosdJpgvOSe6e5hSjuqvMFwsdoN2i2pq1WmePC_jLayyMCaMH0rE9/%D9%85%D8%A7%D8%AF%D9%88%D8%B1%D9%88.jpg",
       "source": "اقتصادنیوز",
       "source_site": "https://www.eghtesadnews.com/",
       "allow_internal_republish": true,
@@ -3131,7 +3131,7 @@
       ],
       "importance_score": 13,
       "important": true,
-      "image_tries": 2
+      "image_tries": 3
     },
     {
       "id": "7a256d701e81a6d1be23",
@@ -3207,7 +3207,7 @@
       ],
       "importance_score": 0,
       "important": false,
-      "image_tries": 1
+      "image_tries": 2
     },
     {
       "id": "b65849ba5e2a55b4e7d2",
@@ -3215,7 +3215,7 @@
       "summary": "داده‌های تازه نشان می‌دهد موج افزایش قیمت موبایل در مهرماه نیز متوقف نشده و در برخی مدل‌ها، فاصله میان قیمت فعلی و ابتدای شهریور به نزدیک ۵۰درصد رسیده است.",
       "content": "افزایش ۵۰ درصدی قیمت‌ها در موبایل‌های میان‌رده+ جدول \n\nسرویس:\nاقتصادی \n\nکدخبر:\n۸۱۰۹۹۳ \n\n۱۴۰۵/۰۷/۱۶ - ۱۶:۰۷ \n\nداده‌های تازه نشان می‌دهد موج افزایش قیمت موبایل در مهرماه نیز متوقف نشده و در برخی مدل‌ها، فاصله میان قیمت فعلی و ابتدای شهریور به نزدیک ۵۰درصد رسیده است.\r\nبازار گوشی در هفته‌های اخیر بار دیگر به سمت افزایش قیمت حرکت کرده است و قیمت‌ها در آن از روندی گزارش می‌دهند که این بار فقط به یک رده قیمتی محدود نمانده و از مدل‌های اقتصادی تا گوشی‌های پرچمدار را در بر گرفته است. بررسی قیمت ۱۲ مدل نمونه نشان می‌دهد که در فاصله هفته دوم مهر تا قیمت‌های روز، به‌جز آی‌فون ۱۷ پرو مکس که در سطح ۵۶۵‌میلیون تومان ثابت مانده، البته به این معنا که فروشنده قیمت اعلام‌شده خود را تغییر نداده است، تمامی مدل‌های موجود در جدول با افزایش قیمت مواجه شده‌اند. شدت این افزایش اما در رده‌های مختلف یکسان نیست و در میان گوشی‌های میان‌رده، حرکت قیمت‌ها تندتر از سایر بخش‌ها بوده است.\n\r\n\r\n\n\r\n\r\n\nرشد هفتگی قیمت‌ها در بازار گوشی\n\r\n\r\n\nدر بخش اقتصادی، Redmi A۵ در هفته دوم مهر ۴۶.۱۵‌میلیون تومان قیمت داشت و اکنون به ۴۸.۵‌میلیون تومان رسیده است؛ یعنی افزایشی حدود ۵.۱درصدی. Poco C۷۱ نیز از ۴۵‌میلیون تومان به ۴۹.۸‌میلیون تومان رسیده و رشد ۱۰.۷درصدی را ثبت کرده است. Galaxy A۷ هم از ۴۹.۴۹‌میلیون به ۵۳.۴۵‌میلیون تومان رسیده و ۸درصد افزایش قیمت داشته است.\n\r\n\r\n\nبا وجود این رشدهای کوتاه‌مدت، فاصله این مدل‌ها با ابتدای شهریور نیز قابل‌توجه است؛ Redmi A۵ در این بازه حدود ۴۸.۸درصد و Poco C۷۱ حدود ۴۷.۲درصد افزایش قیمت داشته‌اند، درحالی‌که Galaxy A۷ رشد محدودتر ۱۴.۷درصدی را تجربه کرده است. اما فشار قیمتی در میان‌رده‌ها آشکارتر است. Poco C۸۵ که در هفته دوم مهر ۶۰‌میلیون تومان قیمت داشت، اکنون به ۶۸.۵‌میلیون تومان رسیده و در یک هفته ۱۴.۲درصد افزایش داشته است. Poco M۷ نیز از ۶۵.۵۸‌میلیون به ۷۳.۷‌میلیون تومان رسیده است؛ رشدی ۱۲.۴درصدی که افزایش قیمت این مدل را از ابتدای شهریور به حدود ۴۹.۴درصد می‌رساند. Galaxy A۱۷ با رسیدن از ۵۳.۵‌میلیون به ۵۸.۲‌میلیون تومان، ۸.۸درصد افزایش هفتگی داشته و در مقایسه با ابتدای شهریور ۱۶.۳درصد گران‌تر شده است. Galaxy A۳۶ نیز با رشد ۶.۳درصدی در هفته اخیر، به ۱۰۳.۳‌میلیون تومان رسیده و نسبت به ابتدای شهریور حدود ۲۰.۸درصد افزایش قیمت دارد.\n\r\n\r\n\nدر این میان، قیمت Galaxy A۵۶ از ۱۱۲.۴۶‌میلیون تومان در هفته دوم مهر به ۱۲۵‌میلیون تومان رسیده است. Poco X۷ نیز با افزایش قیمت از ۱۲۳‌میلیون به ۱۲۹‌میلیون تومان، ۴.۹درصد رشد هفتگی داشته است، هرچند به دلیل ناموجود بودن آن در ابتدای شهریور، مقایسه مستقیم با آن مقطع برای این مدل ممکن نیست. CMF ۲ P o هم از ۱۴۴.۵‌میلیون به ۱۷۹.۲۶‌میلیون تومان رسیده و در یک هفته ۲۴.۱درصد افزایش قیمت داشته است. جالب توجه است که در ویترین‌های آنلاین که مراجع تعیین قیمت برای این گزارش هستند، این مدل تنها یک فروشنده داشت.\n\r\n\r\n\nدر رده بالاتر، Galaxy S۲۶ Ul a از ۳۹۶.۲‌میلیون تومان به ۴۱۷‌میلیون تومان رسیده و رشد ۵.۲درصدی را ثبت کرده است. در مقابل، iPhone ۱۷ P o Max طی یک هفته تغییر قیمتی نداشته، اما همچنان نسبت به ابتدای شهریور ۲۴.۱درصد گران‌تر است.\n\r\n\r\n\nپیش از این «دنیای اقتصاد» در گزارشی با عنوان «اصلاح قیمت در گوشی‌های اقتصادی» روند افزایش قیمت گوشی‌های اقتصادی و میان‌رده را از ابتدای سال بررسی کرده بود. هرچند که در آن مقطع، افت نسبی قیمت‌ها را شاهد بودیم اما داده‌های تازه نشان می‌دهد موج افزایش قیمت در مهرماه نیز متوقف نشده و در برخی مدل‌ها، فاصله میان قیمت فعلی و ابتدای شهریور به نزدیک ۵۰درصد رسیده است. مساله‌ای که نشان می‌دهد برای ارزیابی وضعیت بازار، مشاهده تغییرات هفتگی به تنهایی کافی نیست و مسیر چندماهه قیمت‌ها نیز باید هم‌زمان در نظر گرفته شود.\n\r\n\r\n\n\r\n\r\n\nمقایسه قیمت آی‌فون 18 در ایران و جهان\n\r\n\r\n\nدر بازار جهانی اما یک گوشی واحد با قیمت‌های یکسان عرضه نمی‌شود. بررسی قیمت پایه iPhone 18 P o با حافظه ۲۵۶ گیگابایت نشان می‌دهد فاصله میان بازارها قابل‌توجه است. به‌طوری که آمریکا در پایین‌ترین سطح قرار دارد و ترکیه در سوی دیگر طیف، فاصله بسیار زیادی با قیمت پایه اپل دارد. بررسی‌ها بر مبنای داده‌های Coun e poin نیز آمریکا را ارزان‌ترین بازار و ترکیه را یکی از گران‌ترین بازارها معرفی می‌کند و اختلاف قیمت هند با آمریکا را نیز به مالیات و عوارض واردات و اثر تضعیف روپیه نسبت می‌دهد.\n\r\n\r\n\nبرای قابل مقایسه شدن ارقام، قیمت هر کشور بر اساس نرخ بازار آزاد ارز در ۱۵ مهر ۱۴۰۵ به تومان تبدیل شده است. در این محاسبه، فرمول ساده «قیمت به پول محلی × نرخ همان ارز به تومان» به کار رفته است. اما تبدیل ارزی به تنهایی توضیح‌دهنده اختلاف قیمت نیست. در آمریکا قیمت پایه در سایت اپل پیش از مالیات فروش محلی نمایش داده می‌شود، درحالی‌که در بازارهایی مانند هند و ژاپن مالیات در قیمت مصرف‌کننده لحاظ شده است. در کنار مالیات، تعرفه و عوارض واردات، هزینه توزیع، شرایط رقابتی بازار و نوسان ارز نیز روی قیمت نهایی اثر می‌گذارند. مرجعی با عنوان Res of Wo ld همچنین تاکید می‌کند که در هند، وابستگی به واردات و عوارض وارداتی در کنار مالیات کالا و خدمات، قیمت را بالا می‌برد؛ در ترکیه نیز سطح بالای مالیات و عوارض عامل اصلی فاصله زیاد با قیمت آمریکا معرفی شده است.\n\r\n\r\n\nجدول قیمت آی‌فون در کشورهای گوناگون با استفاده از اطلاعات موجود در GSMA ena تنظیم شد. قیمت‌ها به دلار تبدیل شد و نرخ تبدیل دلار 263هزار و 500تومان در نظر گرفته شده است. گزارش مذکور، به بررسی قیمت iPhone 18 P o Max با ظرفیت ۲۵۶گیگابایت در بازارهای مختلف می‌پردازد.\n\r\n\r\n\nاز این منظر، قیمت ۴۳۵‌میلیون تومانی بازار ایران نیز نباید به‌طور مستقیم معادل «قیمت رسمی اپل در ایران» تلقی شود. این عدد، قیمت بازار داخلی است و ساختار واردات، هزینه‌های زنجیره توزیع و شرایط عرضه در ایران را در خود دارد. در ایران موضوعی با عنوان رجیستری مطرح می‌شود که در ابتدا در مقابله با قاچاق شکل گرفت و حالا پرداختن به آن شرح مفصلی را می‌طلبد. بنابراین مقایسه دقیق‌تر، مقایسه قیمت رسمی یک مدل و ظرفیت مشخص در کشورهای مختلف است.\n\nکپی لینک کوتاه\n\nکپی شد \n\ndocumen .addEven Lis ene ('DOMCon en Loaded', func ion() {\ncons sha eBu on = documen .que ySelec o ('.news_sha e_bu on');\n\nif (!sha eBu on) e u n;\n\nif (!naviga o .sha e) {\nsha eBu on.s yle.display = 'none';\ne u n;\n}\n\nsha eBu on.addEven Lis ene ('click', async () => {\ny {\ncons sha eDa a = {\ni le: \" u0627 u0641 u0632 u0627 u06cc u0634 u06f5 u06f0 u062f u0631 u0635 u062f u06cc u0642 u06cc u0645 u062a u200c u0647 u0627 u062f u0631 u0645 u0648 u0628 u0627 u06cc u0644 u200c u0647 u0627 u06cc u0645 u06cc u0627 u0646 u200c u0631 u062f u0647+ u062c u062f u0648 u0644\",\nex : \" u062f u0627 u062f u0647 u200c u0647 u0627 u06cc u062a u0627 u0632 u0647 u0646 u0634 u0627 u0646 u0645 u06cc u200c u062f u0647 u062f u0645 u0648 u062c u0627 u0641 u0632 u0627 u06cc u0634 u0642 u06cc u0645 u062a u0645 u0648 u0628 u0627 u06cc u0644 u062f u0631 u0645 u0647 u0631 u0645 u0627 u0647 u0646 u06cc u0632 u0645 u062a u0648 u0642 u0641 u0646 u0634 u062f u0647 u0648 u062f u0631 u0628 u0631 u062e u06cc u0645 u062f u0644 u200c u0647 u0627 u060c u0641 u0627 u0635 u0644 u0647 u0645 u06cc u0627 u0646 u0642 u06cc u0645 u062a u0641 u0639 u0644 u06cc u0648 u0627 u0628 u062a u062f u0627 u06cc u0634 u0647 u0631 u06cc u0648 u0631 u0628 u0647 u0646 u0632 u062f u06cc u06a9 u06f5 u06f0 u062f u0631 u0635 u062f u0631 u0633 u06cc u062f u0647 u0627 u0633 u062a. n n\",\nu l: \"h ps: / /www.egh esadnews.com /fa / iny /news-810993\" };\n\nawai naviga o .sha e(sha eDa a);\n} ca ch (e o ) {\nif (e o .name !== 'Abo E o ') {\nconsole.e o ('E o sha ing con en :', e o );\n}\n}\n});\n});\n\nva newsMas e IdFo Ra e = \"1865862\";",
       "url": "https://www.eghtesadnews.com/%D8%A8%D8%AE%D8%B4-%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF%DB%8C-67/810993-%D8%A7%D9%81%D8%B2%D8%A7%DB%8C%D8%B4-%D8%AF%D8%B1%D8%B5%D8%AF%DB%8C-%D9%82%DB%8C%D9%85%D8%AA-%D9%87%D8%A7-%D8%AF%D8%B1-%D9%85%D9%88%D8%A8%D8%A7%DB%8C%D9%84-%D9%87%D8%A7%DB%8C-%D9%85%DB%8C%D8%A7%D9%86-%D8%B1%D8%AF%D9%87-%D8%AC%D8%AF%D9%88%D9%84",
-      "image": "https://cdn.eghtesadnews.com/thumbnail/EUwoByukSLck/3uAmNuLNo25lje0Y45zfgdst6YnG1l5W9tJii1ZHbtE8keBEF19E6uP-jpg4aAI9Bc9-m6azNDoqhMqdV-D161QDrUf7fj20jSKuiN8DwtWYEwpMf8iPhGqm9X3kdo9n5UyGc853GvthNQCnWEURYT7PG2Mt6SgY9mrJjYlJez2HNJshY11i9GCFr5OfimfH/%D9%85%D9%88%D8%A8%D8%A7%DB%8C%D9%84+%D8%AA%D9%84%D9%81%D9%86+%D9%87%D9%85%D8%B1%D8%A7%D9%87+%D8%B1%D8%AC%DB%8C%D8%B3%D8%AA%D8%B1%DB%8C+%DA%AF%D9%88%D8%B4%DB%8C.jpg",
+      "image": "https://cdn.eghtesadnews.com/thumbnail/EUwoByukSLck/OG-LILxaWy3I_DEUmEM56UUFIP8HWOO417FXU4RUGVPjJi-i4bPRBimTANYc1Fbhl5XVAYHK4CR8aEsGIxcA-cx9bRROYMZ9Q7mIF9M3bQ4mXIVe_86_-XC0Tr1o-tt5C4EHq00_Xo7ir07Ei37dJwO4OM7foJt21l5IGp5pFn8AJIbrmC0Ls6DHQ-_7KMzt/%D9%85%D9%88%D8%A8%D8%A7%DB%8C%D9%84+%D8%AA%D9%84%D9%81%D9%86+%D9%87%D9%85%D8%B1%D8%A7%D9%87+%D8%B1%D8%AC%DB%8C%D8%B3%D8%AA%D8%B1%DB%8C+%DA%AF%D9%88%D8%B4%DB%8C.jpg",
       "source": "اقتصادنیوز",
       "source_site": "https://www.eghtesadnews.com/",
       "allow_internal_republish": true,
@@ -3270,7 +3270,7 @@
       "summary": "آن کارسون شاعر، مقاله‌نویس و استاد ادبیات کلاسیک کانادایی برنده نوبل ادبی ۲۰۲۶ معرفی شد.",
       "content": "برنده نوبل ادبیات ۲۰۲۶ معرفی شد/ آن کارسون کیست؟ \n\nسرویس:\nاخبار سایر رسانه‌ها \n\nکدخبر:\n۸۱۰۹۹۰ \n\n۱۴۰۵/۰۷/۱۶ - ۱۵:۵۸ \n\nآن کارسون شاعر، مقاله‌نویس و استاد ادبیات کلاسیک کانادایی برنده نوبل ادبی ۲۰۲۶ معرفی شد. \nآن کارسون شاعر کانادایی از سوی آکادمی نوبل به عنوان برنده این جایزه در بخش ادبیات در سال ۲۰۲۶ شد.\n\r\n\r\n\n بنا به گزارش سایت نوبل، آن کارسون شاعر، مقاله‌نویس و استاد ادبیات کلاسیک کانادایی و همچنین مترجم برنده نوبل ادبی امسال است. اولین کتاب او، اروس تلخ و شیرین (۱۹۹۶)، مفهوم اروس را از یونان باستان تا به امروز دنبال می‌کند. او در این کتاب می‌نویسد: «کلماتی که می‌خوانیم و کلماتی که می‌نویسیم هرگز دقیقاً منظور ما را نمی‌رسانند. افرادی که دوستشان داریم هرگز آنطور که می‌خواهیم نیستند. این دو نماد هرگز کاملاً با هم مطابقت ندارند. اروس چیزی بین این دو است.» کتاب او با عنوان «زندگینامه سرخ» (۱۹۹۸) رمانی منظوم است که با الهام از اسطوره یونانی گریون و هراکلس نوشته شده و در دنیای مدرن اتفاق می‌افتد.\n\r\n\r\n\nاو نزدیک به ۲۰ کتاب شعر، مقاله و ترجمه منتشر کرده است، از جمله «یک اورستیا» (۲۰۱۰) که داستان‌های آگاممنون، الکترا و اورستس را روایت می‌کند. کارسون در سال ۱۹۹۶ جایزه ادبی لانان، در سال ۱۹۹۸ بورسیه گوگنهایم و در سال ۲۰۰۰ بورسیه مک‌آرتور را دریافت کرد. او هنرمند مقیم دانشگاه نیویورک است و با همکاری همسرش، رابرت کوری، تدریس می‌کند. در سال ۲۰۱۴، کارسون کتاب «سند قرمز» را منتشر کرد که در آن شخصیت‌های او، گریون و هراکلس از «زندگینامه قرمز» بازمی‌گردند. او در این کتاب هشدار می‌دهد: «زندگی کردن پس از پایان اسطوره‌ات، کاری خطرناک است.»\n\r\n\r\n\nوی به عنوان برنده این جایزه ۱۲ میلیون کرون سوئد (کمی بیش از ۱.۲ میلیون دلار)، همراه یک عمر افتخار به کارنامه خود خواهد افزود.\n\r\n\r\n\n\r\n\r\n\nبا توجه به سعی آکادمی سوئد در حفظ تعادل جنسیتی و منطقه‌ای، امسال احتمال بیشتری می‌رفت که یک نویسنده زن غیراروپایی برنده این جایزه باشد.\n\r\n\r\n\nدر طول ۹ سال گذشته، آکادمی به طور متناوب بین برندگان مرد و زن، از کازوئو ایشیگورو در سال ۲۰۱۷ و اولگا توکارچوک در سال ۲۰۱۸ گرفته تا هان کانگ در سال ۲۰۲۴ و لازلو کراسناهورکایی در سال ۲۰۲۵، چرخیده است. از این رو با توجه به این الگو انتظار می‌رفت امسال یک نویسنده زن انتخاب محتمل‌تری باشد.\n\r\n\r\n\nبا توجه به اینکه برنده سال پیش، کراسناهورکای از مجارستان موفق به کسب این جایزه شد، برخی ناظران انتظار داشتند که این جایزه امسال به خارج از اروپا برسد. در این میان نویسندگان آمریکای لاتین توجه ویژه‌ای را به خود جلب کرده‌ بودند، زیرا از زمان ماریو بارگاس یوسا از پرو در سال ۲۰۱۰، هیچ نویسنده‌ای برنده این جایزه نشده است.\n\r\n\r\n\nجایزه نوبل ادبی از سال ۱۹۰۱ اهدا می‌شود و ۱۱۸ بار برنده خود را معرفی کرده و در مجموع ۱۲۲ نفر موفق به دریافت این جایزه شده‌اند. به این ترتیب ۴ بار در این میان ۲ نویسنده به صورت مشترک این جایزه را دریافت کرده‌اند.\n\r\n\r\n\nدانستنی‌هایی درباره نوبل ادبیات (از ۱۹۰۱ تا ۲۰۲۵ میلادی)\n\r\n\r\n\nاز سال ۱۹۰۱ تا سال ۲۰۲۵، ۱۱۸ جایزه نوبل ادبیات اهدا شده است. این جایزه در ۷ نوبت (سال‌های ۱۹۱۴، ۱۹۱۸، ۱۹۳۵، ۱۹۴۰، ۱۹۴۱، ۱۹۴۲ و ۱۹۴۳) اهدا نشد. دلیل این امر عمدتاً جنگ‌های جهانی اول و دوم بود.\n\r\n\r\n\nجایزه نوبل ادبیات تنها در ۴ نوبت بین دو برنده تقسیم شده است. تقسیم جایزه در سایر رشته‌های نوبل بسیار رایج‌تر است. آمار کلی نوبل ادبیات به صورت زیر است:\n\r\n\r\n\nتعداد جوایز: ۱۱۸؛\n\r\n\r\n\nتعداد برندگان: ۱۲۲ نفر؛\n\r\n\r\n\nزنان برنده: ۱۸ نفر؛\n\r\n\r\n\nجوان‌ترین برنده: ۴۱ سال؛\n\r\n\r\n\nمسن‌ترین برنده: ۸۷ سال.\n\r\n\r\n\nزمان اعلام جوایز نوبل ۲۰۲۶\n\r\n\r\n\nمراسم اعلام جوایز نوبل امسال از ۵ تا ۱۲ اکتبر/ ۱۳ تا ۲۰ مهر ۱۴۰۵ برگزار می‌شود. بنا به اعلام بنیاد نوبل، همه این مراسم به صورت زنده از کانال‌های رسمی دیجیتال این بنیاد پخش خواهد شد.\n\r\n\r\n\nبرندگان جایزه نوبل پزشکی، فیزیک و شیمی به ترتیب در روزهای دوشنبه ۱۳ مهر، سه‌شنبه ۱۴ مهر، چهارشنبه ۱۵ مهر اعلام شدند. بر اساس تقویم منتشرشده، برنده جایزه صلح، روز جمعه ۱۷ مهر و علوم اقتصادی، دوشنبه ۲۰ مهر اعلام خواهد شد.\n\nکپی لینک کوتاه\n\nکپی شد \n\ndocumen .addEven Lis ene ('DOMCon en Loaded', func ion() {\ncons sha eBu on = documen .que ySelec o ('.news_sha e_bu on');\n\nif (!sha eBu on) e u n;\n\nif (!naviga o .sha e) {\nsha eBu on.s yle.display = 'none';\ne u n;\n}\n\nsha eBu on.addEven Lis ene ('click', async () => {\ny {\ncons sha eDa a = {\ni le: \" u0628 u0631 u0646 u062f u0647 u0646 u0648 u0628 u0644 u0627 u062f u0628 u06cc u0627 u062a u06f2 u06f0 u06f2 u06f6 u0645 u0639 u0631 u0641 u06cc u0634 u062f / u0622 u0646 u06a9 u0627 u0631 u0633 u0648 u0646 u06a9 u06cc u0633 u062a u061f\",\nex : \" u0622 u0646 u06a9 u0627 u0631 u0633 u0648 u0646 u0634 u0627 u0639 u0631 u060c u0645 u0642 u0627 u0644 u0647 u200c u0646 u0648 u06cc u0633 u0648 u0627 u0633 u062a u0627 u062f u0627 u062f u0628 u06cc u0627 u062a u06a9 u0644 u0627 u0633 u06cc u06a9 u06a9 u0627 u0646 u0627 u062f u0627 u06cc u06cc u0628 u0631 u0646 u062f u0647 u0646 u0648 u0628 u0644 u0627 u062f u0628 u06cc u06f2 u06f0 u06f2 u06f6 u0645 u0639 u0631 u0641 u06cc u0634 u062f.\",\nu l: \"h ps: / /www.egh esadnews.com /fa / iny /news-810990\" };\n\nawai naviga o .sha e(sha eDa a);\n} ca ch (e o ) {\nif (e o .name !== 'Abo E o ') {\nconsole.e o ('E o sha ing con en :', e o );\n}\n}\n});\n});\n\nva newsMas e IdFo Ra e = \"1865854\";",
       "url": "https://www.eghtesadnews.com/%D8%A8%D8%AE%D8%B4-%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1-%D8%B3%D8%A7%DB%8C%D8%B1-%D8%B1%D8%B3%D8%A7%D9%86%D9%87-%D9%87%D8%A7-61/810990-%D8%A8%D8%B1%D9%86%D8%AF%D9%87-%D9%86%D9%88%D8%A8%D9%84-%D8%A7%D8%AF%D8%A8%DB%8C%D8%A7%D8%AA-%D9%85%D8%B9%D8%B1%D9%81%DB%8C-%D8%B4%D8%AF-%D8%A2%D9%86-%DA%A9%D8%A7%D8%B1%D8%B3%D9%88%D9%86-%DA%A9%DB%8C%D8%B3%D8%AA",
-      "image": "https://cdn.eghtesadnews.com/thumbnail/7iysm02mGWPa/PQcd_gru5UcLQ91tTaBmyIvSRSdQ-JpM9pCGUTezG7xIxTQIQ0CGUJnUW5xlgwI_YjVhhW_9i7TbTIrhwjh9DJ7tJOnC4SJlszH2KocWS3Ab4GrYTnocjs3OMYSHDuujNUtRzUcL9AhBSrOi6RDIwALR-kYbryd9Jm96YqOXyLoHKf3vuyywOIXpa7CpaxTt/%D9%86%D9%88%D8%A8%D9%84+%D8%A7%D8%AF%D8%A8%DB%8C%D8%A7%D8%AA.jpg",
+      "image": "https://cdn.eghtesadnews.com/thumbnail/7iysm02mGWPa/HB0iKrb7O7byzXPgQ6hz_o1uZhQDC-P1Roxc2Xr0gF0oUqEpANa-9DOMcmgYMNnNrVrG2T7CtpxNa2RFuuej9UCvqy89wiuOeMYnlYK6kSJ5802N2WJhtcNZY7uXgXDg7DaiF9X1wMDRxiyL1GtfHfCBBowupmmRF1Pn08yrunsAPm020JfDOeGd7Bb-c-3C/%D9%86%D9%88%D8%A8%D9%84+%D8%A7%D8%AF%D8%A8%DB%8C%D8%A7%D8%AA.jpg",
       "source": "اقتصادنیوز",
       "source_site": "https://www.eghtesadnews.com/",
       "allow_internal_republish": true,
@@ -3354,7 +3354,8 @@
         "economy"
       ],
       "importance_score": 0,
-      "important": false
+      "important": false,
+      "image_tries": 1
     },
     {
       "id": "257c6605f67c046ae455",
@@ -3391,7 +3392,8 @@
         "economy"
       ],
       "importance_score": 0,
-      "important": false
+      "important": false,
+      "image_tries": 1
     },
     {
       "id": "24e6d9f90c755c6597da",
@@ -3427,7 +3429,8 @@
         "currency-gold"
       ],
       "importance_score": 25,
-      "important": true
+      "important": true,
+      "image_tries": 1
     },
     {
       "id": "e875e0cddd5c1d0dea91",
@@ -3464,7 +3467,8 @@
         "health"
       ],
       "importance_score": 0,
-      "important": false
+      "important": false,
+      "image_tries": 1
     },
     {
       "id": "fa7e9777117159e405ba",
@@ -3483,7 +3487,7 @@
       ],
       "importance_score": 0,
       "important": false,
-      "image_tries": 2
+      "image_tries": 3
     },
     {
       "id": "a8579026ae39f40eefa5",
@@ -3509,7 +3513,7 @@
       "summary": "عباس عراقچی، وزیر امور خارجه در جمع خبرنگاران درباره مذاکرات غیرمستقیم ایران و آمریکا و پاسخ واشنگتن به ۷ شرط ایران بیان کرد: روند مذاکراتی همچنان ادامه دارد و از طریق میانجی‌ها پیام‌ها در حال رد و بدل شدن است.",
       "content": "آخرین وضعیت مذاکرات به روایت عراقچی/ به‌زودی به پیشنهاد آمریکا پاسخ می‌دهیم +فیلم \n\nسرویس:\nاخبار سیاسی \n\nکدخبر:\n۸۱۰۹۸۶ \n\n۱۴۰۵/۰۷/۱۶ - ۱۵:۲۹ \n\nعباس عراقچی، وزیر امور خارجه در جمع خبرنگاران درباره مذاکرات غیرمستقیم ایران و آمریکا و پاسخ واشنگتن به ۷ شرط ایران بیان کرد: روند مذاکراتی همچنان ادامه دارد و از طریق میانجی‌ها پیام‌ها در حال رد و بدل شدن است.\r\nوزیر امور خارجه درباره مذاکرات غیرمستقیم ایران و آمریکا توضیحاتی ارائه کرد.\n\r\n\r\n\nوی گفت: ما طرح خود را که تحت عنوان «طرح هفت‌روزه» ارائه کرده بودیم، مطرح کردیم و دیدگاه‌های طرف آمریکایی را نیز در مقابل آن شنیدیم. در حال حاضر مشغول بررسی دیدگاه‌های آمریکایی‌ها هستیم و فکر می‌کنم ظرف چند روز آینده پاسخ خود را ارائه خواهیم کرد. همان‌طور که عرض کردم، روند مذاکراتی همچنان ادامه دارد.\n\nکپی لینک کوتاه\n\nکپی شد \n\ndocumen .addEven Lis ene ('DOMCon en Loaded', func ion() {\ncons sha eBu on = documen .que ySelec o ('.news_sha e_bu on');\n\nif (!sha eBu on) e u n;\n\nif (!naviga o .sha e) {\nsha eBu on.s yle.display = 'none';\ne u n;\n}\n\nsha eBu on.addEven Lis ene ('click', async () => {\ny {\ncons sha eDa a = {\ni le: \" u0622 u062e u0631 u06cc u0646 u0648 u0636 u0639 u06cc u062a u0645 u0630 u0627 u06a9 u0631 u0627 u062a u0628 u0647 u0631 u0648 u0627 u06cc u062a u0639 u0631 u0627 u0642 u0686 u06cc / u0628 u0647 u200c u0632 u0648 u062f u06cc u0628 u0647 u067e u06cc u0634 u0646 u0647 u0627 u062f u0622 u0645 u0631 u06cc u06a9 u0627 u067e u0627 u0633 u062e u0645 u06cc u200c u062f u0647 u06cc u0645 + u0641 u06cc u0644 u0645\",\nex : \" u0639 u0628 u0627 u0633 u0639 u0631 u0627 u0642 u0686 u06cc u060c u0648 u0632 u06cc u0631 u0627 u0645 u0648 u0631 u062e u0627 u0631 u062c u0647 u062f u0631 u062c u0645 u0639 u062e u0628 u0631 u0646 u06af u0627 u0631 u0627 u0646 u062f u0631 u0628 u0627 u0631 u0647 u0645 u0630 u0627 u06a9 u0631 u0627 u062a u063a u06cc u0631 u0645 u0633 u062a u0642 u06cc u0645 u0627 u06cc u0631 u0627 u0646 u0648 u0622 u0645 u0631 u06cc u06a9 u0627 u0648 u067e u0627 u0633 u062e u0648 u0627 u0634 u0646 u06af u062a u0646 u0628 u0647 u06f7 u0634 u0631 u0637 u0627 u06cc u0631 u0627 u0646 u0628 u06cc u0627 u0646 u06a9 u0631 u062f: u0631 u0648 u0646 u062f u0645 u0630 u0627 u06a9 u0631 u0627 u062a u06cc u0647 u0645 u0686 u0646 u0627 u0646 u0627 u062f u0627 u0645 u0647 u062f u0627 u0631 u062f u0648 u0627 u0632 u0637 u0631 u06cc u0642 u0645 u06cc u0627 u0646 u062c u06cc u200c u0647 u0627 u067e u06cc u0627 u0645 u200c u0647 u0627 u062f u0631 u062d u0627 u0644 u0631 u062f u0648 u0628 u062f u0644 u0634 u062f u0646 u0627 u0633 u062a. n n\",\nu l: \"h ps: / /www.egh esadnews.com /fa / iny /news-810986\" };\n\nawai naviga o .sha e(sha eDa a);\n} ca ch (e o ) {\nif (e o .name !== 'Abo E o ') {\nconsole.e o ('E o sha ing con en :', e o );\n}\n}\n});\n});\n\nva newsMas e IdFo Ra e = \"1865844\";",
       "url": "https://www.eghtesadnews.com/%D8%A8%D8%AE%D8%B4-%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1-%D8%B3%DB%8C%D8%A7%D8%B3%DB%8C-57/810986-%D8%B9%D8%B1%D8%A7%D9%82%DA%86%DB%8C-%D9%85%D8%B0%D8%A7%DA%A9%D8%B1%D8%A7%D8%AA-%D8%A7%D8%AF%D8%A7%D9%85%D9%87-%D8%AF%D8%A7%D8%B1%D8%AF-%D8%A8%D9%87-%D8%B2%D9%88%D8%AF%DB%8C-%D8%A8%D9%87-%D9%BE%DB%8C%D8%B4%D9%86%D9%87%D8%A7%D8%AF-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D9%BE%D8%A7%D8%B3%D8%AE-%D9%85%DB%8C-%D8%AF%D9%87%DB%8C%D9%85-%D9%81%DB%8C%D9%84%D9%85",
-      "image": "https://cdn.eghtesadnews.com/thumbnail/aNacyfKxNZk3/YCt99lfFcGz0iQbri4T8ME9euH-wR14GVjQgyB9MB3fBWrk_4Waqg7JfUWT7fFtCV16uu98kmvGElJw4w3xtONUaW_m3wAkAjlKqKzjit4nH8YwEt3669R80GFYuz1kVrUsXiIwEiTRmHzu4yXqmT2AH4a4drpVktElUGAKXtrUM9TngRrwCtW9TJgT0l0_b/%D8%B9%D8%B1%D8%A7%D9%82%DA%86%DB%8C.jpg",
+      "image": "https://cdn.eghtesadnews.com/thumbnail/aNacyfKxNZk3/WElnknh4fGVvXZ9LtDk61eX4WviuxXBkPfdNaHSYF16NCFt_EMj0uVSXCjgPnPWLnQ90E_GzSOuQIcivkXO9AmGZHZmkpNdvttA6CLUi4XeN1eArgPEQ3JoT0pvTWsHcmydKGOi_hqj-kFPhJ8OlHpdL4cGybC-p9LkKf2JrehYrc1aWqgjnZu7aSiEE930b/%D8%B9%D8%B1%D8%A7%D9%82%DA%86%DB%8C.jpg",
       "source": "اقتصادنیوز",
       "source_site": "https://www.eghtesadnews.com/",
       "allow_internal_republish": true,
@@ -3528,7 +3532,7 @@
       "summary": "عباس عراقچی، وزیر امور خارجه در جمع خبرنگاران درباره مذاکرات غیرمستقیم ایران و آمریکا و پاسخ واشنگتن به ۷ شرط ایران بیان کرد: روند مذاکراتی همچنان ادامه دارد و از طریق میانجی‌ها پیام‌ها در حال رد و بدل شدن است.",
       "content": "آخرین وضعیت مذاکرات به روایت عراقچی/ به‌زودی به پیشنهاد آمریکا پاسخ می‌دهیم +فیلم \n\nسرویس:\nاخبار سیاسی \n\nکدخبر:\n۸۱۰۹۸۶ \n\n۱۴۰۵/۰۷/۱۶ - ۱۵:۲۹ \n\nعباس عراقچی، وزیر امور خارجه در جمع خبرنگاران درباره مذاکرات غیرمستقیم ایران و آمریکا و پاسخ واشنگتن به ۷ شرط ایران بیان کرد: روند مذاکراتی همچنان ادامه دارد و از طریق میانجی‌ها پیام‌ها در حال رد و بدل شدن است.\r\nوزیر امور خارجه درباره مذاکرات غیرمستقیم ایران و آمریکا توضیحاتی ارائه کرد.\n\r\n\r\n\nوی گفت: ما طرح خود را که تحت عنوان «طرح هفت‌روزه» ارائه کرده بودیم، مطرح کردیم و دیدگاه‌های طرف آمریکایی را نیز در مقابل آن شنیدیم. در حال حاضر مشغول بررسی دیدگاه‌های آمریکایی‌ها هستیم و فکر می‌کنم ظرف چند روز آینده پاسخ خود را ارائه خواهیم کرد. همان‌طور که عرض کردم، روند مذاکراتی همچنان ادامه دارد.\n\nکپی لینک کوتاه\n\nکپی شد \n\ndocumen .addEven Lis ene ('DOMCon en Loaded', func ion() {\ncons sha eBu on = documen .que ySelec o ('.news_sha e_bu on');\n\nif (!sha eBu on) e u n;\n\nif (!naviga o .sha e) {\nsha eBu on.s yle.display = 'none';\ne u n;\n}\n\nsha eBu on.addEven Lis ene ('click', async () => {\ny {\ncons sha eDa a = {\ni le: \" u0622 u062e u0631 u06cc u0646 u0648 u0636 u0639 u06cc u062a u0645 u0630 u0627 u06a9 u0631 u0627 u062a u0628 u0647 u0631 u0648 u0627 u06cc u062a u0639 u0631 u0627 u0642 u0686 u06cc / u0628 u0647 u200c u0632 u0648 u062f u06cc u0628 u0647 u067e u06cc u0634 u0646 u0647 u0627 u062f u0622 u0645 u0631 u06cc u06a9 u0627 u067e u0627 u0633 u062e u0645 u06cc u200c u062f u0647 u06cc u0645 + u0641 u06cc u0644 u0645\",\nex : \" u0639 u0628 u0627 u0633 u0639 u0631 u0627 u0642 u0686 u06cc u060c u0648 u0632 u06cc u0631 u0627 u0645 u0648 u0631 u062e u0627 u0631 u062c u0647 u062f u0631 u062c u0645 u0639 u062e u0628 u0631 u0646 u06af u0627 u0631 u0627 u0646 u062f u0631 u0628 u0627 u0631 u0647 u0645 u0630 u0627 u06a9 u0631 u0627 u062a u063a u06cc u0631 u0645 u0633 u062a u0642 u06cc u0645 u0627 u06cc u0631 u0627 u0646 u0648 u0622 u0645 u0631 u06cc u06a9 u0627 u0648 u067e u0627 u0633 u062e u0648 u0627 u0634 u0646 u06af u062a u0646 u0628 u0647 u06f7 u0634 u0631 u0637 u0627 u06cc u0631 u0627 u0646 u0628 u06cc u0627 u0646 u06a9 u0631 u062f: u0631 u0648 u0646 u062f u0645 u0630 u0627 u06a9 u0631 u0627 u062a u06cc u0647 u0645 u0686 u0646 u0627 u0646 u0627 u062f u0627 u0645 u0647 u062f u0627 u0631 u062f u0648 u0627 u0632 u0637 u0631 u06cc u0642 u0645 u06cc u0627 u0646 u062c u06cc u200c u0647 u0627 u067e u06cc u0627 u0645 u200c u0647 u0627 u062f u0631 u062d u0627 u0644 u0631 u062f u0648 u0628 u062f u0644 u0634 u062f u0646 u0627 u0633 u062a. n n\",\nu l: \"h ps: / /www.egh esadnews.com /fa / iny /news-810986\" };\n\nawai naviga o .sha e(sha eDa a);\n} ca ch (e o ) {\nif (e o .name !== 'Abo E o ') {\nconsole.e o ('E o sha ing con en :', e o );\n}\n}\n});\n});\n\nva newsMas e IdFo Ra e = \"1865844\";",
       "url": "https://www.eghtesadnews.com/%D8%A8%D8%AE%D8%B4-%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1-%D8%B3%DB%8C%D8%A7%D8%B3%DB%8C-57/810986-%D8%A2%D8%AE%D8%B1%DB%8C%D9%86-%D9%88%D8%B6%D8%B9%DB%8C%D8%AA-%D9%85%D8%B0%D8%A7%DA%A9%D8%B1%D8%A7%D8%AA-%D8%A8%D9%87-%D8%B1%D9%88%D8%A7%DB%8C%D8%AA-%D8%B9%D8%B1%D8%A7%D9%82%DA%86%DB%8C-%D8%A8%D9%87-%D8%B2%D9%88%D8%AF%DB%8C-%D8%A8%D9%87-%D9%BE%DB%8C%D8%B4%D9%86%D9%87%D8%A7%D8%AF-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D9%BE%D8%A7%D8%B3%D8%AE-%D9%85%DB%8C-%D8%AF%D9%87%DB%8C%D9%85-%D9%81%DB%8C%D9%84%D9%85",
-      "image": "https://cdn.eghtesadnews.com/thumbnail/aNacyfKxNZk3/YCt99lfFcGz0iQbri4T8ME9euH-wR14GVjQgyB9MB3fBWrk_4Waqg7JfUWT7fFtCV16uu98kmvGElJw4w3xtONUaW_m3wAkAjlKqKzjit4nH8YwEt3669R80GFYuz1kVrUsXiIwEiTRmHzu4yXqmT2AH4a4drpVktElUGAKXtrUM9TngRrwCtW9TJgT0l0_b/%D8%B9%D8%B1%D8%A7%D9%82%DA%86%DB%8C.jpg",
+      "image": "https://cdn.eghtesadnews.com/thumbnail/aNacyfKxNZk3/BjpuadUy-yEKEG3dEMOhRkuIyw4DRMiX6-KhRDEIeZg7iyjJNypvKovvxPRF_8u8QrGMbUCg9Thc5DgRvEHj7cR0SQkNf-zrYFCGiAkof6h256p_FayzzN_I71CE4WOFL_kiIVjMtEsvjDQvcX5ZD8YxIrpEKpGs3c4zfWACZuURbKSh1yiV_ZejgheVfcl-/%D8%B9%D8%B1%D8%A7%D9%82%DA%86%DB%8C.jpg",
       "source": "اقتصادنیوز",
       "source_site": "https://www.eghtesadnews.com/",
       "allow_internal_republish": true,
@@ -3546,7 +3550,7 @@
       "summary": "سرپرست وزارت دفاع نوشت: «جهان را با سخنرانی و نمایش نمی‌توان تقسیم کرد. \"میدان\" حرف آخر را می‌زند.»",
       "content": "۱۵:۲۸ - \n۱۶ مهر ۱۴۰۵ \n\nسردار ابن‌الرضا خطاب به سران آمریکا: اشتباهی سر بزند، تقسیم‌بندی جدیدی خواهید دید \n\nسرپرست وزارت دفاع نوشت: «جهان را با سخنرانی و نمایش نمی‌توان تقسیم کرد. \"میدان\" حرف آخر را می‌زند.» \n\nپ\n\n،\n\nپـ\n\nسردار سید مجید ابن‌الرضا، سرپرست وزارت دفاع، در حساب کاربری خود در شبکه اجتماعی ایکس نوشت:\n\r\n\r\n\n«او هنوز جنگ را در مهدکودک پنتاگون نقاشی می‌کند؛ غافل از اینکه جهان را با سخنرانی و نمایش نمی‌توان تقسیم کرد. \"میدان\" حرف آخر را می‌زند.»\n\r\nسرپرست وزارت دفاع هشدار داد: «فاصله شما با ما را موشک‌های ما تعیین می‌کند. دیروز دریای عمان، امروز اقیانوس هند و فردا خلیج خوک ها. اشتباهی سربزند تقسیم‌بندی جدیدی خواهید دید.»\n\r\n\r\n\n\r\n\r\n\n \n\r\n\nva NewsLis Limi = 5;\n\nاز میان اخبار \n\nسردار ابن‌الرضا خطاب به سران آمریکا: اشتباهی سر بزند، تقسیم‌بندی جدیدی خواهید دید \n\nپیام عقب‌نشینی‌های آمریکا از خاورمیانه و انگلیس در پی حملات ایران \n\nکاخ سفید: اظهارات ونس درباره ایران موضع جدیدی نیست \n\nسخنگوی ارتش پاکستان: به اقدامات خود برای کاهش اختلافات میان ایران و آمریکا ادامه می‌دهیم \n\nشما قبلا این خبر را لایک کرده‌اید . \n\nfunc ion oPe sianNumbe (numbe ) {\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\nelemen .addEven Lis ene (\"click\", func ion() {\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n. hen(func ion( esponse) {\nif ( esponse.s a us == 200) {\nesponse.json(). hen(func ion(newSco e) {\nva likeNumbe Span = elemen .que ySelec o (\".like\");\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\nva hiddenHea = elemen .que ySelec o (\".hidden\");\nvisibleHea .classLis .add(\"hidden\");\nfavo i eBu on.classLis .add(\"hidden\");\nhiddenHea .classLis . emove(\"hidden\");\nva e o Message = elemen .que ySelec o (\".e o _message\");\nif (e o Message) {\ne o Message.classLis . emove(\"hidden_e o \");\n}\n});\n} else {\nva e o Message = elemen .que ySelec o (\".e o _message\");\nif (e o Message) {\ne o Message.classLis .add(\"hidden_e o \");\nse Timeou (func ion() {\ne o Message.classLis . emove(\"hidden_e o \");\n}, 3000);\n}\n}\n})\n});\n});",
       "url": "https://fararu.com/fa/news/1008252/%D8%B3%D8%B1%D8%AF%D8%A7%D8%B1-%D8%A7%D8%A8%D9%86-%D8%A7%D9%84%D8%B1%D8%B6%D8%A7-%D8%AE%D8%B7%D8%A7%D8%A8-%D8%A8%D9%87-%D8%B3%D8%B1%D8%A7%D9%86-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D8%A7%D8%B4%D8%AA%D8%A8%D8%A7%D9%87%DB%8C-%D8%B3%D8%B1-%D8%A8%D8%B2%D9%86%D8%AF-%D8%AA%D9%82%D8%B3%DB%8C%D9%85-%D8%A8%D9%86%D8%AF%DB%8C-%D8%AC%D8%AF%DB%8C%D8%AF%DB%8C-%D8%AE%D9%88%D8%A7%D9%87%DB%8C%D8%AF-%D8%AF%DB%8C%D8%AF",
-      "image": "https://cdn.fararu.com/thumbnail/QHEXHqaoBpPP/YphjNpFSUKh0Mh9NJQ9NvHNGKAaTqmlvJFxPB5i18U1O7ozSQLK1tZAdvHMH3QN1sfaa956Gpn66HMHhSODXwmv8VNHTdfdfIA2KXmFkAssirHbFjL8B0my-IzdgAfpu/%D8%B3%D8%B1%D8%AF%D8%A7%D8%B1+%D8%A7%D8%A8%D9%86+%D8%A7%D9%84%D8%B1%D8%B6%D8%A7.jpg",
+      "image": "https://cdn.fararu.com/thumbnail/QHEXHqaoBpPP/Z7PljeOxSt8c01Bc0cUnePQXF5IaK0U4_oRARAaK2-Y_gmvNMKZTJayvFhx6gVztviUycf6AlB_DNWCbTYl1PfHSnGRXthOHDz3wPb84R1AvwbHWVo_LPp1G0O7jPgNm/%D8%B3%D8%B1%D8%AF%D8%A7%D8%B1+%D8%A7%D8%A8%D9%86+%D8%A7%D9%84%D8%B1%D8%B6%D8%A7.jpg",
       "source": "فرارو",
       "source_site": "https://fararu.com/",
       "allow_internal_republish": true,
@@ -3583,7 +3587,7 @@
       "summary": "بررسی آمار مصرف آب نشان می‌دهد سرانه مصرف آب در تهران از حدود ۲۵۰ لیتر به ازای هر نفر در سال ۱۴۰۲ به حدود ۱۸۰ لیتر در سال ۱۴۰۵ کاهش یافته است.",
       "content": "۱۵:۲۴ - \n۱۶ مهر ۱۴۰۵ \n\nکاهش ۷۰ لیتری سرانه مصرف آب در پایتخت / تهرانی‌ها سنگ تمام گذاشتند \n\nبررسی آمار مصرف آب نشان می‌دهد سرانه مصرف آب در تهران از حدود ۲۵۰ لیتر به ازای هر نفر در سال ۱۴۰۲ به حدود ۱۸۰ لیتر در سال ۱۴۰۵ کاهش یافته است. \n\nپ\n\n،\n\nپـ\n\nدر جریان برگزاری پنجمین نشست مدیران روابط‌عمومی شرکت‌های آب و فاضلاب استان تهران که به میزبانی آبفای شرق استان تهران برگزار شد، بهنام بخشی، سخنگو و مدیر روابط‌عمومی شرکت آب و فاضلاب استان تهران، با تشریح دستاوردهای بخش ارتباطات در فصل گرم سال، گزارشی از روند مدیریت مصرف و اقدامات اطلاع‌رسانی انجام‌شده ارائه کرد. \n\r\n\r\n\nبررسی آمار مصرف آب نشان می‌دهد سرانه مصرف آب در تهران از حدود ۲۵۰ لیتر به ازای هر نفر در سال ۱۴۰۲ به حدود ۱۸۰ لیتر در سال ۱۴۰۵ کاهش یافته است. همچنین در شش‌ماهه نخست امسال حدود ۷۴ میلیون مترمکعب از مصرف آب کاسته شده و کمک بزرگی به ذخایر سدهای پنجگانه تهران شد. \n\r\n\r\n\nوی با اعلام خبر گذر موفقیت‌آمیز از پیک مصرف تابستان سال جاری تصریح کرد: تابستان امسال یکی از دوره‌های پرچالش به لحاظ نوسانات دمایی، افزایش ساخت‌وسازها بود؛ با این حال، عبور از این شرایط بدون قطعی‌های گسترده و چالش‌های جدی در تأمین آب پایدار، مرهون لطف الهی، تلاش‌های شبانه‌روزی همکارانمان در بخش‌های فنی و بهره‌برداری و همراهی فهیمانه و مسئولانه شهروندان عزیز استان تهران بود. \n\r\n\r\n\nبخشی نقش دفاتر روابط‌عمومی در سطح شرکت‌های تابعه استان را در این موفقیت عملیاتی بسیار پررنگ ارزیابی کرد و افزود: واضح است که دستاوردهای فنی بدون پیوست رسانه‌ای و ارتباطی کارآمد به ثمر نمی‌نشیند. اطلاع‌رسانی‌های هوشمندانه، به‌موقع و چندوجهی روابط‌عمومی‌ها توانست زنگ خطر کم‌آبی را به‌موقع به گوش جامعه برساند و فضا را برای مشارکت عمومی هموار سازد. \n\r\n\r\n\nمدیر روابط‌عمومی آبفای استان تهران با اشاره به اجرای طرح‌ها و پویش‌های مختلف فرهنگی در ماه‌های اخیر گفت: اقدامات صورت‌گرفته در راستای ترویج فرهنگ صرفه‌جویی، انتشار هشدارهای به‌موقع و بهره‌گیری از کمپین‌های آموزشی مؤثر در رسانه‌ها و فضای مجازی، توانست شاخص تاب‌آوری و همراهی شهروندان را در برابر نوسانات دما و محدودیت منابع آبی به شکل چشمگیری ارتقا دهد. در این میان، پویش «تهرانی‌ها متشکریم» نیز با هدف قدردانی از همراهی شهروندان و تقویت مشارکت عمومی در مدیریت مصرف آب، در کنار سایر اقدامات ارتباطی و فرهنگی اجرا می‌شود. \n\r\n\r\n\nبهنام بخشی در پایان خاطرنشان کرد: آمارها و تحلیل‌های میدانی نشان می‌دهد این تعامل دوسویه، صمیمانه و مبتنی بر اعتماد میان مردم و خانواده بزرگ آبفا، با کاهش سرانه مصرف آب در دو سال اخیر، نقش تعیین‌کننده‌ای در کاهش بار مصرف، مدیریت بهینه منابع و توزیع عادلانه آب در روزهای اوج گرما ایفا کرده است و این الگو باید برای ماه‌های آینده نیز با قدرت حفظ و تقویت شود.\n\r\n\nمنبع :\n\nباشگاه خبرنگاران \n\nva NewsLis Limi = 5;\n\nاز میان اخبار \n\nاحتمال شنیدن صدای انفجار و تیراندازی در مرز مهران \n\nکاهش نسبی دمای تهران از شنبه \n\nجزئیات حمله به خودروی پلیس در زاهدان \n\nجزئیات حمله مسلحانه به مینی‌بوس حامل کارکنان نزاجا \n\nشما قبلا این خبر را لایک کرده‌اید . \n\nfunc ion oPe sianNumbe (numbe ) {\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\nelemen .addEven Lis ene (\"click\", func ion() {\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n. hen(func ion( esponse) {\nif ( esponse.s a us == 200) {\nesponse.json(). hen(func ion(newSco e) {\nva likeNumbe Span = elemen .que ySelec o (\".like\");\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\nva hiddenHea = elemen .que ySelec o (\".hidden\");\nvisibleHea .classLis .add(\"hidden\");\nfavo i eBu on.classLis .add(\"hidden\");\nhiddenHea .classLis . emove(\"hidden\");\nva e o Message = elemen .que ySelec o (\".e o _message\");\nif (e o Message) {\ne o Message.classLis . emove(\"hidden_e o \");\n}\n});\n} else {\nva e o Message = elemen .que ySelec o (\".e o _message\");\nif (e o Message) {\ne o Message.classLis .add(\"hidden_e o \");\nse Timeou (func ion() {\ne o Message.classLis . emove(\"hidden_e o \");\n}, 3000);\n}\n}\n})\n});\n});",
       "url": "https://fararu.com/fa/news/1008251/%DA%A9%D8%A7%D9%87%D8%B4-%D9%84%DB%8C%D8%AA%D8%B1%DB%8C-%D8%B3%D8%B1%D8%A7%D9%86%D9%87-%D9%85%D8%B5%D8%B1%D9%81-%D8%A2%D8%A8-%D8%AF%D8%B1-%D9%BE%D8%A7%DB%8C%D8%AA%D8%AE%D8%AA-%D8%AA%D9%87%D8%B1%D8%A7%D9%86%DB%8C-%D9%87%D8%A7-%D8%B3%D9%86%DA%AF-%D8%AA%D9%85%D8%A7%D9%85-%DA%AF%D8%B0%D8%A7%D8%B4%D8%AA%D9%86%D8%AF",
-      "image": "https://cdn.fararu.com/thumbnail/2UCxJRkfi9jH/siUeLXr4LNKZwyUBJBb6uMA5lANvfylcxs9OukqZfne5AOw9FW07Y7fHDQ_eRjfIVSCntKh9P8LrAEf91XiXuL7JN7UCOcgkg7YjeXLn3bxP3fXmFkqx-EALtiwTuYAi/%D9%82%D8%B7%D8%B9%DB%8C+%D8%A2%D8%A8.jpg",
+      "image": "https://cdn.fararu.com/thumbnail/2UCxJRkfi9jH/ppvoBr1G5f_Ome1PeK3dRov70iaOAvZ-I1IZ8P6wD0bsXN4aSLYlXpxH1T-BEGgFROlDLqMKlLlJjfc9SdAD3MYBm4eTV0DUsv6DEBSC_1HuoIuzOtWsTPMh50oyt5h8/%D9%82%D8%B7%D8%B9%DB%8C+%D8%A2%D8%A8.jpg",
       "source": "فرارو",
       "source_site": "https://fararu.com/",
       "allow_internal_republish": true,
@@ -5394,9 +5398,19 @@
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
       "items": 11,
-      "attempted_at": "2026-10-08T23:53:27.104724+00:00",
-      "last_success_at": "2026-10-08T23:53:28.748172+00:00",
+      "attempted_at": "2026-10-09T00:09:30.465833+00:00",
+      "last_success_at": "2026-10-09T00:09:31.541256+00:00",
       "last_article_published": "2026-10-09T01:00:00+03:30",
+      "error": ""
+    },
+    {
+      "name": "پزشک سایت",
+      "category": "پزشکی و سلامت",
+      "ok": true,
+      "items": 10,
+      "attempted_at": "2026-10-09T00:09:30.483787+00:00",
+      "last_success_at": "2026-10-09T00:09:32.145871+00:00",
+      "last_article_published": "2026-10-08T23:42:05+03:30",
       "error": ""
     },
     {
@@ -5404,8 +5418,8 @@
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
       "items": 12,
-      "attempted_at": "2026-10-08T23:53:27.105376+00:00",
-      "last_success_at": "2026-10-08T23:53:29.019746+00:00",
+      "attempted_at": "2026-10-09T00:09:30.466654+00:00",
+      "last_success_at": "2026-10-09T00:09:32.250454+00:00",
       "last_article_published": "2026-10-09T03:00:53+03:30",
       "error": ""
     },
@@ -5414,19 +5428,9 @@
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
       "items": 13,
-      "attempted_at": "2026-10-08T23:53:27.111413+00:00",
-      "last_success_at": "2026-10-08T23:53:29.242735+00:00",
+      "attempted_at": "2026-10-09T00:09:30.487783+00:00",
+      "last_success_at": "2026-10-09T00:09:32.301813+00:00",
       "last_article_published": "2026-10-09T01:52:00+03:30",
-      "error": ""
-    },
-    {
-      "name": "پزشک سایت",
-      "category": "پزشکی و سلامت",
-      "ok": true,
-      "items": 10,
-      "attempted_at": "2026-10-08T23:53:27.110779+00:00",
-      "last_success_at": "2026-10-08T23:53:29.421465+00:00",
-      "last_article_published": "2026-10-08T23:42:05+03:30",
       "error": ""
     },
     {
@@ -5434,8 +5438,8 @@
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
       "items": 14,
-      "attempted_at": "2026-10-08T23:53:27.105766+00:00",
-      "last_success_at": "2026-10-08T23:53:29.469433+00:00",
+      "attempted_at": "2026-10-09T00:09:30.467141+00:00",
+      "last_success_at": "2026-10-09T00:09:33.027561+00:00",
       "last_article_published": "2026-10-08T23:59:13+03:30",
       "error": ""
     },
@@ -5444,8 +5448,8 @@
       "category": "بورس و بازار سرمایه",
       "ok": true,
       "items": 14,
-      "attempted_at": "2026-10-08T23:53:27.107417+00:00",
-      "last_success_at": "2026-10-08T23:53:32.824740+00:00",
+      "attempted_at": "2026-10-09T00:09:30.471870+00:00",
+      "last_success_at": "2026-10-09T00:09:34.442265+00:00",
       "last_article_published": "2026-10-08T17:23:08+03:30",
       "error": ""
     },
@@ -5454,19 +5458,9 @@
       "category": "بورس و بازار سرمایه",
       "ok": true,
       "items": 14,
-      "attempted_at": "2026-10-08T23:53:27.106094+00:00",
-      "last_success_at": "2026-10-08T23:53:33.493171+00:00",
+      "attempted_at": "2026-10-09T00:09:30.468033+00:00",
+      "last_success_at": "2026-10-09T00:09:34.793121+00:00",
       "last_article_published": "2026-10-08T21:09:07+03:30",
-      "error": ""
-    },
-    {
-      "name": "پیوست",
-      "category": "فناوری و علم",
-      "ok": true,
-      "items": 7,
-      "attempted_at": "2026-10-08T23:53:27.107869+00:00",
-      "last_success_at": "2026-10-08T23:53:33.726830+00:00",
-      "last_article_published": "2026-10-08T12:57:47+03:30",
       "error": ""
     },
     {
@@ -5474,9 +5468,19 @@
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
       "items": 14,
-      "attempted_at": "2026-10-08T23:53:27.111086+00:00",
-      "last_success_at": "2026-10-08T23:53:33.871413+00:00",
+      "attempted_at": "2026-10-09T00:09:30.485791+00:00",
+      "last_success_at": "2026-10-09T00:09:35.972141+00:00",
       "last_article_published": "2026-10-08T23:37:16+03:30",
+      "error": ""
+    },
+    {
+      "name": "پیوست",
+      "category": "فناوری و علم",
+      "ok": true,
+      "items": 7,
+      "attempted_at": "2026-10-09T00:09:30.472411+00:00",
+      "last_success_at": "2026-10-09T00:09:36.391485+00:00",
+      "last_article_published": "2026-10-08T12:57:47+03:30",
       "error": ""
     },
     {
@@ -5484,8 +5488,8 @@
       "category": "پزشکی و سلامت",
       "ok": true,
       "items": 14,
-      "attempted_at": "2026-10-08T23:53:27.110407+00:00",
-      "last_success_at": "2026-10-08T23:53:33.983456+00:00",
+      "attempted_at": "2026-10-09T00:09:30.473791+00:00",
+      "last_success_at": "2026-10-09T00:09:36.970505+00:00",
       "last_article_published": "2026-10-08T13:02:33+03:30",
       "error": ""
     },
@@ -5494,8 +5498,8 @@
       "category": "بورس و بازار سرمایه",
       "ok": true,
       "items": 14,
-      "attempted_at": "2026-10-08T23:53:27.106712+00:00",
-      "last_success_at": "2026-10-08T23:53:37.257410+00:00",
+      "attempted_at": "2026-10-09T00:09:30.468536+00:00",
+      "last_success_at": "2026-10-09T00:09:38.111235+00:00",
       "last_article_published": "2026-10-08T23:57:48+03:30",
       "error": ""
     }
