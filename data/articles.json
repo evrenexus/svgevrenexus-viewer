@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-09T10:27:02Z",
+  "updated": "2026-10-09T10:27:30.760Z",
   "schema": 1,
   "items": {
     "article-eece7c42f225dbaf": {
@@ -25948,6 +25948,174 @@
       "created_at": "2026-10-09T10:02:07.045Z",
       "updated_at": "2026-10-09T10:02:07.045Z",
       "published_at": "2026-10-09T13:00:13+03:30",
+      "status": "published",
+      "ai_managed": false,
+      "generated_by": "internal-republish-v1",
+      "manual_locked": false
+    },
+    "article-64e9788edae6ce65": {
+      "id": "article-64e9788edae6ce65",
+      "title": "شعبان جعفری روی تخت بیمارستان و در حال گفت‌وگو با نوچه‌هایش",
+      "summary": "تصویری قدیمی از شعبان جعفری را روی تخت بیمارستان و در حال گفت‌وگو با نوچه‌هایش در سال ۱۳۳۱ مشاهده می‌کنید.",
+      "content": "۱۳:۴۵ -\n\n۱۷ مهر ۱۴۰۵\n\nشعبان جعفری روی تخت بیمارستان و در حال گفت‌وگو با نوچه‌هایش\n\nتصویری قدیمی از شعبان جعفری را روی تخت بیمارستان و در حال گفت‌وگو با نوچه‌هایش در سال ۱۳۳۱ مشاهده می‌کنید.\n\nپ\n\n،\n\nپـ\n\nتبلیغات\n\nتبلیغات\n\nتبلیغات\n\nva NewsLis Limi = 5;\n\nاز میان اخبار\n\nجان سینا و گلشیفته فراهانی همبازی شدند\n\nنقد و بررسی فیلم Babies\n\nنقد و بررسی فیلم «عقل و احساس» 'Sense and Sensibili y'\n\nاز فیلم «تصمیم به رفتن» تا «امیلی جنایتکار»؛ ۷ فیلم دیدنی ژانر نوآر از ۲۰۲۰ تا ۲۰۲۲\n\nشما قبلا این خبر را لایک کرده‌اید .\n\nfunc ion oPe sianNumbe (numbe ) {\n\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\n\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\n\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\n\nelemen .addEven Lis ene (\"click\", func ion() {\n\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n\n. hen(func ion( esponse) {\n\nif ( esponse.s a us == 200) {\n\nesponse.json(). hen(func ion(newSco e) {\n\nva likeNumbe Span = elemen .que ySelec o (\".like\");\n\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\n\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\n\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\n\nva hiddenHea = elemen .que ySelec o (\".hidden\");\n\nvisibleHea .classLis .add(\"hidden\");\n\nfavo i eBu on.classLis .add(\"hidden\");\n\nhiddenHea .classLis . emove(\"hidden\");\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}\n\n});\n\n} else {\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis .add(\"hidden_e o \");\n\nse Timeou (func ion() {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}, 3000);\n\n}\n\n}\n\n})\n\n});\n\n});\n\nتبلیغات",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "topics": [
+        "health"
+      ],
+      "group_id": "local-42999117d664",
+      "original_news_id": "e47f9e4af5f0337837ab",
+      "source_ids": [],
+      "sources": [
+        {
+          "name": "فرارو",
+          "url": "https://fararu.com/fa/news/1008455/%D8%B4%D8%B9%D8%A8%D8%A7%D9%86-%D8%AC%D8%B9%D9%81%D8%B1%DB%8C-%D8%B1%D9%88%DB%8C-%D8%AA%D8%AE%D8%AA-%D8%A8%DB%8C%D9%85%D8%A7%D8%B1%D8%B3%D8%AA%D8%A7%D9%86-%D8%AF%D8%B1-%D8%AD%D8%A7%D9%84-%DA%AF%D9%81%D8%AA-%D9%88%DA%AF%D9%88-%D8%A8%D8%A7-%D9%86%D9%88%DA%86%D9%87-%D9%87%D8%A7%DB%8C%D8%B4"
+        }
+      ],
+      "image": "https://cdn.fararu.com/thumbnail/eACYuYWmspM2/aHCzqXMY0bWrE6Zk1JbtwtKuv-ngCAMHNyrdW0Eauh0hE5JKmZB1PylIOLsLokIkZvGJ5F6FfJM36FIx7idr_sl9DOJfYpAHTdd-icIgxiqmnRPkrodgX-r8gGXeJZRd/%D8%B4%D8%B9%D8%A8%D8%A7%D9%86+%D8%AC%D8%B9%D9%81%D8%B1%DB%8C.jpg",
+      "importance_score": 0,
+      "created_at": "2026-10-09T10:27:30.760Z",
+      "updated_at": "2026-10-09T10:27:30.760Z",
+      "published_at": "2026-10-09T13:45:53+03:30",
+      "status": "published",
+      "ai_managed": false,
+      "generated_by": "internal-republish-v1",
+      "manual_locked": false
+    },
+    "article-57f885f01d1f34a2": {
+      "id": "article-57f885f01d1f34a2",
+      "title": "جان سینا و گلشیفته فراهانی همبازی شدند",
+      "summary": "فیلم اکشن Matchbox قرار است ۹ اکتبر از اپل تی‌وی پخش شود.",
+      "content": "۱۳:۴۴ -\n\n۱۷ مهر ۱۴۰۵\n\nجان سینا و گلشیفته فراهانی همبازی شدند\n\nفیلم اکشن Ma chbox قرار است ۹ اکتبر از اپل تی‌وی پخش شود.\n\nپ\n\n،\n\nپـ\n\nفرارو - فیلم اکشن «مچ‌باکس» (Ma chbox) با بازی جان سینا و گلشیفته فراهانی از ۹ اکتبر ۲۰۲۶ در اپل تی‌وی پخش می‌شود. این فیلم با الهام از ماشین‌های اسباب‌بازی مشهور شرکت متل ساخته شده و داستان گروهی از دوستان قدیمی را روایت می‌کند که درگیر مأموریتی بین‌المللی می‌شوند.\n\nبه جمع دوستان قدیمی‌اش آغاز می‌شود. اما ماجرا زمانی پیچیده می‌شود که شان ربوده می‌شود و اتهاماتی علیه او شکل می‌گیرد. دوستانش در ادامه برای کمک به او و اثبات بی‌گناهی‌اش وارد ماجرایی پرمخاطره می‌شوند.\n\nسم هارگریو، کارگردان دو قسمت فیلم «استخراج» (Ex ac ion)، کارگردانی مچ‌باکس را بر عهده دارد. گلشیفته فراهانی در کنار جان سینا، جسیکا بیل، دانای گوریرا و کوری استول از بازیگران این فیلم هستند.\n\nمچ‌باکس از کجا آمد؟\n\nایده اولیه مچ‌باکس به سال ۱۹۵۳ بازمی‌گردد؛ زمانی که جک اودل، یکی از بنیان‌گذاران این برند، برای دخترش خودروی اسباب‌بازی کوچکی ساخت که بتوان آن را داخل یک قوطی کبریت جا داد. این ایده به شکل‌گیری مجموعه‌ای از ماشین‌های اسباب‌بازی انجامید که بعدها در سراسر جهان شناخته شدند.\n\nفیلم جدید مچ‌باکس نیز با الهام از همین برند ساخته شده است، اما به‌جای تمرکز بر دنیای اسباب‌بازی‌ها، داستانی جاسوسی و اکشن را دنبال می‌کند.\n\nva NewsLis Limi = 5;\n\nاز میان اخبار\n\nجان سینا و گلشیفته فراهانی همبازی شدند\n\nنقد و بررسی فیلم Babies\n\nنقد و بررسی فیلم «عقل و احساس» 'Sense and Sensibili y'\n\nاز فیلم «تصمیم به رفتن» تا «امیلی جنایتکار»؛ ۷ فیلم دیدنی ژانر نوآر از ۲۰۲۰ تا ۲۰۲۲\n\nشما قبلا این خبر را لایک کرده‌اید .\n\nfunc ion oPe sianNumbe (numbe ) {\n\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\n\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\n\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\n\nelemen .addEven Lis ene (\"click\", func ion() {\n\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n\n. hen(func ion( esponse) {\n\nif ( esponse.s a us == 200) {\n\nesponse.json(). hen(func ion(newSco e) {\n\nva likeNumbe Span = elemen .que ySelec o (\".like\");\n\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\n\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\n\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\n\nva hiddenHea = elemen .que ySelec o (\".hidden\");\n\nvisibleHea .classLis .add(\"hidden\");\n\nfavo i eBu on.classLis .add(\"hidden\");\n\nhiddenHea .classLis . emove(\"hidden\");\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}\n\n});\n\n} else {\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis .add(\"hidden_e o \");\n\nse Timeou (func ion() {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}, 3000);\n\n}\n\n}\n\n})\n\n});\n\n});",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "topics": [
+        "economy"
+      ],
+      "group_id": "local-ba220fab13c0",
+      "original_news_id": "776c1da8c594ac81bd73",
+      "source_ids": [],
+      "sources": [
+        {
+          "name": "فرارو",
+          "url": "https://fararu.com/fa/news/1008453/%D8%AC%D8%A7%D9%86-%D8%B3%DB%8C%D9%86%D8%A7-%DA%AF%D9%84%D8%B4%DB%8C%D9%81%D8%AA%D9%87-%D9%81%D8%B1%D8%A7%D9%87%D8%A7%D9%86%DB%8C-%D9%87%D9%85%D8%A8%D8%A7%D8%B2%DB%8C-%D8%B4%D8%AF%D9%86%D8%AF"
+        }
+      ],
+      "image": "https://cdn.fararu.com/thumbnail/CtADoy079R0d/nOCBIkWMd7S2XY0VGUKVZeDWYcld061HY2fuPeTLLQIX6k1NR6EtBlbMIbUc4ayw3nhZOQVaoJ4u7sRYhFxg2AV-kI1Yz783EXwQswAUOmOIfVj5O0vLdsx9vArcCbIs/Screenshot+2026-10-09+133728.jpg",
+      "importance_score": 0,
+      "created_at": "2026-10-09T10:27:30.760Z",
+      "updated_at": "2026-10-09T10:27:30.760Z",
+      "published_at": "2026-10-09T13:44:29+03:30",
+      "status": "published",
+      "ai_managed": false,
+      "generated_by": "internal-republish-v1",
+      "manual_locked": false
+    },
+    "article-5697035439de9b0a": {
+      "id": "article-5697035439de9b0a",
+      "title": "ورود واکسن آنفلوانزای فرانسوی و روسی",
+      "summary": "سخنگوی سازمان غذا و دارو، از ورود محموله‌ جدید واکسن آنفلوانزا به کشور خبر داد.",
+      "content": "۱۳:۴۱ -\n\n۱۷ مهر ۱۴۰۵\n\nورود واکسن آنفلوانزای فرانسوی و روسی\n\nسخنگوی سازمان غذا و دارو، از ورود محموله‌ جدید واکسن آنفلوانزا به کشور خبر داد.\n\nپ\n\n،\n\nپـ\n\nمحمد هاشمی گفت: توزیع واکسن آنفلوانزای سه‌ ظرفیتی واکسی‌گریپ با اولویت زنان باردار و کودکان زیر سه سال انجام می‌شود.\n\nوی افزود: تعیین داروخانه‌ها و مراکز منتخب، تخصیص سهمیه و نظارت بر رعایت اولویت‌ها بر عهده معاونت‌های غذا و داروی دانشگاه‌های علوم پزشکی است. همچنین مسئولان فنی داروخانه‌ها بر فرایند تحویل واکسن و ثبت اطلاعات در سامانه تیتک نظارت خواهند داشت.\n\nهاشمی گفت: همچنین ۵۰۰ هزار دوز واکسن آنفلوانزای تأمین‌شده از روسیه که برای زنان باردار و کودکان زیر سه سال مورد تأیید است، به معاونت بهداشت وزارت بهداشت تحویل شده است.\n\nلازم به توضیح است، واکسن سه ظرفیتی واکسی گریپ، محصول کشور فرانسه است.\n\nمنبع :\n\nمهر\n\nva NewsLis Limi = 5;\n\nاز میان اخبار\n\nروسیه: آزمایش‌ها وجود طاعون را در مرگ کارمند آزمایشگاه سیبری تأیید نکردند\n\nرفع ممنوعیت صادرات گوجه‌فرنگی زراعی و پیاز\n\nترافیک سنگین در محور چالوس\n\nمتهم تجاوز در دیواندره بازداشت شد\n\nشما قبلا این خبر را لایک کرده‌اید .\n\nfunc ion oPe sianNumbe (numbe ) {\n\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\n\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\n\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\n\nelemen .addEven Lis ene (\"click\", func ion() {\n\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n\n. hen(func ion( esponse) {\n\nif ( esponse.s a us == 200) {\n\nesponse.json(). hen(func ion(newSco e) {\n\nva likeNumbe Span = elemen .que ySelec o (\".like\");\n\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\n\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\n\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\n\nva hiddenHea = elemen .que ySelec o (\".hidden\");\n\nvisibleHea .classLis .add(\"hidden\");\n\nfavo i eBu on.classLis .add(\"hidden\");\n\nhiddenHea .classLis . emove(\"hidden\");\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}\n\n});\n\n} else {\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis .add(\"hidden_e o \");\n\nse Timeou (func ion() {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}, 3000);\n\n}\n\n}\n\n})\n\n});\n\n});",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "topics": [
+        "health"
+      ],
+      "group_id": "local-e9de59bad974",
+      "original_news_id": "355a2e074e2bb22dcb87",
+      "source_ids": [],
+      "sources": [
+        {
+          "name": "فرارو",
+          "url": "https://fararu.com/fa/news/1008452/%D9%88%D8%B1%D9%88%D8%AF-%D9%88%D8%A7%DA%A9%D8%B3%D9%86-%D8%A2%D9%86%D9%81%D9%84%D9%88%D8%A7%D9%86%D8%B2%D8%A7%DB%8C-%D9%81%D8%B1%D8%A7%D9%86%D8%B3%D9%88%DB%8C-%D8%B1%D9%88%D8%B3%DB%8C"
+        }
+      ],
+      "image": "https://cdn.fararu.com/thumbnail/0OjVL3xZBEDo/K8P0EGLgIMShesVZNO_kVUASlNkJpuJ-jnXIS9L8iE3TdqNC2W9XhfUYUeph220Y3XiBxDjmwtoQZMi3VhiG904QD8eNo1WqTdH9fBm33lrtSxmKYLe0uW_OY94Obdor/%D9%88%D8%A7%DA%A9%D8%B3%D9%86+%D8%A2%D9%86%D9%81%D9%84%D9%88%D8%A2%D9%86%D8%B2%D8%A7.jpg",
+      "importance_score": 0,
+      "created_at": "2026-10-09T10:27:30.760Z",
+      "updated_at": "2026-10-09T10:27:30.760Z",
+      "published_at": "2026-10-09T13:41:28+03:30",
+      "status": "published",
+      "ai_managed": false,
+      "generated_by": "internal-republish-v1",
+      "manual_locked": false
+    },
+    "article-ef45fc616d300db0": {
+      "id": "article-ef45fc616d300db0",
+      "title": "سروکله هادی چوپان پیدا شد",
+      "summary": "میلوش سارچف مربی باسابقه بدنسازی، تایید کرد هادی چوپان تمرینات خود را برای حضور در آرنولد کلاسیک ۲۰۲۷ آغاز کرده است و در این رقابت‌ها حضور خواهد داشت.",
+      "content": "۱۳:۳۷ -\n\n۱۷ مهر ۱۴۰۵\n\nسروکله هادی چوپان پیدا شد\n\nمیلوش سارچف مربی باسابقه بدنسازی، تایید کرد هادی چوپان تمرینات خود را برای حضور در آرنولد کلاسیک ۲۰۲۷ آغاز کرده است و در این رقابت‌ها حضور خواهد داشت.\n\nپ\n\n،\n\nپـ\n\nتبلیغات\n\nتبلیغات\n\nبه نظر می‌رسد رقابت‌های آرنولد کلاسیک ۲۰۲۷با حضور ستارگان دنیای بدنسازی از جمله هادی چوپان ایرانی بسیار هیجان‌انگیز باشد.\n\nمیلوش سارچف مربی نامدار بدنسازی تایید کرد هادی چوپان از همین حالا برای فصل بعد با جدیت تمرین می‌کند.\n\nآرنولد کلاسیک امسال بنابراین میزبان یکی از حماسی‌ترین نبردهای تاریخ بدنسازی مدرن خواهد بود.\n\nسال گذشته اندرو جکد برنده آرنولد کلاسیک مبلغ باورنکردنی ۷۵۰ هزار دلار را به خانه برد و امسال هم جایزه نفر اول همین مقدار خواهد بود.\n\nعلاوه بر این، چوپان، واکر، داودا و جکد همگی برای این می‌جنگند که ببینند کدام‌یک اولین نفر از میان آن‌هاست که دومین عنوان آرنولد کلاسیک خود را به دست می‌آورد.\n\nیک سال استراحت؛ سلاح مخفی چوپان؟\n\nدر حالی که نیک واکر، سامسون داودا و اندرو جکد تازه از یک آماده‌سازی سخت و بسیار دشوار برای مستر المپیای اخیر بیرون آمده‌اند، هادی چوپان با شرایط کاملا متفاوتی وارد اوهایو خواهد شد. او تمام سال حتی یک بار هم روی صحنه نرفته است و دقیقا همین غیبت می‌تواند بزرگ‌ترین مزیت او باشد.\n\nیک سال استراحت از رژیم‌های سخت و کات کردن می‌تواند به این معنا باشد که ما شاهد دیدن بهترین نسخه چوپان خواهیم بود.\n\nآرنولد کلاسیک ۲۰۲۷ قرار است از پنج‌شنبه ۱۳ اسفند تا یک‌شنبه ۱۶ اسفند در اوهایو آمریکا برگزار شود.\n\nتبلیغات\n\nمنبع :\n\nايسنا\n\nva NewsLis Limi = 5;\n\nاز میان اخبار\n\nسروکله هادی چوپان پیدا شد\n\nببینید؛ سوپرگل امیرحسین جولانی در لیگ برتر ایران\n\n۵ نکته از گفت‌وگوی جنجالی بیرانوند؛ با خودت چه می‌کنی!\n\nتصویر؛ واکنش تهدیدآمیز علیرضا بیرانوند پس از اخراج از باشگاه تراکتور\n\nشما قبلا این خبر را لایک کرده‌اید .\n\nfunc ion oPe sianNumbe (numbe ) {\n\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\n\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\n\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\n\nelemen .addEven Lis ene (\"click\", func ion() {\n\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n\n. hen(func ion( esponse) {\n\nif ( esponse.s a us == 200) {\n\nesponse.json(). hen(func ion(newSco e) {\n\nva likeNumbe Span = elemen .que ySelec o (\".like\");\n\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\n\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\n\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\n\nva hiddenHea = elemen .que ySelec o (\".hidden\");\n\nvisibleHea .classLis .add(\"hidden\");\n\nfavo i eBu on.classLis .add(\"hidden\");\n\nhiddenHea .classLis . emove(\"hidden\");\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}\n\n});\n\n} else {\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis .add(\"hidden_e o \");\n\nse Timeou (func ion() {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}, 3000);\n\n}\n\n}\n\n})\n\n});\n\n});\n\nتبلیغات",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "topics": [
+        "economy"
+      ],
+      "group_id": "local-a176dfe04e21",
+      "original_news_id": "5ddb0fffbb9288766fa4",
+      "source_ids": [],
+      "sources": [
+        {
+          "name": "فرارو",
+          "url": "https://fararu.com/fa/news/1008454/%D8%B3%D8%B1%D9%88%DA%A9%D9%84%D9%87-%D9%87%D8%A7%D8%AF%DB%8C-%DA%86%D9%88%D9%BE%D8%A7%D9%86-%D9%BE%DB%8C%D8%AF%D8%A7-%D8%B4%D8%AF"
+        }
+      ],
+      "image": "https://cdn.fararu.com/thumbnail/5DLPkIuBCJMj/NZpGACT20dhSJ9KwloVznh1t-9ytQedwwFYVfc2gD699eAF-1F_MwONd-N3q05zHoqmrzpiM36WKeNrQGRa0Vrcw0wRYU88eJKb-vA8LTpWbDvCs_9xKxpvPK7FqyIAS/%D9%87%D8%A7%D8%AF%DB%8C+%DA%86%D9%88%D9%BE%D8%A7%D9%86.jpg",
+      "importance_score": 0,
+      "created_at": "2026-10-09T10:27:30.760Z",
+      "updated_at": "2026-10-09T10:27:30.760Z",
+      "published_at": "2026-10-09T13:37:14+03:30",
+      "status": "published",
+      "ai_managed": false,
+      "generated_by": "internal-republish-v1",
+      "manual_locked": false
+    },
+    "article-8b225422b9aa24b7": {
+      "id": "article-8b225422b9aa24b7",
+      "title": "هشدار امنیتی سفارت آمریکا در اردن به شهروندانش",
+      "summary": "سفارت آمریکا در اردن برای شهروندانش هشدار امنیتی صادر کرد.",
+      "content": "۱۳:۳۳ -\n\n۱۷ مهر ۱۴۰۵\n\nهشدار امنیتی سفارت آمریکا در اردن به شهروندانش\n\nسفارت آمریکا در اردن برای شهروندانش هشدار امنیتی صادر کرد.\n\nپ\n\n،\n\nپـ\n\nفرارو - سفارت آمریکا در امان، پایتخت اردن، با صدور هشدار امنیتی از شهروندان آمریکایی حاضر در خاورمیانه خواست با توجه به شرایط امنیتی منطقه، هوشیاری بیشتری داشته باشند.\n\nاین سفارت در هشتم اکتبر ۲۰۲۶ اعلام کرد که احتمال لغو پروازها، بسته‌شدن حریم‌های هوایی و اختلال در سفرها وجود دارد و شهروندان آمریکایی باید برای تغییرات احتمالی در برنامه‌های سفر خود آماده باشند.\n\nva NewsLis Limi = 5;\n\nاز میان اخبار\n\nهشدار امنیتی سفارت آمریکا در اردن به شهروندانش\n\nاردوغان: اسرائیل تمام منطقه را تهدید می‌کند\n\nناوی پیلای برنده نوبل صلح شد\n\nدو حمله به فرودگاه ریاض و کشته شدن ۳ نفر\n\nشما قبلا این خبر را لایک کرده‌اید .\n\nfunc ion oPe sianNumbe (numbe ) {\n\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\n\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\n\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\n\nelemen .addEven Lis ene (\"click\", func ion() {\n\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n\n. hen(func ion( esponse) {\n\nif ( esponse.s a us == 200) {\n\nesponse.json(). hen(func ion(newSco e) {\n\nva likeNumbe Span = elemen .que ySelec o (\".like\");\n\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\n\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\n\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\n\nva hiddenHea = elemen .que ySelec o (\".hidden\");\n\nvisibleHea .classLis .add(\"hidden\");\n\nfavo i eBu on.classLis .add(\"hidden\");\n\nhiddenHea .classLis . emove(\"hidden\");\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}\n\n});\n\n} else {\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis .add(\"hidden_e o \");\n\nse Timeou (func ion() {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}, 3000);\n\n}\n\n}\n\n})\n\n});\n\n});",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "topics": [
+        "economy"
+      ],
+      "group_id": "local-e00d86a74f33",
+      "original_news_id": "66082df46e37c8bbd1a5",
+      "source_ids": [],
+      "sources": [
+        {
+          "name": "فرارو",
+          "url": "https://fararu.com/fa/news/1008451/%D9%87%D8%B4%D8%AF%D8%A7%D8%B1-%D8%A7%D9%85%D9%86%DB%8C%D8%AA%DB%8C-%D8%B3%D9%81%D8%A7%D8%B1%D8%AA-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D8%AF%D8%B1-%D8%A7%D8%B1%D8%AF%D9%86-%D8%A8%D9%87-%D8%B4%D9%87%D8%B1%D9%88%D9%86%D8%AF%D8%A7%D9%86%D8%B4"
+        }
+      ],
+      "image": "https://cdn.fararu.com/thumbnail/iB8FtmNH5mmU/GMpgHzTK1cGrwu2l28jy0DeGygrdgkZOYl7DcwhkHuTkGlHwc9-ziFVNkjIIA-1xQDCEG-FsHg4zOFx_t3XOaxaopCM-n6IAd6U56rTE5SrHarwmi9OUwSaa5atQAgRB/%D8%A7%D8%B1%D8%AF%D9%86.jpg",
+      "importance_score": 0,
+      "created_at": "2026-10-09T10:27:30.760Z",
+      "updated_at": "2026-10-09T10:27:30.760Z",
+      "published_at": "2026-10-09T13:33:15+03:30",
+      "status": "published",
+      "ai_managed": false,
+      "generated_by": "internal-republish-v1",
+      "manual_locked": false
+    },
+    "article-7b2b3ad04af5a2ea": {
+      "id": "article-7b2b3ad04af5a2ea",
+      "title": "پزشکیان در اجلاس سران کشورهای مشترک‌المنافع: مذاکره در سایه زور، مذاکره نیست",
+      "summary": "رئیس‌جمهور کشورمان حضور ایران برای نخستین بار و به عنوان نخستین کشور دعوت شده در جایگاه مهمان ویژه نشست سران کشورهای مستقل مشترک المنافع را فرصتی ارزشمند برای تقویت پیوندهای موجود و گشودن فصل جدیدی از همکاری‌ها با کشورهای این مجموعه عنوان کرد.",
+      "content": "۱۳:۳۰ -\n\n۱۷ مهر ۱۴۰۵\n\nپزشکیان در اجلاس سران کشورهای مشترک‌المنافع: مذاکره در سایه زور، مذاکره نیست\n\nرئیس‌جمهور کشورمان حضور ایران برای نخستین بار و به عنوان نخستین کشور دعوت شده در جایگاه مهمان ویژه نشست سران کشورهای مستقل مشترک المنافع را فرصتی ارزشمند برای تقویت پیوندهای موجود و گشودن فصل جدیدی از همکاری‌ها با کشورهای این مجموعه عنوان کرد.\n\nپ\n\n،\n\nپـ\n\nمسعود پزشکیان در سخنرانی خود در نشست سران کشورهای مشترک‌المنافع گفت: برای آسیای مرکزی، جمهوری اسلامی ایران صرفاً یک شریک نیست؛ بلکه یک مسیر طبیعی برای اتصال آسیای مرکزی و اوراسیا به آب‌های آزاد است. بنادر جنوبی ایران در خلیج‌فارس و دریای عمان به‌ویژه چابهار می‌توانند این منطقه را به آسیای جنوبی، آفریقا و سپس اروپا متصل کنند.\n\n«بسم‌الله الرحمن الرحیم\n\nجناب آقای سردار بردی‌محمداف، رئیس‌جمهور محترم ترکمنستان، و رئیس محترم اجلاس؛\n\nروسای جمهور محترم؛\n\nدبیر کل محترم کشورهای مستقل مشترک المنافع؛\n\nخانم‌ها و آقایان؛\n\nدر ابتدا، از دولت و ملّت دوست و برادر، ترکمنستان برای دعوت از جمهوری اسلامی ایران و میزبانی این نشست مهم صمیمانه تشکر می‌کنم. حضور جمهوری اسلامی ایران برای نخستین بار و به عنوان نخستین کشور دعوت شده در جایگاه مهمان ویژه نشست سران کشورهای مستقل مشترک المنافع، فرصتی ارزشمند برای تقویت پیوندهای موجود و گشودن فصل جدیدی از همکاری‌ها با کشورهای این مجموعه است. همزمانی این نشست با نشست سران کشورهای ساحلی دریای خزر با موضوع محیط‌ زیست نیز، زمینه‌ای مناسب برای توجه همزمان به پیوندهای جغرافیایی، منافع مشترک، دغدغه‌های مشترک و ظرفیت‌های همکاری ایران با کشورهای ساحلی خزر و آسیای مرکزی فراهم می‌کند.\n\nخانم‌ها و آقایان،\n\nاجازه دهید سخنان خود را با واقعیتی آغاز کنم که نمی‌توان در بحث درباره آینده منطقه از کنار آن گذشت.\n\nجهان و منطقه ما در سال‌های اخیر با بحران‌هایی به‌هم‌پیوسته مواجه بوده‌اند که آثار آنها دیگر در مرزهای یک کشور باقی نمی‌ماند. تحولات پیرامون جنگ روسیه و اوکراین، با ابعاد فرامنطقه‌ای خود، بر امنیت، تجارت، حمل‌و نقل و به ویژه تأمین و بازار انرژی اثر گذاشته است. این رویداد و بحران‌های مشابه نشان داده‌اند که اختلال در یک بخش از منطقه می‌تواند به سرعت به فشارهای اقتصادی، اجتماعی و حتی سیاسی در بخش‌های دیگر منجر شود.\n\nایران نیز در یک سال گذشته، دو بار هدف حملات نظامی آمریکا و اسرائیل قرار گرفت؛ این تجاوزات آشکار و غیرقانونی نه تنها به مردم و زیرساخت‌های غیرنظامی کشورم آسیب وارد کرد، بلکه عده زیادی در منطقه و جهان را متاثر ساخته است. این تحولات بیش از گذشته یک واقعیت را آشکار کرد: امنیت و ثبات منطقه‌ای مفهومی تجزیه‌ناپذیر است. نمی‌توان همزمان برای بخشی از منطقه، امنیت و توسعه خواست و در بخش دیگر، ناامنی، فشار اقتصادی و بی‌ثباتی دامن زد.\n\nجمهوری اسلامی ایران برای برقراری صلح و ثبات پایدار، همواره بر گفت‌وگو و راه‌حل دیپلماتیک تأکید کرده است؛ اما گفت‌وگو زمانی معنا و امکان موفقیت دارد که بر پایه احترام متقابل، تعهدات متقابل و کنار گذاشتن فشار و تهدید باشد. مذاکره در سایه زور، مذاکره نیست؛ تحمیل و اجبار است. در عین حال، تجربه سال‌های اخیر نشان داده است که استفاده ابزاری از تجارت، بانکداری، فناوری، انرژی و نظام مالی بین‌المللی علیه کشورها، صرفاً یک مسئله دوجانبه نیست؛ بلکه بر امنیت اقتصادی و توسعه کل منطقه و جهان اثر می‌گذارد. فشار و تحریم علیه ایران تنها ظرفیت‌های اقتصادی ایران را محدود نمی‌کند؛ بلکه به تجارت، اتصال، انرژی و نظم منطقه‌ای آسیب خواهد زد.\n\nروسای محترم؛\n\nمنطقه ما بیش از هر زمان دیگری به تاب‌آوری در برابر جنگ، بحران، فشار خارجی و اختلال در مسیرهای اقتصادی و ارتباطی نیاز دارد و موفقیت در این مسیر، بیش از هر چیز مستلزم اتصال ظرفیت‌های منطقه به یکدیگر است. منافع مشترک ما، نه در رقابت میان مسیرها بلکه در اتصال مسیرهاست.\n\nبرای آسیای مرکزی، جمهوری اسلامی ایران صرفاً یک شریک نیست؛ بلکه یک مسیر طبیعی برای اتصال آسیای مرکزی و اوراسیا به آب‌های آزاد است. بنادر جنوبی ایران در خلیج‌فارس و دریای عمان به‌ویژه چابهار می‌توانند این منطقه را به آسیای جنوبی، آفریقا و سپس اروپا متصل کنند.\n\nدر همین چارچوب، پیشنهاد ترکمنستان در مجمع عمومی سازمان ملل متحد برای ایجاد یک کریدور حمل‌ونقل میان آسیای مرکزی و جنوبی و اروپا از مسیر دریای خزر، می‌تواند با بهره‌گیری از ظرفیت‌های ایران، عملیاتی شود.\n\nکریدورهای شمال - جنوب و شرق - غرب اجزای یک شبکه واحد منطقه‌ای هستند نه رقیب یکدیگر! بنابراین هر مسیر جدید بر ظرفیت مسیرهای دیگر می‌افزاید و به همگرایی بیشتر در منطقه کمک می‌کند.\n\nهمین نگاه را باید در حوزه انرژی نیز دنبال کرد. منطقه ما می‌تواند به جای رقابت برای حذف یکدیگر از بازار انرژی، به شبکه‌ای از تولید، انتقال و تبادل انرژی تبدیل شود؛ شبکه‌ای که نفت، گاز، برق و انرژی‌های تجدیدپذیر را به منافع مشترک اقتصادی و ثبات منطقه‌ای پیوند می‌زند.\n\nبرای تقویت تجارت نیز لازم است سازوکارهای عملی منطقه‌ای، از جمله سازوکارهای مالی و تهاتری، برای تسهیل مبادلات میان کشورهای منطقه مورد توجه قرار گیرد؛ سازوکارهایی که می‌توانند تداوم همکاری اقتصادی را در برابر اختلالات و محدودیت‌های خارجی افزایش دهند.\n\nخانم‌هاو آقایان،\n\nجمهوری اسلامی ایران خود را بخشی طبیعی از جغرافیای به‌هم‌پیوسته منطقه می‌داند. این پیوند نه تنها جغرافیائی، بلکه ریشه در تاریخ، فرهنگ، تمدن و پیوندهای مردمی دارد. بر همین اساس، جمهوری اسلامی ایران پیشنهاد می‌کند فرمت «کشورهای مستقل مشترک‌المنافع + ایران» یا «CIS+1» به‌عنوان سازوکاری منعطف و موثر برای گفت وگو و همکاری ایجاد شود تا بتوانیم همکاری‌های مشترک را در حوزه‌های ترانزیت، انرژی، تجارت، معدن، سرمایه‌گذاری، فناوری، آب و محیط‌زیست، گردشگری و ارتباطات علمی و فرهنگی توسعه دهیم و برای چالش‌های مشترکی مانند: تغییرات اقلیمی، کاهش منابع آب و مسائل زیست محیطی دریای خزر و منطقه آرال، جنایات سازمان یافته، قاچاق مواد مخدر و غیره راه‌حل‌هایمشترک منطقه‌ای ارائه کنیم.\n\nامروز بیش از هر زمان دیگری نیازمند چندجانبه‌گرایی واقعی در منطقه هستیم. کشورهای این منطقه مهم و استراتژیک باید از بازیگران اصلی در شکل‌دهی به جهان چندقطبی باشند. از این منظر، دیپلماسی منطقه‌ای برای ما، صرفاً به معنای برگزاری نشست‌ها نیست؛ بلکه باید به ابزار مدیریت بحران، حفظ ارتباطات، جلوگیری از گسترش درگیری و فعال‌کردن همکاری‌های عملی تبدیل شود. این همان رویکردی است که در چارچوب سیاست همسایگی جمهوری اسلامی ایران دنبال می‌کنیم.\n\nخانم‌هاو آقایان،\n\nما امروز صرفاً با انتخاب میان انزوا یا وابستگی مواجه نیستیم؛ بلکه باید ظرفیت‌های خود را به یکدیگر متصل کنیم تا هر کشور بتواند با حفظ استقلال و انتخاب‌های ملی خود، از مزیت‌های این جغرافیای مشترک بهره‌مند شود.\n\nما به جای گسست، اتصال؛ به جای رقابت فرساینده، همکاری؛ به جای وابستگی یک‌جانبه، وابستگی متقابل؛ و به جای امنیت مبتنی بر تهدید، امنیت مبتنی بر اعتماد و منافع مشترک را می‌خواهیم.\n\nدر پایان، بار دیگر از دولت و ملت ترکمنستان برای دعوت از جمهوری اسلامی ایران، میزبانی این نشست و ابتکار ارزشمند آن در ایجاد فرصت برای گسترش همکاری میان ایران و کشورهای عضو جامعه کشورهای مستقل مشترک‌المنافع تشکر می‌کنم. امیدوارم این نشست بتواند گامی عملی در مسیر شکل‌گیری منطقه‌ای باشد که در آن آسیای مرکزی، قفقاز جنوبی و ایران نه مجموعه‌ای از فضاهای جدا از هم، بلکه بخشی از یک شبکه واحد همکاری، امنیت و توسعه باشند. جبر جغرافیایی ما را به یکدیگر پیوند داده است اما این اراده سیاسی ماست که می‌تواند این پیوند را به سرمایه مشترک برای صلح، امنیت و توسعه تبدیل کند.\n\nاز توجه شما سپاسگزارم.\n\nوالسلام علیکم و رحمه‌الله و برکاته.»\n\nva NewsLis Limi = 5;\n\nاز میان اخبار\n\nپزشکیان در اجلاس سران کشورهای مشترک‌المنافع: مذاکره در سایه زور، مذاکره نیست\n\nحافظ خوانی سفیر فرانسه در ایران\n\nانتقاد نماینده مجلس از به‌کارگیری بازنشستگان؛ نامه اداری جایگزین قانون شده است؟\n\nچینی‌ها برای عبور از تنگه هرمز به ایران عوارض داده‌اند؟\n\nشما قبلا این خبر را لایک کرده‌اید .\n\nfunc ion oPe sianNumbe (numbe ) {\n\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\n\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\n\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\n\nelemen .addEven Lis ene (\"click\", func ion() {\n\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n\n. hen(func ion( esponse) {\n\nif ( esponse.s a us == 200) {\n\nesponse.json(). hen(func ion(newSco e) {\n\nva likeNumbe Span = elemen .que ySelec o (\".like\");\n\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\n\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\n\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\n\nva hiddenHea = elemen .que ySelec o (\".hidden\");\n\nvisibleHea .classLis .add(\"hidden\");\n\nfavo i eBu on.classLis .add(\"hidden\");\n\nhiddenHea .classLis . emove(\"hidden\");\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}\n\n});\n\n} else {\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis .add(\"hidden_e o \");\n\nse Timeou (func ion() {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}, 3000);\n\n}\n\n}\n\n})\n\n});\n\n});",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "topics": [
+        "economy"
+      ],
+      "group_id": "local-b529be07326d",
+      "original_news_id": "4cdb36c18e5f0bb89f66",
+      "source_ids": [],
+      "sources": [
+        {
+          "name": "فرارو",
+          "url": "https://fararu.com/fa/news/1008449/%D9%BE%D8%B2%D8%B4%DA%A9%DB%8C%D8%A7%D9%86-%D8%AF%D8%B1-%D8%A7%D8%AC%D9%84%D8%A7%D8%B3-%D8%B3%D8%B1%D8%A7%D9%86-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7%DB%8C-%D9%85%D8%B4%D8%AA%D8%B1%DA%A9-%D8%A7%D9%84%D9%85%D9%86%D8%A7%D9%81%D8%B9-%D9%85%D8%B0%D8%A7%DA%A9%D8%B1%D9%87-%D8%AF%D8%B1-%D8%B3%D8%A7%DB%8C%D9%87-%D8%B2%D9%88%D8%B1-%D9%85%D8%B0%D8%A7%DA%A9%D8%B1%D9%87-%D9%86%DB%8C%D8%B3%D8%AA"
+        }
+      ],
+      "image": "https://cdn.fararu.com/thumbnail/w4M50tAIK7oV/4_Ol_6vBLwZIzws0j-20nU6LT_htF55RdXPabciGmy-MOqrovm23rsfscqXRrK5QAuL-c8HLsFo2kXeyd6K4iL0xwAbZlIjik5_WEcSScpZxo7ID0s_OLkP7nsJozwlO/%D8%AF%DB%8C%D8%AF%D8%A7%D8%B1+%D8%B1%D8%A6%DB%8C%D8%B3+%D8%AC%D9%85%D9%87%D9%88%D8%B1.jpg",
+      "importance_score": 8,
+      "created_at": "2026-10-09T10:27:30.760Z",
+      "updated_at": "2026-10-09T10:27:30.760Z",
+      "published_at": "2026-10-09T13:30:24+03:30",
       "status": "published",
       "ai_managed": false,
       "generated_by": "internal-republish-v1",
