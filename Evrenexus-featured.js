@@ -82,7 +82,14 @@ function render(r){
      var u=img(x.image);if(u){var im=document.createElement("img");im.src=u;im.alt=x.title||"";im.loading="lazy";im.referrerPolicy="no-referrer";im.onerror=function(){this.remove()};a.appendChild(im)}
      var cc=document.createElement("div");cc.className="content";
      var h2=document.createElement("div");h2.className="title";h2.textContent=x.title||"";cc.appendChild(h2);
-     if(x.summary){var sm2=document.createElement("div");sm2.className="summary";sm2.textContent=x.summary;cc.appendChild(sm2)}
+     if(x.summary){
+       var summaryText=String(x.summary).replace(/\s+/g," ").trim();
+       var titleText=String(x.title||"").replace(/\s+/g," ").trim();
+       var prefix=summaryText.indexOf("پست ")===0?"پست ":"";
+       if(titleText && prefix && summaryText.slice(prefix.length,prefix.length+titleText.length)===titleText){summaryText=summaryText.slice(prefix.length+titleText.length).replace(/^\s*[/|:؛—–-]?\s*/,"").trim();}
+       else if(titleText && summaryText.indexOf(titleText)===0){summaryText=summaryText.slice(titleText.length).replace(/^\s*[/|:؛—–-]?\s*/,"").trim();}
+       if(summaryText && summaryText!==titleText){var sm2=document.createElement("div");sm2.className="summary";sm2.textContent=summaryText;cc.appendChild(sm2)}
+     }
      var m2=document.createElement("div");m2.className="meta";m2.textContent=(x.source||"")+" • "+(x.published?new Date(x.published).toLocaleString("fa-IR",{dateStyle:"short",timeStyle:"short"}):"");cc.appendChild(m2);
      a.appendChild(cc);list.appendChild(a);
    });
