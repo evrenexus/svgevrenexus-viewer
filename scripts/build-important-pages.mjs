@@ -6,6 +6,8 @@ import {outOfScope} from "./content-policy.mjs";
 
 const OUT=path.join(ROOT,"articles");
 const MAX_BODY_CHARS=4000;
+// Preserve IDs already published in important-news boxes so legacy pages are regenerated.
+const previouslyImportantIds=(()=>{try{const d=JSON.parse(fs.readFileSync(path.join(ROOT,"data/public/featured.json"),"utf8"));const ids=new Set();for(const topic of Object.values(d.topics||{}))for(const item of (topic.important||[]))if(item?.articleId)ids.add(String(item.articleId));return ids}catch{return new Set()}})();
 const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
 const safeUrl=v=>{try{const u=new URL(String(v||""));return /^https?:$/i.test(u.protocol)?u.href:""}catch{return""}};
 const rich=v=>String(v||"").replace(/<(script|style|iframe|noscript)\b[^>]*>[\s\S]*?<\/\1>/gi,"");
@@ -85,18 +87,19 @@ export function generateImportantPages(rows){
    // Never write a title-only page when raw content is just scripts, embeds, or scraper markup.
    const bodyText=cleanArticleHtml(rich(r.article.content)).replace(/<[^>]*>/g," ").replace(/&nbsp;|&#160;/gi," ").replace(/\s+/g," ").trim();
    if(bodyText.length<100)continue;
-   // Publication requires a positive AI decision, not a stale/manual editorial flag.
-   if(r.ai?.important!==true||r.ai?.publishable!==true||r.ai?.political===true)continue;
-   if(r.ed?.auto_important!==true)continue;
+   const id=String(r.article.id??r.article.slug??r.article.__key??"");
+   const wasAlreadyImportant=previouslyImportantIds.has(id);
+   const newlyApproved=r.ai?.important===true&&r.ai?.publishable===true&&r.ai?.political!==true&&r.ed?.auto_important===true;
+   // Legacy important items keep their page through reprocessing; new items still require approval.
+   if(!wasAlreadyImportant&&!newlyApproved)continue;
    if(outOfScope(r.n)!==null)continue;
    if(!Array.isArray(r.n?.topics)||!r.n.topics.some(t=>C.TOPICS.includes(t)))continue;
-   const id=String(r.article.id??r.article.slug??r.article.__key??"");
    if(id)selected.set(id,r.article);
  }
  for(const [id,a] of selected){
    const file=path.join(OUT,encodeURIComponent(id)+".html");
    fs.writeFileSync(file,page(a),"utf8");
  }
- console.log("generated AI-approved important article pages: "+selected.size+" (body limit "+MAX_BODY_CHARS+" characters)");
+ console.log("generated permanent important article pages: "+selected.size+" (legacy + AI-approved; body limit "+MAX_BODY_CHARS+" characters)");
  return new Set(selected.keys());
 }
