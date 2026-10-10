@@ -87,7 +87,7 @@ export function loadArticleResolver(){
 }
 export const pinned=r=>r.ed?.important===true||r.ed?.featured===true||r.ed?.auto_important===true;
 export const ts=r=>Date.parse(r.n.published||r.article?.published_at||r.article?.created_at)||0;
-export const inTopic=(r,topic)=>topic===C.HOME||(Array.isArray(r.n.topics)&&r.n.topics.includes(topic));
+export const inTopic=(r,topic)=>{const ts=Array.isArray(r.n.topics)?r.n.topics:[];if(topic===C.HOME)return true;if(topic==="economy-investment")return ts.includes("economy")||ts.includes("markets");if(topic==="technology-ai")return ts.includes("technology")||ts.includes("ai");return ts.includes(topic)};
 const num=v=>typeof v==="number"&&Number.isFinite(v)?v:null;
 export function scoreFor(r,topic){
  const a=r.ai;
