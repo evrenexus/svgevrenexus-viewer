@@ -39,7 +39,7 @@ TOPICS = [
 TOPIC_KEYWORDS = {
     "economy": ["اقتصاد","اقتصادی","تورم","تولید","تولیدکننده","بودجه","مالیات","رشد اقتصادی","درآمد","هزینه تولید","انرژی","نفت"],
     "markets": ["بورس","بازار سرمایه","بازار سهام","سهام","شاخص کل","فرابورس","عرضه اولیه","سرمایه گذاری","سرمایه‌گذاری","اوراق"],
-    "currency-gold": ["دلار","یورو","درهم","پوند","لیر","ارز","طلا","سکه","نرخ ارز","بازار ارز","قیمت طلا","قیمت دلار"],
+    "currency-gold": ["دلار","یورو","درهم","پوند","لیر","طلا","سکه","نرخ ارز","بازار ارز","قیمت طلا","قیمت دلار"],
     "crypto": ["ارز دیجیتال","ارزهای دیجیتال","رمزارز","رمز ارز","کریپتو","کریپتوکارنسی","بیت کوین","بیت‌کوین","بیتکوین","اتریوم","تتر","بایننس","بلاک چین","بلاک‌چین","بلاکچین","دیفای","سولانا","ریپل","دوج کوین","دوج‌کوین","توکن","web3","bitcoin","ethereum","crypto","cryptocurrency","blockchain","solana","ripple","dogecoin","binance","token","defi"],
     "real-estate": ["مسکن","آپارتمان","اجاره","خانه","ساختمان","املاک","رهن"],
     "technology": ["فناوری","تکنولوژی","اینترنت","موبایل","گوشی","نرم افزار","نرم‌افزار","سخت افزار","سخت‌افزار","اپل","مایکروسافت","گوگل","هوش مصنوعی","یادگیری ماشین","یادگیری ماشینی","مدل زبانی","chatgpt","openai","gemini","claude","copilot"],
@@ -296,6 +296,14 @@ def normalize_title(s):
     s = re.sub(r"[^0-9a-zA-Zآ-ی\s]", " ", s)
     return re.sub(r"\s+", " ", s).strip()
 
+def keyword_present(text, keyword):
+    phrase = normalize_title(keyword)
+    if not phrase:
+        return False
+    if " " in phrase:
+        return phrase in text
+    return re.search(r"(?<!\\w)" + re.escape(phrase) + r"(?!\\w)", text, re.UNICODE) is not None
+
 def title_tokens(s):
     return {t for t in normalize_title(s).split() if len(t) > 2 and t not in STOPWORDS}
 
@@ -376,7 +384,7 @@ def make_local_result(src,meta):
     hit_counts={}
     base=int(meta.get("local_score",0))
     for topic,keywords in TOPIC_KEYWORDS.items():
-        hits=sum(1 for kw in keywords if normalize_title(kw) in text)
+        hits=sum(1 for kw in keywords if keyword_present(text,kw))
         if hits:
             hit_counts[topic]=hits
             topic_scores[topic]=min(20,base+min(12,hits*5))
@@ -513,7 +521,7 @@ def normalize_result(src, row):
     if not topics and src.get("category") in TOPICS: topics = [src["category"]]
     if "ai" in topics and "technology" not in topics:
         topics.append("technology")
-        scores["technology"] = max(scores.get("technology", 0), scores.get("ai", score))
+        scores["technology"] = max(scores.get("technology", 0), scores.get("ai", 0), score)
     important_topics = [t for t in topics if scores.get(t, score) >= IMPORTANT_SCORE_MIN]
     slider_topics = [t for t in topics if scores.get(t, score) >= SLIDER_SCORE_MIN]
     ticker_topics = [t for t in topics if scores.get(t, score) >= TICKER_SCORE_MIN]
