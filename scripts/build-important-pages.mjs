@@ -44,7 +44,7 @@ const page=a=>{
 <div class="ai-notice">این مطلب توسط هوش مصنوعی Evren Nexus بر اساس گزارش‌های خبری موجود در وب بازنشر و تنظیم شده است.${readerUrl?` <a href="${esc(readerUrl)}">مشاهده خبر اصلی در خبرخوان Evren Nexus</a>`:""}</div>
 <div class="meta">Evren Nexus • ${date}</div>${summary?'<div class="summary">'+summary+'</div>':''}
 <div class="article-body">${content}</div>
-${readerUrl?'<div class="long-read">برای خواندن متن کامل و طولانی‌تر خبر اصلی، <a href="'+esc(readerUrl)+'">اینجا کلیک کنید</a> تا خبر در خبرخوان Evren Nexus باز شود.</div>':''}
+${readerUrl?'<div class="long-read">این مطلب توسط هوش مصنوعی در سایت بازنشر و تنظیم شده است. برای خواندن متن کامل <a href="'+esc(readerUrl)+'">اینجا کلیک کنید</a>.</div>':''}
 ${source.name?'<div class="sources">منبع: '+(readerUrl?'<a href="'+esc(readerUrl)+'">'+esc(source.name)+'</a>':esc(source.name))+'</div>':''}
 </article></section><aside id="sidebar-host"></aside></main>
 <script src="../Evrenexus-sidebar.js?v=1"><\/script><script src="../Evrenexus-header.js?v=20261007-10"><\/script></body></html>`;
