@@ -24,6 +24,7 @@ var box=document.createElement("aside");box.id="Evrenxus-sidebar";box.innerHTML=
 <a class="Evrenxus-menu-link" target="_top" href="https://evrenexus.blogfa.com/">درباره من</a>
 <a class="Evrenxus-menu-link" target="_top" href="https://evrenexus.blogfa.com/archive">آرشیو مطالب</a>
 <a class="Evrenxus-menu-link" target="_top" href="https://evrenexus.blogfa.com/posts/">عناوین نوشته‌ها</a>
+<a class="Evrenxus-menu-link" target="_top" href="https://evrenexus.ir/latest-archive.html">آرشیو آخرین مطالب</a>
 </div>
 <div class="Evrenxus-sidebar-box">
 <div class="Evrenxus-sidebar-title">آخرین مطالب</div>
