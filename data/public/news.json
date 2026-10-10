@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-10T17:23:57.686634+00:00",
+  "updated": "2026-10-10T17:30:25.161009+00:00",
   "items": [
     {
       "id": "f2ff24c91bc8bdb6ddae",
@@ -18,7 +18,7 @@
       ],
       "importance_score": 0,
       "important": false,
-      "image_tries": 2
+      "image_tries": 3
     },
     {
       "id": "5cf8e457ee021c6dea40",
@@ -716,7 +716,7 @@
       ],
       "importance_score": 8,
       "important": true,
-      "image_tries": 2
+      "image_tries": 3
     },
     {
       "id": "1e41061649c91b2192cf",
@@ -773,7 +773,7 @@
       ],
       "importance_score": 16,
       "important": true,
-      "image_tries": 2
+      "image_tries": 3
     },
     {
       "id": "20a472f5f85fb98dbf95",
@@ -2649,23 +2649,23 @@
   ],
   "sources": [
     {
-      "name": "دنیای اقتصاد",
-      "category": "اقتصاد و سرمایه‌گذاری",
-      "ok": true,
-      "items": 14,
-      "attempted_at": "2026-10-10T17:23:59.863645+00:00",
-      "last_success_at": "2026-10-10T17:24:01.742714+00:00",
-      "last_article_published": "2026-10-10T20:17:39+03:30",
-      "error": ""
-    },
-    {
       "name": "اقتصادنیوز",
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
       "items": 14,
-      "attempted_at": "2026-10-10T17:23:59.864281+00:00",
-      "last_success_at": "2026-10-10T17:24:01.889942+00:00",
+      "attempted_at": "2026-10-10T17:30:27.462924+00:00",
+      "last_success_at": "2026-10-10T17:30:28.655325+00:00",
       "last_article_published": "2026-10-10T20:34:15+03:30",
+      "error": ""
+    },
+    {
+      "name": "دنیای اقتصاد",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "ok": true,
+      "items": 14,
+      "attempted_at": "2026-10-10T17:30:27.462204+00:00",
+      "last_success_at": "2026-10-10T17:30:28.704585+00:00",
+      "last_article_published": "2026-10-10T20:17:39+03:30",
       "error": ""
     },
     {
@@ -2673,8 +2673,8 @@
       "category": "پزشکی و سلامت",
       "ok": true,
       "items": 8,
-      "attempted_at": "2026-10-10T17:23:59.874403+00:00",
-      "last_success_at": "2026-10-10T17:24:02.047872+00:00",
+      "attempted_at": "2026-10-10T17:30:27.473047+00:00",
+      "last_success_at": "2026-10-10T17:30:28.999480+00:00",
       "last_article_published": "2026-10-10T20:48:04+03:30",
       "error": ""
     },
@@ -2683,8 +2683,8 @@
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
       "items": 14,
-      "attempted_at": "2026-10-10T17:23:59.877779+00:00",
-      "last_success_at": "2026-10-10T17:24:02.302019+00:00",
+      "attempted_at": "2026-10-10T17:30:27.475519+00:00",
+      "last_success_at": "2026-10-10T17:30:29.197568+00:00",
       "last_article_published": "2026-10-10T20:24:47+03:30",
       "error": ""
     },
@@ -2693,9 +2693,19 @@
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
       "items": 14,
-      "attempted_at": "2026-10-10T17:23:59.864645+00:00",
-      "last_success_at": "2026-10-10T17:24:03.042813+00:00",
+      "attempted_at": "2026-10-10T17:30:27.463391+00:00",
+      "last_success_at": "2026-10-10T17:30:30.220827+00:00",
       "last_article_published": "2026-10-10T20:45:48+03:30",
+      "error": ""
+    },
+    {
+      "name": "پیوست",
+      "category": "فناوری و علم",
+      "ok": true,
+      "items": 9,
+      "attempted_at": "2026-10-10T17:30:27.468682+00:00",
+      "last_success_at": "2026-10-10T17:30:30.987081+00:00",
+      "last_article_published": "2026-10-10T16:41:14+03:30",
       "error": ""
     },
     {
@@ -2703,8 +2713,8 @@
       "category": "بورس و بازار سرمایه",
       "ok": true,
       "items": 14,
-      "attempted_at": "2026-10-10T17:23:59.865044+00:00",
-      "last_success_at": "2026-10-10T17:24:04.586536+00:00",
+      "attempted_at": "2026-10-10T17:30:27.464319+00:00",
+      "last_success_at": "2026-10-10T17:30:31.223996+00:00",
       "last_article_published": "2026-10-10T16:15:42+03:30",
       "error": ""
     },
@@ -2713,19 +2723,9 @@
       "category": "بورس و بازار سرمایه",
       "ok": true,
       "items": 14,
-      "attempted_at": "2026-10-10T17:23:59.868493+00:00",
-      "last_success_at": "2026-10-10T17:24:06.173736+00:00",
+      "attempted_at": "2026-10-10T17:30:27.468118+00:00",
+      "last_success_at": "2026-10-10T17:30:31.518656+00:00",
       "last_article_published": "2026-10-10T19:45:00+03:30",
-      "error": ""
-    },
-    {
-      "name": "انتخاب",
-      "category": "اقتصاد و سرمایه‌گذاری",
-      "ok": true,
-      "items": 14,
-      "attempted_at": "2026-10-10T17:23:59.877362+00:00",
-      "last_success_at": "2026-10-10T17:24:07.027457+00:00",
-      "last_article_published": "2026-10-10T19:44:44+03:30",
       "error": ""
     },
     {
@@ -2733,9 +2733,19 @@
       "category": "پزشکی و سلامت",
       "ok": true,
       "items": 14,
-      "attempted_at": "2026-10-10T17:23:59.869334+00:00",
-      "last_success_at": "2026-10-10T17:24:07.831612+00:00",
+      "attempted_at": "2026-10-10T17:30:27.470026+00:00",
+      "last_success_at": "2026-10-10T17:30:32.498797+00:00",
       "last_article_published": "2026-10-10T14:35:13+03:30",
+      "error": ""
+    },
+    {
+      "name": "انتخاب",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "ok": true,
+      "items": 14,
+      "attempted_at": "2026-10-10T17:30:27.475014+00:00",
+      "last_success_at": "2026-10-10T17:30:32.709793+00:00",
+      "last_article_published": "2026-10-10T19:44:44+03:30",
       "error": ""
     },
     {
@@ -2743,25 +2753,15 @@
       "category": "بورس و بازار سرمایه",
       "ok": true,
       "items": 14,
-      "attempted_at": "2026-10-10T17:23:59.865668+00:00",
-      "last_success_at": "2026-10-10T17:24:09.673057+00:00",
+      "attempted_at": "2026-10-10T17:30:27.464751+00:00",
+      "last_success_at": "2026-10-10T17:30:33.490441+00:00",
       "last_article_published": "2026-10-10T20:00:00+03:30",
       "error": ""
-    },
-    {
-      "name": "پیوست",
-      "category": "فناوری و علم",
-      "ok": false,
-      "items": 0,
-      "attempted_at": "2026-10-10T17:23:59.868917+00:00",
-      "last_success_at": "",
-      "last_article_published": "",
-      "error": "TimeoutError: The read operation timed out | discovery: TimeoutError: The read operation timed out"
     }
   ],
   "dedup": {
     "enabled": true,
     "window_hours": 48,
-    "removed": 18
+    "removed": 20
   }
 }
