@@ -1,4 +1,5 @@
-export const TOPICS=["economy","markets","currency-gold","real-estate","technology","ai","health","auto","science-life"];
+export const TOPICS=["economy","markets","currency-gold","real-estate","technology","ai","health","auto","science-life","crypto"];
+export const PAGE_TOPICS=[...TOPICS,"economy-investment","technology-ai"];
 export const HOME="home";
 export const FEATURED_COUNT=4;
 export const REGULAR_PER_PAGE=16;
