@@ -1,7 +1,7 @@
 {
   "version": 1,
   "policy_version": 9,
-  "updated": "2026-10-10T19:10:05Z",
+  "updated": "2026-10-10T19:25:00Z",
   "items": {
     "72b4eb7a7155ed214c32324d": {
       "title": "تصاویر؛ جشن «مهرگان» در غار کرفتو",
@@ -3090,7 +3090,9 @@
       "importance": 20,
       "important": false,
       "important_topics": [],
-      "slider_topics": [],
+      "slider_topics": [
+        "auto"
+      ],
       "ticker_topics": [],
       "breaking": false,
       "breaking_topics": [],
@@ -11177,8 +11179,10 @@
         "auto": 20
       },
       "importance": 20,
-      "important": false,
-      "important_topics": [],
+      "important": true,
+      "important_topics": [
+        "auto"
+      ],
       "slider_topics": [
         "auto"
       ],
@@ -13243,7 +13247,7 @@
       "publishable": true,
       "exclude_reason": "",
       "group_id": "local-8b87e5c6c35b",
-      "representative": false,
+      "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
       "local_score": 7,
@@ -13583,16 +13587,12 @@
         "auto"
       ],
       "topic_scores": {
-        "auto": 20
+        "auto": 19
       },
-      "importance": 20,
-      "important": true,
-      "important_topics": [
-        "auto"
-      ],
-      "slider_topics": [
-        "auto"
-      ],
+      "importance": 19,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
       "ticker_topics": [],
       "breaking": false,
       "breaking_topics": [],
@@ -13605,10 +13605,7 @@
       "local_score": 14,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 3.6243535676267413,
-      "permanent_article": true,
-      "article_id": "article-b44912d5217f3ada",
-      "image": "https://tejaratnews.com/wp-content/uploads/2026/10/139806051110094118215674-1-ak-1200x800-1.webp"
+      "age_hours": 3.8734791402684317
     },
     "94c397b7f6f364887aa53bba": {
       "title": "چرا «پیش‌فروش خودرو» دیگر برای خریداران به‌صرفه نیست؟",
@@ -13900,7 +13897,7 @@
       "local_score": 9,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.3826869009600746
+      "age_hours": 3.631812473601765
     },
     "ddb64c6e629e600bed361153": {
       "title": "علت حضور گلزار در تمرینات استقلال و تیم‌ملی کشتی",
@@ -13937,12 +13934,10 @@
       "source": "اقتصادنیوز",
       "published": "2026-10-10T19:15:32+03:30",
       "topics": [
-        "markets",
-        "auto"
+        "markets"
       ],
       "topic_scores": {
-        "markets": 20,
-        "auto": 20
+        "markets": 20
       },
       "importance": 20,
       "important": false,
@@ -13960,7 +13955,7 @@
       "local_score": 16,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 3.407131345404519
+      "age_hours": 3.6562569180462097
     },
     "f8a9546d611f5f4b0e88901a": {
       "title": "رشد ادامه‌دار شاخص‌ها/ بورس در تلاش برای تثبیت در کانال 8 میلیونی +فیلم",
@@ -13993,7 +13988,7 @@
       "local_score": 16,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.542409123182297,
+      "age_hours": 3.7915346958239873,
       "permanent_article": true,
       "article_id": "article-f8a9546d611f5f4b",
       "image": "https://cdn.donya-e-eqtesad.com/thumbnail/E8xU5qhButIV/QHn8O9nsSzT8qCU7RegsN6Pbb5v74eEtbKeSOh05RaZxikAWcBix80t7TZyzEhnm/%D8%A8%D9%88%D8%B1%D8%B3.jpg"
@@ -14025,7 +14020,7 @@
       "local_score": 16,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 3.666020234293408
+      "age_hours": 3.9151458069350986
     },
     "43f57a3c056b126a54e44153": {
       "title": "واکنش فنلاند به توافق روسیه و آمریکا برای تأمین گازوئیل/ توقف صدور روادید برای شهروندان روسی",
@@ -14148,12 +14143,8 @@
       "summary": "اقتصادنیوز: : رئیس پلیس راه مازندران از ترافیک نیمه‌سنگین در خروجی محورهای کندوان، هراز و سوادکوه خبر داد و اعلام کرد که محدودیت تردد در مسیر جنوب به شمال آزادراه تهران ـ شمال و محور کندوان از ساعت ۱۷ اجرا می‌شود.",
       "source": "اقتصادنیوز",
       "published": "2026-10-10T19:24:09+03:30",
-      "topics": [
-        "economy"
-      ],
-      "topic_scores": {
-        "economy": 4
-      },
+      "topics": [],
+      "topic_scores": {},
       "importance": 4,
       "important": false,
       "important_topics": [],
@@ -14170,7 +14161,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 3.263520234293408
+      "age_hours": 3.5126458069350983
     },
     "c6dee58699ab98703add7725": {
       "title": "سودآورترین شرکت‌های جهان‌",
@@ -14207,7 +14198,7 @@
       "local_score": 16,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.287131345404519,
+      "age_hours": 3.5362569180462096,
       "permanent_article": true,
       "article_id": "article-c6dee58699ab9870",
       "image": "https://cdn.donya-e-eqtesad.com/thumbnail/N5ziONZzWBCQ/QHn8O9nsSzT8qCU7RegsN6Pbb5v74eEtbKeSOh05RaZwhCeXHlfVnEt7TZyzEhnm/IMG_20261010_192034_618.jpg"
@@ -14250,9 +14241,9 @@
         "science-life"
       ],
       "topic_scores": {
-        "science-life": 12
+        "science-life": 11
       },
-      "importance": 12,
+      "importance": 11,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -14265,23 +14256,19 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 7,
+      "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.8649091231822967
+      "age_hours": 3.1140346958239875
     },
     "4f50dcc6f6e8713cb00dd000": {
       "title": "ورود آهن و فولاد غدیر ایرانیان به زنجیره ارزش روی",
       "summary": "",
       "source": "فردای اقتصاد",
       "published": "2026-10-10T19:45:00+03:30",
-      "topics": [
-        "currency-gold"
-      ],
-      "topic_scores": {
-        "currency-gold": 15
-      },
-      "importance": 15,
+      "topics": [],
+      "topic_scores": {},
+      "importance": 9,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -14294,23 +14281,19 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 10,
+      "local_score": 9,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.916020234293408
+      "age_hours": 3.1651458069350986
     },
     "7ca5f0d427192165644158b8": {
       "title": "سفارت آمریکا در ریاض: از حملات به فرودگاه بین‌المللی ملک خالد در ریاض مطلع هستیم / به‌شدت به شهروندان خود توصیه می‌کنیم از این فرودگاه دوری کنند",
       "summary": "سفارت آمریکا در ریاض اعلام کرد: از حملات به فرودگاه بین‌المللی ملک خالد در ریاض مطلع هستیم و به‌شدت به شهروندان خود توصیه می‌کنیم از این فرودگاه دوری کنند.",
       "source": "انتخاب",
       "published": "2026-10-10T19:44:44+03:30",
-      "topics": [
-        "real-estate"
-      ],
-      "topic_scores": {
-        "real-estate": 10
-      },
-      "importance": 10,
+      "topics": [],
+      "topic_scores": {},
+      "importance": 9,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -14323,10 +14306,10 @@
       "representative": false,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 10,
+      "local_score": 9,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.920464678737852
+      "age_hours": 3.169590251379543
     },
     "469ee061abe44a487e3bf338": {
       "title": "ببینید؛ خلاصه بازی آگزبورگ 2 - بایرن مونیخ 2",
@@ -14362,13 +14345,9 @@
       "summary": "مذاکره‌کنندگان آمریکایی زلنسکی را تهدید کردند که اگر درخواست‌های همتای آمریکایی خود را نادیده بگیرد، واشنگتن تبادل اطلاعاتی با کی‌یف را قطع می‌کند.",
       "source": "دنیای اقتصاد",
       "published": "2026-10-10T19:41:40+03:30",
-      "topics": [
-        "currency-gold"
-      ],
-      "topic_scores": {
-        "currency-gold": 9
-      },
-      "importance": 9,
+      "topics": [],
+      "topic_scores": {},
+      "importance": 4,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -14384,7 +14363,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 2.971575789848963
+      "age_hours": 3.220701362490654
     },
     "668c2a3eb48f9a3ebf3db21c": {
       "title": "تساوی ۲-۲ آگزبورگ مقابل بایرن‌مونیخ؛ روز فاجعه نویر",
@@ -14453,9 +14432,9 @@
         "auto"
       ],
       "topic_scores": {
-        "auto": 16
+        "auto": 14
       },
-      "importance": 16,
+      "importance": 14,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -14471,7 +14450,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 3.0401869009600744
+      "age_hours": 3.289312473601765
     },
     "8059e7bda4b483c9ea6c76a9": {
       "title": "ببینید؛ خلاصه بازی پیکان 1 - شمس آذر 1",
@@ -14529,7 +14508,7 @@
       "local_score": 13,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.08324245651563
+      "age_hours": 3.3323680291573208
     },
     "507b85983cc012467c765663": {
       "title": "شرایط عرضه دو محصول «پارس نوآ» و «کوییک GX-L + جزئیات",
@@ -14558,7 +14537,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 3.096575789848963
+      "age_hours": 3.345701362490654
     },
     "dc6e3735523927866b7fa6c4": {
       "title": "شکست طلسم ۲۶۰ روزه ستاره پرسپولیس",
@@ -14596,12 +14575,10 @@
       "published": "2026-10-10T20:06:25+03:30",
       "topics": [
         "real-estate",
-        "economy",
-        "currency-gold"
+        "economy"
       ],
       "topic_scores": {
         "economy": 9,
-        "currency-gold": 9,
         "real-estate": 9
       },
       "importance": 9,
@@ -14620,7 +14597,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 2.5590757898489636
+      "age_hours": 2.808201362490654
     },
     "8c01bc3f44224a69ca4c438d": {
       "title": "ببینید؛ کشیده ساکت زیر گوش بازیکن خودی!",
@@ -14707,7 +14684,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 2.6535202342934077
+      "age_hours": 2.9026458069350984
     },
     "2d5db4ed625b8119d1037e81": {
       "title": "نوسان 3 هزار تومانی قیمت تتر | بیت‌کوین از کانال ۸۲ هزار دلاری جدا شد | آلت‌کوین‌ها سبزپوش شدند",
@@ -14715,24 +14692,30 @@
       "source": "اقتصادنیوز",
       "published": "2026-10-10T20:00:23+03:30",
       "topics": [
-        "currency-gold"
+        "currency-gold",
+        "crypto"
       ],
       "topic_scores": {
-        "currency-gold": 20
+        "currency-gold": 20,
+        "crypto": 20
       },
       "importance": 20,
       "important": true,
       "important_topics": [
+        "crypto",
         "currency-gold"
       ],
       "slider_topics": [
+        "crypto",
         "currency-gold"
       ],
       "ticker_topics": [
+        "crypto",
         "currency-gold"
       ],
       "breaking": true,
       "breaking_topics": [
+        "crypto",
         "currency-gold"
       ],
       "publishable": true,
@@ -14744,7 +14727,7 @@
       "local_score": 17,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 2.659631345404519,
+      "age_hours": 2.9087569180462096,
       "permanent_article": true,
       "article_id": "article-2d5db4ed625b8119",
       "image": "https://cdn.eghtesadnews.com/thumbnail/MJnHz91AYG7M/9wFJ5bHahv2PMDUde8i7WGPUoZPhR2k6vQp3Wbes3xFjVYxKGQfhsfeyB_vNOuor5irbViqQy551GzH5u7amOVt7U9Qe-hBRRcLG_SJKFAxBTXtP4xgq5ZoaYYWFfV2QSdjc06WX1efEm0DGXDg7wg1TTYMbKgS4afbUYZcpgxCfQnH7xFenn-z8sYeZ97wZ/%D9%82%DB%8C%D9%85%D8%AA+%D8%A8%DB%8C%D8%AA+%DA%A9%D9%88%DB%8C%D9%86+%D9%88+%D8%AA%D8%AA%D8%B1.jpg"
@@ -14776,7 +14759,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.666020234293408
+      "age_hours": 2.9151458069350986
     },
     "6eb65546e6b463fa0f5bfa7c": {
       "title": "هشدار آلمان، کانادا و اسپانیا درباره سفر هوایی به ریاض",
@@ -14842,7 +14825,7 @@
       "local_score": 17,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 2.699631345404519,
+      "age_hours": 2.9487569180462097,
       "permanent_article": true,
       "article_id": "article-c468f36c2048823d",
       "image": "https://cdn.fararu.com/thumbnail/e76I2rIkiWa1/-tVojNkJ5LDi9VdAT9y4JTlxjqfn2x4Abj9ZYYrHViKq1Kq5VuA_DScZMJ6tVdeLUl1T-A4k8BZ6Gp34WWZeOITdMaj2c3VAU7wkW4pIajSvDS1cky8gesIj-uJ1EZMY/%D8%A8%DB%8C%D9%85%D8%A7%D8%B1%DB%8C+%DA%86%D8%B4%D9%85%DB%8C.jpg"
@@ -14852,12 +14835,8 @@
       "summary": "در بیست‌وششمین حراج تهران، ویژه آثار مدرن و معاصر ایران که ۲۴ مهرماه برگزار می‌شود، اثری از پرویز تناولی با برآورد ۲۰۰ تا ۲۵۰ میلیارد تومان، بیشینه و کمینه گران‌ترین اثر این دوره را دارد. پس از او، منیر فرمانفرمائیان و کوروش شیشه‌گران در جایگاه دوم و سوم قرار دارند. پست اثر ۲۵۰ میلیاردی پرویز تناولی",
       "source": "تجارت‌نیوز",
       "published": "2026-10-10T19:55:50+03:30",
-      "topics": [
-        "economy"
-      ],
-      "topic_scores": {
-        "economy": 7
-      },
+      "topics": [],
+      "topic_scores": {},
       "importance": 7,
       "important": false,
       "important_topics": [],
@@ -14874,7 +14853,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 2.7354646787378525
+      "age_hours": 2.984590251379543
     },
     "48fab77d7af70bbbecb925de": {
       "title": "ببینید؛ خلاصه بازی چلسی 5 - بورنموث 1",
@@ -14910,13 +14889,9 @@
       "summary": "محور کندوان و آزادراه تهران ـ شمال مسدود شده و تردد در این محور با محدودیت و اعمال یک‌طرفه شدن مسیر انجام می‌شود.",
       "source": "دنیای اقتصاد",
       "published": "2026-10-10T19:50:49+03:30",
-      "topics": [
-        "economy"
-      ],
-      "topic_scores": {
-        "economy": 9
-      },
-      "importance": 9,
+      "topics": [],
+      "topic_scores": {},
+      "importance": 8,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -14929,10 +14904,10 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 9,
+      "local_score": 8,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.8190757898489633
+      "age_hours": 3.068201362490654
     },
     "6ca3093d32abaee62b97c279": {
       "title": "سعید مرد بازی‌های بزرگ استقلال؛ چه سحر دلپذیری!",
@@ -14997,12 +14972,8 @@
       "summary": "پس از هدف قرار گرفتن یک فرودگاه بین‌المللی در پایتخت عربستان، آمریکا و انگلیس برای شهروندان خود در این کشور هشدار امنیتی صادر کردند.",
       "source": "دنیای اقتصاد",
       "published": "2026-10-10T20:17:39+03:30",
-      "topics": [
-        "economy"
-      ],
-      "topic_scores": {
-        "economy": 4
-      },
+      "topics": [],
+      "topic_scores": {},
       "importance": 4,
       "important": false,
       "important_topics": [],
@@ -15019,19 +14990,15 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 2.3718535676267414
+      "age_hours": 2.6209791402684317
     },
     "57d25281e3c38130fe97196f": {
       "title": "کاهش دما همراه با بارش پراکنده در تهران",
       "summary": "مدیرکل هواشناسی استان تهران از وزش باد همراه با کاهش نسبی دما و بارش پراکنده باران در روزهای پیش رو خبر داد. پست کاهش دما همراه با بارش پراکنده در تهران اولین بار در تجارت نیوز ظاهر شد.",
       "source": "تجارت‌نیوز",
       "published": "2026-10-10T20:11:25+03:30",
-      "topics": [
-        "economy"
-      ],
-      "topic_scores": {
-        "economy": 7
-      },
+      "topics": [],
+      "topic_scores": {},
       "importance": 7,
       "important": false,
       "important_topics": [],
@@ -15042,26 +15009,22 @@
       "publishable": true,
       "exclude_reason": "",
       "group_id": "local-8b87e5c6c35b",
-      "representative": true,
+      "representative": false,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.47574245651563
+      "age_hours": 2.724868029157321
     },
     "711fac6b38e9762f05cc3e23": {
       "title": "هشدار سفارتخانه‌های آمریکا و انگلیس به اتباع خود درباره فرودگاه ریاض",
       "summary": "اقتصادنیوز: سفارتخانه‌های آمریکا و انگلیس در ریاض، در پی تحولات امنیتی اخیر، به شهروندان خود توصیه کردند از فرودگاه بین‌المللی ملک خالد و مناطق اطراف آن دوری کنند.",
       "source": "اقتصادنیوز",
       "published": "2026-10-10T20:11:16+03:30",
-      "topics": [
-        "real-estate"
-      ],
-      "topic_scores": {
-        "real-estate": 20
-      },
-      "importance": 20,
+      "topics": [],
+      "topic_scores": {},
+      "importance": 17,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -15077,7 +15040,7 @@
       "local_score": 17,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 2.47824245651563
+      "age_hours": 2.727368029157321
     },
     "ea4767ed6376628a544b37a9": {
       "title": "کریدور عمانی تنگه هرمز تخلیه شد",
@@ -15193,7 +15156,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.8649091231822967
+      "age_hours": 2.1140346958239875
     },
     "07c0ccc9c6a65285c688ddb1": {
       "title": "تأخیر در واردات پنل، مهم ترین مانع توسعه نیروگاه‌های خورشیدی",
@@ -15229,12 +15192,8 @@
       "summary": "رئیس پلیس راه مازندران از ترافیک نیمه‌سنگین در خروجی محورهای کندوان، هراز و سوادکوه خبر داد.",
       "source": "فرارو",
       "published": "2026-10-10T21:01:39+03:30",
-      "topics": [
-        "economy"
-      ],
-      "topic_scores": {
-        "economy": 4
-      },
+      "topics": [],
+      "topic_scores": {},
       "importance": 4,
       "important": false,
       "important_topics": [],
@@ -15251,7 +15210,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 1.6385202342934078
+      "age_hours": 1.8876458069350985
     },
     "8756f03d875654e4d3929baf": {
       "title": "عربستان: فعالیت‌های فرودگاه ملک خالد به‌طور موقت به حالت تعلیق درآمد",
@@ -15259,25 +15218,21 @@
       "source": "انتخاب",
       "published": "2026-10-10T21:00:17+03:30",
       "topics": [
-        "economy",
-        "currency-gold"
+        "economy"
       ],
       "topic_scores": {
-        "economy": 18,
-        "currency-gold": 18
+        "economy": 18
       },
       "importance": 18,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
       "ticker_topics": [
-        "economy",
-        "currency-gold"
+        "economy"
       ],
       "breaking": true,
       "breaking_topics": [
-        "economy",
-        "currency-gold"
+        "economy"
       ],
       "publishable": true,
       "exclude_reason": "",
@@ -15288,7 +15243,7 @@
       "local_score": 13,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 1.6612980120711855
+      "age_hours": 1.9104235847128763
     },
     "4fe59077437f03248b4380f6": {
       "title": "خبر خوش برای سهامداران عدالت/ حساب این افراد شارژ شد + جزئیات",
@@ -15317,7 +15272,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 1.4593535676267413
+      "age_hours": 1.7084791402684318
     },
     "1ba3d6460db5d234f63762aa": {
       "title": "بازگشت هواپیمای توقیفی کاسپین در ترکیه به ایران +جزئیات",
@@ -15411,7 +15366,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.3210202342934079
+      "age_hours": 1.5701458069350984
     },
     "675d010bb44b027f1e844dda": {
       "title": "خوشحالی سهراب از درخشش ستاره قرضی استقلال",
@@ -15419,12 +15374,12 @@
       "source": "فرارو",
       "published": "2026-10-10T21:57:43+03:30",
       "topics": [
-        "currency-gold"
+        "science-life"
       ],
       "topic_scores": {
-        "currency-gold": 9
+        "science-life": 4
       },
-      "importance": 9,
+      "importance": 4,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -15440,19 +15395,15 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 0.7040757898489635
+      "age_hours": 0.953201362490654
     },
     "66e983a1c770cc0515fae0ca": {
       "title": "ببینید؛ خلاصه بازی اینتر 3 - پارما 0",
       "summary": "اینتر در هفته ششم سری آ ایتالیا با نتیجه ۳ بر صفر پارما را شکست داد و با ۱۶ امتیاز در صدر جدول قرار گرفت.",
       "source": "فرارو",
       "published": "2026-10-10T21:52:53+03:30",
-      "topics": [
-        "economy"
-      ],
-      "topic_scores": {
-        "economy": 4
-      },
+      "topics": [],
+      "topic_scores": {},
       "importance": 4,
       "important": false,
       "important_topics": [],
@@ -15469,7 +15420,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 0.784631345404519
+      "age_hours": 1.0337569180462096
     },
     "18982121823a09616eedb74f": {
       "title": "سود جاماندۀ سهام عدالت ۱.۵ میلیون نفر واریز شد",
@@ -15498,19 +15449,15 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.8104646787378523
+      "age_hours": 1.059590251379543
     },
     "c49c78869e6c8e545e643924": {
       "title": "برد ۳-۰ اینتر مقابل پارما؛ بی‌دردسر و آسان!",
       "summary": "در چارچوب هفته ششم رقابت‌های سری آ ایتالیا، تیم اینتر در ورزشگاه خانگی خود، جوزپه مه‌آتزا، میزبان پارما بود.",
       "source": "فرارو",
       "published": "2026-10-10T21:48:46+03:30",
-      "topics": [
-        "economy"
-      ],
-      "topic_scores": {
-        "economy": 4
-      },
+      "topics": [],
+      "topic_scores": {},
       "importance": 4,
       "important": false,
       "important_topics": [],
@@ -15527,20 +15474,16 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 0.8532424565156301
+      "age_hours": 1.1023680291573206
     },
     "18ccaa975514f321f079a37f": {
       "title": "کریدور عمانی هرمز تخلیه شد",
       "summary": "تصاویر ماهواره‌ای از تخلیه کامل بخش عمانی تنگه هرمز از نفتکش‌ها حکایت دارد.",
       "source": "دنیای اقتصاد",
       "published": "2026-10-10T21:42:01+03:30",
-      "topics": [
-        "economy"
-      ],
-      "topic_scores": {
-        "economy": 20
-      },
-      "importance": 20,
+      "topics": [],
+      "topic_scores": {},
+      "importance": 15,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -15556,7 +15499,7 @@
       "local_score": 15,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.9657424565156301
+      "age_hours": 1.2148680291573206
     },
     "f789c5adeb2923c449256ba1": {
       "title": "پارسال ۲۲ میلیارد دلار محصول پتروشیمی تولید و ۱۰ میلیارد دلار آن صادر شد",
@@ -15592,12 +15535,8 @@
       "summary": "سازمان حج و زیارت اعلام کرد: پیگیری‌ها برای آغاز اعزام‌های عمره ادامه دارد و زمان ثبت‌نام پس از نهایی‌شدن هماهنگی‌های پروازی اعلام می‌شود. پست سازمان حج و زیارت: پیگیری‌ها برای آغاز اعزام‌های عمره ادامه دارد اولین بار در تجارت نیوز ظاهر شد.",
       "source": "تجارت‌نیوز",
       "published": "2026-10-10T21:35:25+03:30",
-      "topics": [
-        "economy"
-      ],
-      "topic_scores": {
-        "economy": 4
-      },
+      "topics": [],
+      "topic_scores": {},
       "importance": 4,
       "important": false,
       "important_topics": [],
@@ -15614,7 +15553,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 1.0757424565156302
+      "age_hours": 1.3248680291573207
     },
     "faa0f6cd5d150403b8e23922": {
       "title": "نقد سریال «یل»؛ سریال تازه شبکه خانگی چقدر نفس‌گیر است؟",
@@ -15625,19 +15564,15 @@
         "science-life"
       ],
       "topic_scores": {
-        "science-life": 15
+        "science-life": 10
       },
-      "importance": 15,
+      "importance": 10,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
-      "ticker_topics": [
-        "science-life"
-      ],
-      "breaking": true,
-      "breaking_topics": [
-        "science-life"
-      ],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
       "publishable": true,
       "exclude_reason": "",
       "group_id": "local-8eb9209bca14",
@@ -15647,19 +15582,15 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 1.0954646787378524
+      "age_hours": 1.344590251379543
     },
     "0f76e8624ba40db3da459a22": {
       "title": "وام حمپاد؛ تسهیلات 50 میلیونی بازنشستگان چیست؟",
       "summary": "وام حمپاد فقط به متقاضیان تحصیل در مقطع ارشد و دکتری ارائه می‌شود و سقف 25 یا 50 میلیون تومانی دارد",
       "source": "فرارو",
       "published": "2026-10-10T21:33:10+03:30",
-      "topics": [
-        "economy"
-      ],
-      "topic_scores": {
-        "economy": 4
-      },
+      "topics": [],
+      "topic_scores": {},
       "importance": 4,
       "important": false,
       "important_topics": [],
@@ -15676,7 +15607,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 1.11324245651563
+      "age_hours": 1.3623680291573206
     },
     "52d61a732b17aae6b9bd4270": {
       "title": "قیمت لیپ موتور T03؛ جانشین پژو ۲۰۷ گران شد",
@@ -15684,21 +15615,21 @@
       "source": "فرارو",
       "published": "2026-10-10T21:32:43+03:30",
       "topics": [
-        "economy"
+        "auto"
       ],
       "topic_scores": {
-        "economy": 17
+        "auto": 17
       },
       "importance": 17,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
       "ticker_topics": [
-        "economy"
+        "auto"
       ],
       "breaking": true,
       "breaking_topics": [
-        "economy"
+        "auto"
       ],
       "publishable": true,
       "exclude_reason": "",
@@ -15709,19 +15640,15 @@
       "local_score": 17,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 1.12074245651563
+      "age_hours": 1.3698680291573206
     },
     "84bc23e624fbef84cb62df02": {
       "title": "ببینید؛ خلاصه بازی بارسلونا 3 - ختافه 0",
       "summary": "تیم بارسلونا در هفته هشتم رقابت‌های لالیگا در مقابل ختافه به پیروزی ۳ گله رسید.",
       "source": "فرارو",
       "published": "2026-10-10T22:14:05+03:30",
-      "topics": [
-        "economy"
-      ],
-      "topic_scores": {
-        "economy": 4
-      },
+      "topics": [],
+      "topic_scores": {},
       "importance": 4,
       "important": false,
       "important_topics": [],
@@ -15738,19 +15665,15 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 0.4312980120711856
+      "age_hours": 0.6804235847128762
     },
     "f03a01514f3cfc93621beff5": {
       "title": "برد ۳-۰ بارسلونل مقابل ختافه؛ روزهای رویایی ادامه دارند!",
       "summary": "بارسلونا با پیروزی ۳ بر صفر مقابل ختافه در هفته هشتم، هشتمین برد پیاپی خود را جشن گرفت و با ۲۴ امتیاز صدرنشینی‌اش را تثبیت کرد.​",
       "source": "فرارو",
       "published": "2026-10-10T22:12:16+03:30",
-      "topics": [
-        "economy"
-      ],
-      "topic_scores": {
-        "economy": 4
-      },
+      "topics": [],
+      "topic_scores": {},
       "importance": 4,
       "important": false,
       "important_topics": [],
@@ -15767,7 +15690,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 0.4615757898489634
+      "age_hours": 0.710701362490654
     },
     "12f9586b43688d697e5982d3": {
       "title": "قیمت بالای سوخت جت تا ۲۰۲۸ ادامه می‌یابد",
@@ -15833,7 +15756,7 @@
       "local_score": 17,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.6532424565156301,
+      "age_hours": 0.9023680291573206,
       "permanent_article": true,
       "article_id": "article-3adb598ed52fe2c5",
       "image": "https://vod.demg.org/ao/1a1267ccb8e_bdb463.webp"
@@ -15894,7 +15817,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 0.6732424565156301
+      "age_hours": 0.9223680291573206
     },
     "9fe2c344aba3a6826068870c": {
       "title": "ممنوعیت ارائه خدمات معامله برخط طلا توسط مؤسسات اعتباری",
@@ -15956,7 +15879,7 @@
       "local_score": 17,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.2665757898489634,
+      "age_hours": 0.515701362490654,
       "permanent_article": true,
       "article_id": "article-eaf72ce5a2e767f4",
       "image": "https://cdn.donya-e-eqtesad.com/thumbnail/jFcLOpY2OfW5/QHn8O9nsSzT8qCU7RegsN6Pbb5v74eEtbKeSOh05Rab-W7mR6qQtpUt7TZyzEhnm/r67PvQxkFGA8.jpg"
@@ -15970,9 +15893,9 @@
         "economy"
       ],
       "topic_scores": {
-        "economy": 16
+        "economy": 14
       },
-      "importance": 16,
+      "importance": 14,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -15988,7 +15911,32 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 0.3282424565156301
+      "age_hours": 0.5773680291573207
+    },
+    "1a2bfba4f67a74c1a7dcd56a": {
+      "title": "هواپیمای توقیفی کاسپین در ترکیه به ایران بازگشت",
+      "summary": "اقتصادنیوز: وقیف موقت یکی از هواپیماهای بوئینگ شرکت هواپیمایی کاسپین پس از پیگیری‌های حقوقی و اداری و مذاکرات با مراجع ذی‌صلاح و طرف‌های مرتبط برطرف شد و این هواپیما به کشور بازگشت.",
+      "source": "اقتصادنیوز",
+      "published": "2026-10-10T22:43:31+03:30",
+      "topics": [],
+      "topic_scores": {},
+      "importance": 9,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-ba493df68288",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 9,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.18986802915732065
     }
   },
   "groups": {
@@ -17211,7 +17159,7 @@
       "representative_id": "ca4b72c8247ef44fc0435727"
     },
     "local-8b87e5c6c35b": {
-      "representative_id": "57d25281e3c38130fe97196f"
+      "representative_id": "8d50d9cb6abdab155bbce40f"
     },
     "local-c4dfa1ad309c": {
       "representative_id": "3c1cdcab932c5ce956a43147"
@@ -17461,6 +17409,9 @@
     },
     "local-1dffefcaa4d6": {
       "representative_id": "88f9f6c6b0f4e6d8085a0e09"
+    },
+    "local-ba493df68288": {
+      "representative_id": "1a2bfba4f67a74c1a7dcd56a"
     }
   },
   "usage": {
