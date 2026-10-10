@@ -48,7 +48,10 @@ const clipHtml=(value,max=MAX_BODY_CHARS)=>{
   return out;
 };
 const page=a=>{
- const title=esc(a.title), image=safeUrl(a.image), summary=esc(a.summary), content=clipHtml(rich(a.content),MAX_BODY_CHARS);
+ const titleText=String(a.title||""), summaryText=String(a.summary||"");
+ const title=esc(titleText), image=safeUrl(a.image), summary=esc(summaryText);
+ const contentLimit=Math.max(0,MAX_BODY_CHARS-titleText.length-summaryText.length);
+ const content=clipHtml(rich(a.content),contentLimit);
  const date=esc(new Date(a.updated_at||a.published_at||Date.now()).toLocaleString("fa-IR"));
  const source=a.sources&&a.sources[0]||{};
  const originalUrl=safeUrl(source.url);
