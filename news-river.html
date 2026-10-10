@@ -6,8 +6,8 @@
 <title>بخش خبری | Evren Nexus</title>
 <style>
 *{box-sizing:border-box}html,body{margin:0;padding:0;background:#f1f2f3;color:#20272d;font-family:Vazir,Tahoma,Arial,sans-serif}
-#topic-page{width:850px;max-width:100%;margin:0 auto;padding:148px 10px 30px;display:flex;flex-direction:row;align-items:flex-start;gap:10px;direction:rtl}
-#topic-content{width:610px;max-width:610px;min-width:610px;flex:0 0 610px;order:1;overflow:hidden}
+#page{width:850px;max-width:100%;margin:0 auto;padding:148px 10px 30px;display:flex;flex-direction:row;align-items:flex-start;gap:10px;direction:rtl}
+#content{width:610px;max-width:610px;min-width:610px;flex:0 0 610px;order:1;overflow:hidden}
 #sidebar-host{width:200px;min-width:200px;max-width:200px;flex:0 0 200px;order:2}
 .topic-masthead{background:#fff;border:1px solid #dfe2e4;border-top:3px solid #202c35;padding:12px 14px;margin-bottom:12px;overflow:hidden}
 .topic-masthead:after{display:none}
@@ -19,11 +19,11 @@
 #river .item{display:flex;gap:12px;padding:12px;border-bottom:1px solid #edf0f1;text-decoration:none;color:#29343b;background:#fff}#river .item:last-child{border-bottom:0}#river .item:hover{background:#f7f9fa}#river .item img{width:118px;min-width:118px;height:76px;object-fit:cover;background:#e9edef}#river .content{min-width:0;flex:1}#river .title{font-size:11px;font-weight:700;line-height:1.9;color:#202a31}#river .summary{font-size:9px;line-height:1.8;color:#68747b;margin-top:3px}#river .meta{font-size:8px;color:#98a0a5;margin-top:5px}
 .loading,.error{padding:25px;text-align:center;color:#7b858b;font-size:10px}.pagination-nav{display:flex;justify-content:center;align-items:center;gap:8px;margin:16px 0;padding:12px;background:#fff;border:1px solid #d9e0e4}.pagination-nav button{border:1px solid #d9e0e4;background:#fff;color:#202c35;padding:8px 14px;cursor:pointer;font:10px Vazir,Tahoma,Arial}.pagination-nav button:disabled{opacity:.4;cursor:default}
 .topic-footer{text-align:center;color:#8b959b;font-size:9px;padding:12px}
-@media(max-width:700px){#topic-page{width:100%;max-width:100%;padding:137px 8px 20px;display:block;overflow-x:hidden}#topic-content{width:100%;max-width:100%;min-width:0;flex:0 0 100%;box-sizing:border-box;overflow:hidden}#sidebar-host{display:none}.topic-masthead{padding:12px 14px}.topic-name{font-size:16px}.topic-sub{font-size:9px}.topic-toolbar{display:block}.topic-ticker{height:32px}.ticker-label{flex-basis:122px;font-size:8.5px}.Evrenxus-breaking-track{height:32px}.Evrenxus-breaking-track a{font-size:9px;padding:0 24px}#important .important-item{gap:8px;padding:9px}#important .important-item img{width:105px;min-width:105px;height:66px}#important .important-title,#river .title{font-size:10px}#river .item{gap:8px;padding:9px}#river .item img{width:94px;min-width:94px;height:64px}}
+@media(max-width:700px){#page{width:100%;max-width:100%;padding:137px 8px 20px;display:block;overflow-x:hidden}#content{width:100%;max-width:100%;min-width:0;flex:0 0 100%;box-sizing:border-box;overflow:hidden}#sidebar-host{display:none}.topic-masthead{padding:12px 14px}.topic-name{font-size:16px}.topic-sub{font-size:9px}.topic-toolbar{display:block}.topic-ticker{height:32px}.ticker-label{flex-basis:122px;font-size:8.5px}.Evrenxus-breaking-track{height:32px}.Evrenxus-breaking-track a{font-size:9px;padding:0 24px}#important .important-item{gap:8px;padding:9px}#important .important-item img{width:105px;min-width:105px;height:66px}#important .important-title,#river .title{font-size:10px}#river .item{gap:8px;padding:9px}#river .item img{width:94px;min-width:94px;height:64px}}
 </style>
 </head>
 <body>
-<main id="topic-page"><section id="topic-content">
+<main id="page"><section id="content">
 <header class="topic-masthead"><div class="topic-kicker">EVREN NEXUS / TOPIC DESK</div><div class="topic-name" id="topic-name">بخش خبری</div><div class="topic-sub" id="topic-sub">خبرها، تحلیل‌ها و مطالب منتخب این حوزه</div></header>
 <div class="topic-toolbar"><form class="topic-search" id="topic-search"><input id="newsSearchInput" type="search" placeholder="جستجو فقط در این موضوع..." autocomplete="off"><button type="submit">جستجو</button></form></div>
 <div class="topic-ticker"><div class="ticker-label">منتخب این حوزه</div><div class="Evrenxus-breaking-track" id="Evrenxus-breaking-track"><span class="loading">در حال دریافت مطالب منتخب...</span></div></div>
