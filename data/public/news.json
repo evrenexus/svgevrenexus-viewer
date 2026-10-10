@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-10T21:24:12.746430+00:00",
+  "updated": "2026-10-10T21:39:44.609663+00:00",
   "items": [
     {
       "id": "864c4a4a1e23fc929fc2",
@@ -298,7 +298,7 @@
       "importance_score": 0,
       "important": false,
       "first_seen_at": "2026-10-10T18:27:58.047158+00:00",
-      "image_tries": 2
+      "image_tries": 3
     },
     {
       "id": "30f3abc7851034e2d360",
@@ -316,7 +316,7 @@
       "importance_score": 1,
       "important": false,
       "first_seen_at": "2026-10-10T18:27:58.047159+00:00",
-      "image_tries": 2
+      "image_tries": 3
     },
     {
       "id": "7fad53804d364f771da0",
@@ -651,7 +651,8 @@
       "topics": [],
       "importance_score": 0,
       "important": false,
-      "first_seen_at": ""
+      "first_seen_at": "",
+      "image_tries": 1
     },
     {
       "id": "c82fe98cfa90496c53bb",
@@ -3011,43 +3012,33 @@
   ],
   "sources": [
     {
-      "name": "پزشک سایت",
-      "category": "پزشکی و سلامت",
+      "name": "دنیای اقتصاد",
+      "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
-      "items": 8,
-      "attempted_at": "2026-10-10T21:24:17.915867+00:00",
-      "last_success_at": "2026-10-10T21:24:20.213350+00:00",
-      "last_article_published": "2026-10-10T20:48:04+03:30",
+      "items": 13,
+      "attempted_at": "2026-10-10T21:39:48.723881+00:00",
+      "last_success_at": "2026-10-10T21:39:50.272077+00:00",
+      "last_article_published": "2026-10-11T00:01:20+03:30",
       "error": ""
     },
     {
       "name": "اقتصادنیوز",
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
-      "items": 10,
-      "attempted_at": "2026-10-10T21:24:17.905653+00:00",
-      "last_success_at": "2026-10-10T21:24:20.295982+00:00",
+      "items": 9,
+      "attempted_at": "2026-10-10T21:39:48.724659+00:00",
+      "last_success_at": "2026-10-10T21:39:50.760965+00:00",
       "last_article_published": "2026-10-11T00:29:47+03:30",
       "error": ""
     },
     {
-      "name": "تجارت‌نیوز",
-      "category": "اقتصاد و سرمایه‌گذاری",
+      "name": "پزشک سایت",
+      "category": "پزشکی و سلامت",
       "ok": true,
-      "items": 14,
-      "attempted_at": "2026-10-10T21:24:17.906132+00:00",
-      "last_success_at": "2026-10-10T21:24:21.210970+00:00",
-      "last_article_published": "2026-10-10T22:45:16+03:30",
-      "error": ""
-    },
-    {
-      "name": "دنیای اقتصاد",
-      "category": "اقتصاد و سرمایه‌گذاری",
-      "ok": true,
-      "items": 13,
-      "attempted_at": "2026-10-10T21:24:17.904627+00:00",
-      "last_success_at": "2026-10-10T21:24:21.467321+00:00",
-      "last_article_published": "2026-10-11T00:01:20+03:30",
+      "items": 8,
+      "attempted_at": "2026-10-10T21:39:48.735016+00:00",
+      "last_success_at": "2026-10-10T21:39:51.177501+00:00",
+      "last_article_published": "2026-10-10T20:48:04+03:30",
       "error": ""
     },
     {
@@ -3055,9 +3046,19 @@
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
       "items": 10,
-      "attempted_at": "2026-10-10T21:24:17.920843+00:00",
-      "last_success_at": "2026-10-10T21:24:21.666858+00:00",
+      "attempted_at": "2026-10-10T21:39:48.735986+00:00",
+      "last_success_at": "2026-10-10T21:39:51.263773+00:00",
       "last_article_published": "2026-10-10T23:19:21+03:30",
+      "error": ""
+    },
+    {
+      "name": "تجارت‌نیوز",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "ok": true,
+      "items": 14,
+      "attempted_at": "2026-10-10T21:39:48.725141+00:00",
+      "last_success_at": "2026-10-10T21:39:51.755734+00:00",
+      "last_article_published": "2026-10-10T22:45:16+03:30",
       "error": ""
     },
     {
@@ -3065,8 +3066,8 @@
       "category": "فناوری و علم",
       "ok": true,
       "items": 9,
-      "attempted_at": "2026-10-10T21:24:17.912408+00:00",
-      "last_success_at": "2026-10-10T21:24:21.672886+00:00",
+      "attempted_at": "2026-10-10T21:39:48.731984+00:00",
+      "last_success_at": "2026-10-10T21:39:52.533060+00:00",
       "last_article_published": "2026-10-10T16:41:14+03:30",
       "error": ""
     },
@@ -3075,8 +3076,8 @@
       "category": "بورس و بازار سرمایه",
       "ok": true,
       "items": 14,
-      "attempted_at": "2026-10-10T21:24:17.906625+00:00",
-      "last_success_at": "2026-10-10T21:24:22.434137+00:00",
+      "attempted_at": "2026-10-10T21:39:48.725587+00:00",
+      "last_success_at": "2026-10-10T21:39:53.320099+00:00",
       "last_article_published": "2026-10-10T21:20:42+03:30",
       "error": ""
     },
@@ -3085,8 +3086,8 @@
       "category": "بورس و بازار سرمایه",
       "ok": true,
       "items": 14,
-      "attempted_at": "2026-10-10T21:24:17.911850+00:00",
-      "last_success_at": "2026-10-10T21:24:23.395234+00:00",
+      "attempted_at": "2026-10-10T21:39:48.726931+00:00",
+      "last_success_at": "2026-10-10T21:39:54.575983+00:00",
       "last_article_published": "2026-10-10T19:45:00+03:30",
       "error": ""
     },
@@ -3095,8 +3096,8 @@
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
       "items": 13,
-      "attempted_at": "2026-10-10T21:24:17.917839+00:00",
-      "last_success_at": "2026-10-10T21:24:24.282637+00:00",
+      "attempted_at": "2026-10-10T21:39:48.735504+00:00",
+      "last_success_at": "2026-10-10T21:39:55.291370+00:00",
       "last_article_published": "2026-10-11T00:16:37+03:30",
       "error": ""
     },
@@ -3105,8 +3106,8 @@
       "category": "پزشکی و سلامت",
       "ok": true,
       "items": 14,
-      "attempted_at": "2026-10-10T21:24:17.912976+00:00",
-      "last_success_at": "2026-10-10T21:24:27.056149+00:00",
+      "attempted_at": "2026-10-10T21:39:48.732508+00:00",
+      "last_success_at": "2026-10-10T21:39:56.388513+00:00",
       "last_article_published": "2026-10-10T14:35:13+03:30",
       "error": ""
     },
@@ -3115,8 +3116,8 @@
       "category": "بورس و بازار سرمایه",
       "ok": true,
       "items": 14,
-      "attempted_at": "2026-10-10T21:24:17.907562+00:00",
-      "last_success_at": "2026-10-10T21:24:28.887700+00:00",
+      "attempted_at": "2026-10-10T21:39:48.726209+00:00",
+      "last_success_at": "2026-10-10T21:39:58.472300+00:00",
       "last_article_published": "2026-10-10T20:00:00+03:30",
       "error": ""
     }
