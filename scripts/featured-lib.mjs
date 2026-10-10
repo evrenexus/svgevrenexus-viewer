@@ -60,7 +60,7 @@ export function linkAll({news,aiItems,articles,editorial}){
  for(const n of news){
   const ai=aiItems.get(best.fn(n))??null,g=gid(ai)??gid(n);
   const article=(g?articleByGroup.get(g):null)??articleByOriginalId.get(String(n.id))??null;
-  rows.push({n,ai,ed:editorial.get(String(n.id))??null,group:g??"id:"+n.id,article,activeNews:true});
+  rows.push({n,ai,ed:editorial.get(best.fn(n))??editorial.get(String(n.id))??null,group:g??"id:"+n.id,article,activeNews:true});
   activeIds.add(String(n.id));
  }
  for(const a of articles){
