@@ -56,7 +56,15 @@ const stripHtml=(value)=>{
   };
   s=s.replace(/&nbsp;|&amp;|&lt;|&gt;|&quot;|&#39;|&#x27;/gi,m=>entities[m.toLowerCase()]??m);
   s=s.replace(/\u00a0/g," ").replace(/\r/g,"");
-  return s.split("\n").map(x=>x.replace(/[ \t]+/g," ").trim()).filter(Boolean).join("\n\n").trim();
+  // Remove common injected ad copy and scraper metadata before any article is saved.
+  s=s.replace(/(?:با پایین‌ترین کارمزد|با کمترین کارمزد)[^\n]{0,180}(?:دیجی.?کالا|معامله امن)[^\n]*/gi," ")
+    .replace(/سرمایه‌گذاری طلا و نقره در دیجی.?کالا[^\n]*/gi," ")
+    .replace(/معامله امن/gi," ")
+    .replace(/(?:^|\n)\s*(?:کد خبر\s*[:：]?\s*\d+|https?:\/\/\S+|h\s*ps:\/\/\S+)\s*(?=\n|$)/gim,"\n");
+  const seen=new Set();
+  return s.split("\n").map(x=>x.replace(/[ \t]+/g," ").trim()).filter(Boolean)
+    .filter(x=>{const k=x.replace(/[\s\p{P}\p{S}]/gu,"");if(k.length<25)return true;if(seen.has(k))return false;seen.add(k);return true;})
+    .join("\n\n").trim();
 };
 const clip=(s,n)=>s.length>n?s.slice(0,n-1).trim()+"…":s;
 const linkedAiKey=n=>{for(const fn of aiSchemes){const k=fn(n);if(k&&aiItems[k])return k}return ""};
@@ -83,7 +91,7 @@ for(const n of news){
   if(!n?.id) continue;
   if(n.allow_internal_republish!==true){skippedNoPermission++;continue;}
   if(blocked(n)||outOfScope(n)!==null){skippedBlocked++;continue;}
-  const clean=stripHtml(n.content);
+  const clean=clip(stripHtml(n.content),3600);
   if(clean.length<300){skippedNoContent++;continue;}
   if(!imageUsable(n.image)){skippedNoImage++;continue;}
 
