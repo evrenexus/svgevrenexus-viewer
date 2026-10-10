@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-10T13:54:25.370Z",
+  "updated": "2026-10-10T14:07:04.485Z",
   "schema": 1,
   "items": {
     "article-eece7c42f225dbaf": {
@@ -36767,6 +36767,34 @@
       "created_at": "2026-10-10T13:25:50.411Z",
       "updated_at": "2026-10-10T13:25:50.411Z",
       "published_at": "2026-10-10T16:42:37+03:30",
+      "status": "published",
+      "ai_managed": false,
+      "generated_by": "internal-republish-v1",
+      "manual_locked": false
+    },
+    "article-2cfdae80e7b6969f": {
+      "id": "article-2cfdae80e7b6969f",
+      "title": "طغیان رودخانه شهرستان گرمی اردبیل",
+      "summary": "بارش شدید باران در شهرستان گرمی اردبیل، به جاری‌شدن سیلاب و اختلال در تردد خودروها در برخی مسیرهای منطقه منجر شد.",
+      "content": "۱۷:۳۳ -\n\n۱۸ مهر ۱۴۰۵\n\nطغیان رودخانه شهرستان گرمی اردبیل\n\nبارش شدید باران در شهرستان گرمی اردبیل، به جاری‌شدن سیلاب و اختلال در تردد خودروها در برخی مسیرهای منطقه منجر شد.\n\nپ\n\n،\n\nپـ\n\nجاری‌شدن سیلاب در شهرستان گرمی استان اردبیل، پس از بارش شدید باران، موجب بروز مشکلاتی در تردد خودروها در برخی مسیرهای این منطقه شده است.\n\nعبور خودروها را با دشواری مواجه کرده است.\n\nجزئیات بیشتری درباره میزان خسارت‌های احتمالی و وضعیت رودخانه‌های منطقه منتشر نشده است.\n\nva NewsLis Limi = 5;\n\nاز میان اخبار\n\nجزئیات قتل منشی شرکت در طبقه چهارم پاساژ\n\nسخنگوی وزارت آموزش‌ و پرورش: تنوع مدارس باید کاهش یابد\n\nصدای انفجار کنترل شده مهمات در بندرلنگه\n\nتصاویری از زلزله ۷.۶ ریشتری در پاناما\n\nشما قبلا این خبر را لایک کرده‌اید .\n\nfunc ion oPe sianNumbe (numbe ) {\n\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\n\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\n\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\n\nelemen .addEven Lis ene (\"click\", func ion() {\n\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n\n. hen(func ion( esponse) {\n\nif ( esponse.s a us == 200) {\n\nesponse.json(). hen(func ion(newSco e) {\n\nva likeNumbe Span = elemen .que ySelec o (\".like\");\n\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\n\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\n\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\n\nva hiddenHea = elemen .que ySelec o (\".hidden\");\n\nvisibleHea .classLis .add(\"hidden\");\n\nfavo i eBu on.classLis .add(\"hidden\");\n\nhiddenHea .classLis . emove(\"hidden\");\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}\n\n});\n\n} else {\n\nif (e o Message) {\n\ne o Message.classLis .add(\"hidden_e o \");\n\nse Timeou (func ion() {\n\n}, 3000);\n\n}\n\n}\n\n})\n\n});\n\n});",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "topics": [
+        "economy"
+      ],
+      "group_id": "local-9ecca95de30f",
+      "original_news_id": "6811124006fa31a83dc9",
+      "source_ids": [],
+      "sources": [
+        {
+          "name": "فرارو",
+          "url": "https://fararu.com/fa/news/1008733/%D8%B7%D8%BA%DB%8C%D8%A7%D9%86-%D8%B1%D9%88%D8%AF%D8%AE%D8%A7%D9%86%D9%87-%D8%B4%D9%87%D8%B1%D8%B3%D8%AA%D8%A7%D9%86-%DA%AF%D8%B1%D9%85%DB%8C-%D8%A7%D8%B1%D8%AF%D8%A8%DB%8C%D9%84"
+        }
+      ],
+      "image": "https://mcdn.fararu.com/ao/1a12611e195_2e47f0.webp",
+      "importance_score": 0,
+      "created_at": "2026-10-10T14:07:04.485Z",
+      "updated_at": "2026-10-10T14:07:04.485Z",
+      "published_at": "2026-10-10T17:33:51+03:30",
       "status": "published",
       "ai_managed": false,
       "generated_by": "internal-republish-v1",
