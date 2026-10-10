@@ -2,34 +2,36 @@ import fs from "node:fs";
 import path from "node:path";
 import * as C from "./featured-config.mjs";
 import {ROOT,imageOf,imageUsable} from "./featured-lib.mjs";
+import {outOfScope} from "./content-policy.mjs";
 
 const OUT=path.join(ROOT,"articles");
+const MAX_BODY_CHARS=4000;
 const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
 const safeUrl=v=>{try{const u=new URL(String(v||""));return /^https?:$/i.test(u.protocol)?u.href:""}catch{return""}};
-const rich=v=>{
- const box=String(v||"").replace(/<script[\s\S]*?<\/script>/gi,"");
- return box;
-};
-const clipHtml=(value,max=5000)=>{
-  const tokens=String(value??"").replace(/<script[\s\S]*?<\/script>/gi,"").match(/<[^>]*>|[^<]+/g)||[];
+const rich=v=>String(v||"").replace(/<script[\s\S]*?<\/script>/gi,"").replace(/<iframe[\s\S]*?<\/iframe>/gi,"");
+const clipHtml=(value,max=MAX_BODY_CHARS)=>{
+  const tokens=String(value??"").replace(/<script[\s\S]*?<\/script>/gi,"").replace(/<iframe[\s\S]*?<\/iframe>/gi,"").match(/<[^>]*>|[^<]+/g)||[];
   const stack=[];let out="",count=0,truncated=false;
   for(const token of tokens){
     if(token[0]==="<"){
       const close=token.match(/^<\s*\/\s*([a-z0-9]+)/i);
       const open=token.match(/^<\s*([a-z0-9]+)/i);
-      out+=token;
-      if(close){const tag=close[1].toLowerCase();for(let i=stack.length-1;i>=0;i--){const found=stack.pop();if(found===tag)break;}}
-      else if(open&&!/\/\s*>$/.test(token)&&!/^(br|hr|img|meta|link|input)$/i.test(open[1]))stack.push(open[1].toLowerCase());
+      // Permit only simple formatting tags; remove attributes and active/embed elements.
+      const tag=(close?.[1]||open?.[1]||"").toLowerCase();
+      if(!["p","h2","h3","ul","ol","li","strong","em","b","i","br"].includes(tag))continue;
+      out+=close?("</"+tag+">"):(tag==="br"?"<br>":"<"+tag+">");
+      if(close){for(let i=stack.length-1;i>=0;i--){const found=stack.pop();if(found===tag)break;}}
+      else if(tag!=="br")stack.push(tag);
       continue;
     }
-    if(count+token.length<=max){out+=token;count+=token.length;continue;}
-    const remain=Math.max(0,max-count);if(remain)out+=token.slice(0,remain);out+="…";truncated=true;break;
+    if(count+token.length<=max){out+=esc(token);count+=token.length;continue;}
+    const remain=Math.max(0,max-count);if(remain)out+=esc(token.slice(0,remain));out+="…";truncated=true;break;
   }
   if(truncated)for(let i=stack.length-1;i>=0;i--)out+="</"+stack[i]+">";
   return out;
 };
 const page=a=>{
- const title=esc(a.title), image=safeUrl(a.image), summary=esc(a.summary), content=clipHtml(rich(a.content),5000);
+ const title=esc(a.title), image=safeUrl(a.image), summary=esc(a.summary), content=clipHtml(rich(a.content),MAX_BODY_CHARS);
  const date=esc(new Date(a.updated_at||a.published_at||Date.now()).toLocaleString("fa-IR"));
  const source=a.sources&&a.sources[0]||{};
  const originalUrl=safeUrl(source.url);
@@ -47,24 +49,33 @@ const page=a=>{
 ${readerUrl?'<div class="long-read">این مطلب توسط هوش مصنوعی در سایت بازنشر و تنظیم شده است. برای خواندن متن کامل <a href="'+esc(readerUrl)+'">اینجا کلیک کنید</a>.</div>':''}
 ${source.name?'<div class="sources">منبع: '+(readerUrl?'<a href="'+esc(readerUrl)+'">'+esc(source.name)+'</a>':esc(source.name))+'</div>':''}
 </article></section><aside id="sidebar-host"></aside></main>
-<script src="../Evrenexus-sidebar.js?v=1"><\/script><script src="../Evrenexus-header.js?v=20261007-10"><\/script></body></html>`;
+<script src="../Evrenexus-sidebar.js?v=1"><\\/script><script src="../Evrenexus-header.js?v=20261007-10"><\\/script></body></html>`;
 };
 
 export function generateImportantPages(rows){
  fs.mkdirSync(OUT,{recursive:true});
  const selected=new Map();
  for(const r of rows){
-   if(!r?.article||r.article.status!=="published")continue;
-   // The page must exist before publication; an image is optional for the page itself.
-   if(!String(r.article.content||"").trim())continue;
-   if(!(r.ed?.auto_important===true||r.ed?.important===true||r.ed?.featured===true))continue;
+   if(!r?.article||r.article.status!=="published"||!String(r.article.content||"").trim())continue;
+   // Publication requires a positive AI decision, not a stale/manual editorial flag.
+   if(r.ai?.important!==true||r.ai?.publishable!==true||r.ai?.political===true)continue;
+   if(r.ed?.auto_important!==true)continue;
+   if(outOfScope(r.n)!==null)continue;
+   if(!Array.isArray(r.n?.topics)||!r.n.topics.some(t=>C.TOPICS.includes(t)))continue;
    const id=String(r.article.id??r.article.slug??r.article.__key??"");
    if(id)selected.set(id,r.article);
  }
+ const keep=new Set();
  for(const [id,a] of selected){
    const file=path.join(OUT,encodeURIComponent(id)+".html");
-   fs.writeFileSync(file,page(a),"utf8");
+   fs.writeFileSync(file,page(a),"utf8");keep.add(path.resolve(file));
  }
- console.log("generated important article pages: "+selected.size);
+ // Remove stale generated pages so old importance decisions cannot remain published.
+ for(const name of fs.readdirSync(OUT)){
+   if(!name.endsWith(".html"))continue;
+   const file=path.resolve(OUT,name);
+   if(!keep.has(file))fs.rmSync(file,{force:true});
+ }
+ console.log("generated AI-approved important article pages: "+selected.size+" (body limit "+MAX_BODY_CHARS+" characters)");
  return selected.size;
 }
