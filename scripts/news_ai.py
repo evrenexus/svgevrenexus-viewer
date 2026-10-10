@@ -108,10 +108,10 @@ def call_gemini(prompt, key):
     raise RuntimeError(last)
 
 
-def call_groq(prompt, key):
-    """Call Groq's OpenAI-compatible API and require a JSON object response."""
+def call_openrouter(prompt, key):
+    """Call openrouter's OpenAI-compatible API and require a JSON object response."""
     payload = json.dumps({
-        "model": os.environ.get("GROQ_MODEL", "openai/gpt-oss-20b"),
+        "model": os.environ.get("openrouter_MODEL", "openai/gpt-oss-20b"),
         "messages": [{"role": "user", "content": prompt}],
         "temperature": 0.1,
         "max_completion_tokens": 8192,
@@ -119,41 +119,43 @@ def call_groq(prompt, key):
     }, ensure_ascii=False).encode("utf-8")
     last = ""
     for attempt in range(MAX_RETRIES):
-        req = Request("https://api.groq.com/openai/v1/chat/completions", data=payload, headers={
-            "Authorization": "Bearer " + key, "Content-Type": "application/json"
+        req = Request("https://openrouter.ai/api/v1/chat/completions", data=payload, headers={
+            "Authorization": "Bearer " + key, "Content-Type": "application/json",
+            "HTTP-Referer": "https://evrenexus.github.io/svgevrenexus-viewer/",
+            "X-Title": "Evren Nexus"
         }, method="POST")
         try:
             with urlopen(req, timeout=120) as r:
                 data = json.load(r)
             text = str((((data.get("choices") or [{}])[0]).get("message") or {}).get("content") or "").strip()
             if not text:
-                raise RuntimeError("Empty Groq response")
+                raise RuntimeError("Empty openrouter response")
             try:
                 return json.loads(text)
             except json.JSONDecodeError as e:
-                raise RuntimeError(f"Invalid Groq JSON: {e}; response preview: {text[:500]}")
+                raise RuntimeError(f"Invalid openrouter JSON: {e}; response preview: {text[:500]}")
         except HTTPError as e:
             body = ""
             try: body = e.read().decode("utf-8", "ignore")[:2000]
             except Exception: pass
             last = f"HTTP {e.code}: {body}"
-            print("Groq error:", last)
+            print("openrouter error:", last)
             if e.code == 429:
-                raise RuntimeError("GROQ_RATE_LIMIT " + last)
+                raise RuntimeError("openrouter_RATE_LIMIT " + last)
             if e.code not in (500, 502, 503, 504):
                 raise RuntimeError(last)
         except (URLError, TimeoutError, ValueError, RuntimeError) as e:
             last = str(e)
-            print("Groq temporary error:", last)
+            print("openrouter temporary error:", last)
         if attempt + 1 < MAX_RETRIES:
             delay = RETRY_DELAYS[min(attempt, len(RETRY_DELAYS)-1)] + random.uniform(0, 4)
-            print(f"Groq retry {attempt+1}/{MAX_RETRIES} in {delay:.1f}s...")
+            print(f"openrouter retry {attempt+1}/{MAX_RETRIES} in {delay:.1f}s...")
             time.sleep(delay)
     raise RuntimeError(last)
 
 
-def call_ai(prompt, gemini_key, groq_key):
-    """Gemini first, Groq fallback. A quota failure disables Gemini for this run."""
+def call_ai(prompt, gemini_key, openrouter_key):
+    """Gemini first, openrouter fallback. A quota failure disables Gemini for this run."""
     global GEMINI_QUOTA_BLOCKED
     errors = []
     if gemini_key and not GEMINI_QUOTA_BLOCKED:
@@ -164,19 +166,19 @@ def call_ai(prompt, gemini_key, groq_key):
         except Exception as e:
             msg = str(e)
             errors.append("Gemini: " + msg)
-            print("Gemini failed; trying Groq fallback:", msg[:500])
+            print("Gemini failed; trying openrouter fallback:", msg[:500])
             if "GEMINI_QUOTA_EXHAUSTED" in msg or "HTTP 429" in msg:
                 GEMINI_QUOTA_BLOCKED = True
-    if groq_key:
+    if openrouter_key:
         try:
-            result = call_groq(prompt, groq_key)
-            print("AI provider used: Groq")
+            result = call_openrouter(prompt, openrouter_key)
+            print("AI provider used: openrouter")
             return result
         except Exception as e:
-            errors.append("Groq: " + str(e))
-            print("Groq fallback failed:", str(e)[:500])
-    if not gemini_key and not groq_key:
-        raise RuntimeError("Both GEMINI_API_KEY and GROQ_API_KEY are missing")
+            errors.append("openrouter: " + str(e))
+            print("openrouter fallback failed:", str(e)[:500])
+    if not gemini_key and not openrouter_key:
+        raise RuntimeError("Both GEMINI_API_KEY and openrouter_API_KEY are missing")
     raise RuntimeError("All configured AI providers failed. " + " | ".join(errors))
 
 
@@ -575,7 +577,7 @@ def find_commons_image(query, article_id):
         print("Article image search failed:", exc)
         return ""
 
-def generate_permanent_articles(all_news, ai, key, groq_key=""):
+def generate_permanent_articles(all_news, ai, key, openrouter_key=""):
     db = load_json(ARTICLES, {"updated": "", "schema": 1, "items": {}})
     if not isinstance(db, dict):
         db = {"updated": "", "schema": 1, "items": {}}
@@ -673,7 +675,7 @@ def generate_permanent_articles(all_news, ai, key, groq_key=""):
 """ + json.dumps(candidates, ensure_ascii=False)
 
     try:
-        result = call_ai(prompt, key, groq_key)
+        result = call_ai(prompt, key, openrouter_key)
         rows = result.get("articles", []) if isinstance(result, dict) else []
     except Exception as exc:
         print(f"Permanent article Gemini unavailable; using local article fallback: {exc}")
@@ -807,9 +809,9 @@ def attach_permanent_article_links(ai, db):
 def main():
     global GEMINI_QUOTA_BLOCKED
     key = os.environ.get("GEMINI_API_KEY","").strip()
-    groq_key = os.environ.get("GROQ_API_KEY","").strip()
-    if not key and not groq_key:
-        raise SystemExit("Both GEMINI_API_KEY and GROQ_API_KEY are missing")
+    openrouter_key = os.environ.get("openrouter_API_KEY","").strip()
+    if not key and not openrouter_key:
+        raise SystemExit("Both GEMINI_API_KEY and openrouter_API_KEY are missing")
     if not NEWS.exists(): raise SystemExit(f"news.json not found: {NEWS}")
     try:
         news=json.loads(NEWS.read_text(encoding="utf-8"))
@@ -843,7 +845,7 @@ def main():
     gemini_allowed=True
     if quota_block_until > now:
         wait=int((quota_block_until-now)/3600)+1
-        print(f"Gemini quota cooldown active for about {wait} more hour(s); Groq remains available for AI work.")
+        print(f"Gemini quota cooldown active for about {wait} more hour(s); openrouter remains available for AI work.")
         key = ""
         GEMINI_QUOTA_BLOCKED = True
     if requests_used >= DAILY_REQUEST_BUDGET:
@@ -870,7 +872,7 @@ def main():
     save_ai(ai)
     if not gemini_allowed:
         try:
-            article_db = generate_permanent_articles(items, ai, key, groq_key)
+            article_db = generate_permanent_articles(items, ai, key, openrouter_key)
             attach_permanent_article_links(ai, article_db)
         except Exception as e:
             print(f"Local permanent article generation failed: {e}")
@@ -962,7 +964,7 @@ def main():
 """ + json.dumps(existing,ensure_ascii=False)
 
         try:
-            result=call_ai(prompt,key,groq_key)
+            result=call_ai(prompt,key,openrouter_key)
             rows=result.get("items",[]) if isinstance(result,dict) else []
             if not rows: raise RuntimeError("Gemini returned no items for this batch")
         except RuntimeError as e:
@@ -994,7 +996,7 @@ def main():
             block_until = time.time() + QUOTA_DEFAULT_COOLDOWN_SECONDS
             usage["quota_block_until_epoch"] = block_until
             usage["quota_block_until"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime(block_until))
-            print(f"Gemini quota cooldown recorded until {usage['quota_block_until']}; Groq will remain enabled.")
+            print(f"Gemini quota cooldown recorded until {usage['quota_block_until']}; openrouter will remain enabled.")
         consecutive_failures=0
         by_id={x["id"]:x for x in payload}
         matched=0
