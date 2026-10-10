@@ -18,7 +18,16 @@
 var q=new URLSearchParams(location.search),topic=q.get("topic")||"home",host=document.getElementById("list");
 function img(v){return typeof v==="string"&&/^https?:\/\//i.test(v)?v:""}
 function render(r){
- var items=(r.important||[]).filter(function(x){return !!x.articleUrl;}),html="";
+ var items=(r.important||[]).filter(function(x){return !!x.articleUrl;});
+ if(!items.length){
+  var seen={};
+  items=(r.featured||[]).concat(r.regular||[]).filter(function(x){
+   if(!x||!x.articleUrl)return false;
+   var k=String(x.articleUrl);if(seen[k])return false;seen[k]=true;return true;
+  }).sort(function(a,b){return Number(b.score||b.importance_score||0)-Number(a.score||a.importance_score||0)||String(b.published||"").localeCompare(String(a.published||""))});
+ }
+ items=items.slice(0,20);
+ var html="";
  items.forEach(function(x){
   if(!x.articleUrl)return;
   html+='<a class="item" href="./'+x.articleUrl+'">';
