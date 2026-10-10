@@ -18,7 +18,7 @@
 var q=new URLSearchParams(location.search),topic=q.get("topic")||"home",host=document.getElementById("list");
 function img(v){return typeof v==="string"&&/^https?:\/\//i.test(v)?v:""}
 function render(r){
- var items=(r.important||[]),html="";
+ var items=(r.important&&r.important.length)?r.important:(r.featured||[]),html="";
  items.forEach(function(x){
   if(!x.articleUrl)return;
   html+='<a class="item" href="./'+x.articleUrl+'">';
