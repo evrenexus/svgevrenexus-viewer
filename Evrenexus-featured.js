@@ -28,7 +28,7 @@ function loadPolicy(){
 }
 function getTopic(topic,page){
  var key=topic||"home";
- if(key==="economy-investment"||key==="crypto")return buildClientFallback(key,Math.max(1,parseInt(page,10)||1),"");
+ if(key==="economy-investment"||key==="crypto"||key==="technology-ai")return buildClientFallback(key,Math.max(1,parseInt(page,10)||1),"");
  return Promise.all([load(),loadPolicy()]).then(function(parts){var doc=parts[0];
   var t=doc&&doc.topics&&doc.topics[key];
   if(!t||!Array.isArray(t.featured)||!Array.isArray(t.regular)){
@@ -43,7 +43,7 @@ function getTopic(topic,page){
 function img(v){return typeof v==="string"&&/^https?:\/\//i.test(v.trim())?v.trim():"";}
 function isCryptoItem(x){var z=normPolicy((x&&x.title||"")+" "+(x&&x.summary||"")+" "+(x&&x.source||""));return /(ارز دیجیتال|رمزارز|رمز ارز|بیت ?کوین|اتریوم|تتر|بایننس|کریپتو|کریپتوکارنسی|دوج ?کوین|ریپل|سولانا|کاردانو|ترون|لایت ?کوین|توکن|بلاک ?چین|بلاکچین|دیفای|وب ?۳|web3|bitcoin|ethereum|crypto|cryptocurrency|blockchain|altcoin|defi|solana|ripple|dogecoin|binance|stablecoin|token)/i.test(z);}
 function isSportsItem(x){var z=normPolicy((x&&x.title||"")+" "+(x&&x.summary||""));return /(فوتبال|فوتبالی|لیگ برتر|ورزشگاه|پرسپولیس|استقلال تهران|به مصاف|والیبال|بسکتبال|گلزنی|گل زد|قهرمانی لیگ|جام حذفی|تیم ملی|مسابقه فوتبال|نتیجه بازی|بازی را با پیروزی|دیدار تیم های|دیدار تیم‌های)/i.test(z);}
-function topicMatches(x,topic){var ts=Array.isArray(x&&x.topics)?x.topics:[];if(topic==="economy-investment"){if(isSportsItem(x))return false;return ts.indexOf("economy")!==-1||ts.indexOf("markets")!==-1||ts.indexOf("economy-investment")!==-1;}if(topic==="crypto")return ts.indexOf("crypto")!==-1||isCryptoItem(x);if(topic!=="home"&&isSportsItem(x))return false;return topic==="home"||ts.indexOf(topic)!==-1;}
+function topicMatches(x,topic){var ts=Array.isArray(x&&x.topics)?x.topics:[];if(topic==="economy-investment"){if(isSportsItem(x))return false;return ts.indexOf("economy")!==-1||ts.indexOf("markets")!==-1||ts.indexOf("economy-investment")!==-1;}if(topic==="crypto")return ts.indexOf("crypto")!==-1||isCryptoItem(x);if(topic==="technology-ai")return ts.indexOf("technology")!==-1||ts.indexOf("ai")!==-1||ts.indexOf("technology-ai")!==-1;if(topic!=="home"&&isSportsItem(x))return false;return topic==="home"||ts.indexOf(topic)!==-1;}
 function renderOldWay(topic,page,q){
  return loadPolicy().then(function(){return fetch("data/public/news.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("public/news.json HTTP "+r.status);return r.json()}).catch(function(){return fetch("data/news.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("news.json HTTP "+r.status);return r.json()})}).then(function(d){
   var items=filterItems(Array.isArray(d.items)?d.items:(Array.isArray(d)?d:[]));
