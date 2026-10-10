@@ -15,7 +15,7 @@ API = "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:
 BATCH_SIZE = 40
 CANDIDATE_LIMIT = 40
 RECENT_HOURS = 4
-DAILY_REQUEST_BUDGET = 12
+DAILY_REQUEST_BUDGET = 24
 ARTICLE_LIMIT = 4
 ARTICLE_CANDIDATE_POOL = 20
 MIN_ANALYSIS_INTERVAL_SECONDS = 30 * 60
@@ -27,6 +27,7 @@ SLIDER_SCORE_MIN = 15
 TICKER_SCORE_MIN = 14
 RETRY_DELAYS = [8, 20, 45]
 QUOTA_DEFAULT_COOLDOWN_SECONDS = 6 * 60 * 60
+GEMINI_QUOTA_BLOCKED = False
 
 TOPICS = [
     "economy","markets","currency-gold","real-estate","technology",
@@ -105,6 +106,78 @@ def call_gemini(prompt, key):
             print(f"Retry {attempt+1}/{MAX_RETRIES} in {delay:.1f}s...")
             time.sleep(delay)
     raise RuntimeError(last)
+
+
+def call_groq(prompt, key):
+    """Call Groq's OpenAI-compatible API and require a JSON object response."""
+    payload = json.dumps({
+        "model": os.environ.get("GROQ_MODEL", "openai/gpt-oss-20b"),
+        "messages": [{"role": "user", "content": prompt}],
+        "temperature": 0.1,
+        "max_completion_tokens": 8192,
+        "response_format": {"type": "json_object"}
+    }, ensure_ascii=False).encode("utf-8")
+    last = ""
+    for attempt in range(MAX_RETRIES):
+        req = Request("https://api.groq.com/openai/v1/chat/completions", data=payload, headers={
+            "Authorization": "Bearer " + key, "Content-Type": "application/json"
+        }, method="POST")
+        try:
+            with urlopen(req, timeout=120) as r:
+                data = json.load(r)
+            text = str((((data.get("choices") or [{}])[0]).get("message") or {}).get("content") or "").strip()
+            if not text:
+                raise RuntimeError("Empty Groq response")
+            try:
+                return json.loads(text)
+            except json.JSONDecodeError as e:
+                raise RuntimeError(f"Invalid Groq JSON: {e}; response preview: {text[:500]}")
+        except HTTPError as e:
+            body = ""
+            try: body = e.read().decode("utf-8", "ignore")[:2000]
+            except Exception: pass
+            last = f"HTTP {e.code}: {body}"
+            print("Groq error:", last)
+            if e.code == 429:
+                raise RuntimeError("GROQ_RATE_LIMIT " + last)
+            if e.code not in (500, 502, 503, 504):
+                raise RuntimeError(last)
+        except (URLError, TimeoutError, ValueError, RuntimeError) as e:
+            last = str(e)
+            print("Groq temporary error:", last)
+        if attempt + 1 < MAX_RETRIES:
+            delay = RETRY_DELAYS[min(attempt, len(RETRY_DELAYS)-1)] + random.uniform(0, 4)
+            print(f"Groq retry {attempt+1}/{MAX_RETRIES} in {delay:.1f}s...")
+            time.sleep(delay)
+    raise RuntimeError(last)
+
+
+def call_ai(prompt, gemini_key, groq_key):
+    """Gemini first, Groq fallback. A quota failure disables Gemini for this run."""
+    global GEMINI_QUOTA_BLOCKED
+    errors = []
+    if gemini_key and not GEMINI_QUOTA_BLOCKED:
+        try:
+            result = call_gemini(prompt, gemini_key)
+            print("AI provider used: Gemini")
+            return result
+        except Exception as e:
+            msg = str(e)
+            errors.append("Gemini: " + msg)
+            print("Gemini failed; trying Groq fallback:", msg[:500])
+            if "GEMINI_QUOTA_EXHAUSTED" in msg or "HTTP 429" in msg:
+                GEMINI_QUOTA_BLOCKED = True
+    if groq_key:
+        try:
+            result = call_groq(prompt, groq_key)
+            print("AI provider used: Groq")
+            return result
+        except Exception as e:
+            errors.append("Groq: " + str(e))
+            print("Groq fallback failed:", str(e)[:500])
+    if not gemini_key and not groq_key:
+        raise RuntimeError("Both GEMINI_API_KEY and GROQ_API_KEY are missing")
+    raise RuntimeError("All configured AI providers failed. " + " | ".join(errors))
 
 
 STOPWORDS = {
@@ -502,7 +575,7 @@ def find_commons_image(query, article_id):
         print("Article image search failed:", exc)
         return ""
 
-def generate_permanent_articles(all_news, ai, key):
+def generate_permanent_articles(all_news, ai, key, groq_key=""):
     db = load_json(ARTICLES, {"updated": "", "schema": 1, "items": {}})
     if not isinstance(db, dict):
         db = {"updated": "", "schema": 1, "items": {}}
@@ -600,7 +673,7 @@ def generate_permanent_articles(all_news, ai, key):
 """ + json.dumps(candidates, ensure_ascii=False)
 
     try:
-        result = call_gemini(prompt, key)
+        result = call_ai(prompt, key, groq_key)
         rows = result.get("articles", []) if isinstance(result, dict) else []
     except Exception as exc:
         print(f"Permanent article Gemini unavailable; using local article fallback: {exc}")
@@ -732,8 +805,11 @@ def attach_permanent_article_links(ai, db):
 
 
 def main():
+    global GEMINI_QUOTA_BLOCKED
     key = os.environ.get("GEMINI_API_KEY","").strip()
-    if not key: raise SystemExit("GEMINI_API_KEY is missing")
+    groq_key = os.environ.get("GROQ_API_KEY","").strip()
+    if not key and not groq_key:
+        raise SystemExit("Both GEMINI_API_KEY and GROQ_API_KEY are missing")
     if not NEWS.exists(): raise SystemExit(f"news.json not found: {NEWS}")
     try:
         news=json.loads(NEWS.read_text(encoding="utf-8"))
@@ -767,9 +843,10 @@ def main():
     gemini_allowed=True
     if quota_block_until > now:
         wait=int((quota_block_until-now)/3600)+1
-        print(f"Gemini quota cooldown active. Local editorial engine continues; AI skipped for about {wait} more hour(s).")
-        gemini_allowed=False
-    elif requests_used >= DAILY_REQUEST_BUDGET:
+        print(f"Gemini quota cooldown active for about {wait} more hour(s); Groq remains available for AI work.")
+        key = ""
+        GEMINI_QUOTA_BLOCKED = True
+    if requests_used >= DAILY_REQUEST_BUDGET:
         print(f"AI budget reached: {requests_used}/{DAILY_REQUEST_BUDGET}. Local editorial engine continues.")
         gemini_allowed=False
     elif last_success and now-last_success < MIN_ANALYSIS_INTERVAL_SECONDS:
@@ -793,7 +870,7 @@ def main():
     save_ai(ai)
     if not gemini_allowed:
         try:
-            article_db = generate_permanent_articles(items, ai, key)
+            article_db = generate_permanent_articles(items, ai, key, groq_key)
             attach_permanent_article_links(ai, article_db)
         except Exception as e:
             print(f"Local permanent article generation failed: {e}")
@@ -885,7 +962,7 @@ def main():
 """ + json.dumps(existing,ensure_ascii=False)
 
         try:
-            result=call_gemini(prompt,key)
+            result=call_ai(prompt,key,groq_key)
             rows=result.get("items",[]) if isinstance(result,dict) else []
             if not rows: raise RuntimeError("Gemini returned no items for this batch")
         except RuntimeError as e:
@@ -913,6 +990,11 @@ def main():
 
         usage["requests"]=int(usage.get("requests",0) or 0)+1
         requests_used=usage["requests"]
+        if GEMINI_QUOTA_BLOCKED and float(usage.get("quota_block_until_epoch",0) or 0) <= time.time():
+            block_until = time.time() + QUOTA_DEFAULT_COOLDOWN_SECONDS
+            usage["quota_block_until_epoch"] = block_until
+            usage["quota_block_until"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime(block_until))
+            print(f"Gemini quota cooldown recorded until {usage['quota_block_until']}; Groq will remain enabled.")
         consecutive_failures=0
         by_id={x["id"]:x for x in payload}
         matched=0
@@ -938,6 +1020,10 @@ def main():
         save_ai(ai)
         print(f"Batch {batch_no}/{total_batches} succeeded: {matched}/{len(batch)} matched | daily requests: {requests_used}/{DAILY_REQUEST_BUDGET}")
 
+    if GEMINI_QUOTA_BLOCKED and float(usage.get("quota_block_until_epoch",0) or 0) <= time.time():
+        block_until = time.time() + QUOTA_DEFAULT_COOLDOWN_SECONDS
+        usage["quota_block_until_epoch"] = block_until
+        usage["quota_block_until"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime(block_until))
     ai["usage"]=usage
     if candidates and successful_batches==0:
         if float(usage.get("quota_block_until_epoch",0) or 0) > time.time():
