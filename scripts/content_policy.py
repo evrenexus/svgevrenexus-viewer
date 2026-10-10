@@ -1,6 +1,7 @@
 # scripts/content_policy.py — Python twin of content-policy.mjs.
 import json
 import re
+import html
 from pathlib import Path
 
 _TERMS = json.loads(Path(__file__).with_name("policy-terms.json").read_text(encoding="utf-8"))["terms"]
@@ -16,7 +17,8 @@ _RULES = [(t, re.compile(r"(?<!\w)" + re.escape(_norm(t)) + r"(?!\w)")) for t in
 
 def out_of_scope(item):
     """Return matched term, or None when title + summary are in scope."""
-    text = _norm(f"{item.get('title', '')} {item.get('summary', '')}")
+    plain = lambda value: re.sub(r"<[^>]*>", " ", html.unescape(str(value or "")))
+    text = _norm(" ".join(plain(item.get(key, "")) for key in ("title", "summary", "content")))
     for term, rx in _RULES:
         if rx.search(text):
             return term

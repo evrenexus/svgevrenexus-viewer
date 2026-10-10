@@ -92,13 +92,24 @@ export function generateImportantPages(rows){
    const newlyApproved=r.ai?.important===true&&r.ai?.publishable===true&&r.ai?.political!==true&&r.ed?.auto_important===true;
    // Legacy important items keep their page through reprocessing; new items still require approval.
    if(!wasAlreadyImportant&&!newlyApproved)continue;
-   if(outOfScope(r.n)!==null)continue;
+   if(outOfScope({title:[r.n?.title,r.article?.title,r.ed?.title].filter(Boolean).join(" "),summary:[r.n?.summary,r.article?.summary,r.ed?.summary].filter(Boolean).join(" "),content:r.article?.content})!==null)continue;
    if(!Array.isArray(r.n?.topics)||!r.n.topics.some(t=>C.TOPICS.includes(t)))continue;
    if(id)selected.set(id,r.article);
  }
  for(const [id,a] of selected){
    const file=path.join(OUT,encodeURIComponent(id)+".html");
    fs.writeFileSync(file,page(a),"utf8");
+ }
+ // Remove previously generated important pages that no longer pass the strict content policy.
+ for(const name of fs.readdirSync(OUT)){
+   if(!name.endsWith(".html"))continue;
+   const file=path.join(OUT,name);
+   let existing="";
+   try{existing=fs.readFileSync(file,"utf8")}catch{continue}
+   if(!existing.startsWith("<!doctype html><!-- EVREN_NEXUS_GENERATED_IMPORTANT_ARTICLE -->"))continue;
+   let id=name.slice(0,-5);
+   try{id=decodeURIComponent(id)}catch{}
+   if(!selected.has(id))fs.unlinkSync(file);
  }
  console.log("generated permanent important article pages: "+selected.size+" (legacy + AI-approved; body limit "+MAX_BODY_CHARS+" characters)");
  return new Set(selected.keys());

@@ -2,6 +2,7 @@
 import json, os, time, hashlib, random, re, html
 from difflib import SequenceMatcher
 from pathlib import Path
+from content_policy import out_of_scope
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError, URLError
 
@@ -277,6 +278,8 @@ SPORT_TERMS = ["ورزش","فوتبال","بسکتبال","والیبال","تن
 MILITARY_TERMS = ["جنگ","درگیری مسلحانه","حمله نظامی","عملیات نظامی","موشک","بمباران","ارتش","نیروهای مسلح","نیروی هوایی","نیروی دریایی","نیروی زمینی","نظامی","نظامیان","پهپاد نظامی","رزمایش","تسلیحات","سلاح","جنگنده","فرمانده نظامی","تلفات نظامی","آتش بس","حمله هوایی","حمله موشکی","پدافند","پایگاه نظامی","سرباز","یگان نظامی"]
 
 def is_forbidden_content(x):
+    if out_of_scope(x):
+        return "blocked topic/subject is excluded"
     text = text_for_filter(x)
     if is_political(x):
         return "political content is excluded"
@@ -312,7 +315,7 @@ def local_similarity(a,b):
     return max(seq, jac)
 
 def text_for_filter(x):
-    return normalize_title(f"{x.get('title','')} {x.get('summary','')}")
+    return normalize_title(f"{x.get('title','')} {x.get('summary','')} {x.get('content','')}")
 
 def is_political(x):
     text = text_for_filter(x)

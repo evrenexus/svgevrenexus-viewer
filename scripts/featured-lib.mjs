@@ -78,7 +78,7 @@ function imageHealth(){
 const httpsOnly=process.env.IMAGE_CHECK_ALLOW_HTTP!=="1";
 export const imageUsable=u=>{if(!isUrl(u))return false;if(httpsOnly&&!/^https:/i.test(u.trim()))return false;const h=imageHealth();return h?h.get(u.trim())?.ok===true:true};
 export const imageOf=r=>[r.article?.image,r.ed?.image,r.n.image].find(imageUsable)??"";
-export const isBlocked=r=>r.ai?.publishable===false||r.ed?.deleted===true||r.ed?.hidden===true||outOfScope(r.n)!==null;
+export const isBlocked=r=>r.ai?.publishable===false||r.ed?.deleted===true||r.ed?.hidden===true||outOfScope({title:[r.n?.title,r.article?.title,r.ed?.title].filter(Boolean).join(" "),summary:[r.n?.summary,r.article?.summary,r.ed?.summary].filter(Boolean).join(" "),content:r.article?.content})!==null;
 export function loadArticleResolver(){
  const src=fs.readFileSync(path.join(ROOT,"Evrenexus-article-resolver.js"),"utf8");
  const mod={exports:{}};

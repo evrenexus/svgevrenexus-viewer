@@ -15,7 +15,8 @@ const RULES = OUT_OF_SCOPE_TERMS.map((t) => ({
   re: new RegExp("(?<![\\p{L}\\p{N}])" + esc(norm(t)) + "(?![\\p{L}\\p{N}])", "u")
 }));
 export function outOfScope(item) {
-  const text = norm(String(item?.title ?? "") + " " + String(item?.summary ?? ""));
+  const plain = (v) => String(v ?? "").replace(/<[^>]*>/g, " ").replace(/&nbsp;|&#160;/gi, " ").replace(/&amp;/gi, "&");
+  const text = norm([item?.title, item?.summary, item?.content].map(plain).filter(Boolean).join(" "));
   for (const r of RULES) if (r.re.test(text)) return r.term;
   return null;
 }
