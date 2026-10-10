@@ -316,11 +316,6 @@ def text_for_filter(x):
 
 def is_political(x):
     text = text_for_filter(x)
-    # پزشکیان is intentionally not blacklisted by name. Gemini must judge
-    # whether the story has real news value instead of suppressing it merely
-    # because he is a political figure.
-    if "پزشکیان" in text:
-        return False
     return any(normalize_title(term) in text for term in POLITICAL_TERMS)
 
 def has_breaking_signal(x):
@@ -1025,7 +1020,7 @@ def main():
 """ + json.dumps(existing,ensure_ascii=False)
 
         try:
-            result=call_ai(prompt,key,OpenRouter_key)
+            result=call_ai(prompt,key,groq_key,OpenRouter_key)
             rows=result.get("items",[]) if isinstance(result,dict) else []
             if not rows: raise RuntimeError("Gemini returned no items for this batch")
         except RuntimeError as e:
@@ -1102,7 +1097,7 @@ def main():
     save_ai(ai)
     if int(usage.get("requests", 0) or 0) < DAILY_REQUEST_BUDGET:
         try:
-            article_db = generate_permanent_articles(items, ai, key)
+            article_db = generate_permanent_articles(items, ai, key, groq_key, OpenRouter_key)
             usage["requests"] = int(usage.get("requests", 0) or 0) + 1
             usage["last_article_generation"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
             ai["usage"] = usage
