@@ -49,7 +49,7 @@ const clipHtml=(value,max=MAX_BODY_CHARS)=>{
   return {html:out,truncated};
 };
 const page=a=>{
- const titleText=String(a.title||""), summaryText=String(a.summary||"");
+ const titleText=String(a.title||""); const summaryText=String(a.summary||"").slice(0,Math.max(0,MAX_BODY_CHARS-titleText.length));
  const title=esc(titleText), image=safeUrl(a.image), summary=esc(summaryText);
  const contentLimit=Math.max(0,MAX_BODY_CHARS-titleText.length-summaryText.length);
  const date=esc(new Date(a.updated_at||a.published_at||Date.now()).toLocaleString("fa-IR"));
