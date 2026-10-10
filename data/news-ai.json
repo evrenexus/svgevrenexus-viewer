@@ -1,7 +1,7 @@
 {
   "version": 1,
   "policy_version": 8,
-  "updated": "2026-10-09T23:49:58Z",
+  "updated": "2026-10-10T00:00:28Z",
   "items": {
     "56927672062ac466f3e762c5": {
       "title": "قیمت بیت‌کوین و اتریوم امروز سه‌شنبه ۱۴ مهر ۱۴۰۵",
@@ -51268,9 +51268,13 @@
       "important": false,
       "important_topics": [],
       "slider_topics": [],
-      "ticker_topics": [],
-      "breaking": false,
-      "breaking_topics": [],
+      "ticker_topics": [
+        "sports"
+      ],
+      "breaking": true,
+      "breaking_topics": [
+        "sports"
+      ],
       "publishable": true,
       "exclude_reason": "",
       "group_id": "local-aab611caafa9",
@@ -65141,7 +65145,7 @@
       "publishable": true,
       "exclude_reason": "",
       "group_id": "local-156309e83cd2",
-      "representative": false,
+      "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
       "local_score": 10,
@@ -65810,7 +65814,7 @@
       "publishable": true,
       "exclude_reason": "",
       "group_id": "local-4a72079e38f2",
-      "representative": false,
+      "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
       "local_score": 11,
@@ -66727,7 +66731,7 @@
       "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.8197389871544307
+      "age_hours": 3.9946010818746354
     },
     "f87048b2a0c3c43be1fdd957": {
       "title": "ببینید / سلفی نخست‌وزیر ارمنستان در ترکمنستان با لباس دوچرخه‌سواری",
@@ -66785,7 +66789,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 3.593072320487764
+      "age_hours": 3.767934415207969
     },
     "6a3052bae67f950b89819011": {
       "title": "کشاورزان آمریکایی زیر بار بدهی!",
@@ -66814,7 +66818,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 3.65362787604332
+      "age_hours": 3.8284899707635245
     },
     "307854973c16db07d05bcb98": {
       "title": "نقشه‌برداری سلول‌های ایمنی نشان می‌دهد مسیرهای پیری ایمنی در افراد چگونه از هم جدا می‌شود",
@@ -66843,7 +66847,7 @@
       "local_score": 9,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.698350098265542
+      "age_hours": 3.8732121929857466
     },
     "975aa0168c9305329f1dc569": {
       "title": "خبر تازه درباره سهمیه بنزین خودروهای فرسوده / تکلیف مالکان خودروهای بالای ۲۰ سال مشخص شد؟",
@@ -66903,7 +66907,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.3327945427099865
+      "age_hours": 3.507656637430191
     },
     "cfda53f5031e5a20f9c26fb0": {
       "title": "ابزار مغفول در سیاستگذاری پولی",
@@ -66934,7 +66938,7 @@
       "local_score": 13,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.3327945427099865
+      "age_hours": 3.507656637430191
     },
     "d7f4776b09c5c3f89d8db445": {
       "title": "افت هفتگی بازدهی بازارها",
@@ -66963,7 +66967,7 @@
       "local_score": 12,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.3327945427099865
+      "age_hours": 3.507656637430191
     },
     "180bcf2f14bd5dae5ebc412f": {
       "title": "هوش مصنوعی در مسیر بازگشت سرمایه",
@@ -66994,7 +66998,7 @@
       "local_score": 12,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.3327945427099865
+      "age_hours": 3.507656637430191
     },
     "c1484eecfc79b2cdc972b0bc": {
       "title": "سه پیشران توسعه تجدیدپذیرها",
@@ -67025,7 +67029,7 @@
       "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.3327945427099865
+      "age_hours": 3.507656637430191
     },
     "e94d77ae84f8a52eeb0df772": {
       "title": "چرخش ژئوپلیتیک در عصر فشار",
@@ -67054,7 +67058,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 3.3327945427099865
+      "age_hours": 3.507656637430191
     },
     "a9b9201486cc2e91eebc4b35": {
       "title": "ترمیم رشد در تیرماه",
@@ -67083,7 +67087,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.3327945427099865
+      "age_hours": 3.507656637430191
     },
     "829b2352dc90e5c0aacf408e": {
       "title": "جولان بورس در نزدیکی مقاومت",
@@ -67114,7 +67118,7 @@
       "local_score": 12,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.3327945427099865
+      "age_hours": 3.507656637430191
     },
     "600d4fedd4e5f16b3ec1f8a2": {
       "title": "نسخه کامل شماره امروز روزنامه «دنیای‌ اقتصاد» را اینجا بخوانید",
@@ -67143,7 +67147,7 @@
       "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.3327945427099865
+      "age_hours": 3.507656637430191
     },
     "501be8693776a9c28a2382c9": {
       "title": "روایت پدر تشکل‌های صنعتی",
@@ -67172,7 +67176,7 @@
       "local_score": 8,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 3.3327945427099865
+      "age_hours": 3.507656637430191
     },
     "f467931ba4e9f7bc32a63db5": {
       "title": "مرد صنعت ایران",
@@ -67201,7 +67205,7 @@
       "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.3327945427099865
+      "age_hours": 3.507656637430191
     },
     "11b596b908ccf38d2b897e1f": {
       "title": "چهار ویژگی محسن خلیلی",
@@ -67230,7 +67234,7 @@
       "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.3327945427099865
+      "age_hours": 3.507656637430191
     },
     "c90e25aaa087c8bded340b0c": {
       "title": "او عاشق ایران و مردمش بود",
@@ -67259,7 +67263,7 @@
       "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.3327945427099865
+      "age_hours": 3.507656637430191
     },
     "3f6148526bfbae69f12358a3": {
       "title": "توسعه کشور در اولویت",
@@ -67288,7 +67292,7 @@
       "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.3327945427099865
+      "age_hours": 3.507656637430191
     },
     "4cca94e9ea615be20aea5232": {
       "title": "یک فعال محیط زیست: چطور برای ۷۰۰۰ هکتار جنگل جدید آب هست، اما برای چیتگر نبود؟!",
@@ -67321,7 +67325,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.3400167649322086,
+      "age_hours": 3.514878859652413,
       "permanent_article": true,
       "article_id": "article-13f924048de7",
       "image": "https://tejaratnews.com/wp-content/uploads/2026/10/baznashr-1791555785096-ak-1200x800-1.webp"
@@ -67353,7 +67357,7 @@
       "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.3641834315988755
+      "age_hours": 3.53904552631908
     },
     "1ba17bc33a977727a22879be": {
       "title": "جنجال بزرگ در تبریز؛ بیرانوند از هتل تراکتور اخراج شد",
@@ -67393,9 +67397,9 @@
         "real-estate"
       ],
       "topic_scores": {
-        "real-estate": 10
+        "real-estate": 9
       },
-      "importance": 10,
+      "importance": 9,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -67405,13 +67409,13 @@
       "publishable": true,
       "exclude_reason": "",
       "group_id": "local-156309e83cd2",
-      "representative": true,
+      "representative": false,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 10,
+      "local_score": 9,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 2.8761278760433195
+      "age_hours": 3.050989970763524
     },
     "3f4affabd6bff769cab1f923": {
       "title": "سهمیه سوخت مالکان خودروهای فرسوده قطع نمی‌شود",
@@ -67440,7 +67444,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 2.879183431598875
+      "age_hours": 3.0540455263190798
     },
     "1ed0c06eef660fa6394498d1": {
       "title": "رضایی: برای تکرار تاریخ آماده باشید",
@@ -67469,7 +67473,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 2.888072320487764
+      "age_hours": 3.0629344152079687
     },
     "da1a6a82de68b64feb0d7a81": {
       "title": "وقوع زلزله ۷.۶ ریشتری در پاناما / آمریکا هشدار سونامی صادر کرد",
@@ -67480,9 +67484,9 @@
         "economy"
       ],
       "topic_scores": {
-        "economy": 11
+        "economy": 10
       },
-      "importance": 11,
+      "importance": 10,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -67492,13 +67496,13 @@
       "publishable": true,
       "exclude_reason": "",
       "group_id": "local-4a72079e38f2",
-      "representative": true,
+      "representative": false,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 11,
+      "local_score": 10,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 2.8941834315988753
+      "age_hours": 3.06904552631908
     },
     "fb84d00e462c02c53649b3b3": {
       "title": "گزارش عراقچی از نشست سه‌جانبه ایران، روسیه و آذربایجان",
@@ -67527,7 +67531,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 2.8986278760433195
+      "age_hours": 3.0734899707635246
     },
     "91b2447b5274f8463776587d": {
       "title": "غریب‌آبادی: کاهش سطح آب، مهم‌ترین معضل زیست‌محیطی دریای خزر است",
@@ -67538,9 +67542,9 @@
         "economy"
       ],
       "topic_scores": {
-        "economy": 7
+        "economy": 6
       },
-      "importance": 7,
+      "importance": 6,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -67553,10 +67557,10 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 7,
+      "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.9022389871544307
+      "age_hours": 3.0771010818746354
     },
     "e093c9d3240fa82d25002e41": {
       "title": "گروسی: باید پیش از زمستان ذخایر گازوئیل نیروگاه هسته‌ای زاپوریژیا افزایش یابد",
@@ -67614,7 +67618,7 @@
       "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.0514056538210976
+      "age_hours": 3.2262677485413023
     },
     "f356d817ba36b33be98940cf": {
       "title": "پشت پرده پرونده سنگین ایلان‌ ماسک در بریتانیا",
@@ -67643,7 +67647,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 2.818350098265542
+      "age_hours": 2.9932121929857467
     },
     "0619e1fa279ba0831f243e0f": {
       "title": "بیرانوند از هتل تراکتور اخراج شد",
@@ -67701,7 +67705,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.8244612093766532
+      "age_hours": 2.999323304096858
     },
     "aa4fee49f04d2929d64a16b0": {
       "title": "اطلاعیه نهاد آبراه خلیج فارس در مورد وجود دامنه‌های جعلی",
@@ -67741,9 +67745,9 @@
         "economy"
       ],
       "topic_scores": {
-        "economy": 7
+        "economy": 6
       },
-      "importance": 7,
+      "importance": 6,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -67756,10 +67760,10 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 7,
+      "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.8389056538210973
+      "age_hours": 3.0137677485413024
     },
     "54142e7e182ea93ab192f131": {
       "title": "کاهش نسبی دمای هوا در نواحی شمال و شمال غرب کشور",
@@ -67770,9 +67774,9 @@
         "economy"
       ],
       "topic_scores": {
-        "economy": 7
+        "economy": 6
       },
-      "importance": 7,
+      "importance": 6,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -67785,10 +67789,10 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 7,
+      "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.843072320487764
+      "age_hours": 3.017934415207969
     },
     "d05dc4b351deae62e14ef942": {
       "title": "تصاویر: دیدار تیم‌های پرسپولیس و صنعت نفت آبادان",
@@ -67796,11 +67800,9 @@
       "source": "انتخاب",
       "published": "2026-10-10T00:25:26+03:30",
       "topics": [
-        "sports",
-        "economy"
+        "sports"
       ],
       "topic_scores": {
-        "economy": 17,
         "sports": 20
       },
       "importance": 20,
@@ -67811,23 +67813,19 @@
       "slider_topics": [
         "sports"
       ],
-      "ticker_topics": [
-        "sports"
-      ],
-      "breaking": true,
-      "breaking_topics": [
-        "sports"
-      ],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
       "publishable": true,
       "exclude_reason": "",
       "group_id": "local-d3314cc7598c",
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 12,
+      "local_score": 11,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 2.9089056538210976
+      "age_hours": 3.083767748541302
     },
     "9e84393fee7d5bb86faaaf11": {
       "title": "در سوگ محسن خلیلی‌ عراقی | بختیاری: چه کسی می‌تواند جای خالی مردی را پر کند که خلاقیت، میهن‌ دوستی، پایداری و مسئولیت اجتماعی را در زندگی حرفه‌ای خود، یک‌جا جمع کرده بود؟",
@@ -67856,7 +67854,7 @@
       "local_score": 9,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 2.5489056538210977
+      "age_hours": 2.7237677485413023
     },
     "7039046d777a8e060c45e595": {
       "title": "گروسی: باید پیش از زمستان ذخایر گازوئیل نیروگاه هسته‌ای زاپوریژیا در اوکراین افزایش یابد؛ ممکن است در آن زمان وضعیت بحرانی شود",
@@ -67885,7 +67883,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.6686278760433195
+      "age_hours": 2.843489970763524
     },
     "4967b27fd901aa5240ce59da": {
       "title": "درخواست مهم رافائل گروسی درباره نیروگاه هسته‌ای زاپوریژیا",
@@ -67914,7 +67912,7 @@
       "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.0830723204877644
+      "age_hours": 3.257934415207969
     },
     "6a879140caa7995ab297abeb": {
       "title": "اولین تصویر از نفتکشی که روز جمعه در تنگه هرمز منفجر شد",
@@ -67943,7 +67941,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.9716834315988752
+      "age_hours": 2.14654552631908
     },
     "7a7bf6dde96dcfb9a7ba6c88": {
       "title": "نهاد آبراه خلیح فارس یک اطلاعیه مهم داد",
@@ -67972,7 +67970,7 @@
       "local_score": 11,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.077238987154431
+      "age_hours": 2.2521010818746356
     },
     "d6c7874259e43c8b1159e587": {
       "title": "اطلاعیه نهاد آبراه خلیح فارس در مورد وجود دامنه‌های جعلی + عکس",
@@ -67983,9 +67981,9 @@
         "currency-gold"
       ],
       "topic_scores": {
-        "currency-gold": 16
+        "currency-gold": 15
       },
-      "importance": 16,
+      "importance": 15,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -67998,10 +67996,10 @@
       "representative": false,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 11,
+      "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.8380723204877643
+      "age_hours": 3.012934415207969
     },
     "781b03d2335e5931b173633c": {
       "title": "پرواز پهپادهای ناشناس بر فراز آسمان عراق/ حریم هوایی نقض شد",
@@ -68030,7 +68028,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.5789056538210975
+      "age_hours": 1.7537677485413021
     },
     "5c15e74a88b1ad3de5143012": {
       "title": "جنجال بزرگ در تبریز/ بیرانوند از هتل تراکتور اخراج شد",
@@ -68059,7 +68057,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.8727945427099864
+      "age_hours": 2.047656637430191
     },
     "1e7d332ad1ad1a5ef150c6a0": {
       "title": "این محصولات مراقبت و پاکسازی پوست غیرمجاز هستند + اسامی",
@@ -68088,7 +68086,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.3286278760433197
+      "age_hours": 1.5034899707635243
     },
     "77c0b22eb05239784a5e8947": {
       "title": "جنجال اظهارات یک نماینده درباره «طرح واگذاری اراضی چابهار به افغانستان»/ سعیدی: تجربه سرمایه‌گذاری هندی‌ها بسیار تلخ بود/ مردم منتظر شفاف‌سازی هستند",
@@ -68117,7 +68115,96 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.8841834315988752
+      "age_hours": 1.0590455263190799
+    },
+    "870a1b11ea5fb467cbc2cca6": {
+      "title": "قیمت طلا امروز شنبه ۱۸ مهر ۱۴۰۵/ افزایش قیمت طلا",
+      "summary": "اقتصادنیوز: قیمت طلا امروز با افزایش، 4194 (چهار هزار و یکصد و نود و چهار) دلار نرخ‌گذاری شد.",
+      "source": "اقتصادنیوز",
+      "published": "2026-10-10T03:26:54+03:30",
+      "topics": [
+        "currency-gold"
+      ],
+      "topic_scores": {
+        "currency-gold": 20
+      },
+      "importance": 20,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-38a08dd612fb",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 16,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.05932330409685771
+    },
+    "e4347e96071e481502d7c17f": {
+      "title": "قیمت بیت‌کوین و اتریوم امروز شنبه ۱۸ مهر ۱۴۰۵/ افزایش قیمت بیت کوین",
+      "summary": "اقتصادنیوز: بیت کوین امروز با افزایش به 82,681 (هشتاد و دو هزار و‌ ششصد و هشتاد و یک) دلار رسید.",
+      "source": "اقتصادنیوز",
+      "published": "2026-10-10T03:20:30+03:30",
+      "topics": [
+        "currency-gold"
+      ],
+      "topic_scores": {
+        "currency-gold": 20
+      },
+      "importance": 20,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-38a08dd612fb",
+      "representative": false,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 13,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.16598997076352437
+    },
+    "ce16698d6a7867c9793d1f84": {
+      "title": "میرسلیم: چه کسی گفته نفت مال مردم است؟/ بیخود گفته‌اند، نفت مال خدا و رسول خداست/ بنزین را به قیمت مفت به مردم می‌دهند",
+      "summary": "عضو مجمع تشخیص مصلحت نظام گفت:چه کسی گفته نفت مال مردم است؟ نفت انفال است و متعلق به خدا و رسول.",
+      "source": "اقتصادنیوز",
+      "published": "2026-10-10T03:16:53+03:30",
+      "topics": [
+        "economy",
+        "auto"
+      ],
+      "topic_scores": {
+        "economy": 15,
+        "auto": 15
+      },
+      "importance": 15,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-ba520ea393b1",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 10,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.22626774854130216
     }
   },
   "groups": {
@@ -74008,7 +74095,7 @@
       "representative_id": "e83bfbeaf4b3e42819c5208b"
     },
     "local-156309e83cd2": {
-      "representative_id": "bc9d6e2fab8db28c47f1c9a4"
+      "representative_id": "27a271e48eb2cb22a68c3cfc"
     },
     "local-67f4c434298e": {
       "representative_id": "73cd723179c72eee44ccf74d"
@@ -74065,7 +74152,7 @@
       "representative_id": "0f3d03363b924e9835c4cfdb"
     },
     "local-4a72079e38f2": {
-      "representative_id": "da1a6a82de68b64feb0d7a81"
+      "representative_id": "7baafef0164c35c08e64d626"
     },
     "local-4667992b81e0": {
       "representative_id": "0c5b91158cb859a3bda4a146"
@@ -74270,14 +74357,20 @@
     },
     "local-79f7111b7b75": {
       "representative_id": "77c0b22eb05239784a5e8947"
+    },
+    "local-38a08dd612fb": {
+      "representative_id": "870a1b11ea5fb467cbc2cca6"
+    },
+    "local-ba520ea393b1": {
+      "representative_id": "ce16698d6a7867c9793d1f84"
     }
   },
   "usage": {
-    "date": "2026-10-09",
-    "requests": 2,
+    "date": "2026-10-10",
+    "requests": 1,
     "last_success": "",
-    "last_article_generation": "2026-10-09T00:41:14Z",
-    "quota_block_until_epoch": 1791590399.305283,
-    "quota_block_until": "2026-10-09T23:59:59Z"
+    "quota_block_until_epoch": 1791676799.9425874,
+    "quota_block_until": "2026-10-10T23:59:59Z",
+    "last_article_generation": "2026-10-10T00:00:28Z"
   }
 }
