@@ -528,9 +528,14 @@ def main():
                 for item in items:
                     prev=existing.get(item["id"])
                     if prev:
+                        # Preserve first-seen time so two-hour promotions use site ingestion,
+                        # not the publisher's possibly older timestamp.
+                        item["first_seen_at"]=prev.get("first_seen_at","")
                         if prev.get("image") and not item.get("image"): item["image"]=prev["image"]
                         if prev.get("image_tries"): item["image_tries"]=prev["image_tries"]
                         if prev.get("content") and not item.get("content"): item["content"]=prev["content"]
+                    else:
+                        item["first_seen_at"]=datetime.now(timezone.utc).isoformat()
                     existing[item["id"]]=item
                 status.append(info)
             except Exception as e:
