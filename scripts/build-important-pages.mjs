@@ -55,7 +55,8 @@ export function generateImportantPages(rows){
  const selected=new Map();
  for(const r of rows){
    if(!r?.article||r.article.status!=="published")continue;
-   if(!imageOf(r)||!r.article.content)continue;
+   // The page must exist before publication; an image is optional for the page itself.
+   if(!String(r.article.content||"").trim())continue;
    if(!(r.ed?.auto_important===true||r.ed?.important===true||r.ed?.featured===true))continue;
    const id=String(r.article.id??r.article.slug??r.article.__key??"");
    if(id)selected.set(id,r.article);
