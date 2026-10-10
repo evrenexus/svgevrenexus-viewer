@@ -710,10 +710,15 @@ def generate_permanent_articles(all_news, ai, key, groq_key="", OpenRouter_key="
 - چند گزارش درباره یک رویداد را در یک مقاله واحد ادغام کن.
 - اگر موضوعی قبلاً در articles موجود است UPDATE کن، مقاله تکراری نساز.
 - فقط بر اساس اطلاعات ورودی بنویس و هیچ واقعیت، عدد یا نقل‌قولی را جعل نکن.
-- متن فارسی روان و اختصاصی باشد؛ کپی‌برداری از متن منابع ممنوع.
+- متن فارسی روان، مستقل و ویراستاری‌شده باشد؛ متن خام منبع را عیناً بازنشر نکن.
+- پیش از نوشتن، متن منابع را پاک‌سازی کن: کد خبر، تاریخ/ساعت تکراری، URL خراب، نام دسته‌بندی و مسیرهای ناوبری، تبلیغات و پیام‌های اسپانسری، دعوت به خرید/سرمایه‌گذاری، واترمارک، کپشن نامرتبط، پاراگراف‌ها و جمله‌های تکراری را حذف کن.
+- اگر تبلیغ وسط یک پاراگراف آمده، تبلیغ را حذف و جمله‌های معتبر قبل و بعد آن را طبیعی به هم وصل کن.
+- تیترها و میان‌تیترهای واقعی، اطلاعات پزشکی/ایمنی مهم، اعداد و نقل‌قول‌های مرتبط را حفظ کن؛ واقعیت یا نقل‌قول جعل نکن و معنای منبع را تغییر نده.
+- هر پاراگراف فقط یک بار بیاید؛ خلاصه را دوباره به عنوان پاراگراف اول متن تکرار نکن.
 - content فقط HTML ساده: <p>، <h2>، <ul>، <li>، <strong>.
 - مقاله حدود 500 تا 900 کلمه باشد، مگر اینکه اطلاعات کافی نباشد.
-- summary حداکثر 300 کاراکتر.
+- summary حداکثر 300 کاراکتر و بدون تبلیغ یا تکرار متن باشد.
+- پیش از تحویل، خروجی نهایی را دوباره بازبینی کن و هر تبلیغ، تکرار یا متن ناوبری باقی‌مانده را حذف کن.
 - category یکی از economy,markets,currency-gold,real-estate,technology,ai,health,auto,science-life باشد.
 - sources فقط از منابع ورودی انتخاب شوند.
 - اگر گروه خبر تصویر مناسبی ندارد، image_query یک عبارت کوتاه و دقیق برای جستجوی تصویر مرتبط در Wikimedia Commons بده؛ اگر تصویر مناسب از ورودی وجود دارد image_query را خالی بگذار.
@@ -733,39 +738,11 @@ def generate_permanent_articles(all_news, ai, key, groq_key="", OpenRouter_key="
         result = call_ai(prompt, key, groq_key, OpenRouter_key)
         rows = result.get("articles", []) if isinstance(result, dict) else []
     except Exception as exc:
-        print(f"Permanent article Gemini unavailable; using local article fallback: {exc}")
-        rows = []
-        for cand in candidates:
-            srcs = cand.get("sources", [])
-            if not srcs:
-                continue
-            lead = srcs[0]
-            title = str(lead.get("title", "") or "").strip()
-            summary = str(lead.get("summary", "") or "").strip()
-            body = str(lead.get("content", "") or "").strip()
-            if not title:
-                continue
-            if not summary:
-                summary = body[:280]
-            paragraphs = []
-            if summary:
-                paragraphs.append("<p>" + html.escape(summary) + "</p>")
-            if body:
-                clean = re.sub(r"<[^>]+>", " ", body)
-                clean = re.sub(r"\\s+", " ", clean).strip()
-                if clean and clean != summary:
-                    paragraphs.append("<p>" + html.escape(clean[:1800]) + "</p>")
-            rows.append({
-                "action": "create",
-                "article_id": "article-" + hashlib.sha1(normalize_title(title).encode("utf-8")).hexdigest()[:16],
-                "group_id": str(cand.get("group_id", "")),
-                "category": (cand.get("topics") or ["economy"])[0] if isinstance(cand.get("topics"), list) else "economy",
-                "title": title,
-                "summary": summary[:300],
-                "content": "".join(paragraphs) or "<p>اطلاعات کافی برای تهیه این مطلب در دسترس نیست.</p>",
-                "image_query": title,
-                "source_ids": [str(s.get("id", "")) for s in srcs if s.get("id")]
-            })
+        # Never publish raw source text as fallback: it may contain ads,
+        # duplicate paragraphs, navigation debris, or scraped artifacts.
+        print(f"AI article writing failed; skipping permanent-article creation instead of copying raw text: {exc}")
+        return db
+
     changed = 0
     for row in rows:
         if not isinstance(row, dict) or row.get("action") == "skip":
