@@ -17,11 +17,14 @@ CANDIDATE_LIMIT = 40
 RECENT_HOURS = 4
 DAILY_REQUEST_BUDGET = 12
 ARTICLE_LIMIT = 4
-ARTICLE_CANDIDATE_POOL = 20
+ARTICLE_CANDIDATE_POOL = 40
 MIN_ANALYSIS_INTERVAL_SECONDS = 30 * 60
 MAX_RETRIES = 3
 MAX_CONSECUTIVE_BATCH_FAILURES = 2
-POLICY_VERSION = 8
+POLICY_VERSION = 9
+IMPORTANT_SCORE_MIN = 13
+SLIDER_SCORE_MIN = 15
+TICKER_SCORE_MIN = 13
 RETRY_DELAYS = [8, 20, 45]
 QUOTA_DEFAULT_COOLDOWN_SECONDS = 6 * 60 * 60
 
@@ -316,7 +319,7 @@ def apply_local_selection(ai):
 
         seen=set()
         for nid,v,score in candidates:
-            if score < 12:
+            if score < IMPORTANT_SCORE_MIN:
                 continue
             gid=v.get("group_id") or nid
             if gid in seen:
@@ -329,7 +332,7 @@ def apply_local_selection(ai):
 
         seen=set()
         for nid,v,score in candidates:
-            if score < 14:
+            if score < SLIDER_SCORE_MIN:
                 continue
             gid=v.get("group_id") or nid
             if gid in seen:
@@ -341,7 +344,7 @@ def apply_local_selection(ai):
 
         seen=set()
         for nid,v,score in candidates:
-            if score < 14 or not v.get("breaking_signal"):
+            if score < TICKER_SCORE_MIN or not v.get("breaking_signal"):
                 continue
             if float(v.get("age_hours",99)) > 3:
                 continue
@@ -372,9 +375,9 @@ def normalize_result(src, row):
     topics = [t for t in row.get("topics", []) if t in TOPICS]
     if not topics: topics = [t for t in src.get("topics", []) if t in TOPICS]
     if not topics and src.get("category") in TOPICS: topics = [src["category"]]
-    important_topics = [t for t in topics if scores.get(t, score) >= 11]
-    slider_topics = [t for t in topics if scores.get(t, score) >= 14]
-    ticker_topics = [t for t in topics if scores.get(t, score) >= 11]
+    important_topics = [t for t in topics if scores.get(t, score) >= IMPORTANT_SCORE_MIN]
+    slider_topics = [t for t in topics if scores.get(t, score) >= SLIDER_SCORE_MIN]
+    ticker_topics = [t for t in topics if scores.get(t, score) >= TICKER_SCORE_MIN]
     publishable = bool(row.get("publishable", True))
     content_type = str(row.get("content_type", "") or "").strip()[:60]
     reject_reason = str(row.get("reject_reason", row.get("exclude_reason", "")) or "").strip()[:300]
@@ -511,11 +514,23 @@ def generate_permanent_articles(all_news, ai, key):
         if t:
             by_title[t] = x
     ranked = []
+    completed_groups = {
+        str(article.get("group_id"))
+        for article in db["items"].values()
+        if isinstance(article, dict)
+        and article.get("status") == "published"
+        and str(article.get("content", "")).strip()
+        and str(article.get("title", "")).strip()
+        and article.get("group_id")
+    }
     cutoff = time.time() - RECENT_HOURS * 3600
     for nid, row in ai.get("items", {}).items():
         if not row.get("publishable", True) or row.get("political"):
             continue
         if not row.get("representative", True) or not row.get("important"):
+            continue
+        gid = str(row.get("group_id") or nid)
+        if gid in completed_groups:
             continue
         src = by_id.get(nid) or by_title.get(normalize_title(row.get("title", "")))
         if src and (published_ts(src.get("published", "")) == 0 or published_ts(src.get("published", "")) >= cutoff):
@@ -789,8 +804,23 @@ def main():
 
     if not candidates:
         rebuild_groups(ai); save_ai(ai)
+        # Keep processing important stories even when no fresh AI classification is needed.
+        if int(usage.get("requests", 0) or 0) < DAILY_REQUEST_BUDGET:
+            try:
+                article_db = generate_permanent_articles(items, ai, key)
+                usage["requests"] = int(usage.get("requests", 0) or 0) + 1
+                usage["last_article_generation"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+                ai["usage"] = usage
+                attach_permanent_article_links(ai, article_db)
+                save_ai(ai)
+            except Exception as e:
+                print(f"Queued permanent article generation failed: {e}")
+                attach_permanent_article_links(ai, load_json(ARTICLES, {"items": {}}))
+        else:
+            attach_permanent_article_links(ai, load_json(ARTICLES, {"items": {}}))
+        save_ai(ai)
         write_editorial(ai,load_json(EDITORIAL,{"items":{}}))
-        print("No AI candidates in the recent window.")
+        print("No new AI candidates; permanent-article queue checked.")
         return
 
     max_requests=min(DAILY_REQUEST_BUDGET-requests_used,(len(candidates)+BATCH_SIZE-1)//BATCH_SIZE)
