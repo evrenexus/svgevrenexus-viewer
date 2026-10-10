@@ -51,6 +51,9 @@ def clean_editorial(raw):
         if not isinstance(e, dict):
             dropped += 1; print(f'::warning::آیتم سردبیری نامعتبر: {nid}'); continue
         e = dict(e)
+        if out_of_scope(e):
+            dropped += 1
+            continue
         for k in STR:
             if k in e and not isinstance(e[k], str): del e[k]
         for k in BOOL:
