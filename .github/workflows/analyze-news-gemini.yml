@@ -1,9 +1,11 @@
-name: Evren Nexus — AI Manager
+name: Evren Nexus — AI Manager (Gemini + Groq failover)
 
 on:
   workflow_call:
     secrets:
       GEMINI_API_KEY:
+        required: false
+      GROQ_API_KEY:
         required: false
   workflow_dispatch:
 
@@ -12,7 +14,7 @@ permissions:
 
 jobs:
   analyze:
-    name: Analyze news with Gemini
+    name: Analyze news with Gemini and Groq fallback
     runs-on: ubuntu-latest
     continue-on-error: true
 
@@ -26,6 +28,7 @@ jobs:
       - name: Run AI analysis
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
         run: python3 scripts/news_ai.py
 
       - name: Commit AI database
