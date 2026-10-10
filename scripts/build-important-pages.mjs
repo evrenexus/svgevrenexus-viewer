@@ -82,6 +82,9 @@ export function generateImportantPages(rows){
  const selected=new Map();
  for(const r of rows){
    if(!r?.article||r.article.status!=="published"||!String(r.article.content||"").trim())continue;
+   // Never write a title-only page when raw content is just scripts, embeds, or scraper markup.
+   const bodyText=cleanArticleHtml(rich(r.article.content)).replace(/<[^>]*>/g," ").replace(/&nbsp;|&#160;/gi," ").replace(/\s+/g," ").trim();
+   if(bodyText.length<100)continue;
    // Publication requires a positive AI decision, not a stale/manual editorial flag.
    if(r.ai?.important!==true||r.ai?.publishable!==true||r.ai?.political===true)continue;
    if(r.ed?.auto_important!==true)continue;
