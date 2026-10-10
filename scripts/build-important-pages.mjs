@@ -51,7 +51,7 @@ const clipHtml=(value,max=MAX_BODY_CHARS)=>{
 const page=a=>{
  const titleText=String(a.title||""); const summaryText=String(a.summary||"").slice(0,Math.max(0,MAX_BODY_CHARS-titleText.length));
  const title=esc(titleText), image=safeUrl(a.image), summary=esc(summaryText);
- const contentLimit=Math.max(0,MAX_BODY_CHARS-titleText.length-summaryText.length);
+ const contentLimit=MAX_BODY_CHARS;
  const date=esc(new Date(a.updated_at||a.published_at||Date.now()).toLocaleString("fa-IR"));
  const source=a.sources&&a.sources[0]||{};
  const originalUrl=safeUrl(source.url);
@@ -86,7 +86,7 @@ export function generateImportantPages(rows){
    if(!r?.article||r.article.status!=="published"||!String(r.article.content||"").trim())continue;
    // Never write a title-only page when raw content is just scripts, embeds, or scraper markup.
    const bodyText=cleanArticleHtml(rich(r.article.content)).replace(/<[^>]*>/g," ").replace(/&nbsp;|&#160;/gi," ").replace(/\s+/g," ").trim();
-   if(bodyText.length<100)continue;
+   if(bodyText.length<100||bodyText.length>MAX_BODY_CHARS)continue;
    const id=String(r.article.id??r.article.slug??r.article.__key??"");
    const wasAlreadyImportant=previouslyImportantIds.has(id);
    const newlyApproved=r.ai?.important===true&&r.ai?.publishable===true&&r.ai?.political!==true&&r.ed?.auto_important===true;
