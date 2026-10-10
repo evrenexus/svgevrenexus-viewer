@@ -119,7 +119,7 @@ def call_OpenRouter(prompt, key):
     }, ensure_ascii=False).encode("utf-8")
     last = ""
     for attempt in range(MAX_RETRIES):
-        req = Request("https://OpenRouter.ai/api/v1/chat/completions", data=payload, headers={
+        req = Request("https://openrouter.ai/api/v1/chat/completions", data=payload, headers={
             "Authorization": "Bearer " + key, "Content-Type": "application/json",
             "HTTP-Referer": "https://evrenexus.github.io/svgevrenexus-viewer/",
             "X-Title": "Evren Nexus"
