@@ -43,7 +43,7 @@ var topic=new URLSearchParams(location.search).get("topic")||"home";
 function aiFor(){return{}}
 function renderFeatured(){
  return window.EvrenFeatured.getTopic(topic,1).then(function(r){
-  if(r&&r.ok){var items=(r.important&&r.important.length)?r.important:(r.featured||[]);render(items.slice(0,4),aiFor);return}
+  if(r&&r.ok){var items=[],seen={};(r.important||[]).concat(r.featured||[]).forEach(function(x){var k=String(x&&x.title||"").trim().toLowerCase();if(k&&!seen[k]&&items.length<4){seen[k]=true;items.push(x)}});render(items,aiFor);return}
   slider.style.display="none";
  }).catch(function(e){
   console.warn("Evrenexus-slider featured:",e);
