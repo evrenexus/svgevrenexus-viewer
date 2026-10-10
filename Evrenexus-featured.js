@@ -34,7 +34,7 @@ function getTopic(topic,page){
    return buildClientFallback(key,Math.max(1,parseInt(page,10)||1),"");
   }
   var per=(doc.config&&doc.config.regularPerPage)||16,p=Math.max(1,parseInt(page,10)||1),start=(p-1)*per;
-  var ff=filterItems(t.featured).filter(function(x){return topicMatches(x,key)}), rr=filterItems(t.regular).filter(function(x){return topicMatches(x,key)}); var imp=filterItems(t.important||[]).filter(function(x){return topicMatches(x,key)}); return{ok:true,featured:ff,important:imp,regular:rr.slice(start,start+per),page:p,hasPrev:p>1,hasNext:start+per<rr.length};
+  var ff=filterItems(t.featured).filter(function(x){return topicMatches(x,key)}), rr=filterItems(t.regular).filter(function(x){return topicMatches(x,key)}); var imp=filterItems(t.important||[]).filter(function(x){return topicMatches(x,key)}); var ranked=function(items){return items.slice().sort(function(a,b){return (Number(b.score||b.importance_score||0)-Number(a.score||a.importance_score||0))||String(b.published||"").localeCompare(String(a.published||""));});}; if(!imp.length)imp=ranked(rr.filter(function(x){return !!x.articleUrl;})).slice(0,20); if(!ff.length)ff=(imp.length?imp:ranked(rr)).slice(0,4); return{ok:true,featured:ff,important:imp,regular:rr.slice(start,start+per),page:p,hasPrev:p>1,hasNext:start+per<rr.length};
  },function(e){
   return buildClientFallback(key,Math.max(1,parseInt(page,10)||1),"").catch(function(){return empty(String(e&&e.message||e))});
  });
