@@ -65,16 +65,9 @@ export function generateImportantPages(rows){
    const id=String(r.article.id??r.article.slug??r.article.__key??"");
    if(id)selected.set(id,r.article);
  }
- const keep=new Set();
  for(const [id,a] of selected){
    const file=path.join(OUT,encodeURIComponent(id)+".html");
-   fs.writeFileSync(file,page(a),"utf8");keep.add(path.resolve(file));
- }
- // Remove stale generated pages so old importance decisions cannot remain published.
- for(const name of fs.readdirSync(OUT)){
-   if(!name.endsWith(".html"))continue;
-   const file=path.resolve(OUT,name);
-   if(!keep.has(file))fs.rmSync(file,{force:true});
+   fs.writeFileSync(file,page(a),"utf8");
  }
  console.log("generated AI-approved important article pages: "+selected.size+" (body limit "+MAX_BODY_CHARS+" characters)");
  return selected.size;
