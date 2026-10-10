@@ -116,7 +116,7 @@ function buildClientFallback(topic,page,q){
     id:n.id,title:e.title||n.title,summary:e.summary||n.summary||"",image:e.image||n.image||"",
     source:n.source||"",published:n.published||"",url:n.url||"",
     articleId:n.id,articleUrl:"article.html?id="+encodeURIComponent(n.id),
-    topics:Array.isArray(n.topics)?n.topics:(Array.isArray(e.ai_topics)?e.ai_topics:[]),
+    topics:Array.from(new Set([].concat(Array.isArray(n.topics)?n.topics:[],Array.isArray(e.ai_topics)?e.ai_topics:[]).filter(Boolean))),
     important:e.auto_important===true,score:Number(e.ai_importance)||0
    });
   });
