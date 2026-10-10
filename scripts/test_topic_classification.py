@@ -7,6 +7,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from news_collector import assign_topics
+import news_ai
 
 
 class TopicClassificationTests(unittest.TestCase):
@@ -68,6 +69,38 @@ class TopicClassificationTests(unittest.TestCase):
                 "خلاصه بازی بارسلونا",
                 content="قیمت دلار و طلا در بازار امروز افزایش یافت",
             ),
+            set(),
+        )
+
+    def ai_topics(self, title, summary="", category="اقتصاد و سرمایه‌گذاری"):
+        src = {"title": title, "summary": summary, "category": category, "topics": []}
+        meta = {
+            "local_score": 5,
+            "group_id": "test-group",
+            "duplicate_count": 1,
+            "political": False,
+            "breaking_signal": False,
+            "age_hours": 0,
+        }
+        return set(news_ai.make_local_result(src, meta)["topics"])
+
+    def test_ai_fallback_keeps_crypto_separate_even_when_headline_says_dollari(self):
+        topics = self.ai_topics(
+            "ارز دیجیتال بیت‌کوین از کانال ۸۲ هزار دلاری جدا شد"
+        )
+        self.assertIn("crypto", topics)
+        self.assertNotIn("currency-gold", topics)
+
+    def test_ai_fallback_places_ai_in_technology(self):
+        topics = self.ai_topics(
+            "سازمان‌ها در عصر هوش مصنوعی؛ پیش‌نیازهای تحول AI"
+        )
+        self.assertIn("ai", topics)
+        self.assertIn("technology", topics)
+
+    def test_ai_fallback_does_not_restore_publisher_category(self):
+        self.assertEqual(
+            self.ai_topics("ببینید؛ خلاصه بازی بارسلونا ۳ - ختافه ۰"),
             set(),
         )
 
