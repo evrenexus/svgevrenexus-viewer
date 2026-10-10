@@ -14,6 +14,7 @@ on:
       - 'scripts/featured-config.mjs'
       - 'scripts/news_ai.py'
       - 'scripts/validate-featured.mjs'
+      - 'scripts/policy-terms.json'
 
 permissions:
   contents: write
