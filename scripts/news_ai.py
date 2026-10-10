@@ -111,7 +111,7 @@ def call_gemini(prompt, key):
 def call_OpenRouter(prompt, key):
     """Call OpenRouter's OpenAI-compatible API and require a JSON object response."""
     payload = json.dumps({
-        "model": os.environ.get("OPENROUTER_MODEL", "openai/gpt-oss-20b:free"),
+        "model": os.environ.get("OPENROUTER_MODEL", "openrouter/free"),
         "messages": [{"role": "user", "content": prompt}],
         "temperature": 0.1,
         "max_completion_tokens": 8192,
