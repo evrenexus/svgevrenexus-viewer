@@ -11,14 +11,14 @@
 </style></head>
 <body>
 <main id="page"><section id="content"><a class="back" href="./">بازگشت به خانه</a><div class="archive"><div class="head"><h1>آرشیو مطالب مهم</h1><p>مطالب مهم بیش از چهار عنوان اصلی صفحه اول</p></div><div id="list"><div class="error">در حال دریافت مطالب...</div></div></div></section></main>
-<script src="./Evrenexus-featured.js?v=20261007-04"></script>
+<script src="./Evrenexus-featured.js?v=20261010-02"></script>
 <script>
 (function(){
 "use strict";
 var q=new URLSearchParams(location.search),topic=q.get("topic")||"home",host=document.getElementById("list");
 function img(v){return typeof v==="string"&&/^https?:\/\//i.test(v)?v:""}
 function render(r){
- var items=(r.important&&r.important.length)?r.important:(r.featured||[]),html="";
+ var items=(r.important||[]).filter(function(x){return !!x.articleUrl;}),html="";
  items.forEach(function(x){
   if(!x.articleUrl)return;
   html+='<a class="item" href="./'+x.articleUrl+'">';
