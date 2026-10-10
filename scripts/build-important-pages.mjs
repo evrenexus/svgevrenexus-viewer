@@ -8,7 +8,7 @@ const OUT=path.join(ROOT,"articles");
 const MAX_BODY_CHARS=4000;
 const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
 const safeUrl=v=>{try{const u=new URL(String(v||""));return /^https?:$/i.test(u.protocol)?u.href:""}catch{return""}};
-const rich=v=>String(v||"").replace(/<script[\s\S]*?<\/script>/gi,"").replace(/<iframe[\s\S]*?<\/iframe>/gi,"");
+const rich=v=>String(v||"").replace(/<(script|style|iframe|noscript)\b[^>]*>[\s\S]*?<\/\1>/gi,"");
 const cleanArticleHtml=value=>{
   let s=rich(value)
     .replace(/(?:با پایین‌ترین کارمزد|با کمترین کارمزد)[^<\n]{0,180}(?:دیجی.?کالا|معامله امن)[^<\n]*/gi,"")
@@ -61,7 +61,7 @@ const page=a=>{
  const reserved=willTruncate&&readerUrl?continuationText.length+1:0;
  const clipped=clipHtml(rich(a.content),Math.max(0,contentLimit-reserved));
  const content=clipped.html;
- return `<!doctype html><html lang="fa" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+ return `<!doctype html><!-- EVREN_NEXUS_GENERATED_IMPORTANT_ARTICLE --><html lang="fa" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${title} | Evren Nexus</title><style>
 *{box-sizing:border-box}body{margin:0;background:#f1f2f3;color:#20272d;font-family:Tahoma,Arial,sans-serif}
 #page{width:850px;max-width:100%;margin:auto;padding:123px 10px 25px;display:flex;gap:10px;direction:rtl}#content{width:610px;min-width:0;background:#fff;border:1px solid #dfe2e4;padding:18px}#sidebar-host{width:200px}
@@ -98,5 +98,5 @@ export function generateImportantPages(rows){
    fs.writeFileSync(file,page(a),"utf8");
  }
  console.log("generated AI-approved important article pages: "+selected.size+" (body limit "+MAX_BODY_CHARS+" characters)");
- return selected.size;
+ return new Set(selected.keys());
 }
