@@ -40,7 +40,7 @@ class TopicClassificationTests(unittest.TestCase):
 
     def test_crypto_is_separate_from_currency_and_gold(self):
         topics = self.topics(
-            "بیت‌کوین از کانال ۸۲ هزار دلاری جدا شد؛ آلت‌کوین‌ها سبزپوش شدند"
+            "ارز دیجیتال بیت‌کوین از کانال ۸۲ هزار دلاری جدا شد؛ آلت‌کوین‌ها سبزپوش شدند"
         )
         self.assertIn("crypto", topics)
         self.assertNotIn("currency-gold", topics)
