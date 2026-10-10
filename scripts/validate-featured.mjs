@@ -17,8 +17,19 @@ if(data.editorialError)warn("editorial.json ignored: "+data.editorialError);
 
 const{rows,scheme,linked}=linkAll(data);
 const byId=new Map(rows.map(r=>[String(r.n.id),r]));
-const rate=data.news.length?linked/data.news.length:0;
-if(rate<C.LINK_RATE_MIN)err("news->news-ai link rate "+(rate*100).toFixed(1)+"% ("+linked+"/"+data.news.length+") below "+(C.LINK_RATE_MIN*100)+"% using "+scheme);
+// AI classification intentionally processes the recent-news window; archived news
+// can remain in news.json without a current news-ai record. Validate the eligible
+// recent window instead of incorrectly requiring 95% of all archived items.
+const LINK_WINDOW_HOURS=4;
+const nowMs=Date.now();
+const eligibleRows=rows.filter(r=>{
+ const published=Date.parse(r.n?.published||"");
+ return !published || nowMs-published <= LINK_WINDOW_HOURS*60*60*1000;
+});
+const eligibleLinked=eligibleRows.filter(r=>r.ai).length;
+const rate=eligibleRows.length?eligibleLinked/eligibleRows.length:1;
+console.log("link scheme: "+scheme+" | recent eligible "+eligibleLinked+"/"+eligibleRows.length+" (all-news matches "+linked+"/"+data.news.length+")");
+if(rate<C.LINK_RATE_MIN)err("recent news->news-ai link rate "+(rate*100).toFixed(1)+"% ("+eligibleLinked+"/"+eligibleRows.length+") below "+(C.LINK_RATE_MIN*100)+"% using "+scheme);
 
 // Permanent article integrity. Legacy AI/manual articles may contain old HTML;
 // newly generated internal articles must always be plain text.
