@@ -302,7 +302,7 @@ def keyword_present(text, keyword):
         return False
     if " " in phrase:
         return phrase in text
-    return re.search(r"(?<!\\w)" + re.escape(phrase) + r"(?!\\w)", text, re.UNICODE) is not None
+    return re.search(r"(?<!\w)" + re.escape(phrase) + r"(?!\w)", text, re.UNICODE) is not None
 
 def title_tokens(s):
     return {t for t in normalize_title(s).split() if len(t) > 2 and t not in STOPWORDS}
