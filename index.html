@@ -50,8 +50,8 @@ if(input)input.addEventListener("keydown",function(e){if(e.key==="Enter")go();})
 if(tags){
  fetch("./data/public/news.json?v="+Date.now(),{cache:"no-store"}).then(function(r){return r.ok?r.json():null}).then(function(d){
   if(!d||!Array.isArray(d.items))return;
-  var names={economy:"اقتصادی",markets:"بازار و سرمایه‌گذاری","currency-gold":"ارز و طلا","real-estate":"مسکن",technology:"فناوری",ai:"هوش مصنوعی",health:"پزشکی و سلامت",auto:"خودرو","science-life":"علم و سبک زندگی"},seen={};
-  d.items.forEach(function(x){(Array.isArray(x.topics)?x.topics:[]).forEach(function(t){if(names[t])seen[t]=true;});});
+  var names={"economy-investment":"اقتصاد و سرمایه‌گذاری","crypto":"ارزهای دیجیتال","currency-gold":"ارز و طلا","real-estate":"مسکن",technology:"فناوری",ai:"هوش مصنوعی",health:"پزشکی و سلامت",auto:"خودرو","science-life":"علم و سبک زندگی"},seen={};
+  d.items.forEach(function(x){var ts=Array.isArray(x.topics)?x.topics:[];if(ts.indexOf("economy")!==-1||ts.indexOf("markets")!==-1||ts.indexOf("economy-investment")!==-1)seen["economy-investment"]=true;if(ts.indexOf("crypto")!==-1||/(ارز دیجیتال|رمزارز|رمز ارز|بیت ?کوین|اتریوم|تتر|بایننس|کریپتو|bitcoin|ethereum|crypto|blockchain|solana|ripple|dogecoin|token)/i.test((x.title||"")+" "+(x.summary||"")))seen.crypto=true;ts.forEach(function(t){if(names[t])seen[t]=true;});});
   Object.keys(names).forEach(function(t){if(seen[t]){var a=document.createElement("a");a.className="news-tag";a.href="./news-river.html?topic="+encodeURIComponent(t);a.textContent=names[t];tags.appendChild(a);}});
  }).catch(function(){});
 }
