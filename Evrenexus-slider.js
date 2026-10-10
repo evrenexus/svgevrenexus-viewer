@@ -43,7 +43,7 @@ var topic=new URLSearchParams(location.search).get("topic")||"home";
 function aiFor(){return{}}
 function renderFeatured(){
  return window.EvrenFeatured.getTopic(topic,1).then(function(r){
-  if(r&&r.ok){render((r.featured||[]).slice(0,4),aiFor);return}
+  if(r&&r.ok){var items=(r.important&&r.important.length)?r.important:(r.featured||[]);render(items.slice(0,4),aiFor);return}
   slider.style.display="none";
  }).catch(function(e){
   console.warn("Evrenexus-slider featured:",e);
