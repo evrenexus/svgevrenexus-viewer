@@ -55,7 +55,7 @@ for(const a of data.articles){
 console.log("article integrity: "+seenArticleIds.size+" articles checked");
 
 const table={};
-for(const topic of[C.HOME,...C.TOPICS]){
+for(const topic of[C.HOME,...C.PAGE_TOPICS]){
  const t=doc.topics?.[topic];
  if(!t){err("["+topic+"] missing in featured.json");continue}
  const F=Array.isArray(t.featured)?t.featured:[],R=Array.isArray(t.regular)?t.regular:[];
