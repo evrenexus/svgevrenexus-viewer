@@ -63,7 +63,7 @@ function renderOldWay(topic,page,q){
  });}).catch(function(e){var list=document.getElementById("list");if(list)list.innerHTML='<div class="error">دریافت اخبار انجام نشد.</div>';console.warn("news.json fallback:",e)});
 }
 function render(r){
- var F=(r.featured||[]).slice(0,4),list=document.getElementById("list"),important=document.getElementById("important"),ih=document.getElementById("importantList");
+ var F=((r.important&&r.important.length)?r.important:(r.featured||[])).slice(0,4),list=document.getElementById("list"),important=document.getElementById("important"),ih=document.getElementById("importantList");
  var br=document.getElementById("Evrenxus-breaking-track");
  if(br){br.innerHTML="";if(F.length){var tk=document.createElement("div");tk.className="Evrenxus-breaking-ticker";var g=document.createElement("div");g.className="Evrenxus-breaking-group";F.forEach(function(x){if(!x.articleUrl)return;var a=document.createElement("a");a.href="./"+x.articleUrl;a.textContent=x.title||"";g.appendChild(a)});tk.appendChild(g);tk.appendChild(g.cloneNode(true));br.appendChild(tk)}else br.textContent="فعلاً مطلب مهمی برای این موضوع وجود ندارد."}
  if(important)important.style.display="";
@@ -122,7 +122,8 @@ function buildClientFallback(topic,page,q){
   });
   var filtered=topic&&topic!=="home"?rows.filter(function(x){return topicMatches(x,topic)}):rows.slice();
   filtered.sort(function(a,b){return (Number(b.important)-Number(a.important))||(b.score-a.score)||(new Date(b.published)-new Date(a.published));});
-  var featured=filtered.filter(function(x){return x.important}).slice(0,4);
+  var important=filtered.filter(function(x){return x.important});
+  var featured=important.slice(0,4);
   var used={};featured.forEach(function(x){used[x.id]=true});
   if(featured.length<4){
     filtered.forEach(function(x){
@@ -131,7 +132,7 @@ function buildClientFallback(topic,page,q){
     });
   }
   var regular=filtered.filter(function(x){return !used[x.id]}).slice((Math.max(1,page)-1)*16,Math.max(1,page)*16);
-  return {ok:true,featured:featured,regular:regular,page:Math.max(1,page),hasPrev:page>1,hasNext:Math.max(1,page)*16<filtered.length};
+  return {ok:true,featured:featured,important:important,regular:regular,page:Math.max(1,page),hasPrev:page>1,hasNext:Math.max(1,page)*16<filtered.length};
  });
 }
 function renderPage(){
