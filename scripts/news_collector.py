@@ -85,16 +85,14 @@ def classify_topics(item):
     scores={}; strong_hits={}
 
     for topic,groups in TOPIC_RULES.items():
-        score=0; direct_score=0; title_strong=0
+        score=0; direct_score=0; title_strong=0; body_strong=0
         for kw in groups["strong"]:
             if _contains(title,kw):
                 score+=10; direct_score+=10; title_strong+=1
             elif _contains(summary,kw):
                 score+=5; direct_score+=5
-            elif direct_score and _contains(body,kw):
-                # Body evidence may reinforce a headline/summary signal, but
-                # must never classify an unrelated headline on its own.
-                score+=2
+            elif _contains(body,kw) and not _contains(title,kw) and not _contains(summary,kw):
+                body_strong+=1
         medium_title=sum(1 for kw in groups["medium"] if _contains(title,kw))
         medium_summary=sum(1 for kw in groups["medium"] if _contains(summary,kw))
         medium_body=sum(1 for kw in groups["medium"] if _contains(body,kw)
@@ -102,7 +100,9 @@ def classify_topics(item):
         direct_score += medium_title*4 + medium_summary
         score += medium_title*4 + medium_summary
         if direct_score:
-            score += min(3,medium_body)
+            # Body evidence reinforces an established title/summary signal
+            # but cannot classify an unrelated headline on its own.
+            score += min(4,body_strong*2) + min(3,medium_body)
         generic_hits=sum(1 for kw in GENERIC_TOPIC_WORDS.get(topic,[]) if _contains(title,kw))
         generic_summary=sum(1 for kw in GENERIC_TOPIC_WORDS.get(topic,[]) if _contains(summary,kw))
         if generic_hits+generic_summary>=2:
