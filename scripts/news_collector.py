@@ -44,8 +44,9 @@ SOURCES=[
 TOPIC_RULES={
  "economy":{"strong":["اقتصاد","اقتصادی","تورم","رشد اقتصادی","بودجه","مالیات","بانک مرکزی","نرخ بهره","نقدینگی","تجارت خارجی","صادرات","واردات","رکود اقتصادی","اشتغال","دستمزد","معیشت","کسب و کار","کسب‌وکار","بازرگانی","سیاست اقتصادی","تولید ناخالص داخلی","gdp","شاخص قیمت","تورم سالانه","تورم نقطه‌ای","تورم ماهانه","درآمد سرانه"],"medium":["تولید","صنعت","کشاورزی","نفت","گاز","انرژی","تجارت","رکود","بازار کار","هزینه تولید","قیمت کالا","قیمت محصولات","زنجیره تامین","سرمایه‌گذاری خارجی","اقتصاد ایران"]},
  "markets":{"strong":["بورس","بازار سرمایه","شاخص کل","شاخص هم‌وزن","فرابورس","سهام","نماد معاملاتی","عرضه اولیه","پذیره‌نویسی","بورس کالا","صندوق سرمایه‌گذاری","اوراق بهادار","حق تقدم","مجمع شرکت","کدال","پرتفوی","معاملات بورس","بازار سهام","شاخص بورس","ارزش معاملات","حجم معاملات","صف خرید","صف فروش","افزایش سرمایه"],"medium":["سرمایه‌گذاری","سهم","بازدهی بورس","معاملات سهام","بازار مالی","بازار پول","بازده","سهامداران","شرکت بورسی"]},
- "currency-gold":{"strong":["دلار","یورو","درهم","پوند","لیر","یوان","روبل","دینار","نرخ ارز","بازار ارز","طلا","سکه","طلای آبشده","آبشده","اونس طلا","انس طلا","نقره","قیمت طلا","قیمت سکه","قیمت دلار","قیمت یورو","قیمت درهم","حواله ارزی","مرکز مبادله","بازار متشکل ارزی"],"medium":["ارز","اونس","انس","حواله","نرخ دلار","نرخ یورو","نرخ لیر"]},
- "real-estate":{"strong":["مسکن","بازار مسکن","املاک","ملک","املاک و مستغلات","آپارتمان","واحد مسکونی","اجاره مسکن","بازار اجاره","اجاره‌بها","اجاره بها","رهن و اجاره","رهن کامل","مستاجر","موجر","زمین مسکونی","قیمت مسکن","قیمت آپارتمان","قیمت ملک","معاملات مسکن","معاملات ملکی","خرید خانه","فروش خانه","خرید و فروش ملک","وام مسکن","تسهیلات مسکن","بانک مسکن","وام ودیعه","ودیعه مسکن","نهضت ملی مسکن","مسکن ملی","طرح جامع مسکن","بافت فرسوده","مشاور املاک","بنگاه املاک","کمیسیون املاک","انبوه‌ساز","انبوه ساز","ساخت مسکن","سرمایه‌گذاری در مسکن"],"medium":["خانه","زمین","ساختمان","ساخت‌وساز","ساخت و ساز","سازنده","ساختمان‌سازی","ساختمان سازی","شهرسازی","عمران","پروانه ساختمانی","پروانه ساخت","تراکم ساختمانی","کاربری زمین","اراضی","قطعه زمین","واحد","ملک مسکونی","خانه‌دار","خانه دار","اجاره‌نشینی","اجاره نشینی"]},
+ "currency-gold":{"strong":["دلار","یورو","درهم","پوند","لیر","یوان","روبل","دینار","نرخ ارز","بازار ارز","طلا","سکه","طلای آبشده","آبشده","اونس طلا","انس طلا","نقره","قیمت طلا","قیمت سکه","قیمت دلار","قیمت یورو","قیمت درهم","حواله ارزی","مرکز مبادله","بازار متشکل ارزی"],"medium":["اونس","انس","حواله","نرخ دلار","نرخ یورو","نرخ لیر"]},
+  "crypto":{"strong":["ارز دیجیتال","ارزهای دیجیتال","رمزارز","رمز ارز","کریپتو","کریپتوکارنسی","بیت کوین","بیت‌کوین","بیتکوین","اتریوم","تتر","بایننس","بلاک چین","بلاک‌چین","بلاکچین","دیفای","سولانا","ریپل","دوج کوین","دوج‌کوین","توکن","وب ۳","web3","bitcoin","ethereum","crypto","cryptocurrency","blockchain","solana","ripple","dogecoin","binance","token","defi"],"medium":["دارایی دیجیتال","صرافی رمزارز","بازار رمزارز","کیف پول دیجیتال","شبکه بلاک چین","استیبل کوین","stablecoin"]},
+ "real-estate":{"strong":["مسکن","بازار مسکن","املاک","املاک و مستغلات","آپارتمان","واحد مسکونی","اجاره مسکن","بازار اجاره","اجاره‌بها","اجاره بها","رهن و اجاره","رهن کامل","مستاجر","موجر","زمین مسکونی","قیمت مسکن","قیمت آپارتمان","قیمت ملک","معاملات مسکن","معاملات ملکی","خرید خانه","فروش خانه","خرید و فروش ملک","وام مسکن","تسهیلات مسکن","بانک مسکن","وام ودیعه","ودیعه مسکن","نهضت ملی مسکن","مسکن ملی","طرح جامع مسکن","بافت فرسوده","مشاور املاک","بنگاه املاک","کمیسیون املاک","انبوه‌ساز","انبوه ساز","ساخت مسکن","سرمایه‌گذاری در مسکن"],"medium":["خانه","زمین","ساختمان","ساخت‌وساز","ساخت و ساز","سازنده","ساختمان‌سازی","ساختمان سازی","شهرسازی","عمران","پروانه ساختمانی","پروانه ساخت","تراکم ساختمانی","کاربری زمین","اراضی","قطعه زمین","واحد","ملک مسکونی","خانه‌دار","خانه دار","اجاره‌نشینی","اجاره نشینی"]},
  "technology":{"strong":["فناوری","تکنولوژی","اینترنت","گوشی هوشمند","لپ‌تاپ","رایانه","کامپیوتر","گجت","نرم‌افزار","سخت‌افزار","سیستم‌عامل","اپلیکیشن","امنیت سایبری","شبکه کامپیوتری","استارتاپ فناوری","هوش مصنوعی در فناوری","پردازنده","تراشه","چیپ","داده‌های دیجیتال","فضای ابری","رایانش ابری","پلتفرم دیجیتال","شبکه اجتماعی","پیام‌رسان"],"medium":["وب","موبایل","شبکه","داده","استارتاپ","دیجیتال","آنلاین","اپ","پردازنده","دوربین","نمایشگر","باتری"]},
  "ai":{"strong":["هوش مصنوعی","هوش مصنوعی مولد","مدل زبانی","مدل بزرگ زبانی","llm","chatgpt","openai","gemini","claude","copilot","یادگیری ماشین","یادگیری عمیق","ماشین لرنینگ","ربات هوشمند","مدل هوش مصنوعی","مدل مولد","عامل هوش مصنوعی","ایجنت هوش مصنوعی"],"medium":["مولد","مدل زبانی","چت‌بات","چت بات","ربات گفتگو","پردازش زبان طبیعی","بینایی ماشین","هوش مصنوعی در کسب‌وکار"]},
  "health":{"strong":["پزشکی","سلامت","درمان","بیماری","پزشک","دارو","دارویی","بیمارستان","کلینیک","جراحی","سرطان","دیابت","فشار خون","واکسن","ویروس","بیماری قلبی","پزشکی بالینی","پزشکی قانونی","داروخانه","بیماران","علائم بیماری","پیشگیری از بیماری"],"medium":["بیمار","قلب","تغذیه","بهداشت","سلامت روان","روانشناسی","بارداری","کودک","سالمندان","واکسن","عفونت","سردرد","تب","فشارخون"]},
@@ -78,37 +79,66 @@ def fallback_topic(item):
     return {"اقتصاد و سرمایه‌گذاری":"economy","بورس و بازار سرمایه":"markets","فناوری و علم":"technology","پزشکی و سلامت":"health"}.get(item.get("category",""))
 
 def classify_topics(item):
-    title=normalize_text(item.get("title","")); summary=normalize_text(item.get("summary","")); scores={}; strong_hits={}
+    title=normalize_text(item.get("title",""))
+    summary=normalize_text(item.get("summary",""))
+    body=normalize_text(item.get("content","") or item.get("description",""))
+    scores={}; strong_hits={}
+
     for topic,groups in TOPIC_RULES.items():
-        score=0; hits=0; title_strong=0
+        score=0; direct_score=0; title_strong=0; body_strong=0
         for kw in groups["strong"]:
-            if _contains(title,kw): score+=10; hits+=1; title_strong+=1
-            elif _contains(summary,kw): score+=5; hits+=1
-        medium_title=sum(1 for kw in groups["medium"] if _contains(title,kw)); medium_summary=sum(1 for kw in groups["medium"] if _contains(summary,kw))
-        score += medium_title*4 + medium_summary; hits += medium_title + medium_summary
-        generic_hits=sum(1 for kw in GENERIC_TOPIC_WORDS.get(topic,[]) if _contains(title,kw)); generic_summary=sum(1 for kw in GENERIC_TOPIC_WORDS.get(topic,[]) if _contains(summary,kw))
-        if generic_hits+generic_summary>=2: score+=2; hits+=1
+            if _contains(title,kw):
+                score+=10; direct_score+=10; title_strong+=1
+            elif _contains(summary,kw):
+                score+=5; direct_score+=5
+            elif _contains(body,kw) and not _contains(title,kw) and not _contains(summary,kw):
+                body_strong+=1
+        medium_title=sum(1 for kw in groups["medium"] if _contains(title,kw))
+        medium_summary=sum(1 for kw in groups["medium"] if _contains(summary,kw))
+        medium_body=sum(1 for kw in groups["medium"] if _contains(body,kw)
+                        and not _contains(title,kw) and not _contains(summary,kw))
+        direct_score += medium_title*4 + medium_summary
+        score += medium_title*4 + medium_summary
+        if direct_score:
+            # Body evidence reinforces an established title/summary signal
+            # but cannot classify an unrelated headline on its own.
+            score += min(4,body_strong*2) + min(3,medium_body)
+        generic_hits=sum(1 for kw in GENERIC_TOPIC_WORDS.get(topic,[]) if _contains(title,kw))
+        generic_summary=sum(1 for kw in GENERIC_TOPIC_WORDS.get(topic,[]) if _contains(summary,kw))
+        if generic_hits+generic_summary>=2:
+            score+=2; direct_score+=2
         scores[topic]=score; strong_hits[topic]=title_strong
+
     source_hint={"پزشکی و سلامت":"health","فناوری و علم":"technology","بورس و بازار سرمایه":"markets","اقتصاد و سرمایه‌گذاری":"economy"}.get(item.get("category",""))
-    if source_hint and scores.get(source_hint,0)>=3: scores[source_hint]+=1
+    if source_hint and scores.get(source_hint,0)>=5:
+        scores[source_hint]+=1
     political=sum(2 if _contains(title,k) else 1 for k in POLITICAL_HINTS if _contains(title+" "+summary,k))
     ranked=sorted(scores.items(),key=lambda x:x[1],reverse=True)
-    if political>=4 and (not ranked or ranked[0][1]<political): return []
+    if political>=4 and (not ranked or ranked[0][1]<political):
+        return []
     eligible=[(topic,score) for topic,score in ranked if score>=5]
-    if not eligible: return []
-    best_topic,best_score=eligible[0]; second_score=eligible[1][1] if len(eligible)>1 else 0
-    if strong_hits.get(best_topic,0)==0 and best_score<7 and best_score-second_score<3: return []
+    if not eligible:
+        return []
+    best_topic,best_score=eligible[0]
+    second_score=eligible[1][1] if len(eligible)>1 else 0
+    if strong_hits.get(best_topic,0)==0 and best_score<7 and best_score-second_score<3:
+        return []
     topics=[best_topic]
     for topic,score in eligible[1:]:
-        if score>=10 and best_score-score<=8: topics.append(topic)
-        if len(topics)>=2: break
+        if score>=10 and best_score-score<=8:
+            topics.append(topic)
+        if len(topics)>=2:
+            break
+
+    # AI is a technology subtopic and belongs on the combined technology page.
+    if "ai" in topics and "technology" not in topics:
+        topics.append("technology")
     return topics
 
 def assign_topics(item):
-    topics=classify_topics(item)
-    if topics: return topics
-    fb=fallback_topic(item)
-    return [fb] if fb else []
+    # Publisher/source categories describe the source, not the story.
+    # Never use them to mislabel an unrelated article.
+    return classify_topics(item)
 
 
 # ---------- importance scoring ----------
@@ -545,6 +575,10 @@ def main():
         print("All news sources failed; keeping previous news.json unchanged."); return
     enrich_images(all_items)
     enrich_content(all_items)
+    # Reclassify after body extraction so the full article can support, but
+    # never override, the topic signal from its title and summary.
+    for item in all_items:
+        item["topics"]=assign_topics(item)
     all_items=[x for x in all_items if is_valid_item(x,now_ts)]
     all_items.sort(key=lambda x:date_key(x.get("published","")),reverse=True)
     all_items=all_items[:300]

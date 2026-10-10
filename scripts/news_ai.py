@@ -32,16 +32,17 @@ QUOTA_DEFAULT_COOLDOWN_SECONDS = 6 * 60 * 60
 GEMINI_QUOTA_BLOCKED = False
 
 TOPICS = [
-    "economy","markets","currency-gold","real-estate","technology",
+    "economy","markets","crypto","currency-gold","real-estate","technology",
     "ai","health","auto","science-life"
 ]
 
 TOPIC_KEYWORDS = {
     "economy": ["اقتصاد","اقتصادی","تورم","تولید","تولیدکننده","بودجه","مالیات","رشد اقتصادی","درآمد","هزینه تولید","انرژی","نفت"],
     "markets": ["بورس","بازار سرمایه","بازار سهام","سهام","شاخص کل","فرابورس","عرضه اولیه","سرمایه گذاری","سرمایه‌گذاری","اوراق"],
-    "currency-gold": ["دلار","یورو","ارز","طلا","سکه","نرخ ارز","بیت کوین","بیت‌کوین","اتریوم","رمزارز","کریپتو"],
+    "currency-gold": ["دلار","یورو","درهم","پوند","لیر","طلا","سکه","نرخ ارز","بازار ارز","قیمت طلا","قیمت دلار"],
+    "crypto": ["ارز دیجیتال","ارزهای دیجیتال","رمزارز","رمز ارز","کریپتو","کریپتوکارنسی","بیت کوین","بیت‌کوین","بیتکوین","اتریوم","تتر","بایننس","بلاک چین","بلاک‌چین","بلاکچین","دیفای","سولانا","ریپل","دوج کوین","دوج‌کوین","توکن","web3","bitcoin","ethereum","crypto","cryptocurrency","blockchain","solana","ripple","dogecoin","binance","token","defi"],
     "real-estate": ["مسکن","آپارتمان","اجاره","خانه","ساختمان","املاک","رهن"],
-    "technology": ["فناوری","تکنولوژی","اینترنت","موبایل","گوشی","نرم افزار","نرم‌افزار","سخت افزار","سخت‌افزار","اپل","مایکروسافت","گوگل"],
+    "technology": ["فناوری","تکنولوژی","اینترنت","موبایل","گوشی","نرم افزار","نرم‌افزار","سخت افزار","سخت‌افزار","اپل","مایکروسافت","گوگل","هوش مصنوعی","یادگیری ماشین","یادگیری ماشینی","مدل زبانی","chatgpt","openai","gemini","claude","copilot"],
     "ai": ["هوش مصنوعی","یادگیری ماشین","یادگیری ماشینی","چت جی پی تی","chatgpt","gemini","claude","مدل زبانی"],
     "health": ["پزشکی","سلامت","بیماری","بیمار","درمان","دارو","پزشک","بیمارستان","اپیدمی","کرونا"],
     "auto": ["خودرو","ماشین","ایران خودرو","ایران‌خودرو","سایپا","خودروساز","خودروسازی","قطعه خودرو","بنزین"],
@@ -295,6 +296,14 @@ def normalize_title(s):
     s = re.sub(r"[^0-9a-zA-Zآ-ی\s]", " ", s)
     return re.sub(r"\s+", " ", s).strip()
 
+def keyword_present(text, keyword):
+    phrase = normalize_title(keyword)
+    if not phrase:
+        return False
+    if " " in phrase:
+        return phrase in text
+    return re.search(r"(?<!\w)" + re.escape(phrase) + r"(?!\w)", text, re.UNICODE) is not None
+
 def title_tokens(s):
     return {t for t in normalize_title(s).split() if len(t) > 2 and t not in STOPWORDS}
 
@@ -375,13 +384,13 @@ def make_local_result(src,meta):
     hit_counts={}
     base=int(meta.get("local_score",0))
     for topic,keywords in TOPIC_KEYWORDS.items():
-        hits=sum(1 for kw in keywords if normalize_title(kw) in text)
+        hits=sum(1 for kw in keywords if keyword_present(text,kw))
         if hits:
             hit_counts[topic]=hits
             topic_scores[topic]=min(20,base+min(12,hits*5))
 
-    # Keep collector topics only as a weak fallback. When the text contains
-    # a strong topical signal, unrelated collector labels must not dominate.
+    # Collector labels are only a fallback when they were actually
+    # classified from the story. Source-publisher categories are never topics.
     if not topic_scores:
         for topic in base_topics:
             topic_scores[topic]=base
@@ -390,6 +399,9 @@ def make_local_result(src,meta):
         topic_scores={t:v for t,v in topic_scores.items() if v>=max(8,top_score*0.85)}
 
     topics=sorted(topic_scores,key=lambda t:(topic_scores[t],t),reverse=True)
+    if "ai" in topics and "technology" not in topics:
+        topics.append("technology")
+        topic_scores["technology"]=max(topic_scores.get("technology",0),topic_scores.get("ai",0))
     score=max(topic_scores.values()) if topic_scores else base
     forbidden=is_forbidden_content(src)
     political=bool(meta.get("political")) or bool(forbidden)
@@ -507,6 +519,9 @@ def normalize_result(src, row):
     topics = [t for t in row.get("topics", []) if t in TOPICS]
     if not topics: topics = [t for t in src.get("topics", []) if t in TOPICS]
     if not topics and src.get("category") in TOPICS: topics = [src["category"]]
+    if "ai" in topics and "technology" not in topics:
+        topics.append("technology")
+        scores["technology"] = max(scores.get("technology", 0), scores.get("ai", 0), score)
     important_topics = [t for t in topics if scores.get(t, score) >= IMPORTANT_SCORE_MIN]
     slider_topics = [t for t in topics if scores.get(t, score) >= SLIDER_SCORE_MIN]
     ticker_topics = [t for t in topics if scores.get(t, score) >= TICKER_SCORE_MIN]
@@ -722,7 +737,7 @@ def generate_permanent_articles(all_news, ai, key, groq_key="", OpenRouter_key="
 - content باید خلاصه واقعی و مستقل از متن کامل منابع باشد، نه بریدن ابتدا یا انتهای متن؛ هدف 3000 تا 3800 کاراکتر متن خالص و سقف قطعی 4000 کاراکتر پس از حذف HTML است. نکات کلیدی، اعداد و نتیجه اصلی را حفظ کن و متن را کامل و طبیعی تمام کن.
 - summary حداکثر 300 کاراکتر و بدون تبلیغ یا تکرار متن باشد.
 - پیش از تحویل، خروجی نهایی را دوباره بازبینی کن و هر تبلیغ، تکرار یا متن ناوبری باقی‌مانده را حذف کن.
-- category یکی از economy,markets,currency-gold,real-estate,technology,ai,health,auto,science-life باشد.
+- category یکی از economy,markets,crypto,currency-gold,real-estate,technology,ai,health,auto,science-life باشد.
 - sources فقط از منابع ورودی انتخاب شوند.
 - اگر گروه خبر تصویر مناسبی ندارد، image_query یک عبارت کوتاه و دقیق برای جستجوی تصویر مرتبط در Wikimedia Commons بده؛ اگر تصویر مناسب از ورودی وجود دارد image_query را خالی بگذار.
 - از بین گروه‌های ورودی حداکثر ۴ مقاله تولید کن؛ اولویت با اهمیت بیشتر و تازگی بیشتر است، اما اگر تصویر یک گروه پیدا نشد، سراغ گروه بعدی برو تا در نهایت ۴ مقاله قابل انتشار با تصویر ساخته شود.\n- action یکی از create, update, skip باشد.
