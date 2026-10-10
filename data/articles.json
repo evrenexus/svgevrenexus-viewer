@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-10T07:59:58Z",
+  "updated": "2026-10-10T08:00:29.434Z",
   "schema": 1,
   "items": {
     "article-eece7c42f225dbaf": {
@@ -34816,6 +34816,62 @@
       "published_at": "2026-10-10T07:59:55Z",
       "status": "published",
       "ai_managed": true
+    },
+    "article-3099f49b7e5ddb17": {
+      "id": "article-3099f49b7e5ddb17",
+      "title": "سهمیه سوخت خودروهای فرسوده قطع می‌شود؟",
+      "summary": "مالکان خودروهای فرسوده در صورت ثبت‌نام در سامانه اسقاط کشور از محدودیت‌های تردد معاف می‌شوند و سهمیه سوخت آنها قطع نخواهد شد",
+      "content": "۱۱:۲۷ -\n\n۱۸ مهر ۱۴۰۵\n\nسهمیه سوخت خودروهای فرسوده قطع می‌شود؟\n\nمالکان خودروهای فرسوده در صورت ثبت‌نام در سامانه اسقاط کشور از محدودیت‌های تردد معاف می‌شوند و سهمیه سوخت آنها قطع نخواهد شد\n\nپ\n\n،\n\nپـ\n\nفرارو- رئیس سازمان گسترش و نوسازی صنایع ایران (ایدرو) اعلام کرد سهمیه بنزین خودروهای فرسوده بالای 20 سال قطع نشده است و مالکان این خودروها برای جایگزینی وسیله نقلیه خود پنج سال فرصت دارند.\n\nطبق آیین‌نامه مالکان این خودروها می‌توانند با ثبت‌نام در سامانه اسقاط کشور تا زمان فراهم شدن تسهیلات و شرایط لازم برای جایگزینی خودرو از محدودیت‌های تردد معاف شوند.\n\nبه گفته مقیمی برای تشویق مالکان به اسقاط خودروهای فرسوده تسهیلات ۴۰۰ میلیون تومانی با بازپرداخت سه‌ساله و نرخ سود ۸ درصد در نظر گرفته شده است. این تسهیلات برای تاکسی‌ها بین یک میلیارد تا یک میلیارد و ۲۰۰ میلیون تومان خواهد بود.\n\nرئیس سازمان گسترش و نوسازی صنایع ایران همچنین توضیح داد که برای اسقاط هر تاکسی شش گواهی به ارزش مجموع ۳۶۰ میلیون تومان در نظر گرفته می‌شود. ارزش لاشه تاکسی فرسوده نیز بین ۷۰ تا ۱۰۰ میلیون تومان برآورد شده است. با احتساب این مبالغ و تسهیلات پیش‌بینی‌شده مجموع اعتبار و منابع قابل استفاده برای نوسازی و جایگزینی تاکسی‌ها می‌تواند به یک میلیارد و ۴۵۰ میلیون تومان برسد.\n\nگفتنی است سن فرسودگی خودروهای سواری ۲۰ سال تعیین شده است. این معیار برای تاکسی‌های درون‌شهری ۱۲ سال و برای موتورسیکلت‌های کاربراتوری شش سال است. البته موتورسیکلت‌های کاربراتوری در صورت احراز شرایط لازم می‌توانند تا ۱۲ سال نیز به فعالیت خود ادامه دهند.\n\nva NewsLis Limi = 5;\n\nاز میان اخبار\n\nسهمیه سوخت خودروهای فرسوده قطع می‌شود؟\n\nقیمت دلار، طلا و سکه امروز شنبه ۱۸ مهر ۱۴۰۵\n\nقیمت طلا جهانی امروز شنبه ۱۸ مهر ۱۴۰۵\n\nقیمت نفت امروز شنبه ۱۸ مهر ۱۴۰۵\n\nشما قبلا این خبر را لایک کرده‌اید .\n\nfunc ion oPe sianNumbe (numbe ) {\n\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\n\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\n\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\n\nelemen .addEven Lis ene (\"click\", func ion() {\n\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n\n. hen(func ion( esponse) {\n\nif ( esponse.s a us == 200) {\n\nesponse.json(). hen(func ion(newSco e) {\n\nva likeNumbe Span = elemen .que ySelec o (\".like\");\n\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\n\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\n\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\n\nva hiddenHea = elemen .que ySelec o (\".hidden\");\n\nvisibleHea .classLis .add(\"hidden\");\n\nfavo i eBu on.classLis .add(\"hidden\");\n\nhiddenHea .classLis . emove(\"hidden\");\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}\n\n});\n\n} else {\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis .add(\"hidden_e o \");\n\nse Timeou (func ion() {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}, 3000);\n\n}\n\n}\n\n})\n\n});\n\n});",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "topics": [
+        "auto"
+      ],
+      "group_id": "local-1619b1a9a7f5",
+      "original_news_id": "a732e9f7eb63d7530fa5",
+      "source_ids": [],
+      "sources": [
+        {
+          "name": "فرارو",
+          "url": "https://fararu.com/fa/news/1008595/%D8%B3%D9%87%D9%85%DB%8C%D9%87-%D8%B3%D9%88%D8%AE%D8%AA-%D8%AE%D9%88%D8%AF%D8%B1%D9%88%D9%87%D8%A7%DB%8C-%D9%81%D8%B1%D8%B3%D9%88%D8%AF%D9%87-%D9%82%D8%B7%D8%B9-%D9%85%DB%8C-%D8%B4%D9%88%D8%AF"
+        }
+      ],
+      "image": "https://cdn.fararu.com/thumbnail/wiiu2ndqvyim/gFzSz7-XbKiBZjGWhTTLgaLc2MYjhr1_MdL8AjEmUJBj_LFgeu0s0h8mjLlPHEOn6G96VGqAIrbJWN4vicPkSwKDyiobmWKuxop6o9xNkNPpZf81AWUXL1Ro4069RtMX/%D8%AE%D9%88%D8%AF%D8%B1%D9%88+%D9%81%D8%B1%D8%B3%D9%88%D8%AF%D9%87.jpg",
+      "importance_score": 0,
+      "created_at": "2026-10-10T08:00:29.434Z",
+      "updated_at": "2026-10-10T08:00:29.434Z",
+      "published_at": "2026-10-10T11:27:25+03:30",
+      "status": "published",
+      "ai_managed": false,
+      "generated_by": "internal-republish-v1",
+      "manual_locked": false
+    },
+    "article-210d5dd071d6c85d": {
+      "id": "article-210d5dd071d6c85d",
+      "title": "قیمت طلا امروز شنبه ۱۸ مهر ۱۴۰۵/صعود قیمت طلا",
+      "summary": "قیمت طلا امروز با افزایش 66 دلاری نسبت به روز گذشته، 4194 (چهار هزار و یکصد و نود و چهار) دلار ارزیابی شد.",
+      "content": "قیمت طلا امروز شنبه ۱۸ مهر ۱۴۰۵/صعود قیمت طلا\n\nسایت خوان روزنامه دنیای اقتصاد\n\nتاریخ انتشار :\n\n۱۴۰۵/۰۷/۱۸ ۱۱:۲۱\n\nشماره خبر :\n\n۴۳۰۰۷۹۲\n\nدنیای اقتصاد :\n\nقیمت طلا امروز با افزایش ۶۶ دلاری نسبت به روز گذشته، ۴۱۹۴ (چهار هزار و یکصد و نود و چهار) دلار ارزیابی شد.\n\nدر بازار جهانی امروز، قیمت‌‌‌‌ اونس طلا ‌‌ صعود را تجربه کرد.\n\nآخرین نرخ اونس طلا\n\nقیمت طلا امروز با افزایش ۶۶ دلاری نسبت به روز گذشته، ۴۱۹۴ (چهار هزار و یکصد و نود و چهار) دلار ارزیابی شد.\n\nبخش\n\nسایت‌خوان،\n\nصرفا بازتاب‌دهنده اخبار رسانه‌های رسمی کشور است.\n\n-->\n\ndocumen .addEven Lis ene ('DOMCon en Loaded', func ion() {\n\ncons sha eBu on = documen .que ySelec o ('.news_sha e_bu on');\n\nif (!sha eBu on) e u n;\n\nif (!naviga o .sha e) {\n\nconsole.log('Web Sha e API no suppo ed in his b owse . Hiding he bu on.');\n\nsha eBu on.s yle.display = 'none';\n\ne u n;\n\n}\n\nsha eBu on.addEven Lis ene ('click', async () => {\n\ny {\n\ncons sha eDa a = {\n\ni le: \" u0642 u06cc u0645 u062a u0637 u0644 u0627 u0627 u0645 u0631 u0648 u0632 u0634 u0646 u0628 u0647 u06f1 u06f8 u0645 u0647 u0631 u06f1 u06f4 u06f0 u06f5 / u0635 u0639 u0648 u062f u0642 u06cc u0645 u062a u0637 u0644 u0627 \",\n\nex : \" u0642 u06cc u0645 u062a u0637 u0644 u0627 u0627 u0645 u0631 u0648 u0632 u0628 u0627 u0627 u0641 u0632 u0627 u06cc u0634 66 u062f u0644 u0627 u0631 u06cc u0646 u0633 u0628 u062a u0628 u0647 u0631 u0648 u0632 u06af u0630 u0634 u062a u0647 u060c 4194 ( u0686 u0647 u0627 u0631 u0647 u0632 u0627 u0631 u0648 u06cc u06a9 u0635 u062f u0648 u0646 u0648 u062f u0648 u0686 u0647 u0627 u0631) u062f u0644 u0627 u0631 u0627 u0631 u0632 u06cc u0627 u0628 u06cc u0634 u062f.\",\n\nu l: \"h ps: / /donya-e-eq esad.com /fa / iny /news-4300792\" };\n\nawai naviga o .sha e(sha eDa a);\n\nconsole.log('Con en sha ed successfully!');\n\n} ca ch (e o ) {\n\nif (e o .name !== 'Abo E o ') {\n\nconsole.e o ('E o sha ing con en :', e o );\n\n}\n\n}\n\n});\n\n});\n\nاخبار مرتبط\n\nنرخ ارز دلار، طلا و یورو امروز چهارشنبه ۱۱ شهریور ۱۴۰۵/ طلا و سکه گران شدند\n\nنرخ ارز دلار، طلا و یورو امروز سه‌شنبه ۱۰ شهریور ۱۴۰۵/ طلا و سکه گران شدند\n\nنرخ ارز دلار، طلا و یورو امروز دوشنبه ۹ شهریور ۱۴۰۵/ طلا و سکه گران شدند\n\nنرخ ارز دلار، طلا و یورو امروز شنبه ۷ شهریور ۱۴۰۵/ صعود طلا و سکه\n\nنرخ ارز دلار، طلا و یورو امروز پنجشنبه ۵ شهریور ۱۴۰۵/شیب صعودی طلا و سکه",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "topics": [
+        "currency-gold"
+      ],
+      "group_id": "local-164caef6ff50",
+      "original_news_id": "1e41061649c91b2192cf",
+      "source_ids": [],
+      "sources": [
+        {
+          "name": "دنیای اقتصاد",
+          "url": "https://donya-e-eqtesad.com/%D8%A8%D8%AE%D8%B4-%D8%B3%D8%A7%DB%8C%D8%AA-%D8%AE%D9%88%D8%A7%D9%86-62/4300792-%D9%82%DB%8C%D9%85%D8%AA-%D8%B7%D9%84%D8%A7-%D8%A7%D9%85%D8%B1%D9%88%D8%B2-%D8%B4%D9%86%D8%A8%D9%87-%D9%85%D9%87%D8%B1-%D8%B5%D8%B9%D9%88%D8%AF-%D9%82%DB%8C%D9%85%D8%AA-%D8%B7%D9%84%D8%A7"
+        }
+      ],
+      "image": "https://cdn.donya-e-eqtesad.com/thumbnail/Zp1K6z9GeVv8/QHn8O9nsSzT8qCU7RegsN6Pbb5v74eEtbKeSOh05RabD99QBTI_HOUt7TZyzEhnm/%D9%82%DB%8C%D9%85%D8%AA+%D8%B7%D9%84%D8%A7%DB%8C+%D8%AC%D9%87%D8%A7%D9%86%DB%8C+.jpg",
+      "importance_score": 8,
+      "created_at": "2026-10-10T08:00:29.434Z",
+      "updated_at": "2026-10-10T08:00:29.434Z",
+      "published_at": "2026-10-10T11:21:56+03:30",
+      "status": "published",
+      "ai_managed": false,
+      "generated_by": "internal-republish-v1",
+      "manual_locked": false
     }
   }
 }
