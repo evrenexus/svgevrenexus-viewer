@@ -1,7 +1,7 @@
 /* Evren Nexus — shared featured loader and safe page rendering */
 (function(){
 "use strict";
-var URL_="data/public/featured.json",pending=null,policyPending=null;
+var URL_="data/public/featured.json",pending=null,policyPending=null,activeTopic="home";
 function load(){
  if(!pending)pending=fetch(URL_+"?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("featured.json HTTP "+r.status);return r.json()}).catch(function(e){pending=null;throw e});
  return pending;
@@ -75,7 +75,7 @@ function render(r){
    if(x.summary){var sm=document.createElement("div");sm.className="important-summary";sm.textContent=x.summary;c.appendChild(sm)}
    var m=document.createElement("div");m.className="important-meta";m.textContent=(x.source||"")+" • "+(x.published?new Date(x.published).toLocaleString("fa-IR",{dateStyle:"short",timeStyle:"short"}):"");c.appendChild(m);a.appendChild(c);ih.appendChild(a);
  });}
- var ia=document.createElement("a");ia.href="./important-archive.html"+(topic&&topic!=="home"?"?topic="+encodeURIComponent(topic):"");ia.textContent="مشاهده آرشیو مطالب مهم";ia.style.cssText="display:block;text-align:center;padding:10px;background:#f7f7f7;color:#d9232e;text-decoration:none;font-size:10px;font-weight:700;border-top:1px solid #edf0f1";ih.appendChild(ia);
+ var ia=document.createElement("a");ia.href="./important-archive.html"+(activeTopic&&activeTopic!=="home"?"?topic="+encodeURIComponent(activeTopic):"");ia.textContent="مشاهده آرشیو مطالب مهم";ia.style.cssText="display:block;text-align:center;padding:10px;background:#f7f7f7;color:#d9232e;text-decoration:none;font-size:10px;font-weight:700;border-top:1px solid #edf0f1";ih.appendChild(ia);
 
  var regular=(r.regular||[]).slice(0,16),list=document.getElementById("list");
  if(list){
@@ -135,7 +135,7 @@ function buildClientFallback(topic,page,q){
  });
 }
 function renderPage(){
- var qx=new URLSearchParams(location.search),topic=qx.get("topic")||"home",page=Math.max(1,parseInt(qx.get("page"),10)||1),q=(qx.get("q")||"").trim().toLowerCase();
+ var qx=new URLSearchParams(location.search),topic=qx.get("topic")||"home",page=Math.max(1,parseInt(qx.get("page"),10)||1),q=(qx.get("q")||"").trim().toLowerCase();activeTopic=topic;
  getTopic(topic,page).then(function(r){if(!r.ok){console.warn("featured.json:",r.reason);return buildClientFallback(topic,page,q).then(render).catch(function(e){console.warn("client fallback:",e);return renderOldWay(topic,page,q)})}render(r)}).catch(function(e){console.warn("featured.json:",e);buildClientFallback(topic,page,q).then(render).catch(function(){renderOldWay(topic,page,q)});});
 }
 window.EvrenFeatured={load:load,getTopic:getTopic,render:renderPage};
