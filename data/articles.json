@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-10T15:07:03.392Z",
+  "updated": "2026-10-10T15:23:34.100Z",
   "schema": 1,
   "items": {
     "article-eece7c42f225dbaf": {
@@ -36964,6 +36964,34 @@
       "created_at": "2026-10-10T14:41:28.510Z",
       "updated_at": "2026-10-10T14:41:28.510Z",
       "published_at": "2026-10-10T17:53:25+03:30",
+      "status": "published",
+      "ai_managed": false,
+      "generated_by": "internal-republish-v1",
+      "manual_locked": false
+    },
+    "article-3c1cdcab932c5ce9": {
+      "id": "article-3c1cdcab932c5ce9",
+      "title": "تصاویر؛ خسارات سیلاب و گل‌ولای در شیلی",
+      "summary": "جریان شدید آب در شرق سانتیاگو، پایتخت شیلی، گل‌ولای و سنگ‌ها را با خود به خیابان‌ها و معابر کشاند. در پی جاری شدن سیلاب و پوشیده شدن بخش‌هایی از منطقه با آب و گل‌ولای، شماری از خودروها گرفتار جریان آب شدند و آسیب دیدند.",
+      "content": "۱۸:۳۶ -\n\n۱۸ مهر ۱۴۰۵\n\nتصاویر؛ خسارات سیلاب و گل‌ولای در شیلی\n\nجریان شدید آب در شرق سانتیاگو، پایتخت شیلی، گل‌ولای و سنگ‌ها را با خود به خیابان‌ها و معابر کشاند. در پی جاری شدن سیلاب و پوشیده شدن بخش‌هایی از منطقه با آب و گل‌ولای، شماری از خودروها گرفتار جریان آب شدند و آسیب دیدند.\n\nپ\n\n،\n\nپـ\n\nتبلیغات\n\nتبلیغات\n\nتبلیغات\n\nva NewsLis Limi = 5;\n\nاز میان اخبار\n\nتصاویر؛ بازداشت گسترده، اعضای حزب «سوسک»\n\nتصاویر؛ رصد مردم از اتاق کنترل دوربین‌های پلیس طالبان\n\nتصاویر؛ سرکوب معترضان با آب‌پاش و گاز اشک‌آور\n\nشما قبلا این خبر را لایک کرده‌اید .\n\nfunc ion oPe sianNumbe (numbe ) {\n\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\n\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\n\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\n\nelemen .addEven Lis ene (\"click\", func ion() {\n\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n\n. hen(func ion( esponse) {\n\nif ( esponse.s a us == 200) {\n\nesponse.json(). hen(func ion(newSco e) {\n\nva likeNumbe Span = elemen .que ySelec o (\".like\");\n\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\n\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\n\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\n\nva hiddenHea = elemen .que ySelec o (\".hidden\");\n\nvisibleHea .classLis .add(\"hidden\");\n\nfavo i eBu on.classLis .add(\"hidden\");\n\nhiddenHea .classLis . emove(\"hidden\");\n\nva e o Message = elemen .que ySelec o (\".e o _message\");\n\nif (e o Message) {\n\ne o Message.classLis . emove(\"hidden_e o \");\n\n}\n\n});\n\n} else {\n\nif (e o Message) {\n\ne o Message.classLis .add(\"hidden_e o \");\n\nse Timeou (func ion() {\n\n}, 3000);\n\n}\n\n}\n\n})\n\n});\n\n});\n\nتبلیغات",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "topics": [
+        "economy"
+      ],
+      "group_id": "local-c4dfa1ad309c",
+      "original_news_id": "bcacb452cd1bbb21619b",
+      "source_ids": [],
+      "sources": [
+        {
+          "name": "فرارو",
+          "url": "https://fararu.com/fa/news/1008742/%D8%AA%D8%B5%D8%A7%D9%88%DB%8C%D8%B1-%D8%AE%D8%B3%D8%A7%D8%B1%D8%A7%D8%AA-%D8%B3%DB%8C%D9%84%D8%A7%D8%A8-%DA%AF%D9%84-%D9%88%D9%84%D8%A7%DB%8C-%D8%AF%D8%B1-%D8%B4%DB%8C%D9%84%DB%8C"
+        }
+      ],
+      "image": "https://cdn.fararu.com/thumbnail/CPsNDLppDU8S/od_WOMTdAHdTc3SInfht1d2NM4ovbI9OVoJ6yQfg91OEWUIZ5cYpWPeJHhDEfTG-qZ4r_IyHmKtL3fRL1CAV-FOfZtHSdXCHt5TRFQRptc60XdUZz0iovkeCOwJCkfuU/%D8%B3%DB%8C%D9%84+%D8%B4%DB%8C%D9%84%DB%8C.jpg",
+      "importance_score": 0,
+      "created_at": "2026-10-10T15:23:34.100Z",
+      "updated_at": "2026-10-10T15:23:34.100Z",
+      "published_at": "2026-10-10T18:36:17+03:30",
       "status": "published",
       "ai_managed": false,
       "generated_by": "internal-republish-v1",
