@@ -22,6 +22,8 @@ if(rate<C.LINK_RATE_MIN)err("news->news-ai link rate "+(rate*100).toFixed(1)+"% 
 
 // Permanent article integrity. Legacy AI/manual articles may contain old HTML;
 // newly generated internal articles must always be plain text.
+// An image is a hard requirement for featured pages, not for unrelated archived articles.
+const featuredArticleIds=new Set(Object.values(doc.topics||{}).flatMap(t=>(Array.isArray(t?.featured)?t.featured:[]).map(f=>String(f.articleId||""))));
 const seenArticleIds=new Set();
 for(const a of data.articles){
  const id=String(a?.id||"");
@@ -30,7 +32,7 @@ for(const a of data.articles){
  seenArticleIds.add(id);
  if(!String(a?.title||"").trim())err("article "+(id||"(no id)")+" has empty title");
  if(!String(a?.content||"").trim())err("article "+(id||"(no id)")+" has empty content");
- if(!isUrl(a?.image))err("article "+(id||"(no id)")+" has no valid image");
+ if(!isUrl(a?.image)){if(featuredArticleIds.has(id))err("featured article "+(id||"(no id)")+" has no valid image");else warn("archived article "+(id||"(no id)")+" has no valid image");}
  const src=a?.sources?.[0];
  if(!src?.name||!isUrl(src.url))err("article "+(id||"(no id)")+" has no valid source");
  if(a?.status!=="published")warn("article "+id+" is not published");
