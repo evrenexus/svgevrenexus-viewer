@@ -12,6 +12,7 @@ EDITORIAL = ROOT / "data" / "editorial.json"
 ARTICLES = ROOT / "data" / "articles.json"
 
 API = "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent"
+GROQ_API = "https://api.groq.com/openai/v1/chat/completions"
 BATCH_SIZE = 40
 CANDIDATE_LIMIT = 40
 RECENT_HOURS = 4
@@ -31,7 +32,7 @@ GEMINI_QUOTA_BLOCKED = False
 
 TOPICS = [
     "economy","markets","currency-gold","real-estate","technology",
-    "ai","health","auto","science-life","sports","war"
+    "ai","health","auto","science-life"
 ]
 
 TOPIC_KEYWORDS = {
@@ -43,9 +44,7 @@ TOPIC_KEYWORDS = {
     "ai": ["هوش مصنوعی","یادگیری ماشین","یادگیری ماشینی","چت جی پی تی","chatgpt","gemini","claude","مدل زبانی"],
     "health": ["پزشکی","سلامت","بیماری","بیمار","درمان","دارو","پزشک","بیمارستان","اپیدمی","کرونا"],
     "auto": ["خودرو","ماشین","ایران خودرو","ایران‌خودرو","سایپا","خودروساز","خودروسازی","قطعه خودرو","بنزین"],
-    "science-life": ["علم","پژوهش","دانشگاه","فضا","محیط زیست","محیط‌زیست","آزمایش","سبک زندگی","تغذیه","نجوم"],
-    "sports": ["ورزش","فوتبال","بسکتبال","والیبال","تنیس","لیگ","تیم ملی","مسابقه","قهرمانی"],
-    "war": ["جنگ","حمله","موشک","بمباران","درگیری","ارتش","نیروهای مسلح","پهپاد","یمن","اسرائیل","غزه","اوکراین","روسیه","ناتو","عملیات نظامی"]
+    "science-life": ["علم","پژوهش","دانشگاه","فضا","محیط زیست","محیط‌زیست","آزمایش","سبک زندگی","تغذیه","نجوم"]
 }
 
 
@@ -154,8 +153,46 @@ def call_OpenRouter(prompt, key):
     raise RuntimeError(last)
 
 
-def call_ai(prompt, gemini_key, OpenRouter_key):
-    """Gemini first, OpenRouter fallback. A quota failure disables Gemini for this run."""
+def call_groq(prompt, key):
+    """Call Groq's OpenAI-compatible API; used only after Gemini fails."""
+    payload = json.dumps({
+        "model": os.environ.get("GROQ_MODEL", "llama-3.3-70b-versatile"),
+        "messages": [{"role": "user", "content": prompt}],
+        "temperature": 0.1,
+        "max_tokens": 8192,
+        "response_format": {"type": "json_object"}
+    }, ensure_ascii=False).encode("utf-8")
+    last = ""
+    for attempt in range(MAX_RETRIES):
+        req = Request(GROQ_API, data=payload, headers={
+            "Authorization": "Bearer " + key, "Content-Type": "application/json"
+        }, method="POST")
+        try:
+            with urlopen(req, timeout=120) as r:
+                data = json.load(r)
+            response_text = str((((data.get("choices") or [{}])[0]).get("message") or {}).get("content") or "").strip()
+            if not response_text:
+                raise RuntimeError("Empty Groq response")
+            return json.loads(response_text)
+        except HTTPError as e:
+            body = ""
+            try: body = e.read().decode("utf-8", "ignore")[:2000]
+            except Exception: pass
+            last = f"HTTP {e.code}: {body}"
+            print("Groq error:", last)
+            if e.code not in (408, 429, 500, 502, 503, 504):
+                raise RuntimeError(last)
+        except (URLError, TimeoutError, ValueError, RuntimeError) as e:
+            last = str(e)
+            print("Groq temporary error:", last)
+        if attempt + 1 < MAX_RETRIES:
+            delay = RETRY_DELAYS[min(attempt, len(RETRY_DELAYS)-1)] + random.uniform(0, 4)
+            time.sleep(delay)
+    raise RuntimeError(last)
+
+
+def call_ai(prompt, gemini_key, groq_key, OpenRouter_key):
+    """Sequential provider priority: Gemini, then Groq, then OpenRouter."""
     global GEMINI_QUOTA_BLOCKED
     errors = []
     if gemini_key and not GEMINI_QUOTA_BLOCKED:
@@ -166,9 +203,17 @@ def call_ai(prompt, gemini_key, OpenRouter_key):
         except Exception as e:
             msg = str(e)
             errors.append("Gemini: " + msg)
-            print("Gemini failed; trying OpenRouter fallback:", msg[:500])
+            print("Gemini failed; trying Groq:", msg[:500])
             if "GEMINI_QUOTA_EXHAUSTED" in msg or "HTTP 429" in msg:
                 GEMINI_QUOTA_BLOCKED = True
+    if groq_key:
+        try:
+            result = call_groq(prompt, groq_key)
+            print("AI provider used: Groq")
+            return result
+        except Exception as e:
+            errors.append("Groq: " + str(e))
+            print("Groq failed; trying OpenRouter:", str(e)[:500])
     if OpenRouter_key:
         try:
             result = call_OpenRouter(prompt, OpenRouter_key)
@@ -177,8 +222,8 @@ def call_ai(prompt, gemini_key, OpenRouter_key):
         except Exception as e:
             errors.append("OpenRouter: " + str(e))
             print("OpenRouter fallback failed:", str(e)[:500])
-    if not gemini_key and not OpenRouter_key:
-        raise RuntimeError("Both GEMINI_API_KEY and OPENROUTER_API_KEY are missing")
+    if not gemini_key and not groq_key and not OpenRouter_key:
+        raise RuntimeError("GEMINI_API_KEY, GROQ_API_KEY, and OPENROUTER_API_KEY are all missing")
     raise RuntimeError("All configured AI providers failed. " + " | ".join(errors))
 
 
@@ -227,6 +272,19 @@ BREAKING_TERMS = [
     "قطع برق","خاموشی","سقوط","کشته","درگذشت","فوت","توقف پرواز",
     "تعطیلی","ورشکستگی","تعلیق","فوری","لغو شد","اعلام شد"
 ]
+
+SPORT_TERMS = ["ورزش","فوتبال","بسکتبال","والیبال","تنیس","لیگ برتر","تیم ملی","مسابقه ورزشی","قهرمانی","المپیک","جام جهانی","گلزنی","مربی تیم","بازیکن فوتبال"]
+MILITARY_TERMS = ["جنگ","درگیری مسلحانه","حمله نظامی","عملیات نظامی","موشک","بمباران","ارتش","نیروهای مسلح","پهپاد نظامی","رزمایش","تسلیحات","جنگنده","فرمانده نظامی","تلفات نظامی","آتش بس","حمله هوایی","حمله موشکی"]
+
+def is_forbidden_content(x):
+    text = text_for_filter(x)
+    if is_political(x):
+        return "political content is excluded"
+    if any(normalize_title(term) in text for term in SPORT_TERMS):
+        return "sports content is excluded"
+    if any(normalize_title(term) in text for term in MILITARY_TERMS):
+        return "military content is excluded"
+    return ""
 
 def normalize_title(s):
     s = str(s or "").lower()
@@ -335,15 +393,16 @@ def make_local_result(src,meta):
 
     topics=sorted(topic_scores,key=lambda t:(topic_scores[t],t),reverse=True)
     score=max(topic_scores.values()) if topic_scores else base
-    political=bool(meta.get("political"))
+    forbidden=is_forbidden_content(src)
+    political=bool(meta.get("political")) or bool(forbidden)
     return {
         "title":src.get("title",""),"summary":src.get("summary",""),
         "source":src.get("source",""),"published":src.get("published",""),
         "topics":topics,"topic_scores":topic_scores,
         "importance":score,"important":False,"important_topics":[],
         "slider_topics":[],"ticker_topics":[],"breaking":False,
-        "breaking_topics":[],"publishable":not political,
-        "exclude_reason":"political content is excluded" if political else "",
+        "breaking_topics":[],"publishable":not political and not forbidden,
+        "exclude_reason":forbidden or ("political content is excluded" if political else ""),
         "group_id":meta.get("group_id",""),
         "representative":meta.get("duplicate_count",1)==1,
         "reason":"local rule-based classification","analysis_mode":"local",
@@ -377,7 +436,7 @@ def apply_local_selection(ai):
         for nid,v in items.items():
             if not isinstance(v,dict):
                 continue
-            if not v.get("publishable",True) or v.get("political",False):
+            if not v.get("publishable",True) or v.get("political",False) or is_forbidden_content(v):
                 continue
             if not v.get("representative",True):
                 continue
@@ -453,7 +512,8 @@ def normalize_result(src, row):
     important_topics = [t for t in topics if scores.get(t, score) >= IMPORTANT_SCORE_MIN]
     slider_topics = [t for t in topics if scores.get(t, score) >= SLIDER_SCORE_MIN]
     ticker_topics = [t for t in topics if scores.get(t, score) >= TICKER_SCORE_MIN]
-    publishable = bool(row.get("publishable", True))
+    forbidden = is_forbidden_content(src)
+    publishable = bool(row.get("publishable", True)) and not forbidden
     content_type = str(row.get("content_type", "") or "").strip()[:60]
     reject_reason = str(row.get("reject_reason", row.get("exclude_reason", "")) or "").strip()[:300]
     return {
@@ -469,7 +529,7 @@ def normalize_result(src, row):
         "slider_topics": slider_topics if publishable else [],
         "ticker_topics": ticker_topics if publishable else [],
         "publishable": publishable,
-        "exclude_reason": str(row.get("exclude_reason", reject_reason))[:300],
+        "exclude_reason": str(forbidden or row.get("exclude_reason", reject_reason))[:300],
         "content_type": content_type,
         "reject_reason": reject_reason,
         "group_id": str(row.get("group_id","")),
@@ -577,7 +637,7 @@ def find_commons_image(query, article_id):
         print("Article image search failed:", exc)
         return ""
 
-def generate_permanent_articles(all_news, ai, key, OpenRouter_key=""):
+def generate_permanent_articles(all_news, ai, key, groq_key="", OpenRouter_key=""):
     db = load_json(ARTICLES, {"updated": "", "schema": 1, "items": {}})
     if not isinstance(db, dict):
         db = {"updated": "", "schema": 1, "items": {}}
@@ -659,7 +719,7 @@ def generate_permanent_articles(all_news, ai, key, OpenRouter_key=""):
 - content فقط HTML ساده: <p>، <h2>، <ul>، <li>، <strong>.
 - مقاله حدود 500 تا 900 کلمه باشد، مگر اینکه اطلاعات کافی نباشد.
 - summary حداکثر 300 کاراکتر.
-- category یکی از economy,markets,currency-gold,real-estate,technology,ai,health,auto,science-life,sports,war باشد.
+- category یکی از economy,markets,currency-gold,real-estate,technology,ai,health,auto,science-life باشد.
 - sources فقط از منابع ورودی انتخاب شوند.
 - اگر گروه خبر تصویر مناسبی ندارد، image_query یک عبارت کوتاه و دقیق برای جستجوی تصویر مرتبط در Wikimedia Commons بده؛ اگر تصویر مناسب از ورودی وجود دارد image_query را خالی بگذار.
 - از بین گروه‌های ورودی حداکثر ۴ مقاله تولید کن؛ اولویت با اهمیت بیشتر و تازگی بیشتر است، اما اگر تصویر یک گروه پیدا نشد، سراغ گروه بعدی برو تا در نهایت ۴ مقاله قابل انتشار با تصویر ساخته شود.\n- action یکی از create, update, skip باشد.
@@ -675,7 +735,7 @@ def generate_permanent_articles(all_news, ai, key, OpenRouter_key=""):
 """ + json.dumps(candidates, ensure_ascii=False)
 
     try:
-        result = call_ai(prompt, key, OpenRouter_key)
+        result = call_ai(prompt, key, groq_key, OpenRouter_key)
         rows = result.get("articles", []) if isinstance(result, dict) else []
     except Exception as exc:
         print(f"Permanent article Gemini unavailable; using local article fallback: {exc}")
@@ -809,9 +869,10 @@ def attach_permanent_article_links(ai, db):
 def main():
     global GEMINI_QUOTA_BLOCKED
     key = os.environ.get("GEMINI_API_KEY","").strip()
+    groq_key = os.environ.get("GROQ_API_KEY","").strip()
     OpenRouter_key = os.environ.get("OPENROUTER_API_KEY","").strip()
-    if not key and not OpenRouter_key:
-        raise SystemExit("Both GEMINI_API_KEY and OPENROUTER_API_KEY are missing")
+    if not key and not groq_key and not OpenRouter_key:
+        raise SystemExit("GEMINI_API_KEY, GROQ_API_KEY, and OPENROUTER_API_KEY are all missing")
     if not NEWS.exists(): raise SystemExit(f"news.json not found: {NEWS}")
     try:
         news=json.loads(NEWS.read_text(encoding="utf-8"))
@@ -872,7 +933,7 @@ def main():
     save_ai(ai)
     if not gemini_allowed:
         try:
-            article_db = generate_permanent_articles(items, ai, key, OpenRouter_key)
+            article_db = generate_permanent_articles(items, ai, key, groq_key, OpenRouter_key)
             attach_permanent_article_links(ai, article_db)
         except Exception as e:
             print(f"Local permanent article generation failed: {e}")
@@ -891,7 +952,7 @@ def main():
         # Keep processing important stories even when no fresh AI classification is needed.
         if int(usage.get("requests", 0) or 0) < DAILY_REQUEST_BUDGET:
             try:
-                article_db = generate_permanent_articles(items, ai, key)
+                article_db = generate_permanent_articles(items, ai, key, groq_key, OpenRouter_key)
                 usage["requests"] = int(usage.get("requests", 0) or 0) + 1
                 usage["last_article_generation"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
                 ai["usage"] = usage
@@ -928,7 +989,7 @@ def main():
                   "published":x.get("published",""),"topics":x.get("topics",[])}
                  for x in batch]
 
-        prompt="""تو سردبیر ارشد و سخت‌گیر Evren Nexus هستی. هدف، انتخاب «خبر واقعی و ارزشمند» برای یک سایت خبری اقتصادی/فناوری/سلامت/علم/خودرو/ورزش است؛ نه بازنشر هر چیزی که خبرگزاری‌ها منتشر کرده‌اند.
+        prompt="""تو سردبیر ارشد و سخت‌گیر Evren Nexus هستی. هدف، انتخاب «خبر واقعی و ارزشمند» برای یک سایت خبری اقتصادی/فناوری/سلامت/علم/خودرو است؛ نه بازنشر هر چیزی که خبرگزاری‌ها منتشر کرده‌اند.
 دسته‌های مجاز: """ + ",".join(TOPICS) + """.
 
 سیاست تحریریه:
@@ -943,14 +1004,14 @@ def main():
 9) اظهارات نمایندگان مجلس و چهره‌های سیاسی را اگر فقط نظر، واکنش، انتقاد، وعده یا موضع‌گیری است حذف کن.
 10) در موضوع جنگ نیز تحلیل روانی/سیاسی، تهدید لفظی و «آرایش جنگی» را حذف کن؛ اما حمله واقعی، شلیک/اصابت موشک، عملیات نظامی واقعی، انفجار مهم، تلفات واقعی یا تصمیم اجرایی با اثر جدی را می‌توان publishable=true کرد.
 11) پزشکیان استثناست: خبر را فقط به خاطر نام «پزشکیان» حذف نکن. درباره او هم همان معیار ارزش خبری را اعمال کن؛ اگر رویداد واقعی و مهم باشد منتشر شود.
-12) خبر اقتصادی، بازار، ارز و طلا، مسکن، فناوری، هوش مصنوعی، پزشکی و سلامت، خودرو، علم، ورزش و سایر دسته‌های مجاز را بر اساس اثر و اهمیت واقعی ارزیابی کن.
+12) فقط خبرهای اقتصادی، بازار، ارز و طلا، مسکن، فناوری، هوش مصنوعی، پزشکی و سلامت، خودرو و علم را بر اساس اثر و اهمیت واقعی ارزیابی کن. خبر سیاسی، نظامی یا ورزشی در هر شرایطی publishable=false است.
 13) برای امتیازدهی اهمیت از این مقیاس ثابت استفاده کن: 0 تا 7 کم‌اهمیت؛ 8 تا 12 معمولی؛ 13 تا 15 مهم و دارای اثر ملموس؛ 16 تا 20 بسیار مهم و دارای اثر گسترده/فوری.
 14) فقط به کلمات تحریک‌آمیز عنوان، عبارت‌هایی مثل «اعلام شد»، «رسید» یا وجود یک درصد بزرگ امتیاز بالا نده؛ اثر واقعی، تازگی، اندازه پیامد، تعداد افراد/بازارهای متأثر و اعتبار اطلاعات را بسنج.
 15) خبر دارای عدد مشخص و اثر اقتصادی/اجتماعی قابل‌توجه، مثل جهش بزرگ هزینه یا تورم مصالح، می‌تواند مهم باشد؛ خبر تکراری، جزئی، تبلیغاتی یا صرفاً نقل‌قولی نباید مهم شود.
 16) امتیاز کلی importance و امتیازهای topic_scores باید با هم سازگار باشند؛ امتیاز هر موضوع فقط وقتی بالا باشد که خبر هم واقعاً به آن موضوع مربوط باشد و هم اثر قابل‌توجهی داشته باشد.
 17) از هر رویداد فقط نمایندهٔ اصلی را مهم علامت بزن؛ گزارش‌های تکراری همان رویداد را به‌عنوان خبر مهم جداگانه انتخاب نکن.
 18) اطلاعات را جعل نکن و از متن ورودی چیزی اضافه نکن.
-19) content_type را یکی از این مقادیر کوتاه انتخاب کن: real_event, economic_news, market_news, technology_news, health_news, science_news, sports_news, auto_news, military_event, political_statement, military_statement, parliamentary_statement, commentary, personal_fluff, advertising, rumor, duplicate, other.
+19) content_type را یکی از این مقادیر کوتاه انتخاب کن: real_event, economic_news, market_news, technology_news, health_news, science_news, auto_news, political_statement, military_statement, parliamentary_statement, commentary, personal_fluff, advertising, rumor, duplicate, other.
 15) اگر publishable=false است، reject_reason کوتاه و مشخص بنویس.
 16) JSON فقط و بدون توضیح اضافی.
 
