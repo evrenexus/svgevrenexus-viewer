@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="آرشیو کامل آخرین مطالب و خبرهای Evren Nexus">
+<title>آرشیو آخرین مطالب | Evren Nexus</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;background:#f1f2f3;color:#20272d;font-family:Vazir,Tahoma,Arial,sans-serif}
+#page{width:850px;max-width:100%;margin:auto;padding:148px 10px 25px;display:flex;gap:10px;direction:rtl}
+#content{width:610px;min-width:0;flex:0 0 610px}#sidebar-host{width:200px;flex:0 0 200px}
+.head,.filters,.archive{background:#fff;border:1px solid #dfe2e4;margin-bottom:12px}.head{padding:13px 14px;border-top:3px solid #202c35}.head h1{font-size:16px;margin:0}.head p{font-size:9px;color:#7d878d;margin:5px 0 0;line-height:1.8}
+.filters{display:flex;gap:7px;padding:8px}.filters input,.filters select{min-width:0;flex:1;padding:9px;border:1px solid #d8dfe3;background:#fff;font:10px Vazir,Tahoma,Arial;color:#20272d}.item{display:flex;gap:10px;padding:11px;border-bottom:1px solid #edf0f1;text-decoration:none;color:#343b40}.item:hover{background:#fafafa}.item img{width:115px;min-width:115px;height:74px;object-fit:cover;background:#eee}.content{min-width:0;flex:1}.title{font-size:11px;font-weight:700;line-height:1.9;color:#20272d}.summary{font-size:9.5px;line-height:1.8;color:#737a7f;margin-top:3px}.meta{font-size:8.5px;color:#969da2;margin-top:6px}.pagination{display:flex;justify-content:center;align-items:center;gap:8px;padding:12px;background:#fff}.pagination button{border:1px solid #d9dfe3;background:#fff;padding:7px 13px;font:10px Vazir,Tahoma,Arial;cursor:pointer}.pagination button:disabled{opacity:.4;cursor:default}.status{padding:25px;text-align:center;color:#777;font-size:10px}.back{display:inline-block;margin-bottom:10px;background:#202c35;color:#fff;text-decoration:none;padding:7px 12px;font-size:9px}
+@media(max-width:700px){#page{width:100%;padding:242px 8px 20px;display:block}#content{width:100%;min-width:0}#sidebar-host{display:none}.filters{display:block}.filters input,.filters select{width:100%;margin-bottom:6px}.item{gap:8px;padding:9px}.item img{width:92px;min-width:92px;height:64px}.title{font-size:10px}}
+</style>
+</head>
+<body>
+<main id="page"><section id="content">
+<a class="back" href="./news-river.html">بازگشت به بخش خبرها</a>
+<header class="head"><h1>آرشیو آخرین مطالب</h1><p>فهرست مطالب جمع‌آوری‌شده از منابع سایت؛ جستجو در عنوان و خلاصه، فیلتر موضوعی و پیمایش صفحه‌به‌صفحه.</p></header>
+<div class="filters"><input id="q" type="search" placeholder="جستجو در عنوان و خلاصه..." autocomplete="off"><select id="topic"><option value="">همه موضوع‌ها</option><option value="economy-investment">اقتصاد و سرمایه‌گذاری</option><option value="crypto">ارزهای دیجیتال</option><option value="currency-gold">ارز و طلا</option><option value="real-estate">مسکن</option><option value="technology-ai">فناوری و هوش مصنوعی</option><option value="health">پزشکی و سلامت</option><option value="auto">خودرو</option><option value="science-life">علم و سبک زندگی</option></select></div>
+<div class="archive"><div id="list" class="status">در حال دریافت آرشیو...</div><div class="pagination"><button id="prev" type="button" disabled>صفحه قبلی</button><span id="pageNum">۱</span><button id="next" type="button" disabled>صفحه بعدی</button></div></div>
+</section><aside id="sidebar-host"></aside></main>
+<script src="./Evrenexus-sidebar.js?v=1"></script>
+<script src="./Evrenexus-header.js?v=20261010-03"></script>
+<script>
+(function(){
+"use strict";
+var all=[],page=1,per=20,topicNames={"economy-investment":"economy-investment","crypto":"crypto","currency-gold":"currency-gold","real-estate":"real-estate","technology-ai":"technology-ai","health":"health","auto":"auto","science-life":"science-life"};
+var list=document.getElementById("list"),q=document.getElementById("q"),topic=document.getElementById("topic"),prev=document.getElementById("prev"),next=document.getElementById("next"),pageNum=document.getElementById("pageNum");
+function esc(v){return String(v||"").replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function plain(v){return String(v||"").replace(/<[^>]*>/g," ").replace(/&nbsp;|&#160;/gi," ").replace(/\s+/g," ").trim()}
+function matches(x){
+ var query=q.value.trim().toLocaleLowerCase(),hay=(x.title||"")+" "+(x.summary||"")+" "+(x.source||"");
+ if(query&&hay.toLocaleLowerCase().indexOf(query)<0)return false;
+ var t=topic.value;if(t){var topics=Array.isArray(x.topics)?x.topics:[];if(t==="economy-investment"&&!(topics.includes("economy")||topics.includes("markets")||topics.includes(t)))return false;if(t==="technology-ai"&&!(topics.includes("technology")||topics.includes("ai")||topics.includes(t)))return false;if(t!=="economy-investment"&&t!=="technology-ai"&&!topics.includes(t))return false}
+ return true
+}
+function render(){
+ var rows=all.filter(matches),pages=Math.max(1,Math.ceil(rows.length/per));if(page>pages)page=pages;
+ var start=(page-1)*per,items=rows.slice(start,start+per),html="";
+ items.forEach(function(x){
+  var url=x.url?"./viewer.html?url="+encodeURIComponent(x.url):"#";
+  html+='<a class="item" href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">';
+  if(/^https?:\/\//i.test(x.image||""))html+='<img src="'+esc(x.image)+'" alt="" loading="lazy" referrerpolicy="no-referrer">';
+  html+='<div class="content"><div class="title">'+esc(x.title)+'</div>';
+  if(x.summary)html+='<div class="summary">'+esc(plain(x.summary))+'</div>';
+  html+='<div class="meta">'+esc(x.source||"")+" · "+esc(x.published?new Date(x.published).toLocaleString("fa-IR",{dateStyle:"short",timeStyle:"short"}):"")+'</div></div></a>';
+ });
+ list.innerHTML=html||'<div class="status">مطلبی با این مشخصات پیدا نشد.</div>';
+ prev.disabled=page<=1;next.disabled=page>=pages;pageNum.textContent=page.toLocaleString("fa-IR")+" / "+pages.toLocaleString("fa-IR")+" · "+rows.length.toLocaleString("fa-IR")+" مطلب";
+}
+function load(url){return fetch(url+"?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("fetch failed");return r.json()})}
+load("data/public/news.json").catch(function(){return load("data/news.json")}).then(function(d){
+ all=(Array.isArray(d.items)?d.items:Array.isArray(d)?d:[]).slice().sort(function(a,b){return new Date(b.first_seen_at||b.published||0)-new Date(a.first_seen_at||a.published||0)});
+ render();
+}).catch(function(){list.innerHTML='<div class="status">آرشیو دریافت نشد؛ لطفاً بعداً دوباره تلاش کنید.</div>'});
+q.addEventListener("input",function(){page=1;render()});topic.addEventListener("change",function(){page=1;render()});
+prev.addEventListener("click",function(){if(page>1){page--;render();window.scrollTo(0,0)}});next.addEventListener("click",function(){page++;render();window.scrollTo(0,0)});
+})();
+</script>
+</body></html>
