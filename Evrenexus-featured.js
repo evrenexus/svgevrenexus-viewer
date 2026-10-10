@@ -28,6 +28,7 @@ function loadPolicy(){
 }
 function getTopic(topic,page){
  var key=topic||"home";
+ if(key==="economy-investment"||key==="crypto")return buildClientFallback(key,Math.max(1,parseInt(page,10)||1),"");
  return Promise.all([load(),loadPolicy()]).then(function(parts){var doc=parts[0];
   var t=doc&&doc.topics&&doc.topics[key];
   if(!t||!Array.isArray(t.featured)||!Array.isArray(t.regular)){
@@ -40,10 +41,12 @@ function getTopic(topic,page){
  });
 }
 function img(v){return typeof v==="string"&&/^https?:\/\//i.test(v.trim())?v.trim():"";}
+function isCryptoItem(x){var z=normPolicy((x&&x.title||"")+" "+(x&&x.summary||"")+" "+(x&&x.source||""));return /(ارز دیجیتال|رمزارز|رمز ارز|بیت ?کوین|اتریوم|تتر|بایننس|کریپتو|کریپتوکارنسی|دوج ?کوین|ریپل|سولانا|کاردانو|ترون|لایت ?کوین|توکن|بلاک ?چین|بلاکچین|دیفای|وب ?۳|web3|bitcoin|ethereum|crypto|cryptocurrency|blockchain|altcoin|defi|solana|ripple|dogecoin|binance|stablecoin|token)/i.test(z);}
+function topicMatches(x,topic){var ts=Array.isArray(x&&x.topics)?x.topics:[];if(topic==="economy-investment")return ts.indexOf("economy")!==-1||ts.indexOf("markets")!==-1||ts.indexOf("economy-investment")!==-1;if(topic==="crypto")return ts.indexOf("crypto")!==-1||isCryptoItem(x);return ts.indexOf(topic)!==-1;}
 function renderOldWay(topic,page,q){
  return loadPolicy().then(function(){return fetch("data/public/news.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("public/news.json HTTP "+r.status);return r.json()}).catch(function(){return fetch("data/news.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("news.json HTTP "+r.status);return r.json()})}).then(function(d){
   var items=filterItems(Array.isArray(d.items)?d.items:(Array.isArray(d)?d:[]));
-  if(topic&&topic!=="home")items=items.filter(function(x){return Array.isArray(x.topics)&&x.topics.indexOf(topic)!==-1});
+  if(topic&&topic!=="home")items=items.filter(function(x){return topicMatches(x,topic)});
   if(q)items=items.filter(function(x){return((x.title||"")+" "+(x.summary||"")+" "+(x.source||"")).toLowerCase().indexOf(q)!==-1});
   var list=document.getElementById("list");if(!list)return;
   list.innerHTML="";
@@ -117,7 +120,7 @@ function buildClientFallback(topic,page,q){
     important:e.auto_important===true,score:Number(e.ai_importance)||0
    });
   });
-  var filtered=topic&&topic!=="home"?rows.filter(function(x){return x.topics.indexOf(topic)!==-1}):rows.slice();
+  var filtered=topic&&topic!=="home"?rows.filter(function(x){return topicMatches(x,topic)}):rows.slice();
   filtered.sort(function(a,b){return (Number(b.important)-Number(a.important))||(b.score-a.score)||(new Date(b.published)-new Date(a.published));});
   var featured=filtered.filter(function(x){return x.important}).slice(0,4);
   var used={};featured.forEach(function(x){used[x.id]=true});
