@@ -9,6 +9,9 @@ on:
     paths:
       - '.github/workflows/update-all.yml'
       - 'scripts/build-important-pages.mjs'
+      - 'scripts/build-featured.mjs'
+      - 'scripts/news_ai.py'
+      - 'scripts/validate-featured.mjs'
 
 permissions:
   contents: write
