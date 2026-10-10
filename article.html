@@ -54,7 +54,7 @@ function render(a){
  var budget=4000-title.length-summary.length-2;
  var truncated=body.length>budget;
  if(truncated){
-   var linkReserve=sourceUrl?continuation.length+1:1;
+   var linkReserve=sourceUrl?continuation.length+3:1;
    body=body.slice(0,Math.max(0,budget-linkReserve)).trim().replace(/\\s+\\S*$/,"").trim()+"…";
    if(sourceUrl)body+="\\n\\n"+continuation;
  }
