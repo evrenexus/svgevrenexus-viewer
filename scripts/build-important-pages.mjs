@@ -76,7 +76,7 @@ const page=a=>{
 
 ${source.name?'<div class="sources">منبع: '+(readerUrl?'<a href="'+esc(readerUrl)+'">'+esc(source.name)+'</a>':esc(source.name))+'</div>':''}
 </article></section><aside id="sidebar-host"></aside></main><footer class="Evrenxus-home-footer"><nav class="footer-nav"><a href="../">صفحه اصلی</a><a href="../news-river.html">آخرین مطالب</a><a href="../important-archive.html">آرشیو مطالب مهم</a></nav><div class="footer-copy">© Evren Nexus · اقتصاد، بازارها، ملک و فناوری</div></footer>
-<script src="../Evrenexus-sidebar.js?v=1"></script><script src="../Evrenexus-header.js?v=20261010-03"></script></body></html>`;
+<script src="../Evrenexus-sidebar.js?v=20261010-02"></script><script src="../Evrenexus-header.js?v=20261010-03"></script></body></html>`;
 };
 
 export function generateImportantPages(rows){
