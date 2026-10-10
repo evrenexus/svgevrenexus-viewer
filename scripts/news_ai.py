@@ -753,6 +753,23 @@ def generate_permanent_articles(all_news, ai, key, groq_key="", OpenRouter_key="
         title, content = str(row.get("title", "")).strip(), str(row.get("content", "")).strip()
         if not title or not content:
             continue
+        # If the first draft is too long, request a genuine summary; never clip it.
+        plain = lambda value: re.sub(r"\\s+", " ", html.unescape(re.sub(r"(?s)<[^>]+>", " ", str(value or "")))).strip()
+        if len(plain(content)) > 4000:
+            summary_prompt = """متن HTML زیر را به خلاصه‌ای واقعی و مستقل به فارسی بازنویسی کن. متن را از ابتدا قطع نکن؛ نکات اصلی و اعداد مهم را حفظ کن، تبلیغ و تکرار را حذف کن و جمله پایانی کامل باشد. متن خالص باید حداکثر 4000 کاراکتر داشته باشد. فقط JSON با کلید content و HTML ساده برگردان.
+متن:
+""" + content
+            try:
+                summarized = call_ai(summary_prompt, key, groq_key, OpenRouter_key)
+                candidate = str(summarized.get("content", "") if isinstance(summarized, dict) else "").strip()
+                if candidate and len(plain(candidate)) <= 4000:
+                    content = candidate
+                else:
+                    print(f"Permanent article skipped: AI summary exceeds 4000 characters: {title}")
+                    continue
+            except Exception as exc:
+                print(f"Permanent article skipped: AI summary failed: {title}: {exc}")
+                continue
         aid = str(row.get("article_id", "")).strip()
         if not aid:
             aid = "article-" + hashlib.sha1(normalize_title(title).encode("utf-8")).hexdigest()[:16]
