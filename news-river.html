@@ -6,10 +6,9 @@
 <title>بخش خبری | Evren Nexus</title>
 <style>
 *{box-sizing:border-box}html,body{margin:0;padding:0;background:#f1f2f3;color:#20272d;font-family:Vazir,Tahoma,Arial,sans-serif}
-#topic-page{width:850px;max-width:100%;margin:0 auto;padding:148px 10px 30px;display:grid;grid-template-columns:610px 200px;align-items:start;column-gap:10px;direction:rtl}
-#topic-content{width:100%;max-width:none;min-width:0;grid-column:1;grid-row:1;overflow:hidden}
-#sidebar-host{width:200px;min-width:0;max-width:200px;grid-column:2;grid-row:1}
-@media(min-width:701px) and (max-width:849px){#topic-page{width:100%;grid-template-columns:minmax(0,1fr) 200px}#topic-content{width:100%;max-width:100%;min-width:0}#sidebar-host{width:200px}}
+#topic-page{width:850px;max-width:100%;margin:0 auto;padding:148px 10px 30px;display:flex;flex-direction:row;align-items:flex-start;gap:10px;direction:rtl}
+#topic-content{width:610px;max-width:610px;min-width:610px;flex:0 0 610px;order:1;overflow:hidden}
+#sidebar-host{width:200px;min-width:200px;max-width:200px;flex:0 0 200px;order:2}
 .topic-masthead{background:#fff;border:1px solid #dfe2e4;border-top:3px solid #202c35;padding:12px 14px;margin-bottom:12px;overflow:hidden}
 .topic-masthead:after{display:none}
 .topic-kicker{font-size:8px;letter-spacing:.5px;color:#858c91;margin-bottom:4px}.topic-name{font-size:18px;font-weight:700;line-height:1.6;color:#20272d}.topic-sub{font-size:9px;color:#858c91;margin-top:4px;line-height:1.8}
