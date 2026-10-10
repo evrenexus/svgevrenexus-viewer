@@ -41,7 +41,7 @@ const clipHtml=(value,max=MAX_BODY_CHARS)=>{
       continue;
     }
     if(count+token.length<=max){out+=esc(token);count+=token.length;continue;}
-    const remain=Math.max(0,max-count);if(remain)out+=esc(token.slice(0,remain));out+="…";truncated=true;break;
+    const remain=Math.max(0,max-count-1);if(remain)out+=esc(token.slice(0,remain));if(max>0)out+="…";truncated=true;break;
   }
   if(truncated)for(let i=stack.length-1;i>=0;i--)out+="</"+stack[i]+">";
   return {html:out,truncated};
@@ -58,7 +58,7 @@ const page=a=>{
  const willTruncate=fullText.length>contentLimit;
  const continuationText="جهت مطالعه متن کامل‌تر اینجا کلیک کنید";
  const continuation=willTruncate&&readerUrl?'<p class="continue-reading"><a href="'+esc(readerUrl)+'" target="_blank" rel="noopener noreferrer">'+continuationText+'</a></p>':"";
- const reserved=willTruncate&&readerUrl?continuationText.length:0;
+ const reserved=willTruncate&&readerUrl?continuationText.length+1:0;
  const clipped=clipHtml(rich(a.content),Math.max(0,contentLimit-reserved));
  const content=clipped.html;
  return `<!doctype html><html lang="fa" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
