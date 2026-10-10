@@ -28,7 +28,6 @@ function loadPolicy(){
 }
 function getTopic(topic,page){
  var key=topic||"home";
- if(key==="economy-investment"||key==="crypto"||key==="technology-ai")return buildClientFallback(key,Math.max(1,parseInt(page,10)||1),"");
  return Promise.all([load(),loadPolicy()]).then(function(parts){var doc=parts[0];
   var t=doc&&doc.topics&&doc.topics[key];
   if(!t||!Array.isArray(t.featured)||!Array.isArray(t.regular)){
@@ -64,11 +63,11 @@ function renderOldWay(topic,page,q){
  });}).catch(function(e){var list=document.getElementById("list");if(list)list.innerHTML='<div class="error">دریافت اخبار انجام نشد.</div>';console.warn("news.json fallback:",e)});
 }
 function render(r){
- var F=((r.important&&r.important.length)?r.important:(r.featured||[])).slice(0,4),list=document.getElementById("list"),important=document.getElementById("important"),ih=document.getElementById("importantList");
+ var F=(r.featured||[]).slice(0,4),I=(r.important||[]).filter(function(x){return !!x.articleUrl;}).slice(0,4),list=document.getElementById("list"),important=document.getElementById("important"),ih=document.getElementById("importantList");
  var br=document.getElementById("Evrenxus-breaking-track");
  if(br){br.innerHTML="";if(F.length){var tk=document.createElement("div");tk.className="Evrenxus-breaking-ticker";var g=document.createElement("div");g.className="Evrenxus-breaking-group";F.forEach(function(x){if(!x.articleUrl)return;var a=document.createElement("a");a.href="./"+x.articleUrl;a.textContent=x.title||"";g.appendChild(a)});tk.appendChild(g);tk.appendChild(g.cloneNode(true));br.appendChild(tk)}else br.textContent="فعلاً مطلب مهمی برای این موضوع وجود ندارد."}
  if(important)important.style.display="";
- if(ih){ih.innerHTML="";F.forEach(function(x){
+ if(ih){ih.innerHTML="";I.forEach(function(x){
    if(!x.articleUrl)return;
    var a=document.createElement("a");a.className="important-item";a.href="./"+x.articleUrl;
    var iu=img(x.image);if(iu){var im=document.createElement("img");im.src=iu;im.alt=x.title||"";im.loading="lazy";im.referrerPolicy="no-referrer";im.onerror=function(){this.remove()};a.appendChild(im);}
@@ -105,20 +104,25 @@ function render(r){
 function buildClientFallback(topic,page,q){
  return Promise.all([
   fetch("data/news.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("news.json HTTP "+r.status);return r.json()}),
-  fetch("data/editorial.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("editorial.json HTTP "+r.status);return r.json()}).catch(function(){return {items:{}}})
+  fetch("data/editorial.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("editorial.json HTTP "+r.status);return r.json()}).catch(function(){return {items:{}}}),
+  fetch("data/articles.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("articles.json HTTP "+r.status);return r.json()}).catch(function(){return {items:{}}})
  ]).then(function(parts){
-  var raw=parts[0], ed=parts[1]||{}, items=Array.isArray(raw)?raw:(Array.isArray(raw.items)?raw.items:[]);
-  var em=ed.items||{}, rows=[];
+  var raw=parts[0], ed=parts[1]||{}, ad=parts[2]||{}, items=Array.isArray(raw)?raw:(Array.isArray(raw.items)?raw.items:[]);
+  var em=ed.items||{}, rawArts=ad.items||ad.articles||ad, arts=Array.isArray(rawArts)?rawArts:Object.entries(rawArts).filter(function(kv){return kv[1]&&typeof kv[1]==="object"}).map(function(kv){return Object.assign({id:kv[0]},kv[1])}), rows=[];
   items.forEach(function(n){
    if(!n||!n.id||blockedByPolicy(n))return;
    var e=em[n.id]||{};
    if(e.ai_political===true||e.auto_publishable===false)return;
+   var article=arts.find(function(a){return String(a.original_news_id||"")===String(n.id)||(n.group_id&&a.group_id&&String(a.group_id)===String(n.group_id))});
+   var permanent=article&&article.status==="published"&&String(article.content||"").trim().length>0;
+   var articleId=permanent?String(article.id||article.slug||""):"";
+   var articleUrl=permanent&&articleId?"articles/"+encodeURIComponent(articleId)+".html":"";
    rows.push({
     id:n.id,title:e.title||n.title,summary:e.summary||n.summary||"",image:e.image||n.image||"",
     source:n.source||"",published:n.published||"",url:n.url||"",
-    articleId:n.id,articleUrl:"article.html?id="+encodeURIComponent(n.id),
+    articleId:articleId,articleUrl:articleUrl,
     topics:Array.from(new Set([].concat(Array.isArray(n.topics)?n.topics:[],Array.isArray(e.ai_topics)?e.ai_topics:[]).filter(Boolean))),
-    important:e.auto_important===true,score:Number(e.ai_importance)||0
+    important:e.auto_important===true&&!!articleUrl,score:Number(e.ai_importance)||0
    });
   });
   var filtered=topic&&topic!=="home"?rows.filter(function(x){return topicMatches(x,topic)}):rows.slice();
