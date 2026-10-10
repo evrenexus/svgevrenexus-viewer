@@ -13,6 +13,8 @@ on:
       - 'scripts/build-featured.mjs'
       - 'scripts/featured-config.mjs'
       - 'scripts/news_ai.py'
+      - 'scripts/news_collector.py'
+      - 'scripts/test_topic_classification.py'
       - 'scripts/validate-featured.mjs'
       - 'scripts/policy-terms.json'
 
@@ -35,6 +37,8 @@ jobs:
         with:
           ref: main
           fetch-depth: 0
+      - name: Test topic classification
+        run: python3 scripts/test_topic_classification.py
       - name: Collect news
         run: python3 scripts/news_collector.py
       - name: Setup Node.js
