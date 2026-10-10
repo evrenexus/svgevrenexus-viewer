@@ -62,7 +62,7 @@ if(window.MutationObserver&&document.body)new MutationObserver(removeLegacyTicke
 var wrap=document.createElement("div");wrap.innerHTML=`
 <header id="Evrenxus-header" dir="rtl">
 <div id="Evrenxus-header-row1">
-<div class="Evrenxus-header-brand"><a href="/" target="_top" class="Evrenxus-brand">Evren Nexus</a></div>
+<div class="Evrenxus-header-brand"><a href="https://evrenexus.ir/" target="_top" class="Evrenxus-brand">Evren Nexus</a></div>
 <div id="Evrenxus-market-tickers">
 <div class="Evrenxus-ticker"><div class="Evrenxus-ticker-window"><div id="Evrenxus-metals-track" class="Evrenxus-ticker-track"><span class="Evrenxus-ticker-item">در حال دریافت...</span></div></div></div>
 <div class="Evrenxus-ticker"><div class="Evrenxus-ticker-window"><div id="Evrenxus-currency-track" class="Evrenxus-ticker-track"><span class="Evrenxus-ticker-item">در حال دریافت...</span></div></div></div>
@@ -70,8 +70,8 @@ var wrap=document.createElement("div");wrap.innerHTML=`
 <div class="Evrenxus-ticker"><div class="Evrenxus-ticker-window"><div id="Evrenxus-car-track" class="Evrenxus-ticker-track"><span class="Evrenxus-ticker-item">در حال دریافت قیمت خودرو...</span></div></div></div>
 </div></div>
 <div id="Evrenxus-header-row2">
-<nav id="Evrenxus-main-menu"><a class="active" target="_top" href="/">خانه</a><a target="_top" href="/news-river.html?topic=economy" data-topic="economy">اقتصاد</a><a target="_top" href="/news-river.html?topic=markets" data-topic="markets">بازار و سرمایه‌گذاری</a><a target="_top" href="/news-river.html?topic=currency-gold" data-topic="currency-gold">ارز و طلا</a><a target="_top" href="/news-river.html?topic=real-estate" data-topic="real-estate">مسکن</a><a target="_top" href="/news-river.html?topic=technology" data-topic="technology">فناوری</a><a target="_top" href="/news-river.html?topic=ai" data-topic="ai">هوش مصنوعی</a><a target="_top" href="/news-river.html?topic=health" data-topic="health">پزشکی و سلامت</a><a target="_top" href="/news-river.html?topic=auto" data-topic="auto">خودرو</a><a target="_top" href="/news-river.html?topic=science-life" data-topic="science-life">علم و سبک زندگی</a></nav>
-<div id="Evrenxus-property-search"><div id="Evrenxus-property-search-title"><a target="_blank" href="/news-river.html?topic=real-estate">موتور جستجوی املاک</a></div><div id="Evrenxus-property-search-form"><input id="Evrenxus-property-budget" type="text" inputmode="decimal" autocomplete="off" placeholder="1-999"><button id="Evrenxus-property-search-button" type="button">بیاب</button></div><div id="Evrenxus-property-search-error">رقم را بر پایه میلیارد تومان وارد کنید</div></div>
+<nav id="Evrenxus-main-menu"><a class="active" target="_top" href="https://evrenexus.ir/">خانه</a><a target="_top" href="https://evrenexus.ir/news-river.html?topic=economy" data-topic="economy">اقتصاد</a><a target="_top" href="https://evrenexus.ir/news-river.html?topic=markets" data-topic="markets">بازار و سرمایه‌گذاری</a><a target="_top" href="https://evrenexus.ir/news-river.html?topic=currency-gold" data-topic="currency-gold">ارز و طلا</a><a target="_top" href="https://evrenexus.ir/news-river.html?topic=real-estate" data-topic="real-estate">مسکن</a><a target="_top" href="https://evrenexus.ir/news-river.html?topic=technology" data-topic="technology">فناوری</a><a target="_top" href="https://evrenexus.ir/news-river.html?topic=ai" data-topic="ai">هوش مصنوعی</a><a target="_top" href="https://evrenexus.ir/news-river.html?topic=health" data-topic="health">پزشکی و سلامت</a><a target="_top" href="https://evrenexus.ir/news-river.html?topic=auto" data-topic="auto">خودرو</a><a target="_top" href="https://evrenexus.ir/news-river.html?topic=science-life" data-topic="science-life">علم و سبک زندگی</a></nav>
+<div id="Evrenxus-property-search"><div id="Evrenxus-property-search-title"><a target="_blank" href="https://evrenexus.ir/news-river.html?topic=real-estate">موتور جستجوی املاک</a></div><div id="Evrenxus-property-search-form"><input id="Evrenxus-property-budget" type="text" inputmode="decimal" autocomplete="off" placeholder="1-999"><button id="Evrenxus-property-search-button" type="button">بیاب</button></div><div id="Evrenxus-property-search-error">رقم را بر پایه میلیارد تومان وارد کنید</div></div>
 </div></header>`;
 function mountHeader(){if(document.getElementById("Evrenxus-header"))return;var root=document.body||document.documentElement;if(!root)return;var header=wrap.firstElementChild;if(!header)return;root.insertBefore(header,root.firstChild);initTickers();setActiveTopic()}
 function ensureHeader(){if(document.getElementById("Evrenxus-header"))return;mountHeader();}
@@ -82,7 +82,7 @@ setTimeout(ensureHeader,0);setTimeout(ensureHeader,250);
 var input=document.getElementById("Evrenxus-property-budget"),button=document.getElementById("Evrenxus-property-search-button"),error=document.getElementById("Evrenxus-property-search-error");
 if(!input||!button||!error)return;
 function norm(v){return String(v).replace(/[۰-۹]/g,function(d){return"۰۱۲۳۴۵۶۷۸۹".indexOf(d)}).replace(/[٠-٩]/g,function(d){return"٠١٢٣٤٥٦٧٨٩".indexOf(d)}).replace(/,/g,".").trim()}
-function search(){var v=norm(input.value),b=Number(v);if(!v||!isFinite(b)||b<1||b>999){error.style.display="block";input.focus();return}error.style.display="none";window.location.href="/news-river.html?topic=real-estate&budget="+encodeURIComponent(b)}
+function search(){var v=norm(input.value),b=Number(v);if(!v||!isFinite(b)||b<1||b>999){error.style.display="block";input.focus();return}error.style.display="none";window.location.href="https://evrenexus.ir/news-river.html?topic=real-estate&budget="+encodeURIComponent(b)}
 button.onclick=search;input.onkeydown=function(e){if(e.key==="Enter"){e.preventDefault();search()}};input.oninput=function(){error.style.display="none"}
 })();
 
@@ -94,11 +94,11 @@ var metal=document.getElementById("Evrenxus-metals-track"),cur=document.getEleme
 function stamp(prefix,iso){var n=iso?new Date(iso):new Date(),d=document.getElementById("Evrenxus-"+prefix+"-date"),t=document.getElementById("Evrenxus-"+prefix+"-time");if(!d||!t)return;d.textContent=new Intl.DateTimeFormat("fa-IR-u-ca-persian",{timeZone:"Asia/Tehran",year:"numeric",month:"2-digit",day:"2-digit"}).format(n);t.textContent=new Intl.DateTimeFormat("en-GB",{timeZone:"Asia/Tehran",hour:"2-digit",minute:"2-digit",hour12:false}).format(n)}
 function fmt(v){return v==null?"-":new Intl.NumberFormat("en-US",{maximumFractionDigits:2}).format(Number(v))}
 var tvMap={"انس طلا":"OANDA:XAUUSD","انس نقره":"OANDA:XAGUSD","انس پلاتین":"OANDA:XPTUSD","انس پالادیوم":"OANDA:XPDUSD","آلومینیوم":"COMEX:ALI1!","سرب":"LME:LEAD1!","روی":"LME:ZINC1!","مس":"COMEX:HG1!","نیکل":"LME:NICKEL1!","قلع":"LME:TIN1!","نفت برنت":"TVC:UKOIL","نفت اپک":"TVC:OPEC","نفت خام":"TVC:USOIL","نفت کوره":"NYMEX:HO1!","بنزین (RBOB)":"NYMEX:RB1!","گاز طبیعی":"NYMEX:NG1!","گازوییل":"NYMEX:HO1!","زغال سنگ":"NYMEX:MTF1!","دلار":"FX_IDC:USDIRR","یورو":"FX_IDC:EURIRR","درهم":"FX_IDC:AEDIRR","پوند":"FX_IDC:GBPIRR","لیر":"FX_IDC:TRYIRR","فرانک":"FX_IDC:CHFIRR","یوان":"FX_IDC:CNYIRR","ین":"FX_IDC:JPYIRR","روبل":"FX_IDC:RUBIRR","منات":"FX_IDC:AZNIRR","بیت‌کوین":"BINANCE:BTCUSDT","اتریوم":"BINANCE:ETHUSDT","لایت‌کوین":"BINANCE:LTCUSDT","تتر":"BINANCE:USDTUSD","ریپل":"BINANCE:XRPUSDT","بایننس‌کوین":"BINANCE:BNBUSDT","دوج‌کوین":"BINANCE:DOGEUSDT","ترون":"BINANCE:TRXUSDT","کاردانو":"BINANCE:ADAUSDT","سولانا":"BINANCE:SOLUSDT"};
-function item(x,isCrypto,isRial){var v=isCrypto?x.priceIRT:x.price,c=x.changePercent!=null?x.changePercent:x.changePercent24h;if(isRial)v=Math.round(Number(v)/10);var unit=isCrypto?" تومان":isRial?" تومان":" دلار",cl=Number(c)>0?"Evrenxus-up":Number(c)<0?"Evrenxus-down":"",ar=Number(c)>0?"▲":Number(c)<0?"▼":"",tv=tvMap[x.name],inner='<span class="symbol">'+x.name+'</span><span class="price">'+fmt(v)+unit+'</span><span class="'+cl+'">'+ar+(Number.isFinite(Number(c))?"("+fmt(c)+"%)":"")+'</span>';return tv?(isCrypto?'<a class="Evrenxus-ticker-item" href="/crypto-prices.html" target="_top">'+inner+'</a>':'<a class="Evrenxus-ticker-item" href="#market-chart" data-tv-symbol="'+tv+'" data-tv-name="'+x.name+'" onclick="return window.EvrenxusOpenMarketChart(this.getAttribute(\'data-tv-symbol\'),this.getAttribute(\'data-tv-name\'))">'+inner+'</a>'):'<span class="Evrenxus-ticker-item">'+inner+'</span>';}
+function item(x,isCrypto,isRial){var v=isCrypto?x.priceIRT:x.price,c=x.changePercent!=null?x.changePercent:x.changePercent24h;if(isRial)v=Math.round(Number(v)/10);var unit=isCrypto?" تومان":isRial?" تومان":" دلار",cl=Number(c)>0?"Evrenxus-up":Number(c)<0?"Evrenxus-down":"",ar=Number(c)>0?"▲":Number(c)<0?"▼":"",tv=tvMap[x.name],inner='<span class="symbol">'+x.name+'</span><span class="price">'+fmt(v)+unit+'</span><span class="'+cl+'">'+ar+(Number.isFinite(Number(c))?"("+fmt(c)+"%)":"")+'</span>';return tv?(isCrypto?'<a class="Evrenxus-ticker-item" href="https://evrenexus.ir/crypto-prices.html" target="_top">'+inner+'</a>':'<a class="Evrenxus-ticker-item" href="#market-chart" data-tv-symbol="'+tv+'" data-tv-name="'+x.name+'" onclick="return window.EvrenxusOpenMarketChart(this.getAttribute(\'data-tv-symbol\'),this.getAttribute(\'data-tv-name\'))">'+inner+'</a>'):'<span class="Evrenxus-ticker-item">'+inner+'</span>';}
 function itemNoLink(x,isCrypto,isRial){var v=isCrypto?x.priceIRT:x.price,c=x.changePercent!=null?x.changePercent:x.changePercent24h;if(isRial)v=Math.round(Number(v)/10);var unit=" تومان",cl=Number(c)>0?"Evrenxus-up":Number(c)<0?"Evrenxus-down":"",ar=Number(c)>0?"▲":Number(c)<0?"▼":"",inner='<span class="symbol">'+x.name+'</span><span class="price">'+fmt(v)+unit+'</span><span class="'+cl+'">'+ar+(Number.isFinite(Number(c))?"("+fmt(c)+"%)":"")+"</span>";return '<span class="Evrenxus-ticker-item">'+inner+"</span>"}
 function startTicker(track){if(!track)return;track.style.animation="none";track.style.transform="translateX(0)";track.offsetHeight;var distance=track.scrollWidth+(track.parentElement?track.parentElement.clientWidth:0);var seconds=Math.max(18,distance/45);track.style.setProperty("--EvrenxusTickerDuration",seconds+"s");track.style.animation="EvrenxusTickerMove "+seconds+"s linear infinite";track.style.animationPlayState="running";var win=track.parentElement;if(win&&!win.dataset.hoverBound){win.dataset.hoverBound="1";win.addEventListener("mouseenter",function(){track.style.animationPlayState="paused"});win.addEventListener("mouseleave",function(){track.style.animationPlayState="running"});}}function updateLabel(iso){if(!iso)return "";var n=new Date(iso);var day=new Intl.DateTimeFormat("fa-IR",{timeZone:"Asia/Tehran",weekday:"long"}).format(n);var date=new Intl.DateTimeFormat("en-US-u-ca-persian",{timeZone:"Asia/Tehran",year:"numeric",month:"2-digit",day:"2-digit"}).formatToParts(n),y="",m="",d="";date.forEach(function(p){if(p.type==="year")y=p.value;if(p.type==="month")m=p.value;if(p.type==="day")d=p.value});var time=new Intl.DateTimeFormat("en-GB",{timeZone:"Asia/Tehran",hour:"2-digit",minute:"2-digit",hour12:false}).format(n);return "بروزرسانی "+time+" روز "+day+" "+y+m+d}function render(track,prefix,groups,iso){var all=[];groups.forEach(function(g){if(Array.isArray(g))all=all.concat(g)});all.reverse();var topics={metals:"💰 فلزات و کالاها",currency:"💵 ارز",crypto:"₿ رمزارزها"};var html='<span class="Evrenxus-ticker-topic">'+topics[prefix]+'</span>';html+=(iso?'<span class="Evrenxus-ticker-update">'+updateLabel(iso)+"</span>":"");html+=all.map(function(x){return prefix==="currency"?itemNoLink(x,false,true):item(x,prefix==="crypto",false)}).join("");track.innerHTML=html;startTicker(track);}
 window.EvrenxusOpenMarketChart=function(symbol,name){
-var url="/market-chart.html?symbol="+encodeURIComponent(symbol)+"&name="+encodeURIComponent(name||"");
+var url="https://evrenexus.ir/market-chart.html?symbol="+encodeURIComponent(symbol)+"&name="+encodeURIComponent(name||"");
 window.open(url,"_blank");
 return false;
 }
@@ -122,7 +122,7 @@ function renderCars(data){
     var arrow=num>0?"▲":num<0?"▼":"";
     var shown=pct?(arrow+" ("+pct+"%)"):"";
     var html='<span class="symbol">'+x.name+'</span><span class="price">'+(x.market||'-')+' تومان</span>'+(shown?'<span class="'+cls+'">'+shown+'</span>':'');
-    return '<a class="Evrenxus-ticker-item" href="/car-prices.html" target="_top">'+html+'</a>';
+    return '<a class="Evrenxus-ticker-item" href="https://evrenexus.ir/car-prices.html" target="_top">'+html+'</a>';
   }
   var update='';
   if(data.fetched_at){
@@ -130,13 +130,13 @@ function renderCars(data){
     var day=new Intl.DateTimeFormat("fa-IR",{timeZone:"Asia/Tehran",weekday:"long"}).format(n);
     var parts=new Intl.DateTimeFormat("fa-IR-u-ca-persian",{timeZone:"Asia/Tehran",year:"numeric",month:"long",day:"numeric"}).format(n);
     var time=new Intl.DateTimeFormat("fa-IR",{timeZone:"Asia/Tehran",hour:"2-digit",minute:"2-digit",hour12:false}).format(n);
-    update='<a class="Evrenxus-ticker-item" href="/car-prices.html" target="_top"><span class="Evrenxus-ticker-topic">🚗 قیمت خودرو</span><span class="Evrenxus-ticker-update">آخرین به‌روزرسانی: '+time+' | '+day+'، '+parts+'</span></a>';
-  } else update='<a class="Evrenxus-ticker-item" href="/car-prices.html" target="_top"><span class="Evrenxus-ticker-topic">🚗 قیمت خودرو</span></a>';
+    update='<a class="Evrenxus-ticker-item" href="https://evrenexus.ir/car-prices.html" target="_top"><span class="Evrenxus-ticker-topic">🚗 قیمت خودرو</span><span class="Evrenxus-ticker-update">آخرین به‌روزرسانی: '+time+' | '+day+'، '+parts+'</span></a>';
+  } else update='<a class="Evrenxus-ticker-item" href="https://evrenexus.ir/car-prices.html" target="_top"><span class="Evrenxus-ticker-topic">🚗 قیمت خودرو</span></a>';
   car.innerHTML=update+all.slice().reverse().map(carItem).join("");
   startTicker(car);
 }
 function dataURL(file){
-  return "/market-data/"+file+"?v="+Date.now();
+  return "https://evrenexus.ir/market-data/"+file+"?v="+Date.now();
 }
 function fetchWithTimeout(url){
   return Promise.race([
@@ -151,7 +151,7 @@ function fetchJSON(file,fallback){
 }
 function loadTGJU(){return fetchJSON("tgju.json","https://raw.githubusercontent.com/evrenexus/svgevrenexus-viewer/main/market-data/").then(function(t){render(metal,"metals",[t.precious||[],t.baseMetals||[],t.energy||[]],t.scrapedAt);render(cur,"currency",[t.currency||[]],t.scrapedAt)})}
 function loadCrypto(){return fetchJSON("nobitex.json","https://raw.githubusercontent.com/evrenexus/svgevrenexus-viewer/main/market-data/").then(function(n){render(crypto,"crypto",[(n.markets||[]).slice().sort(function(a,b){return a.symbol==="USDT"?-1:b.symbol==="USDT"?1:0})],n.scrapedAt)})}
-function loadCars(){return fetchWithTimeout("/car-data/car-prices.json?v="+Date.now()).then(function(r){if(!r.ok)throw new Error("car "+r.status);return r.json()}).then(renderCars)}
+function loadCars(){return fetchWithTimeout("https://evrenexus.ir/car-data/car-prices.json?v="+Date.now()).then(function(r){if(!r.ok)throw new Error("car "+r.status);return r.json()}).then(renderCars)}
 function showLoadError(track){if(track)track.innerHTML='<span class="Evrenxus-ticker-item">خطا در دریافت داده — تلاش مجدد</span>';}
 loadTGJU().catch(function(){showLoadError(metal);showLoadError(cur)});
 loadCrypto().catch(function(){showLoadError(crypto)});
