@@ -746,11 +746,14 @@ def main():
 
     ai=load_json(OUT,{})
     if not isinstance(ai,dict): ai={}
-    if ai.get("policy_version") != POLICY_VERSION:
-        print(f"Policy changed: {ai.get('policy_version',0)} -> {POLICY_VERSION}; rebuilding recent AI state.")
+    policy_changed = ai.get("policy_version") != POLICY_VERSION
+    if policy_changed:
+        print(f"Policy changed: {ai.get('policy_version',0)} -> {POLICY_VERSION}; preserving prior records and refreshing recent news.")
         previous_usage = ai.get("usage") if isinstance(ai.get("usage"),dict) else {}
-        ai={"version":1,"policy_version":POLICY_VERSION,"updated":"","items":{},"groups":{},
-            "usage":previous_usage}
+        previous_items = ai.get("items") if isinstance(ai.get("items"),dict) else {}
+        previous_groups = ai.get("groups") if isinstance(ai.get("groups"),dict) else {}
+        ai={"version":1,"policy_version":POLICY_VERSION,"updated":"",
+            "items":previous_items,"groups":previous_groups,"usage":previous_usage}
     ai.setdefault("items",{}); ai.setdefault("groups",{}); ai["policy_version"]=POLICY_VERSION
 
     usage=ai.get("usage") if isinstance(ai.get("usage"),dict) else {}
@@ -779,6 +782,8 @@ def main():
 
     for x in recent:
         k=item_key(x); m=local_meta.get(k,{})
+        if policy_changed and isinstance(ai["items"].get(k),dict):
+            ai["items"][k]["analysis_mode"] = "local"
         if not ai["items"].get(k) or ai["items"][k].get("analysis_mode") != "ai":
             local_row=dict(x); local_row["_local_score"]=m.get("local_score",0)
             ai["items"][k]=make_local_result(local_row,m)
