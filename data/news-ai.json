@@ -1,7 +1,7 @@
 {
   "version": 1,
   "policy_version": 9,
-  "updated": "2026-10-10T18:29:04Z",
+  "updated": "2026-10-10T18:48:02Z",
   "items": {
     "72b4eb7a7155ed214c32324d": {
       "title": "تصاویر؛ جشن «مهرگان» در غار کرفتو",
@@ -3588,10 +3588,8 @@
         "real-estate": 16
       },
       "importance": 16,
-      "important": true,
-      "important_topics": [
-        "real-estate"
-      ],
+      "important": false,
+      "important_topics": [],
       "slider_topics": [
         "real-estate"
       ],
@@ -3608,9 +3606,7 @@
       "political": false,
       "breaking_signal": false,
       "age_hours": 3.935797076291508,
-      "image": "https://cdn.fararu.com/thumbnail/EMkEabK884eP/2MCETBMNsliH1LPhGcpf7eMpyW8GpkGqIJMHyHLHkJdP9dlovXaz_tQux4vEzcieruPjEeptqy2Gf1YjOQFPtGYfvp2py1pdEXWCbnT7yTX9hq4ZNGSJDDjtyHRRA00S/%D8%A8%D8%A7%D8%B2%D8%A7%D8%B1+%D9%85%D8%B3%DA%A9%D9%86.jpg",
-      "permanent_article": true,
-      "article_id": "article-3d0aa82860a567c6"
+      "image": "https://cdn.fararu.com/thumbnail/EMkEabK884eP/2MCETBMNsliH1LPhGcpf7eMpyW8GpkGqIJMHyHLHkJdP9dlovXaz_tQux4vEzcieruPjEeptqy2Gf1YjOQFPtGYfvp2py1pdEXWCbnT7yTX9hq4ZNGSJDDjtyHRRA00S/%D8%A8%D8%A7%D8%B2%D8%A7%D8%B1+%D9%85%D8%B3%DA%A9%D9%86.jpg"
     },
     "2e5a117a9b8afecbedae3634": {
       "title": "درباره «دگردیسی شیء معمولی» آرتور دانتو/ چگونه یک پونز می‌تواند اثر هنری باشد؟",
@@ -10979,9 +10975,7 @@
       "importance": 20,
       "important": false,
       "important_topics": [],
-      "slider_topics": [
-        "economy"
-      ],
+      "slider_topics": [],
       "ticker_topics": [],
       "breaking": false,
       "breaking_topics": [],
@@ -11336,7 +11330,6 @@
       "importance": 20,
       "important": true,
       "important_topics": [
-        "economy",
         "markets"
       ],
       "slider_topics": [
@@ -12988,7 +12981,7 @@
       "local_score": 9,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.442119491961267
+      "age_hours": 3.7580852680736117
     },
     "b659b1bfb35c71b273c0e1e6": {
       "title": "پایان خرید آنلاین طلا در بلوبانک؛ امکان فروش همچنان برقرار است",
@@ -13019,7 +13012,7 @@
       "local_score": 16,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 3.509619491961267
+      "age_hours": 3.825585268073612
     },
     "e3234c7f5e6c6eb43431f16c": {
       "title": "چرا پرسه‌زدن نوجوانان در شهر به مسئله تبدیل می‌شود؟",
@@ -13172,7 +13165,7 @@
       "local_score": 6,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.181286158627934
+      "age_hours": 3.4972519347402784
     },
     "047b709763db6a5468b9e230": {
       "title": "واکنش فنلاند به توافق روسیه و آمریکا برای تأمین گازوئیل/ توقف صدور روادید برای شهروندان روسیه",
@@ -13419,25 +13412,25 @@
         "economy"
       ],
       "topic_scores": {
-        "economy": 17
+        "economy": 14
       },
-      "importance": 17,
+      "importance": 14,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
       "ticker_topics": [],
       "breaking": false,
       "breaking_topics": [],
-      "publishable": true,
-      "exclude_reason": "",
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
       "group_id": "local-fb9804de8709",
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 7,
-      "political": false,
-      "breaking_signal": false,
-      "age_hours": 0.3094436905781428
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 3.725585268073612
     },
     "f4d1e7d16f7655b684c5f45f": {
       "title": "رئیس روس اتم: تحریم‌ ها علیه روسیه به آمریکا هم آسیب زده‌اند",
@@ -13553,7 +13546,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 2.822119491961267
+      "age_hours": 3.138085268073612
     },
     "53d610ee2789018a6307a034": {
       "title": "سرانجام بدهی 15 همتی دولت به صندوق بیمه روستاییان چه شد؟",
@@ -13603,23 +13596,19 @@
       "slider_topics": [
         "auto"
       ],
-      "ticker_topics": [
-        "auto"
-      ],
-      "breaking": true,
-      "breaking_topics": [
-        "auto"
-      ],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
       "publishable": true,
       "exclude_reason": "",
       "group_id": "local-97593c5b7e43",
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 15,
+      "local_score": 14,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 2.9407306030723785,
+      "age_hours": 3.256696379184723,
       "permanent_article": true,
       "article_id": "article-b44912d5217f3ada",
       "image": "https://tejaratnews.com/wp-content/uploads/2026/10/139806051110094118215674-1-ak-1200x800-1.webp"
@@ -13653,7 +13642,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 2.9704528252946005
+      "age_hours": 3.286418601406945
     },
     "41a8fa2ee6b66d924e8119c9": {
       "title": "تعلیق پروازهای کویت و ترکیه به ریاض",
@@ -13827,7 +13816,7 @@
       "local_score": 16,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.596563936405712
+      "age_hours": 3.9125297125180563
     },
     "259befcf40494f851cf52cc0": {
       "title": "باخت شوک‌آور ناهید کیانی مقابل قهرمان جهان",
@@ -13885,7 +13874,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 2.666286158627934
+      "age_hours": 2.9822519347402783
     },
     "8122c79290762065b8a8fd3a": {
       "title": "رشد ۳۷ درصدی خالص دارایی‌های صندوق سرو",
@@ -13911,10 +13900,10 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 10,
+      "local_score": 9,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.699063936405712
+      "age_hours": 3.0150297125180563
     },
     "ddb64c6e629e600bed361153": {
       "title": "علت حضور گلزار در تمرینات استقلال و تیم‌ملی کشتی",
@@ -13971,10 +13960,10 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 17,
+      "local_score": 16,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 2.723508380850156
+      "age_hours": 3.0394741569625006
     },
     "f8a9546d611f5f4b0e88901a": {
       "title": "رشد ادامه‌دار شاخص‌ها/ بورس در تلاش برای تثبیت در کانال 8 میلیونی +فیلم",
@@ -14004,10 +13993,10 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 17,
+      "local_score": 16,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.8587861586279337,
+      "age_hours": 3.1747519347402786,
       "permanent_article": true,
       "article_id": "article-f8a9546d611f5f4b",
       "image": "https://cdn.donya-e-eqtesad.com/thumbnail/E8xU5qhButIV/QHn8O9nsSzT8qCU7RegsN6Pbb5v74eEtbKeSOh05RaZxikAWcBix80t7TZyzEhnm/%D8%A8%D9%88%D8%B1%D8%B3.jpg"
@@ -14036,10 +14025,10 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 17,
+      "local_score": 16,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 2.982397269739045
+      "age_hours": 3.2983630458513895
     },
     "43f57a3c056b126a54e44153": {
       "title": "واکنش فنلاند به توافق روسیه و آمریکا برای تأمین گازوئیل/ توقف صدور روادید برای شهروندان روسی",
@@ -14184,7 +14173,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 2.579897269739045
+      "age_hours": 2.8958630458513896
     },
     "c6dee58699ab98703add7725": {
       "title": "سودآورترین شرکت‌های جهان‌",
@@ -14221,7 +14210,7 @@
       "local_score": 17,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.603508380850156,
+      "age_hours": 2.919474156962501,
       "permanent_article": true,
       "article_id": "article-c6dee58699ab9870",
       "image": "https://cdn.donya-e-eqtesad.com/thumbnail/N5ziONZzWBCQ/QHn8O9nsSzT8qCU7RegsN6Pbb5v74eEtbKeSOh05RaZwhCeXHlfVnEt7TZyzEhnm/IMG_20261010_192034_618.jpg"
@@ -14282,7 +14271,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.181286158627934
+      "age_hours": 2.4972519347402784
     },
     "4f50dcc6f6e8713cb00dd000": {
       "title": "ورود آهن و فولاد غدیر ایرانیان به زنجیره ارزش روی",
@@ -14311,7 +14300,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.232397269739045
+      "age_hours": 2.5483630458513895
     },
     "7ca5f0d427192165644158b8": {
       "title": "سفارت آمریکا در ریاض: از حملات به فرودگاه بین‌المللی ملک خالد در ریاض مطلع هستیم / به‌شدت به شهروندان خود توصیه می‌کنیم از این فرودگاه دوری کنند",
@@ -14340,7 +14329,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.2368417141834893
+      "age_hours": 2.552807490295834
     },
     "469ee061abe44a487e3bf338": {
       "title": "ببینید؛ خلاصه بازی آگزبورگ 2 - بایرن مونیخ 2",
@@ -14398,7 +14387,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 2.2879528252946004
+      "age_hours": 2.6039186014069453
     },
     "668c2a3eb48f9a3ebf3db21c": {
       "title": "تساوی ۲-۲ آگزبورگ مقابل بایرن‌مونیخ؛ روز فاجعه نویر",
@@ -14485,7 +14474,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 2.3565639364057116
+      "age_hours": 2.672529712518056
     },
     "8059e7bda4b483c9ea6c76a9": {
       "title": "ببینید؛ خلاصه بازی پیکان 1 - شمس آذر 1",
@@ -14543,7 +14532,7 @@
       "local_score": 14,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.3996194919612672
+      "age_hours": 2.7155852680736117
     },
     "507b85983cc012467c765663": {
       "title": "شرایط عرضه دو محصول «پارس نوآ» و «کوییک GX-L + جزئیات",
@@ -14572,7 +14561,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 2.4129528252946004
+      "age_hours": 2.7289186014069453
     },
     "dc6e3735523927866b7fa6c4": {
       "title": "شکست طلسم ۲۶۰ روزه ستاره پرسپولیس",
@@ -14634,7 +14623,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 1.8754528252946006
+      "age_hours": 2.191418601406945
     },
     "8c01bc3f44224a69ca4c438d": {
       "title": "ببینید؛ کشیده ساکت زیر گوش بازیکن خودی!",
@@ -14692,7 +14681,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 1.9621194919612672
+      "age_hours": 2.2780852680736117
     },
     "398d867c6b99117520b35479": {
       "title": "چرا اقتدارگرایی در چین جواب داد؟",
@@ -14721,7 +14710,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 1.969897269739045
+      "age_hours": 2.2858630458513898
     },
     "2d5db4ed625b8119d1037e81": {
       "title": "نوسان 3 هزار تومانی قیمت تتر | بیت‌کوین از کانال ۸۲ هزار دلاری جدا شد | آلت‌کوین‌ها سبزپوش شدند",
@@ -14758,7 +14747,7 @@
       "local_score": 17,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 1.976008380850156,
+      "age_hours": 2.2919741569625005,
       "permanent_article": true,
       "article_id": "article-2d5db4ed625b8119",
       "image": "https://cdn.eghtesadnews.com/thumbnail/MJnHz91AYG7M/9wFJ5bHahv2PMDUde8i7WGPUoZPhR2k6vQp3Wbes3xFjVYxKGQfhsfeyB_vNOuor5irbViqQy551GzH5u7amOVt7U9Qe-hBRRcLG_SJKFAxBTXtP4xgq5ZoaYYWFfV2QSdjc06WX1efEm0DGXDg7wg1TTYMbKgS4afbUYZcpgxCfQnH7xFenn-z8sYeZ97wZ/%D9%82%DB%8C%D9%85%D8%AA+%D8%A8%DB%8C%D8%AA+%DA%A9%D9%88%DB%8C%D9%86+%D9%88+%D8%AA%D8%AA%D8%B1.jpg"
@@ -14790,7 +14779,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.982397269739045
+      "age_hours": 2.2983630458513895
     },
     "6eb65546e6b463fa0f5bfa7c": {
       "title": "هشدار آلمان، کانادا و اسپانیا درباره سفر هوایی به ریاض",
@@ -14856,7 +14845,7 @@
       "local_score": 17,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 2.016008380850156,
+      "age_hours": 2.3319741569625005,
       "permanent_article": true,
       "article_id": "article-c468f36c2048823d",
       "image": "https://cdn.fararu.com/thumbnail/e76I2rIkiWa1/-tVojNkJ5LDi9VdAT9y4JTlxjqfn2x4Abj9ZYYrHViKq1Kq5VuA_DScZMJ6tVdeLUl1T-A4k8BZ6Gp34WWZeOITdMaj2c3VAU7wkW4pIajSvDS1cky8gesIj-uJ1EZMY/%D8%A8%DB%8C%D9%85%D8%A7%D8%B1%DB%8C+%DA%86%D8%B4%D9%85%DB%8C.jpg"
@@ -14888,7 +14877,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 2.0518417141834893
+      "age_hours": 2.367807490295834
     },
     "48fab77d7af70bbbecb925de": {
       "title": "ببینید؛ خلاصه بازی چلسی 5 - بورنموث 1",
@@ -14946,7 +14935,7 @@
       "local_score": 9,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 2.1354528252946006
+      "age_hours": 2.451418601406945
     },
     "6ca3093d32abaee62b97c279": {
       "title": "سعید مرد بازی‌های بزرگ استقلال؛ چه سحر دلپذیری!",
@@ -14975,7 +14964,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 1.5693417141834896
+      "age_hours": 1.885307490295834
     },
     "ca34efde0eab9c38ec725995": {
       "title": "سفر آسیایی پر از رنج؛ سگ‌ها به دنبال بازیکنان تراکتور افتادند!",
@@ -15004,7 +14993,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 1.6260083808501562
+      "age_hours": 1.9419741569625006
     },
     "a29dc7514d6f0f52eb36bb92": {
       "title": "آمریکا و انگلیس برای شهروندان خود هشدار امنیتی صادر کردند",
@@ -15033,7 +15022,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 1.6882306030723784
+      "age_hours": 2.004196379184723
     },
     "57d25281e3c38130fe97196f": {
       "title": "کاهش دما همراه با بارش پراکنده در تهران",
@@ -15062,7 +15051,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.7921194919612673
+      "age_hours": 2.1080852680736117
     },
     "711fac6b38e9762f05cc3e23": {
       "title": "هشدار سفارتخانه‌های آمریکا و انگلیس به اتباع خود درباره فرودگاه ریاض",
@@ -15091,7 +15080,7 @@
       "local_score": 17,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 1.7946194919612672
+      "age_hours": 2.1105852680736117
     },
     "ea4767ed6376628a544b37a9": {
       "title": "کریدور عمانی تنگه هرمز تخلیه شد",
@@ -15207,7 +15196,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.181286158627934
+      "age_hours": 1.4972519347402784
     },
     "07c0ccc9c6a65285c688ddb1": {
       "title": "تأخیر در واردات پنل، مهم ترین مانع توسعه نیروگاه‌های خورشیدی",
@@ -15236,7 +15225,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 1.2190639364057116
+      "age_hours": 1.5350297125180563
     },
     "115da0bdd02dfdffec1e639c": {
       "title": "اجرای محدودیت در محور کندوان/ ۳ کیلومتر ترافیک ایستایی",
@@ -15265,7 +15254,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 0.954897269739045
+      "age_hours": 1.2708630458513896
     },
     "8756f03d875654e4d3929baf": {
       "title": "عربستان: فعالیت‌های فرودگاه ملک خالد به‌طور موقت به حالت تعلیق درآمد",
@@ -15302,7 +15291,7 @@
       "local_score": 13,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 0.9776750475168228
+      "age_hours": 1.2936408236291674
     },
     "4fe59077437f03248b4380f6": {
       "title": "خبر خوش برای سهامداران عدالت/ حساب این افراد شارژ شد + جزئیات",
@@ -15331,7 +15320,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 0.7757306030723784
+      "age_hours": 1.091696379184723
     },
     "1ba3d6460db5d234f63762aa": {
       "title": "بازگشت هواپیمای توقیفی کاسپین در ترکیه به ایران +جزئیات",
@@ -15360,7 +15349,7 @@
       "local_score": 17,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 0.5026750475168228
+      "age_hours": 0.8186408236291673
     },
     "d14d406aab3222476c615320": {
       "title": "پیش‌بینی بورس فردا یکشنبه ۱۹ مهر ۱۴۰۵ | دو نشانه مهم برای ادامه روند صعودی بازار سهام",
@@ -15393,7 +15382,7 @@
       "local_score": 17,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.5585083808501562,
+      "age_hours": 0.8744741569625006,
       "permanent_article": true,
       "article_id": "article-d14d406aab322247",
       "image": "https://cdn.eghtesadnews.com/thumbnail/wa1y890KvooX/a7sP_IH_Q0CITUTW2-IeByuPsN-X0stniFEz1rCYvhOLe3dWhTvO0WqEKZc24MF8gQEO3TP_0LfBv7DVXPsdcUfU_RW7Nocqy_18l4pYid75unwI0sZUz4B7w90PAnJ1EsTdJRVdwQR9YNY92l0f2msyvvwRbxORoXrcQvYf7zkhJAkCi5fp1YZ-s85pE7Oc/%D9%BE%DB%8C%D8%B4+%D8%A8%DB%8C%D9%86%DB%8C+%D8%A8%D9%88%D8%B1%D8%B3.jpg"
@@ -15425,7 +15414,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.6373972697390451
+      "age_hours": 0.9533630458513895
     },
     "675d010bb44b027f1e844dda": {
       "title": "خوشحالی سهراب از درخشش ستاره قرضی استقلال",
@@ -15454,7 +15443,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 0.02045282529460059
+      "age_hours": 0.33641860140694513
     },
     "66e983a1c770cc0515fae0ca": {
       "title": "ببینید؛ خلاصه بازی اینتر 3 - پارما 0",
@@ -15476,14 +15465,14 @@
       "breaking_topics": [],
       "publishable": false,
       "exclude_reason": "political content is excluded",
-      "group_id": "local-e26960845df6",
-      "representative": true,
+      "group_id": "local-e66b42357b70",
+      "representative": false,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
       "local_score": 4,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 0.10100838085015615
+      "age_hours": 0.4169741569625007
     },
     "18982121823a09616eedb74f": {
       "title": "سود جاماندۀ سهام عدالت ۱.۵ میلیون نفر واریز شد",
@@ -15512,7 +15501,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.12684171418348947
+      "age_hours": 0.442807490295834
     },
     "c49c78869e6c8e545e643924": {
       "title": "برد ۳-۰ اینتر مقابل پارما؛ بی‌دردسر و آسان!",
@@ -15541,7 +15530,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 0.16961949196126727
+      "age_hours": 0.4855852680736118
     },
     "18ccaa975514f321f079a37f": {
       "title": "کریدور عمانی هرمز تخلیه شد",
@@ -15570,7 +15559,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.28211949196126723
+      "age_hours": 0.5980852680736118
     },
     "f789c5adeb2923c449256ba1": {
       "title": "پارسال ۲۲ میلیارد دلار محصول پتروشیمی تولید و ۱۰ میلیارد دلار آن صادر شد",
@@ -15599,7 +15588,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 0.30573060307237837
+      "age_hours": 0.6216963791847229
     },
     "bdbaea2660e42d57f8c23235": {
       "title": "سازمان حج و زیارت: پیگیری‌ها برای آغاز اعزام‌های عمره ادامه دارد",
@@ -15628,7 +15617,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 0.3921194919612673
+      "age_hours": 0.7080852680736118
     },
     "faa0f6cd5d150403b8e23922": {
       "title": "نقد سریال «یل»؛ سریال تازه شبکه خانگی چقدر نفس‌گیر است؟",
@@ -15661,7 +15650,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 0.41184171418348947
+      "age_hours": 0.727807490295834
     },
     "0f76e8624ba40db3da459a22": {
       "title": "وام حمپاد؛ تسهیلات 50 میلیونی بازنشستگان چیست؟",
@@ -15690,7 +15679,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 0.42961949196126725
+      "age_hours": 0.7455852680736118
     },
     "52d61a732b17aae6b9bd4270": {
       "title": "قیمت لیپ موتور T03؛ جانشین پژو ۲۰۷ گران شد",
@@ -15723,7 +15712,189 @@
       "local_score": 17,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 0.43711949196126726
+      "age_hours": 0.7530852680736118
+    },
+    "84bc23e624fbef84cb62df02": {
+      "title": "ببینید؛ خلاصه بازی بارسلونا 3 - ختافه 0",
+      "summary": "تیم بارسلونا در هفته هشتم رقابت‌های لالیگا در مقابل ختافه به پیروزی ۳ گله رسید.",
+      "source": "فرارو",
+      "published": "2026-10-10T22:14:05+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 4
+      },
+      "importance": 4,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-e66b42357b70",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 0.06364082362916734
+    },
+    "f03a01514f3cfc93621beff5": {
+      "title": "برد ۳-۰ بارسلونل مقابل ختافه؛ روزهای رویایی ادامه دارند!",
+      "summary": "بارسلونا با پیروزی ۳ بر صفر مقابل ختافه در هفته هشتم، هشتمین برد پیاپی خود را جشن گرفت و با ۲۴ امتیاز صدرنشینی‌اش را تثبیت کرد.​",
+      "source": "فرارو",
+      "published": "2026-10-10T22:12:16+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 4
+      },
+      "importance": 4,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-33555d43d1bd",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 0.09391860140694512
+    },
+    "12f9586b43688d697e5982d3": {
+      "title": "قیمت بالای سوخت جت تا ۲۰۲۸ ادامه می‌یابد",
+      "summary": "مدیرعامل یک شرکت هواپیمایی در اروپا نسبت به احتمال تداوم قیمت بالای سوخت جت تا سال ۲۰۲۸ هشدار داد. پست قیمت بالای سوخت جت تا ۲۰۲۸ ادامه می‌یابد اولین بار در تجارت نیوز ظاهر شد.",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-10T22:02:58+03:30",
+      "topics": [
+        "auto"
+      ],
+      "topic_scores": {
+        "auto": 11
+      },
+      "importance": 11,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-dd4b1ddb42bf",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 11,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.24891860140694513
+    },
+    "3adb598ed52fe2c51ae94df9": {
+      "title": "پشت طرح‌های تازه مدیریت شهری چه می‌گذرد؟",
+      "summary": "دنیای اقتصاد؛ از طرح «تورم صفر» و صورت‌حساب ۷ هزار میلیارد تومانی شهرداری تا ساخت‌وساز اطراف ایستگاه‌های مترو و گسترش فقر شهری؛ بازار مسکن و مدیریت شهری تهران در هفته منتهی به ۱۵ مهر، با چند پرسش جدی روبه‌رو بود.",
+      "source": "دنیای اقتصاد",
+      "published": "2026-10-10T22:00:46+03:30",
+      "topics": [
+        "real-estate",
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 20,
+        "real-estate": 20
+      },
+      "importance": 20,
+      "important": true,
+      "important_topics": [
+        "economy",
+        "real-estate"
+      ],
+      "slider_topics": [
+        "economy",
+        "real-estate"
+      ],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-f493bd813be5",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 17,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.2855852680736118
+    },
+    "fe4221de56a6de651a24fe1f": {
+      "title": "واریز سود سنوات گذشته سهام‌داران عدالتی که اطلاعات آنها ناقص بود",
+      "summary": "مدیر نظارت بر ناشران سازمان بورس و اوراق بهادار گفت: سود سنوات گذشته سهام‌داران عدالت که اطلاعات آنها در سجام ناقص بود به صورت یکجا واریز شد. پست واریز سود سنوات گذشته سهام‌داران عدالتی که اطلاعات آنها ناقص بود اولین بار در تجارت نیوز ظاهر شد.",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-10T22:00:44+03:30",
+      "topics": [
+        "markets"
+      ],
+      "topic_scores": {
+        "markets": 16
+      },
+      "importance": 16,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-11cf949ac2e3",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.2861408236291673
+    },
+    "d5324a1a7e13515df5c02b7c": {
+      "title": "تصاویر؛ کنسرت همایون شجریان",
+      "summary": "کنسرت «هرجا که تویی» همایون شجریان با همراهی گروه «سیاوش» از ۱۵ مهرماه در آمفی‌تئاتر روباز نمایشگاه بین‌المللی شیراز آغاز شده و اجراهای این خواننده موسیقی ایرانی تا ۲۳ مهرماه ادامه دارد.",
+      "source": "فرارو",
+      "published": "2026-10-10T21:59:34+03:30",
+      "topics": [
+        "science-life"
+      ],
+      "topic_scores": {
+        "science-life": 4
+      },
+      "importance": 4,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-2bfa6c0da615",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 0.3055852680736118
     }
   },
   "groups": {
@@ -17146,8 +17317,8 @@
     "local-a076305aefb3": {
       "representative_id": "675d010bb44b027f1e844dda"
     },
-    "local-e26960845df6": {
-      "representative_id": "66e983a1c770cc0515fae0ca"
+    "local-e66b42357b70": {
+      "representative_id": "84bc23e624fbef84cb62df02"
     },
     "local-fbcb4f1fb6a1": {
       "representative_id": "18982121823a09616eedb74f"
@@ -17172,6 +17343,21 @@
     },
     "local-67ab771b1979": {
       "representative_id": "52d61a732b17aae6b9bd4270"
+    },
+    "local-33555d43d1bd": {
+      "representative_id": "f03a01514f3cfc93621beff5"
+    },
+    "local-dd4b1ddb42bf": {
+      "representative_id": "12f9586b43688d697e5982d3"
+    },
+    "local-f493bd813be5": {
+      "representative_id": "3adb598ed52fe2c51ae94df9"
+    },
+    "local-11cf949ac2e3": {
+      "representative_id": "fe4221de56a6de651a24fe1f"
+    },
+    "local-2bfa6c0da615": {
+      "representative_id": "d5324a1a7e13515df5c02b7c"
     }
   },
   "usage": {
