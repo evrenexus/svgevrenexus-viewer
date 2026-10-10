@@ -6,7 +6,7 @@
 <title>بخش خبری | Evren Nexus</title>
 <style>
 *{box-sizing:border-box}html,body{margin:0;padding:0;background:#eef1f3;color:#202a31;font-family:Vazir,Tahoma,Arial,sans-serif}
-#topic-page{width:850px;max-width:100%;margin:0 auto;padding:148px 10px 30px}
+#topic-page{width:850px;max-width:100%;margin:0 auto;padding:148px 10px 30px;display:flex;flex-direction:row;align-items:flex-start;gap:10px;direction:rtl}\n#topic-content{width:610px;max-width:610px;min-width:610px;flex:0 0 610px;order:1;overflow:hidden}\n#sidebar-host{width:200px;min-width:200px;max-width:200px;flex:0 0 200px;order:2}
 .topic-masthead{position:relative;background:#17232d;color:#fff;padding:22px 22px 20px;margin-bottom:14px;overflow:hidden;border-right:5px solid #d9232e}
 .topic-masthead:after{content:"";position:absolute;left:-22px;top:-55px;width:180px;height:180px;border:1px solid rgba(255,255,255,.1);border-radius:50%;box-shadow:0 0 0 24px rgba(255,255,255,.025),0 0 0 48px rgba(255,255,255,.02)}
 .topic-kicker{font-size:9px;letter-spacing:1px;color:#b8c4cc;margin-bottom:7px}.topic-name{font-size:22px;font-weight:700;line-height:1.6;position:relative;z-index:1}.topic-sub{font-size:10px;color:#d1d8dd;margin-top:5px;line-height:1.8;position:relative;z-index:1}
@@ -17,11 +17,11 @@
 #river .item{display:flex;gap:12px;padding:12px;border-bottom:1px solid #edf0f1;text-decoration:none;color:#29343b;background:#fff}#river .item:last-child{border-bottom:0}#river .item:hover{background:#f7f9fa}#river .item img{width:118px;min-width:118px;height:76px;object-fit:cover;background:#e9edef}#river .content{min-width:0;flex:1}#river .title{font-size:11px;font-weight:700;line-height:1.9;color:#202a31}#river .summary{font-size:9px;line-height:1.8;color:#68747b;margin-top:3px}#river .meta{font-size:8px;color:#98a0a5;margin-top:5px}
 .loading,.error{padding:25px;text-align:center;color:#7b858b;font-size:10px}.pagination-nav{display:flex;justify-content:center;align-items:center;gap:8px;margin:16px 0;padding:12px;background:#fff;border:1px solid #d9e0e4}.pagination-nav button{border:1px solid #d9e0e4;background:#fff;color:#202c35;padding:8px 14px;cursor:pointer;font:10px Vazir,Tahoma,Arial}.pagination-nav button:disabled{opacity:.4;cursor:default}
 .topic-footer{text-align:center;color:#8b959b;font-size:9px;padding:12px}
-@media(max-width:700px){#topic-page{width:100%;padding:137px 8px 20px}.topic-masthead{padding:17px 15px}.topic-name{font-size:18px}.topic-sub{font-size:9px}.topic-toolbar{display:block}.topic-ticker{height:32px}.ticker-label{flex-basis:95px;font-size:9px}.Evrenxus-breaking-track{height:32px}.Evrenxus-breaking-track a{font-size:9px;padding:0 18px}#important .important-item{gap:8px;padding:9px}#important .important-item img{width:100px;min-width:100px;height:66px}#important .important-title,#river .title{font-size:10px}#river .item{gap:8px;padding:9px}#river .item img{width:94px;min-width:94px;height:64px}}
+@media(max-width:700px){#topic-page{width:100%;max-width:100%;padding:137px 8px 20px;display:block;overflow-x:hidden}#topic-content{width:100%;max-width:100%;min-width:0;flex:0 0 100%;overflow:hidden}#sidebar-host{display:none}.topic-masthead{padding:17px 15px}.topic-name{font-size:18px}.topic-sub{font-size:9px}.topic-toolbar{display:block}.topic-ticker{height:32px}.ticker-label{flex-basis:95px;font-size:9px}.Evrenxus-breaking-track{height:32px}.Evrenxus-breaking-track a{font-size:9px;padding:0 18px}#important .important-item{gap:8px;padding:9px}#important .important-item img{width:100px;min-width:100px;height:66px}#important .important-title,#river .title{font-size:10px}#river .item{gap:8px;padding:9px}#river .item img{width:94px;min-width:94px;height:64px}}
 </style>
 </head>
 <body>
-<main id="topic-page">
+<main id="topic-page"><section id="topic-content">
 <header class="topic-masthead"><div class="topic-kicker">EVREN NEXUS / TOPIC DESK</div><div class="topic-name" id="topic-name">بخش خبری</div><div class="topic-sub" id="topic-sub">خبرها، تحلیل‌ها و مطالب منتخب این حوزه</div></header>
 <div class="topic-toolbar"><form class="topic-search" id="topic-search"><input id="newsSearchInput" type="search" placeholder="جستجو فقط در این موضوع..." autocomplete="off"><button type="submit">جستجو</button></form></div>
 <div class="topic-ticker"><div class="ticker-label">منتخب این حوزه</div><div class="Evrenxus-breaking-track" id="Evrenxus-breaking-track"><span class="loading">در حال دریافت مطالب منتخب...</span></div></div>
@@ -31,13 +31,13 @@
 <div class="topic-footer">Evren Nexus · آرشیو مستقل موضوعی</div>
 </main>
 <script src="./Evrenexus-featured.js?v=20261010-01"></script>
-<script src="./Evrenexus-slider.js?v=20261010-01"></script>
+<script src="./Evrenexus-slider.js?v=20261010-01"></script>\n<script src="./Evrenexus-sidebar.js?v=1"></script>
 <script src="https://evrenexus.github.io/svgevrenexus-viewer/Evrenexus-header.js?v=20261007-10"></script>
 <script>
 (function(){
 "use strict";
-var labels={"economy-investment":"اقتصاد و سرمایه‌گذاری","crypto":"ارزهای دیجیتال","currency-gold":"ارز و طلا","real-estate":"مسکن","technology":"فناوری","ai":"هوش مصنوعی","health":"پزشکی و سلامت","auto":"خودرو","science-life":"علم و سبک زندگی"};
-var descriptions={"economy-investment":"خبرها و تحلیل‌های اقتصاد کلان، سرمایه‌گذاری و بازارهای مالی","crypto":"خبرها و تحلیل‌های رمزارزها، بلاک‌چین و دارایی‌های دیجیتال","currency-gold":"خبرهای نرخ ارز، طلا و بازارهای مرتبط","real-estate":"خبرها و تحلیل‌های مسکن، ملک و ساخت‌وساز","technology":"خبرهای فناوری و محصولات دیجیتال","ai":"خبرها و کاربردهای هوش مصنوعی","health":"خبرها و اطلاعات حوزه پزشکی و سلامت","auto":"خبرهای صنعت خودرو و بازار خودرو","science-life":"علم، محیط زیست، سبک زندگی و دانستنی‌ها"};
+var labels={"economy-investment":"اقتصاد و سرمایه‌گذاری","crypto":"ارزهای دیجیتال","currency-gold":"ارز و طلا","real-estate":"مسکن","technology-ai":"فناوری و هوش مصنوعی","health":"پزشکی و سلامت","auto":"خودرو","science-life":"علم و سبک زندگی"};
+var descriptions={"economy-investment":"خبرها و تحلیل‌های اقتصاد کلان، سرمایه‌گذاری و بازارهای مالی","crypto":"خبرها و تحلیل‌های رمزارزها، بلاک‌چین و دارایی‌های دیجیتال","currency-gold":"خبرهای نرخ ارز، طلا و بازارهای مرتبط","real-estate":"خبرها و تحلیل‌های مسکن، ملک و ساخت‌وساز","technology-ai":"خبرهای فناوری، محصولات دیجیتال و پیشرفت‌های هوش مصنوعی","health":"خبرها و اطلاعات حوزه پزشکی و سلامت","auto":"خبرهای صنعت خودرو و بازار خودرو","science-life":"علم، محیط زیست، سبک زندگی و دانستنی‌ها"};
 var q=new URLSearchParams(location.search),topic=q.get("topic")||"home",name=labels[topic]||"همه خبرها";
 document.title=name+" | Evren Nexus";
 document.getElementById("topic-name").textContent=name;
