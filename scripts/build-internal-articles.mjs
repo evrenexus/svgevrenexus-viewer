@@ -6,6 +6,7 @@ import fs from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";
 import {outOfScope} from "./content-policy.mjs";
+import * as C from "./featured-config.mjs";
 import {imageUsable,loadArticleResolver} from "./featured-lib.mjs";
 
 const ROOT=path.resolve(path.dirname(new URL(import.meta.url).pathname),"..");
@@ -60,9 +61,14 @@ const stripHtml=(value)=>{
 const clip=(s,n)=>s.length>n?s.slice(0,n-1).trim()+"…":s;
 const linkedAiKey=n=>{for(const fn of aiSchemes){const k=fn(n);if(k&&aiItems[k])return k}return ""};
 const blocked=(n)=>{
-  const a=aiItems[n.id];
+  const key=linkedAiKey(n);
+  const a=key?aiItems[key]:null;
   const e=editorialItems[n.id];
-  return a?.publishable===false || e?.deleted===true || e?.hidden===true;
+  const topics=Array.isArray(a?.topics)?a.topics:(Array.isArray(n.topics)?n.topics:[]);
+  // Permanent pages are only created for AI-approved important news in site topics.
+  return a?.publishable!==true || a?.important!==true || a?.political===true ||
+    !topics.some(t=>C.TOPICS.includes(t)) ||
+    e?.deleted===true || e?.hidden===true;
 };
 
 const existingByGroup=new Map();
