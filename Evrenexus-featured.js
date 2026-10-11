@@ -68,10 +68,11 @@ function renderOldWay(topic,page,q){
   if(pg){pg.style.display=total>1?"flex":"none";if(prev){prev.disabled=page<=1;prev.onclick=function(){if(page<=1)return;var u=new URL(location.href);u.searchParams.set("page",String(page-1));location.href=u.href}}if(next){next.disabled=page>=total;next.onclick=function(){if(page>=total)return;var u=new URL(location.href);u.searchParams.set("page",String(page+1));location.href=u.href}}}
  }).catch(function(e){var list=document.getElementById("list");if(list)list.innerHTML='<div class="error">دریافت آخرین مطالب انجام نشد.</div>';console.warn("latest-news fallback:",e)});
 }
+function recentImportant(items,topic){var now=Date.now(),cutoff=now-10*60*60*1000;return filterItems(items).filter(function(x){var selected=Date.parse(x&& (x.selectedAt||x.published)||"");return !!(x&&x.articleUrl)&&Number.isFinite(selected)&&selected>=cutoff&&selected<=now+5*60*1000&&topicMatches(x,topic||"home")}).sort(function(a,b){return String(b.selectedAt||b.published||"").localeCompare(String(a.selectedAt||a.published||""))||Number(b.score||0)-Number(a.score||0)}).slice(0,20)}
 function renderAiBoxes(doc,topic){
  var key=topic||"home",t=doc&&doc.topics&&doc.topics[key]||{};
  var F=filterItems(t.featured||[]).filter(function(x){return topicMatches(x,key)}).slice(0,4);
- var I=filterItems(t.important||[]).filter(function(x){return !!x.articleUrl&&topicMatches(x,key)}).slice(0,4);
+ var I=recentImportant(t.important||[],key);
  var important=document.getElementById("important"),ih=document.getElementById("importantList"),br=document.getElementById("Evrenxus-breaking-track");
  if(br){br.innerHTML="";if(F.length){var tk=document.createElement("div");tk.className="Evrenxus-breaking-ticker";var g=document.createElement("div");g.className="Evrenxus-breaking-group";F.forEach(function(x){if(!x.articleUrl)return;var a=document.createElement("a");a.href="./"+x.articleUrl;a.textContent=x.title||"";g.appendChild(a)});tk.appendChild(g);tk.appendChild(g.cloneNode(true));br.appendChild(tk)}else br.textContent="فعلاً مطلب مهمی برای این موضوع وجود ندارد."}
  if(important)important.style.display="";
@@ -85,7 +86,7 @@ function renderAiBoxes(doc,topic){
  if(ih){var ia=document.createElement("a");ia.href="./important-archive.html"+(key&&key!=="home"?"?topic="+encodeURIComponent(key):"");ia.textContent="مشاهده آرشیو مطالب مهم";ia.style.cssText="display:block;text-align:center;padding:10px;background:#f7f7f7;color:#d9232e;text-decoration:none;font-size:10px;font-weight:700;border-top:1px solid #edf0f1";ih.appendChild(ia);}
 }
 function render(r){
- var F=(r.featured||[]).slice(0,4),I=(r.important||[]).filter(function(x){return !!x.articleUrl;}).slice(0,4),list=document.getElementById("list"),important=document.getElementById("important"),ih=document.getElementById("importantList");
+ var F=(r.featured||[]).slice(0,4),I=recentImportant(r.important||[],activeTopic),list=document.getElementById("list"),important=document.getElementById("important"),ih=document.getElementById("importantList");
  var br=document.getElementById("Evrenxus-breaking-track");
  if(br){br.innerHTML="";if(F.length){var tk=document.createElement("div");tk.className="Evrenxus-breaking-ticker";var g=document.createElement("div");g.className="Evrenxus-breaking-group";F.forEach(function(x){if(!x.articleUrl)return;var a=document.createElement("a");a.href="./"+x.articleUrl;a.textContent=x.title||"";g.appendChild(a)});tk.appendChild(g);tk.appendChild(g.cloneNode(true));br.appendChild(tk)}else br.textContent="فعلاً مطلب مهمی برای این موضوع وجود ندارد."}
  if(important)important.style.display="";
