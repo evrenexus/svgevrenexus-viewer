@@ -1,7 +1,7 @@
 {
   "version": 1,
   "policy_version": 9,
-  "updated": "2026-10-11T01:02:09Z",
+  "updated": "2026-10-11T01:28:24Z",
   "items": {
     "72b4eb7a7155ed214c32324d": {
       "title": "تصاویر؛ جشن «مهرگان» در غار کرفتو",
@@ -16912,25 +16912,38 @@
       "summary": "مقدمه تمرینات تنفسی، از روش‌های قدیمی برای کاهش استرس، بهبود تمرکز و تقویت آرامش شناخته می‌شوند. در سال‌های اخیر شکل‌های مختلفی از breathwork یا تمرینات تنفسی فعال در میان عموم محبوب شد و برخی افراد آن را هم‌ردیف تجربه‌های معنوی یا روانگردان توصیف کردند. حال یک مطالعه تصویربرداری مغزی که در کنگره EC",
       "source": "پزشک سایت",
       "published": "2026-10-11T04:12:04+03:30",
-      "topics": [],
-      "topic_scores": {},
-      "importance": 7,
+      "topics": [
+        "science-life",
+        "health"
+      ],
+      "topic_scores": {
+        "economy": 0,
+        "markets": 0,
+        "crypto": 0,
+        "currency-gold": 0,
+        "real-estate": 0,
+        "technology": 0,
+        "ai": 0,
+        "health": 0,
+        "auto": 0,
+        "science-life": 0
+      },
+      "importance": 0,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
       "ticker_topics": [],
-      "breaking": false,
-      "breaking_topics": [],
-      "publishable": true,
-      "exclude_reason": "",
+      "publishable": false,
+      "exclude_reason": "گزارش علمی تکراری و از قبل ثبت‌شده",
+      "content_type": "duplicate",
+      "reject_reason": "گزارش علمی تکراری و از قبل ثبت‌شده",
       "group_id": "local-a7d5d756d3a5",
       "representative": true,
-      "reason": "local rule-based classification",
-      "analysis_mode": "local",
+      "reason": "این مقاله علمی عینا در داده‌های پردازش‌شده پیشین موجود است.",
+      "analysis_mode": "ai",
       "local_score": 7,
-      "political": false,
-      "breaking_signal": false,
-      "age_hours": 0.3331152813302146
+      "breaking": false,
+      "breaking_topics": []
     },
     "eb711aa9b094e783d75a2474": {
       "title": "ابرنفتکش‌ها در تنگنای هرمز | هزینه انتقال نفت آمریکا به آسیا هشت برابر شده است | انتقال نفت خام از خاورمیانه پیچیده‌تر شد",
@@ -16938,34 +16951,112 @@
       "source": "اقتصادنیوز",
       "published": "2026-10-11T04:00:00+03:30",
       "topics": [
-        "real-estate",
-        "markets",
         "economy",
-        "currency-gold"
+        "markets"
       ],
       "topic_scores": {
-        "economy": 20,
-        "markets": 20,
-        "currency-gold": 20,
-        "real-estate": 20
+        "economy": 0,
+        "markets": 0,
+        "crypto": 0,
+        "currency-gold": 0,
+        "real-estate": 0,
+        "technology": 0,
+        "ai": 0,
+        "health": 0,
+        "auto": 0,
+        "science-life": 0
       },
-      "importance": 20,
+      "importance": 0,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
       "ticker_topics": [],
-      "breaking": false,
-      "breaking_topics": [],
       "publishable": false,
-      "exclude_reason": "political content is excluded",
+      "exclude_reason": "خبر تکراری و قبلاً پردازش‌شده در سامانه",
+      "content_type": "duplicate",
+      "reject_reason": "خبر تکراری و قبلاً پردازش‌شده در سامانه",
       "group_id": "local-9a181cc4b317",
       "representative": true,
-      "reason": "local rule-based classification",
-      "analysis_mode": "local",
+      "reason": "گزارش پیش‌تر دریافت و ثبت شده و بازنشر مجدد است.",
+      "analysis_mode": "ai",
       "local_score": 17,
-      "political": true,
-      "breaking_signal": true,
-      "age_hours": 0.5342263924413257
+      "breaking": false,
+      "breaking_topics": []
+    },
+    "867c4c9797ba3e53659b78e4": {
+      "title": "آینده شغل ها در سایه هوش مصنوعی/ جف بزوس: هوش مصنوعی می‌تواند هفته کاری را به ۳ روز کاهش دهد",
+      "summary": "بنیان‌گذار آمازون، معتقد است افزایش بهره‌وری ناشی از هوش مصنوعی می‌تواند به افراد اجازه دهد با سه روز کار در هفته هزینه‌های زندگی خود را تأمین کنند.",
+      "source": "دنیای اقتصاد",
+      "published": "2026-10-11T04:30:32+03:30",
+      "topics": [
+        "ai",
+        "technology"
+      ],
+      "topic_scores": {
+        "economy": 0,
+        "markets": 0,
+        "crypto": 0,
+        "currency-gold": 0,
+        "real-estate": 0,
+        "technology": 3,
+        "ai": 4,
+        "health": 0,
+        "auto": 0,
+        "science-life": 0
+      },
+      "importance": 4,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "publishable": false,
+      "exclude_reason": "صرفاً اظهارنظر، پیش‌بینی و گمانه‌زنی فردی بدون رویداد عینی ملموس، تکراری با اجرای قبلی",
+      "content_type": "commentary",
+      "reject_reason": "صرفاً اظهارنظر، پیش‌بینی و گمانه‌زنی فردی بدون رویداد عینی ملموس، تکراری با اجرای قبلی",
+      "group_id": "local-a577dc397b49",
+      "representative": true,
+      "reason": "سخنان جف بزوس درباره هفته کاری صرفاً نظر شخصی و فاقد ارزش خبری رویدادمحور است.",
+      "analysis_mode": "ai",
+      "local_score": 15,
+      "breaking": false,
+      "breaking_topics": []
+    },
+    "da0d61bfcd915dd6dbff7cb5": {
+      "title": "کوچ سرمایه‌گذاران ایرانی از بازار مسکن | گوران: محدودیت‌های داخلی، سازندگان ایرانی را به بازارهای منطقه‌ای سوق می‌دهد",
+      "summary": "اقتصادنیوز: رامین گوران، رئیس هیات‌مدیره انجمن انبوه‌سازان مسکن و ساختمان استان تهران، با اشاره به فعالیت شرکت‌های ساختمانی ایرانی در کشورهای حاشیه خلیج فارس، عراق، سوریه و کشورهای مستقل مشترک‌المنافع (CIS)، معتقد است محدودیت ظرفیت‌های اقتصادی داخل کشور، بخشی از سرمایه‌گذاران و توسعه‌گران را به سمت ",
+      "source": "اقتصادنیوز",
+      "published": "2026-10-11T04:20:00+03:30",
+      "topics": [
+        "real-estate"
+      ],
+      "topic_scores": {
+        "economy": 0,
+        "markets": 0,
+        "crypto": 0,
+        "currency-gold": 0,
+        "real-estate": 5,
+        "technology": 0,
+        "ai": 0,
+        "health": 0,
+        "auto": 0,
+        "science-life": 0
+      },
+      "importance": 5,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "content_type": "commentary",
+      "reject_reason": "مصاحبه و تحلیل صنفی فاقد تصمیم سیاستی جدید، داده عینی یا رویداد اجرایی مشخص",
+      "group_id": "local-8399cf30a5a8",
+      "representative": true,
+      "reason": "اظهارات رئیس انجمن انبوه‌سازان تحلیل کلی از مهاجرت سازندگان است و واجد خبر فوری یا تصمیم عملیاتی نیست.",
+      "analysis_mode": "ai",
+      "local_score": 4,
+      "breaking": false,
+      "breaking_topics": []
     }
   },
   "groups": {
@@ -18537,13 +18628,19 @@
     },
     "local-9a181cc4b317": {
       "representative_id": "eb711aa9b094e783d75a2474"
+    },
+    "local-a577dc397b49": {
+      "representative_id": "867c4c9797ba3e53659b78e4"
+    },
+    "local-8399cf30a5a8": {
+      "representative_id": "da0d61bfcd915dd6dbff7cb5"
     }
   },
   "usage": {
     "date": "2026-10-11",
-    "requests": 2,
-    "last_success": "2026-10-11T00:39:05Z",
-    "last_success_epoch": 1791679145.2376344,
-    "last_article_generation": "2026-10-11T00:39:11Z"
+    "requests": 4,
+    "last_success": "2026-10-11T01:28:18Z",
+    "last_success_epoch": 1791682098.6123629,
+    "last_article_generation": "2026-10-11T01:28:24Z"
   }
 }
