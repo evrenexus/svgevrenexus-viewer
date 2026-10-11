@@ -29,10 +29,22 @@ tr:hover td{background:#fafafa}
 .status{padding:25px;text-align:center;color:#777;font-size:10px}
 .nav{display:flex;gap:6px;padding:9px}.nav a{font-size:9px;color:#202c35;text-decoration:none;border:1px solid #dfe2e4;padding:6px 10px;background:#fff}
 @media(max-width:700px){#page{width:100%;padding:112px 8px 20px}.head h1{font-size:16px}.tools{flex-wrap:wrap}.tools select{width:100%}table{font-size:8.5px}th,td{padding:7px 6px}}
+
+/* Shared Evren Nexus site shell */
+#page{width:850px;max-width:100%;margin:0 auto;padding:148px 10px 25px;display:flex;flex-direction:row;align-items:flex-start;gap:10px;direction:rtl}
+#content{width:610px;max-width:610px;min-width:610px;flex:0 0 610px;order:1;overflow:hidden}
+#sidebar-host{width:200px;min-width:200px;max-width:200px;flex:0 0 200px;order:2}
+.Evrenxus-home-footer{width:100%;background:#202c35;color:#fff;margin-top:14px;padding:14px 12px;text-align:center}
+.Evrenxus-home-footer .footer-tags-title{font-size:10px;font-weight:700;margin-bottom:8px}
+.Evrenxus-home-footer .news-tags-list{display:flex;flex-wrap:wrap;gap:5px;justify-content:center}
+.Evrenxus-home-footer .news-tag{border:1px solid #fff;background:#fff;color:#596168;padding:4px 8px;font-size:8.5px;text-decoration:none}
+.Evrenxus-home-footer .footer-copy{font-size:9px;color:#d7dadd;margin-top:12px;padding-top:9px;border-top:1px solid #3c4850}
+@media(max-width:700px){html,body{background:#fff;overflow-x:hidden}#page{width:100%;max-width:100%;padding:137px 8px 20px;display:block;overflow-x:hidden}#content{width:100%;max-width:100%;min-width:0;flex:0 0 100%;box-sizing:border-box;overflow:hidden}#sidebar-host{display:block;width:100%;min-width:0;max-width:100%;margin-top:16px}.head h1{font-size:16px}.tools{flex-wrap:wrap}table{font-size:8.5px}th,td{padding:7px 6px}}
+
 </style>
 </head>
 <body>
-<main id="page">
+<main id="page"><section id="content">
 <div class="card">
   <div class="head">
     <h1>قیمت روز خودرو</h1>
@@ -47,8 +59,8 @@ tr:hover td{background:#fafafa}
 </div>
 <div id="prices" class="card"><div class="status">در حال دریافت قیمت‌ها...</div></div>
 <div class="card note">قیمت‌های نمایش‌داده‌شده از منبع ایران جیب دریافت می‌شوند. طبق توضیح منبع، قیمت بازار پیشنهادی فروشندگان است و ممکن است با قیمت معامله متفاوت باشد. استفاده از داده‌ها با ذکر منبع و لینک مربوطه مجاز اعلام شده است.</div>
-</main>
-<script src="./Evrenexus-header.js?v=20261007-07"></script>
+</section><div id="sidebar-host"></div></main>
+<footer class="Evrenxus-home-footer"><div class="footer-tags-title">برچسب‌های خبری</div><div class="news-tags-list" id="newsTags"></div><div class="footer-copy">© اورین نکسوس</div></footer>
 <script>
 (function(){
 "use strict";
@@ -86,5 +98,22 @@ fetch(dataUrl,{cache:"no-store"}).then(function(r){if(!r.ok)throw new Error("pri
 search.addEventListener("input",render);brand.addEventListener("change",render);
 })();
 </script>
+
+<script src="./Evrenexus-sidebar.js?v=20261010-09"></script>
+<script>
+(function(){
+"use strict";
+var tags=document.getElementById("newsTags");
+if(!tags)return;
+fetch("./data/public/news.json?v="+Date.now(),{cache:"no-store"}).then(function(r){return r.ok?r.json():null}).then(function(d){
+ if(!d||!Array.isArray(d.items))return;
+ var names={"economy-investment":"اقتصاد و سرمایه‌گذاری","crypto":"ارزهای دیجیتال","currency-gold":"ارز و طلا","real-estate":"مسکن","technology-ai":"فناوری و هوش مصنوعی",health:"پزشکی و سلامت",auto:"خودرو","science-life":"علم و سبک زندگی"},seen={};
+ d.items.forEach(function(x){var ts=Array.isArray(x.topics)?x.topics:[];if(ts.indexOf("economy")!==-1||ts.indexOf("markets")!==-1||ts.indexOf("economy-investment")!==-1)seen["economy-investment"]=true;if(ts.indexOf("crypto")!==-1||/(ارز دیجیتال|رمزارز|رمز ارز|بیت ?کوین|اتریوم|تتر|بایننس|کریپتو|bitcoin|ethereum|crypto|blockchain|solana|ripple|dogecoin|token)/i.test((x.title||"")+" "+(x.summary||"")))seen.crypto=true;ts.forEach(function(t){if(t==="technology"||t==="ai")seen["technology-ai"]=true;else if(names[t])seen[t]=true;});});
+ Object.keys(names).forEach(function(t){if(seen[t]){var a=document.createElement("a");a.className="news-tag";a.href="./news-river.html?topic="+encodeURIComponent(t);a.textContent=names[t];tags.appendChild(a);}});
+}).catch(function(){});
+})();
+</script>
+<script src="https://evrenexus.github.io/svgevrenexus-viewer/Evrenexus-header.js?v=20261010-08"></script>
+
 </body>
 </html>
