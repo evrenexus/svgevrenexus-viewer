@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Maintain four rolling two-hour batches of important published news."""
 import json
+from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -39,17 +40,14 @@ def clean_item(item):
 
 def eligible_items():
     data = json.loads(SOURCE.read_text(encoding="utf-8"))
-    source_items = data.get("items", [])
-    result = []
-    seen_ids = set()
-    seen_titles = set()
-    for raw in source_items:
+    result, seen_ids, seen_titles = [], set(), set()
+    for raw in data.get("items", []):
         if raw.get("important") is not True:
             continue
         item = clean_item(raw)
+        title_key = normalized_title(item["title"])
         if not item["id"] or not item["title"] or not item["url"] or not item["topics"]:
             continue
-        title_key = normalized_title(item["title"])
         if item["id"] in seen_ids or title_key in seen_titles:
             continue
         seen_ids.add(item["id"])
@@ -57,6 +55,49 @@ def eligible_items():
         result.append(item)
     result.sort(key=lambda x: (parse_date(x["published"]), x["importance_score"]), reverse=True)
     return result
+
+
+def choose_batch(candidates, excluded_ids, source_counts):
+    """Prefer fresh stories and diversify sources/topics, relaxing caps only if needed."""
+    selected = []
+    selected_ids = set()
+    selected_sources = Counter()
+    selected_topics = Counter()
+    passes = [
+        (1, 2, 3),   # one source per batch when possible; max three per source in the 16
+        (2, 3, 4),
+        (3, 4, 5),
+        (None, None, None),
+    ]
+    for source_cap, topic_cap, rolling_source_cap in passes:
+        for item in candidates:
+            if len(selected) >= BATCH_SIZE:
+                break
+            if item["id"] in excluded_ids or item["id"] in selected_ids:
+                continue
+            source = item["source"] or "نامشخص"
+            topic = (item["topics"] or ["unknown"])[0]
+            if source_cap is not None and selected_sources[source] >= source_cap:
+                continue
+            if topic_cap is not None and selected_topics[topic] >= topic_cap:
+                continue
+            if rolling_source_cap is not None and source_counts[source] + selected_sources[source] >= rolling_source_cap:
+                continue
+            selected.append(item)
+            selected_ids.add(item["id"])
+            selected_sources[source] += 1
+            selected_topics[topic] += 1
+        if len(selected) >= BATCH_SIZE:
+            return selected
+    return selected
+
+
+def source_counts_for(batches):
+    return Counter(
+        str(item.get("source") or "نامشخص")
+        for batch in batches
+        for item in batch.get("items", [])
+    )
 
 
 def main():
@@ -78,36 +119,33 @@ def main():
         batches = []
 
     if not batches:
-        seed = candidates[:TOTAL]
         batches = []
-        for offset in range(0, len(seed), BATCH_SIZE):
-            group = seed[offset:offset + BATCH_SIZE]
-            if len(group) == BATCH_SIZE:
-                batches.append({
-                    "selectedAt": now,
-                    "items": group,
-                })
-        if not batches:
-            print("Not enough eligible posts to initialize four batches.")
-            return
+        excluded_ids = set()
+        rolling_sources = Counter()
+        for _ in range(BATCH_COUNT):
+            group = choose_batch(candidates, excluded_ids, rolling_sources)
+            if len(group) != BATCH_SIZE:
+                print("Not enough unique important posts to initialize four full batches.")
+                return
+            batches.append({"selectedAt": now, "items": group})
+            excluded_ids.update(item["id"] for item in group)
+            rolling_sources.update(item["source"] or "نامشخص" for item in group)
     else:
+        batches = batches[:BATCH_COUNT]
         history_ids = {
             str(item.get("id"))
-            for batch in batches[:BATCH_COUNT]
+            for batch in batches
             for item in batch.get("items", [])
         }
         fresh = [item for item in candidates if item["id"] not in history_ids]
-        if len(fresh) < BATCH_SIZE:
-            print(f"Only {len(fresh)} new important posts since the previous selection; keeping the existing four batches.")
+        rolling_sources = source_counts_for(batches)
+        group = choose_batch(fresh, set(), rolling_sources)
+        if len(group) < BATCH_SIZE:
+            print(f"Only {len(group)} new important posts available; keeping the existing four batches.")
             return
-        batches = [{
-            "selectedAt": now,
-            "items": fresh[:BATCH_SIZE],
-        }] + batches[:BATCH_COUNT - 1]
+        batches = [{"selectedAt": now, "items": group}] + batches[:BATCH_COUNT - 1]
 
-    # Keep newest batch first and build a unique 16-item sidebar list.
-    items = []
-    seen = set()
+    items, seen = [], set()
     for batch in batches:
         for item in batch.get("items", []):
             item_id = str(item.get("id") or "")
@@ -118,14 +156,6 @@ def main():
                 break
         if len(items) >= TOTAL:
             break
-
-    # If an older batch contained repeats, top up from eligible news not already shown.
-    for item in candidates:
-        if len(items) >= TOTAL:
-            break
-        if item["id"] not in seen:
-            seen.add(item["id"])
-            items.append(item)
 
     payload = {
         "version": 1,
