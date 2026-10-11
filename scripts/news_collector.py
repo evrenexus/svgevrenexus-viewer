@@ -27,7 +27,7 @@ RETRY_BACKOFF_SECONDS=1
 TEHRAN_TZ=ZoneInfo("Asia/Tehran")
 DUPLICATE_WINDOW_HOURS=48
 
-EXCLUDED_SOURCE_NAMES={"ایسنا","ایرنا"}
+EXCLUDED_SOURCE_NAMES={"ایسنا","ایرنا","مهر","خبرگزاری مهر"}
 
 SOURCES=[
  {"name":"دنیای اقتصاد","category":"اقتصاد و سرمایه‌گذاری","site":"https://donya-e-eqtesad.com/","feeds":["https://donya-e-eqtesad.com/feeds/"],"allow_internal_republish":True},
@@ -41,7 +41,6 @@ SOURCES=[
  {"name":"پزشک سایت","category":"پزشکی و سلامت","site":"https://www.pezeshk-site.ir/","feeds":["https://www.pezeshk-site.ir/feed/"],"allow_internal_republish":True},
  {"name":"انتخاب","category":"اقتصاد و سرمایه‌گذاری","site":"https://www.entekhab.ir/","feeds":["https://www.entekhab.ir/fa/rss/1"],"allow_internal_republish":True},
  {"name":"فرارو","category":"اقتصاد و سرمایه‌گذاری","site":"https://fararu.com/","feeds":["https://fararu.com/fa/rss"],"allow_internal_republish":True},
- {"name":"مهر","category":"خبرگزاری عمومی","site":"https://www.mehrnews.com/","feeds":["https://www.mehrnews.com/rss"],"allow_internal_republish":True},
  {"name":"ایران‌جیب","category":"اقتصاد و سرمایه‌گذاری","site":"https://www.iranjib.ir/","feeds":[],"allow_internal_republish":True},
 ]
 
