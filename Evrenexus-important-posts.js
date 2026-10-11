@@ -29,15 +29,7 @@
       "#Evrenxus-slider .Evrenxus-slider-dots{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);z-index:6;display:flex;gap:6px}",
       "#Evrenxus-slider .Evrenxus-slider-dot{width:8px;height:8px;border:0;border-radius:50%;background:rgba(255,255,255,.5);cursor:pointer}",
       "#Evrenxus-slider .Evrenxus-slider-dot.active{background:#fff}",
-      "#Evrenxus-important-posts{width:100%;margin:0 0 14px;padding:0;border:1px solid #d8dfe3;background:#fff;direction:rtl;overflow:hidden}",
-      "#Evrenxus-important-posts .Evrenxus-important-heading{padding:10px 9px;background:#172b3a;color:#fff;font:700 13px/1.8 Tahoma,Arial,sans-serif;border-right:4px solid #d9b45b}",
-      "#Evrenxus-important-posts .Evrenxus-important-list{margin:0;padding:0;list-style:none}",
-      "#Evrenxus-important-posts .Evrenxus-important-item{display:block;padding:8px 9px;border-bottom:1px solid #edf0f2;color:#28343c;text-decoration:none;font:11px/1.9 Tahoma,Arial,sans-serif}",
-      "#Evrenxus-important-posts .Evrenxus-important-item:last-child{border-bottom:0}",
-      "#Evrenxus-important-posts .Evrenxus-important-item:hover{background:#f4f7f8;color:#147a9c}",
-      "#Evrenxus-important-posts .Evrenxus-important-source{display:block;margin-top:2px;color:#89939a;font:10px/1.6 Tahoma,Arial,sans-serif}",
-      "#Evrenxus-important-posts .Evrenxus-important-status{padding:12px 8px;color:#777;font:11px/1.8 Tahoma,Arial,sans-serif;text-align:center}",
-      "@media(max-width:700px){#Evrenxus-slider{height:auto;aspect-ratio:16/9;max-height:300px}#Evrenxus-slider .Evrenxus-slide-caption{right:8px;left:8px;bottom:23px;padding:7px 9px;font-size:12px}#sidebar-host{width:100%!important;min-width:0!important;max-width:100%!important}#Evrenxus-important-posts{width:100%}}"
+      "@media(max-width:700px){#Evrenxus-slider{height:auto;aspect-ratio:16/9;max-height:300px}#Evrenxus-slider .Evrenxus-slide-caption{right:8px;left:8px;bottom:23px;padding:7px 9px;font-size:12px}#sidebar-host{width:100%!important;min-width:0!important;max-width:100%!important}}"
     ].join("\n");
     document.head.appendChild(style);
   }
@@ -134,44 +126,6 @@
     slideTimer = window.setInterval(function () { showSlide(slideIndex + 1); }, SLIDE_MS);
   }
 
-  function renderSidebar(items) {
-    var host = document.getElementById("sidebar-host") || document.getElementById("sidebar");
-    if (!host) return;
-    var widget = document.getElementById("Evrenxus-important-posts");
-    if (!widget) {
-      widget = document.createElement("section");
-      widget.id = "Evrenxus-important-posts";
-      if (host.id === "sidebar") {
-        var customBox = host.querySelector(".custombox");
-        if (customBox) host = customBox;
-      }
-      host.insertBefore(widget, host.firstChild);
-    }
-    widget.textContent = "";
-    var heading = document.createElement("div");
-    heading.className = "Evrenxus-important-heading";
-    heading.textContent = "مطالب مهم (۱۶ مطلب)";
-    widget.appendChild(heading);
-    var list = document.createElement("ul");
-    list.className = "Evrenxus-important-list";
-    items.slice(0, 16).forEach(function (item) {
-      var li = document.createElement("li");
-      var link = document.createElement("a");
-      link.className = "Evrenxus-important-item";
-      link.href = makeViewerLink(item);
-      link.target = "_blank";
-      link.rel = "noopener noreferrer";
-      link.appendChild(document.createTextNode(safeText(item.title)));
-      var source = document.createElement("span");
-      source.className = "Evrenxus-important-source";
-      source.textContent = [safeText(item.source), safeText(item.published).slice(0, 10)].filter(Boolean).join(" · ");
-      link.appendChild(source);
-      li.appendChild(link);
-      list.appendChild(li);
-    });
-    widget.appendChild(list);
-    if (items.length < 16) setStatus(widget, "در حال حاضر " + items.length + " مطلب مهم در دسترس است");
-  }
 
   function load() {
     fetch(DATA_URL + "?t=" + Date.now(), { cache: "no-store" })
@@ -188,7 +142,6 @@
           : items.slice(0, 4);
         addStyles();
         renderSlider(currentBatch);
-        renderSidebar(items);
       })
       .catch(function () {
         addStyles();
@@ -197,13 +150,7 @@
           var slides = document.getElementById("Evrenxus-slides");
           if (slides && !slides.children.length) setStatus(slides, "دریافت مطالب مهم ممکن نشد؛ کمی بعد دوباره تلاش کنید");
         }
-        var host = document.getElementById("sidebar-host");
-        if (host && !document.getElementById("Evrenxus-important-posts")) {
-          var widget = document.createElement("section");
-          widget.id = "Evrenxus-important-posts";
-          setStatus(widget, "دریافت مطالب مهم ممکن نشد");
-          host.insertBefore(widget, host.firstChild);
-        }
+
       });
   }
 
