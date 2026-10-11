@@ -92,5 +92,5 @@ Promise.all([
  fetch("./data/news.json?v="+Date.now(),{cache:"no-store"}).then(function(r){return r.ok?r.json():{}}).catch(function(){return {}})
 ]).then(function(parts){render(resolveArticle(parts[0],parts[1],parts[2]))}).catch(function(){host.innerHTML="<h1>دریافت مطلب انجام نشد.</h1>"});
 })();
-</script><script src="https://evrenexus.github.io/svgevrenexus-viewer/Evrenexus-header.js?v=20261005-15"></script>
+</script><script src="./Evrenexus-header.js?v=20261011-03"></script>
 </body></html>
