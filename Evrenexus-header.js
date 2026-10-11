@@ -168,3 +168,13 @@ function update(){var n=new Date(),d=document.getElementById("Evrenxus-shamsi"),
 update();setInterval(update,1000);
 })();
 })();
+
+/* Load the shared important-post slider/sidebar on the Blogfa template. */
+(function () {
+  if (window.__EVRENEXUS_IMPORTANT_POSTS_SCRIPT_REQUESTED__) return;
+  window.__EVRENEXUS_IMPORTANT_POSTS_SCRIPT_REQUESTED__ = true;
+  var script = document.createElement("script");
+  script.src = "https://evrenexus.github.io/svgevrenexus-viewer/Evrenexus-important-posts.js";
+  script.async = true;
+  document.head.appendChild(script);
+})();
