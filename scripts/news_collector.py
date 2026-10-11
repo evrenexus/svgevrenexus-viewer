@@ -39,9 +39,9 @@ SOURCES=[
  {"name":"پزشک سایت","category":"پزشکی و سلامت","site":"https://www.pezeshk-site.ir/","feeds":["https://www.pezeshk-site.ir/feed/"],"allow_internal_republish":True},
  {"name":"انتخاب","category":"اقتصاد و سرمایه‌گذاری","site":"https://www.entekhab.ir/","feeds":["https://www.entekhab.ir/fa/rss/1"],"allow_internal_republish":True},
  {"name":"فرارو","category":"اقتصاد و سرمایه‌گذاری","site":"https://fararu.com/","feeds":["https://fararu.com/fa/rss"],"allow_internal_republish":True},
- {"name":"ایسنا","category":"اقتصاد و سرمایه‌گذاری","site":"https://www.isna.ir/","feeds":["https://www.isna.ir/rss"],"allow_internal_republish":True},
- {"name":"ایرنا","category":"اقتصاد و سرمایه‌گذاری","site":"https://www.irna.ir/","feeds":["https://www.irna.ir/rss"],"allow_internal_republish":True},
- {"name":"مهر","category":"اقتصاد و سرمایه‌گذاری","site":"https://www.mehrnews.com/","feeds":["https://www.mehrnews.com/rss"],"allow_internal_republish":True},
+ {"name":"ایسنا","category":"خبرگزاری عمومی","site":"https://www.isna.ir/","feeds":["https://www.isna.ir/rss"],"allow_internal_republish":True},
+ {"name":"ایرنا","category":"خبرگزاری عمومی","site":"https://www.irna.ir/","feeds":["https://www.irna.ir/rss"],"allow_internal_republish":True},
+ {"name":"مهر","category":"خبرگزاری عمومی","site":"https://www.mehrnews.com/","feeds":["https://www.mehrnews.com/rss"],"allow_internal_republish":True},
  {"name":"ایران‌جیب","category":"اقتصاد و سرمایه‌گذاری","site":"https://www.iranjib.ir/","feeds":[],"allow_internal_republish":True},
 ]
 
@@ -265,8 +265,8 @@ def is_duplicate_news(a,b):
     summary_a=normalize_text(a.get("summary",""))
     summary_b=normalize_text(b.get("summary",""))
     if len(summary_a)>=80 and len(summary_b)>=80:
-        sa={t for t in (dedup_stem(x) for x in re.findall(r"[\\w؀-ۿ]+",summary_a,re.UNICODE)) if t}
-        sb={t for t in (dedup_stem(x) for x in re.findall(r"[\\w؀-ۿ]+",summary_b,re.UNICODE)) if t}
+        sa={t for t in (dedup_stem(x) for x in re.findall(r"[\w؀-ۿ]+",summary_a,re.UNICODE)) if t}
+        sb={t for t in (dedup_stem(x) for x in re.findall(r"[\w؀-ۿ]+",summary_b,re.UNICODE)) if t}
         summary_shared=len(sa & sb)
         summary_union=len(sa | sb)
         summary_jaccard=summary_shared/summary_union if summary_union else 0
