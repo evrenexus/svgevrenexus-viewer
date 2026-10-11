@@ -92,12 +92,12 @@ setActiveTopic();
 function initTickers(){
 var metal=document.getElementById("Evrenxus-metals-track"),cur=document.getElementById("Evrenxus-currency-track"),crypto=document.getElementById("Evrenxus-crypto-track"),car=document.getElementById("Evrenxus-car-track");
 function stamp(prefix,iso){var n=iso?new Date(iso):new Date(),d=document.getElementById("Evrenxus-"+prefix+"-date"),t=document.getElementById("Evrenxus-"+prefix+"-time");if(!d||!t)return;d.textContent=new Intl.DateTimeFormat("fa-IR-u-ca-persian",{timeZone:"Asia/Tehran",year:"numeric",month:"2-digit",day:"2-digit"}).format(n);t.textContent=new Intl.DateTimeFormat("en-GB",{timeZone:"Asia/Tehran",hour:"2-digit",minute:"2-digit",hour12:false}).format(n)}
-function fmt(v){return v==null?"-":new Intl.NumberFormat("en-US",{maximumFractionDigits:2}).format(Number(v))}
+function fmt(v){return v==null?"-":new Intl.NumberFormat("en-US",{maximumFractionDigits:2}).format(Number(v))}function fmtCrypto(v){return v==null?"-":new Intl.NumberFormat("en-US",{maximumFractionDigits:8}).format(Number(v))}
 var tvMap={"انس طلا":"OANDA:XAUUSD","انس نقره":"OANDA:XAGUSD","انس پلاتین":"OANDA:XPTUSD","انس پالادیوم":"OANDA:XPDUSD","آلومینیوم":"COMEX:ALI1!","سرب":"LME:LEAD1!","روی":"LME:ZINC1!","مس":"COMEX:HG1!","نیکل":"LME:NICKEL1!","قلع":"LME:TIN1!","نفت برنت":"TVC:UKOIL","نفت اپک":"TVC:OPEC","نفت خام":"TVC:USOIL","نفت کوره":"NYMEX:HO1!","بنزین (RBOB)":"NYMEX:RB1!","گاز طبیعی":"NYMEX:NG1!","گازوییل":"NYMEX:HO1!","زغال سنگ":"NYMEX:MTF1!","دلار":"FX_IDC:USDIRR","یورو":"FX_IDC:EURIRR","درهم":"FX_IDC:AEDIRR","پوند":"FX_IDC:GBPIRR","لیر":"FX_IDC:TRYIRR","فرانک":"FX_IDC:CHFIRR","یوان":"FX_IDC:CNYIRR","ین":"FX_IDC:JPYIRR","روبل":"FX_IDC:RUBIRR","منات":"FX_IDC:AZNIRR","بیت‌کوین":"BINANCE:BTCUSDT","اتریوم":"BINANCE:ETHUSDT","لایت‌کوین":"BINANCE:LTCUSDT","تتر":"BINANCE:USDTUSD","ریپل":"BINANCE:XRPUSDT","بایننس‌کوین":"BINANCE:BNBUSDT","دوج‌کوین":"BINANCE:DOGEUSDT","ترون":"BINANCE:TRXUSDT","کاردانو":"BINANCE:ADAUSDT","سولانا":"BINANCE:SOLUSDT"};
 function item(x,isCrypto,isRial){
-var v=isCrypto?x.priceIRT:x.price,c=isCrypto?x.changePercent1hIRT:(x.changePercent!=null?x.changePercent:x.changePercent24h);
+var v=isCrypto?x.priceUSDT:x.price,c=isCrypto?x.changePercent1hUSDT:(x.changePercent!=null?x.changePercent:x.changePercent24h);
 if(isRial)v=Math.round(Number(v)/10);
-var unit=isCrypto?" تومان":isRial?" تومان":" دلار",cl=Number(c)>0?"Evrenxus-up":Number(c)<0?"Evrenxus-down":"",ar=Number(c)>0?"▲":Number(c)<0?"▼":"",tv=tvMap[x.name],inner='<span class="symbol">'+(isCrypto?(x.symbol+" · "+x.name):x.name)+'</span><span class="price">'+fmt(v)+unit+'</span><span class="'+cl+'">'+ar+(c!=null&&c!==""&&Number.isFinite(Number(c))?"("+fmt(c)+"%)":"")+'</span>';
+var unit=isCrypto?" USDT":isRial?" تومان":" دلار",cl=Number(c)>0?"Evrenxus-up":Number(c)<0?"Evrenxus-down":"",ar=Number(c)>0?"▲":Number(c)<0?"▼":"",tv=tvMap[x.name],inner='<span class="symbol">'+(isCrypto?x.symbol:x.name)+'</span><span class="price">'+(isCrypto?fmtCrypto(v):fmt(v))+unit+'</span><span class="'+cl+'">'+ar+(c!=null&&c!==""&&Number.isFinite(Number(c))?"("+fmt(c)+"%)":"")+'</span>';
 if(isCrypto)return '<a class="Evrenxus-ticker-item" href="https://evrenexus.ir/crypto-price.html" target="_blank" rel="noopener noreferrer">'+inner+'</a>';
 if(tv)return '<a class="Evrenxus-ticker-item" href="#market-chart" data-tv-symbol="'+tv+'" data-tv-name="'+x.name+'" onclick="return window.EvrenxusOpenMarketChart(this.getAttribute(\'data-tv-symbol\'),this.getAttribute(\'data-tv-name\'))">'+inner+'</a>';
 return '<span class="Evrenxus-ticker-item">'+inner+'</span>';
@@ -162,10 +162,10 @@ function fetchJSON(file,fallback){
 function loadTGJU(){return fetchJSON("tgju.json","https://raw.githubusercontent.com/evrenexus/svgevrenexus-viewer/main/market-data/").then(function(t){render(metal,"metals",[t.precious||[],t.baseMetals||[],t.energy||[]],t.scrapedAt);render(cur,"currency",[t.currency||[]],t.scrapedAt)})}
 function loadCrypto(){return fetchJSON("nobitex.json","https://raw.githubusercontent.com/evrenexus/svgevrenexus-viewer/main/market-data/").then(function(n){
   if(!crypto)return;
-  var markets=(n.markets||[]).filter(function(x){return x.symbol!=="USDT"&&x.changePercent1hIRT!=null&&Number.isFinite(Number(x.changePercent1hIRT));});
+  var markets=(n.markets||[]).filter(function(x){return x.symbol!=="USDT"&&x.changePercent1hUSDT!=null&&Number.isFinite(Number(x.changePercent1hUSDT));});
   var ranked=(n.markets||[]).filter(function(x){return x.symbol!=="USDT"&&Number(x.rank)>0;}).sort(function(a,b){return Number(a.rank)-Number(b.rank);}).slice(0,8);
-  var gainers=markets.filter(function(x){return Number(x.changePercent1hIRT)>0;}).sort(function(a,b){return Number(b.changePercent1hIRT)-Number(a.changePercent1hIRT);}).slice(0,8);
-  var losers=markets.filter(function(x){return Number(x.changePercent1hIRT)<0;}).sort(function(a,b){return Number(a.changePercent1hIRT)-Number(b.changePercent1hIRT);}).slice(0,8);
+  var gainers=markets.filter(function(x){return Number(x.changePercent1hUSDT)>0;}).sort(function(a,b){return Number(b.changePercent1hUSDT)-Number(a.changePercent1hUSDT);}).slice(0,8);
+  var losers=markets.filter(function(x){return Number(x.changePercent1hUSDT)<0;}).sort(function(a,b){return Number(a.changePercent1hUSDT)-Number(b.changePercent1hUSDT);}).slice(0,8);
   var href="https://evrenexus.ir/crypto-price.html";
   function topic(label){return '<a class="Evrenxus-ticker-topic" href="'+href+'" target="_blank" rel="noopener noreferrer">'+label+'</a>';}
   var html=topic("₿ قیمت زنده ارزهای دیجیتال");
