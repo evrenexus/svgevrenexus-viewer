@@ -96,9 +96,10 @@ jobs:
       GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
       OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
 
+  # Publish collected news as soon as collection succeeds; AI analysis is optional and must not block freshness.
   deploy:
     name: Build and deploy
-    needs: [update-data, ai-analysis]
+    needs: [update-data]
     if: ${{ always() && needs.update-data.result == 'success' }}
     runs-on: ubuntu-latest
     environment:
