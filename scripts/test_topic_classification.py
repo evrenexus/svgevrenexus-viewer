@@ -75,6 +75,29 @@ class TopicClassificationTests(unittest.TestCase):
             self.topics("قیمت میلگرد امروز یکشنبه اعلام شد"),
         )
 
+
+    def test_construction_materials_belong_to_economy_and_housing(self):
+        for title in (
+            "قیمت سیمان عمده امروز اعلام شد",
+            "قیمت میلگرد امروز یکشنبه اعلام شد",
+            "قیمت تیرآهن و فولاد ساختمانی افزایش یافت",
+            "هزینه ساخت‌وساز و دستمزد کارگر ساختمانی بالا رفت",
+            "شرایط جدید صدور پروانه ساختمانی اعلام شد",
+        ):
+            with self.subTest(title=title):
+                topics = self.topics(title)
+                self.assertIn("economy", topics)
+                self.assertIn("real-estate", topics)
+
+    def test_ai_fallback_construction_materials_belong_to_housing(self):
+        for title in (
+            "قیمت سیمان عمده امروز اعلام شد",
+            "قیمت میلگرد امروز یکشنبه اعلام شد",
+            "هزینه ساخت‌وساز و دستمزد کارگر ساختمانی بالا رفت",
+        ):
+            with self.subTest(title=title):
+                self.assertIn("real-estate", self.ai_topics(title))
+
     def test_health_research_on_loneliness_is_health(self):
         topics = self.topics(
             "تنهایی و انزوای اجتماعی ممکن است چند سال از عمر سالم شما بکاهد",
