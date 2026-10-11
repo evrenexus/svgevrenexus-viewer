@@ -1,133 +1,182 @@
-// manual refresh trigger 2026-10-04
-// Direct page scraper
+// Fetch all tradable Nobitex crypto markets, global ranks, and 15-minute price changes.
 const fs = require("fs");
-const cheerio = require("cheerio");
 
-const URLS = ["https://nobitex.ir/price/","https://nobitex.company/price/"];
+const API = "https://apiv2.nobitex.ir";
+const COINGECKO = "https://api.coingecko.com/api/v3";
+const DATA_FILE = "market-data/nobitex.json";
 
-const wanted = [
-  ["BTC","بیت‌کوین"],
-  ["ETH","اتریوم"],
-  ["LTC","لایت‌کوین"],
-  ["USDT","تتر"],
-  ["XRP","ریپل"],
-  ["BNB","بایننس‌کوین"],
-  ["DOGE","دوج‌کوین"],
-  ["TRX","ترون"],
-  ["ADA","کاردانو"],
-  ["SOL","سولانا"]
-];
+const persianNames = {
+  btc:"بیت‌کوین", eth:"اتریوم", ltc:"لایت‌کوین", usdt:"تتر", xrp:"ریپل",
+  bnb:"بایننس‌کوین", doge:"دوج‌کوین", trx:"ترون", ada:"کاردانو", sol:"سولانا",
+  ton:"تون‌کوین", shib:"شیبا اینو", link:"چین‌لینک", dot:"پولکادات", avax:"آوالانچ",
+  xlm:"استلار", atom:"کازماس", uni:"یونی‌سواپ", etc:"اتریوم کلاسیک", bch:"بیت‌کوین کش",
+  near:"نیر پروتکل", apt:"اپتوس", arb:"آربیتروم", op:"آپتیمیسم", fil:"فایل‌کوین",
+  vet:"وی‌چین", xmr:"مونرو", eos:"ایاس", algo:"الگوراند", aave:"آوه",
+  trx:"ترون", ftm:"فانتوم", cake:"پنکیک‌سواپ", mana:"دیسنترالند", sand:"سندباکس",
+  pepe:"پپه", wif:"داگ‌ویف‌هت", not:"نات‌کوین", hmstr:"همستر کامبت",
+  btc:"بیت‌کوین", usdc:"یو‌اس‌دی کوین", dai:"دای", tusd:"ترو یو‌اس‌دی"
+};
 
-function digits(s){
-  return String(s || "")
-    .replace(/[۰-۹]/g,d=>"۰۱۲۳۴۵۶۷۸۹".indexOf(d))
-    .replace(/[٠-٩]/g,d=>"٠١٢٣٤٥٦٧٨٩".indexOf(d));
-}
-
-function clean(s){
-  return digits(s).replace(/\s+/g," ").trim();
-}
-
-function pricesFrom(s){
-  const text=clean(s).replace(/٬/g,",");
-  const m=text.match(/irt\s*([\d,]+(?:\.\d+)?)\s*\$\s*([\d,]+(?:\.\d+)?)/i);
-  if(!m) return null;
-  return {
-    priceIRT:Number(m[1].replace(/,/g,"")),
-    priceUSDT:Number(m[2].replace(/,/g,""))
-  };
-}
-
-function changePercent(s){
-  const m=clean(s).match(/([+-]?\d+(?:\.\d+)?)\s*[٪%]/);
-  return m ? Number(m[1]) : null;
-}
-
-async function main(){
-  let html="";
-  let lastError=null;
-  for(const URL of URLS){
-    try{
-      const r=await fetch(URL,{
-    headers:{
-      "User-Agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/140 Safari/537.36",
-      "Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-      "Accept-Language":"fa-IR,fa;q=0.9,en;q=0.8"
-    }
+function requestJson(url) {
+  return fetch(url, {
+    headers: {
+      "User-Agent": "EvrenNexusMarketData/1.0",
+      "Accept": "application/json"
+    },
+    signal: AbortSignal.timeout(25000)
+  }).then(async r => {
+    if (!r.ok) throw new Error("HTTP " + r.status + " for " + url);
+    return r.json();
   });
-
-      if(!r.ok) throw new Error("HTTP "+r.status);
-      html=await r.text();
-      if(html.length>1000) break;
-    }catch(e){ lastError=e; }
-  }
-  if(!html) throw new Error("Nobitex page fetch failed: "+(lastError?.message||"unknown"));
-  const $=cheerio.load(html);
-  const result=[];
-
-  $("table tr").each((_,tr)=>{
-    const cells=$(tr).find("th,td")
-      .map((_,c)=>clean($(c).text()))
-      .get();
-
-    if(cells.length<3) return;
-
-    const first=cells[0] || "";
-    const match=wanted.find(([symbol])=>{
-      return new RegExp("(^|\\s)"+symbol+"(\\s|$)","i").test(first);
-    });
-
-    if(!match || result.some(x=>x.symbol===match[0])) return;
-
-    let prices=pricesFrom(cells[1] || "");
-    if(prices==null){
-      const rowText=cells.join(" ");
-      const m=rowText.match(/irt\\s*([\\d,]+(?:\\.\\d+)?)\\s*\\$\\s*([\\d,]+(?:\\.\\d+)?)/i);
-      if(m) prices={priceIRT:Number(m[1].replace(/,/g,"")),priceUSDT:Number(m[2].replace(/,/g,""))};
+}
+function number(v) {
+  if (v == null || v === "") return null;
+  const n = Number(v);
+  return Number.isFinite(n) ? n : null;
+}
+function pct(now, before) {
+  return now != null && before != null && before !== 0
+    ? Number(((now - before) / before * 100).toFixed(6))
+    : null;
+}
+function persianText(s) {
+  return /[\u0600-\u06FF]/.test(String(s || ""));
+}
+function parsePairStats(payload) {
+  const stats = payload && payload.stats;
+  if (!stats || typeof stats !== "object") throw new Error("Nobitex market stats missing");
+  return stats;
+}
+async function fetchGlobalRanks() {
+  const ranks = new Map();
+  // CoinGecko's market-cap order supplies global ranks for assets listed on Nobitex.
+  // Keep failures non-fatal: local market prices must continue updating.
+  for (let page = 1; page <= 4; page++) {
+    try {
+      const rows = await requestJson(
+        COINGECKO + "/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=" + page + "&sparkline=false"
+      );
+      if (!Array.isArray(rows) || !rows.length) break;
+      rows.forEach(x => {
+        const symbol = String(x.symbol || "").toLowerCase();
+        const rank = number(x.market_cap_rank);
+        if (symbol && rank != null && !ranks.has(symbol)) ranks.set(symbol, rank);
+      });
+    } catch (e) {
+      console.warn("Global ranking page " + page + " unavailable:", e.message);
+      break;
     }
-    if(prices==null) return;
+  }
+  return ranks;
+}
+async function main() {
+  const previous = fs.existsSync(DATA_FILE)
+    ? JSON.parse(fs.readFileSync(DATA_FILE, "utf8"))
+    : {};
+  const now = Date.now();
 
-    result.push({
-      symbol:match[0],
-      name:match[1],
-      priceIRT:prices.priceIRT,
-      priceUSDT:prices.priceUSDT,
-      changePercent24h:changePercent(cells[2] || "")
-    });
+  const [options, marketPayload, ranks] = await Promise.all([
+    requestJson(API + "/v2/options"),
+    requestJson(API + "/market/stats"),
+    fetchGlobalRanks()
+  ]);
+
+  const pairStats = parsePairStats(marketPayload);
+  const coins = Array.isArray(options.coins) ? options.coins : [];
+  const coinInfo = new Map(coins.map(c => [String(c.coin || "").toLowerCase(), c]));
+  const symbols = new Set();
+
+  Object.keys(pairStats).forEach(pair => {
+    const m = pair.toLowerCase().match(/^([a-z0-9]+)-(rls|usdt)$/);
+    if (m && m[1] !== "rls") symbols.add(m[1]);
   });
+  // Include every active currency returned by Nobitex even if one quote pair is temporarily absent.
+  const active = options.nobitex && Array.isArray(options.nobitex.activeCurrencies)
+    ? options.nobitex.activeCurrencies : [];
+  active.forEach(s => {
+    const symbol = String(s).toLowerCase();
+    if (symbol && symbol !== "rls" && symbol !== "usdt" && symbol !== "irt") symbols.add(symbol);
+  });
+  symbols.add("usdt");
 
-  if(result.length<5){
-    const body=clean($("body").text());
-    for(const [symbol,name] of wanted){
-      if(result.some(x=>x.symbol===symbol)) continue;
-      const re=new RegExp(symbol+"[\\s\\S]{0,500}?irt\\s*([\\d,]+(?:\\.\\d+)?)\\s*\\$\\s*([\\d,]+(?:\\.\\d+)?)[\\s\\S]{0,80}?([+-]?\\d+(?:\\.\\d+)?)\\s*[٪%]","i");
-      const m=body.match(re);
-      if(!m) continue;
-      result.push({symbol,name,priceIRT:Number(m[1].replace(/,/g,"")),priceUSDT:Number(m[2]),changePercent24h:Number(m[3])});
-    }
+  const usdtRls = number(pairStats["usdt-rls"] && pairStats["usdt-rls"].latest);
+  const usdtToman = usdtRls == null ? null : usdtRls / 10;
+  const markets = [];
+
+  for (const symbol of symbols) {
+    if (symbol === "rls" || symbol === "irt") continue;
+    const rlsStat = pairStats[symbol + "-rls"];
+    const usdtStat = pairStats[symbol + "-usdt"];
+    const info = coinInfo.get(symbol) || {};
+    const rawName = String(info.name || info.stdName || symbol.toUpperCase());
+    const name = persianNames[symbol] || (persianText(info.stdName) ? info.stdName : rawName);
+    const priceIRT = symbol === "usdt"
+      ? usdtToman
+      : (rlsStat ? number(rlsStat.latest) / 10 : null);
+    const priceUSDT = symbol === "usdt"
+      ? 1
+      : (usdtStat ? number(usdtStat.latest) : null);
+    if (priceIRT == null && priceUSDT == null) continue;
+
+    markets.push({
+      symbol: symbol.toUpperCase(),
+      name,
+      rank: ranks.get(symbol) || null,
+      priceIRT,
+      priceUSDT,
+      changePercent15mIRT: null,
+      changePercent15mUSDT: null
+    });
   }
 
-  if(result.length<5){
-    throw new Error("Nobitex page yielded too few markets: "+result.length);
+  if (markets.length < 5) throw new Error("Nobitex returned too few crypto markets: " + markets.length);
+
+  const history = Array.isArray(previous.history) ? previous.history.slice() : [];
+  const targetTime = now - 15 * 60 * 1000;
+  const baseline = history
+    .filter(h => number(h.timestamp) != null && h.timestamp <= targetTime && h.prices)
+    .sort((a, b) => b.timestamp - a.timestamp)[0];
+
+  if (baseline) {
+    markets.forEach(x => {
+      const old = baseline.prices[x.symbol];
+      if (!old) return;
+      x.changePercent15mIRT = pct(x.priceIRT, number(old.priceIRT));
+      x.changePercent15mUSDT = pct(x.priceUSDT, number(old.priceUSDT));
+    });
   }
 
-  const payload={
-    source:"Nobitex",
-    sourcePage:"Nobitex price page",
-    scrapedAt:new Date().toISOString(),
-    scrapedAtTimezone:"UTC",
-    quoteCurrency:"USDT",
-    usdtPriceCurrency:"IRT",
-    markets:result
+  history.push({
+    timestamp: now,
+    prices: Object.fromEntries(markets.map(x => [x.symbol, {
+      priceIRT: x.priceIRT,
+      priceUSDT: x.priceUSDT
+    }]))
+  });
+  const trimmedHistory = history
+    .filter(h => number(h.timestamp) != null && h.timestamp >= now - 90 * 60 * 1000)
+    .slice(-20);
+
+  const payload = {
+    source: "Nobitex",
+    rankingSource: "CoinGecko market-cap rank",
+    sourcePage: "Nobitex public market API",
+    scrapedAt: new Date(now).toISOString(),
+    scrapedAtTimezone: "UTC",
+    quoteCurrency: "USDT",
+    usdtPriceCurrency: "IRT",
+    marketCount: markets.length,
+    rankingUpdatedAt: ranks.size ? new Date(now).toISOString() : (previous.rankingUpdatedAt || null),
+    markets,
+    history: trimmedHistory
   };
 
-  fs.mkdirSync("market-data",{recursive:true});
-  fs.writeFileSync("market-data/nobitex.json",JSON.stringify(payload,null,2)+"\n");
-
-  console.log("Nobitex updated:",result.length,"markets");
+  fs.mkdirSync("market-data", { recursive: true });
+  fs.writeFileSync(DATA_FILE, JSON.stringify(payload, null, 2) + "\n");
+  console.log("Nobitex updated:", markets.length, "markets; global ranks:", ranks.size,
+    "; 15-minute baseline:", baseline ? new Date(baseline.timestamp).toISOString() : "warming up");
 }
-
-main().catch(err=>{
+main().catch(err => {
   console.error(err);
   process.exit(1);
 });
