@@ -100,17 +100,21 @@ export function generateImportantPages(rows){
    const file=path.join(OUT,encodeURIComponent(id)+".html");
    fs.writeFileSync(file,page(a),"utf8");
  }
- // Remove previously generated important pages that no longer pass the strict content policy.
+ // Preserve every previously generated important page. Reprocessing or a temporary
+ // AI/policy mismatch must never delete published archive content.
+ const allGeneratedIds=new Set(selected.keys());
  for(const name of fs.readdirSync(OUT)){
    if(!name.endsWith(".html"))continue;
    const file=path.join(OUT,name);
    let existing="";
    try{existing=fs.readFileSync(file,"utf8")}catch{continue}
    if(!existing.startsWith("<!doctype html><!-- EVREN_NEXUS_GENERATED_IMPORTANT_ARTICLE -->"))continue;
+   const refreshed=existing.replace(/Evrenexus-sidebar\.js\?v=[^"]+/g,"Evrenexus-sidebar.js?v=20261011-01");
+   if(refreshed!==existing){fs.writeFileSync(file,refreshed,"utf8");existing=refreshed;}
    let id=name.slice(0,-5);
    try{id=decodeURIComponent(id)}catch{}
-   if(!selected.has(id))fs.unlinkSync(file);
+   if(id)allGeneratedIds.add(id);
  }
- console.log("generated permanent important article pages: "+selected.size+" (legacy + AI-approved; body limit "+MAX_BODY_CHARS+" characters)");
- return new Set(selected.keys());
+ console.log("generated or preserved permanent important article pages: "+allGeneratedIds.size+" (published archive pages are never deleted; body limit "+MAX_BODY_CHARS+" characters)");
+ return allGeneratedIds;
 }
