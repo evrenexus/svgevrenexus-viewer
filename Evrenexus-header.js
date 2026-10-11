@@ -4,34 +4,34 @@
 if(document.getElementById("Evrenxus-header")) return;
 
 var css=`
-#Evrenxus-header{width:850px;max-width:100%;height:130px;position:fixed;top:0;left:50%;transform:translateX(-50%);z-index:100000;background:#fff;border-bottom:1px solid #d9dfe3;font-family:Vazir,Tahoma,Arial,sans-serif;box-sizing:border-box;direction:rtl;box-shadow:0 1px 5px rgba(0,0,0,.04)}
+#Evrenxus-header{width:1180px;max-width:100%;height:130px;position:fixed;top:0;left:50%;transform:translateX(-50%);z-index:100000;background:#fff;border-bottom:1px solid #e0e6eb;font-family:Vazir,Tahoma,Arial,sans-serif;box-sizing:border-box;direction:rtl;box-shadow:0 1px 5px rgba(0,0,0,.04)}
 #Evrenxus-header *{box-sizing:border-box}
-#Evrenxus-header-row1{height:100px;background:#17232d;position:relative;overflow:hidden;direction:rtl}
-.Evrenxus-header-brand{position:absolute;right:0;top:0;width:300px;height:100px;display:block;background:#101b23;z-index:5;overflow:hidden}
+#Evrenxus-header-row1{height:100px;background:#142d40;position:relative;overflow:hidden;direction:rtl}
+.Evrenxus-header-brand{position:absolute;right:0;top:0;width:300px;height:100px;display:block;background:#0d202e;z-index:5;overflow:hidden}
 .Evrenxus-brand{display:block;width:300px;height:100px;line-height:0}.Evrenxus-brand img{display:block;width:300px;height:100px;object-fit:fill;border:0}
 #Evrenxus-market-tickers{height:100px;margin-right:300px}
-.Evrenxus-ticker{height:25px;position:relative;background:#17232d;color:#fff;display:flex;align-items:center;font-size:10px;font-weight:700;overflow:hidden}
+.Evrenxus-ticker{height:25px;position:relative;background:#142d40;color:#fff;display:flex;align-items:center;font-size:10px;font-weight:700;overflow:hidden}
 .Evrenxus-ticker-window{position:absolute;right:0;left:0;height:25px;overflow:hidden;white-space:nowrap}
 .Evrenxus-ticker-track{display:inline-flex;height:25px;align-items:center;white-space:nowrap;animation:EvrenxusTickerMove var(--EvrenxusTickerDuration,40s) linear infinite}
 .Evrenxus-ticker-window:hover .Evrenxus-ticker-track{animation-play-state:paused}
 .Evrenxus-ticker-item{display:inline-flex;align-items:center;direction:rtl;margin-left:30px;height:25px;white-space:nowrap;color:#fff;text-decoration:none;cursor:pointer}.Evrenxus-ticker-item:hover{opacity:.88}
-.Evrenxus-ticker-item .symbol{color:#aeb9c1;margin-left:6px}.Evrenxus-ticker-update{color:#8e9aa3;margin-right:18px;font-size:9px;opacity:.9;text-decoration:none;cursor:pointer}.Evrenxus-ticker-item .price{color:#fff;direction:ltr}.Evrenxus-ticker-track{direction:ltr}.Evrenxus-ticker-window{direction:ltr}.Evrenxus-ticker-topic{display:inline-flex;align-items:center;height:25px;margin-right:18px;font-size:10px;color:#fff;font-weight:700;white-space:nowrap;text-decoration:none;cursor:pointer}
-.Evrenxus-up{color:#55cf8a;margin-right:5px}.Evrenxus-down{color:#ff7474;margin-right:5px}
+.Evrenxus-ticker-item .symbol{color:#b9c9d2;margin-left:6px}.Evrenxus-ticker-update{color:#91a3af;margin-right:18px;font-size:9px;opacity:.9;text-decoration:none;cursor:pointer}.Evrenxus-ticker-item .price{color:#fff;direction:ltr}.Evrenxus-ticker-track{direction:ltr}.Evrenxus-ticker-window{direction:ltr}.Evrenxus-ticker-topic{display:inline-flex;align-items:center;height:25px;margin-right:18px;font-size:10px;color:#fff;font-weight:700;white-space:nowrap;text-decoration:none;cursor:pointer}
+.Evrenxus-up{color:#62c9a0;margin-right:5px}.Evrenxus-down{color:#ff9992;margin-right:5px}
 
 @keyframes EvrenxusTickerMove{from{transform:translateX(-100%)}to{transform:translateX(100%)}}
 
 #Evrenxus-header-row2{height:30px;display:flex;align-items:center;direction:rtl;background:#fff}
 #Evrenxus-main-menu{height:30px;display:flex;align-items:stretch;justify-content:flex-start;direction:rtl;overflow:hidden;white-space:nowrap;flex:1;min-width:0}
-#Evrenxus-main-menu a{height:30px;padding:0 5px;display:flex;align-items:center;color:#303a41;text-decoration:none;font-size:9.5px;font-weight:700;border-left:1px solid #edf0f2;flex-shrink:0;position:relative}
-#Evrenxus-main-menu a:first-child{color:#d9232e}
-#Evrenxus-main-menu a:hover{color:#d9232e;background:#fafafa}
-#Evrenxus-main-menu a:hover:after,#Evrenxus-main-menu a.active:after{content:"";position:absolute;right:7px;left:7px;bottom:0;height:3px;background:#d9232e}
-#Evrenxus-property-search{width:225px;height:28px;flex:0 0 225px;margin:0 4px;padding:0 4px;border:1px solid #d7dde1;border-right:3px solid #d9232e;background:#fafbfc;display:flex;align-items:center;gap:5px;direction:rtl;white-space:nowrap}
+#Evrenxus-main-menu a{height:30px;padding:0 5px;display:flex;align-items:center;color:#243949;text-decoration:none;font-size:9.5px;font-weight:700;border-left:1px solid #edf0f2;flex-shrink:0;position:relative}
+#Evrenxus-main-menu a:first-child{color:#d64c43}
+#Evrenxus-main-menu a:hover{color:#d64c43;background:#fafafa}
+#Evrenxus-main-menu a:hover:after,#Evrenxus-main-menu a.active:after{content:"";position:absolute;right:7px;left:7px;bottom:0;height:3px;background:#d64c43}
+#Evrenxus-property-search{width:225px;height:28px;flex:0 0 225px;margin:0 4px;padding:0 4px;border:1px solid #e0e6eb;border-right:3px solid #d64c43;background:#fafbfc;display:flex;align-items:center;gap:5px;direction:rtl;white-space:nowrap}
 #Evrenxus-property-search-title{font-size:9px;font-weight:700;white-space:nowrap}#Evrenxus-property-search-title a{color:#26333b;text-decoration:none}
 #Evrenxus-property-search-form{display:flex;align-items:center;gap:4px}#Evrenxus-property-budget{width:49px;height:24px;border:1px solid #cbd3d8;background:#fff;text-align:center;direction:ltr;font-size:10px;outline:none}
-#Evrenxus-property-search-button{height:24px;padding:0 7px;border:0;background:#d9232e;color:#fff;font-family:Vazir,Tahoma,sans-serif;font-size:9px;font-weight:700;cursor:pointer}
+#Evrenxus-property-search-button{height:24px;padding:0 7px;border:0;background:#d64c43;color:#fff;font-family:Vazir,Tahoma,sans-serif;font-size:9px;font-weight:700;cursor:pointer}
 #Evrenxus-property-search-error{display:none;position:absolute;right:5px;top:38px;color:#c3212b;font-size:9px;white-space:nowrap;background:#fff;padding:3px 6px;border:1px solid #ead0d3;z-index:20}
-@media(max-width:700px){#Evrenxus-header{width:100vw;max-width:none;left:0;right:0;margin:0;transform:none;height:230px}#Evrenxus-header-row1{height:200px}.Evrenxus-header-brand{width:300px;height:100px;right:50%;transform:translateX(50%)}.Evrenxus-brand,.Evrenxus-brand img{width:300px;height:100px}#Evrenxus-market-tickers{position:absolute;top:100px;right:0;left:0;width:100%;height:100px;margin-right:0}.Evrenxus-ticker,.Evrenxus-ticker-window,.Evrenxus-ticker-track{height:25px}#Evrenxus-header-row2{height:30px}#Evrenxus-main-menu{height:30px;overflow-x:auto}#Evrenxus-main-menu a{height:30px;padding:0 8px;font-size:9px;background:#d9232e;color:#fff}#Evrenxus-property-search{width:190px;flex-basis:190px;height:28px}}
+@media(max-width:700px){#Evrenxus-header{width:100vw;max-width:none;left:0;right:0;margin:0;transform:none;height:230px}#Evrenxus-header-row1{height:200px}.Evrenxus-header-brand{width:300px;height:100px;right:50%;transform:translateX(50%)}.Evrenxus-brand,.Evrenxus-brand img{width:300px;height:100px}#Evrenxus-market-tickers{position:absolute;top:100px;right:0;left:0;width:100%;height:100px;margin-right:0}.Evrenxus-ticker,.Evrenxus-ticker-window,.Evrenxus-ticker-track{height:25px}#Evrenxus-header-row2{height:30px}#Evrenxus-main-menu{height:30px;overflow-x:auto}#Evrenxus-main-menu a{height:30px;padding:0 8px;font-size:9px;background:#d64c43;color:#fff}#Evrenxus-property-search{width:190px;flex-basis:190px;height:28px}}
 @media(max-width:430px){#Evrenxus-header{height:230px}#Evrenxus-header-row1{height:200px}.Evrenxus-header-brand{width:300px;height:100px;right:50%;transform:translateX(50%)}.Evrenxus-brand,.Evrenxus-brand img{width:300px;height:100px}#Evrenxus-market-tickers{top:100px;height:100px;margin-right:0}.Evrenxus-ticker,.Evrenxus-ticker-window,.Evrenxus-ticker-track{height:25px}.Evrenxus-datetime,#Evrenxus-header-row2{height:30px}#Evrenxus-main-menu{height:30px}#Evrenxus-main-menu a{height:30px;padding:0 7px;font-size:8.5px}#Evrenxus-property-search{width:166px;flex-basis:166px;height:28px}}
 `;
 var style=document.createElement("style");style.id="Evrenxus-header-style";style.textContent=css;(document.head||document.documentElement).appendChild(style);
