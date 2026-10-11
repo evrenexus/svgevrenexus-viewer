@@ -12,9 +12,12 @@ const raw=readJson("data/news.json");
 const source=Array.isArray(raw)?raw:(Array.isArray(raw?.items)?raw.items:Array.isArray(raw?.news)?raw.news:Array.isArray(raw?.articles)?raw.articles:[]);
 if(!source.length) throw new Error("data/news.json contains no collected news items");
 
+const IRRELEVANT_HEADLINE_RE=/(?:قتل|قاتل|جنایی|قاچاقچی|سارق|سرقت|دستگیری|زندانی|زندان|چوگان|فوتبال|فوتسال|بسکتبال|والیبال|هندبال|تنیس|کشتی|سرمربی|بازیکن|لیگ برتر|مسابقه ورزشی|قهرمانی|جام جهانی|ورزشکار|ورزشی)/u;
 const valid=source.filter(n=>{
   if(!n||typeof n!=="object"||!String(n.id||"").trim()||!String(n.title||"").trim()||!/^https?:\/\//i.test(String(n.url||"").trim())) return false;
-  return outOfScope({title:n.title,summary:n.summary,content:n.content})===null;
+  const topics=Array.isArray(n.topics)?n.topics.filter(t=>C.TOPICS.includes(t)):[];
+  if(!topics.length||IRRELEVANT_HEADLINE_RE.test(String(n.title||"").replace(/[\u200c\u200d\u200e\u200f]/g," "))) return false;
+  return outOfScope({title:n.title})===null;
 }).map(n=>({
   id:String(n.id),
   title:String(n.title||"").trim(),
