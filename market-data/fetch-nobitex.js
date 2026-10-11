@@ -43,6 +43,20 @@ function pct(now, before) {
 function persianText(s) {
   return /[\u0600-\u06FF]/.test(String(s || ""));
 }
+function extractPersianName(label, symbol) {
+  const re = new RegExp("(?<![A-Z0-9])" + symbol + "(?![A-Z0-9])", "i");
+  const match = re.exec(label);
+  if (!match) return null;
+  const clean = s => String(s || "").replace(/[()|·•—–-]/g, " ").replace(/\s+/g, " ").trim();
+  const before = clean(label.slice(0, match.index));
+  const after = clean(label.slice(match.index + match[0].length));
+  const beforeFa = persianText(before);
+  const afterFa = persianText(after);
+  if (beforeFa && afterFa) return before.length <= after.length ? before : after;
+  if (beforeFa) return before;
+  if (afterFa) return after;
+  return null;
+}
 function parsePairStats(payload) {
   const stats = payload && payload.stats;
   if (!stats || typeof stats !== "object") throw new Error("Nobitex market stats missing");
@@ -61,32 +75,20 @@ async function fetchPersianNames(symbols) {
       });
       if (!r.ok) throw new Error("HTTP " + r.status);
       const $ = cheerio.load(await r.text());
-      $("table tr").each((_, tr) => {
-        const cells = $(tr).find("th,td").map((_, cell) => $(cell).text().replace(/\\s+/g, " ").trim()).get();
-        if (!cells.length) return;
-        const first = cells[0] || "";
-        for (const symbol of symbols) {
-          const re = new RegExp("(^|[^A-Z0-9])" + symbol + "([^A-Z0-9]|$)", "i");
-          if (!re.test(first)) continue;
-          const candidate = first.replace(re, " ").replace(/[()|·•—–-]/g, " ").replace(/\\s+/g, " ").trim();
-          if (/[\\u0600-\\u06FF]/.test(candidate) && candidate.length < 80) {
-            names.set(symbol, candidate);
-          }
-        }
-      });
-      // Nobitex renders part of the long market list as links rather than table rows.
-      $("a").each((_, anchor) => {
-        const label = $(anchor).text().replace(/\\s+/g, " ").trim();
+      function scanLabel(label) {
+        label = String(label || "").replace(/\s+/g, " ").trim();
         if (!label) return;
         for (const symbol of symbols) {
-          const re = new RegExp("(^|[^A-Z0-9])" + symbol + "([^A-Z0-9]|$)", "i");
-          if (!re.test(label)) continue;
-          const candidate = label.replace(re, " ").replace(/[()|·•—–-]/g, " ").replace(/\\s+/g, " ").trim();
-          if (/[\\u0600-\\u06FF]/.test(candidate) && candidate.length < 80) {
-            names.set(symbol, candidate);
-          }
+          const candidate = extractPersianName(label, symbol);
+          if (candidate && candidate.length < 80) names.set(symbol, candidate);
         }
+      }
+      $("table tr").each((_, tr) => {
+        const cells = $(tr).find("th,td").map((_, cell) => $(cell).text()).get();
+        cells.forEach(scanLabel);
       });
+      // The longer market list is also rendered as links on Nobitex.
+      $("a").each((_, anchor) => scanLabel($(anchor).text()));
       if (names.size) break;
     } catch (e) {
       console.warn("Nobitex Persian names unavailable:", e.message);
@@ -157,7 +159,7 @@ async function main() {
     const usdtStat = pairStats[symbol + "-usdt"];
     const info = coinInfo.get(symbol) || {};
     const rawName = String(info.name || info.stdName || symbol.toUpperCase());
-    const name = scrapedNames.get(symbol) || persianNames[symbol] || (persianText(info.stdName) ? info.stdName : rawName);
+    const name = persianNames[symbol] || scrapedNames.get(symbol) || (persianText(info.stdName) ? info.stdName : rawName);
     const rlsLatestRaw = rlsStat ? number(rlsStat.latest) : null;
     const usdtLatestRaw = usdtStat ? number(usdtStat.latest) : null;
     const rlsLatest = rlsLatestRaw != null && rlsLatestRaw > 0 ? rlsLatestRaw : null;
