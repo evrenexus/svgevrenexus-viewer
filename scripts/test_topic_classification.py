@@ -63,6 +63,28 @@ class TopicClassificationTests(unittest.TestCase):
             self.topics("وام مسکن و تسهیلات خرید آپارتمان اعلام شد"),
         )
 
+    def test_cement_price_news_is_economy(self):
+        self.assertIn(
+            "economy",
+            self.topics("قیمت سیمان عمده امروز اعلام شد"),
+        )
+
+    def test_health_research_on_loneliness_is_health(self):
+        topics = self.topics(
+            "تنهایی و انزوای اجتماعی ممکن است چند سال از عمر سالم شما بکاهد",
+            summary="یافته‌ها با کاهش سال‌های زندگی سالم و علائم افسردگی یا اضطراب مرتبط‌اند.",
+            category="پزشکی و سلامت",
+        )
+        self.assertIn("health", topics)
+
+    def test_cultural_festival_is_science_life_not_housing(self):
+        topics = self.topics(
+            "تصاویر؛ جشن مهرگان در غار کرفتو",
+            summary="این جشن برای پاسداشت میراث فرهنگی و آیین‌های کهن ایرانی برگزار شد.",
+        )
+        self.assertIn("science-life", topics)
+        self.assertNotIn("real-estate", topics)
+
     def test_unrelated_body_cannot_override_sports_headline(self):
         self.assertEqual(
             self.topics(
@@ -110,6 +132,28 @@ class TopicClassificationTests(unittest.TestCase):
             "قیمت خانه در تهران افزایش یافت"
         )
         self.assertIn("real-estate", topics)
+
+    def test_ai_fallback_classifies_cement_prices_as_economy(self):
+        self.assertIn(
+            "economy",
+            self.ai_topics("قیمت سیمان عمده امروز اعلام شد"),
+        )
+
+    def test_ai_fallback_classifies_health_research(self):
+        topics = self.ai_topics(
+            "تنهایی و انزوای اجتماعی ممکن است چند سال از عمر سالم شما بکاهد",
+            summary="یافته‌ها با کاهش سال‌های زندگی سالم و علائم افسردگی یا اضطراب مرتبط‌اند.",
+            category="پزشکی و سلامت",
+        )
+        self.assertIn("health", topics)
+
+    def test_ai_fallback_classifies_cultural_festival_not_housing(self):
+        topics = self.ai_topics(
+            "تصاویر؛ جشن مهرگان در غار کرفتو",
+            summary="این جشن برای پاسداشت میراث فرهنگی و آیین‌های کهن ایرانی برگزار شد.",
+        )
+        self.assertIn("science-life", topics)
+        self.assertNotIn("real-estate", topics)
 
     def test_ai_fallback_does_not_restore_publisher_category(self):
         self.assertEqual(
