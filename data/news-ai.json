@@ -1,7 +1,7 @@
 {
   "version": 1,
   "policy_version": 9,
-  "updated": "2026-10-11T08:11:48Z",
+  "updated": "2026-10-11T10:09:29Z",
   "items": {
     "72b4eb7a7155ed214c32324d": {
       "title": "تصاویر؛ جشن «مهرگان» در غار کرفتو",
@@ -5394,7 +5394,7 @@
       "title": "قیمت روز طلا و دلار",
       "summary": "نرخ لحظه‌ای دلار و طلا امروز | جدول قیمت ارز و سکه، طلا ۱۸ عیار، دلار آزاد، صرافی و نیما را اینجا ببینید.",
       "source": "فرارو",
-      "published": "2026-10-10T11:28:35+03:30",
+      "published": "2026-10-11T11:42:19+03:30",
       "topics": [
         "currency-gold"
       ],
@@ -5402,22 +5402,32 @@
         "currency-gold": 20
       },
       "importance": 20,
-      "important": false,
-      "important_topics": [],
-      "slider_topics": [],
-      "ticker_topics": [],
-      "breaking": false,
-      "breaking_topics": [],
+      "important": true,
+      "important_topics": [
+        "currency-gold"
+      ],
+      "slider_topics": [
+        "currency-gold"
+      ],
+      "ticker_topics": [
+        "currency-gold"
+      ],
+      "breaking": true,
+      "breaking_topics": [
+        "currency-gold"
+      ],
       "publishable": true,
       "exclude_reason": "",
       "group_id": "local-0388df91d1f9",
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 15,
+      "local_score": 17,
       "political": false,
-      "breaking_signal": false,
-      "age_hours": 3.791527293390698,
+      "breaking_signal": true,
+      "age_hours": 1.683771025273535,
+      "permanent_article": true,
+      "article_id": "article-bd0016cd5804210b",
       "image": "https://cdn.fararu.com/thumbnail/4GLbAlXa0Qba/JABahvdX-__vZfhSVdBz81vtWbpEttyjBltEMSZQjqK9Yl6n-jh2lxdNEcmKJkw8zsDmFLlc0OaHK0sKPHGk1_gXLQYkrIzk2hNafglHwEJ4epCfu4JHlhzxlloJpgTD/%D9%82%DB%8C%D9%85%D8%AA+%D8%B7%D9%84%D8%A7+%D9%88+%D8%AF%D9%84%D8%A7%D8%B1.jpg"
     },
     "0d93bed876a57c8cf81e71ea": {
@@ -17781,7 +17791,7 @@
       "publishable": false,
       "exclude_reason": "political content is excluded",
       "group_id": "local-d5f3bd2f59dd",
-      "representative": true,
+      "representative": false,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
       "local_score": 7,
@@ -18580,7 +18590,7 @@
       "publishable": false,
       "exclude_reason": "political content is excluded",
       "group_id": "local-f0e81d21635d",
-      "representative": true,
+      "representative": false,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
       "local_score": 4,
@@ -19393,7 +19403,7 @@
       "publishable": true,
       "exclude_reason": "",
       "group_id": "local-a660ad148830",
-      "representative": true,
+      "representative": false,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
       "local_score": 7,
@@ -19793,25 +19803,29 @@
         "markets"
       ],
       "topic_scores": {
-        "markets": 9
+        "markets": 15
       },
-      "importance": 9,
-      "important": false,
-      "important_topics": [],
-      "slider_topics": [],
+      "importance": 15,
+      "important": true,
+      "important_topics": [
+        "markets"
+      ],
+      "slider_topics": [
+        "markets"
+      ],
       "ticker_topics": [],
       "breaking": false,
       "breaking_topics": [],
-      "publishable": false,
-      "exclude_reason": "political content is excluded",
+      "publishable": true,
+      "exclude_reason": "",
       "group_id": "local-58cfb7578def",
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 4,
-      "political": true,
+      "local_score": 10,
+      "political": false,
       "breaking_signal": false,
-      "age_hours": 0.20735326766967774
+      "age_hours": 1.9559654714001549
     },
     "33a148e45d968142c38f0e1f": {
       "title": "مدیریت بحران گلستان: انسداد ۱۴ راه روستایی و قطع برق ۱۹ روستا بر اثر سیلاب شب گذشته/ میزان بارندگی در منطقه قلعه قافه به بیش از ۱۴۷ میلی متر رسیده",
@@ -20615,25 +20629,25 @@
         "currency-gold"
       ],
       "topic_scores": {
-        "currency-gold": 9
+        "currency-gold": 15
       },
-      "importance": 9,
+      "importance": 15,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
       "ticker_topics": [],
       "breaking": false,
       "breaking_topics": [],
-      "publishable": false,
-      "exclude_reason": "political content is excluded",
+      "publishable": true,
+      "exclude_reason": "",
       "group_id": "local-4f0f8ee1a299",
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 4,
-      "political": true,
+      "local_score": 10,
+      "political": false,
       "breaking_signal": false,
-      "age_hours": 0.20666015128294626
+      "age_hours": 1.023997602727678
     },
     "0249c71954dc609f9238d9c3": {
       "title": "دو پیام ناهمسویی انتظارات تورمی و رشد نقدینگی",
@@ -20644,25 +20658,25 @@
         "economy"
       ],
       "topic_scores": {
-        "economy": 4
+        "economy": 10
       },
-      "importance": 4,
+      "importance": 10,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
       "ticker_topics": [],
       "breaking": false,
       "breaking_topics": [],
-      "publishable": false,
-      "exclude_reason": "political content is excluded",
+      "publishable": true,
+      "exclude_reason": "",
       "group_id": "local-e3eb97d25dc9",
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 4,
-      "political": true,
+      "local_score": 10,
+      "political": false,
       "breaking_signal": false,
-      "age_hours": 0.20666014432907104
+      "age_hours": 1.023997602197859
     },
     "9282f3820cc39ff3e110c3db": {
       "title": "قیمت دلار، یورو و درهم امروز یکشنبه ‌۱۹ مهر ۱۴۰۵/ افزایش قیمت",
@@ -20704,23 +20718,23 @@
       "published": "2026-10-11T11:20:46+03:30",
       "topics": [],
       "topic_scores": {},
-      "importance": 4,
+      "importance": 7,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
       "ticker_topics": [],
       "breaking": false,
       "breaking_topics": [],
-      "publishable": false,
-      "exclude_reason": "political content is excluded",
+      "publishable": true,
+      "exclude_reason": "",
       "group_id": "local-fb2b74fe98af",
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 4,
-      "political": true,
-      "breaking_signal": true,
-      "age_hours": 0.20754867878225114
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.0253632946809133
     },
     "685817110eadb5a6ce7e9830": {
       "title": "قیمت سکه، نیم‌سکه و ربع‌سکه امروز یکشنبه ۱۹ مهر ۱۴۰۵",
@@ -20789,25 +20803,29 @@
         "markets"
       ],
       "topic_scores": {
-        "markets": 9
+        "markets": 15
       },
-      "importance": 9,
-      "important": false,
-      "important_topics": [],
-      "slider_topics": [],
+      "importance": 15,
+      "important": true,
+      "important_topics": [
+        "markets"
+      ],
+      "slider_topics": [
+        "markets"
+      ],
       "ticker_topics": [],
       "breaking": false,
       "breaking_topics": [],
-      "publishable": false,
-      "exclude_reason": "political content is excluded",
+      "publishable": true,
+      "exclude_reason": "",
       "group_id": "local-49d4c1295394",
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 4,
-      "political": true,
+      "local_score": 10,
+      "political": false,
       "breaking_signal": false,
-      "age_hours": 0.206660143799252
+      "age_hours": 1.21069983250565
     },
     "ff2d6123745746acac4cd211": {
       "title": "قیمت طلا در میلی چگونه نمایش داده می‌شود؟",
@@ -20987,7 +21005,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 0.40981704182094997
+      "age_hours": 1.6838375194205177
     },
     "cf86ee9bd79cd08fbb6e4a7a": {
       "title": "تغییر الگوی خرید با شکست رکورد تاریخی تورم لوازم خانگی",
@@ -21025,23 +21043,23 @@
       "published": "2026-10-11T11:00:38+03:30",
       "topics": [],
       "topic_scores": {},
-      "importance": 4,
+      "importance": 7,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
       "ticker_topics": [],
       "breaking": false,
       "breaking_topics": [],
-      "publishable": false,
-      "exclude_reason": "political content is excluded",
+      "publishable": true,
+      "exclude_reason": "",
       "group_id": "local-48518e9e9264",
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 4,
-      "political": true,
-      "breaking_signal": true,
-      "age_hours": 0.20753591848744288
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.2127058849732082
     },
     "3e22c472a73b9549eba26b59": {
       "title": "آغاز بحران مسکن از جایی بود که توان مردم نادیده گرفته شد / برای حل بحران مسکن باید نگاه به تعداد واحد ساخته‌شده تغییر کند",
@@ -21052,25 +21070,29 @@
         "real-estate"
       ],
       "topic_scores": {
-        "real-estate": 16
+        "real-estate": 20
       },
-      "importance": 16,
-      "important": false,
-      "important_topics": [],
-      "slider_topics": [],
+      "importance": 20,
+      "important": true,
+      "important_topics": [
+        "real-estate"
+      ],
+      "slider_topics": [
+        "real-estate"
+      ],
       "ticker_topics": [],
       "breaking": false,
       "breaking_topics": [],
-      "publishable": false,
-      "exclude_reason": "political content is excluded",
+      "publishable": true,
+      "exclude_reason": "",
       "group_id": "local-1b6fc2d08a38",
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 4,
-      "political": true,
+      "local_score": 10,
+      "political": false,
       "breaking_signal": false,
-      "age_hours": 0.20735327263673148
+      "age_hours": 1.2125447441471948
     },
     "26b273c31dd089a2f87245dc": {
       "title": "خروج بی‌سابقه شرکت‌های ژاپنی از بازار چین",
@@ -21098,8 +21120,8 @@
       "analysis_mode": "local",
       "local_score": 4,
       "political": true,
-      "breaking_signal": true,
-      "age_hours": 0.207548675470882
+      "breaking_signal": false,
+      "age_hours": 1.2129361257950464
     },
     "d8acef9047820190d669a677": {
       "title": "برای حفظ سلامت عضلات در سنین بالا چکار کنیم؟",
@@ -21147,25 +21169,25 @@
         "economy"
       ],
       "topic_scores": {
-        "economy": 9
+        "economy": 12
       },
-      "importance": 9,
+      "importance": 12,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
       "ticker_topics": [],
       "breaking": false,
       "breaking_topics": [],
-      "publishable": false,
-      "exclude_reason": "political content is excluded",
+      "publishable": true,
+      "exclude_reason": "",
       "group_id": "local-40ae73aab004",
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 4,
-      "political": true,
-      "breaking_signal": true,
-      "age_hours": 0.20666014267338648
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.2106998313797845
     },
     "4dc99c9f8b304fe11a0bded2": {
       "title": "از رکوردشکنی بورس تا تردید معامله‌گران",
@@ -21214,16 +21236,16 @@
       "ticker_topics": [],
       "breaking": false,
       "breaking_topics": [],
-      "publishable": false,
-      "exclude_reason": "political content is excluded",
+      "publishable": true,
+      "exclude_reason": "",
       "group_id": "local-ae11fb226609",
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
       "local_score": 7,
-      "political": true,
+      "political": false,
       "breaking_signal": false,
-      "age_hours": 0.20735327184200286
+      "age_hours": 1.4350544705655839
     },
     "7220eb5e94e1fc742632dbb5": {
       "title": "جریان نقدینگی در راه ملل| از برگزاری اَبَرمزایده تا افزایش سرمایه ۳۵۰۰ درصدی!",
@@ -21327,25 +21349,25 @@
         "economy"
       ],
       "topic_scores": {
-        "economy": 4
+        "economy": 11
       },
-      "importance": 4,
+      "importance": 11,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
       "ticker_topics": [],
       "breaking": false,
       "breaking_topics": [],
-      "publishable": false,
-      "exclude_reason": "political content is excluded",
+      "publishable": true,
+      "exclude_reason": "",
       "group_id": "local-668eb59bcf2a",
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 4,
-      "political": true,
+      "local_score": 11,
+      "political": false,
       "breaking_signal": false,
-      "age_hours": 0.20639462212721507
+      "age_hours": 1.4341421608130138
     },
     "7dd8a8eb313e7ee1eb786d4c": {
       "title": "ارزش ذاتی هر سهم \"ومعادن\" ۹۳۰ تومان است؛ ۲.۴ برابر قیمت تابلو",
@@ -21584,28 +21606,36 @@
       "source": "فرارو",
       "published": "2026-10-11T10:51:28+03:30",
       "topics": [
+        "economy",
         "currency-gold"
       ],
       "topic_scores": {
-        "currency-gold": 16
+        "economy": 20,
+        "currency-gold": 20
       },
-      "importance": 16,
-      "important": false,
-      "important_topics": [],
-      "slider_topics": [],
+      "importance": 20,
+      "important": true,
+      "important_topics": [
+        "economy",
+        "currency-gold"
+      ],
+      "slider_topics": [
+        "economy",
+        "currency-gold"
+      ],
       "ticker_topics": [],
       "breaking": false,
       "breaking_topics": [],
-      "publishable": false,
-      "exclude_reason": "political content is excluded",
+      "publishable": true,
+      "exclude_reason": "",
       "group_id": "local-064efe942a6d",
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 4,
-      "political": true,
-      "breaking_signal": true,
-      "age_hours": 0.20750380489561293
+      "local_score": 17,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.683771023021804
     },
     "61a3818321fccdad2716e2b0": {
       "title": "چین و روسیه همچنان پشت سر قدرت‌های غربی",
@@ -21800,25 +21830,27 @@
         "auto"
       ],
       "topic_scores": {
-        "auto": 9
+        "auto": 14
       },
-      "importance": 9,
-      "important": false,
-      "important_topics": [],
+      "importance": 14,
+      "important": true,
+      "important_topics": [
+        "auto"
+      ],
       "slider_topics": [],
       "ticker_topics": [],
       "breaking": false,
       "breaking_topics": [],
-      "publishable": false,
-      "exclude_reason": "political content is excluded",
+      "publishable": true,
+      "exclude_reason": "",
       "group_id": "local-f15af589305b",
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 4,
-      "political": true,
+      "local_score": 9,
+      "political": false,
       "breaking_signal": false,
-      "age_hours": 0.20735327124595643
+      "age_hours": 1.6836904888682895
     },
     "9642ca955d8c185cdaf1daf9": {
       "title": "پرستاران از عدم پاسخگویی به مطالباتشان گلایه مندند",
@@ -21842,8 +21874,8 @@
       "analysis_mode": "local",
       "local_score": 4,
       "political": true,
-      "breaking_signal": true,
-      "age_hours": 0.20735327071613735
+      "breaking_signal": false,
+      "age_hours": 1.9559654755062528
     },
     "bb8d575c38802a8754d515e6": {
       "title": "قبض آب 30 میلیاردی برای برجی در تهران+ فیلم",
@@ -21924,7 +21956,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 0.20753591570589278
+      "age_hours": 1.956259053879314
     },
     "d87fb198aca817652a27b12c": {
       "title": "۱۳۰ میلیون مترمکعب به ناترازی گاز افزوده شده است",
@@ -22057,23 +22089,23 @@
       "published": "2026-10-11T10:30:47+03:30",
       "topics": [],
       "topic_scores": {},
-      "importance": 10,
+      "importance": 7,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
       "ticker_topics": [],
       "breaking": false,
       "breaking_topics": [],
-      "publishable": false,
-      "exclude_reason": "political content is excluded",
+      "publishable": true,
+      "exclude_reason": "",
       "group_id": "local-1a7c1b44b4e5",
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 10,
-      "political": true,
+      "local_score": 7,
+      "political": false,
       "breaking_signal": false,
-      "age_hours": 0.20750379933251276
+      "age_hours": 1.956111218598154
     },
     "f6b54c5a78f83fcdfa634ecf": {
       "title": "اتوبوس هیدروژنی جدید تویوتا با برد ۳۰۰ کیلومتر و سوخت‌گیری ۱۰ دقیقه‌ای معرفی شد",
@@ -22084,25 +22116,25 @@
         "technology"
       ],
       "topic_scores": {
-        "technology": 9
+        "technology": 12
       },
-      "importance": 9,
+      "importance": 12,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
       "ticker_topics": [],
       "breaking": false,
       "breaking_topics": [],
-      "publishable": false,
-      "exclude_reason": "political content is excluded",
+      "publishable": true,
+      "exclude_reason": "",
       "group_id": "local-70c83f38a1e0",
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 4,
-      "political": true,
+      "local_score": 7,
+      "political": false,
       "breaking_signal": false,
-      "age_hours": 0.20735326846440633
+      "age_hours": 1.9559654721948836
     },
     "d2c6a1c77a70ecb1ecf80094": {
       "title": "شتاب ساخت فضاهای آموزشی درهرمزگان",
@@ -22182,6 +22214,2015 @@
       "political": true,
       "breaking_signal": false,
       "age_hours": 0.40981703460216523
+    },
+    "5615ab744038f5c0bd0c1f39": {
+      "title": "سونامی سرطان در ایران",
+      "summary": "سرطان‌های گوارش و کبد بعد از بیماری‌های قلبی و عروقی، دومین علت مرگ‌ومیر در جهان هستند و در ایران نیز رو به افزایش است؛ به‌طوری که در مردان به ازای هر 100هزار نفر، 13تا 15نفر و در زنان به ازای هر ۱۰۰هزار نفر، 9تا 12نفر به یکی از آنها مبتلا هستند. علت مراجعه یک‌سوم بزرگسالان […] نوشته سونامی سرطان در",
+      "source": "پزشک سایت",
+      "published": "2026-10-11T13:21:40+03:30",
+      "topics": [
+        "health"
+      ],
+      "topic_scores": {
+        "health": 12
+      },
+      "importance": 12,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-d5f3bd2f59dd",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.2266691972149743
+    },
+    "b2d7f347d86418ad21925fbf": {
+      "title": "تغییرات اساسی در قراردادهای حآفرین با راه‌آهن",
+      "summary": "شرکت ریل‌پرداز نوآفرین (حآفرین) در جدیدترین افشای اطلاعات خود، از قرار گرفتن مطالبات «ماده ۱۲» واگن‌های مسافری در مسیر وصول خبر داد؛ رویدادی که می‌تواند گام مهمی در جهت بهبود جریان نقدینگی و تقویت صورت‌های مالی این شرکت ریلی باشد.",
+      "source": "صدای بورس",
+      "published": "2026-10-11T13:20:33+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 4
+      },
+      "importance": 4,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-01fa66dc26c6",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.22385124690002867
+    },
+    "5ab43276efe070f829afbff9": {
+      "title": "افزایش عفونت‌های تنفسی مطابق الگوی فصلی/ پیامدهای مصرف خودسرانه آنتی‌بیوتیک",
+      "summary": "رئیس دانشگاه علوم‌پزشکی ایران با بیان اینکه افزایش بیماری‌های ویروسی تنفسی را تقریبا دو بار در سال تجربه می‌کنیم، گفت: افزایش مراجعات برای عفونت‌های تنفسی منطبق با الگوی فصلی هر ساله است و بحران‌ عمده‌ای در این زمینه نداریم و آمار و ارقام مرتبط با عفونت‌های تنفسی مهر تاییدی برای این موضوع است. دکتر ",
+      "source": "پزشک سایت",
+      "published": "2026-10-11T13:16:59+03:30",
+      "topics": [
+        "health"
+      ],
+      "topic_scores": {
+        "health": 14
+      },
+      "importance": 14,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-f0e81d21635d",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.2266691952281528
+    },
+    "f073dafd08a46b6f214364a7": {
+      "title": "پیش بینی قیمت طلا در هفته دوم اکتبر | طلا از کف ۴۰۶۶ دلاری برگشت | 3 عامل تعیین مسیر طلا | وال‌استریت به صعود امیدوار شد",
+      "summary": "اقتصادنیوز: قیمت جهانی طلا پس از یک هفته پرنوسان و عقب‌نشینی تا کف ۴۰۶۶ دلار، با بازگشت خریداران به نزدیکی مرز ۴۲۰۰ دلار رسید؛ با این حال، نظرسنجی هفتگی کیتکو نشان می‌دهد در حالی که نیمی از تحلیلگران وال استریت به رشد قیمت در هفته آینده امیدوارند، تنها ۴۵ درصد معامله‌گران خرد چنین انتظاری دارند.",
+      "source": "اقتصادنیوز",
+      "published": "2026-10-11T13:15:00+03:30",
+      "topics": [
+        "currency-gold"
+      ],
+      "topic_scores": {
+        "currency-gold": 16
+      },
+      "importance": 16,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-78c701810e4a",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 0.22713630358378092
+    },
+    "e59599957564c25bee51593d": {
+      "title": "واکسن HPV فوایدی فراتر از پیشگیری از سرطان دارد",
+      "summary": "واکسن HPV عمدتاً به دلیل محافظت در برابر سرطان دهانه رحم شناخته می‌شود. اما این واکسن ممکن است مزیت مهم دیگری نیز داشته باشد: کاهش خطر عوارض جدی در دوران بارداری. تیمی به سرپرستی «ژونگ‌سونگ ژانگ» از موسسه کارولینسکا در استکهلم، مطالعه‌ای گسترده را روی بیش از ۶۲۴ هزار مورد زایمان اول انجام دادند. حدو",
+      "source": "پزشک سایت",
+      "published": "2026-10-11T13:14:49+03:30",
+      "topics": [
+        "health"
+      ],
+      "topic_scores": {
+        "health": 7
+      },
+      "importance": 7,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-a660ad148830",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.2266691944334242
+    },
+    "e596027b7dd521ff5e204add": {
+      "title": "پشتوانه ارزش‌گذاری ۲۴.۸ همتی فکور چیست؟",
+      "summary": "در دومین روز از نشست معارفه شرکت مهندسی فکور صنعت تهران مبنای ارزش‌گذاری ۲۴.۸ همتی شرکت، نحوه مواجهه با چالش‌های محیط کسب‌وکار و همچنین دستاوردهای فناورانه فکور در بخش‌های مختلف زنجیره فولاد مورد بررسی قرار گرفت.",
+      "source": "دنیای اقتصاد",
+      "published": "2026-10-11T13:13:57+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 18
+      },
+      "importance": 18,
+      "important": true,
+      "important_topics": [
+        "economy"
+      ],
+      "slider_topics": [
+        "economy"
+      ],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-5403b211acda",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 18,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.22734079778194427
+    },
+    "ae038a5c6358d9945ee4a647": {
+      "title": "ثبت رکورد تاریخی ارزش معاملات با وجود موج سنگین فروش |خروج 4.8 همت پول از سهام | ۵۳۴ نماد سرخ پوش شدند",
+      "summary": "اقتصادنیوز: شاخص کل بورس در پایان معاملات امروز با افت ۲۲ هزار و ۵۹۷ واحدی، معادل ۰.۲۷ درصد، به سطح ۸ میلیون و ۲۴۲ هزار و ۸۸۱ واحد رسید. شاخص کل هم وزن نیز ۷ هزار و ۲۹۷ واحد کاهش یافت و با افت ۰.۳۴ درصدی، در ارتفاع ۲ میلیون و ۱۶۵ هزار و ۲۲۷ واحد ایستاد.",
+      "source": "اقتصادنیوز",
+      "published": "2026-10-11T13:10:33+03:30",
+      "topics": [
+        "markets"
+      ],
+      "topic_scores": {
+        "markets": 20
+      },
+      "importance": 20,
+      "important": true,
+      "important_topics": [
+        "markets"
+      ],
+      "slider_topics": [
+        "markets"
+      ],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-a5677293300b",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 17,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.44492611050605774
+    },
+    "d8c882f99aeefbb98693cec2": {
+      "title": "دام مدل‌های چینی",
+      "summary": "آمریکا در توسعه پیشرفته‌ترین مدل‌های هوش مصنوعی همچنان برتری محدودی دارد، اما چین با عرضه مدل‌های ارزان‌تر و دارای وزن‌های باز، به‌دنبال گسترش نفوذ جهانی و افزایش بهره‌وری اقتصادی است. درحالی‌که واشنگتن بر دستیابی به هوش مصنوعی عمومی تمرکز دارد، پکن کاربردهای صنعتی این فناوری را دنبال می‌کند. بنابرا",
+      "source": "فرارو",
+      "published": "2026-10-11T13:03:43+03:30",
+      "topics": [
+        "technology"
+      ],
+      "topic_scores": {
+        "technology": 14
+      },
+      "importance": 14,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-aa4c315de401",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 0.22706132524543338
+    },
+    "d93f2a2ba748b49d13952bd3": {
+      "title": "پشتوانه ارزش‌ گذاری ۲۴.۸ همتی فکور چیست؟",
+      "summary": "دومین روز از نشست معارفه شرکت مهندسی فکور صنعت تهران، بیش از آنکه صرفاً به تشریح وضعیت فعلی شرکت محدود باشد، تصویری از مسیر پیش‌روی آن در زنجیره فولاد ارائه کرد.",
+      "source": "دنیای اقتصاد",
+      "published": "2026-10-11T13:03:03+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 18
+      },
+      "importance": 18,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-5403b211acda",
+      "representative": false,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 18,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.22734079579512279
+    },
+    "0de6292e11b30b833686689c": {
+      "title": "آیتول در سال بحران؛ تداوم خدمات و توسعه شبکه همکاری",
+      "summary": "آیتول در گزارش عملکرد سالانه ۱۴۰۴ خود از ارائه خدمات به بیش از ۵.۲ میلیون مشتری و ثبت ۸.۷۷ میلیون کاربر خبر داده است؛ پلتفرمی که فعالیت خود را با خدمات پرداخت عوارض آغاز کرد و اکنون با توسعه خدمات بیمه‌ای، اعتباری، امدادی و اجرایی، به‌دنبال ایفای نقش گسترده‌تری در مدیریت چرخه عمر خودرو است.",
+      "source": "اقتصادنیوز",
+      "published": "2026-10-11T13:02:41+03:30",
+      "topics": [
+        "auto"
+      ],
+      "topic_scores": {
+        "auto": 20
+      },
+      "importance": 20,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-826e0caea30e",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 17,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.22713630080223082
+    },
+    "59e8803d6da2e6cada89c0be": {
+      "title": "کدام نمادها مشکوک معامله شدند؟ ۱۹ مهر ۱۴۰۵",
+      "summary": "بعد از پایان معاملات امروز شش نماد معاملات مشکوک داشتند.",
+      "source": "صدای بورس",
+      "published": "2026-10-11T13:00:00+03:30",
+      "topics": [],
+      "topic_scores": {},
+      "importance": 10,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-3ffe948692ca",
+      "representative": false,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 10,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.4430590377913581
+    },
+    "120b56e494ff10471b1a62c2": {
+      "title": "هزینه ۲۵۰ هزار دلاری ثروتمندان برای داشتن عمر طولانی",
+      "summary": "اقتصادنیوز: متخصصان تأکید دارند که هزینه‌های سنگین لزوماً به معنای افزایش طول عمر نیست و بسیاری از خدمات گران‌قیمت ممکن است مزیت اثبات‌شده‌ای نسبت به مراقبت‌های استاندارد پزشکی نداشته باشند.",
+      "source": "اقتصادنیوز",
+      "published": "2026-10-11T12:53:28+03:30",
+      "topics": [
+        "health"
+      ],
+      "topic_scores": {
+        "health": 20
+      },
+      "importance": 20,
+      "important": true,
+      "important_topics": [
+        "health"
+      ],
+      "slider_topics": [
+        "health"
+      ],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-c2d9cb234eb9",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 17,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.7128106741772757
+    },
+    "a960c01ba501b3545676d9e8": {
+      "title": "مسعود کیمیایی در جشن رونمایی از یک آلبوم موسیقی",
+      "summary": "مسعود کیمیایی در رونمایی از البوم داد از جدایی محمدرضا منصوری شرکت کرد.",
+      "source": "فرارو",
+      "published": "2026-10-11T12:52:18+03:30",
+      "topics": [
+        "science-life"
+      ],
+      "topic_scores": {
+        "science-life": 4
+      },
+      "importance": 4,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-bcc22974f4d5",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.2270613227287928
+    },
+    "ec87b170f323cf26a57c3366": {
+      "title": "تصاویر؛ تلاش صدها مرد عنکبوتی",
+      "summary": "عده زیادی با لباس مرد عنکبوتی یا همان اسپایدرمن، در نخستین روز نمایشگاه کامیک‌کان منهتن نیویورک گرد هم آمدند تا رکورد جهانی گینس را برای بزرگ‌ترین تجمع افراد با لباس مرد عنکبوتی به ثبت برسانند. تلاشی که البته ناموفق بود. مرد عنکبوتی یک شخصیت تخیلی ابرقهرمان در کتاب‌های داستان مصور آمریکایی است و شعا",
+      "source": "فرارو",
+      "published": "2026-10-11T12:51:34+03:30",
+      "topics": [
+        "science-life"
+      ],
+      "topic_scores": {
+        "science-life": 4
+      },
+      "importance": 4,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-24b8163498c3",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 0.22706132193406423
+    },
+    "e41c8a058831bd3422959264": {
+      "title": "قیمت طلا 24 عیار امروز یکشنبه 19 مهر 1405",
+      "summary": "هر گرم طلا 24 عیار به کف محدوده 35 میلیون تومان رسید",
+      "source": "فرارو",
+      "published": "2026-10-11T12:49:47+03:30",
+      "topics": [
+        "currency-gold"
+      ],
+      "topic_scores": {
+        "currency-gold": 20
+      },
+      "importance": 20,
+      "important": true,
+      "important_topics": [
+        "currency-gold"
+      ],
+      "slider_topics": [
+        "currency-gold"
+      ],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-6003714d8dfd",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 15,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.7126879886123869
+    },
+    "b6e85028591de86d5f9f4fe3": {
+      "title": "قیمت سکه پارسیان امروز یکشنبه 19 مهر 1405",
+      "summary": "قیمت هر قطعه سکه پارسیان 100 سوت در بازار طلا و سکه به دو میلیون و 650 هزار تومان رسیده است",
+      "source": "فرارو",
+      "published": "2026-10-11T12:48:56+03:30",
+      "topics": [
+        "currency-gold"
+      ],
+      "topic_scores": {
+        "currency-gold": 20
+      },
+      "importance": 20,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-6003714d8dfd",
+      "representative": false,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 15,
+      "political": false,
+      "breaking_signal": true,
+      "age_hours": 0.7126879874865214
+    },
+    "1661daced84fa19ff667cc2e": {
+      "title": "درآمد شهریورماه های‌وب از ۹۵ میلیارد تومان عبور کرد",
+      "summary": "درآمد شهریورماه های‌وب با رشد حدود ۵۲.۷ درصدی به‌نسبت ماه گذشته بیش از ۹۵ میلیارد تومان اعلام شد. علت افزایش درآمد شرکت در این ماه، درآمد حاصل از ارائه خدمات پارک فناوری، بالغ‌بر ۴۰ میلیارد و ۷۶۲ میلیون تومان عنوان شد که عمدتا ناشی از انعقاد قرارداد با شرکت‌ها از ابتدای سال ۱۴۰۵ تا پایان…",
+      "source": "پیوست",
+      "published": "2026-10-11T12:48:29+03:30",
+      "topics": [
+        "technology",
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 14,
+        "technology": 14
+      },
+      "importance": 14,
+      "important": true,
+      "important_topics": [
+        "economy",
+        "technology"
+      ],
+      "slider_topics": [],
+      "ticker_topics": [
+        "economy",
+        "technology"
+      ],
+      "breaking": true,
+      "breaking_topics": [
+        "economy",
+        "technology"
+      ],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-b7b0123a1815",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 9,
+      "political": false,
+      "breaking_signal": true,
+      "age_hours": 0.7123723524808884
+    },
+    "910bb2554e0c6fe9c9348433": {
+      "title": "فیلترینگ چگونه درآمد استریمرها و تولیدکنندگان محتوا را تهدید می‌کند؟",
+      "summary": "فیلترینگ پلتفرم‌های پخش زنده، قطعی‌های اینترنت و افزایش هزینه اتصال، فعالیت استریمرها و تولیدکنندگان محتوای ایرانی را با مشکلات جدی روبه‌رو کرده است. برخی از فعالان این حوزه از کاهش درآمد، از دست دادن مخاطبان و حتی توقف فعالیت حرفه‌ای خود خبر می‌دهند. در چنین شرایطی، کارزاری برای رفع فیلتر پلتفرم‌ها",
+      "source": "پیوست",
+      "published": "2026-10-11T12:48:16+03:30",
+      "topics": [
+        "technology",
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 9,
+        "technology": 9
+      },
+      "importance": 9,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-9148e23fa142",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 0.2266618138551712
+    },
+    "45de27bfda08ff78c78e18eb": {
+      "title": "حمل زمینی از چین به ایران؛ بررسی 2 مسیر اصلی واردات",
+      "summary": "با تداوم اختلال در خطوط ترانزیت دریایی، حمل زمینی از چین به ایران به گزینه‌ای مطمئن‌تر برای بازرگانان تبدیل شده است. در این گزارش، دو کریدور اصلی ترانزیت جاده‌ای از طریق بیشکک و خورگس، همراه با زمان‌بندی واقعی تحویل خرده‌بار (LTL) و نکات کلیدی انتخاب مسیر بهینه برای حمل بار از چین، بررسی شده است.",
+      "source": "اقتصادنیوز",
+      "published": "2026-10-11T12:43:48+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 9
+      },
+      "importance": 9,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-3a2006b4da55",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 9,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.7128106716606352
+    },
+    "7268ef6b42217d7252107af5": {
+      "title": "اسلامی: حملات به مراکز پرتودهی نشان می‌دهد تا چه اندازه از انسانیت فاصله گرفته‌اند",
+      "summary": "رئیس سازمان انرژی هسته با اشاره به حملات به مراکز پرتودهی عنوان کرد که این حملات نشان می‌دهد که آنها تا چه اندازه از انسانیت فاصله گرفته‌اند و نسبت به جان انسان‌ها بی‌توجه هستند.",
+      "source": "دنیای اقتصاد",
+      "published": "2026-10-11T12:40:23+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 9
+      },
+      "importance": 9,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-059d8ae200e2",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 0.2273407941394382
+    },
+    "6ef2b9622c0bf638b038f34f": {
+      "title": "تمدید قرارداد فروش ۲۵ درصدی محصولات پیزد به مدت ۳ سال",
+      "summary": "شرکت مجتمع صنایع لاستیک یزد (پیزد) از تمدید ۳ ساله قرارداد فروش تایر و تیوب دوچرخه و موتورسیکلت با مشتری عمده خود خبر داد.",
+      "source": "صدای بورس",
+      "published": "2026-10-11T12:40:00+03:30",
+      "topics": [
+        "auto"
+      ],
+      "topic_scores": {
+        "auto": 15
+      },
+      "importance": 15,
+      "important": true,
+      "important_topics": [
+        "auto"
+      ],
+      "slider_topics": [
+        "auto"
+      ],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-f462b7e0a6fa",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 15,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.711019163330396
+    },
+    "bf52a2b75d441586e3d740e5": {
+      "title": "پرسه علنی و راحت موش‌ها در ایستگاه مترو",
+      "summary": "یک ایستگاه مترو در پاریس، پایتخت فرانسه، با هجوم موش‌ها مواجه شده است؛ اتفاقی که نگرانی‌هایی درباره بهداشت و سلامت عمومی ایجاد کرده است. موش‌ها در این مرکز پرتردد حمل‌ونقل شهری به تعداد زیاد دیده می‌شوند.",
+      "source": "فرارو",
+      "published": "2026-10-11T12:35:21+03:30",
+      "topics": [
+        "health"
+      ],
+      "topic_scores": {
+        "health": 12
+      },
+      "importance": 12,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-ad15dcbb121c",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.2270613196823332
+    },
+    "ab23274eae77616a0ec25e48": {
+      "title": "توضیحات مدیر نظارت بر ناشران سازمان بورس درباره واریز سود سهام عدالت/ چه کسانی هفته گذشته دریافتی داشتند؟",
+      "summary": "مدیر نظارت بر ناشران سازمان بورس و اوراق بهادار گفت: پرداخت انجام‌شده در روز چهارشنبه گذشته، صرفاً مربوط به سهام‌داران سهام عدالت در قید حیات بود که اطلاعات آن‌ها در سامانه سجام ناقص بود.",
+      "source": "دنیای اقتصاد",
+      "published": "2026-10-11T12:32:58+03:30",
+      "topics": [
+        "markets"
+      ],
+      "topic_scores": {
+        "markets": 16
+      },
+      "importance": 16,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-18ca207763f5",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.22734079360961915
+    },
+    "93605e01617df5e3885c584f": {
+      "title": "روایت ساغر حاجی‌پور، بازیگر سریال و تأتر از بیماری سخت‌اش",
+      "summary": "یک هنرپیشه از تجربه تلخ ابتلا به بیماری‌ای سخت صحبت کرده است که چند سال پیش از بازی در سریال «هم‌گناه» با زردی ناگهانی آغاز شد.",
+      "source": "فرارو",
+      "published": "2026-10-11T12:31:39+03:30",
+      "topics": [
+        "health"
+      ],
+      "topic_scores": {
+        "health": 14
+      },
+      "importance": 14,
+      "important": true,
+      "important_topics": [
+        "health"
+      ],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-c4b28682dc46",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 9,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.4352428605159124
+    },
+    "82e7a3b7686b47c0870df34d": {
+      "title": "تولد غیرمنتظره پس از ۲۲ سال انتظار",
+      "summary": "یک مادر ۴۲ ساله سبزواری که پس از ۲۲ سال ناباروری و بدون سابقه فرزندآوری، از بارداری خود بی‌اطلاع بود، در بیمارستان زنان و زایمان شهیدان مبینی سبزوار صاحب فرزند شد.",
+      "source": "فرارو",
+      "published": "2026-10-11T12:30:04+03:30",
+      "topics": [
+        "health"
+      ],
+      "topic_scores": {
+        "health": 15
+      },
+      "importance": 15,
+      "important": true,
+      "important_topics": [
+        "health"
+      ],
+      "slider_topics": [
+        "health"
+      ],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-48b1ed3f8882",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 10,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.0250200682878494
+    },
+    "87bcae6ad9bb8c07e75cc587": {
+      "title": "تصاویر؛ طوفان سهمگین؛ پرواز سقف خانه‌ها در آسمان",
+      "summary": "طوفان آیزایاس پیش از حرکت به سمت مناطق داخلی آمریکا در روز شنبه، سقف‌ها و نماهای ساختمان‌ها را در امتداد منطقه پن‌هندل فلوریدا تخریب کرد. این طوفان با بارش‌های سیل‌آسا همراه بود و خطر وقوع سیلاب ناگهانی و گردباد را در سراسر مناطق جنوب‌شرقی آمریکا افزایش داد.",
+      "source": "فرارو",
+      "published": "2026-10-11T12:29:38+03:30",
+      "topics": [
+        "real-estate"
+      ],
+      "topic_scores": {
+        "real-estate": 4
+      },
+      "importance": 4,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-4e534055d9c5",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 0.22706131829155815
+    },
+    "51bd1b93abb3dbfbda8bf1e5": {
+      "title": "مقایسه آنلاین زندگی زناشویی: چرا زندگی دیگران از پشت گوشی زیباتر به نظر می‌رسد؟",
+      "summary": "زندگی دیگران در شبکه‌های اجتماعی همیشه زیباتر است. پژوهش‌های جدید می‌گویند همین مقایسه خاموش، بیش از دعواهای بزرگ، رضایت زناشویی را فرسوده می‌کند. اما چرا ذهن ما ناخودآگاه زندگی خودمان را با تصویری ناقص از زندگی دیگران می‌سنجد؟",
+      "source": "فرارو",
+      "published": "2026-10-11T12:28:30+03:30",
+      "topics": [
+        "technology",
+        "science-life"
+      ],
+      "topic_scores": {
+        "technology": 18,
+        "science-life": 18
+      },
+      "importance": 18,
+      "important": true,
+      "important_topics": [
+        "technology",
+        "science-life"
+      ],
+      "slider_topics": [
+        "technology",
+        "science-life"
+      ],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-3356ffc06d91",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 13,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.7126879844400618
+    },
+    "358bbe8d1eb4f1a37d2c6387": {
+      "title": "تاوان سنگین یک اشتباه؛ چرا پرنده زیبای آسمان ایران قربانی می‌شود؟",
+      "summary": "با وجود زیبایی خیره‌کننده و نقش ارزشمند زنبورخوار اروپایی در طبیعت، این پرندگان همچنان قربانی باورهای نادرست می‌شوند.",
+      "source": "فرارو",
+      "published": "2026-10-11T12:27:14+03:30",
+      "topics": [],
+      "topic_scores": {},
+      "importance": 4,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-350b0c77944a",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 0.22706131723192002
+    },
+    "a2bdd941cfad4f314c858869": {
+      "title": "میلی از پایان صف تسویه درخواست‌های برداشت خبر داد",
+      "summary": "بر اساس اعلام میلی، صف درخواست‌های برداشت کاربران این پلتفرم به پایان رسیده و تمام درخواست‌ها از طریق تسویه ریالی یا تحویل طلای فیزیکی تعیین تکلیف شده‌اند.",
+      "source": "دنیای اقتصاد",
+      "published": "2026-10-11T12:26:38+03:30",
+      "topics": [],
+      "topic_scores": {},
+      "importance": 17,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-580e5e4e070f",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 17,
+      "political": false,
+      "breaking_signal": true,
+      "age_hours": 1.0253633027606541
+    },
+    "3651831eb14bb4813d347efb": {
+      "title": "سلامت روان کودکان فقط درمان اختلالات نیست",
+      "summary": "متخصص سلامت روان کودک و نوجوان گفت: ارتقای سلامت روان نسل آینده، علاوه بر درمان اختلالات روان‌پزشکی، به آموزش مهارت‌های زندگی در خانواده و مدرسه و تقویت خدمات تخصصی نیاز دارد.",
+      "source": "سلامت نیوز",
+      "published": "2026-10-11T12:23:41+03:30",
+      "topics": [
+        "health"
+      ],
+      "topic_scores": {
+        "health": 20
+      },
+      "importance": 20,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-23b54831c267",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 11,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.22547564857535893
+    },
+    "1b0a840e225cd5224475ee17": {
+      "title": "کمالوندی: در هر 2 مسیر مذاکره و مقاومت حرکت خواهیم کرد+ فیلم",
+      "summary": "سخنگوی سازمان انرژی اتمی عنوان کرد که در هر دو مسیر مذاکره و مقاومت حرکت خواهیم کرد.",
+      "source": "دنیای اقتصاد",
+      "published": "2026-10-11T12:23:18+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 20
+      },
+      "importance": 20,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-b9e2335e514e",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 16,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 0.22734079195393456
+    },
+    "2c33d34826d721fd89aa2b0e": {
+      "title": "قبض آب ۳۰ میلیارد تومانی آب برای مجتمع مسکونی در تهران!",
+      "summary": "مدیرعامل شرکت آب و فاضلاب استان تهران اعلام کرد که قبض آب ۳۰ میلیارد تومانی برای برجی در تهران صادر شده است.",
+      "source": "فرارو",
+      "published": "2026-10-11T12:23:11+03:30",
+      "topics": [],
+      "topic_scores": {},
+      "importance": 7,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-c17dfba4bcac",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.0250200633207958
+    },
+    "6673f5eb407d0876ae74f79a": {
+      "title": "هشدار پلیس فتا درباره درمانگرنماهای طب سنتی در فضای مجازی",
+      "summary": "رئیس پلیس فضای تولید و تبادل اطلاعات تهران با هشدار درباره فعالیت برخی افراد سودجو تحت عنوان روشهای درمانی با طب سنتی در فضای مجازی گفت: با وجود اینکه اینگونه فعالیتها می تواند منجر به تهدیدات جانی برای شهروندان گردد، سودجویان در این حوزه به چیزی جز منفعت و آورده مالی فکر نمی کنند.",
+      "source": "سلامت نیوز",
+      "published": "2026-10-11T12:20:37+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 9
+      },
+      "importance": 9,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-ef1e95f13211",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 1.2109514721896912
+    },
+    "3ca814328bd955a712ced709": {
+      "title": "دویدن غافلگیرکننده خرس‌های در معرض انقراض در کرمان",
+      "summary": "ویدیویی از دو توله خرس سیاه آسیایی، معروف به خرس بلوچی، در حال دویدن در یکی از جاده‌های پناهگاه حیات وحش زریاب در استان کرمان و در تاریکی شب ثبت شده است.",
+      "source": "فرارو",
+      "published": "2026-10-11T12:20:25+03:30",
+      "topics": [
+        "science-life"
+      ],
+      "topic_scores": {
+        "science-life": 7
+      },
+      "importance": 7,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-5f45637601c3",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.2126307330528896
+    },
+    "6c158d0ce08cab1239e2b04d": {
+      "title": "تعیین ظرفیت پذیرش در دستیاری دندانپزشکی ۱۴۰۵؛ آغاز انتخاب رشته از فردا",
+      "summary": "انتخاب رشته محل تحصیل آزمون پذیرش دستیار در رشته‌های تخصصی دندانپزشکی سال تحصیلی ۱۴۰۶–۱۴۰۵ از فردا ۲۰ مهرماه آغاز می شود. پست تعیین ظرفیت پذیرش در دستیاری دندانپزشکی ۱۴۰۵؛ آغاز انتخاب رشته از فردا اولین بار در تجارت نیوز ظاهر شد.",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-11T12:20:13+03:30",
+      "topics": [
+        "science-life"
+      ],
+      "topic_scores": {
+        "science-life": 4
+      },
+      "importance": 4,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-24aa0e3106e8",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 0.2268498894241121
+    },
+    "e189e7f83fda350b1721116e": {
+      "title": "کاهش 13 درصدی خودکشی در تهران",
+      "summary": "رئیس سازمان بهزیستی از کاهش 13 درصدی خودکشی در طرح پیگیری افراد پس از اقدام به خودکشی در تهران خبر داد. پست کاهش 13 درصدی خودکشی در تهران اولین بار در تجارت نیوز ظاهر شد.",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-11T12:19:51+03:30",
+      "topics": [],
+      "topic_scores": {},
+      "importance": 4,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-f70d91b48b8e",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 0.22684988690747154
+    },
+    "499a9f5bf281a33ff057361c": {
+      "title": "محمد مهاجری: مبارزه با استارلینک کشک است، مگر اینکه...",
+      "summary": "«استارلینک البته پدیده خطرناکی است اما راه مبارزه‌اش آن نیست که دبیر شورای فضای مجازی می‌گوید. گمانش آن است که اگر پای لانچر بنشیند و به آن شلیک کند قصه تمام می‌شود و این فناوری از روی کره زمین محو می‌گردد. این توهم را او در باره فیلترینگ هم داشت و پیشینیان نیز در باره ماهواره داشتند. آن‌ها حداکثر ک",
+      "source": "فرارو",
+      "published": "2026-10-11T12:19:02+03:30",
+      "topics": [
+        "technology"
+      ],
+      "topic_scores": {
+        "technology": 9
+      },
+      "importance": 9,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-86aee53ac80d",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 0.22706131584114497
+    },
+    "9488070190eec93db95d089e": {
+      "title": "توقیف گسترده اقلام سلامت‌محور غیرمجاز؛ از بوتاکس تا واکسن گارداسیل قاچاق",
+      "summary": "مدیرکل دفتر بازرسی و مدیریت عملکرد سازمان غذا و دارو از کشف و توقیف انواع بوتاکس، فیلر، داروهای شیمی‌ درمانی، واکسن‌های غیرمجاز و تجهیزات پزشکی به ارزش بیش از ۱۳۵۰ میلیارد ریال در تهران خبر داد.",
+      "source": "سلامت نیوز",
+      "published": "2026-10-11T12:17:40+03:30",
+      "topics": [
+        "health"
+      ],
+      "topic_scores": {
+        "health": 16
+      },
+      "importance": 16,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-7794614045f6",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 1.2109514713949627
+    },
+    "aa48fe48feeacbe26e919338": {
+      "title": "مسئله پالایشی‌ها فقط چند دلار تخفیف نیست",
+      "summary": "اتفاقی که طی روزهای اخیر برای صنعت پالایش و نمادهای پالایشی بازار سرمایه رخ داد، بیش از آنکه یک بحث ساده درباره چند دلار افزایش یا کاهش تخفیف خوراک باشد.",
+      "source": "صدای بورس",
+      "published": "2026-10-11T12:16:09+03:30",
+      "topics": [
+        "markets",
+        "currency-gold"
+      ],
+      "topic_scores": {
+        "markets": 9,
+        "currency-gold": 9
+      },
+      "importance": 9,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-cc4eb7e686c4",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 0.22385124332374998
+    },
+    "6633280a1ed0917741b4424c": {
+      "title": "تجارت رنج در ترمینال جنوب / استخوان کودکان جلیقه‌سبز زیر بار سنگین خورد می‌شود",
+      "summary": "پشت هیاهوی مسافران و گردش مالی میلیاردی در ترمینال جنوب، چرخه‌ی سنگینی از بهره‌کشی از کارگران غیررسمی جریان دارد؛ از کودکان جلیقه‌سبزی که زیر بار چمدان‌ها استخوان خرد می‌کنند تا کارگران روزمزدی که بدون بیمه و حق قانونی، دور از خانواده عرق می‌ریزند. پست تجارت رنج در ترمینال جنوب / استخوان کودکان جلیق",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-11T12:15:05+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 7
+      },
+      "importance": 7,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-edd460d7e670",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.2125447518957986
+    },
+    "75fae9fad8b91d74818e1168": {
+      "title": "درمان سرطان با روش‌های ماورایی؛ شگرد فریب بیماران در فضای مجازی",
+      "summary": "رئیس پلیس فتا تهران بزرگ از فعالیت سودجویان در پوشش درمانگر و متخصص طب سنتی در فضای مجازی خبر داد و نسبت به تبلیغات فریبنده در حوزه درمان ریزش مو، لاغری، زیبایی و حتی سرطان هشدار داد. پست درمان سرطان با روش‌های ماورایی؛ شگرد فریب بیماران در فضای مجازی اولین بار در تجارت نیوز ظاهر شد.",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-11T12:13:14+03:30",
+      "topics": [
+        "health"
+      ],
+      "topic_scores": {
+        "health": 9
+      },
+      "importance": 9,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-facdd8a32af7",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 1.4350544750028187
+    },
+    "2cf8548945377ca906d50f85": {
+      "title": "«ارتورکسیا»؛ وقتی بشقاب غذا زندگی‌تان را گروگان می‌گیرد",
+      "summary": "در سال‌های اخیر، تب تند سالم‌خوری و رژیم‌های سخت‌گیرانه در جوامع مدرن به یک هنجار رایج تبدیل شده است، با این حال خط باریکی میان مراقبت مسئولانه از بدن و ابتلا به یک اختلال بالینی به نام «ارتورکسیا» یا وسواس غذای سالم وجود دارد.",
+      "source": "سلامت نیوز",
+      "published": "2026-10-11T12:12:31+03:30",
+      "topics": [
+        "health"
+      ],
+      "topic_scores": {
+        "health": 10
+      },
+      "importance": 10,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-6192f827f412",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 10,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.2254756447341707
+    },
+    "2392981632678fc5a7d51caf": {
+      "title": "سهام عدالت چقدر می‌ارزد؟",
+      "summary": "ارزش روز سهام عدالت با ارزش اولیه ۵۳۲ هزار تومان، در پایان هفته گذشته حدود ۷۶ میلیون و ۲۶۰ هزار تومان برآورد شد.",
+      "source": "صدای بورس",
+      "published": "2026-10-11T12:10:08+03:30",
+      "topics": [
+        "markets"
+      ],
+      "topic_scores": {
+        "markets": 9
+      },
+      "importance": 9,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-bbccf5ad2d85",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.22385124246279398
+    },
+    "c167865feb712c3b079bbc48": {
+      "title": "مریم سعادت: آثار قوی‌تر در جشنواره کودک امسال ندیدم / چرا برخی انیمیشن‌های ایرانی ترسناک است؟",
+      "summary": "مریم سعادت از داوران سی و هشتمین جشنواره بین‌المللی فیلم‌های کودک و نوجوان با انتقاد از آثار پویانمایی که به این دوره از رویداد آمده بودند، گفت که کارهای خیلی قوی در جشنواره امسال ندیده و این سوال را مطرح کرد که چرا برخی انیمیشن‌های ایرانی اینقدر ترسناک است؟ پست مریم سعادت: آثار قوی‌تر در جشنواره کو",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-11T12:10:03+03:30",
+      "topics": [
+        "health"
+      ],
+      "topic_scores": {
+        "health": 10
+      },
+      "importance": 10,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-6ad1dd350aed",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 10,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.4350544744067721
+    },
+    "923070ff0d6b3257c54dbe63": {
+      "title": "جزئیاتی جدید درباره افزایش رقم کالابرگ",
+      "summary": "مدیرعامل سازمان هدفمندسازی یارانه‌ها گفت: منابع کالابرگ از محل تسعیر نرخ ارز توسط بانک مرکزی تامین مالی می شود.",
+      "source": "دنیای اقتصاد",
+      "published": "2026-10-11T12:05:43+03:30",
+      "topics": [
+        "currency-gold"
+      ],
+      "topic_scores": {
+        "currency-gold": 9
+      },
+      "importance": 9,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-ca0db27dd7e6",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.22734079135788812
+    },
+    "aec8903442002e036140c022": {
+      "title": "تب پاییزی؛ مراقب کدام عفونت‌های فصلی باشیم؟",
+      "summary": "تب در فصل پاییز، به‌ویژه هنگام تغییر دما، شایع است؛ اما اگر تب طول بکشد یا با علائم دیگری همراه باشد، ممکن است نشانه یک عفونت باشد. برخی بیماری‌های فصلی علائم مشابهی دارند و تشخیص علت آن‌ها بدون بررسی پزشکی دشوار است.",
+      "source": "انتخاب",
+      "published": "2026-10-11T12:04:35+03:30",
+      "topics": [
+        "health"
+      ],
+      "topic_scores": {
+        "health": 17
+      },
+      "importance": 17,
+      "important": true,
+      "important_topics": [
+        "health"
+      ],
+      "slider_topics": [
+        "health"
+      ],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-4330c45a3fb6",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.4343621671862072
+    },
+    "abe51789691edc00e7739bfa": {
+      "title": "پناهگاه مردم برای نجات از تورم",
+      "summary": "",
+      "source": "فردای اقتصاد",
+      "published": "2026-10-11T12:04:00+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 20
+      },
+      "importance": 20,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-c3320a20598e",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 16,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.22590923223230575
+    },
+    "3bec95551b13fa2c9f8ea1cc": {
+      "title": "۸.۴ میلیون تراکنش؛ روایت آیتول از تغییر رفتار کاربران خدمات خودرو",
+      "summary": "سپردن خدمات خودرو به پلتفرم‌های آنلاین، از پرداخت عوارض و خلافی گرفته تا انجام معاینه فنی و خرید بیمه، به بخشی از رفتار کاربران تبدیل شده است. گزارش عملکرد سال ۱۴۰۴ آیتول نیز نشان می‌دهد کاربران علاوه بر پرداخت‌های روزمره، تمایل دارند انجام خدمات حضوری و زمان‌بر خودرو را به پلتفرم‌ها بسپارند. در سال",
+      "source": "پیوست",
+      "published": "2026-10-11T12:03:42+03:30",
+      "topics": [
+        "auto"
+      ],
+      "topic_scores": {
+        "auto": 20
+      },
+      "importance": 20,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-aed59ba5c925",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 17,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 0.22666181246439615
+    },
+    "a6bb2aa46a8d0c49b7ae379b": {
+      "title": "نرخ اقتصادی دلار در سه پارادایم",
+      "summary": "",
+      "source": "فردای اقتصاد",
+      "published": "2026-10-11T11:57:06+03:30",
+      "topics": [
+        "economy",
+        "currency-gold"
+      ],
+      "topic_scores": {
+        "economy": 9,
+        "currency-gold": 9
+      },
+      "importance": 9,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-1f3ccf849367",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.22590923051039377
+    },
+    "a0ffded55873ce63705762be": {
+      "title": "انتخاب رشته بیش از نیم میلیون کنکوری/ مهلت باقیمانده تمدید نمی‌شود",
+      "summary": "مدیرکل روابط عمومی سازمان سنجش از انتخاب رشته بیش از ۵۲۰ هزار داوطلب آزمون‌های سراسری و پذیرش دانشجو-معلم خبر داد و گفت: این مهلت مجدد تمدید نمی‌شود.",
+      "source": "فرارو",
+      "published": "2026-10-11T11:56:19+03:30",
+      "topics": [],
+      "topic_scores": {},
+      "importance": 4,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-49c06eabbbe0",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 1.0250200610690647
+    },
+    "13ded48e9cf81ce2e9403c7b": {
+      "title": "عکس روز ناسا از سفر به اعماق یخ‌ها برای شکار نوترینوهای کیهانی",
+      "summary": "عکس امروز ناسا به آزمایشگاهی اختصاص یافته که این روزها به دلیل اینکه ایده برنده جایزه نوبل فیزیک 2026 بوده، بر سر زبان‌ها افتاده است. پست عکس روز ناسا از سفر به اعماق یخ‌ها برای شکار نوترینوهای کیهانی اولین بار در تجارت نیوز ظاهر شد.",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-11T11:55:59+03:30",
+      "topics": [
+        "science-life"
+      ],
+      "topic_scores": {
+        "science-life": 7
+      },
+      "importance": 7,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-4eca02dfc1ac",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 0.22684988412592147
+    },
+    "2cdebd9424b66411ab54324c": {
+      "title": "سوءاستفاده و سوءمدیریت در کنار شرایط تولید از عوامل افزایش قیمت میوه و صیفی‌جات است",
+      "summary": "رئیس اتاق اصناف تهران با اشاره به عوامل مختلف افزایش قیمت میوه و صیفی‌جات گفت: سوءاستفاده و سوءمدیریت در کنار شرایط تولید، هزینه‌های حمل‌ونقل، دستمزد و نهاده‌های مورد نیاز، در افزایش قیمت برخی محصولات نقش دارند و تنظیم بازار مستلزم پایش مستمر عرضه و تقاضاست. پست سوءاستفاده و سوءمدیریت در کنار شرایط ",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-11T11:50:49+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 9
+      },
+      "importance": 9,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-daa2253963fb",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.22684988306628334
+    },
+    "a33e567e61356a370cbc4c6a": {
+      "title": "این مشکلات چشم را جدی بگیرید",
+      "summary": "مشکلات جدی چشم اغلب هیچ‌گونه دردی ایجاد نمی‌کنند. در اینجا به ۸ نشانه هشداردهنده اشاره می‌کنیم که نباید نادیده گرفته شوند.",
+      "source": "سلامت نیوز",
+      "published": "2026-10-11T11:48:15+03:30",
+      "topics": [],
+      "topic_scores": {},
+      "importance": 17,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-d3b2286cb425",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 17,
+      "political": false,
+      "breaking_signal": true,
+      "age_hours": 1.6825987102588018
+    },
+    "508eeec914f0d44c9aff1dcd": {
+      "title": "بیش از ۶۴ هزار نفر به سامانه حسام مراجعه کردند",
+      "summary": "تاکنون درخواست تعیین تکلیف برای یک میلیون و ۴۴۶ هزار و ۸۵۱ حساب در سامانه حسام به ثبت رسیده است.",
+      "source": "دنیای اقتصاد",
+      "published": "2026-10-11T11:47:21+03:30",
+      "topics": [],
+      "topic_scores": {},
+      "importance": 4,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-64b6d29e17e1",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 1.43552213523123
+    },
+    "4ba05373ba362e62a35f343f": {
+      "title": "مدیرعامل مایکروسافت هم خواستار کنترل هوش مصنوعی شد",
+      "summary": "ساتیا نادلا مدیر ارشد اجرایی مایکروسافت معتقد است مدل های هوش مصنوعی نیازمند یک ترمز اضطراری هستند. پست مدیرعامل مایکروسافت هم خواستار کنترل هوش مصنوعی شد اولین بار در تجارت نیوز ظاهر شد.",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-11T11:45:40+03:30",
+      "topics": [
+        "technology",
+        "ai"
+      ],
+      "topic_scores": {
+        "technology": 20,
+        "ai": 20
+      },
+      "importance": 20,
+      "important": true,
+      "important_topics": [
+        "technology",
+        "ai"
+      ],
+      "slider_topics": [
+        "technology",
+        "ai"
+      ],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-d92d852a87fc",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 15,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.6836904925107956
+    },
+    "2b4aeb5bf9aaa083b6386f3e": {
+      "title": "غشان درباره افزایش سرمایه تصمیم می‌گیرد",
+      "summary": "شرکت شیر پاستوریزه پگاه خراسان (غشان) با دریافت مجوز قانونی، سهامداران خود را به مجمع عمومی فوق‌العاده دعوت کرد. محور اصلی این نشست، تصمیم‌گیری در خصوص افزایش سرمایه است.",
+      "source": "صدای بورس",
+      "published": "2026-10-11T11:40:51+03:30",
+      "topics": [
+        "markets"
+      ],
+      "topic_scores": {
+        "markets": 7
+      },
+      "importance": 7,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-06cbf4b9bdfb",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.2238512416680654
+    },
+    "3c28653fd47bd8f9c7bd0d89": {
+      "title": "فیلم بعدی دل تورو به ماجرای ربایش پدرش خواهد پرداخت",
+      "summary": "گی‌یرمو دل تورو، کارگردان برنده اسکار، قصد دارد پس از دو دهه بار دیگر فیلمی به زبان اسپانیایی بسازد و به سینمای مکزیک بازگردد؛ پروژه‌ای متفاوت از آثار فانتزی شناخته‌شده او که ممکن است از ماجرای واقعی ربوده شدن پدرش در دهه ۱۹۹۰ الهام گرفته باشد. پست فیلم بعدی دل تورو به ماجرای ربایش پدرش خواهد پرداخت",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-11T11:40:36+03:30",
+      "topics": [
+        "science-life"
+      ],
+      "topic_scores": {
+        "science-life": 7
+      },
+      "importance": 7,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-0e4c83f126c4",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.22684988194041783
+    },
+    "c7f6b8739cb447a81adadb20": {
+      "title": "شانس شکست بورس و تورم با دلار",
+      "summary": "",
+      "source": "فردای اقتصاد",
+      "published": "2026-10-11T11:37:43+03:30",
+      "topics": [
+        "markets",
+        "economy",
+        "currency-gold"
+      ],
+      "topic_scores": {
+        "economy": 20,
+        "markets": 20,
+        "currency-gold": 20
+      },
+      "importance": 20,
+      "important": true,
+      "important_topics": [
+        "economy",
+        "markets",
+        "currency-gold"
+      ],
+      "slider_topics": [
+        "economy",
+        "markets",
+        "currency-gold"
+      ],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-9ac19c43b3e8",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 17,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.9556787152422799
+    },
+    "7374a3f116f81525fee94ee8": {
+      "title": "هشدار متخصصان دانش اعتیاد درباره تغییر الگوی مصرف مواد",
+      "summary": "مطالعات انجام‌شده درباره نوجوانان و جوانان نشان می‌دهد این گروه بویژه در زمینه مصرف دخانیات، الکل، کانابیس و برخی داروها نیازمند توجه جدی است، اما یک مشکل مهم وجود دارد، همه نوجوانان در مطالعات یکسان دیده نمی‌شوند.",
+      "source": "سلامت نیوز",
+      "published": "2026-10-11T11:36:01+03:30",
+      "topics": [],
+      "topic_scores": {},
+      "importance": 7,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-6e610d9e70d3",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.22547564334339565
+    },
+    "c970306e6760d85a797a90c0": {
+      "title": "سازمان سنجش: میزان تقلب و تخلف در کنکور ۱۴۰۵، بسیار کمتر از سال‌های گذشته است",
+      "summary": "رئیس سازمان سنجش آموزش کشور با بیان اینکه کنکور ۱۴۰۵ از بالاترین ضریب امنیت برخوردار بود و تقلب و تخلف به کمترین میزان رسید، گفت: تعداد محدودی از این پرونده‌ها در سازمان سنجش در حال بررسی است.",
+      "source": "انتخاب",
+      "published": "2026-10-11T11:35:39+03:30",
+      "topics": [
+        "science-life"
+      ],
+      "topic_scores": {
+        "science-life": 4
+      },
+      "importance": 4,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-01149ce34778",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 1.954900559120708
+    },
+    "ffb717ff25b8a08ee4d7e4af": {
+      "title": "فرمول شناسایی بدترین زمان خرید دلار",
+      "summary": "",
+      "source": "فردای اقتصاد",
+      "published": "2026-10-11T11:35:38+03:30",
+      "topics": [
+        "currency-gold"
+      ],
+      "topic_scores": {
+        "currency-gold": 15
+      },
+      "importance": 15,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-835fba202636",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 10,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.7121408616171943
+    },
+    "fa618aff5387edf4f0d32989": {
+      "title": "تیلاپیا بخوریم یا نه؟ / شیلات تکلیف را روشن کرد",
+      "summary": "رئیس مؤسسه تحقیقات علوم شیلاتی کشور گفت: سلامت تیلاپیا به کیفیت آب و شرایط پرورش آن بستگی دارد. پست تیلاپیا بخوریم یا نه؟ / شیلات تکلیف را روشن کرد اولین بار در تجارت نیوز ظاهر شد.",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-11T11:35:35+03:30",
+      "topics": [
+        "health"
+      ],
+      "topic_scores": {
+        "health": 9
+      },
+      "importance": 9,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-a42a36c11c28",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 1.955965480539534
+    },
+    "ccae5513e763cbf6d6fdd863": {
+      "title": "دو مغالطه فروش دلار به مردم",
+      "summary": "",
+      "source": "فردای اقتصاد",
+      "published": "2026-10-11T11:34:10+03:30",
+      "topics": [
+        "currency-gold"
+      ],
+      "topic_scores": {
+        "currency-gold": 15
+      },
+      "importance": 15,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-d37fbed944ad",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 10,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.023997603588634
+    },
+    "b93e1c531165acae84b63611": {
+      "title": "حریم هوایی عربستان خالی شد",
+      "summary": "اقتصادنیوز: وب سایت فلایت رادار 24 که موقعیت پروازهای مسافربری را به صورت زنده نمایش می‌دهد، امروز اعلام کرد که از 29 فرودگاه غیرنظامی عربستان تنها یک یا دو فرودگاه فعال هستند.",
+      "source": "اقتصادنیوز",
+      "published": "2026-10-11T11:31:28+03:30",
+      "topics": [],
+      "topic_scores": {},
+      "importance": 7,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-0f6494e97bac",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 1.0250500308142767
+    },
+    "aa35ef833b970588b329a151": {
+      "title": "الگوی ضدالتهاب دلار؛ «حراج هلندی» یا «دُم اسب»؟",
+      "summary": "",
+      "source": "فردای اقتصاد",
+      "published": "2026-10-11T11:30:44+03:30",
+      "topics": [
+        "currency-gold"
+      ],
+      "topic_scores": {
+        "currency-gold": 15
+      },
+      "importance": 15,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-cc68628e2c3e",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 10,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.023997603058815
+    },
+    "8c6322c8601d9ea4261c4c53": {
+      "title": "نرخ ارز دلار، طلا و یورو امروز یکشنبه ۱۹ مهر ۱۴۰۵/ کاهش قیمت طلا و سکه",
+      "summary": "طبق اعلام سایت اتحادیه طلا و جواهر، بازار امروز شاهد کاهش قیمت طلای ۱۸ عیار و سکه امامی نسبت به قیمت بسته‌شده روز گذشته است؛ همزمان نرخ ارز در مرکز مبادله ارز و طلا نسبت به دیروز نوسان صعودی ثبت کرده است.",
+      "source": "دنیای اقتصاد",
+      "published": "2026-10-11T11:26:54+03:30",
+      "topics": [
+        "currency-gold"
+      ],
+      "topic_scores": {
+        "currency-gold": 20
+      },
+      "importance": 20,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-6003714d8dfd",
+      "representative": false,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 19,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.7129021866454018
+    },
+    "ef31a057899129c9dde2bdbe": {
+      "title": "علیرضا خمسه: به من گفتند با این قیافه بازیگر نمی‌شوی؛ زشتی‌هایم باعث پیشرفتم شد!",
+      "summary": "علیرضا خمسه گفت: بارها با چنین برخوردهایی روبه‌رو شدم؛ حتی یک‌بار مأمور مهاجرت یونان از من پرسید شغلم چیست و وقتی گفتم بازیگرم، با تعجب به ظاهرم نگاه کرد. این اتفاق‌ها تلخ بود، اما باعث شد به‌جای تسلیم‌شدن، بیشتر تلاش کنم و پیشرفت کنم.",
+      "source": "فرارو",
+      "published": "2026-10-11T11:08:24+03:30",
+      "topics": [
+        "science-life"
+      ],
+      "topic_scores": {
+        "science-life": 7
+      },
+      "importance": 7,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-d5bec462be5f",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.9561112227704789
+    },
+    "eff3d863585626e64111a0d8": {
+      "title": "قیمت دلار توافقی - ۱۹ مهر ۱۴۰۵",
+      "summary": "قیمت فروش حواله دلار امروز به ۱۷۸ هزار و ۹۴۱ تومان رسید و نرخ فروش یورو نیز از ۲۰۰ هزار تومان عبور کرد.",
+      "source": "بورس‌نیوز",
+      "published": "2026-10-11T10:58:36+03:30",
+      "topics": [
+        "currency-gold"
+      ],
+      "topic_scores": {
+        "currency-gold": 20
+      },
+      "importance": 20,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [
+        "currency-gold"
+      ],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-192e443e42dd",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 10,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.711762619415919
     }
   },
   "groups": {
@@ -23818,7 +25859,7 @@
       "representative_id": "4fce0b5b59e132d925d084c7"
     },
     "local-d5f3bd2f59dd": {
-      "representative_id": "58979ef87f741bb19d5d70e0"
+      "representative_id": "5615ab744038f5c0bd0c1f39"
     },
     "3882c0d2ce53205efb2c1314": {
       "representative_id": "3882c0d2ce53205efb2c1314"
@@ -23896,7 +25937,7 @@
       "representative_id": "3fd1d1e91d3adbd64cf38078"
     },
     "local-f0e81d21635d": {
-      "representative_id": "1aef24d8c3eda75ec37da242"
+      "representative_id": "5ab43276efe070f829afbff9"
     },
     "local-2a2140649e08": {
       "representative_id": "258f476216ea3277cf8d4f0b"
@@ -23965,7 +26006,7 @@
       "representative_id": "546582c460cc760f70130bd6"
     },
     "local-a660ad148830": {
-      "representative_id": "cd14988b2ca09e62624bb066"
+      "representative_id": "e59599957564c25bee51593d"
     },
     "local-ad01e5ca0eed": {
       "representative_id": "6fa1f6987bfe07b776bf9810"
@@ -24224,17 +26265,200 @@
     },
     "local-cc6d3d75b7f6": {
       "representative_id": "dcf82ee670bd5848e37c7533"
+    },
+    "local-01fa66dc26c6": {
+      "representative_id": "b2d7f347d86418ad21925fbf"
+    },
+    "local-78c701810e4a": {
+      "representative_id": "f073dafd08a46b6f214364a7"
+    },
+    "local-5403b211acda": {
+      "representative_id": "e596027b7dd521ff5e204add"
+    },
+    "local-a5677293300b": {
+      "representative_id": "ae038a5c6358d9945ee4a647"
+    },
+    "local-aa4c315de401": {
+      "representative_id": "d8c882f99aeefbb98693cec2"
+    },
+    "local-826e0caea30e": {
+      "representative_id": "0de6292e11b30b833686689c"
+    },
+    "local-c2d9cb234eb9": {
+      "representative_id": "120b56e494ff10471b1a62c2"
+    },
+    "local-bcc22974f4d5": {
+      "representative_id": "a960c01ba501b3545676d9e8"
+    },
+    "local-24b8163498c3": {
+      "representative_id": "ec87b170f323cf26a57c3366"
+    },
+    "local-6003714d8dfd": {
+      "representative_id": "e41c8a058831bd3422959264"
+    },
+    "local-b7b0123a1815": {
+      "representative_id": "1661daced84fa19ff667cc2e"
+    },
+    "local-9148e23fa142": {
+      "representative_id": "910bb2554e0c6fe9c9348433"
+    },
+    "local-3a2006b4da55": {
+      "representative_id": "45de27bfda08ff78c78e18eb"
+    },
+    "local-059d8ae200e2": {
+      "representative_id": "7268ef6b42217d7252107af5"
+    },
+    "local-f462b7e0a6fa": {
+      "representative_id": "6ef2b9622c0bf638b038f34f"
+    },
+    "local-ad15dcbb121c": {
+      "representative_id": "bf52a2b75d441586e3d740e5"
+    },
+    "local-18ca207763f5": {
+      "representative_id": "ab23274eae77616a0ec25e48"
+    },
+    "local-c4b28682dc46": {
+      "representative_id": "93605e01617df5e3885c584f"
+    },
+    "local-48b1ed3f8882": {
+      "representative_id": "82e7a3b7686b47c0870df34d"
+    },
+    "local-4e534055d9c5": {
+      "representative_id": "87bcae6ad9bb8c07e75cc587"
+    },
+    "local-3356ffc06d91": {
+      "representative_id": "51bd1b93abb3dbfbda8bf1e5"
+    },
+    "local-350b0c77944a": {
+      "representative_id": "358bbe8d1eb4f1a37d2c6387"
+    },
+    "local-580e5e4e070f": {
+      "representative_id": "a2bdd941cfad4f314c858869"
+    },
+    "local-23b54831c267": {
+      "representative_id": "3651831eb14bb4813d347efb"
+    },
+    "local-b9e2335e514e": {
+      "representative_id": "1b0a840e225cd5224475ee17"
+    },
+    "local-c17dfba4bcac": {
+      "representative_id": "2c33d34826d721fd89aa2b0e"
+    },
+    "local-ef1e95f13211": {
+      "representative_id": "6673f5eb407d0876ae74f79a"
+    },
+    "local-5f45637601c3": {
+      "representative_id": "3ca814328bd955a712ced709"
+    },
+    "local-24aa0e3106e8": {
+      "representative_id": "6c158d0ce08cab1239e2b04d"
+    },
+    "local-f70d91b48b8e": {
+      "representative_id": "e189e7f83fda350b1721116e"
+    },
+    "local-86aee53ac80d": {
+      "representative_id": "499a9f5bf281a33ff057361c"
+    },
+    "local-7794614045f6": {
+      "representative_id": "9488070190eec93db95d089e"
+    },
+    "local-cc4eb7e686c4": {
+      "representative_id": "aa48fe48feeacbe26e919338"
+    },
+    "local-edd460d7e670": {
+      "representative_id": "6633280a1ed0917741b4424c"
+    },
+    "local-facdd8a32af7": {
+      "representative_id": "75fae9fad8b91d74818e1168"
+    },
+    "local-6192f827f412": {
+      "representative_id": "2cf8548945377ca906d50f85"
+    },
+    "local-bbccf5ad2d85": {
+      "representative_id": "2392981632678fc5a7d51caf"
+    },
+    "local-6ad1dd350aed": {
+      "representative_id": "c167865feb712c3b079bbc48"
+    },
+    "local-ca0db27dd7e6": {
+      "representative_id": "923070ff0d6b3257c54dbe63"
+    },
+    "local-4330c45a3fb6": {
+      "representative_id": "aec8903442002e036140c022"
+    },
+    "local-c3320a20598e": {
+      "representative_id": "abe51789691edc00e7739bfa"
+    },
+    "local-aed59ba5c925": {
+      "representative_id": "3bec95551b13fa2c9f8ea1cc"
+    },
+    "local-1f3ccf849367": {
+      "representative_id": "a6bb2aa46a8d0c49b7ae379b"
+    },
+    "local-49c06eabbbe0": {
+      "representative_id": "a0ffded55873ce63705762be"
+    },
+    "local-4eca02dfc1ac": {
+      "representative_id": "13ded48e9cf81ce2e9403c7b"
+    },
+    "local-daa2253963fb": {
+      "representative_id": "2cdebd9424b66411ab54324c"
+    },
+    "local-d3b2286cb425": {
+      "representative_id": "a33e567e61356a370cbc4c6a"
+    },
+    "local-64b6d29e17e1": {
+      "representative_id": "508eeec914f0d44c9aff1dcd"
+    },
+    "local-d92d852a87fc": {
+      "representative_id": "4ba05373ba362e62a35f343f"
+    },
+    "local-06cbf4b9bdfb": {
+      "representative_id": "2b4aeb5bf9aaa083b6386f3e"
+    },
+    "local-0e4c83f126c4": {
+      "representative_id": "3c28653fd47bd8f9c7bd0d89"
+    },
+    "local-9ac19c43b3e8": {
+      "representative_id": "c7f6b8739cb447a81adadb20"
+    },
+    "local-6e610d9e70d3": {
+      "representative_id": "7374a3f116f81525fee94ee8"
+    },
+    "local-01149ce34778": {
+      "representative_id": "c970306e6760d85a797a90c0"
+    },
+    "local-835fba202636": {
+      "representative_id": "ffb717ff25b8a08ee4d7e4af"
+    },
+    "local-a42a36c11c28": {
+      "representative_id": "fa618aff5387edf4f0d32989"
+    },
+    "local-d37fbed944ad": {
+      "representative_id": "ccae5513e763cbf6d6fdd863"
+    },
+    "local-0f6494e97bac": {
+      "representative_id": "b93e1c531165acae84b63611"
+    },
+    "local-cc68628e2c3e": {
+      "representative_id": "aa35ef833b970588b329a151"
+    },
+    "local-d5bec462be5f": {
+      "representative_id": "ef31a057899129c9dde2bdbe"
+    },
+    "local-192e443e42dd": {
+      "representative_id": "eff3d863585626e64111a0d8"
     }
   },
   "usage": {
     "date": "2026-10-11",
-    "requests": 22,
+    "requests": 23,
     "last_success": "2026-10-11T05:23:32Z",
     "last_success_epoch": 1791696212.862786,
-    "last_article_generation": "2026-10-11T08:11:48Z",
-    "quota_block_until_epoch": 1791721376.553285,
-    "quota_block_until": "2026-10-11T12:22:56Z"
+    "last_article_generation": "2026-10-11T10:09:29Z",
+    "quota_block_until_epoch": 1791734966.5392315,
+    "quota_block_until": "2026-10-11T16:09:26Z"
   },
-  "selection_window_end": "2026-10-11T08:09:58Z",
-  "selection_window_start": "2026-10-11T06:09:58Z"
+  "selection_window_end": "2026-10-11T10:09:24Z",
+  "selection_window_start": "2026-10-11T08:09:24Z"
 }
