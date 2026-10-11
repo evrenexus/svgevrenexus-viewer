@@ -1,7 +1,7 @@
 {
   "version": 1,
   "policy_version": 9,
-  "updated": "2026-10-11T02:28:43Z",
+  "updated": "2026-10-11T02:43:27Z",
   "items": {
     "72b4eb7a7155ed214c32324d": {
       "title": "تصاویر؛ جشن «مهرگان» در غار کرفتو",
@@ -17125,10 +17125,68 @@
       "local_score": 17,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.11966083460383944,
+      "age_hours": 0.3953980527321498,
       "permanent_article": true,
       "article_id": "article-2d5db4ed625b8119",
       "image": "https://cdn.eghtesadnews.com/thumbnail/MJnHz91AYG7M/9wFJ5bHahv2PMDUde8i7WGPUoZPhR2k6vQp3Wbes3xFjVYxKGQfhsfeyB_vNOuor5irbViqQy551GzH5u7amOVt7U9Qe-hBRRcLG_SJKFAxBTXtP4xgq5ZoaYYWFfV2QSdjc06WX1efEm0DGXDg7wg1TTYMbKgS4afbUYZcpgxCfQnH7xFenn-z8sYeZ97wZ/%D9%82%DB%8C%D9%85%D8%AA+%D8%A8%DB%8C%D8%AA+%DA%A9%D9%88%DB%8C%D9%86+%D9%88+%D8%AA%D8%AA%D8%B1.jpg"
+    },
+    "e7b91fa9ebc6ed1850e290f9": {
+      "title": "استیبل‌کوین‌ها در مسیر ورود به زندگی روزمره و فتح بازار آسیا | آیا پول دیجیتال جای پرداخت‌های سنتی را می‌گیرد؟",
+      "summary": "اقتصادنیوز: نظرسنجی جدید ویزا نشان می‌دهد ۴۶ درصد مصرف‌کنندگان آسیا و اقیانوسیه احتمالاً تا سال ۲۰۳۱ از استیبل‌کوین‌ها استفاده خواهند کرد؛ روندی که می‌تواند آینده پرداخت‌های روزمره و انتقال پول بین‌المللی را تغییر دهد، هرچند شناخت عمومی از این رمزارزها همچنان محدود است.",
+      "source": "اقتصادنیوز",
+      "published": "2026-10-11T06:01:32+03:30",
+      "topics": [
+        "crypto"
+      ],
+      "topic_scores": {
+        "crypto": 4
+      },
+      "importance": 4,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-f1452cb08a70",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.19706471939881642
+    },
+    "810522f3ce9b55a73889b351": {
+      "title": "شبکه‌های رشوه افقی و عمودی در کره شمالی | هیچ زیرساختی برای کسب‌وکارهای خصوصی وجود ندارد | شتاب گرفتن نابرابری ثروت در کره شمالی پس از پاندمی کرونا",
+      "summary": "اقتصادنیوز: فرض کنید شما یک فروشنده بازار هستید که چاشنی‌های ساخت چین می‌فروشید. افراد هیچ راه قانونی برای واردات کالا جهت کسب‌وکار خصوصی ندارند. بنابراین شما به کسی در یک شرکت دولتی رشوه می‌دهید تا کالاها را برای شما سفارش دهد، یا پیش از دوران کرونا، ممکن بود به مرزبانان رشوه بدهید تا هنگام عبور کا",
+      "source": "اقتصادنیوز",
+      "published": "2026-10-11T05:57:43+03:30",
+      "topics": [
+        "health"
+      ],
+      "topic_scores": {
+        "health": 9
+      },
+      "importance": 9,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-98a92587ef5a",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 0.26067583050992754
     }
   },
   "groups": {
@@ -18712,6 +18770,12 @@
     },
     "local-86925bc7e5fc": {
       "representative_id": "109eeaf4ff4f9a3fa257a14e"
+    },
+    "local-f1452cb08a70": {
+      "representative_id": "e7b91fa9ebc6ed1850e290f9"
+    },
+    "local-98a92587ef5a": {
+      "representative_id": "810522f3ce9b55a73889b351"
     }
   },
   "usage": {
