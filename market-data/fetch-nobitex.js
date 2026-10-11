@@ -1,5 +1,6 @@
 // Fetch all tradable Nobitex crypto markets, global ranks, and 15-minute price changes.
 const fs = require("fs");
+const cheerio = require("cheerio");
 
 const API = "https://apiv2.nobitex.ir";
 const COINGECKO = "https://api.coingecko.com/api/v3";
@@ -46,6 +47,39 @@ function parsePairStats(payload) {
   const stats = payload && payload.stats;
   if (!stats || typeof stats !== "object") throw new Error("Nobitex market stats missing");
   return stats;
+}
+async function fetchPersianNames(symbols) {
+  const names = new Map();
+  for (const url of ["https://nobitex.ir/price/", "https://nobitex.company/price/"]) {
+    try {
+      const r = await fetch(url, {
+        headers: {
+          "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/140 Safari/537.36",
+          "Accept-Language": "fa-IR,fa;q=0.9,en;q=0.8"
+        },
+        signal: AbortSignal.timeout(20000)
+      });
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      const $ = cheerio.load(await r.text());
+      $("table tr").each((_, tr) => {
+        const cells = $(tr).find("th,td").map((_, cell) => $(cell).text().replace(/\\s+/g, " ").trim()).get();
+        if (!cells.length) return;
+        const first = cells[0] || "";
+        for (const symbol of symbols) {
+          const re = new RegExp("(^|[^A-Z0-9])" + symbol + "([^A-Z0-9]|$)", "i");
+          if (!re.test(first)) continue;
+          const candidate = first.replace(re, " ").replace(/[()|·•—–-]/g, " ").replace(/\\s+/g, " ").trim();
+          if (/[\\u0600-\\u06FF]/.test(candidate) && candidate.length < 80) {
+            names.set(symbol, candidate);
+          }
+        }
+      });
+      if (names.size) break;
+    } catch (e) {
+      console.warn("Nobitex Persian names unavailable:", e.message);
+    }
+  }
+  return names;
 }
 async function fetchGlobalRanks() {
   const ranks = new Map();
@@ -102,6 +136,7 @@ async function main() {
   const usdtRls = number(pairStats["usdt-rls"] && pairStats["usdt-rls"].latest);
   const usdtToman = usdtRls == null ? null : usdtRls / 10;
   const markets = [];
+  const scrapedNames = await fetchPersianNames(symbols);
 
   for (const symbol of symbols) {
     if (symbol === "rls" || symbol === "irt") continue;
@@ -109,13 +144,15 @@ async function main() {
     const usdtStat = pairStats[symbol + "-usdt"];
     const info = coinInfo.get(symbol) || {};
     const rawName = String(info.name || info.stdName || symbol.toUpperCase());
-    const name = persianNames[symbol] || (persianText(info.stdName) ? info.stdName : rawName);
+    const name = scrapedNames.get(symbol) || persianNames[symbol] || (persianText(info.stdName) ? info.stdName : rawName);
+    const rlsLatest = rlsStat ? number(rlsStat.latest) : null;
+    const usdtLatest = usdtStat ? number(usdtStat.latest) : null;
     const priceIRT = symbol === "usdt"
       ? usdtToman
-      : (rlsStat ? number(rlsStat.latest) / 10 : null);
+      : (rlsLatest == null ? null : rlsLatest / 10);
     const priceUSDT = symbol === "usdt"
       ? 1
-      : (usdtStat ? number(usdtStat.latest) : null);
+      : usdtLatest;
     if (priceIRT == null && priceUSDT == null) continue;
 
     markets.push({
