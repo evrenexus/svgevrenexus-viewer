@@ -98,6 +98,19 @@ class TopicClassificationTests(unittest.TestCase):
         self.assertIn("ai", topics)
         self.assertIn("technology", topics)
 
+    def test_ai_fallback_does_not_classify_cultural_story_as_housing(self):
+        topics = self.ai_topics(
+            "تصاویر؛ جشن مهرگان در غار کرفتو",
+            summary="جشن مهرگان با حضور هنرمندان در محوطه تاریخی غار کرفتو برگزار شد؛ خانه فرهنگ نیز برنامه‌ای برگزار کرد.",
+        )
+        self.assertNotIn("real-estate", topics)
+
+    def test_ai_fallback_still_recognizes_specific_house_price_story(self):
+        topics = self.ai_topics(
+            "قیمت خانه در تهران افزایش یافت"
+        )
+        self.assertIn("real-estate", topics)
+
     def test_ai_fallback_does_not_restore_publisher_category(self):
         self.assertEqual(
             self.ai_topics("ببینید؛ خلاصه بازی بارسلونا ۳ - ختافه ۰"),
