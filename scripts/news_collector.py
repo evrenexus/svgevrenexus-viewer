@@ -45,6 +45,11 @@ SOURCES=[
  {"name":"ایران‌جیب","category":"اقتصاد و سرمایه‌گذاری","site":"https://www.iranjib.ir/","feeds":[],"allow_internal_republish":True},
 ]
 
+# These are the only topic IDs that map to categories in the shared site header.
+# economy + markets => اقتصاد و سرمایه‌گذاری; technology + ai => تکنولوژی و فناوری;
+# science-life + health => دانش و سلامت.
+HEADER_TOPICS={"economy","markets","crypto","currency-gold","real-estate","technology","ai","health","auto","science-life"}
+
 TOPIC_RULES={
  "economy":{"strong":["اقتصاد","اقتصادی","تورم","رشد اقتصادی","بودجه","مالیات","بانک مرکزی","نرخ بهره","نقدینگی","تجارت خارجی","صادرات","واردات","رکود اقتصادی","اشتغال","دستمزد","معیشت","کسب و کار","کسب‌وکار","بازرگانی","سیاست اقتصادی","تولید ناخالص داخلی","gdp","شاخص قیمت","تورم سالانه","تورم نقطه‌ای","تورم ماهانه","درآمد سرانه","قیمت سیمان","سیمان","مصالح ساختمانی","قیمت مصالح","قیمت میلگرد","میلگرد","قیمت تیرآهن","تیرآهن","آهن آلات","آهن‌آلات","بازار آهن","قیمت آهن","قیمت فولاد","فولاد ساختمانی","بازار فولاد","شمش فولاد","ورق فولادی","سنگ آهن","قیمت مس","قیمت آلومینیوم","مواد اولیه","بازار کالا","قیمت کالا","قیمت محصولات","قیمت انرژی","قیمت نفت","قیمت گاز"],"medium":["تولید","صنعت","کشاورزی","نفت","گاز","انرژی","تجارت","رکود","بازار کار","هزینه تولید","زنجیره تامین","سرمایه‌گذاری خارجی","اقتصاد ایران"]},
  "markets":{"strong":["بورس","بازار سرمایه","شاخص کل","شاخص هم‌وزن","فرابورس","سهام","نماد معاملاتی","عرضه اولیه","پذیره‌نویسی","بورس کالا","صندوق سرمایه‌گذاری","اوراق بهادار","حق تقدم","مجمع شرکت","کدال","پرتفوی","معاملات بورس","بازار سهام","شاخص بورس","ارزش معاملات","حجم معاملات","صف خرید","صف فروش","افزایش سرمایه"],"medium":["سرمایه‌گذاری","سهم","بازدهی بورس","معاملات سهام","بازار مالی","بازار پول","بازده","سهامداران","شرکت بورسی"]},
@@ -137,7 +142,8 @@ def classify_topics(item):
     # AI is a technology subtopic and belongs on the combined technology page.
     if "ai" in topics and "technology" not in topics:
         topics.append("technology")
-    return topics
+    # Never let a non-header/unknown topic become a publication category.
+    return [topic for topic in topics if topic in HEADER_TOPICS]
 
 def assign_topics(item):
     # Publisher/source categories describe the source, not the story.
