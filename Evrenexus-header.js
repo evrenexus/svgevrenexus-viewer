@@ -168,7 +168,7 @@ function loadCrypto(){return fetchJSON("nobitex.json","https://raw.githubusercon
   var losers=markets.filter(function(x){return Number(x.changePercent1hUSDT)<0;}).sort(function(a,b){return Number(a.changePercent1hUSDT)-Number(b.changePercent1hUSDT);}).slice(0,8);
   var href="https://evrenexus.ir/crypto-price.html";
   function topic(label){return '<a class="Evrenxus-ticker-topic" href="'+href+'" target="_blank" rel="noopener noreferrer">'+label+'</a>';}
-  var html=topic("₿ قیمت زنده ارزهای دیجیتال");
+  var html=topic("₿ ارزهای دیجیتال");
   html+=ranked.map(function(x){return item(x,true,false);}).join("");
   html+=topic("↗ ارزهای با بیشترین افزایش در بازه ۱ ساعته اخیر");
   html+=gainers.map(function(x){return item(x,true,false);}).join("");
