@@ -1,7 +1,7 @@
 {
   "version": 1,
   "policy_version": 9,
-  "updated": "2026-10-10T23:53:07Z",
+  "updated": "2026-10-11T00:39:11Z",
   "items": {
     "72b4eb7a7155ed214c32324d": {
       "title": "تصاویر؛ جشن «مهرگان» در غار کرفتو",
@@ -2597,8 +2597,10 @@
         "technology": 15
       },
       "importance": 15,
-      "important": false,
-      "important_topics": [],
+      "important": true,
+      "important_topics": [
+        "technology"
+      ],
       "slider_topics": [
         "technology"
       ],
@@ -2615,7 +2617,9 @@
       "political": false,
       "breaking_signal": false,
       "age_hours": 1.7449266266822816,
-      "image": "https://cdn.fararu.com/thumbnail/w3GaN3ywhkpH/upsvo-qDZwVEnpLJiEH1JWsU-wdAZ00na1H-qFMzamGPmCX1ZCAt890aU6tAH1S2IEGwxkQwuGqAlWnNWLL5mjkJjGmGlEw7ef0bbNnNO58n6RZo8rCknnNZRSWpberC/%D8%A8%D8%A7%D8%B2%D8%A7%D8%B1+%D9%85%D9%88%D8%A8%D8%A7%DB%8C%D9%84.jpg"
+      "image": "https://cdn.fararu.com/thumbnail/w3GaN3ywhkpH/upsvo-qDZwVEnpLJiEH1JWsU-wdAZ00na1H-qFMzamGPmCX1ZCAt890aU6tAH1S2IEGwxkQwuGqAlWnNWLL5mjkJjGmGlEw7ef0bbNnNO58n6RZo8rCknnNZRSWpberC/%D8%A8%D8%A7%D8%B2%D8%A7%D8%B1+%D9%85%D9%88%D8%A8%D8%A7%DB%8C%D9%84.jpg",
+      "permanent_article": true,
+      "article_id": "article-3c5fcba50dbf3c09"
     },
     "b26bb3e1dac46d1cf4bdbc04": {
       "title": "نفت گران شد",
@@ -6221,8 +6225,10 @@
         "science-life": 0
       },
       "importance": 13,
-      "important": false,
-      "important_topics": [],
+      "important": true,
+      "important_topics": [
+        "ai"
+      ],
       "slider_topics": [],
       "ticker_topics": [],
       "publishable": true,
@@ -6236,7 +6242,9 @@
       "local_score": 13,
       "breaking": false,
       "breaking_topics": [],
-      "image": "https://cdn.donya-e-eqtesad.com/thumbnail/SdAewr47rx5o/CjRxp5qG1cmEWIlhaH818SDXWP2hNFnwfxyAiaICmUsGadYJ8OFNnlSj37wf3nzT_KglO0XoLDej22-b--HhLWynkjodOUWmcgOuOHgPxOlLe02csxIZ5g,,/IMG_7619.jpg"
+      "image": "https://cdn.donya-e-eqtesad.com/thumbnail/SdAewr47rx5o/CjRxp5qG1cmEWIlhaH818SDXWP2hNFnwfxyAiaICmUsGadYJ8OFNnlSj37wf3nzT_KglO0XoLDej22-b--HhLWynkjodOUWmcgOuOHgPxOlLe02csxIZ5g,,/IMG_7619.jpg",
+      "permanent_article": true,
+      "article_id": "evren-nexus-softbank-100b-ai-investment-gulf-2026-10-10"
     },
     "45a93ed0f977e26a8a0fda8a": {
       "title": "قیمت خانه در منطقه ۱۷ تهران / 40 متر خانه 5 میلیارد تومان! + جدول",
@@ -16541,25 +16549,33 @@
         "science-life"
       ],
       "topic_scores": {
-        "science-life": 4
+        "economy": 0,
+        "markets": 0,
+        "crypto": 0,
+        "currency-gold": 0,
+        "real-estate": 0,
+        "technology": 0,
+        "ai": 0,
+        "health": 0,
+        "auto": 0,
+        "science-life": 2
       },
-      "importance": 4,
+      "importance": 2,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
       "ticker_topics": [],
-      "breaking": false,
-      "breaking_topics": [],
       "publishable": false,
       "exclude_reason": "political content is excluded",
+      "content_type": "duplicate",
+      "reject_reason": "خبر تکراری و گزارش تصویری مراسم سنتی فاقد ارزش خبری اختصاصی",
       "group_id": "local-5dcd6edfd391",
       "representative": true,
-      "reason": "local rule-based classification",
-      "analysis_mode": "local",
+      "reason": "گزارش تصویری جشن مهرگان، فاقد دستاورد یا تحول علمی/اجتماعی و تکراری از اجرای پیشین",
+      "analysis_mode": "ai",
       "local_score": 4,
-      "political": true,
-      "breaking_signal": false,
-      "age_hours": 3.107341277798017
+      "breaking": false,
+      "breaking_topics": []
     },
     "2b834f1f9e66b8d8e54350d5": {
       "title": "اطلاعیه مهم هواشناسی تهران/ دما به ۲۷ درجه می‌رسد",
@@ -16567,24 +16583,34 @@
       "source": "اقتصادنیوز",
       "published": "2026-10-11T00:29:47+03:30",
       "topics": [],
-      "topic_scores": {},
-      "importance": 12,
+      "topic_scores": {
+        "economy": 0,
+        "markets": 0,
+        "crypto": 0,
+        "currency-gold": 0,
+        "real-estate": 0,
+        "technology": 0,
+        "ai": 0,
+        "health": 0,
+        "auto": 0,
+        "science-life": 0
+      },
+      "importance": 2,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
       "ticker_topics": [],
-      "breaking": false,
-      "breaking_topics": [],
-      "publishable": true,
-      "exclude_reason": "",
+      "publishable": false,
+      "exclude_reason": "خبر تکراری و پیش‌بینی روزمره هواشناسی خارج از محورهای مجاز",
+      "content_type": "duplicate",
+      "reject_reason": "خبر تکراری و پیش‌بینی روزمره هواشناسی خارج از محورهای مجاز",
       "group_id": "local-5599fc757e57",
       "representative": true,
-      "reason": "local rule-based classification",
-      "analysis_mode": "local",
-      "local_score": 12,
-      "political": false,
-      "breaking_signal": false,
-      "age_hours": 2.8878968333535724
+      "reason": "گزارش روتین تغییرات جوی تهران فاقد ارزش اقتصادی یا علمی و تکراری از اجرای پیشین",
+      "analysis_mode": "ai",
+      "local_score": 11,
+      "breaking": false,
+      "breaking_topics": []
     },
     "00e33e5dfa093114ff83fed2": {
       "title": "جزئیات جدید درباره سیل مینودشت/ یک نفر جان باخت/ دو زن مفقود شدند",
@@ -16592,53 +16618,71 @@
       "source": "دنیای اقتصاد",
       "published": "2026-10-11T01:00:15+03:30",
       "topics": [],
-      "topic_scores": {},
-      "importance": 4,
+      "topic_scores": {
+        "economy": 0,
+        "markets": 0,
+        "crypto": 0,
+        "currency-gold": 0,
+        "real-estate": 0,
+        "technology": 0,
+        "ai": 0,
+        "health": 0,
+        "auto": 0,
+        "science-life": 0
+      },
+      "importance": 3,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
       "ticker_topics": [],
-      "breaking": false,
-      "breaking_topics": [],
       "publishable": false,
       "exclude_reason": "political content is excluded",
+      "content_type": "duplicate",
+      "reject_reason": "خبر تکراری و اخبار حوادث محلی خارج از اهداف تحریریه",
       "group_id": "local-835aee14b094",
       "representative": true,
-      "reason": "local rule-based classification",
-      "analysis_mode": "local",
+      "reason": "حادثه سیلاب محلی بدون ارتباط با موضوعات تخصصی و پردازش‌شده در دور قبل",
+      "analysis_mode": "ai",
       "local_score": 4,
-      "political": true,
-      "breaking_signal": true,
-      "age_hours": 2.3801190555757947
+      "breaking": false,
+      "breaking_topics": []
     },
     "0ee2caf86efba4de9f1747e8": {
       "title": "قیمت طلا امروز یکشنبه ۱۹ مهر ۱۴۰۵",
       "summary": "اقتصادنیوز: قیمت طلا امروز بدون تغییر، 4194 (چهار هزار و یکصد و نود و چهار) دلار نرخ‌گذاری شد.",
       "source": "اقتصادنیوز",
-      "published": "2026-10-11T02:44:00+03:30",
+      "published": "2026-10-11T03:41:02+03:30",
       "topics": [
         "currency-gold"
       ],
       "topic_scores": {
-        "currency-gold": 16
+        "economy": 0,
+        "markets": 0,
+        "crypto": 0,
+        "currency-gold": 2,
+        "real-estate": 0,
+        "technology": 0,
+        "ai": 0,
+        "health": 0,
+        "auto": 0,
+        "science-life": 0
       },
-      "importance": 16,
+      "importance": 2,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
       "ticker_topics": [],
-      "breaking": false,
-      "breaking_topics": [],
       "publishable": false,
-      "exclude_reason": "political content is excluded",
+      "exclude_reason": "خبر تکراری و قیمت روتین بدون نوسان",
+      "content_type": "duplicate",
+      "reject_reason": "خبر تکراری و قیمت روتین بدون نوسان",
       "group_id": "local-99113d85bb68",
       "representative": false,
-      "reason": "local rule-based classification",
-      "analysis_mode": "local",
+      "reason": "ثبت تکراری نرخ بدون تغییر طلا و هم‌پوشان با گزارش‌های روزانه پیشین",
+      "analysis_mode": "ai",
       "local_score": 4,
-      "political": true,
-      "breaking_signal": false,
-      "age_hours": 0.650952388909128
+      "breaking": false,
+      "breaking_topics": []
     },
     "1028a34b5f7303b60677be48": {
       "title": "مسیرهای ورود زنان و مردان به بازار کار/ چرا برخی مردان جوان تحصیل‌کرده عقب مانده‌اند؟",
@@ -16649,56 +16693,70 @@
         "economy"
       ],
       "topic_scores": {
-        "economy": 9
+        "economy": 3,
+        "markets": 0,
+        "crypto": 0,
+        "currency-gold": 0,
+        "real-estate": 0,
+        "technology": 0,
+        "ai": 0,
+        "health": 0,
+        "auto": 0,
+        "science-life": 0
       },
-      "importance": 9,
+      "importance": 3,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
       "ticker_topics": [],
-      "breaking": false,
-      "breaking_topics": [],
-      "publishable": true,
-      "exclude_reason": "",
+      "publishable": false,
+      "exclude_reason": "خبر تکراری و یادداشت تحلیلی فاقد داده یا رویداد خبری تازه",
+      "content_type": "duplicate",
+      "reject_reason": "خبر تکراری و یادداشت تحلیلی فاقد داده یا رویداد خبری تازه",
       "group_id": "local-23cdf5188d09",
       "representative": true,
-      "reason": "local rule-based classification",
-      "analysis_mode": "local",
+      "reason": "محتوای تحلیلی عمومی بازار کار، فاقد خبر یا آمار مشخص و ثبت‌شده در دور قبل",
+      "analysis_mode": "ai",
       "local_score": 9,
-      "political": false,
-      "breaking_signal": false,
-      "age_hours": 1.9017857222424612
+      "breaking": false,
+      "breaking_topics": []
     },
     "765e1d3a08c54316c8119cb1": {
       "title": "قیمت بیت‌کوین و اتریوم امروز یکشنبه ۱۹ مهر ۱۴۰۵/ افزایش قیمت بیت کوین",
       "summary": "اقتصادنیوز: بیت کوین امروز با افزایش به 83,066 (هشتاد و سه هزار و‌ شصت و شش) دلار رسید.",
       "source": "اقتصادنیوز",
-      "published": "2026-10-11T02:42:18+03:30",
+      "published": "2026-10-11T03:39:44+03:30",
       "topics": [
-        "currency-gold",
         "crypto"
       ],
       "topic_scores": {
-        "currency-gold": 20,
-        "crypto": 20
+        "economy": 0,
+        "markets": 0,
+        "crypto": 3,
+        "currency-gold": 0,
+        "real-estate": 0,
+        "technology": 0,
+        "ai": 0,
+        "health": 0,
+        "auto": 0,
+        "science-life": 0
       },
-      "importance": 20,
+      "importance": 3,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
       "ticker_topics": [],
-      "breaking": false,
-      "breaking_topics": [],
-      "publishable": true,
-      "exclude_reason": "",
+      "publishable": false,
+      "exclude_reason": "خبر تکراری قیمت که در اجرای قبلی پردازش شده است",
+      "content_type": "duplicate",
+      "reject_reason": "خبر تکراری قیمت که در اجرای قبلی پردازش شده است",
       "group_id": "local-99113d85bb68",
       "representative": true,
-      "reason": "local rule-based classification",
-      "analysis_mode": "local",
+      "reason": "نوسان روتین بازار رمزارز و پردازش‌شده در دور پیشین",
+      "analysis_mode": "ai",
       "local_score": 18,
-      "political": false,
-      "breaking_signal": false,
-      "age_hours": 0.6792857222424613
+      "breaking": false,
+      "breaking_topics": []
     },
     "fe2633452da845322585c78d": {
       "title": "پیش‌بینی مدیران فناوری درباره آینده کار/ جف بزوس: هوش مصنوعی می‌تواند هفته کاری را به ۳ روز کاهش دهد",
@@ -16710,35 +16768,33 @@
         "ai"
       ],
       "topic_scores": {
-        "technology": 20,
-        "ai": 20
+        "economy": 0,
+        "markets": 0,
+        "crypto": 0,
+        "currency-gold": 0,
+        "real-estate": 0,
+        "technology": 3,
+        "ai": 3,
+        "health": 0,
+        "auto": 0,
+        "science-life": 0
       },
-      "importance": 20,
-      "important": true,
-      "important_topics": [
-        "technology",
-        "ai"
-      ],
-      "slider_topics": [
-        "technology",
-        "ai"
-      ],
+      "importance": 3,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
       "ticker_topics": [],
-      "breaking": false,
-      "breaking_topics": [],
-      "publishable": true,
-      "exclude_reason": "",
+      "publishable": false,
+      "exclude_reason": "خبر تکراری و اظهارنظر/پیش‌بینی بدون رویداد یا تصمیم واقعی",
+      "content_type": "duplicate",
+      "reject_reason": "خبر تکراری و اظهارنظر/پیش‌بینی بدون رویداد یا تصمیم واقعی",
       "group_id": "local-b277629fffcf",
       "representative": true,
-      "reason": "local rule-based classification",
-      "analysis_mode": "local",
+      "reason": "پیش‌بینی‌های نظری مدیران درباره آینده کار، بدون تصمیم اجرایی ملموس و تکراری از دور قبل",
+      "analysis_mode": "ai",
       "local_score": 15,
-      "political": false,
-      "breaking_signal": false,
-      "age_hours": 1.375952388909128,
-      "permanent_article": true,
-      "article_id": "evren-nexus-ai-future-of-work-bezos-20261011",
-      "image": "https://cdn.eghtesadnews.com/thumbnail/2v8zaGMpr0qU/sBgjZXVwOKqDtosAr2M9pM-x5D9KanFOyp7oxUkEP_JBKSz3O7Vlgrpu8pMTAh79jsdThD2qCuNJpPrlo-g550Zd1nyD_4x9U3kmcfiRVSXmJI6cMS50F0nEcibRpB3pJzqMomnQTj0cjF0gOAcc2oTs7CgoopnoZRxVyvWRhL26qsjXktZ5X_pVMK-jERRB/T1zsKsSUhrPR.jpg"
+      "breaking": false,
+      "breaking_topics": []
     },
     "206582082a95be29c3450fb1": {
       "title": "هدف‌گذاری تورم به‌جای نرخ بهره | پیشنهاد استاد دانشگاه شیکاگو برای مهار تورم | چگونه از ترازنامه بانک مرکزی می‌توان برای کنترل تورم بهره برد؟",
@@ -16746,30 +16802,36 @@
       "source": "اقتصادنیوز",
       "published": "2026-10-11T02:24:21+03:30",
       "topics": [
-        "science-life",
         "economy"
       ],
       "topic_scores": {
-        "economy": 9,
-        "science-life": 9
+        "economy": 3,
+        "markets": 0,
+        "crypto": 0,
+        "currency-gold": 0,
+        "real-estate": 0,
+        "technology": 0,
+        "ai": 0,
+        "health": 0,
+        "auto": 0,
+        "science-life": 0
       },
-      "importance": 9,
+      "importance": 3,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
       "ticker_topics": [],
-      "breaking": false,
-      "breaking_topics": [],
       "publishable": false,
-      "exclude_reason": "political content is excluded",
+      "exclude_reason": "خبر تکراری و پیشنهاد آکادمیک تئوریک فاقد تصمیم اجرایی",
+      "content_type": "duplicate",
+      "reject_reason": "خبر تکراری و پیشنهاد آکادمیک تئوریک فاقد تصمیم اجرایی",
       "group_id": "local-52153f70b09d",
       "representative": true,
-      "reason": "local rule-based classification",
-      "analysis_mode": "local",
+      "reason": "دیدگاه نظری استاد دانشگاه پیرامون کنترل تورم بدون تصمیم عملیاتی و تکراری از اجرای قبلی",
+      "analysis_mode": "ai",
       "local_score": 4,
-      "political": true,
-      "breaking_signal": true,
-      "age_hours": 0.978452388909128
+      "breaking": false,
+      "breaking_topics": []
     },
     "10868e2956760218483e9d1f": {
       "title": "نوشیدنی خیلی داغ این بلا را بر سرتان می آورد",
@@ -16780,25 +16842,70 @@
         "health"
       ],
       "topic_scores": {
-        "health": 12
+        "economy": 0,
+        "markets": 0,
+        "crypto": 0,
+        "currency-gold": 0,
+        "real-estate": 0,
+        "technology": 0,
+        "ai": 0,
+        "health": 2,
+        "auto": 0,
+        "science-life": 0
       },
-      "importance": 12,
+      "importance": 2,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
       "ticker_topics": [],
-      "breaking": false,
-      "breaking_topics": [],
-      "publishable": true,
-      "exclude_reason": "",
+      "publishable": false,
+      "exclude_reason": "خبر تکراری، تیتر زرد و کلیک‌بیت سلامت",
+      "content_type": "duplicate",
+      "reject_reason": "خبر تکراری، تیتر زرد و کلیک‌بیت سلامت",
       "group_id": "local-48ffe6cd0a08",
       "representative": true,
-      "reason": "local rule-based classification",
-      "analysis_mode": "local",
+      "reason": "توصیه عمومی فاقد یافته علمی جدید و پردازش‌شده در اجرای قبلی",
+      "analysis_mode": "ai",
       "local_score": 12,
-      "political": false,
-      "breaking_signal": false,
-      "age_hours": 1.1317857222424612
+      "breaking": false,
+      "breaking_topics": []
+    },
+    "c4bb4d30cf46831ce9cfd0ce": {
+      "title": "اعتراض به اجاره‌های سرسام‌آور؛ خشم مستاجران اسپانیایی از چیست؟ | دوربرگردان اجاره دستوری در بارسلونا",
+      "summary": "اقتصادنیوز: براساس گزارشی از وب‌سایت خبری کاتالان‌نیوز، در میان مناطق اسپانیا، کاتالونیا یکی از جدی‌ترین تجربه‌ها را برای مهار فشار اجاره‌بها دنبال کرده است. کاتالونیا یک منطقه خودمختار در شمال‌شرق اسپانیاست و بارسلونا، بزرگ‌ترین شهر و مرکز این منطقه است.",
+      "source": "اقتصادنیوز",
+      "published": "2026-10-11T03:40:00+03:30",
+      "topics": [
+        "real-estate"
+      ],
+      "topic_scores": {
+        "economy": 0,
+        "markets": 0,
+        "crypto": 0,
+        "currency-gold": 0,
+        "real-estate": 4,
+        "technology": 0,
+        "ai": 0,
+        "health": 0,
+        "auto": 0,
+        "science-life": 0
+      },
+      "importance": 4,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "content_type": "duplicate",
+      "reject_reason": "خبر تکراری و گزارش بازخوانی سیاست اجاره در اسپانیا فاقد تازگی",
+      "group_id": "local-62ab4f58ec4c",
+      "representative": true,
+      "reason": "گزارش تحلیلی-توصیفی از بارسلونا بدون رویداد فوری و تحلیل‌شده در اجرای قبل",
+      "analysis_mode": "ai",
+      "local_score": 4,
+      "breaking": false,
+      "breaking_topics": []
     }
   },
   "groups": {
@@ -18361,15 +18468,16 @@
     },
     "local-48ffe6cd0a08": {
       "representative_id": "10868e2956760218483e9d1f"
+    },
+    "local-62ab4f58ec4c": {
+      "representative_id": "c4bb4d30cf46831ce9cfd0ce"
     }
   },
   "usage": {
-    "date": "2026-10-10",
-    "requests": 24,
-    "last_success": "2026-10-10T12:07:27Z",
-    "quota_block_until_epoch": 1791662794.37718,
-    "quota_block_until": "2026-10-10T20:06:34Z",
-    "last_article_generation": "2026-10-10T14:06:35Z",
-    "last_success_epoch": 1791634047.1988156
+    "date": "2026-10-11",
+    "requests": 2,
+    "last_success": "2026-10-11T00:39:05Z",
+    "last_success_epoch": 1791679145.2376344,
+    "last_article_generation": "2026-10-11T00:39:11Z"
   }
 }
