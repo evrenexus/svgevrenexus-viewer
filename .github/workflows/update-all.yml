@@ -24,7 +24,8 @@ permissions:
   id-token: write
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
+  # Versioned group lets the fixed non-AI-blocking pipeline start despite an older stuck run.
+  group: ${{ github.workflow }}-${{ github.ref }}-publish-v2
   cancel-in-progress: false
 
 jobs:
