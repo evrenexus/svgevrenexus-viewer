@@ -135,13 +135,20 @@ def parse_json_object_response(raw):
 
 
 def call_OpenRouter(prompt, key):
-    """Call OpenRouter's OpenAI-compatible API and require a JSON object response."""
+    """Call OpenRouter with model-level failover and recover JSON-only output."""
+    primary_model = os.environ.get("OPENROUTER_MODEL", "google/gemma-4-26b-a4b-it:free")
+    fallback_models = []
+    for model in ("google/gemma-4-31b-it:free", "google/gemma-4-26b-a4b-it:free", "openrouter/free"):
+        if model != primary_model and model not in fallback_models:
+            fallback_models.append(model)
     payload = json.dumps({
-        "model": os.environ.get("OPENROUTER_MODEL", "google/gemma-4-26b-a4b-it:free"),
+        "model": primary_model,
+        "models": fallback_models,
         "messages": [{"role": "user", "content": prompt}],
         "temperature": 0.1,
         "max_completion_tokens": 8192,
-        "response_format": {"type": "json_object"}
+        "response_format": {"type": "json_object"},
+        "provider": {"require_parameters": True}
     }, ensure_ascii=False).encode("utf-8")
     last = ""
     for attempt in range(MAX_RETRIES):
