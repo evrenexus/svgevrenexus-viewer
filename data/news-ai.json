@@ -1,7 +1,7 @@
 {
   "version": 1,
   "policy_version": 9,
-  "updated": "2026-10-11T04:15:56Z",
+  "updated": "2026-10-11T04:18:32Z",
   "items": {
     "72b4eb7a7155ed214c32324d": {
       "title": "تصاویر؛ جشن «مهرگان» در غار کرفتو",
@@ -17539,6 +17539,85 @@
       "local_score": 15,
       "breaking": false,
       "breaking_topics": []
+    },
+    "e71654b7c18415dac3b2963e": {
+      "title": "قیمت میلگرد امروز یکشنبه ۱۹ مهر ۱۴۰۵ / شیب بازار کند شد + جدول",
+      "summary": "قیمت میلگرد امروز یک‌شنبه ۱۹ مهر ۱۴۰۵ اعلام شد. بازار از فاز رشد یکپارچه فاصله گرفته و وارد مرحله‌ای از احتیاط و ارزیابی مجدد قیمت‌ها شده است. پست قیمت میلگرد امروز یکشنبه ۱۹ مهر ۱۴۰۵ / شیب بازار کند شد + جدول اولین بار در تجارت نیوز ظاهر شد.",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-11T07:45:35+03:30",
+      "topics": [],
+      "topic_scores": {},
+      "importance": 19,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-dc223fe1290e",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 19,
+      "political": false,
+      "breaking_signal": true,
+      "age_hours": 0.0483824442492591
+    },
+    "1a7982a20ff313c9af60b6da": {
+      "title": "بهزاد نبوی: به حرف خاتمی گوش بدهیم و دنبال اصلاحات باشیم/ پزشکیان شرایط بسیار دشواری دارد",
+      "summary": "بهزاد نبوی با اشاره به دیدگاه‌های سیدمحمد خاتمی و ضرورت پایبندی به رویکرد اصلاح‌طلبانه اظهار داشت: «به حرف آقای خاتمی گوش بدهیم و دنبال اصلاحات باشیم. با اصلاحات شاید بتوان تحول ایجاد کرد، اما با انقلاب نمی‌توان به نتیجه مطلوب رسید.»",
+      "source": "فرارو",
+      "published": "2026-10-11T07:36:16+03:30",
+      "topics": [],
+      "topic_scores": {},
+      "importance": 4,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-5b32a0530144",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 0.20366022202703687
+    },
+    "c4e6a56346d13c0d7ad59cf6": {
+      "title": "حضور سردار قاآنی در مراسم ختم مادر معاون پزشکیان+ عکس",
+      "summary": "تصاویری از سردار قاآنی در مراسم یادبود مادر رئیس سازمان برنامه و بودجه را مشاهده می کنید.",
+      "source": "دنیای اقتصاد",
+      "published": "2026-10-11T07:12:40+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 9
+      },
+      "importance": 9,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-ee255337cf56",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.5969935553603702
     }
   },
   "groups": {
@@ -19155,6 +19234,15 @@
     },
     "group-5fd7ac3e4252fc3597bff568": {
       "representative_id": "5fd7ac3e4252fc3597bff568"
+    },
+    "local-dc223fe1290e": {
+      "representative_id": "e71654b7c18415dac3b2963e"
+    },
+    "local-5b32a0530144": {
+      "representative_id": "1a7982a20ff313c9af60b6da"
+    },
+    "local-ee255337cf56": {
+      "representative_id": "c4e6a56346d13c0d7ad59cf6"
     }
   },
   "usage": {
