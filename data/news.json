@@ -21,25 +21,6 @@
       "first_seen_at": "2026-10-11T12:07:11.728023+00:00"
     },
     {
-      "id": "aa500c050415ec79ac14",
-      "title": "تصویر میرسلیم سوار بر تویوتا لندکروز دوباره سوژه شد",
-      "summary": "مصطفی میرسلیم، حامی خودروسازان، چند روز پیش گفت که تیبا قابلیت رقابت با خودروهای لوکس دنیا را دارد. در پی این اظهار نظر کابران در فضای مجازی تصویر قدیمی میرسلیم را سوار بر تویوتا لندکروز، بازنشر کردند.",
-      "content": "۱۵:۳۵ - \n۱۹ مهر ۱۴۰۵ \n\nتصویر میرسلیم سوار بر تویوتا لندکروز دوباره سوژه شد \n\nمصطفی میرسلیم، حامی خودروسازان، چند روز پیش گفت که تیبا قابلیت رقابت با خودروهای لوکس دنیا را دارد. در پی این اظهار نظر کابران در فضای مجازی تصویر قدیمی میرسلیم را سوار بر تویوتا لندکروز، بازنشر کردند. \n\nپ\n\n،\n\nپـ\n\n \n\r\n\r\n\n\r\n\nva NewsLis Limi = 5;\n\nاز میان اخبار \n\nتصویر میرسلیم سوار بر تویوتا لندکروز دوباره سوژه شد \n\nبلینکن: توافق گازوئیلی ترامپ با پوتین باخت-باخت است \n\nشهباز شریف: پاکستان به تلاش‌های خود برای میانجی‌گری میان ایران و آمریکا ادامه خواهد داد \n\nادعای معاریو به نقل از منبع نظامی اسرائیلی: نتانیاهو احتمال حمله به ایران را رد نمی‌کند \n\nشما قبلا این خبر را لایک کرده‌اید . \n\nfunc ion oPe sianNumbe (numbe ) {\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\nelemen .addEven Lis ene (\"click\", func ion() {\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n. hen(func ion( esponse) {\nif ( esponse.s a us == 200) {\nesponse.json(). hen(func ion(newSco e) {\nva likeNumbe Span = elemen .que ySelec o (\".like\");\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\nva hiddenHea = elemen .que ySelec o (\".hidden\");\nvisibleHea .classLis .add(\"hidden\");\nfavo i eBu on.classLis .add(\"hidden\");\nhiddenHea .classLis . emove(\"hidden\");\nva e o Message = elemen .que ySelec o (\".e o _message\");\nif (e o Message) {\ne o Message.classLis . emove(\"hidden_e o \");\n}\n});\n} else {\nva e o Message = elemen .que ySelec o (\".e o _message\");\nif (e o Message) {\ne o Message.classLis .add(\"hidden_e o \");\nse Timeou (func ion() {\ne o Message.classLis . emove(\"hidden_e o \");\n}, 3000);\n}\n}\n})\n});\n});",
-      "url": "https://fararu.com/fa/news/1008968/%D8%AA%D8%B5%D9%88%DB%8C%D8%B1-%D9%85%DB%8C%D8%B1%D8%B3%D9%84%DB%8C%D9%85-%D8%B3%D9%88%D8%A7%D8%B1-%D8%A8%D8%B1-%D8%AA%D9%88%DB%8C%D9%88%D8%AA%D8%A7-%D9%84%D9%86%D8%AF%DA%A9%D8%B1%D9%88%D8%B2-%D8%AF%D9%88%D8%A8%D8%A7%D8%B1%D9%87-%D8%B3%D9%88%DA%98%D9%87-%D8%B4%D8%AF",
-      "image": "https://cdn.fararu.com/thumbnail/eor6VjaKPYSl/oOxHmLFOPAufFyK_1WCPG75fWERxudnTyqYB6DIII5OZMgi55u46cZ8EbePINOumazA6vlEpqBAt1PCl6DS2MXSGtLw-Xpx1GgRMdp8KIf-lbEY2RMcgEW7DVd0ghmIm/%D9%85%D8%B5%D8%B7%D9%81%DB%8C+%D9%85%DB%8C%D8%B1%D8%B3%D9%84%DB%8C%D9%85.jpg",
-      "source": "فرارو",
-      "source_site": "https://fararu.com/",
-      "allow_internal_republish": true,
-      "category": "اقتصاد و سرمایه‌گذاری",
-      "published": "2026-10-11T15:35:27+03:30",
-      "topics": [
-        "auto"
-      ],
-      "importance_score": 0,
-      "important": false,
-      "first_seen_at": "2026-10-11T12:07:12.055198+00:00"
-    },
-    {
       "id": "39e4afa5ea914e8b24d5",
       "title": "حمایت ۱۲۰میلیون تومانی دانشگاه امام صادق (ع) از رتبه‌های زیر ۵۰۰ کنکور",
       "summary": "دانشگاه امام صادق (ع) در قالب طرح جذب و حمایت ویژه از داوطلبان برتر، به پذیرفته‌شدگان با رتبه کشوری زیر ۵۰۰، در سال نخست تحصیل ۱۲۰ میلیون تومان کمک‌هزینه مالی اختصاص می دهد.",
