@@ -1,13 +1,16 @@
 #!/usr/bin/env python3
-"""Maintain four rolling two-hour batches of important published news."""
+"""Select a fresh, deduplicated batch of important news from the last two hours."""
 import json
+import re
 from collections import Counter
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
+from difflib import SequenceMatcher
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "data" / "news.json"
 OUTPUT = ROOT / "data" / "public" / "important-posts.json"
+WINDOW_HOURS = 2
 BATCH_SIZE = 4
 BATCH_COUNT = 4
 TOTAL = BATCH_SIZE * BATCH_COUNT
@@ -15,159 +18,157 @@ TOTAL = BATCH_SIZE * BATCH_COUNT
 
 def parse_date(value):
     try:
-        return datetime.fromisoformat(str(value).replace("Z", "+00:00")).timestamp()
+        dt = datetime.fromisoformat(str(value).replace("Z", "+00:00"))
+        return dt.replace(tzinfo=timezone.utc) if dt.tzinfo is None else dt
     except Exception:
-        return 0
+        return None
 
 
-def normalized_title(value):
-    return " ".join(str(value or "").lower().replace("\u200c", " ").split())
+def norm(value):
+    value = str(value or "").lower()
+    value = value.replace("\u200c", " ").replace("\u200f", " ").replace("\u200e", " ")
+    value = re.sub(r"[\W_]+", " ", value, flags=re.UNICODE)
+    return " ".join(value.split())
 
 
-def clean_item(item):
+def title_tokens(value):
+    return set(norm(value).split())
+
+
+def near_duplicate(a, b):
+    if a.get("url") == b.get("url") or a.get("id") == b.get("id"):
+        return True
+    ta, tb = norm(a.get("title")), norm(b.get("title"))
+    if not ta or not tb:
+        return False
+    if ta == tb or SequenceMatcher(None, ta, tb).ratio() >= 0.82:
+        return True
+    aa, bb = title_tokens(ta), title_tokens(tb)
+    return bool(aa and bb and len(aa & bb) / len(aa | bb) >= 0.72)
+
+
+def clean_item(raw):
+    try:
+        score = int(raw.get("importance_score") or 0)
+    except (TypeError, ValueError):
+        score = 0
     return {
-        "id": str(item.get("id") or item.get("url") or ""),
-        "title": str(item.get("title") or "").strip(),
-        "summary": str(item.get("summary") or "").strip(),
-        "url": str(item.get("url") or "").strip(),
-        "image": str(item.get("image") or "").strip(),
-        "source": str(item.get("source") or "").strip(),
-        "published": str(item.get("published") or ""),
-        "topics": item.get("topics") if isinstance(item.get("topics"), list) else [],
-        "importance_score": int(item.get("importance_score") or 0),
+        "id": str(raw.get("id") or raw.get("url") or "").strip(),
+        "title": str(raw.get("title") or "").strip(),
+        "summary": str(raw.get("summary") or "").strip(),
+        "url": str(raw.get("url") or "").strip(),
+        "image": str(raw.get("image") or "").strip(),
+        "source": str(raw.get("source") or "").strip(),
+        "published": str(raw.get("published") or ""),
+        "topics": raw.get("topics") if isinstance(raw.get("topics"), list) else [],
+        "importance_score": score,
+        "_timestamp": parse_date(raw.get("published")),
     }
 
 
-def eligible_items():
-    data = json.loads(SOURCE.read_text(encoding="utf-8"))
-    result, seen_ids, seen_titles = [], set(), set()
+def eligible_items(data, now):
+    cutoff = now - timedelta(hours=WINDOW_HOURS)
+    candidates = []
     for raw in data.get("items", []):
-        if raw.get("important") is not True:
-            continue
         item = clean_item(raw)
-        title_key = normalized_title(item["title"])
-        if not item["id"] or not item["title"] or not item["url"] or not item["topics"]:
+        dt = item.pop("_timestamp")
+        if not item["id"] or not item["title"] or not item["url"] or not item["topics"] or not dt:
             continue
-        if item["id"] in seen_ids or title_key in seen_titles:
+        if dt < cutoff or dt > now + timedelta(minutes=5):
             continue
-        seen_ids.add(item["id"])
-        seen_titles.add(title_key)
-        result.append(item)
-    result.sort(key=lambda x: (parse_date(x["published"]), x["importance_score"]), reverse=True)
-    return result
+        item["_published_dt"] = dt
+        candidates.append(item)
+    candidates.sort(key=lambda x: (x["importance_score"], x["_published_dt"]), reverse=True)
+
+    # Deduplicate copies/syndicated stories before ranking the shortlist.
+    unique = []
+    for item in candidates:
+        if any(near_duplicate(item, prior) for prior in unique):
+            continue
+        unique.append(item)
+    return unique
 
 
-def choose_batch(candidates, excluded_ids, source_counts):
-    """Prefer fresh stories and diversify sources/topics, relaxing caps only if needed."""
+def choose_batch(candidates, count=BATCH_SIZE):
     selected = []
-    selected_ids = set()
-    selected_sources = Counter()
-    selected_topics = Counter()
-    passes = [
-        (1, 2, 3),   # one source per batch when possible; max three per source in the 16
-        (2, 3, 4),
-        (3, 4, 5),
-        (None, None, None),
-    ]
-    for source_cap, topic_cap, rolling_source_cap in passes:
-        for item in candidates:
-            if len(selected) >= BATCH_SIZE:
-                break
-            if item["id"] in excluded_ids or item["id"] in selected_ids:
-                continue
-            source = item["source"] or "نامشخص"
-            topic = (item["topics"] or ["unknown"])[0]
-            if source_cap is not None and selected_sources[source] >= source_cap:
-                continue
-            if topic_cap is not None and selected_topics[topic] >= topic_cap:
-                continue
-            if rolling_source_cap is not None and source_counts[source] + selected_sources[source] >= rolling_source_cap:
-                continue
-            selected.append(item)
-            selected_ids.add(item["id"])
-            selected_sources[source] += 1
-            selected_topics[topic] += 1
-        if len(selected) >= BATCH_SIZE:
-            return selected
+    remaining = list(candidates)
+    source_counts, topic_counts = Counter(), Counter()
+    while remaining and len(selected) < count:
+        best, best_value = None, None
+        for item in remaining:
+            source = item.get("source") or "نامشخص"
+            topics = item.get("topics") or ["unknown"]
+            # Importance leads; freshness breaks ties; source/topic novelty improves coverage.
+            age_minutes = max(0.0, (datetime.now(timezone.utc) - item["_published_dt"]).total_seconds() / 60)
+            freshness = max(0.0, 12.0 - age_minutes / 10.0)
+            novelty = (5.0 / (1 + source_counts[source])) + (4.0 / (1 + topic_counts[topics[0]]))
+            value = item["importance_score"] * 2.0 + freshness + novelty
+            if best_value is None or value > best_value:
+                best, best_value = item, value
+        if best is None:
+            break
+        selected.append(best)
+        remaining.remove(best)
+        source_counts[best.get("source") or "نامشخص"] += 1
+        topic_counts[(best.get("topics") or ["unknown"])[0]] += 1
+    for item in selected:
+        item.pop("_published_dt", None)
     return selected
 
 
-def source_counts_for(batches):
-    return Counter(
-        str(item.get("source") or "نامشخص")
-        for batch in batches
-        for item in batch.get("items", [])
-    )
-
-
 def main():
-    candidates = eligible_items()
-    if len(candidates) < BATCH_SIZE:
-        print(f"Only {len(candidates)} eligible important posts; keeping the existing selection.")
-        return
+    now = datetime.now(timezone.utc)
+    data = json.loads(SOURCE.read_text(encoding="utf-8"))
+    candidates = eligible_items(data, now)
 
-    now = datetime.now(timezone.utc).isoformat(timespec="seconds")
     previous = {"batches": []}
     if OUTPUT.exists():
         try:
             previous = json.loads(OUTPUT.read_text(encoding="utf-8"))
         except Exception:
-            previous = {"batches": []}
-
+            pass
     batches = previous.get("batches", [])
     if not isinstance(batches, list):
         batches = []
 
-    if not batches:
+    # The previous initializer stamped four batches with the same selectedAt.
+    # Those were not four real two-hour cycles, so discard that artificial history.
+    stamps = [str(b.get("selectedAt") or "") for b in batches if isinstance(b, dict)]
+    if len(stamps) > 1 and len(set(stamps)) == 1:
         batches = []
-        excluded_ids = set()
-        rolling_sources = Counter()
-        for _ in range(BATCH_COUNT):
-            group = choose_batch(candidates, excluded_ids, rolling_sources)
-            if len(group) != BATCH_SIZE:
-                print("Not enough unique important posts to initialize four full batches.")
-                return
-            batches.append({"selectedAt": now, "items": group})
-            excluded_ids.update(item["id"] for item in group)
-            rolling_sources.update(item["source"] or "نامشخص" for item in group)
-    else:
-        batches = batches[:BATCH_COUNT]
-        history_ids = {
-            str(item.get("id"))
-            for batch in batches
-            for item in batch.get("items", [])
-        }
-        fresh = [item for item in candidates if item["id"] not in history_ids]
-        rolling_sources = source_counts_for(batches)
-        group = choose_batch(fresh, set(), rolling_sources)
-        if len(group) < BATCH_SIZE:
-            print(f"Only {len(group)} new important posts available; keeping the existing four batches.")
-            return
-        batches = [{"selectedAt": now, "items": group}] + batches[:BATCH_COUNT - 1]
+
+    now_text = now.isoformat(timespec="seconds")
+    previous_top_ids = {
+        str(item.get("id"))
+        for batch in batches
+        if isinstance(batch, dict)
+        for item in batch.get("items", [])
+    }
+    fresh = [item for item in candidates if item["id"] not in previous_top_ids]
+    group = choose_batch(fresh)
+    if group:
+        batches = [{"selectedAt": now_text, "windowHours": WINDOW_HOURS, "items": group}] + batches[:BATCH_COUNT - 1]
+    elif not batches:
+        # Never backfill with stale stories; publish an empty current batch instead.
+        batches = [{"selectedAt": now_text, "windowHours": WINDOW_HOURS, "items": []}]
 
     items, seen = [], set()
-    for batch in batches:
+    for batch in batches[:BATCH_COUNT]:
         for item in batch.get("items", []):
-            item_id = str(item.get("id") or "")
-            if item_id and item_id not in seen:
-                seen.add(item_id)
+            key = str(item.get("id") or "")
+            if key and key not in seen:
+                seen.add(key)
                 items.append(item)
             if len(items) >= TOTAL:
                 break
         if len(items) >= TOTAL:
             break
 
-    payload = {
-        "version": 1,
-        "updated": now,
-        "batchSize": BATCH_SIZE,
-        "batchCount": BATCH_COUNT,
-        "batches": batches[:BATCH_COUNT],
-        "items": items[:TOTAL],
-    }
-    OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+    payload = {"version": 2, "updated": now_text, "windowHours": WINDOW_HOURS,
+               "batchSize": BATCH_SIZE, "batchCount": BATCH_COUNT,
+               "batches": batches[:BATCH_COUNT], "items": items[:TOTAL]}
     OUTPUT.write_text(json.dumps(payload, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
-    print(f"Wrote {len(payload['items'])} sidebar items in {len(payload['batches'])} two-hour batches.")
+    print(f"Selected {len(group)} posts published in the last {WINDOW_HOURS} hours; sidebar total: {len(payload['items'])}.")
 
 
 if __name__ == "__main__":
