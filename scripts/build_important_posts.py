@@ -44,7 +44,11 @@ def near_duplicate(a, b):
     if ta == tb or SequenceMatcher(None, ta, tb).ratio() >= 0.82:
         return True
     aa, bb = title_tokens(ta), title_tokens(tb)
-    return bool(aa and bb and len(aa & bb) / len(aa | bb) >= 0.72)
+    similarity = len(aa & bb) / len(aa | bb) if aa and bb else 0.0
+    # Headlines from the same publisher often differ by only a few words.
+    if str(a.get("source") or "").strip() == str(b.get("source") or "").strip() and similarity >= 0.45:
+        return True
+    return similarity >= 0.72
 
 
 def clean_item(raw):
@@ -70,6 +74,8 @@ def eligible_items(data, now):
     cutoff = now - timedelta(hours=WINDOW_HOURS)
     candidates = []
     for raw in data.get("items", []):
+        if raw.get("important") is not True:
+            continue
         item = clean_item(raw)
         dt = item.pop("_timestamp")
         if not item["id"] or not item["title"] or not item["url"] or not item["topics"] or not dt:
