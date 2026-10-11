@@ -16,7 +16,7 @@ API = "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:
 GROQ_API = "https://api.groq.com/openai/v1/chat/completions"
 BATCH_SIZE = 40
 CANDIDATE_LIMIT = 40
-RECENT_HOURS = 4
+RECENT_HOURS = 2
 DAILY_REQUEST_BUDGET = 24
 ARTICLE_LIMIT = 4
 ARTICLE_CANDIDATE_POOL = 20
@@ -921,7 +921,7 @@ def main():
     if requests_used >= DAILY_REQUEST_BUDGET:
         print(f"AI budget reached: {requests_used}/{DAILY_REQUEST_BUDGET}. Local editorial engine continues.")
         gemini_allowed=False
-    elif last_success and now-last_success < MIN_ANALYSIS_INTERVAL_SECONDS:
+    elif last_success and now-last_success < MIN_ANALYSIS_INTERVAL_SECONDS and os.environ.get("EVRENEXUS_FORCE_AI", "").lower() not in ("1", "true", "yes"):
         wait=int((MIN_ANALYSIS_INTERVAL_SECONDS-(now-last_success))/60)+1
         print(f"Analysis interval lock active. Local editorial engine continues; AI next in about {wait} minutes.")
         gemini_allowed=False
