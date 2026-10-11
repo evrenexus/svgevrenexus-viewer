@@ -67,7 +67,7 @@ var prices=document.getElementById("prices"),search=document.getElementById("sea
 function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
 function num(v){return v==null?null:Number(v)}
 function money(v){return v==null?"-":new Intl.NumberFormat("fa-IR",{maximumFractionDigits:2}).format(v)}function cryptoMoney(v){return v==null?"-":new Intl.NumberFormat("en-US",{maximumFractionDigits:8}).format(v)}
-function tvSymbol(x){return ({BTC:"BINANCE:BTCUSDT",ETH:"BINANCE:ETHUSDT",LTC:"BINANCE:LTCUSDT",USDT:"BINANCE:USDTUSD",XRP:"BINANCE:XRPUSDT",BNB:"BINANCE:BNBUSDT",DOGE:"BINANCE:DOGEUSDT",TRX:"BINANCE:TRXUSDT",ADA:"BINANCE:ADAUSDT",SOL:"BINANCE:SOLUSDT"})[x.symbol]||("SEARCH:"+String(x.symbol||""))}
+function tvSymbol(x){var symbol=String(x.symbol||"").toUpperCase().replace(/[^A-Z0-9]/g,"");if(!symbol)return "";return ({BTC:"BINANCE:BTCUSDT",ETH:"BINANCE:ETHUSDT",LTC:"BINANCE:LTCUSDT",USDT:"BINANCE:USDTUSD",XRP:"BINANCE:XRPUSDT",BNB:"BINANCE:BNBUSDT",DOGE:"BINANCE:DOGEUSDT",TRX:"BINANCE:TRXUSDT",ADA:"BINANCE:ADAUSDT",SOL:"BINANCE:SOLUSDT"})[symbol]||("BINANCE:"+symbol+"USDT")}
 var sortKey=null,sortDir=1,currentPage=1;
 function render(){
  var q=(search.value||"").trim().toLocaleLowerCase();
@@ -99,7 +99,7 @@ function render(){
  '<th class="sortable" data-sort="changePercent1hUSDT">تغییر ۱ ساعته (%) <span class="sort-mark">'+(sortKey==="changePercent1hUSDT"?(sortDir===1?"▲":"▼"):"↕")+'</span></th>'+
  '</tr></thead><tbody>';
  pageRows.forEach(function(x,i){
-   var tv=tvSymbol(x),link=tv?(tv.indexOf("SEARCH:")===0?"https://www.tradingview.com/search/?query="+encodeURIComponent(tv.slice(7)):"./market-chart.html?symbol="+encodeURIComponent(tv)+"&name="+encodeURIComponent(x.symbol||"")):"https://www.tradingview.com/search/?query="+encodeURIComponent(x.symbol||"");
+   var tv=tvSymbol(x),link=tv?"./market-chart.html?symbol="+encodeURIComponent(tv)+"&name="+encodeURIComponent(x.symbol||""):"./market-chart.html";
    html+='<tr class="crypto-row" data-link="'+esc(link)+'"><td class="row-num">'+money((currentPage-1)*pageSize+i+1)+'</td><td class="num">'+esc(x.symbol)+'</td>'+
      '<td class="num">'+(num(x.priceUSDT)==null?"—":cryptoMoney(x.priceUSDT)+" USDT")+'</td>'+
      changeCell(x.changePercent1hUSDT)+'</tr>';
