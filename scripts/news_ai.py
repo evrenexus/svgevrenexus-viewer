@@ -317,6 +317,10 @@ def published_ts(s):
     except Exception:
         return 0
 
+def site_seen_ts(item):
+    """Use first ingestion time for the two-hour site-publication window."""
+    return published_ts(item.get("first_seen_at", "")) or published_ts(item.get("published", ""))
+
 def local_similarity(a,b):
     na, nb = normalize_title(a), normalize_title(b)
     if not na or not nb: return 0
@@ -339,7 +343,7 @@ def has_breaking_signal(x):
 def local_prepare(items):
     now = time.time()
     cutoff = now - RECENT_HOURS * 3600
-    recent = [x for x in items if not published_ts(x.get("published","")) or published_ts(x.get("published","")) >= cutoff]
+    recent = [x for x in items if not site_seen_ts(x) or site_seen_ts(x) >= cutoff]
     groups, meta = [], {}
 
     for x in sorted(recent, key=lambda z: published_ts(z.get("published","")), reverse=True):
@@ -364,7 +368,8 @@ def local_prepare(items):
         political = is_political(x)
         keyword_score = min(10, sum(v for k2,v in STRONG_KEYWORDS.items() if normalize_title(k2) in text))
         ts = published_ts(x.get("published","")) or now
-        age_hours = max(0, (now-ts)/3600)
+        seen_ts = site_seen_ts(x) or now
+        age_hours = max(0, (now-seen_ts)/3600)
         freshness = max(0, 7-int(age_hours/3))
         dup_count = next((g["count"] for g in groups if g["gid"]==m["group_id"]),1)
         local_score = max(0,min(20,freshness+keyword_score+min(3,max(0,dup_count-1))))
@@ -424,12 +429,18 @@ def make_local_result(src,meta):
         "age_hours":float(meta.get("age_hours",99))
     }
 
-def apply_local_selection(ai):
+def apply_local_selection(ai, eligible_ids=None):
     items=ai.get("items",{}) if isinstance(ai.get("items",{}),dict) else {}
+    eligible=set(str(x) for x in eligible_ids) if eligible_ids is not None else None
 
-    # Reset automatic editorial flags first.
-    for _,v in items.items():
+    # Recompute automatic flags only for this cycle; retain archived selections.
+    for nid,v in items.items():
         if not isinstance(v,dict):
+            continue
+        if v.get("political"):
+            v["publishable"]=False
+            v["exclude_reason"]="political content is excluded"
+        if eligible is not None and str(nid) not in eligible:
             continue
         v["important"]=False
         v["important_topics"]=[]
@@ -437,9 +448,6 @@ def apply_local_selection(ai):
         v["breaking"]=False
         v["breaking_topics"]=[]
         v["ticker_topics"]=[]
-        if v.get("political"):
-            v["publishable"]=False
-            v["exclude_reason"]="political content is excluded"
 
     # Editorial selection is performed independently for every topic.
     # This keeps the homepage global while making every topic page local.
@@ -447,6 +455,8 @@ def apply_local_selection(ai):
         candidates=[]
         for nid,v in items.items():
             if not isinstance(v,dict):
+                continue
+            if eligible is not None and str(nid) not in eligible:
                 continue
             if not v.get("publishable",True) or v.get("political",False) or is_forbidden_content(v):
                 continue
@@ -683,7 +693,8 @@ def generate_permanent_articles(all_news, ai, key, groq_key="", OpenRouter_key="
         if gid in completed_groups:
             continue
         src = by_id.get(nid) or by_title.get(normalize_title(row.get("title", "")))
-        if src and (published_ts(src.get("published", "")) == 0 or published_ts(src.get("published", "")) >= cutoff):
+        seen_ts = site_seen_ts(src) if src else 0
+        if src and (seen_ts == 0 or seen_ts >= cutoff):
             ranked.append((int(row.get("importance", 0) or 0), nid, row, src))
     ranked.sort(key=lambda z: (z[0], z[3].get("published", "")), reverse=True)
 
@@ -911,6 +922,8 @@ def main():
     requests_used=int(usage.get("requests",0) or 0)
     last_success=float(usage.get("last_success_epoch",0) or 0)
     now=time.time()
+    ai["selection_window_end"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime(now))
+    ai["selection_window_start"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime(now - RECENT_HOURS * 3600))
     quota_block_until=float(usage.get("quota_block_until_epoch",0) or 0)
     gemini_allowed=True
     if quota_block_until > now:
@@ -937,7 +950,7 @@ def main():
             local_row=dict(x); local_row["_local_score"]=m.get("local_score",0)
             ai["items"][k]=make_local_result(local_row,m)
 
-    apply_local_selection(ai)
+    apply_local_selection(ai, {item_key(x) for x in recent})
     rebuild_groups(ai)
     save_ai(ai)
     if not gemini_allowed:
@@ -1107,7 +1120,7 @@ def main():
         print(f"::warning::{failed_batches} batch(es) failed; successful batches were preserved.")
 
     rebuild_groups(ai)
-    apply_local_selection(ai)
+    apply_local_selection(ai, {item_key(x) for x in recent})
     save_ai(ai)
     if int(usage.get("requests", 0) or 0) < DAILY_REQUEST_BUDGET:
         try:
