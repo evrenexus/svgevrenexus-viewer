@@ -120,27 +120,50 @@ jobs:
         run: npm install --no-save cheerio@1.0.0-rc.12
       - name: Check images
         run: node scripts/check-images.mjs
-      - name: Build permanent internal articles
-        run: node scripts/build-internal-articles.mjs
-      - name: Commit generated articles and image health
+      # Commit the independent public/latest feeds before starting the separate AI-derived boxes.
+      - name: Commit public data and independent latest-news feed
         run: |
           git config user.name "evrenexus-update-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/articles.json data/public/image-health.json data/public/news.json data/public/editorial.json data/public/policy-terms.json data/public/meta.json data/public/latest-news.json
-          if git diff --cached --quiet; then echo "No generated article, public-data, or image-health changes."; exit 0; fi
-          git commit -m "Build public data, permanent articles, and image health"
+          git add data/public/image-health.json data/public/news.json data/public/editorial.json data/public/policy-terms.json data/public/meta.json data/public/latest-news.json
+          if git diff --cached --quiet; then echo "No public-data, latest-news, or image-health changes."; exit 0; fi
+          git commit -m "Publish rule-based latest news and public data"
           git push origin HEAD:main
-      - name: Build featured and permanent important pages
+      # The following is a separate, non-blocking stage for AI-managed permanent/important articles.
+      - name: Build permanent internal articles
+        id: build_internal_articles
+        continue-on-error: true
+        run: node scripts/build-internal-articles.mjs
+      - name: Restore article data if separate article stage fails
+        if: steps.build_internal_articles.outcome == 'failure'
+        run: git checkout -- data/articles.json
+      - name: Commit generated permanent articles
+        if: steps.build_internal_articles.outcome == 'success'
+        run: |
+          git config user.name "evrenexus-update-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/articles.json
+          if git diff --cached --quiet; then echo "No permanent-article changes."; exit 0; fi
+          git commit -m "Build permanent internal articles"
+          git push origin HEAD:main
+      - name: Build important and featured boxes
+        id: build_important_boxes
+        if: steps.build_internal_articles.outcome == 'success'
+        continue-on-error: true
         run: node scripts/build-featured.mjs
-      - name: Validate featured
+      - name: Validate important and featured boxes
+        id: validate_important_boxes
+        if: steps.build_important_boxes.outcome == 'success'
+        continue-on-error: true
         run: node scripts/validate-featured.mjs
-      - name: Commit generated featured data and article pages
+      - name: Commit important boxes and article pages
+        if: steps.build_important_boxes.outcome == 'success' && steps.validate_important_boxes.outcome == 'success'
         run: |
           git config user.name "evrenexus-update-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/public/featured.json articles
-          if git diff --cached --quiet; then echo "No generated featured/article changes."; exit 0; fi
-          git commit -m "Build featured data and important article pages"
+          if git diff --cached --quiet; then echo "No important/featured changes."; exit 0; fi
+          git commit -m "Build important boxes and article pages"
           git push origin HEAD:main
       - name: Configure Pages
         uses: actions/configure-pages@v5
