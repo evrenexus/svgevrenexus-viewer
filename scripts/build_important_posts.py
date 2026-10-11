@@ -90,21 +90,35 @@ def eligible_items(data, now):
 
 
 def choose_batch(candidates, count=BATCH_SIZE):
+    """Rank fresh items while strongly preferring distinct sources and topics."""
     selected = []
     remaining = list(candidates)
     source_counts, topic_counts = Counter(), Counter()
+    passes = [
+        (1, 1),       # try one source and one topic each
+        (1, 2),       # allow a second story in a topic
+        (1, None),    # still prefer distinct sources
+        (2, 2),
+        (2, None),
+        (None, None),
+    ]
     while remaining and len(selected) < count:
-        best, best_value = None, None
-        for item in remaining:
-            source = item.get("source") or "نامشخص"
-            topics = item.get("topics") or ["unknown"]
-            # Importance leads; freshness breaks ties; source/topic novelty improves coverage.
-            age_minutes = max(0.0, (datetime.now(timezone.utc) - item["_published_dt"]).total_seconds() / 60)
-            freshness = max(0.0, 12.0 - age_minutes / 10.0)
-            novelty = (5.0 / (1 + source_counts[source])) + (4.0 / (1 + topic_counts[topics[0]]))
-            value = item["importance_score"] * 2.0 + freshness + novelty
-            if best_value is None or value > best_value:
-                best, best_value = item, value
+        best = None
+        for source_cap, topic_cap in passes:
+            eligible = []
+            for item in remaining:
+                source = item.get("source") or "نامشخص"
+                topics = item.get("topics") or ["unknown"]
+                topic = topics[0]
+                if source_cap is not None and source_counts[source] >= source_cap:
+                    continue
+                if topic_cap is not None and topic_counts[topic] >= topic_cap:
+                    continue
+                eligible.append(item)
+            if eligible:
+                # candidates are already ordered by importance then publication time.
+                best = eligible[0]
+                break
         if best is None:
             break
         selected.append(best)
@@ -114,7 +128,6 @@ def choose_batch(candidates, count=BATCH_SIZE):
     for item in selected:
         item.pop("_published_dt", None)
     return selected
-
 
 def main():
     now = datetime.now(timezone.utc)
