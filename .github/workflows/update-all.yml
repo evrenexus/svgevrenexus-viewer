@@ -11,6 +11,9 @@ on:
       - 'scripts/build-important-pages.mjs'
       - 'scripts/build-internal-articles.mjs'
       - 'scripts/build-featured.mjs'
+      - 'scripts/build-latest-news.mjs'
+      - 'scripts/validate-latest-news.mjs'
+      - 'Evrenexus-featured.js'
       - 'scripts/featured-config.mjs'
       - 'scripts/news_collector.py'
       - 'scripts/test_topic_classification.py'
@@ -106,6 +109,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+      # This feed is generated and validated from data/news.json only, before the separate AI/editorial boxes are built.
+      - name: Build independent latest-news feed
+        run: node scripts/build-latest-news.mjs
+      - name: Validate independent latest-news feed
+        run: node scripts/validate-latest-news.mjs
       - name: Build public data
         run: python3 scripts/build_public.py
       - name: Install image-check dependency
@@ -118,7 +126,7 @@ jobs:
         run: |
           git config user.name "evrenexus-update-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/articles.json data/public/image-health.json data/public/news.json data/public/editorial.json data/public/policy-terms.json data/public/meta.json
+          git add data/articles.json data/public/image-health.json data/public/news.json data/public/editorial.json data/public/policy-terms.json data/public/meta.json data/public/latest-news.json
           if git diff --cached --quiet; then echo "No generated article, public-data, or image-health changes."; exit 0; fi
           git commit -m "Build public data, permanent articles, and image health"
           git push origin HEAD:main
