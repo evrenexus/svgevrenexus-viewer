@@ -14,9 +14,12 @@ const compact=(r,t)=>({id:String(r.n.id),title:String((r.ed?.title&&String(r.ed.
 const previousFeaturedDoc=(()=>{try{return JSON.parse(fs.readFileSync(path.join(ROOT,"data/public/featured.json"),"utf8"))}catch{return {}}})();
 const previouslyImportantIds=(()=>{const ids=new Set();for(const topic of Object.values(previousFeaturedDoc.topics||{}))for(const item of (topic.important||[]))if(item?.articleId)ids.add(String(item.articleId));return ids})();
 const PROMOTION_WINDOW_MS=2*60*60*1000;
-const promotionWindowStart=Math.floor(Date.now()/PROMOTION_WINDOW_MS)*PROMOTION_WINDOW_MS;
+const aiSelectionWindow=(()=>{try{return JSON.parse(fs.readFileSync(path.join(ROOT,"data/news-ai.json"),"utf8"))}catch{return {}}})();
+const parsedWindowEnd=Date.parse(aiSelectionWindow.selection_window_end||aiSelectionWindow.updated||"");
+const promotionWindowStart=Number.isFinite(parsedWindowEnd)?parsedWindowEnd:Date.now();
+const parsedWindowStart=Date.parse(aiSelectionWindow.selection_window_start||"");
 const promotionWindow=new Date(promotionWindowStart).toISOString();
-const completedWindowStart=promotionWindowStart-PROMOTION_WINDOW_MS;
+const completedWindowStart=Number.isFinite(parsedWindowStart)?parsedWindowStart:promotionWindowStart-PROMOTION_WINDOW_MS;
 
 const wasPreviouslyImportant=r=>previouslyImportantIds.has(String(r?.article?.id??r?.article?.slug??r?.article?.__key??""));
 const isImportantCandidate=r=>wasPreviouslyImportant(r)||(r.ai?.important===true&&r.ai?.publishable===true&&r.ai?.political!==true&&Array.isArray(r.ai?.important_topics)&&r.ed?.auto_important===true);
