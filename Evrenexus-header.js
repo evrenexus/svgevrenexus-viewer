@@ -174,7 +174,7 @@ update();setInterval(update,1000);
   if (window.__EVRENEXUS_IMPORTANT_POSTS_SCRIPT_REQUESTED__) return;
   window.__EVRENEXUS_IMPORTANT_POSTS_SCRIPT_REQUESTED__ = true;
   var script = document.createElement("script");
-  script.src = "https://evrenexus.github.io/svgevrenexus-viewer/Evrenexus-important-posts.js?v=20261011-05";
+  script.src = "https://evrenexus.github.io/svgevrenexus-viewer/Evrenexus-important-posts.js?v=20261011-06";
   script.async = true;
   document.head.appendChild(script);
 })();
