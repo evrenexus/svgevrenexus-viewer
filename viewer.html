@@ -4,29 +4,69 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>خبرخوان Evren Nexus</title>
-<style>*{box-sizing:border-box}html,body{margin:0;padding:0;width:100%;min-height:100%;background:#fff;font-family:Tahoma,Arial,sans-serif}#content{width:100%;height:calc(100vh - 113px);margin-top:113px;position:relative;background:#fff}#loading{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#555;font-size:14px;z-index:1}#iframe{width:100%;height:100%;border:0;display:block;position:relative;z-index:2;background:#fff}@media(max-width:700px){#content{height:calc(100vh - 105px);margin-top:105px}}@media(max-width:430px){#content{height:calc(100vh - 102px);margin-top:102px}}.Evrenxus-page-footer{width:100%;padding:12px;text-align:center;font:9px Tahoma,Arial,sans-serif;color:#777;border-top:1px solid #e5e7e9;background:#fff} </style>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;width:100%;min-height:100%;background:#fff;font-family:Tahoma,Arial,sans-serif}
+#content{width:100%;height:calc(100vh - 113px);margin-top:113px;position:relative;background:#fff;display:flex;flex-direction:column}
+#source-bar{position:relative;z-index:5;min-height:40px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:6px 12px;background:#f5f7f8;border-bottom:1px solid #dfe3e6;font-size:12px;color:#414b52}
+#source-help{font-size:11px;color:#69747b;line-height:1.8}
+#open-source{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;padding:8px 12px;background:#d9232e;color:#fff;text-decoration:none;border-radius:3px;font-size:11px;font-weight:700}
+#open-source:hover{background:#b91d27}
+#iframe-wrap{position:relative;flex:1;min-height:0;background:#fff}
+#loading{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#555;font-size:13px;z-index:1;text-align:center;line-height:2;width:90%}
+#iframe{width:100%;height:100%;border:0;display:block;position:relative;z-index:2;background:#fff}
+#fallback-note{display:none;position:absolute;z-index:4;left:10px;right:10px;bottom:10px;padding:9px 12px;background:#fff8e6;border:1px solid #ead9a4;color:#655522;font-size:11px;line-height:1.9;text-align:center}
+@media(max-width:700px){
+#content{height:calc(100vh - 105px);margin-top:105px}
+#source-bar{min-height:44px;padding:6px 8px;gap:7px}
+#source-help{font-size:10px}
+#open-source{font-size:10px;padding:8px 9px}
+}
+@media(max-width:430px){#content{height:calc(100vh - 102px);margin-top:102px}#source-help{max-width:58%}}
+.Evrenxus-page-footer{width:100%;padding:12px;text-align:center;font:9px Tahoma,Arial,sans-serif;color:#777;border-top:1px solid #e5e7e9;background:#fff}
+</style>
 </head>
 <body>
-
-
-
 <div id="content">
-<div id="loading">در حال بارگذاری خبر...</div>
-<iframe id="iframe" title="خبر"></iframe>
-</div><footer class="Evrenxus-page-footer">© اورین نکسوس</footer>
-
+  <div id="source-bar">
+    <div id="source-help">اگر صفحه خبر در این بخش نمایش داده نشد، از لینک روبه‌رو استفاده کنید.</div>
+    <a id="open-source" href="#" target="_blank" rel="noopener noreferrer">مشاهده خبر در سایت اصلی ↗</a>
+  </div>
+  <div id="iframe-wrap">
+    <div id="loading">در حال بارگذاری خبر...</div>
+    <iframe id="iframe" title="خبر" referrerpolicy="no-referrer"></iframe>
+    <div id="fallback-note">ممکن است این خبرگزاری نمایش صفحه در خبرخوان‌های دیگر را مسدود کرده باشد. برای دیدن خبر، روی «مشاهده خبر در سایت اصلی» بزنید.</div>
+  </div>
+</div>
+<footer class="Evrenxus-page-footer">© اورین نکسوس</footer>
 <script>
 (function(){
-var params=new URLSearchParams(location.search),newsUrl=params.get("url"),iframe=document.getElementById("iframe"),loading=document.getElementById("loading");
-if(!newsUrl){loading.textContent="لینک خبر مشخص نشده است.";return}
+"use strict";
+var params=new URLSearchParams(location.search);
+var newsUrl=params.get("url");
+var iframe=document.getElementById("iframe");
+var loading=document.getElementById("loading");
+var openSource=document.getElementById("open-source");
+var fallback=document.getElementById("fallback-note");
+if(!newsUrl){loading.textContent="لینک خبر مشخص نشده است.";openSource.style.display="none";return}
 try{
- var url=new URL(newsUrl);
- if(!/^https?:$/i.test(url.protocol)){loading.textContent="آدرس خبر معتبر نیست.";return}
- iframe.src=newsUrl;
- iframe.onload=function(){loading.style.display="none"};
-}catch(e){loading.textContent="آدرس خبر معتبر نیست."}
+  var url=new URL(newsUrl);
+  if(!/^https?:$/i.test(url.protocol)){loading.textContent="آدرس خبر معتبر نیست.";openSource.style.display="none";return}
+  openSource.href=url.href;
+  iframe.src=url.href;
+  var timer=window.setTimeout(function(){
+    loading.style.display="none";
+    fallback.style.display="block";
+  },7000);
+  iframe.onload=function(){
+    window.clearTimeout(timer);
+    loading.style.display="none";
+    // Cross-origin frame restrictions prevent reliable detection of blocked embeds.
+    // Keep the direct-source link visible at all times as the safe fallback.
+  };
+}catch(e){loading.textContent="آدرس خبر معتبر نیست.";openSource.style.display="none"}
 })();
 </script>
-<script src="https://evrenexus.github.io/svgevrenexus-viewer/Evrenexus-header.js?v=20261005-15"></script>
+<script src="https://evrenexus.github.io/svgevrenexus-viewer/Evrenexus-header.js?v=20261011-02"></script>
 </body>
 </html>
