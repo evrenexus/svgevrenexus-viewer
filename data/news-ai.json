@@ -1,7 +1,7 @@
 {
   "version": 1,
   "policy_version": 9,
-  "updated": "2026-10-11T05:23:36Z",
+  "updated": "2026-10-11T06:15:05Z",
   "items": {
     "72b4eb7a7155ed214c32324d": {
       "title": "تصاویر؛ جشن «مهرگان» در غار کرفتو",
@@ -890,7 +890,7 @@
       "publishable": false,
       "exclude_reason": "political content is excluded",
       "group_id": "local-2e837a29ee30",
-      "representative": true,
+      "representative": false,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
       "local_score": 4,
@@ -4724,13 +4724,9 @@
       "summary": "سازمان هواشناسی برای بارش‌های سیل‌آسا طی امروز و فردا در ۶ استان کشور هشدار نارنجی صادر کرد.",
       "source": "بورس‌نیوز",
       "published": "2026-10-10T11:18:09+03:30",
-      "topics": [
-        "markets"
-      ],
-      "topic_scores": {
-        "markets": 10
-      },
-      "importance": 10,
+      "topics": [],
+      "topic_scores": {},
+      "importance": 12,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -4739,14 +4735,14 @@
       "breaking_topics": [],
       "publishable": true,
       "exclude_reason": "",
-      "group_id": "local-9c2ba41f2d02",
-      "representative": true,
+      "group_id": "local-a9bf35fe2c7f",
+      "representative": false,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 10,
+      "local_score": 12,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 3.965416182279587
+      "age_hours": 0.7293982766071956
     },
     "da1eca42d56e4373e5e3f09a": {
       "title": "۲۰ نماد معاملاتی متوقف شد",
@@ -11014,7 +11010,7 @@
       "publishable": true,
       "exclude_reason": "",
       "group_id": "local-8b611e52d499",
-      "representative": false,
+      "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
       "local_score": 13,
@@ -12673,28 +12669,28 @@
       "source": "صدای بورس",
       "published": "2026-10-10T18:00:00+03:30",
       "topics": [
-        "currency-gold"
+        "economy"
       ],
       "topic_scores": {
-        "currency-gold": 20
+        "economy": 10
       },
-      "importance": 20,
+      "importance": 10,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
       "ticker_topics": [],
       "breaking": false,
       "breaking_topics": [],
-      "publishable": false,
-      "exclude_reason": "political content is excluded",
+      "publishable": true,
+      "exclude_reason": "",
       "group_id": "local-8b611e52d499",
-      "representative": true,
+      "representative": false,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 16,
-      "political": true,
+      "local_score": 10,
+      "political": false,
       "breaking_signal": false,
-      "age_hours": 3.982397269739045
+      "age_hours": 1.232575035492579
     },
     "bf14ee00f295c33af572b065": {
       "title": "زور دلار به رکود بازار خودرو نرسید | بازار خودرو بخشی از افزایش قیمت هفته گذشته را پس گرفت | جدول قیمت‌ها",
@@ -12749,25 +12745,29 @@
         "currency-gold"
       ],
       "topic_scores": {
-        "currency-gold": 14
+        "currency-gold": 20
       },
-      "importance": 14,
-      "important": false,
-      "important_topics": [],
-      "slider_topics": [],
+      "importance": 20,
+      "important": true,
+      "important_topics": [
+        "currency-gold"
+      ],
+      "slider_topics": [
+        "currency-gold"
+      ],
       "ticker_topics": [],
       "breaking": false,
       "breaking_topics": [],
-      "publishable": false,
-      "exclude_reason": "political content is excluded",
+      "publishable": true,
+      "exclude_reason": "",
       "group_id": "local-b1e8338e0968",
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 4,
-      "political": true,
-      "breaking_signal": true,
-      "age_hours": 3.6614659404092365
+      "local_score": 16,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.2325750346978506
     },
     "9de27588b806b936e219b329": {
       "title": "چالش تحریم و فرسودگی زیرساخت فناوری کشور برای اپراتورها در گپ و گفت با کارشناس اقتصاد دیجیتال | تحریم، واسطه‌ها را ثروتمند کرد و هزینه فناوری را برای ایران چند برابر",
@@ -12865,12 +12865,10 @@
       "source": "صدای بورس",
       "published": "2026-10-10T18:16:02+03:30",
       "topics": [
-        "economy",
-        "currency-gold"
+        "economy"
       ],
       "topic_scores": {
-        "economy": 16,
-        "currency-gold": 14
+        "economy": 16
       },
       "importance": 16,
       "important": false,
@@ -12887,8 +12885,8 @@
       "analysis_mode": "local",
       "local_score": 4,
       "political": true,
-      "breaking_signal": true,
-      "age_hours": 3.715175047516823
+      "breaking_signal": false,
+      "age_hours": 1.232575036353535
     },
     "08fade8990bfc350e4622d63": {
       "title": "بانک مرکزی: بانک‌ها دیگر اجازه فروش طلا ندارند",
@@ -13998,22 +13996,26 @@
         "economy": 20
       },
       "importance": 20,
-      "important": false,
-      "important_topics": [],
-      "slider_topics": [],
+      "important": true,
+      "important_topics": [
+        "economy"
+      ],
+      "slider_topics": [
+        "economy"
+      ],
       "ticker_topics": [],
       "breaking": false,
       "breaking_topics": [],
-      "publishable": false,
-      "exclude_reason": "political content is excluded",
+      "publishable": true,
+      "exclude_reason": "",
       "group_id": "local-b7d93b5dba07",
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 16,
-      "political": true,
-      "breaking_signal": true,
-      "age_hours": 3.956337177356084
+      "local_score": 10,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.727977658841345
     },
     "43f57a3c056b126a54e44153": {
       "title": "واکنش فنلاند به توافق روسیه و آمریکا برای تأمین گازوئیل/ توقف صدور روادید برای شهروندان روسی",
@@ -15201,9 +15203,13 @@
         "economy": 18
       },
       "importance": 18,
-      "important": false,
-      "important_topics": [],
-      "slider_topics": [],
+      "important": true,
+      "important_topics": [
+        "economy"
+      ],
+      "slider_topics": [
+        "economy"
+      ],
       "ticker_topics": [
         "economy"
       ],
@@ -15220,7 +15226,7 @@
       "local_score": 13,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 2.14596202035745
+      "age_hours": 0.7287120566103193
     },
     "4fe59077437f03248b4380f6": {
       "title": "خبر خوش برای سهامداران عدالت/ حساب این افراد شارژ شد + جزئیات",
@@ -15411,9 +15417,13 @@
         "markets": 20
       },
       "importance": 20,
-      "important": false,
-      "important_topics": [],
-      "slider_topics": [],
+      "important": true,
+      "important_topics": [
+        "markets"
+      ],
+      "slider_topics": [
+        "markets"
+      ],
       "ticker_topics": [],
       "breaking": false,
       "breaking_topics": [],
@@ -15426,7 +15436,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.2951286870241165
+      "age_hours": 0.7287120571401384
     },
     "c49c78869e6c8e545e643924": {
       "title": "برد ۳-۰ اینتر مقابل پارما؛ بی‌دردسر و آسان!",
@@ -17629,7 +17639,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 1.605073815451728
+      "age_hours": 0.22415375663174522
     },
     "9e863aee21f7dc0472a1bc7b": {
       "title": "رفتار عجیب مجری تلویزیون",
@@ -17654,7 +17664,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 0.4584071487850613
+      "age_hours": 0.2239395477374395
     },
     "c7dd19ff37951cbd989765b7": {
       "title": "ترافیک نیمه‌سنگین در ۴ محور مواصلاتی منتهی به تهران/بارش باران در ۵ استان",
@@ -17693,9 +17703,13 @@
         "health": 18
       },
       "importance": 18,
-      "important": false,
-      "important_topics": [],
-      "slider_topics": [],
+      "important": true,
+      "important_topics": [
+        "health"
+      ],
+      "slider_topics": [
+        "health"
+      ],
       "ticker_topics": [],
       "breaking": false,
       "breaking_topics": [],
@@ -17708,7 +17722,7 @@
       "local_score": 13,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.5084071487850613
+      "age_hours": 1.2331754349337685
     },
     "4fce0b5b59e132d925d084c7": {
       "title": "قیمت تیرآهن امروز یکشنبه ۱۹ مهر 1405 + جدول",
@@ -17774,7 +17788,7 @@
       "local_score": 7,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 0.571184926562839
+      "age_hours": 0.22244664635923173
     },
     "3882c0d2ce53205efb2c1314": {
       "title": "قیمت خودرو‌های سایپا امروز یکشنبه ۱۹ مهر ۱۴۰۵ + جدول",
@@ -17834,9 +17848,13 @@
         "science-life": 15
       },
       "importance": 15,
-      "important": false,
-      "important_topics": [],
-      "slider_topics": [],
+      "important": true,
+      "important_topics": [
+        "science-life"
+      ],
+      "slider_topics": [
+        "science-life"
+      ],
       "ticker_topics": [],
       "publishable": true,
       "exclude_reason": "",
@@ -18084,7 +18102,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 0.041462704340616864
+      "age_hours": 0.22244664914078183
     },
     "cebcefe72c6ebcf6e55e4d5a": {
       "title": "قیمت گوشت قرمز امروز یکشنبه ۱۹ مهر ۱۴۰۵ + جدول",
@@ -18102,14 +18120,14 @@
       "breaking_topics": [],
       "publishable": true,
       "exclude_reason": "",
-      "group_id": "local-f19360b16f78",
-      "representative": true,
+      "group_id": "local-b6a900d4634c",
+      "representative": false,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
       "local_score": 10,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 0.057573815451727975
+      "age_hours": 0.223720047738817
     },
     "cc0285bab0bd88e8d3bc6415": {
       "title": "اینترمیامی پرگل برد؛ مسی بریس کرد",
@@ -18134,7 +18152,7 @@
       "local_score": 7,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 0.05924048211839464
+      "age_hours": 0.8615895163350635
     },
     "f4a7158578ecc308d88a31be": {
       "title": "غذا خوردن در این ساعت از روز کبدتان را نابود می کند",
@@ -18159,7 +18177,7 @@
       "local_score": 15,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 0.11368492656283909
+      "age_hours": 0.22395127799775866
     },
     "78ebf1f9806000ab6cad7f3d": {
       "title": "وام ساخت این خانه‌ها افزایش یافت+ جزئیات",
@@ -18221,7 +18239,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 0.20618492656283907
+      "age_hours": 0.2224466485447354
     },
     "e0da0fab081b5753dc3b6789": {
       "title": "سیل در گلستان چند کشته و مفقودی برجا گذاشت؟",
@@ -18252,7 +18270,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 0.20924048211839463
+      "age_hours": 0.22395127720303007
     },
     "57b98b433caed6bb8bf4debb": {
       "title": "۵ اشتباه رایج هنگام خرید میوه و سبزیجات منجمد",
@@ -18266,9 +18284,13 @@
         "science-life": 15
       },
       "importance": 15,
-      "important": false,
-      "important_topics": [],
-      "slider_topics": [],
+      "important": true,
+      "important_topics": [
+        "science-life"
+      ],
+      "slider_topics": [
+        "science-life"
+      ],
       "ticker_topics": [],
       "breaking": false,
       "breaking_topics": [],
@@ -18281,7 +18303,7 @@
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.23285159322950574
+      "age_hours": 1.003644854426384
     },
     "2ba8d8bd278c4754ba43646a": {
       "title": "تیر خلاص همتی به بساط خالی‌خوانی تراستی‌ها",
@@ -18343,7 +18365,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.36646270434061684
+      "age_hours": 1.00492235077752
     },
     "87c3418b36ba6cf1dfdfe117": {
       "title": "مزایده ۱.۴ همتی آپ برای واگذاری ساختمان اداری و دیتاسنتر در پارک فناوری",
@@ -18366,8 +18388,10 @@
         "science-life": 0
       },
       "importance": 14,
-      "important": false,
-      "important_topics": [],
+      "important": true,
+      "important_topics": [
+        "technology"
+      ],
       "slider_topics": [],
       "ticker_topics": [],
       "publishable": true,
@@ -18381,6 +18405,839 @@
       "local_score": 13,
       "breaking": false,
       "breaking_topics": []
+    },
+    "7645f020dfb7db8d59e52b45": {
+      "title": "امروز آخرین مهلت انتخاب رشته کنکوری‌ها",
+      "summary": "متقاضیان آزمون های سراسری و پذیرش دانشجو - معلم تا پایان امروز می توانند با مراجعه به سایت سازمان سنجش آموزش کشور نسبت به انتخاب رشته خود اقدام کنند. پست امروز آخرین مهلت انتخاب رشته کنکوری‌ها اولین بار در تجارت نیوز ظاهر شد.",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-11T09:24:32+03:30",
+      "topics": [
+        "science-life"
+      ],
+      "topic_scores": {
+        "science-life": 4
+      },
+      "importance": 4,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-80eb34fd155b",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.22372005495760175
+    },
+    "3fa1c7153a6eeb67dda051eb": {
+      "title": "سقوط 47 درصدی تولید محصولات گرم فولاد مبارکه / «فولاد» از پلکان تورم بالا رفت + نمودار",
+      "summary": "فولاد مبارکه در نیمه نخست 1405 از نظر مجموع تولید تقریبا در سطح سال قبل ایستاد، اما ترکیب تولید تصویر متفاوتی دارد؛ محصولات گرم 47 درصد و تختال 91 درصد افت کرده‌اند و بخش عمده حجم تولید از گندله آمده است. همزمان درآمد 56 درصد رشد کرده، اما رشدی که از جهش نرخ‌ها و تورم تاثیر گرفته است. پست سقوط 47 در",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-11T09:24:01+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 20
+      },
+      "importance": 20,
+      "important": true,
+      "important_topics": [
+        "economy"
+      ],
+      "slider_topics": [
+        "economy"
+      ],
+      "ticker_topics": [
+        "economy"
+      ],
+      "breaking": true,
+      "breaking_topics": [
+        "economy"
+      ],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-13bd6317f798",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 16,
+      "political": false,
+      "breaking_signal": true,
+      "age_hours": 0.22372005244096121
+    },
+    "5cde4e8a34b6047b5ed8d2fc": {
+      "title": "استانداردهای جدید تشخیص کمبود آهن اعلام شد",
+      "summary": "انجمن هماتولوژی آمریکا معیارهای تشخیص کمبود آهن را تغییر داده است؛ تغییری که با افزایش آستانه سطح فریتین خون، می‌تواند به شناسایی افرادی کمک کند که پیش‌تر کمبود آهن آن‌ها تشخیص داده نمی‌شد.",
+      "source": "سلامت نیوز",
+      "published": "2026-10-11T09:23:16+03:30",
+      "topics": [],
+      "topic_scores": {},
+      "importance": 4,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-2b13f394f3be",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 0.222446651591195
+    },
+    "dba65944e7eed7fc78b4d1f5": {
+      "title": "شوک‌های قیمتی بیت‌کوین بیشتر شد",
+      "summary": "بیت‌کوین با وجود کاهش چشمگیر نوسان‌پذیری کلی در سال جاری، در مقایسه با دوره بازار نزولی ۲۰۱۸، نوسان‌های شدید و غیرمعمول بیشتر قیمت را تجربه کرده است که برای سرمایه‌گذاران استفاده‌کننده از مدل‌های متداول سنجش ریسک، چالش ایجاد می‌کند. پست شوک‌های قیمتی بیت‌کوین بیشتر شد اولین بار در تجارت نیوز ظاهر شد",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-11T09:22:58+03:30",
+      "topics": [
+        "crypto"
+      ],
+      "topic_scores": {
+        "crypto": 14
+      },
+      "importance": 14,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-c74d22cc0837",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.2237200516462326
+    },
+    "3fd1d1e91d3adbd64cf38078": {
+      "title": "از انحصار نسل سوم تا مزایده ۱۳۰ همتی، چرا رایتل کوچک ماند؟",
+      "summary": "رایتل با امتیاز انحصاری عرضه خدمات نسل سوم وارد بازار تلفن همراه ایران شد، اما نتوانست از این فرصت برای رسیدن به جایگاهی نزدیک به دو رقیب خود استفاده کند. زمانی که دوره انحصار در شهریور ۱۳۹۳ پایان یافت، همراه اول و ایرانسل از نظر تعداد مشترکان و گستره شبکه فاصله زیادی با اپراتور سوم…",
+      "source": "پیوست",
+      "published": "2026-10-11T09:20:54+03:30",
+      "topics": [
+        "technology"
+      ],
+      "topic_scores": {
+        "technology": 4
+      },
+      "importance": 4,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-fd4e18babe45",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 0.22351709882418314
+    },
+    "1aef24d8c3eda75ec37da242": {
+      "title": "افزایش عفونت‌های تنفسی مطابق الگوی فصلی/ پیامدهای مصرف خودسرانه آنتی‌بیوتیک",
+      "summary": "رئیس دانشگاه علوم‌پزشکی ایران با بیان اینکه افزایش بیماری‌های ویروسی تنفسی را تقریبا دو بار در سال تجربه می‌کنیم، گفت: افزایش مراجعات برای عفونت‌های تنفسی منطبق با الگوی فصلی هر ساله است و بحران‌ عمده‌ای در این زمینه نداریم و آمار و ارقام مرتبط با عفونت‌های تنفسی مهر تاییدی برای این موضوع است.",
+      "source": "سلامت نیوز",
+      "published": "2026-10-11T09:16:47+03:30",
+      "topics": [
+        "health"
+      ],
+      "topic_scores": {
+        "health": 14
+      },
+      "importance": 14,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-f0e81d21635d",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.22244664993551042
+    },
+    "258f476216ea3277cf8d4f0b": {
+      "title": "قیمت دام زنده امروز یکشنبه ۱۹ مهر ۱۴۰۵ + جدول",
+      "summary": "قیمت دام زنده امروز یکشنبه ۱۹ مهر ۱۴۰۵ اعلام شد. پست قیمت دام زنده امروز یکشنبه ۱۹ مهر ۱۴۰۵ + جدول اولین بار در تجارت نیوز ظاهر شد.",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-11T09:15:29+03:30",
+      "topics": [],
+      "topic_scores": {},
+      "importance": 10,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-b6a900d4634c",
+      "representative": false,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 10,
+      "political": false,
+      "breaking_signal": true,
+      "age_hours": 0.2237200505203671
+    },
+    "90caa7e40f2ca43313fee166": {
+      "title": "رکورد تاریخی جدید در بورس",
+      "summary": "اقتصادنیوز: در معاملات روز گذشته، حدود ۲هزار و ۳۰۰‌میلیارد تومان پول توسط سرمایه‌گذاران حقیقی وارد بازار سهام شد و ارزش معاملات خرد نیز به ۴۷هزار ‌میلیارد تومان رسید.",
+      "source": "اقتصادنیوز",
+      "published": "2026-10-11T09:14:57+03:30",
+      "topics": [
+        "markets"
+      ],
+      "topic_scores": {
+        "markets": 20
+      },
+      "importance": 20,
+      "important": true,
+      "important_topics": [
+        "markets"
+      ],
+      "slider_topics": [
+        "markets"
+      ],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-7e8e7fbd785c",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 17,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.2239512844218148
+    },
+    "44ae51673d695e8e0b88ccd1": {
+      "title": "یک دوره کوتاه ایمونوتراپی پیش از جراحی و امید به حفاظت بلندمدت در سرطان روده: چه نتایجی از مطالعه NEOPRISM-CRC به دست آمد؟",
+      "summary": "خلاصه سریع برای خواننده مطالعه NEOPRISM-CRC روی 32 بیمار مبتلا به سرطان روده مرحله دو یا سه با شکل ژنتیکی مشخص انجام شد. بیماران تا حداکثر 9 هفته پمبرولیزومب دریافت کردند پیش از جراحی، و از شیمی درمانی پس از جراحی صرف‌نظر شد. بعد از تقریباً سه سال پیگیری، گزارش شده هیچ یک از بیماران […] نوشته یک دور",
+      "source": "پزشک سایت",
+      "published": "2026-10-11T09:12:04+03:30",
+      "topics": [
+        "health"
+      ],
+      "topic_scores": {
+        "health": 12
+      },
+      "importance": 12,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-0a63c1882f98",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.22386354353692797
+    },
+    "fe85425030f15104c634ebab": {
+      "title": "همزمانی خطرناک تورم نزدیک به ۹۰ درصدی و رشد منفی ۱۰ درصدی!",
+      "summary": "اقتصاد ایران در نیمه نخست دهه ۱۴۰۰ وارد مرحله‌ای کم‌سابقه از نظر همزمانی رکود و تورم شده است؛ مرکز آمار ایران نرخ تورم سالانه تا پایان شهریور ۱۴۰۵ را ۷۳.۶ درصد و نرخ تورم نقطه‌به‌نقطه را ۸۹.۸ درصد اعلام کرده و همزمان رشد اقتصادی در بهار امسال به منفی ۱۰.۱ درصد رسیده است. پست همزمانی خطرناک تورم نزدی",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-11T09:09:32+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 16
+      },
+      "importance": 16,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-eaa786c2de57",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 0.2237200496594111
+    },
+    "10c652f98c147aef11864fa0": {
+      "title": "سرخط اخبار / ۱۹ مهر ۱۴۰۵",
+      "summary": "رئیس اتاق اصناف ایران گفت: سال گذشته برخی شرکت‌های واردکننده با کم‌اظهاری گمرکی اقدام به واردات گوشی کردند که پس از احراز تخلف، دستگاه‌ها مسدود شد و برای خریداران مشکلاتی ایجاد کرد. او افزود: با پیگیری اتاق اصناف، رفع مسدودی در دو مرحله انجام شد؛ ۲۶۲۳ پرونده در مرحله اول و ۱۳۸۳ پرونده در مرحله…",
+      "source": "پیوست",
+      "published": "2026-10-11T09:08:39+03:30",
+      "topics": [
+        "technology"
+      ],
+      "topic_scores": {
+        "technology": 9
+      },
+      "importance": 9,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-2e837a29ee30",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.2235170963075426
+    },
+    "ebe62f0ef72d29ee5efae362": {
+      "title": "شرط مهم برای افزایش اعتبار کالابرگ/ فقط تا سه شنبه فرصت دارید",
+      "summary": "اقتصادنیوز: حدود 40 میلیون نفر از هموطنان (حدود 18 میلیون و 300 هزار خانوار) پس از تکمیل فرم خوداظهاری و ثبت درخواست، مشمول افزایش کالابرگ خواهند شد.",
+      "source": "اقتصادنیوز",
+      "published": "2026-10-11T09:08:21+03:30",
+      "topics": [],
+      "topic_scores": {},
+      "importance": 4,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-aa56c943303b",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 0.22395128190517424
+    },
+    "de3d74ca30c15826fc10efbf": {
+      "title": "اجاره آپارتمان در مرکز تهران؛ ولیعصر و سنایی چند؟",
+      "summary": "اجاره آپارتمان در مناطق شش و هفت تهران برای واحدهای میان‌متراژ با عمربنای 10 تا 25 سال به طور متوسط به یک میلیارد و 492 میلیون تومان ودیعه و 15 میلیون تومان کرایه نیاز دارد",
+      "source": "فرارو",
+      "published": "2026-10-11T09:07:06+03:30",
+      "topics": [
+        "real-estate"
+      ],
+      "topic_scores": {
+        "real-estate": 15
+      },
+      "importance": 15,
+      "important": true,
+      "important_topics": [
+        "real-estate"
+      ],
+      "slider_topics": [
+        "real-estate"
+      ],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-70275c096f6b",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 10,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.487358417974578
+    },
+    "64fcc0708783efc08c57a367": {
+      "title": "سه چالش اقتصاد ایران در نیمه دوم سال",
+      "summary": "اقتصاد ایران در نیمه دوم سال 1405 با سه چالش ناترازی انرژی، تنگنای منابع ارزی و افزایش نااطمینانی اقتصادی روبه‌رو است",
+      "source": "فرارو",
+      "published": "2026-10-11T09:02:14+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 16
+      },
+      "importance": 16,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-0ff66dc45e3c",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 0.22393955442640517
+    },
+    "a13bc7ee4327d0b08932c29d": {
+      "title": "قیمت لیر ترکیه امروز یکشنبه ۱۹ مهر ۱۴۰۵ + جدول",
+      "summary": "قیمت لیر ترکیه در بازار آزاد امروز را می‌توانید در جدول زیر مشاهده نمایید. پست قیمت لیر ترکیه امروز یکشنبه ۱۹ مهر ۱۴۰۵ + جدول اولین بار در تجارت نیوز ظاهر شد.",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-11T09:02:07+03:30",
+      "topics": [
+        "currency-gold"
+      ],
+      "topic_scores": {
+        "currency-gold": 15
+      },
+      "importance": 15,
+      "important": true,
+      "important_topics": [
+        "currency-gold"
+      ],
+      "slider_topics": [
+        "currency-gold"
+      ],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-b6a900d4634c",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 10,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.22372004912959204
+    },
+    "f5ede24764028de4164b8031": {
+      "title": "اقدامات فوری پس از کلیک روی لینک‌های آلوده/ برای قطع دسترسی کلاهبرداران چه کنیم؟",
+      "summary": "اقتصادنیوز: فرازپور با اشاره به آمار کلاهبرداری‌های انجام‌ شده در استان قم گفت: در 6 ماه 139 میلیارد تومان از مردم استان قم کلاهبرداری شده است.",
+      "source": "اقتصادنیوز",
+      "published": "2026-10-11T09:01:34+03:30",
+      "topics": [],
+      "topic_scores": {},
+      "importance": 4,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-4dde494fa9b2",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 0.4873308557934231
+    },
+    "1a16ebd309dcce4eeb704a2e": {
+      "title": "تویوتا bZ3X پرو؛ قیمت جدید شاسی‌بلند محبوب بازار مشخص شد",
+      "summary": "تویوتا bZ3X پرو یک شاسی‌بلند تمام‌برقی با قدرت 224 اسب‌بخار است که با یک بار شارژ می‌تواند تا 610 کیلومتر مسافت را طی کند",
+      "source": "فرارو",
+      "published": "2026-10-11T08:57:04+03:30",
+      "topics": [
+        "auto"
+      ],
+      "topic_scores": {
+        "auto": 12
+      },
+      "importance": 12,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-ff43b4313101",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 12,
+      "political": false,
+      "breaking_signal": true,
+      "age_hours": 0.48735841466320884
+    },
+    "d8c1cb61f7c1ea876b5936e0": {
+      "title": "قیمت درهم امارات امروز یکشنبه ۱۹ مهر ۱۴۰۵ + جدول",
+      "summary": "قیمت درهم امارات در بازار آزاد امروز را می‌توانید در جدول زیر مشاهده نمایید. پست قیمت درهم امارات امروز یکشنبه ۱۹ مهر ۱۴۰۵ + جدول اولین بار در تجارت نیوز ظاهر شد.",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-11T08:55:59+03:30",
+      "topics": [
+        "currency-gold"
+      ],
+      "topic_scores": {
+        "currency-gold": 15
+      },
+      "importance": 15,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-b6a900d4634c",
+      "representative": false,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 10,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.2237200485335456
+    },
+    "5f8d9a2cec3e7f23ddc910ea": {
+      "title": "سیلاب مسیر تردد در نقاط شهری و روستایی این استان را مسدود کرد",
+      "summary": "مدیر کل مدیریت بحران استانداری مازندران از انسداد مسیر تردد در برخی نقاط شهری و روستایی شهرستان سوادکوه شمالی بر اثر سیلاب خبر داد .",
+      "source": "دنیای اقتصاد",
+      "published": "2026-10-11T08:55:42+03:30",
+      "topics": [],
+      "topic_scores": {},
+      "importance": 15,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-9ad4b0869588",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 15,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 0.22415376245975493
+    },
+    "f0deeab562268f5eae3245a6": {
+      "title": "چرا تمام تصمیمات پیش روی چین، بر شدت تأثیر شوک نفتی در جهان اثر خواهد گذاشت؟/ دو اقدام لازم برای احیای ذخایر فرآورده‌های نفتی پکن",
+      "summary": "چین که زمانی بزرگ‌ترین خریدار نفت منطقه خلیج فارس بود، تا همین اواخر بحران تنگه هرمز را با انعطاف‌پذیری چشمگیری پشت سر گذاشته بود. این کشور بین آوریل و ژوئن واردات نفت خام خود را به نصف کاهش داد و به روزانه ۶ میلیون بشکه رساند؛ اقدامی که به تثبیت قیمت جهانی نفت کمک کرد، بی‌آنکه باعث رکود اقتصادی داخ",
+      "source": "انتخاب",
+      "published": "2026-10-11T08:55:29+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 20
+      },
+      "importance": 20,
+      "important": true,
+      "important_topics": [
+        "economy"
+      ],
+      "slider_topics": [
+        "economy"
+      ],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-c7d8216fcca5",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 10,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.44518265353308784
+    },
+    "84d0ef59f08aaace23009a3a": {
+      "title": "موج تازه بارش‌ها در راه ایران/ کدام استان ها بارانی می شوند؟",
+      "summary": "اقتصادنیوز: در ارتفاعات تهران، البرز، قزوین و سمنان، افزایش ابر و رگبارهای پراکنده محتمل است؛ اما این پیش‌بینی به معنای بارش یکسان در همه شهرها و مناطق این استان‌ها نیست.",
+      "source": "اقتصادنیوز",
+      "published": "2026-10-11T08:51:48+03:30",
+      "topics": [],
+      "topic_scores": {},
+      "importance": 4,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-6ff04e338690",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 0.7299889599614673
+    },
+    "3a7bdf0604eebf34d0f7f169": {
+      "title": "حال و روز ناخوش حریف آسیایی استقلال",
+      "summary": "حریف قطری استقلال در شرایطی به مصاف الغرافه می‌رود که بدترین نتایج خود را در فصل جاری کسب کرده و هواداران به شدت از عملکرد تیم عصبانی هستند.",
+      "source": "فرارو",
+      "published": "2026-10-11T08:49:44+03:30",
+      "topics": [],
+      "topic_scores": {},
+      "importance": 14,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-eb694225de5e",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 14,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 0.2239395507838991
+    },
+    "5ec27333ebc4779ad41f0165": {
+      "title": "وضعیت جاده‌ها و راه‌ها، امروز ۱۹ مهر ۱۴۰۵؛ ترافیک نیمه‌ سنگین در ۴ محور مواصلاتی منتهی به تهران/ بارش باران در ۵ استان",
+      "summary": "رئیس مرکز اطلاعات و کنترل ترافیک پلیس راهور فراجا، از بارش باران در برخی محورهای مواصلاتی استان‌های مازندران، گلستان، سمنان، خراسان شمالی و خراسان رضوی خبر داد و گفت: ترافیک در بخش‌هایی از آزادراه‌های منتهی به تهران و محور شهریار ـ تهران نیمه‌سنگین است.",
+      "source": "انتخاب",
+      "published": "2026-10-11T08:49:36+03:30",
+      "topics": [],
+      "topic_scores": {},
+      "importance": 4,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-497e7102fa6c",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.6916662027438482
+    },
+    "273bc23c79443f70f2be8bba": {
+      "title": "پیش‌بینی قیمت طلا، دلار و سکه امروز امروز یکشنبه ۱۹ مهر ۱۴۰۵ | طلای ۱۸ عیار و سکه امامی عقب می‌نشینند یا دوباره اوج می‌گیرند؟",
+      "summary": "اقتصادنیوز: بازار طلا، سکه و ارز در روز یکشنبه در حالی چشم‌انتظار معاملات تازه است که دلار در معاملات پشت‌خطی به ۲۶۵ هزار و ۴۰۰ تومان عقب نشست، طلای ۱۸ عیار در محدوده ۲۶.۵ میلیون تومان قرار گرفت و سکه امامی به کانال ۲۶۸ میلیون تومان نزدیک شد.",
+      "source": "اقتصادنیوز",
+      "published": "2026-10-11T08:47:32+03:30",
+      "topics": [
+        "currency-gold"
+      ],
+      "topic_scores": {
+        "currency-gold": 16
+      },
+      "importance": 16,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-d6cbe7e5476c",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 0.2239512793885337
+    },
+    "5e4428875fa1adf5aff8f69a": {
+      "title": "لوازم خانگی 80 درصد گران شده است/ علت چیست؟",
+      "summary": "نایب‌رئیس اتحادیه لوازم خانگی با اعلام افزایش حدود ۸۰ درصدی قیمت‌ها از نهم اسفند، افزایش هزینه مواد اولیه و محصولات صنایع بالادستی را از عوامل اصلی گرانی در این بازار دانست.",
+      "source": "دنیای اقتصاد",
+      "published": "2026-10-11T08:46:08+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 9
+      },
+      "importance": 9,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-b6be48d5c3b1",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 0.2241537602080239
+    },
+    "94f3dce328262a365cd39e4d": {
+      "title": "وضعیت آب و هوا، امروز ۱۹ مهر ۱۴۰۵؛ بارندگی و رعد و برق در ۴ استان نوار شمالی کشور",
+      "summary": "سازمان هواشناسی اعلام‌کرد: امروز (یکشنبه) در برخی مناطق استان‌های مازندران، گلستان، خراسان شمالی و خراسان رضوی در برخی ساعات بارندگی، رعد و برق و وزش باد شدید موقت پیش بینی می شود.",
+      "source": "انتخاب",
+      "published": "2026-10-11T08:44:50+03:30",
+      "topics": [
+        "science-life"
+      ],
+      "topic_scores": {
+        "science-life": 8
+      },
+      "importance": 8,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-a9bf35fe2c7f",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 8,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.7287120621734196
+    },
+    "4f7cd540ab7802ce0e8a844c": {
+      "title": "نوبل صلح در آزمون تاریخ",
+      "summary": "افزایش زنان برنده نوبل صلح واقعیتی آماری است، اما شواهد برای اثبات برتری ذاتی زنان در صلح‌سازی کافی نیست. در مقابل، پژوهش‌های مربوط به مذاکرات صلح نشان می‌دهد مشارکت مؤثرتر زنان و شبکه‌های اجتماعی می‌تواند با توافق‌های بادوام‌تری همراه باشد.",
+      "source": "فرارو",
+      "published": "2026-10-11T08:41:47+03:30",
+      "topics": [
+        "science-life"
+      ],
+      "topic_scores": {
+        "science-life": 9
+      },
+      "importance": 9,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-7da3288f64ce",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 0.2239395496580336
+    },
+    "a74cf28bc3744ad2537c2cee": {
+      "title": "از طبابت تا مسافرکشی/ گزارشی از خروج پزشکان عمومی از چرخه درمان به دلیل درآمدهای پایین‌",
+      "summary": "طبق گفته‌های رئیس انجمن پزشکان عمومی ایران، حدود ۳۵ درصد پزشکان عمومی دیگر طبابت نمی‌کنند و فعالیت‌های دیگری انجام می‌دهند. همچنین سخنگوی سازمان نظام پزشکی با اشاره به موج بیکاری پزشکان، تأکید می‌کند پزشکان عمومی برای امرار معاش به سمت مسافرکشی در پلتفرم‌های تاکسی‌های اینترنتی رفته‌اند.",
+      "source": "فرارو",
+      "published": "2026-10-11T08:39:29+03:30",
+      "topics": [
+        "health"
+      ],
+      "topic_scores": {
+        "health": 14
+      },
+      "importance": 14,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-8d3011938b58",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 0.2239395491282145
+    },
+    "ac2564b95b71b302a0bb7cd5": {
+      "title": "مرثیه‌ای برای سفیدپوشان خزر/ فوک‌ها شرایط خوبی ندارند",
+      "summary": "مدیر مرکز حفاظت از فوک خزری ایران، درخصوص همکاری کشورهای حاشیه خزر در جهت حفاظت از فوک خزری می‌گوید:‌ در یک دهه گذشته، چندین‌بار درباره مشارکت‌های محیط‌زیستی میان پنج کشور حاشیه خزر صحبت شده، اما این همکاری‌ها ضمانت اجرایی نداشته‌اند. شاید به این دلیل که این موضوع آن‌طور که باید جدی گرفته نشده و پیگ",
+      "source": "فرارو",
+      "published": "2026-10-11T08:34:14+03:30",
+      "topics": [
+        "science-life"
+      ],
+      "topic_scores": {
+        "science-life": 20
+      },
+      "importance": 20,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-ff11866c96ba",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 17,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.22393954853216808
     }
   },
   "groups": {
@@ -18451,7 +19308,7 @@
       "representative_id": "7b703cf585bcc8a69dcc5ba1"
     },
     "local-2e837a29ee30": {
-      "representative_id": "78486e0da6f77e56cc48b69b"
+      "representative_id": "10c652f98c147aef11864fa0"
     },
     "local-d3f3894b5685": {
       "representative_id": "83f14256c06df3e8c43fff26"
@@ -18831,8 +19688,8 @@
     "local-a752d052ff51": {
       "representative_id": "5a0b2d4552508386ea440f0e"
     },
-    "local-9c2ba41f2d02": {
-      "representative_id": "d66364049fdd72636e62a883"
+    "local-a9bf35fe2c7f": {
+      "representative_id": "94f3dce328262a365cd39e4d"
     },
     "local-b143a9d62606": {
       "representative_id": "cc7234e829c40e9f775f548f"
@@ -19408,7 +20265,7 @@
       "representative_id": "3a6b3bc0cf449718d149a7a8"
     },
     "local-8b611e52d499": {
-      "representative_id": "0bdb78e893097cf242146bef"
+      "representative_id": "afcd5aa4a0dd8774bf41ade4"
     },
     "local-0e09fa525ee8": {
       "representative_id": "34664c40b4cff460212bc7f5"
@@ -20052,8 +20909,8 @@
     "local-432066ef0231": {
       "representative_id": "c2da92d69c1bf2b27cf872c7"
     },
-    "local-f19360b16f78": {
-      "representative_id": "cebcefe72c6ebcf6e55e4d5a"
+    "local-b6a900d4634c": {
+      "representative_id": "a13bc7ee4327d0b08932c29d"
     },
     "local-e8fb5b92802b": {
       "representative_id": "cc0285bab0bd88e8d3bc6415"
@@ -20081,15 +20938,89 @@
     },
     "87c3418b36ba6cf1dfdfe117": {
       "representative_id": "87c3418b36ba6cf1dfdfe117"
+    },
+    "local-80eb34fd155b": {
+      "representative_id": "7645f020dfb7db8d59e52b45"
+    },
+    "local-13bd6317f798": {
+      "representative_id": "3fa1c7153a6eeb67dda051eb"
+    },
+    "local-2b13f394f3be": {
+      "representative_id": "5cde4e8a34b6047b5ed8d2fc"
+    },
+    "local-c74d22cc0837": {
+      "representative_id": "dba65944e7eed7fc78b4d1f5"
+    },
+    "local-fd4e18babe45": {
+      "representative_id": "3fd1d1e91d3adbd64cf38078"
+    },
+    "local-f0e81d21635d": {
+      "representative_id": "1aef24d8c3eda75ec37da242"
+    },
+    "local-7e8e7fbd785c": {
+      "representative_id": "90caa7e40f2ca43313fee166"
+    },
+    "local-0a63c1882f98": {
+      "representative_id": "44ae51673d695e8e0b88ccd1"
+    },
+    "local-eaa786c2de57": {
+      "representative_id": "fe85425030f15104c634ebab"
+    },
+    "local-aa56c943303b": {
+      "representative_id": "ebe62f0ef72d29ee5efae362"
+    },
+    "local-70275c096f6b": {
+      "representative_id": "de3d74ca30c15826fc10efbf"
+    },
+    "local-0ff66dc45e3c": {
+      "representative_id": "64fcc0708783efc08c57a367"
+    },
+    "local-4dde494fa9b2": {
+      "representative_id": "f5ede24764028de4164b8031"
+    },
+    "local-ff43b4313101": {
+      "representative_id": "1a16ebd309dcce4eeb704a2e"
+    },
+    "local-9ad4b0869588": {
+      "representative_id": "5f8d9a2cec3e7f23ddc910ea"
+    },
+    "local-c7d8216fcca5": {
+      "representative_id": "f0deeab562268f5eae3245a6"
+    },
+    "local-6ff04e338690": {
+      "representative_id": "84d0ef59f08aaace23009a3a"
+    },
+    "local-eb694225de5e": {
+      "representative_id": "3a7bdf0604eebf34d0f7f169"
+    },
+    "local-497e7102fa6c": {
+      "representative_id": "5ec27333ebc4779ad41f0165"
+    },
+    "local-d6cbe7e5476c": {
+      "representative_id": "273bc23c79443f70f2be8bba"
+    },
+    "local-b6be48d5c3b1": {
+      "representative_id": "5e4428875fa1adf5aff8f69a"
+    },
+    "local-7da3288f64ce": {
+      "representative_id": "4f7cd540ab7802ce0e8a844c"
+    },
+    "local-8d3011938b58": {
+      "representative_id": "a74cf28bc3744ad2537c2cee"
+    },
+    "local-ff11866c96ba": {
+      "representative_id": "ac2564b95b71b302a0bb7cd5"
     }
   },
   "usage": {
     "date": "2026-10-11",
-    "requests": 15,
+    "requests": 16,
     "last_success": "2026-10-11T05:23:32Z",
     "last_success_epoch": 1791696212.862786,
-    "last_article_generation": "2026-10-11T05:23:36Z",
+    "last_article_generation": "2026-10-11T06:15:05Z",
     "quota_block_until_epoch": 1791706881.9577627,
     "quota_block_until": "2026-10-11T08:21:21Z"
-  }
+  },
+  "selection_window_end": "2026-10-11T06:08:10Z",
+  "selection_window_start": "2026-10-11T04:08:10Z"
 }
