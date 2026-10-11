@@ -12,7 +12,6 @@ on:
       - 'scripts/build-internal-articles.mjs'
       - 'scripts/build-featured.mjs'
       - 'scripts/featured-config.mjs'
-      - 'scripts/news_ai.py'
       - 'scripts/news_collector.py'
       - 'scripts/test_topic_classification.py'
       - 'scripts/validate-featured.mjs'
@@ -24,7 +23,7 @@ permissions:
   id-token: write
 
 concurrency:
-  # Versioned group lets the fixed non-AI-blocking pipeline start despite an older stuck run.
+  # Versioned group lets the fixed publication pipeline start despite an older stuck run.
   group: ${{ github.workflow }}-${{ github.ref }}-publish-v2
   cancel-in-progress: false
 
@@ -88,16 +87,7 @@ jobs:
             sleep $((attempt * 3))
           done
 
-  ai-analysis:
-    name: AI analysis (non-blocking)
-    needs: update-data
-    uses: ./.github/workflows/analyze-news-gemini.yml
-    secrets:
-      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-
-  # Publish collected news as soon as collection succeeds; AI analysis is optional and must not block freshness.
+  # Publish collected news as soon as collection succeeds; this workflow does not run AI analysis.
   deploy:
     name: Build and deploy
     needs: [update-data]
