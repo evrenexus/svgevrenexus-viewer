@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 import json, os, time, hashlib, random, re, html
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from difflib import SequenceMatcher
 from pathlib import Path
 from content_policy import out_of_scope
+from news_collector import extract_article_text
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError, URLError
 
@@ -712,6 +714,7 @@ def generate_permanent_articles(all_news, ai, key, groq_key="", OpenRouter_key="
         and str(article.get("content", "")).strip()
         and str(article.get("title", "")).strip()
         and article.get("group_id")
+        and article.get("ai_managed") is True
     }
     cutoff = time.time() - RECENT_HOURS * 3600
     for nid, row in ai.get("items", {}).items():
@@ -744,14 +747,45 @@ def generate_permanent_articles(all_news, ai, key, groq_key="", OpenRouter_key="
             members.append({
                 "id": mid, "title": ms.get("title", ""),
                 "summary": ms.get("summary", "")[:1200],
-                "content": str(ms.get("content", "") or ms.get("description", "") or "")[:3500],
+                "content": str(ms.get("content", "") or ms.get("description", "") or ""),
                 "source": ms.get("source", ""), "url": ms.get("url", ""),
                 "image": ms.get("image", ""),
                 "published": ms.get("published", "")
             })
         members.sort(key=lambda x: x.get("published", ""), reverse=True)
+        for member_index, member in enumerate(members):
+            member["content"] = str(member.get("content", "") or "")[:8000 if member_index == 0 else 1200]
         candidates.append({"group_id": gid, "importance": score,
                            "topics": row.get("important_topics", []), "sources": members[:3]})
+
+    # Read the original publisher page for important candidates when feed content is missing.
+    # This runs only in the separate AI-article workflow; it does not alter the latest-news collector.
+    fetch_targets = []
+    for candidate in candidates:
+        source_rows = candidate.get("sources", [])
+        if not source_rows:
+            continue
+        primary = source_rows[0]
+        if len(str(primary.get("content", "")).strip()) >= 700:
+            continue
+        source_url = str(primary.get("url", "") or "").strip()
+        if source_url.startswith(("https://", "http://")):
+            fetch_targets.append((primary, source_url))
+
+    def fetch_original(target):
+        source_row, source_url = target
+        return source_row, extract_article_text(source_url)
+
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        futures = [pool.submit(fetch_original, target) for target in fetch_targets]
+        for future in as_completed(futures):
+            try:
+                source_row, full_text = future.result()
+            except Exception as exc:
+                print("Original article extraction failed:", str(exc)[:200])
+                continue
+            if len(str(full_text or "").strip()) >= 300:
+                source_row["content"] = str(full_text).strip()[:8000]
 
     if not candidates:
         print("No important story groups selected for permanent articles.")
@@ -777,6 +811,7 @@ def generate_permanent_articles(all_news, ai, key, groq_key="", OpenRouter_key="
 - تیترها و میان‌تیترهای واقعی، اطلاعات پزشکی/ایمنی مهم، اعداد و نقل‌قول‌های مرتبط را حفظ کن؛ واقعیت یا نقل‌قول جعل نکن و معنای منبع را تغییر نده.
 - هر پاراگراف فقط یک بار بیاید؛ خلاصه را دوباره به عنوان پاراگراف اول متن تکرار نکن.
 - content فقط HTML ساده: <p>، <h2>، <ul>، <li>، <strong>.
+- اگر content متن استخراج‌شده از صفحه اصلی دارد، آن را منبع اصلی بدان؛ summary فید فقط برای تکمیل زمینه است. اگر متن اصلی قابل استخراج نیست، فقط بر اساس اطلاعات موجود بنویس و جزئیات را جعل یا حدس نزن.
 - content باید خلاصه واقعی و مستقل از متن کامل منابع باشد، نه بریدن ابتدا یا انتهای متن؛ هدف 3000 تا 3800 کاراکتر متن خالص و سقف قطعی 4000 کاراکتر پس از حذف HTML است. نکات کلیدی، اعداد و نتیجه اصلی را حفظ کن و متن را کامل و طبیعی تمام کن.
 - summary حداکثر 300 کاراکتر و بدون تبلیغ یا تکرار متن باشد.
 - پیش از تحویل، خروجی نهایی را دوباره بازبینی کن و هر تبلیغ، تکرار یا متن ناوبری باقی‌مانده را حذف کن.

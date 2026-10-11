@@ -89,7 +89,7 @@ export function generateImportantPages(rows){
    if(bodyText.length<100||bodyText.length>MAX_BODY_CHARS)continue;
    const id=String(r.article.id??r.article.slug??r.article.__key??"");
    const wasAlreadyImportant=previouslyImportantIds.has(id);
-   const newlyApproved=r.ai?.important===true&&r.ai?.publishable===true&&r.ai?.political!==true&&r.ed?.auto_important===true;
+   const newlyApproved=r.article.ai_managed===true&&r.ai?.important===true&&r.ai?.publishable===true&&r.ai?.political!==true&&r.ed?.auto_important===true;
    // Legacy important items keep their page through reprocessing; new items still require approval.
    if(!wasAlreadyImportant&&!newlyApproved)continue;
    if(outOfScope({title:[r.n?.title,r.article?.title,r.ed?.title].filter(Boolean).join(" "),summary:[r.n?.summary,r.article?.summary,r.ed?.summary].filter(Boolean).join(" "),content:r.article?.content})!==null)continue;

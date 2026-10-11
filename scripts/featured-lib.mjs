@@ -53,7 +53,7 @@ export function linkAll({news,aiItems,articles,editorial}){
  else for(const[nm,fn]of Object.entries(SCHEMES)){const matched=news.filter(n=>aiItems.has(fn(n))).length;if(!best||matched>best.matched)best={name:nm,fn,matched}}
  const articleByGroup=new Map(),articleByOriginalId=new Map();
  for(const a of articles){
-  const g=gid(a);if(g&&!articleByGroup.has(g))articleByGroup.set(g,a);
+  const g=gid(a);if(g){const current=articleByGroup.get(g);if(!current||(a.ai_managed===true&&current.ai_managed!==true))articleByGroup.set(g,a);}
   if(a.original_news_id&&!articleByOriginalId.has(String(a.original_news_id)))articleByOriginalId.set(String(a.original_news_id),a);
  }
  const rows=[],activeIds=new Set();
