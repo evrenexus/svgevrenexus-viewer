@@ -51,18 +51,11 @@ function render(items){
  out.forEach(function(x){var a=document.createElement("a");a.className="Evrenxus-important-link";a.target="_top";a.href=x.href;a.textContent=x.title;el.appendChild(a)});
 }
 function load(){
- fetch("./data/public/featured.json?v="+Date.now(),{cache:"no-store"})
- .then(function(r){if(!r.ok)throw Error("featured HTTP "+r.status);return r.json()})
- .then(function(doc){
-  var home=doc&&doc.topics&&doc.topics.home?doc.topics.home:{};
-  var cutoff=Date.now()-10*60*60*1000,now=Date.now();
-  var all=(Array.isArray(home.important)?home.important:[]).filter(function(x){
-   if(!x||!x.articleUrl)return false;
-   var selected=Date.parse(x.selectedAt||x.published||"");
-   return Number.isFinite(selected)&&selected>=cutoff&&selected<=now+5*60*1000;
-  });
-  render(all);
- }).catch(function(){render([])});
+ fetch("./data/public/important-posts.json?v="+Date.now(),{cache:"no-store"})
+ .then(function(r){if(!r.ok)throw Error("important-posts HTTP "+r.status);return r.json()})
+ .then(function(doc){render(Array.isArray(doc&&doc.items)?doc.items:[])})
+ .catch(function(){render([])});
 }
+
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",load,{once:true});else load();
 })();
