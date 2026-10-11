@@ -109,7 +109,7 @@ export function generateImportantPages(rows){
    let existing="";
    try{existing=fs.readFileSync(file,"utf8")}catch{continue}
    if(!existing.startsWith("<!doctype html><!-- EVREN_NEXUS_GENERATED_IMPORTANT_ARTICLE -->"))continue;
-   const refreshed=existing.replace(/Evrenexus-sidebar\\.js\\?v=[^"]+/g,"Evrenexus-sidebar.js?v=20261011-01");
+   const refreshed=existing.replace(/Evrenexus-sidebar\.js\?v=[^"]+/g,"Evrenexus-sidebar.js?v=20261011-01");
    if(refreshed!==existing){fs.writeFileSync(file,refreshed,"utf8");existing=refreshed;}
    let id=name.slice(0,-5);
    try{id=decodeURIComponent(id)}catch{}
