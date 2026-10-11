@@ -1,7 +1,7 @@
 {
   "version": 1,
   "policy_version": 9,
-  "updated": "2026-10-11T10:09:29Z",
+  "updated": "2026-10-11T12:11:49Z",
   "items": {
     "72b4eb7a7155ed214c32324d": {
       "title": "تصاویر؛ جشن «مهرگان» در غار کرفتو",
@@ -5996,7 +5996,7 @@
       "publishable": true,
       "exclude_reason": "",
       "group_id": "local-d01152dabcd7",
-      "representative": true,
+      "representative": false,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
       "local_score": 7,
@@ -6025,7 +6025,7 @@
       "publishable": true,
       "exclude_reason": "",
       "group_id": "local-e5d3e02af750",
-      "representative": true,
+      "representative": false,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
       "local_score": 13,
@@ -6054,7 +6054,7 @@
       "publishable": true,
       "exclude_reason": "",
       "group_id": "local-64ece4743100",
-      "representative": true,
+      "representative": false,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
       "local_score": 10,
@@ -7143,20 +7143,16 @@
       "source": "پیوست",
       "published": "2026-10-10T12:37:34+03:30",
       "topics": [
-        "technology",
         "currency-gold"
       ],
       "topic_scores": {
-        "currency-gold": 16,
-        "technology": 16
+        "currency-gold": 17
       },
-      "importance": 16,
-      "important": true,
-      "important_topics": [
-        "technology"
-      ],
+      "importance": 17,
+      "important": false,
+      "important_topics": [],
       "slider_topics": [
-        "technology"
+        "currency-gold"
       ],
       "ticker_topics": [],
       "breaking": false,
@@ -7167,13 +7163,10 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 11,
+      "local_score": 12,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.859943861961365,
-      "permanent_article": true,
-      "article_id": "article-8409a5c74105a0d9",
-      "image": "https://peivast.com/wp-content/uploads/7596605b-4616-4af2-99f9-348aeaf84615.jpg"
+      "age_hours": 0.07360074592961205
     },
     "c2be6be4ad93b5397db4215f": {
       "title": "شاکری: قطر به‌تنهایی امکان آزادسازی پول‌های ایران را ندارد/ در دوره قبل مداخله مستقیم آمریکا مانع از آزادسازی منابع شد+ فیلم",
@@ -11113,7 +11106,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 3.8202185559272768
+      "age_hours": 0.07360074626074897
     },
     "e814454a23b4095538d60a2e": {
       "title": "خبر مهم درباره اعزام زائران به حج عمره",
@@ -11734,25 +11727,29 @@
         "markets"
       ],
       "topic_scores": {
-        "markets": 15
+        "markets": 16
       },
-      "importance": 15,
+      "importance": 16,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
-      "ticker_topics": [],
-      "breaking": false,
-      "breaking_topics": [],
+      "ticker_topics": [
+        "markets"
+      ],
+      "breaking": true,
+      "breaking_topics": [
+        "markets"
+      ],
       "publishable": true,
       "exclude_reason": "",
       "group_id": "local-a16d2b39c7a8",
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 10,
+      "local_score": 11,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 3.9933104013734395
+      "age_hours": 0.07360074705547756
     },
     "8059185eb4160626f6099073": {
       "title": "عجله بیرانوند برای سربازی بعد از اخراج!",
@@ -12294,9 +12291,9 @@
         "economy"
       ],
       "topic_scores": {
-        "economy": 16
+        "economy": 11
       },
-      "importance": 16,
+      "importance": 11,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
@@ -12309,10 +12306,10 @@
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 16,
+      "local_score": 11,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 3.932947193119261
+      "age_hours": 0.07358334514829848
     },
     "bc6717f46871416d7a36b752": {
       "title": "روز جهانی سلامت روان؛ نشانه‌های گرفتار شدن در چرخه افکار منفی و راه‌های رهایی از آن",
@@ -12436,28 +12433,39 @@
       "source": "فردای اقتصاد",
       "published": "2026-10-10T17:42:07+03:30",
       "topics": [
+        "technology",
         "ai"
       ],
       "topic_scores": {
-        "ai": 9
+        "technology": 17,
+        "ai": 17
       },
-      "importance": 9,
-      "important": false,
-      "important_topics": [],
-      "slider_topics": [],
+      "importance": 17,
+      "important": true,
+      "important_topics": [
+        "technology",
+        "ai"
+      ],
+      "slider_topics": [
+        "technology",
+        "ai"
+      ],
       "ticker_topics": [],
       "breaking": false,
       "breaking_topics": [],
-      "publishable": false,
-      "exclude_reason": "political content is excluded",
+      "publishable": true,
+      "exclude_reason": "",
       "group_id": "local-934a3fcfd2c2",
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 4,
-      "political": true,
+      "local_score": 12,
+      "political": false,
       "breaking_signal": false,
-      "age_hours": 3.8917437181870143
+      "age_hours": 0.07358334653907352,
+      "permanent_article": true,
+      "article_id": "article-8c78b9faf38ef878",
+      "image": "https://media.fardayeeghtesad.com/d/2026/10/10/4/38826.jpg"
     },
     "df2802b54d9c4eed80ae518c": {
       "title": "یک ماده شیمیایی پرکاربرد در پلاستیک‌ها ممکن است به سلامت تخمدان آسیب بزند",
@@ -16004,7 +16012,7 @@
       "publishable": false,
       "exclude_reason": "political content is excluded",
       "group_id": "local-c2d5014b69c6",
-      "representative": true,
+      "representative": false,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
       "local_score": 4,
@@ -17857,10 +17865,8 @@
         "science-life": 15
       },
       "importance": 15,
-      "important": true,
-      "important_topics": [
-        "science-life"
-      ],
+      "important": false,
+      "important_topics": [],
       "slider_topics": [
         "science-life"
       ],
@@ -18686,7 +18692,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 1.5427381234036552
+      "age_hours": 0.07474082787831625
     },
     "fe85425030f15104c634ebab": {
       "title": "همزمانی خطرناک تورم نزدیک به ۹۰ درصدی و رشد منفی ۱۰ درصدی!",
@@ -21338,7 +21344,7 @@
       "local_score": 13,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.7094732307063208
+      "age_hours": 1.5140889495611192
     },
     "c47d6b3fc5ab477f7622b5e3": {
       "title": "بانک‌ها باید بانکداری کنند، نه داروسازی!",
@@ -22311,25 +22317,29 @@
         "currency-gold"
       ],
       "topic_scores": {
-        "currency-gold": 16
+        "currency-gold": 20
       },
-      "importance": 16,
-      "important": false,
-      "important_topics": [],
-      "slider_topics": [],
+      "importance": 20,
+      "important": true,
+      "important_topics": [
+        "currency-gold"
+      ],
+      "slider_topics": [
+        "currency-gold"
+      ],
       "ticker_topics": [],
       "breaking": false,
       "breaking_topics": [],
-      "publishable": false,
-      "exclude_reason": "political content is excluded",
+      "publishable": true,
+      "exclude_reason": "",
       "group_id": "local-78c701810e4a",
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 4,
-      "political": true,
-      "breaking_signal": true,
-      "age_hours": 0.22713630358378092
+      "local_score": 13,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.3395371556944318
     },
     "e59599957564c25bee51593d": {
       "title": "واکسن HPV فوایدی فراتر از پیشگیری از سرطان دارد",
@@ -22741,26 +22751,30 @@
         "economy"
       ],
       "topic_scores": {
-        "economy": 9,
-        "technology": 9
+        "economy": 15,
+        "technology": 15
       },
-      "importance": 9,
-      "important": false,
-      "important_topics": [],
-      "slider_topics": [],
+      "importance": 15,
+      "important": true,
+      "important_topics": [
+        "economy"
+      ],
+      "slider_topics": [
+        "economy"
+      ],
       "ticker_topics": [],
       "breaking": false,
       "breaking_topics": [],
-      "publishable": false,
-      "exclude_reason": "political content is excluded",
+      "publishable": true,
+      "exclude_reason": "",
       "group_id": "local-9148e23fa142",
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 4,
-      "political": true,
-      "breaking_signal": true,
-      "age_hours": 0.2266618138551712
+      "local_score": 10,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.3389717787504196
     },
     "45de27bfda08ff78c78e18eb": {
       "title": "حمل زمینی از چین به ایران؛ بررسی 2 مسیر اصلی واردات",
@@ -22862,25 +22876,29 @@
         "health"
       ],
       "topic_scores": {
-        "health": 12
+        "health": 16
       },
-      "importance": 12,
+      "importance": 16,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
-      "ticker_topics": [],
-      "breaking": false,
-      "breaking_topics": [],
-      "publishable": false,
-      "exclude_reason": "political content is excluded",
+      "ticker_topics": [
+        "health"
+      ],
+      "breaking": true,
+      "breaking_topics": [
+        "health"
+      ],
+      "publishable": true,
+      "exclude_reason": "",
       "group_id": "local-ad15dcbb121c",
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 7,
-      "political": true,
-      "breaking_signal": false,
-      "age_hours": 0.2270613196823332
+      "local_score": 11,
+      "political": false,
+      "breaking_signal": true,
+      "age_hours": 1.7615965045822992
     },
     "ab23274eae77616a0ec25e48": {
       "title": "توضیحات مدیر نظارت بر ناشران سازمان بورس درباره واریز سود سهام عدالت/ چه کسانی هفته گذشته دریافتی داشتند؟",
@@ -22891,25 +22909,25 @@
         "markets"
       ],
       "topic_scores": {
-        "markets": 16
+        "markets": 20
       },
-      "importance": 16,
+      "importance": 20,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
       "ticker_topics": [],
       "breaking": false,
       "breaking_topics": [],
-      "publishable": false,
-      "exclude_reason": "political content is excluded",
+      "publishable": true,
+      "exclude_reason": "",
       "group_id": "local-18ca207763f5",
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 4,
-      "political": true,
+      "local_score": 13,
+      "political": false,
       "breaking_signal": false,
-      "age_hours": 0.22734079360961915
+      "age_hours": 1.339531125691202
     },
     "93605e01617df5e3885c584f": {
       "title": "روایت ساغر حاجی‌پور، بازیگر سریال و تأتر از بیماری سخت‌اش",
@@ -23100,25 +23118,25 @@
         "health"
       ],
       "topic_scores": {
-        "health": 20
+        "health": 19
       },
-      "importance": 20,
+      "importance": 19,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
       "ticker_topics": [],
       "breaking": false,
       "breaking_topics": [],
-      "publishable": false,
-      "exclude_reason": "political content is excluded",
+      "publishable": true,
+      "exclude_reason": "",
       "group_id": "local-23b54831c267",
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 11,
-      "political": true,
+      "local_score": 7,
+      "political": false,
       "breaking_signal": false,
-      "age_hours": 0.22547564857535893
+      "age_hours": 1.3378537992636363
     },
     "1b0a840e225cd5224475ee17": {
       "title": "کمالوندی: در هر 2 مسیر مذاکره و مقاومت حرکت خواهیم کرد+ فیلم",
@@ -23354,26 +23372,26 @@
         "currency-gold"
       ],
       "topic_scores": {
-        "markets": 9,
-        "currency-gold": 9
+        "markets": 15,
+        "currency-gold": 15
       },
-      "importance": 9,
+      "importance": 15,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
       "ticker_topics": [],
       "breaking": false,
       "breaking_topics": [],
-      "publishable": false,
-      "exclude_reason": "political content is excluded",
+      "publishable": true,
+      "exclude_reason": "",
       "group_id": "local-cc4eb7e686c4",
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 4,
-      "political": true,
-      "breaking_signal": true,
-      "age_hours": 0.22385124332374998
+      "local_score": 10,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.5125246765216191
     },
     "6633280a1ed0917741b4424c": {
       "title": "تجارت رنج در ترمینال جنوب / استخوان کودکان جلیقه‌سبز زیر بار سنگین خورد می‌شود",
@@ -23591,25 +23609,29 @@
         "economy"
       ],
       "topic_scores": {
-        "economy": 20
+        "economy": 15
       },
-      "importance": 20,
-      "important": false,
-      "important_topics": [],
-      "slider_topics": [],
+      "importance": 15,
+      "important": true,
+      "important_topics": [
+        "economy"
+      ],
+      "slider_topics": [
+        "economy"
+      ],
       "ticker_topics": [],
       "breaking": false,
       "breaking_topics": [],
-      "publishable": false,
-      "exclude_reason": "political content is excluded",
+      "publishable": true,
+      "exclude_reason": "",
       "group_id": "local-c3320a20598e",
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 16,
-      "political": true,
+      "local_score": 10,
+      "political": false,
       "breaking_signal": false,
-      "age_hours": 0.22590923223230575
+      "age_hours": 1.761108849313524
     },
     "3bec95551b13fa2c9f8ea1cc": {
       "title": "۸.۴ میلیون تراکنش؛ روایت آیتول از تغییر رفتار کاربران خدمات خودرو",
@@ -23620,25 +23642,29 @@
         "auto"
       ],
       "topic_scores": {
-        "auto": 20
+        "auto": 17
       },
-      "importance": 20,
-      "important": false,
-      "important_topics": [],
-      "slider_topics": [],
+      "importance": 17,
+      "important": true,
+      "important_topics": [
+        "auto"
+      ],
+      "slider_topics": [
+        "auto"
+      ],
       "ticker_topics": [],
       "breaking": false,
       "breaking_topics": [],
-      "publishable": false,
-      "exclude_reason": "political content is excluded",
+      "publishable": true,
+      "exclude_reason": "",
       "group_id": "local-aed59ba5c925",
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 17,
-      "political": true,
-      "breaking_signal": true,
-      "age_hours": 0.22666181246439615
+      "local_score": 12,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.761792835659451
     },
     "a6bb2aa46a8d0c49b7ae379b": {
       "title": "نرخ اقتصادی دلار در سه پارادایم",
@@ -23650,26 +23676,28 @@
         "currency-gold"
       ],
       "topic_scores": {
-        "economy": 9,
-        "currency-gold": 9
+        "economy": 15,
+        "currency-gold": 15
       },
-      "importance": 9,
+      "importance": 15,
       "important": false,
       "important_topics": [],
-      "slider_topics": [],
+      "slider_topics": [
+        "economy"
+      ],
       "ticker_topics": [],
       "breaking": false,
       "breaking_topics": [],
-      "publishable": false,
-      "exclude_reason": "political content is excluded",
+      "publishable": true,
+      "exclude_reason": "",
       "group_id": "local-1f3ccf849367",
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 4,
-      "political": true,
+      "local_score": 10,
+      "political": false,
       "breaking_signal": false,
-      "age_hours": 0.22590923051039377
+      "age_hours": 1.7611088467968834
     },
     "a0ffded55873ce63705762be": {
       "title": "انتخاب رشته بیش از نیم میلیون کنکوری/ مهلت باقیمانده تمدید نمی‌شود",
@@ -23714,16 +23742,16 @@
       "ticker_topics": [],
       "breaking": false,
       "breaking_topics": [],
-      "publishable": false,
-      "exclude_reason": "political content is excluded",
+      "publishable": true,
+      "exclude_reason": "",
       "group_id": "local-4eca02dfc1ac",
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
       "local_score": 7,
-      "political": true,
-      "breaking_signal": true,
-      "age_hours": 0.22684988412592147
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.7619120540221531
     },
     "2cdebd9424b66411ab54324c": {
       "title": "سوءاستفاده و سوءمدیریت در کنار شرایط تولید از عوامل افزایش قیمت میوه و صیفی‌جات است",
@@ -23752,7 +23780,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 0.22684988306628334
+      "age_hours": 1.7619120531611971
     },
     "a33e567e61356a370cbc4c6a": {
       "title": "این مشکلات چشم را جدی بگیرید",
@@ -24139,30 +24167,30 @@
       "title": "نرخ ارز دلار، طلا و یورو امروز یکشنبه ۱۹ مهر ۱۴۰۵/ کاهش قیمت طلا و سکه",
       "summary": "طبق اعلام سایت اتحادیه طلا و جواهر، بازار امروز شاهد کاهش قیمت طلای ۱۸ عیار و سکه امامی نسبت به قیمت بسته‌شده روز گذشته است؛ همزمان نرخ ارز در مرکز مبادله ارز و طلا نسبت به دیروز نوسان صعودی ثبت کرده است.",
       "source": "دنیای اقتصاد",
-      "published": "2026-10-11T11:26:54+03:30",
+      "published": "2026-10-11T14:24:54+03:30",
       "topics": [
         "currency-gold"
       ],
       "topic_scores": {
-        "currency-gold": 20
+        "currency-gold": 16
       },
-      "importance": 20,
+      "importance": 16,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
       "ticker_topics": [],
       "breaking": false,
       "breaking_topics": [],
-      "publishable": true,
-      "exclude_reason": "",
-      "group_id": "local-6003714d8dfd",
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-eb3abf914d54",
       "representative": false,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 19,
-      "political": false,
-      "breaking_signal": false,
-      "age_hours": 0.7129021866454018
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 1.0897825643089083
     },
     "ef31a057899129c9dde2bdbe": {
       "title": "علیرضا خمسه: به من گفتند با این قیافه بازیگر نمی‌شوی؛ زشتی‌هایم باعث پیشرفتم شد!",
@@ -24207,6 +24235,1148 @@
       "importance": 20,
       "important": false,
       "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-e5d3e02af750",
+      "representative": false,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 11,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.7737697750992245
+    },
+    "b54efc1f421cab9dedb31495": {
+      "title": "فیلم| ظرفیت‌های تجاری بازارچه مرزی «ریمدان» دشتیاری و لزوم تامین زیرساخت‌های پایدار",
+      "summary": "چابهار - ایرنا - «عبدالسلیم حوت» سرپرست بازارچه مرزی «ریمدان» در شهرستان دشتیاری با اشاره به ظرفیت‌های تجاری، روند صادرات و واردات، شبانه‌روزی شدن فعالیت‌ها و اقدامات انجام‌شده برای تسهیل تجارت با پاکستان در این منطقه بر لزوم تأمین زیرساخت‌های پایدار، توسعه راه‌های دسترسی و رفع موانع عملیاتی با هدف ",
+      "source": "ایرنا",
+      "published": "2026-10-11T15:36:35+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 7
+      },
+      "importance": 7,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-4e73c9d73fb2",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.0746505339940389
+    },
+    "d01c65dd7aab324754b4837c": {
+      "title": "حمایت ۱۲۰میلیون تومانی دانشگاه امام صادق (ع) از رتبه‌های زیر ۵۰۰ کنکور",
+      "summary": "دانشگاه امام صادق (ع) در قالب طرح جذب و حمایت ویژه از داوطلبان برتر، به پذیرفته‌شدگان با رتبه کشوری زیر ۵۰۰، در سال نخست تحصیل ۱۲۰ میلیون تومان کمک‌هزینه مالی اختصاص می دهد.",
+      "source": "مهر",
+      "published": "2026-10-11T15:34:34+03:30",
+      "topics": [
+        "science-life"
+      ],
+      "topic_scores": {
+        "science-life": 18
+      },
+      "importance": 18,
+      "important": true,
+      "important_topics": [
+        "science-life"
+      ],
+      "slider_topics": [
+        "science-life"
+      ],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-faa29f976d0c",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 13,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.07467468175623151
+    },
+    "5845ebf5484e5c67935d3b1c": {
+      "title": "تعیین تکلیف ۱۳۶ پرونده اراضی فارس در ۳ ماه",
+      "summary": "مدیر امور اراضی سازمان جهاد کشاورزی استان فارس از تعیین تکلیف ۱۳۶ پرونده در کمیسیون ماده ۲ طی سه‌ماهه دوم سال جاری خبر داد و گفت: این پرونده‌ها در پنج جلسه رسمی بررسی شدند تا ضمن صیانت از اراضی کشاورزی و دولتی، موانع پیش‌روی اجرای طرح‌های تولیدی و سرمایه‌گذاری در بخش کشاورزی کاهش یابد.",
+      "source": "ایسنا",
+      "published": "2026-10-11T15:34:04+03:30",
+      "topics": [
+        "markets"
+      ],
+      "topic_scores": {
+        "markets": 14
+      },
+      "importance": 14,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-3f0f39cf7f26",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.07461326486534542
+    },
+    "bdb4fbf86bf88bf04b0d6e35": {
+      "title": "لئو چهاردهم تحت عمل جراحی قرار می‌گیرد",
+      "summary": "تهران-ایرنا- واتیکان اعلام کرد پاپ لئو چهاردهم، رهبر کاتولیک‌های جهان طی روزهای آینده تحت عمل جراحی قرار خواهد گرفت.",
+      "source": "ایرنا",
+      "published": "2026-10-11T15:33:20+03:30",
+      "topics": [
+        "health"
+      ],
+      "topic_scores": {
+        "health": 7
+      },
+      "importance": 7,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-9f9ba457f23d",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.07465053346421983
+    },
+    "2228ce2f84ee905ed7401cf2": {
+      "title": "تشکیل تشکل حرفه‌ای صنایع‌دستی، گامی مهم در توانمندسازی هنرمندان ایلامی است",
+      "summary": "مدیرکل میراث‌فرهنگی، گردشگری و صنایع‌دستی استان ایلام از برگزاری نخستین نشست کارگروه استانی تشکیل تشکل حرفه‌ای صنایع‌دستی خبر داد و گفت: تشکیل این تشکل با هدف تقویت نقش هنرمندان و صنعتگران، حمایت از مطالبات فعالان این حوزه و فراهم‌سازی زمینه واگذاری امور غیرحاکمیتی به بخش خصوصی انجام می‌شود.",
+      "source": "ایسنا",
+      "published": "2026-10-11T15:33:15+03:30",
+      "topics": [
+        "science-life"
+      ],
+      "topic_scores": {
+        "science-life": 12
+      },
+      "importance": 12,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-042e67cbe058",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.07461326347457038
+    },
+    "efb25be097c86dfb4fcf58a7": {
+      "title": "۱۵۵ هزار کاشانی از نظر سلامت روان سنجش شدند",
+      "summary": "کاشان - معاون بهداشت دانشگاه علوم پزشکی کاشان از ارزیابی ۱۵۵ هزار و ۹۴۴ نفر از نظر سلامت روان و ارائه ۴۵ هزار و ۷۲۵ خدمت مشاوره‌ای توسط کارشناسان سلامت روان در سال ۱۴۰۵ خبر داد.",
+      "source": "مهر",
+      "published": "2026-10-11T15:33:03+03:30",
+      "topics": [
+        "health"
+      ],
+      "topic_scores": {
+        "health": 20
+      },
+      "importance": 20,
+      "important": true,
+      "important_topics": [
+        "health"
+      ],
+      "slider_topics": [
+        "health"
+      ],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-dedb7a02e7d4",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 10,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.07467468096150293
+    },
+    "b44ab2afd8f27c043e458064": {
+      "title": "مطالعه بین‌المللی CaPP۳: آیا دوز پایین آسپرین هم از سرطان روده در افراد با سندرم لینچ پیشگیری می‌کند؟",
+      "summary": "خلاصه سریع برای خواننده مطالعه بین‌المللی CaPP3 نشان می‌دهد که مصرف روزانه آسپرین ۱۰۰ میلی‌گرم ممکن است در افراد دارای سندرم لینچ به کاهش خطر ابتلا به سرطان کولورکتال کمک کند. این نتیجه در ادامهٔ یافته‌های قبلی CAPP2 است که کاهش خطر را با دوز بالاتری (۶۰۰ میلی‌گرم روزانه) نشان داده بود. مزیت احتمالی",
+      "source": "پزشک سایت",
+      "published": "2026-10-11T15:32:04+03:30",
+      "topics": [
+        "health"
+      ],
+      "topic_scores": {
+        "health": 7
+      },
+      "importance": 7,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-c0f03c20b0e1",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.07474083125591278
+    },
+    "504348315434f9cc867af2d0": {
+      "title": "قصه مرکبات از رنج باغدار تا سود بازار؛ طلای نارنجی برند مازندران",
+      "summary": "ساری- مرکبات مازندران در حالی روانه بازار می‌شود که افزایش هزینه‌های تولید، نوسان قیمت و چالش‌های صادرات، سهم باغداران از سود طلای نارنجی را ارسال کاهش داده است.",
+      "source": "مهر",
+      "published": "2026-10-11T15:32:02+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 9
+      },
+      "importance": 9,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-8a43444a1481",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 0.07467468069659339
+    },
+    "6dc83660dcb6e95d718599c5": {
+      "title": "گام بلند بازرگام در توسعه لجستیک",
+      "summary": "شرکت پست پیشگامان (بازرگام) از انعقاد تفاهم‌نامه انحصاری مهم در زمینه ارائه خدمات لجستیکی و ترخیص گمرکی برای واردات انواع قطعات الکتریکی خبر داد.",
+      "source": "صدای بورس",
+      "published": "2026-10-11T15:32:00+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 13
+      },
+      "importance": 13,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-33cba7040ed5",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 13,
+      "political": false,
+      "breaking_signal": true,
+      "age_hours": 0.07297944929864672
+    },
+    "3164dd195e551cdfd29bd718": {
+      "title": "هزینه وکالت تعویض پلاک خودرو چقدر است؟",
+      "summary": "هزینه وکالت تعویض پلاک خودرو در سال جاری 825 هزار و 750 تومان است",
+      "source": "فرارو",
+      "published": "2026-10-11T15:30:08+03:30",
+      "topics": [
+        "auto"
+      ],
+      "topic_scores": {
+        "auto": 17
+      },
+      "importance": 17,
+      "important": true,
+      "important_topics": [
+        "auto"
+      ],
+      "slider_topics": [
+        "auto"
+      ],
+      "ticker_topics": [
+        "auto"
+      ],
+      "breaking": true,
+      "breaking_topics": [
+        "auto"
+      ],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-908f2bda3bbf",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 12,
+      "political": false,
+      "breaking_signal": true,
+      "age_hours": 0.07455965009000566
+    },
+    "853cbd4c310d6ab8d10003d8": {
+      "title": "برگزاری اولین جلسه شورای عالی خانه موسیقی در منزل فرهاد فخرالدینی",
+      "summary": "نخستین جلسه شورای عالی خانه موسیقی ایران در دوره جدید، به ریاست افتخاری فرهاد فخرالدینی آهنگساز و رهبر ارکستر موسیقی ایران، در منزل وی برگزار شد.",
+      "source": "مهر",
+      "published": "2026-10-11T15:29:40+03:30",
+      "topics": [
+        "science-life"
+      ],
+      "topic_scores": {
+        "science-life": 4
+      },
+      "importance": 4,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-23be9a3dfdf2",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.07467468010054694
+    },
+    "88c1d45c9670a58cc2b705e9": {
+      "title": "بخت سیاه خودروهای برقی در ایران!",
+      "summary": "قیمت خودرو برقی و هیبریدی همزمان با افزایش نرخ سوم بنزین کمتر از خودروهای بنزینی وارداتی رشد داشته است. این روند نشان می‌دهد افزایش قیمت بنزین نتوانسته سبب بالا رفتن تقاضا برای خودروهای برقی و هیبریدی در میان خریداران ایرانی شود",
+      "source": "فرارو",
+      "published": "2026-10-11T15:27:17+03:30",
+      "topics": [
+        "auto"
+      ],
+      "topic_scores": {
+        "auto": 20
+      },
+      "importance": 20,
+      "important": true,
+      "important_topics": [
+        "auto"
+      ],
+      "slider_topics": [
+        "auto"
+      ],
+      "ticker_topics": [
+        "auto"
+      ],
+      "breaking": true,
+      "breaking_topics": [
+        "auto"
+      ],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-347b63c8ee48",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 17,
+      "political": false,
+      "breaking_signal": true,
+      "age_hours": 0.07455964982509614
+    },
+    "bffaf523f3ad2b9768a696ab": {
+      "title": "توضیح دانشگاه تهران درباره نام‌گذاری خوابگاهی به نام رئیس این دانشگاه",
+      "summary": "در پی انتشار خبری درباره نام‌گذاری یکی از خوابگاه‌های دانشگاه تهران به نام دکتر محمدحسین امید، رئیس این دانشگاه، معاون مرکز حوزه ریاست و روابط عمومی دانشگاه تهران توضیحاتی در این زمینه ارائه کرد.",
+      "source": "ایسنا",
+      "published": "2026-10-11T15:27:00+03:30",
+      "topics": [
+        "science-life"
+      ],
+      "topic_scores": {
+        "science-life": 9
+      },
+      "importance": 9,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-25557bc1743d",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.07461326314343346
+    },
+    "4c336b2d1ea984dde2e469d5": {
+      "title": "۲۰ هزار واکسن آنفلوانزا در استان کرمان توزیع شد",
+      "summary": "معاون غذا و دارو دانشگاه علوم پزشکی کرمان گفت: از ۱۰ روز قبل توزیع واکسن آنفلوانزا در استان آغاز شده و تاکنون ۲۰ هزار واکسن بین همه داروخانه‌های حوزه دانشگاه‌های علوم پزشکی توزیع شده است.",
+      "source": "ایسنا",
+      "published": "2026-10-11T15:26:58+03:30",
+      "topics": [
+        "science-life",
+        "health"
+      ],
+      "topic_scores": {
+        "health": 12,
+        "science-life": 12
+      },
+      "importance": 12,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-c559bbbe23a1",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.0746132626136144
+    },
+    "dbc988b5730a8ab710ae8f6b": {
+      "title": "از فرصت اکسپو برای توسعه ارتباطات حرفه‌ای و حضور در بازارهای داخلی و خارجی استفاده کنیم",
+      "summary": "مدیرعامل منطقه ویژه اقتصادی شیراز با بیان اینکه حضور در نمایشگاه‌های اقتصادی نباید صرفاً به عرضه محصولات محدود شود، گفت: باید از فرصت شیراز اکسپو برای توسعه ارتباطات حرفه‌ای، معرفی توانمندی‌های تولیدی، شناسایی زمینه‌های همکاری و حضور مؤثرتر شرکت‌ها در بازارهای داخلی و خارجی استفاده کنیم.",
+      "source": "ایسنا",
+      "published": "2026-10-11T15:25:31+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 12
+      },
+      "importance": 12,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-73b8a946f7e1",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.07461326234870487
+    },
+    "825b2884ef081bfd58841e41": {
+      "title": "صدور ۲۳۰ سند مالکیت شهرک‌های صنعتی سمنان؛ پایان حدنگاری اراضی صنعتی",
+      "summary": "سمنان- رئیس‌کل دادگستری استان سمنان از تثبیت مالکیت شهرک‌های صنعتی استان با اهدای ۲۳۰ فقره سند مالکیت خبر داد و بر اهمیت سامان‌دهی وضعیت ثبتی اراضی در توسعه فعالیت‌های صنعتی تأکید کرد.",
+      "source": "مهر",
+      "published": "2026-10-11T15:23:16+03:30",
+      "topics": [
+        "real-estate"
+      ],
+      "topic_scores": {
+        "real-estate": 4
+      },
+      "importance": 4,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-56d38c2a377e",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.07467467983563741
+    },
+    "f1eeb4e5e3d4caf0e5cb7bb3": {
+      "title": "در برخی واگذاری‌ها، خصولتی‌ها جای مردم را می‌گیرند",
+      "summary": "نماینده شهرستان‌های ساوجبلاغ، نظرآباد، طالقان و چهارباغ گفت: مردمی‌سازی اقتصاد نباید صرفاً به تغییر مالکیت بنگاه‌های دولتی به بخش خصوصی محدود شود. در برخی واگذاری‌ها، به‌جای تحقق مشارکت گسترده مردم، شاهد شکل‌گیری ساختارهای خصولتی هستیم؛ ازاین‌رو، جلوگیری از رانت و انحصار و تسهیل فعالیت اقتصادی مردم ",
+      "source": "ایسنا",
+      "published": "2026-10-11T15:20:22+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 14
+      },
+      "importance": 14,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-3bef5b266967",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.30063612792227
+    },
+    "8da52c39eeda258db7a60d18": {
+      "title": "سود سهام عدالت ۱.۵ میلیون نفر واریز شد",
+      "summary": "مدیر نظارت بر ناشران سازمان بورس و اوراق بهادار اعلام کرد: چهارشنبه هفته گذشته سود سهام عدالت دارندگان این سهام که در سال‌های گذشته به دلیل نقصان مدارک و عدم ثبت شماره حساب بانکی خود در سامانه سجام، از واریزی‌ها جا مانده بودند، واریز شد. پست سود سهام عدالت ۱.۵ میلیون نفر واریز شد اولین بار در تجارت ",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-11T15:17:36+03:30",
+      "topics": [
+        "markets"
+      ],
+      "topic_scores": {
+        "markets": 16
+      },
+      "importance": 16,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-c2d5014b69c6",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.30036838511625924
+    },
+    "0df9fb689270370e0f8c4f01": {
+      "title": "تداوم واردات کالاهای اساسی با وجود فشارهای آمریکا/ ۱۸۰۰ میلیارد دلار تجارت جهانی در خطر",
+      "summary": "دبیر انجمن شرکت‌های کشتیرانی گفت: با وجود اقداماتی که آمریکایی‌ها از طریق سنتکام برای ایجاد محدودیت در مسیرهای دریایی اعمال می‌کنند، واردات کالاهای اساسی و مورد نیاز کشور با استفاده از ظرفیت‌های موجود ادامه یافته و به نظر می‌رسد این روند نیز تداوم پیدا کند. پست تداوم واردات کالاهای اساسی با وجود فشا",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-11T15:14:25+03:30",
+      "topics": [
+        "currency-gold"
+      ],
+      "topic_scores": {
+        "currency-gold": 9
+      },
+      "importance": 9,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-b67bac3b245f",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.30036838425530327
+    },
+    "e20678b6c02cae1c28d99810": {
+      "title": "شوک رجیستری آیفون 18",
+      "summary": "هزینه رجیستری آیفون 18 در ایران به بیش از 100 میلیون تومان می‌رسد؛ رقمی قابل‌توجه که به دلیل تعرفه‌های واردات مسافری و ...",
+      "source": "ایران‌جیب",
+      "published": "2026-10-11T15:10:51+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 7
+      },
+      "importance": 7,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-2028ff2b9bb2",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.30040521959463756
+    },
+    "ba8ab2aaddfd3dbff71073a9": {
+      "title": "پرداخت وام ۵۰۰ میلیونی مسکن با بازپرداخت ۲۰ ساله/ شرایط دریافت اعلام شد",
+      "summary": "شرایط دریافت وام ۵۰۰ میلیون تومانی ساخت و نوسازی مسکن در روستاها و شهرهای کوچک با کارمزد پنج درصد و بازپرداخت ۲۰ ساله اعلام شد.",
+      "source": "اقتصادنیوز",
+      "published": "2026-10-11T15:10:47+03:30",
+      "topics": [
+        "real-estate"
+      ],
+      "topic_scores": {
+        "real-estate": 9
+      },
+      "importance": 9,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-54d0416241a6",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 0.3005399817890591
+    },
+    "a3af93a1faa7d8bdd990435b": {
+      "title": "پلمب داروخانه فاقد مجوز در یکی از درمانگاه‌های خرم‌آباد",
+      "summary": "خرم‌آباد- یک داروخانه مستقر در یکی از درمانگاه‌های خرم‌آباد به دلیل نداشتن مجوزهای قانونی لازم، در جریان گشت مشترک بازرسان تعزیرات حکومتی و دستگاه‌های نظارتی پلمب شد.",
+      "source": "مهر",
+      "published": "2026-10-11T15:02:51+03:30",
+      "topics": [
+        "health"
+      ],
+      "topic_scores": {
+        "health": 4
+      },
+      "importance": 4,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-419c39d853cb",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.5370168912410737
+    },
+    "d074e550871a8aa66cf7d5b0": {
+      "title": "پلمب انبار دارویی متخلف در خرم‌آباد با دستور قضائی",
+      "summary": "خرم‌آباد- یک انبار نگهداری دارو در خرم‌آباد به دلیل تخلفات صنفی و رعایت نکردن ضوابط قانونی، در جریان گشت مشترک بازرسان تعزیرات حکومتی و سازمان صنعت، معدن و تجارت پلمب شد.",
+      "source": "مهر",
+      "published": "2026-10-11T15:00:34+03:30",
+      "topics": [
+        "health"
+      ],
+      "topic_scores": {
+        "health": 9
+      },
+      "importance": 9,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-113a7a59d4a9",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.5370168879297045
+    },
+    "9fc52e3c5a31821e22d054c5": {
+      "title": "نخستین شناسه یکتای پروانه ساختمان در سمنان رونمایی شد",
+      "summary": "سمنان- رئیس کل دادگستری استان سمنان گفت: هم‌زمان با سفر رئیس سازمان ثبت اسناد و املاک کشور به سمنان، نخستین شناسه یکتای پروانه ساختمان در استان رونمایی شد.",
+      "source": "مهر",
+      "published": "2026-10-11T15:00:01+03:30",
+      "topics": [
+        "real-estate"
+      ],
+      "topic_scores": {
+        "real-estate": 14
+      },
+      "importance": 14,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-8c6aff488fbd",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.537016887333658
+    },
+    "3da2172f20b928cc2bdecf43": {
+      "title": "تدوین آیین‌نامه استفاده از هوش مصنوعی در سینما ضروری است",
+      "summary": "نشست خبری چهل و سومین جشنواره فیلم کوتاه تهران صبح امروز، یکشنبه (۱۹ مهر) در پردیس سینمایی ملت برگزار شد. دبیر این جشنواره تاکید کرد: باید هوش مصنوعی را به عنوان ابزار بگیریم و نه هدف. با این نگاه تکنیک و محتوا مهم است و هر دو اینها، ملاک هیات انتخاب و داوری است. بهروز شعیبی گفت:‌ تدوین آیین‌نامه اس",
+      "source": "ایسنا",
+      "published": "2026-10-11T14:59:49+03:30",
+      "topics": [
+        "technology",
+        "ai"
+      ],
+      "topic_scores": {
+        "technology": 15,
+        "ai": 15
+      },
+      "importance": 15,
+      "important": true,
+      "important_topics": [
+        "technology",
+        "ai"
+      ],
+      "slider_topics": [
+        "technology",
+        "ai"
+      ],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-a4238547ce1d",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 10,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.5369795973433389
+    },
+    "2316b8c9175fe1db77f0413a": {
+      "title": "فعالیت ۱۰۳ تشکل مردم‌ نهاد در حوزه بهداشت و سلامت استان کرمان",
+      "summary": "کرمان- مدیرکل دفتر امور اجتماعی و فرهنگی استانداری کرمان گفت: تعداد ۱۰۳ تشکل مردم‌ نهاد در حوزه بهداشت، درمان و سلامت در استان کرمان فعالیت می‌کنند.",
+      "source": "مهر",
+      "published": "2026-10-11T14:59:30+03:30",
+      "topics": [
+        "health"
+      ],
+      "topic_scores": {
+        "health": 14
+      },
+      "importance": 14,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-8719f72da618",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.3006976203786002
+    },
+    "b9e69362849e507cc91c0c1a": {
+      "title": "دسترسی به اطلاعات ۳۰ میلیون ملک در سامانه وثایق الکترونیکی",
+      "summary": "سمنان- رئیس سازمان ثبت اسناد و املاک کشور از راه‌اندازی سامانه وثایق الکترونیکی با دسترسی به اطلاعات حدود ۳۰ میلیون ملک و فراهم شدن دسترسی قضات به این سامانه خبر داد.",
+      "source": "مهر",
+      "published": "2026-10-11T14:59:17+03:30",
+      "topics": [
+        "real-estate"
+      ],
+      "topic_scores": {
+        "real-estate": 9
+      },
+      "importance": 9,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-b696384cdaa6",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.5370168856779735
+    },
+    "5a19bf6340e0efb6a4bdea5f": {
+      "title": "سلیمی: ۷۸۲ مجوز صنایع تبدیلی کشاورزی در کردستان صادر شد",
+      "summary": "سنندج- مدیر صنایع تبدیلی و غذایی جهاد کشاورزی کردستان گفت: ۷۸۲ مجوز صنایع تبدیلی با بیش از ۳۹ هزار میلیارد تومان سرمایه‌گذاری و پیش‌بینی و تحقق اشتغال برای ۸ هزار و ۷۸۸ نفر صادر شده است.",
+      "source": "مهر",
+      "published": "2026-10-11T14:59:16+03:30",
+      "topics": [
+        "markets"
+      ],
+      "topic_scores": {
+        "markets": 20
+      },
+      "importance": 20,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-228dd2f5781a",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 11,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.5370168851481544
+    },
+    "a099fb6d0036e2563f539425": {
+      "title": "18میلیون تومان برای یک تمیزکاری ساده/ پشت‌پرده فاکتورسازی در پلتفرم‌ها",
+      "summary": "رئیس اتحادیه تعمیرکاران بر فعالیت بدون مجوز برخی پلتفرم‌های آنلاین و نقض تعرفه‌های مصوب تأکید کرد. پست 18میلیون تومان برای یک تمیزکاری ساده/ پشت‌پرده فاکتورسازی در پلتفرم‌ها اولین بار در تجارت نیوز ظاهر شد.",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-11T14:58:27+03:30",
+      "topics": [
+        "technology"
+      ],
+      "topic_scores": {
+        "technology": 4
+      },
+      "importance": 4,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-b29aff3e348f",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.5365233931938808
+    },
+    "854382062d1da34184f539a2": {
+      "title": "شبکه دانش‌آموختگان سمپاد راه‌اندازی شد",
+      "summary": "رئیس سازمان ملی پرورش استعدادهای درخشان گفت: توسعه تعاملات با دانش‌آموختگان و بهره‌گیری از ظرفیت‌های علمی و حرفه‌ای آنان برای کمک به حل مسائل کشور، از اهداف مهم توسعه کشور است.",
+      "source": "مهر",
+      "published": "2026-10-11T14:55:31+03:30",
+      "topics": [
+        "technology"
+      ],
+      "topic_scores": {
+        "technology": 4
+      },
+      "importance": 4,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-0ac70178e887",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.5370168834262424
+    },
+    "f913a09c5ce028350b1b0515": {
+      "title": "واریز سود سهام عدالت برای این افراد/ علت تفاوت مبالغ دریافتی سهام‌داران چیست؟",
+      "summary": "​سود معوقه و انباشته سهام عدالت به همراه عواید آن به حساب بیش از یک میلیون سهام‌دار که به دلیل نقص اطلاعات بانکی و ثبت‌نشدن شماره شبای خود در سامانه سجام، از دریافت سود سال‌های گذشته محروم مانده بودند واریز شد. سازمان بورس همچنین علت تفاوت مبالغ دریافتی سهام‌داران را تشریح کرد. ر",
+      "source": "اقتصادنیوز",
+      "published": "2026-10-11T14:53:44+03:30",
+      "topics": [
+        "markets"
+      ],
+      "topic_scores": {
+        "markets": 14
+      },
+      "importance": 14,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-764a33d9286c",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 0.3005399795373281
+    },
+    "14ba71b76e711f98ca9af8d7": {
+      "title": "سفر سبز دانش‌آموزان به مرکز بازدید کنندگان تالاب انزلی در هفته ملی کودک| فیلم",
+      "summary": "بندرانزلی- ایرنا- همزمان با هفته ملی کودک، تعدادی از دانش‌آموزان با حضور در مرکز بازدیدکنندگان تالاب انزلی با ظرفیت‌های زیست‌محیطی این میراث طبیعی و اهمیت حفاظت از آن آشنا شدند.",
+      "source": "ایرنا",
+      "published": "2026-10-11T14:53:10+03:30",
+      "topics": [
+        "science-life"
+      ],
+      "topic_scores": {
+        "science-life": 7
+      },
+      "importance": 7,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-cae1f1b01a90",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.7743899759319094
+    },
+    "061fcfa9a3c06360b61a1965": {
+      "title": "ارتقای ۹ پله‌ای دانشگاه صنعتی امیرکبیر در ارزیابی شبکه آزمایشگاهی کشور",
+      "summary": "دانشگاه صنعتی امیرکبیر بر اساس نتایج اولیه دوازدهمین دوره ارزیابی عملکرد مراکز عضو شبکه آزمایشگاهی کشور در سال ۱۴۰۴، با ارتقای ۹ پله‌ای، رتبه دوازدهم مجموعه‌های آزمایشگاهی کشور را کسب کرد.",
+      "source": "مهر",
+      "published": "2026-10-11T14:52:07+03:30",
+      "topics": [
+        "science-life"
+      ],
+      "topic_scores": {
+        "science-life": 20
+      },
+      "importance": 20,
+      "important": true,
+      "important_topics": [
+        "science-life"
+      ],
+      "slider_topics": [
+        "science-life"
+      ],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-2d739e73ca50",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 16,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.7744376670651966
+    },
+    "2caab8bf8bbf3a6c43ab1062": {
+      "title": "نمایشگاه کتاب ناشران کشور پس از ۷ سال در زنجان برگزار می‌شود",
+      "summary": "زنجان- مدیرکل فرهنگ و ارشاد اسلامی استان زنجان از برگزاری دهمین نمایشگاه کتاب ناشران کشور پس از وقفه ۷ ساله از ۱۸ تا ۲۴ مهرماه در محل دائمی نمایشگاه‌های بین‌المللی زنجان خبر داد.",
+      "source": "مهر",
+      "published": "2026-10-11T14:52:00+03:30",
+      "topics": [
+        "science-life"
+      ],
+      "topic_scores": {
+        "science-life": 7
+      },
+      "importance": 7,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-410c3548809b",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.7744376662042406
+    },
+    "b21cf7082f048698715e2f11": {
+      "title": "مدیرکل دامپزشکی البرز: هیچ نشانه‌ای از تب برفکی در استان مشاهده نشده است",
+      "summary": "مدیرکل دامپزشکی استان البرز از اجرای طرح واکسیناسیون علیه بیماری تب برفکی در ۳۵ هزار رأس دام خبر داد و گفت: در حال حاضر هیچ‌گونه نشانه‌ای از بیماری تب برفکی در استان مشاهده نشده است. واکسیناسیون دام‌های صنعتی استان نیز از ابتدای آبان‌ با هدف پیشگیری و کنترل این بیماری آغاز می‌شود.",
+      "source": "ایسنا",
+      "published": "2026-10-11T14:51:52+03:30",
+      "topics": [
+        "health"
+      ],
+      "topic_scores": {
+        "health": 12
+      },
+      "importance": 12,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-c9f5230b393e",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.7743999670611488
+    },
+    "6500187bdae8c3afed2d0ac4": {
+      "title": "ثبت درخواست برای 1.4 میلیون حساب در سامانه حسام",
+      "summary": "بانک مرکزی از ثبت بیش از یک میلیون و 446 هزار درخواست تعیین تکلیف حساب بانکی خبر داد. پست ثبت درخواست برای 1.4 میلیون حساب در سامانه حسام اولین بار در تجارت نیوز ظاهر شد.",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-11T14:50:35+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 4
+      },
+      "importance": 4,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-8c5795abcf54",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.7742583026488622
+    },
+    "fbde87fe5f392ec960d761cf": {
+      "title": "قیمت انواع سکه- ۱۹ مهر ۱۴۰۵",
+      "summary": "در بازار امروز قیمت انواع سکه با نوساناتی همراه شد.",
+      "source": "بورس‌نیوز",
+      "published": "2026-10-11T14:50:11+03:30",
+      "topics": [
+        "currency-gold"
+      ],
+      "topic_scores": {
+        "currency-gold": 12
+      },
+      "importance": 12,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-d01152dabcd7",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.7737697792715497
+    },
+    "4820cc1345ca99d6dcd92734": {
+      "title": "قیمت دلار و سایر ارز‌ها - ۱۹ مهر ۱۴۰۵",
+      "summary": "قیمت دلار آزاد در روز یکشنبه ۱۹ مهر ۱۴۰۵ در محدوده ۲۶۴ هزار تومان متوقف شد.",
+      "source": "بورس‌نیوز",
+      "published": "2026-10-11T14:49:14+03:30",
+      "topics": [
+        "currency-gold"
+      ],
+      "topic_scores": {
+        "currency-gold": 20
+      },
+      "importance": 20,
+      "important": true,
+      "important_topics": [
+        "currency-gold"
+      ],
       "slider_topics": [
         "currency-gold"
       ],
@@ -24215,14 +25385,1732 @@
       "breaking_topics": [],
       "publishable": true,
       "exclude_reason": "",
-      "group_id": "local-192e443e42dd",
+      "group_id": "local-e5d3e02af750",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 14,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.7737697773509555
+    },
+    "3a97f3da8179f084d249a2e0": {
+      "title": "قیمت طلا ۱۸ عیار - ۱۹ مهر ۱۴۰۵",
+      "summary": "قیمت طلا در بازار امروز یکشنبه ۱۹ مهرماه با کاهش جزئی مواجه شد.",
+      "source": "بورس‌نیوز",
+      "published": "2026-10-11T14:47:02+03:30",
+      "topics": [
+        "currency-gold"
+      ],
+      "topic_scores": {
+        "currency-gold": 20
+      },
+      "importance": 20,
+      "important": true,
+      "important_topics": [
+        "currency-gold"
+      ],
+      "slider_topics": [
+        "currency-gold"
+      ],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-64ece4743100",
       "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
       "local_score": 10,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.711762619415919
+      "age_hours": 0.7737697767549091
+    },
+    "f7a69518f7aa43cbee933564": {
+      "title": "یک اپیدمیولوژیست: فرصت شناسایی و درمان طاعون کوتاه است و میزان مرگ مبتلایان بالا / مسافران ورودی از روسیه باید غربالگری شوند",
+      "summary": "​یک اپیدمیولوژیست گفت: قویا توصیه می‌شود مسئولان بهداشتی کشور، غربالگری مسافران ورودی به کشور به ویژه از کشور روسیه و کشورهای آسیای مرکزی را جدی بگیرند، تیم‌های واکنش سریع فعال شوند، اتاق‌های قرنطینه در مرزهای ورودی درنظرگرفته شود، بیمارستان‌ها آمادگی داشته باشند و مردم برای پیشگیری و کنترل بیماری آ",
+      "source": "اقتصادنیوز",
+      "published": "2026-10-11T14:46:54+03:30",
+      "topics": [
+        "health"
+      ],
+      "topic_scores": {
+        "health": 16
+      },
+      "importance": 16,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-bd0dda4e5442",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 0.300539979007509
+    },
+    "a0b3ee3aa09400e985fdbcca": {
+      "title": "شرط افزایش اعتبار کالابرگ اعلام شد",
+      "summary": "سازمان برنامه و بودجه کشور در اطلاعیه ای با تاکید بر اینکه افزایش کالابرگ برای حدود ۴۰ میلیون نفر از هموطنان پس از تکمیل فرم خوداظهاری و ثبت درخواست انجام می‌شود، اعلام کرد: مهلت ثبت نام متقاضیان تا ساعت ۲۴ سه‌شنبه ۲۱ مهرماه است.",
+      "source": "بورس‌نیوز",
+      "published": "2026-10-11T14:46:38+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 9
+      },
+      "importance": 9,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-c5c15d8039e7",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 0.77376977622509
+    },
+    "dd1406e382e25daec3108c37": {
+      "title": "تولید سالانه بیش از ۹۰ هزار تن تخم‌مرغ در البرز",
+      "summary": "معاون بهبود تولیدات دامی سازمان جهاد کشاورزی استان البرز با اشاره به فعالیت ۱۰۵ واحد مرغ تخم‌گذار در این استان گفت: ظرفیت این واحدها ۷.۷ میلیون قطعه مرغ تخم‌گذار است و سالانه بیش از ۹۰ هزار تن تخم‌مرغ در البرز تولید می‌شود.",
+      "source": "ایسنا",
+      "published": "2026-10-11T14:46:16+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 13
+      },
+      "importance": 13,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-cb6ea843c6ee",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 8,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.7743999623590045
+    },
+    "0e47436547fc72c12811f280": {
+      "title": "برخورد قاطع با تغییر کاربری غیرمجاز اراضی و ساخت و ساز در حریم رودخانه‌ها در مازندران",
+      "summary": "رئیس‌کل دادگستری مازندران با تأکید بر ضرورت مقابله به‌موقع و قاطع با تغییر کاربری غیرمجاز اراضی، ساخت‌وساز در حریم رودخانه‌ها و تصرف منابع طبیعی، گفت: دستگاه‌های مسئول باید از همان ابتدای مشاهده تخلف وارد عمل شوند و اجازه ندهند با استمرار تخلفات، شرایط به‌گونه‌ای پیش برود که برخورد قانونی دشوارتر و ",
+      "source": "ایسنا",
+      "published": "2026-10-11T14:45:40+03:30",
+      "topics": [
+        "real-estate"
+      ],
+      "topic_scores": {
+        "real-estate": 14
+      },
+      "importance": 14,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-f9c34ff0cf7a",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.7743999617629581
+    },
+    "cdbf9caf88da0eb04dc14be2": {
+      "title": "بانک مرکزی: بیش از 190 همت تسهیلات ازدواج و فرزندآوری پرداخت شد",
+      "summary": "بانک مرکزی از پرداخت 190.8 همت وام ازدواج و فرزندآوری به بیش از 804 هزار نفر خبر داد. پست بانک مرکزی: بیش از 190 همت تسهیلات ازدواج و فرزندآوری پرداخت شد اولین بار در تجارت نیوز ظاهر شد.",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-11T14:40:35+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 4
+      },
+      "importance": 4,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-04873cf397a0",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.7742582995361752
+    },
+    "6c685d1fa8908a836c0d9bf1": {
+      "title": "خستگی و ناراحتی شکم می‌توانند نشانه کبد چرب باشند؟",
+      "summary": "کبد چرب در مراحل اولیه اغلب بدون علامت است، اما در برخی افراد می‌تواند به التهاب، فیبروز و سیروز کبدی منجر شود. اضافه‌وزن، کم‌تحرکی، دیابت و عادات غذایی ناسالم از عوامل خطر این بیماری هستند؛ بااین‌حال، افراد دارای وزن طبیعی نیز ممکن است به آن مبتلا شوند.",
+      "source": "سلامت نیوز",
+      "published": "2026-10-11T14:36:41+03:30",
+      "topics": [
+        "health"
+      ],
+      "topic_scores": {
+        "health": 20
+      },
+      "importance": 20,
+      "important": true,
+      "important_topics": [
+        "health"
+      ],
+      "slider_topics": [
+        "health"
+      ],
+      "ticker_topics": [
+        "health"
+      ],
+      "breaking": true,
+      "breaking_topics": [
+        "health"
+      ],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-e44acd01b435",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 16,
+      "political": false,
+      "breaking_signal": true,
+      "age_hours": 0.7731757293144862
+    },
+    "2af436e2161aae6367b51354": {
+      "title": "جانمایی دهکده لجستیک شیراز نهایی شد",
+      "summary": "معاون هماهنگی امور عمرانی استانداری فارس از نهایی شدن جانمایی دهکده لجستیک شیراز در اراضی مجاور منطقه ویژه اقتصادی خبر داد و گفت: این طرح در محدوده‌ای به وسعت ۲۴۶ تا ۲۵۰ هکتار پیش‌بینی شده و با اتصال مستقیم ریلی به منطقه ویژه اقتصادی، با هدف تسهیل جابه‌جایی کالا، کاهش هزینه‌های لجستیکی و تقویت ظرفیت",
+      "source": "ایسنا",
+      "published": "2026-10-11T14:35:38+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 12
+      },
+      "importance": 12,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-6272cdbd8b95",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.0896707317564223
+    },
+    "04cba689c8e201e802103dfb": {
+      "title": "رییس سازمان ثبت اسناد: ایران هفتمین کشور جهان در صدور الکترونیکی اسناد می‌شود",
+      "summary": "سمنان - ایرنا - رییس سازمان اسناد و املاک کشور گفت: ایران با آغاز برنامه صدور الکترونیکی اسناد مالکیت اشخاص حقوقی از ابتدای آبان، به جمع ۶ کشور صادرکننده الکترونیکی اسناد در جهان می‌پیوندد.",
+      "source": "ایرنا",
+      "published": "2026-10-11T14:31:21+03:30",
+      "topics": [
+        "real-estate"
+      ],
+      "topic_scores": {
+        "real-estate": 4
+      },
+      "importance": 4,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-5a0b31cca000",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 1.0896344976292716
+    },
+    "21943edc32faaec5db4f114b": {
+      "title": "پلمب ۳ واحد درمانی و زیبایی غیرمجاز در خرم‌آباد",
+      "summary": "خرم‌آباد- رئیس پلیس نظارت بر اماکن عمومی لرستان از شناسایی و پلمب سه واحد غیرمجاز شامل یک واحد دندانپزشکی، یک مرکز خدمات زیبایی و یک واحد تزریقات در خرم‌آباد خبر داد.",
+      "source": "مهر",
+      "published": "2026-10-11T14:30:56+03:30",
+      "topics": [
+        "real-estate"
+      ],
+      "topic_scores": {
+        "real-estate": 4
+      },
+      "importance": 4,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-113a7a59d4a9",
+      "representative": false,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 1.0896813023090361
+    },
+    "f18ea6aeb7337d1e50d45ff1": {
+      "title": "سمنان پشت‌صفی فرزندخواندگی ندارد/ ارزیابی سلامت روان ۴۸۰۰ نفر در استان سمنان",
+      "summary": "مدیرکل بهزیستی استان سمنان از ارزیابی بیش از ۴۸۰۰ نفر در طرح ارزیابی سلامت روان در شهرستان‌های این استان خبر داد.",
+      "source": "ایسنا",
+      "published": "2026-10-11T14:27:45+03:30",
+      "topics": [
+        "health"
+      ],
+      "topic_scores": {
+        "health": 20
+      },
+      "importance": 20,
+      "important": true,
+      "important_topics": [
+        "health"
+      ],
+      "slider_topics": [
+        "health"
+      ],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-63628ab597cb",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 10,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.089670727915234
+    },
+    "3abae24b5c82ab3755c8a3f7": {
+      "title": "کمبود متخصص و پوشش ناکافی بیمه؛ دو مانع درمان اختلالات خواب در ایران",
+      "summary": "نتایج یک مطالعه منتشرشده در «Journal of Clinical Sleep Medicine» نشان می‌دهد پزشکی خواب در ایران طی دو دهه گذشته با توسعه دوره‌های آموزشی، افزایش شمار کلینیک‌های تخصصی و رشد پژوهش‌ها پیشرفت کرده است؛ با این حال، کمبود متخصصان آموزش‌دیده، محدودیت دسترسی به مراکز استاندارد و پوشش ناکافی بیمه برای آزما",
+      "source": "ایسنا",
+      "published": "2026-10-11T14:27:12+03:30",
+      "topics": [
+        "health"
+      ],
+      "topic_scores": {
+        "health": 17
+      },
+      "importance": 17,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-fa5f3ec95cfb",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.0896707273191877
+    },
+    "c814fdd359a96c037e50ca5f": {
+      "title": "مراسم روز ملی کودک و محیط زیست در گناوه برگزار شد",
+      "summary": "بوشهر- مراسم روز ملی کودک و محیط زیست همزمان با هفته ملی کودک، با همکاری اداره حفاظت محیط زیست و کانون پرورش فکری کودکان و نوجوانان شهرستان گناوه برگزار شد.",
+      "source": "مهر",
+      "published": "2026-10-11T14:26:21+03:30",
+      "topics": [
+        "science-life"
+      ],
+      "topic_scores": {
+        "science-life": 14
+      },
+      "importance": 14,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-34b314151827",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 1.0896813015143076
+    },
+    "85cc06e10bc1cae723f34bf8": {
+      "title": "رئیس مرکز آمار ایران: تولید انبوه داده به‌تنهایی اثربخش نیست",
+      "summary": "رئیس مرکز آمار ایران با تأکید بر ضرورت ارتقای کیفیت داده‌های آماری، بهره‌گیری مؤثر از اطلاعات موجود در دستگاه‌های اجرایی را از الزامات تصمیم‌گیری و برنامه‌ریزی دقیق در کشور دانست و سرشماری عمومی نفوس و مسکن به روش ثبتی‌مبنا در سال جاری را گامی مهم در مسیر تحول نظام آماری کشور عنوان کرد.",
+      "source": "ایسنا",
+      "published": "2026-10-11T14:25:06+03:30",
+      "topics": [
+        "real-estate",
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 9,
+        "real-estate": 9
+      },
+      "importance": 9,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-a92fcc7f5ca7",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 1.2494610614909065
+    },
+    "bc1b9e86305df8518a808128": {
+      "title": "بوفه بیمارستان نجف‌آباد با جریمه ۳.۸ میلیاردی پلمب شد",
+      "summary": "اصفهان -مدیرکل تعزیرات حکومتی استان اصفهان گفت: متصدی بوفه بیمارستان نجف‌آباد به دلیل گرانفروشی برای مرتبه سوم، علاوه بر پلمب به پرداخت بیش از ۳ میلیارد و ۸۰۰میلیون ریال جزای نقدی محکوم شد.",
+      "source": "مهر",
+      "published": "2026-10-11T14:24:36+03:30",
+      "topics": [
+        "health"
+      ],
+      "topic_scores": {
+        "health": 9
+      },
+      "importance": 9,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-5927137aeb3c",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 1.2494884892967013
+    },
+    "af3009a4b827eba2c6ebddbb": {
+      "title": "نسخه‌های سؤال برانگیز برای نجات خودروسازی داخلی | حمایت از تولید داخل بدون رقابت، چه نتیجه‌ای دارد؟",
+      "summary": "اقتصادنیوز: اظهارات تازه مصطفی میرسلیم درباره رقابت‌پذیری تیبا با خودروهای خارجی، بار دیگر اختلاف بر سر کیفیت خودروهای داخلی، محدودیت واردات و حق انتخاب مصرف‌کنندگان را برجسته کرده است؛ اختلافی که سابقه آن به مواضع جنجالی او درباره لندکروز، پژو ۲۰۶ و ایمنی خودروها بازمی‌گردد.",
+      "source": "اقتصادنیوز",
+      "published": "2026-10-11T14:23:57+03:30",
+      "topics": [
+        "economy",
+        "auto"
+      ],
+      "topic_scores": {
+        "economy": 9,
+        "auto": 9
+      },
+      "importance": 9,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-e711def50955",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 0.7743588636981117
+    },
+    "b1da3906e8518f724c23ecce": {
+      "title": "۷ بیمارستان تا پایان امسال تکمیل و تحویل بهره‌بردار می‌شود",
+      "summary": "تهران- ایرنا- مدیرعامل سازمان مجری ساختمان‌ها و تاسیسات عمومی و دولتی از برنامه این سازمان برای تکمیل هفت بیمارستان و مرکز درمانی تا پایان امسال خبر داد و میانگین پیشرفت فیزیکی این پروژه های بیمارستانی را ۹۱ درصد عنوان کرد.",
+      "source": "ایرنا",
+      "published": "2026-10-11T14:23:48+03:30",
+      "topics": [
+        "health"
+      ],
+      "topic_scores": {
+        "health": 9
+      },
+      "importance": 9,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-6169a1223397",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 1.2492281362083224
+    },
+    "3dc6dd25c0ce07082ae4bdbb": {
+      "title": "حضور صنایع‌دستی اردبیل در ششمین نمایشگاه بین‌المللی روستایی و عشایری",
+      "summary": "اردبیل- مدیرکل میراث‌فرهنگی گردشگری وصنایع‌دستی استان اردبیل از حضورهنرمندان صنایع‌دستی استان اردبیل نمایش آثار آنها در ششمین نمایشگاه بین‌المللی توانمندی‌های روستایی و عشایری تهران خبر داد.",
+      "source": "مهر",
+      "published": "2026-10-11T14:22:20+03:30",
+      "topics": [
+        "science-life"
+      ],
+      "topic_scores": {
+        "science-life": 12
+      },
+      "importance": 12,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-f53923ca52e7",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.2936179445849525
+    },
+    "ee22b89b5a7d78477db2d21b": {
+      "title": "فیزیوتراپی؛ حلقه مفقوده در پیشگیری، درمان و توان‌بخشی بیماری‌های قلبی‌عروقی و مغزی",
+      "summary": "مدیر گروه فیزیوتراپی دانشگاه علوم پزشکی شیراز با اشاره به اهمیت روزافزون جایگاه فعالیت بدنی در مدیریت بیماری‌های مزمن، بر نقش محوری فیزیوتراپی در زنجیره سلامت بیماران قلبی‌عروقی و سکته مغزی تأکید کرد.",
+      "source": "ایسنا",
+      "published": "2026-10-11T14:21:14+03:30",
+      "topics": [
+        "health"
+      ],
+      "topic_scores": {
+        "health": 19
+      },
+      "importance": 19,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-91099d14b516",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.3394746004210578
+    },
+    "30c11e09099ab1c37e6941fc": {
+      "title": "ثبت بالاترین رکورد تاریخی ارزش معاملات خرد سهام و صندوق‌های سهامی",
+      "summary": "بالاترین رکورد ارزش معاملات خرد «سهام و صندوق‌های سهامی در پایان مبادلات امروز بازار سهام به ثبت رسید. امروز ۱۹ مهر ۱۴۰۵ ارزش معاملات خرد در بازار سهام به مرز ۷۴ همت نزدیک شد. پیش از این، بالاترین رکورد ارزش معاملات خرد در ۲۵ شهریور ۱۴۰۵ با ۶۸.۵ همت ثبت شده بود.",
+      "source": "صدای بورس",
+      "published": "2026-10-11T14:19:35+03:30",
+      "topics": [
+        "markets"
+      ],
+      "topic_scores": {
+        "markets": 20
+      },
+      "importance": 20,
+      "important": true,
+      "important_topics": [
+        "markets"
+      ],
+      "slider_topics": [
+        "markets"
+      ],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-e7f22e703bf2",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 18,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.3367670976453356
+    },
+    "348bdb6844bbe11c1539546e": {
+      "title": "تاب‌آوری؛ مهارتی برای عبور از روزهای دشوار و رسیدن به شادی",
+      "summary": "هیچ‌کس از تجربه غم، استرس و ناکامی در زندگی مصون نیست؛ اما نحوه مواجهه با این چالش‌ها می‌تواند تفاوت چشمگیری در سلامت روان و احساس رضایت از زندگی ایجاد کند. تقویت تاب‌آوری به افراد کمک می‌کند واقعیت‌های دشوار را بپذیرند و با امید و انعطاف بیشتری مسیر خود را ادامه دهند.",
+      "source": "سلامت نیوز",
+      "published": "2026-10-11T14:18:38+03:30",
+      "topics": [
+        "health"
+      ],
+      "topic_scores": {
+        "health": 20
+      },
+      "importance": 20,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [
+        "health"
+      ],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-ec3b7634424f",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 10,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.3378538015153674
+    },
+    "b41da67fb82fa0c12bafc3cc": {
+      "title": "هزینه بالا تبلیغات رسانه‌ها سبب عدم معرفی جشنواره زعفران شده است",
+      "summary": "معاون هماهنگی امور اقتصادی استانداری خراسان رضوی با بیان اینکه با وجود اهمیت زعفران در ابعاد فرهنگی و اقتصادی خراسان رضوی، از ظرفیت‌های رسانه ملی برای معرفی و حمایت از آن به‌اندازه کافی استفاده نشده است، گفت: هزینه بالا برای حمایت رسانه‌ها از جشنواره زعفران، سبب شده که بهره‌گیری از ظرفیت رسانه ملی ب",
+      "source": "ایسنا",
+      "published": "2026-10-11T14:16:59+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 12
+      },
+      "importance": 12,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-783ef5cbbb51",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.3394745984342362
+    },
+    "d0384c4d15f1070e4eecdbbb": {
+      "title": "حمایت از سرمایه‌گذاری در صنایع فرآوری انار در کازرون",
+      "summary": "مدیر جهاد کشاورزی شهرستان کازرون از حمایت سرمایه‌گذاری برای راه‌اندازی واحدهای صنایع تبدیلی و تکمیلی انار خبر داد و گفت: با توجه به محدودیت صنایع فرآوری این محصول در شهرستان، توسعه واحدهای مرتبط می‌تواند زمینه استفاده از ظرفیت‌های متنوع انار را فراهم کند.",
+      "source": "ایسنا",
+      "published": "2026-10-11T14:14:58+03:30",
+      "topics": [
+        "markets"
+      ],
+      "topic_scores": {
+        "markets": 17
+      },
+      "importance": 17,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-c19a4522cd0a",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.3394745979044171
+    },
+    "a48db8c7369321aa88961ea7": {
+      "title": "صنایع تبدیلی کشاورزی کردستان برای بیش از ۸ هزار اشتغال ایجاد یا پیش‌بینی می‌کند",
+      "summary": "مدیر صنایع تبدیلی و غذایی سازمان جهاد کشاورزی استان کردستان از صدور ۷۸۲ مجوز تأسیس و پروانه بهره‌برداری در حوزه صنایع تبدیلی و تکمیلی کشاورزی خبر داد و گفت: مجموع سرمایه‌گذاری انجام‌شده و پیش‌بینی‌شده در این بخش از ۳۹ هزار میلیارد تومان فراتر رفته و زمینه اشتغال مستقیم برای ۸ هزار و ۷۸۸ نفر فراهم شد",
+      "source": "ایسنا",
+      "published": "2026-10-11T14:14:13+03:30",
+      "topics": [
+        "markets"
+      ],
+      "topic_scores": {
+        "markets": 18
+      },
+      "importance": 18,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-228dd2f5781a",
+      "representative": false,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 8,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.3394745973745983
+    },
+    "3553cc4bae5216f07262ffbf": {
+      "title": "اعضای هیئت علمی موظف به برگزاری حداقل سه جلسه مجازی از هر درس هستند",
+      "summary": "معاون آموزش دانشکده کشاورزی دانشگاه تربیت مدرس گفت: حتی در شرایطی که کلاس‌ها به صورت حضوری برگزار می‌شوند، اعضای هیئت علمی موظف شده‌اند حداقل سه جلسه از ۱۶ جلسه هر درس را به شکل مجازی برگزار کنند تا آمادگی لازم برای آموزش غیرحضوری حفظ شود.",
+      "source": "ایسنا",
+      "published": "2026-10-11T14:13:52+03:30",
+      "topics": [
+        "science-life"
+      ],
+      "topic_scores": {
+        "science-life": 7
+      },
+      "importance": 7,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-42cad518625e",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.3394745965136423
+    },
+    "41de5ee86d9058b438b33477": {
+      "title": "آیت‌الله دری: سلامت مردم در گرو نظارت دقیق بر کیفیت غذا و دارو است",
+      "summary": "اراک- نماینده ولی‌فقیه در استان مرکزی با تأکید بر ضرورت نظارت مستمر بر کیفیت مواد غذایی، دارو و نان، خواستار تقویت بازرسی‌ها وارتقای استاندارد شد.",
+      "source": "مهر",
+      "published": "2026-10-11T14:13:37+03:30",
+      "topics": [
+        "health"
+      ],
+      "topic_scores": {
+        "health": 20
+      },
+      "importance": 20,
+      "important": true,
+      "important_topics": [
+        "health"
+      ],
+      "slider_topics": [
+        "health"
+      ],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-9bf28160ce06",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 15,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.339509165684382
+    },
+    "2da1e60a76c7cf01278b4ae6": {
+      "title": "مدیرکل آموزش و پرورش استان: برنامه نماد در کردستان ۱۱۹ هزار دانش‌آموز را تحت پوشش قرار داد",
+      "summary": "مدیرکل آموزش و پرورش استان کردستان گفت: برنامه ملی نظام مراقبت اجتماعی دانش‌آموزان (نماد) در مناطق هدف استان شامل سقز، قروه و ناحیه یک سنندج، ۱۱۹ هزار دانش‌آموز و ۶ هزار نفر از معلمان و کادر آموزشی را تحت پوشش قرار داده است.",
+      "source": "ایسنا",
+      "published": "2026-10-11T14:13:28+03:30",
+      "topics": [
+        "science-life"
+      ],
+      "topic_scores": {
+        "science-life": 7
+      },
+      "importance": 7,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-eba0753d9fee",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.3394745959838232
+    },
+    "aac01aceb9ec3961299b039f": {
+      "title": "مدیرکل استاندارد مازندران: فرهنگ‌سازی، پیش‌شرط اجرای استانداردهاست",
+      "summary": "مدیرکل استاندارد مازندران با تأکید بر ضرورت نهادینه‌سازی فرهنگ استاندارد در جامعه، از اجرای یک‌هزار و ۱۰۰ برنامه در قالب طرح امین، انجام ۴۴ طرح بازرسی و نظارت و فعالیت ۲۵ واحد دارای پروانه استاندارد در حوزه بسته‌بندی برنج خبر داد.",
+      "source": "ایسنا",
+      "published": "2026-10-11T14:10:07+03:30",
+      "topics": [
+        "science-life"
+      ],
+      "topic_scores": {
+        "science-life": 7
+      },
+      "importance": 7,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-953af20e03fe",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.3394745951228673
+    },
+    "052531d566552cf626b680a6": {
+      "title": "پیش‌بینی تولید بیش از ۶۵ هزار تن ذرت دانه‌ای در فیروزآباد",
+      "summary": "مدیر جهاد کشاورزی شهرستان فیروزآباد از پیش‌بینی برداشت بیش از ۶۵ هزار تن ذرت دانه‌ای از سطح ۶۴۴۰ هکتار از اراضی کشاورزی این شهرستان خبر داد و اعلام کرد که عملیات برداشت این محصول تا نیمه آذرماه ادامه دارد.",
+      "source": "ایسنا",
+      "published": "2026-10-11T14:08:56+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 13
+      },
+      "importance": 13,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-cb6ea843c6ee",
+      "representative": false,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 8,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.3394745945930482
+    },
+    "d07fcfa7f0dfb00fb4f3d4f3": {
+      "title": "وعده ایلان ماسک برای اینترنت ارزان در هند",
+      "summary": "ایلان ماسک اعلام کرد که برای رقابت با سرویس ارزان‌قیمت «ریلاینس جیو» (Reliance Jio) متعلق به موکش آمبانی، خدمات اینترنت ماهواره‌ای استارلینک را با قیمتی مقرون‌به‌صرفه در هند عرضه خواهد کرد.",
+      "source": "ایسنا",
+      "published": "2026-10-11T14:06:47+03:30",
+      "topics": [
+        "technology"
+      ],
+      "topic_scores": {
+        "technology": 15
+      },
+      "importance": 15,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [
+        "technology"
+      ],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-9efb42ac35f2",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 10,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.3394745937320922
+    },
+    "75d6ac97f2b010e08bd78217": {
+      "title": "کرمان در مسیر ارتقای کیفیت آموزش و هدایت هدفمند دانش‌آموزان",
+      "summary": "کرمان - ایرنا - شهر کرمان در روزهای اخیر میزبان گردهمایی مدیران آموزش متوسطه کشور بود تا راهکارهای ارتقای کیفیت آموزشی و توسعه متوازن تحصیلی را بررسی کنند. در این نشست، علاوه‌بر ارائه آمارهای امیدوارکننده از رشد نمرات نهایی دانش‌آموزان، بر ضرورت هدایت تحصیلی مبتنی بر استعداد و نیازهای بومی هر منطقه ",
+      "source": "ایرنا",
+      "published": "2026-10-11T14:05:47+03:30",
+      "topics": [
+        "science-life"
+      ],
+      "topic_scores": {
+        "science-life": 7
+      },
+      "importance": 7,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-a7a1c04b083f",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.3394076462586721
+    },
+    "53ab336880fae81439a5d18d": {
+      "title": "پوشش ۲۳۷۱فرد با اختلال شنوایی در سمنان؛ جذب ۳۳ معلول در آزمون استخدامی",
+      "summary": "سمنان- مدیرکل بهزیستی استان سمنان از پوشش حمایتی ۲۳۷۱نفر با اختلال شنوایی و ۲۲۸۶ فرد با آسیب بینایی خبر داد و گفت: در دومین آزمون استخدامی اختصاصی معلولان، زمینه جذب ۳۳ نفر فراهم شد.",
+      "source": "مهر",
+      "published": "2026-10-11T14:04:49+03:30",
+      "topics": [
+        "science-life"
+      ],
+      "topic_scores": {
+        "science-life": 16
+      },
+      "importance": 16,
+      "important": true,
+      "important_topics": [
+        "science-life"
+      ],
+      "slider_topics": [
+        "science-life"
+      ],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-fba71318d1d2",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 16,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.3395091631677416
+    },
+    "eb8e5feb17041f78d2be75fd": {
+      "title": "بررسی ePlanet Brokers براساس داده‌های داخلی؛ گزارش شفافیت این بروکر چه می‌گوید؟",
+      "summary": "بررسی ePlanet Brokers براساس داده‌های داخلی، تصویری از عملکرد این بروکر در احراز هویت، واریز و برداشت، اجرای سفارش، پشتیبانی و رسیدگی به شکایت‌ها ارائه می‌دهد؛ داده‌هایی که می‌توانند برای ارزیابی یک بروکر امن و معتبر مورد توجه قرار گیرند.",
+      "source": "اقتصادنیوز",
+      "published": "2026-10-11T14:03:37+03:30",
+      "topics": [
+        "technology"
+      ],
+      "topic_scores": {
+        "technology": 17
+      },
+      "importance": 17,
+      "important": true,
+      "important_topics": [
+        "technology"
+      ],
+      "slider_topics": [
+        "technology"
+      ],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-4fd489ef03d6",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 17,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.5147541875971688
+    },
+    "5aa108d600d277ae9291e030": {
+      "title": "پرستاری از بیمار مصداق عینی خدمت به بشریت و عبادتی ارزشمند است",
+      "summary": "ایلام - نماینده ولی فقیه در استان ایلام گفت: پرستاری از بیمار مصداق عینی خدمت به بشریت و عبادتی ارزشمند است.",
+      "source": "مهر",
+      "published": "2026-10-11T14:01:58+03:30",
+      "topics": [
+        "health"
+      ],
+      "topic_scores": {
+        "health": 15
+      },
+      "importance": 15,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-3f01956e290e",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 10,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.339509161512057
+    },
+    "cf7a8a722ce41efa8f965ea5": {
+      "title": "نگرانی از معیشت خانوار/ دستمزد کارگران ترمیم می‌شود؟",
+      "summary": "با گذشت بیش از سه هفته از آخرین جلسه شورای عالی کار برای بررسی دستمزد کارگران، هنوز زمان برگزاری جلسه بعدی مشخص نیست، موضوعی که قرار بود در شهریور پیگیری و در ادامه، تا پیش از پایان مهر تعیین تکلیف شود ، عضو شورای عالی کار عنوان کرد: زمینه لازم برای برگزاری جلسه و طرح دوباره موضوع مزد وجود دارد و اک",
+      "source": "ایسنا",
+      "published": "2026-10-11T14:01:52+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 7
+      },
+      "importance": 7,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-47b0d15c3055",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.3394745926062266
+    },
+    "5566b5aad40966dfc50bd8ce": {
+      "title": "نظارت بر چرخه توزیع آرد و کیفیت نان تقویت شود",
+      "summary": "زنجان- معاون هماهنگی امور اقتصادی استانداری زنجان بر ضرورت تقویت نظارت بر چرخه توزیع و مصرف آرد، ظرفیت‌سنجی کارشناسی واحدهای نانوایی و ارتقای کیفیت نان در استان تأکید کرد.",
+      "source": "مهر",
+      "published": "2026-10-11T14:00:56+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 18
+      },
+      "importance": 18,
+      "important": true,
+      "important_topics": [
+        "economy"
+      ],
+      "slider_topics": [
+        "economy"
+      ],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-4623bab87796",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 13,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.3395091609822378
+    },
+    "c8ddc47af9592494548bd0af": {
+      "title": "بحران بدهی فرانسه و افت یورو، جهش ارزش انویدیا به ۵.۷ تریلیون دلار و توافق عرضه ۱۰۰ میلیون بشکه سوخت گروه G7",
+      "summary": "موج فروش در بازار اوراق قرضه بدهی فرانسه را در تنگنای ۱۴ ساله قرار داد و یورو را به کف ۱۷ ماهه رساند. هم‌زمان با تصمیم گروه هفت برای عرضه ۱۰۰ میلیون بشکه سوخت، ارزش انویدیا با افزایش تقاضای زیرساخت هوش مصنوعی به بیش از ۵.۷ تریلیون دلار رسید. پست بحران بدهی فرانسه و افت یورو، جهش ارزش انویدیا به ۵.۷ ",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-11T14:00:08+03:30",
+      "topics": [
+        "technology",
+        "markets",
+        "currency-gold",
+        "ai"
+      ],
+      "topic_scores": {
+        "markets": 20,
+        "currency-gold": 20,
+        "technology": 20,
+        "ai": 20
+      },
+      "importance": 20,
+      "important": true,
+      "important_topics": [
+        "markets",
+        "currency-gold",
+        "technology",
+        "ai"
+      ],
+      "slider_topics": [
+        "markets",
+        "currency-gold",
+        "technology",
+        "ai"
+      ],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-6a903ed06974",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 16,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.0893736339939966
+    },
+    "1d09859f243da4403e4e035a": {
+      "title": "افت ۲۲ هزار واحدی شاخص کل بورس",
+      "summary": "تهران- ایرنا- شاخص کل بورس تهران در پایان معاملات امروز با کاهش ۲۲ هزار واحدی به تراز ۸ میلیون و ۲۴۳ هزار واحد برگشت.",
+      "source": "ایرنا",
+      "published": "2026-10-11T13:57:50+03:30",
+      "topics": [
+        "markets"
+      ],
+      "topic_scores": {
+        "markets": 20
+      },
+      "importance": 20,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [
+        "markets"
+      ],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-5b36440f91b2",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 14,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.3394076451328065
+    },
+    "566d4264603fd88e5fbda956": {
+      "title": "روز جهانی سلامت روان ۲۰۲۶؛ شنیدن تجربه‌ها، گامی برای تغییر واقعی",
+      "summary": "تهران- ایرنا- سازمان جهانی بهداشت در روز جهانی سلامت روان سال ۲۰۲۶ بر شنیدن صدای افرادی تاکید دارد که مشکلات روانی را تجربه کرده‌اند؛ رویکردی که با مشارکت دادن این افراد در تصمیم‌گیری‌ها، بهبود خدمات سلامت روان و کاهش انگ اجتماعی دنبال می‌شود.",
+      "source": "ایرنا",
+      "published": "2026-10-11T13:57:48+03:30",
+      "topics": [
+        "health"
+      ],
+      "topic_scores": {
+        "health": 17
+      },
+      "importance": 17,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-514a66c6719c",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.3394076445367602
+    },
+    "5b0c50e1756823f54c58a721": {
+      "title": "«فکور»؛ بازیگر چندوجهی در صنعت معدن و فولاد",
+      "summary": "شرکت مهندسی فکور صنعت تهران (سهامی عام) در آستانه ورود به بازار سرمایه، با برگزاری کنفرانس اطلاع‌رسانی، زوایای پنهان مدل کسب‌وکار، برنامه‌های توسعه‌ای و استراتژی‌های بین‌المللی خود را برای سهامداران ترسیم کرد.",
+      "source": "صدای بورس",
+      "published": "2026-10-11T13:57:42+03:30",
+      "topics": [
+        "markets"
+      ],
+      "topic_scores": {
+        "markets": 15
+      },
+      "importance": 15,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-1c1aafed8f59",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 10,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.08771656009886
+    },
+    "869ba76a914d04bc4fd4bcfd": {
+      "title": "مجوز ۲ مکان ۵۰ هکتاری در جنوب گیلان برای دفن زباله صادر شده است",
+      "summary": "رشت- ایرنا- معاون محیط زیست انسانی اداره محیط زیست گیلان گفت: مجوز ۲ مرکز بزرگ لندفیل(مکان دفن زباله) حدود ۵۰ هکتاری با ارزیابی محیطی در شهرستان رودبار صادر شده است.",
+      "source": "ایرنا",
+      "published": "2026-10-11T13:56:18+03:30",
+      "topics": [
+        "science-life"
+      ],
+      "topic_scores": {
+        "science-life": 20
+      },
+      "importance": 20,
+      "important": true,
+      "important_topics": [
+        "science-life"
+      ],
+      "slider_topics": [
+        "science-life"
+      ],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-068a4900b8a9",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 10,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.3394076442718506
+    },
+    "564553a0aa2bc13f600a9e0e": {
+      "title": "راهنمای خرید هدست؛ معرفی بهترین مدل‌های گیمینگ، بلوتوثی و اقتصادی",
+      "summary": "قبل از انتخاب هدست، بهتر است ابتدا مشخص کنید قرار است بیشتر برای چه کاری از آن استفاده کنید. هدستی که برای بازی مناسب است، لزوماً بهترین گزینه برای مکالمه یا گوش دادن به موسیقی نیست. توجه به نکات راهنمای خرید هدست گیمینگ، راهنمای خرید هدست بلوتوثی و راهنمای خرید هدست بی سیم می‌تواند به شما در انتخاب",
+      "source": "فرارو",
+      "published": "2026-10-11T13:53:30+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 17
+      },
+      "importance": 17,
+      "important": true,
+      "important_topics": [
+        "economy"
+      ],
+      "slider_topics": [
+        "economy"
+      ],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-28976db39383",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 12,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.7615965143177243
+    },
+    "0ed1cc0cecab01db1f09a777": {
+      "title": "دسترسی به تیم امنیت سفر اسنپ، حتی پس از پایان سفر",
+      "summary": "اگر راننده سفر را زودتر پایان دهد، چطور به امنیت سفر دسترسی داشته باشیم؟",
+      "source": "فرارو",
+      "published": "2026-10-11T13:53:12+03:30",
+      "topics": [
+        "science-life"
+      ],
+      "topic_scores": {
+        "science-life": 4
+      },
+      "importance": 4,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-31205245c906",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 1.7615965120659933
+    },
+    "fb1d6f2d595984f146ce8b24": {
+      "title": "ارتقای کیفیت و نظارت مستمر بر تولید، لازمه صیانت از سلامت مردم است",
+      "summary": "اراک - ایرنا - نماینده ولی‌فقیه در استان مرکزی گفت: ارتقای کیفیت کالاها و خدمات، نظارت مستمر بر تولید و عرضه محصولات و ترویج فرهنگ استاندارد، از ضرورت‌های صیانت از سلامت مردم و افزایش مسئولیت‌پذیری دستگاه‌های اجرایی است.",
+      "source": "ایرنا",
+      "published": "2026-10-11T13:42:00+03:30",
+      "topics": [
+        "health",
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 12,
+        "health": 12
+      },
+      "importance": 12,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-0cf9980f951b",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.339407641225391
+    },
+    "1ec5697b27f08925b237e088": {
+      "title": "پرویزخان؛ شاهراه تجارت ایران با اقلیم کردستان و ظرفیت راهبردی ترانزیت منطقه‌ای",
+      "summary": "قصرشیرین - ایرنا - مرز پرویزخان در شهرستان قصرشیرین در غرب کرمانشاه با تکیه بر موقعیت جغرافیایی، پیوندهای تجاری با اقلیم کردستان عراق و ظرفیت جابه‌جایی کالا، یکی از محورهای مهم توسعه تجارت خارجی، تقویت ترانزیت منطقه‌ای و رونق اقتصادی غرب کشور است؛ ظرفیتی که بهره‌برداری کامل از آن، به نگاهی فراتر از ",
+      "source": "ایرنا",
+      "published": "2026-10-11T13:40:13+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 12
+      },
+      "importance": 12,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-c37d14429c8e",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.3394076400995254
+    },
+    "4491843dfc440f44417d8d12": {
+      "title": "هشدار متخصصان اطفال: شیر خام می‌تواند کودکان را به بیماری‌های خطرناک مبتلا کند",
+      "summary": "شیر خام، یعنی شیری که پاستوریزه نشده است، ممکن است حاوی میکروب‌هایی باشد که به‌ویژه برای کودکان خردسال و زنان باردار خطرناک‌اند. متخصصان اطفال هشدار می‌دهند که مصرف این شیر و فرآورده‌های تهیه‌شده از آن می‌تواند به بیماری‌های جدی منجر شود.",
+      "source": "انتخاب",
+      "published": "2026-10-11T13:38:30+03:30",
+      "topics": [
+        "health"
+      ],
+      "topic_scores": {
+        "health": 12
+      },
+      "importance": 12,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-7b0553345c4d",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.7609179743131003
+    },
+    "065cd2365348638b51003f23": {
+      "title": "پایان بورس امروز یکشنبه 19 مهر 1405 / رکورد ارزش معاملات شکسته شد + جدول",
+      "summary": "بورس امروز در حالی به کار خود پایان داد که فضای معاملات در بخش‌هایی از بازار همچنان مثبت بود و حتی برخی صندوق‌های اهرمی نیز در محدوده سبز قرار داشتند، اما ورود موج عرضه و رنج منفی، شاخص‌ها را به عقب راند. در پایان، 62 درصد بازار قرمزپوش شد و شاخص کل به 8 میلیون و 242 هزار واحد رسید. پست پایان بورس ا",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-11T13:36:14+03:30",
+      "topics": [
+        "markets"
+      ],
+      "topic_scores": {
+        "markets": 20
+      },
+      "importance": 20,
+      "important": true,
+      "important_topics": [
+        "markets"
+      ],
+      "slider_topics": [
+        "markets"
+      ],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-eb3abf914d54",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 18,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.774258296224806
+    },
+    "29efd989c791e1a48e3a2d6b": {
+      "title": "ترکیب دارویی جدید می‌تواند ویروس HIV را در بیمارانی که به درمان مقاوم شده‌اند، کنترل کند",
+      "summary": "پژوهشگران می‌گویند ترکیب دو داروی طولانی‌اثر می‌تواند به کنترل دوباره ویروس HIV در بیمارانی کمک کند که ویروس بدنشان در برابر برخی داروهای رایج مقاوم شده است.",
+      "source": "انتخاب",
+      "published": "2026-10-11T13:33:49+03:30",
+      "topics": [
+        "health"
+      ],
+      "topic_scores": {
+        "health": 12
+      },
+      "importance": 12,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-311789a2bdf9",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.7609179734521443
+    },
+    "1abdfb87bcc3a4fa5b101c9a": {
+      "title": "خطرات اندک اما واقعی؛ پیامدهای بالینی آنژیوگرافی تهاجمی در بیماران ACS که پیش‌درمان با P۲Y دریافت کرده و برای CABG در نظر گرفته می‌شوند",
+      "summary": "خلاصه سریع برای خواننده مطالعه: تحلیل رِتروسپکتیو تک‌مرکزی روی 262 بیمار مبتلا به سندرم حاد ایسکمیک (ACS) که تحت آنژیوگرافی تهاجمی قرار گرفتند و پیش‌درمان با P2Y دریافت کرده بودند. داروها: 91٪ بیماران با ticagrelor و 9٪ با thienopyridine پیش‌درمان شده بودند؛ داروها قبل از CABG قطع شد. نتیجه اولیه: و",
+      "source": "پزشک سایت",
+      "published": "2026-10-11T13:32:04+03:30",
+      "topics": [
+        "health"
+      ],
+      "topic_scores": {
+        "health": 17
+      },
+      "importance": 17,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-230a2ada77c3",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.761969692044788
+    },
+    "6ace986e2c2abdb8dbd3abdb": {
+      "title": "هشدار پژوهشگران: هوش مصنوعی در انتخاب فشارسنج دقیق نیست؛ به توصیه‌های آن اعتماد نکنید",
+      "summary": "یک مطالعه جدید نشان می‌دهد بسیاری از ابزارهای هوش مصنوعی هنگام معرفی دستگاه‌های فشارسنج خانگی، مدل‌هایی را پیشنهاد می‌کنند که دقت آن‌ها به‌طور علمی تأیید نشده است. این اشتباه می‌تواند به اندازه‌گیری نادرست فشار خون و در نتیجه، تشخیص یا درمان نامناسب منجر شود.",
+      "source": "انتخاب",
+      "published": "2026-10-11T13:30:42+03:30",
+      "topics": [
+        "technology",
+        "health",
+        "ai"
+      ],
+      "topic_scores": {
+        "technology": 15,
+        "ai": 15,
+        "health": 15
+      },
+      "importance": 15,
+      "important": true,
+      "important_topics": [
+        "ai"
+      ],
+      "slider_topics": [
+        "ai"
+      ],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-e71f3d9a780d",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 10,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.7609179729223252
+    },
+    "8a97c050ebe49b94a7437ddc": {
+      "title": "بورس با کاهش ۲۲ هزار واحدی، به ۸ میلیون و ۲۴۴ هزار واحد رسید",
+      "summary": "بورس تهران در معاملات یکشنبه ۱۹ مهر ۱۴۰۵ پس از رکوردشکنی روز گذشته با افزایش عرضه مواجه شد؛ شاخص کل بیش از ۲۲ هزار واحد کاهش یافت، اما ارزش معاملات بورس به حدود ۵۹ هزار میلیارد تومان رسید و تعداد معاملات از یک میلیون و ۵۹۲ هزار فقره عبور کرد.",
+      "source": "انتخاب",
+      "published": "2026-10-11T13:26:35+03:30",
+      "topics": [
+        "markets"
+      ],
+      "topic_scores": {
+        "markets": 20
+      },
+      "importance": 20,
+      "important": true,
+      "important_topics": [
+        "markets"
+      ],
+      "slider_topics": [
+        "markets"
+      ],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-9d095e7aa358",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 17,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.7609179717964596
+    },
+    "3def5712bc02036c815c18ca": {
+      "title": "رکوردشکنی تاریخی بورس در ارزش معاملات/ خروج 4.8 همت پول از بازار سهام",
+      "summary": "در پایان معاملات امروز شاخص کل بورس با افت ۲۲ هزار و ۵۹۷ واحدی، معادل ۰.۲۷ درصد، به سطح ۸ میلیون و ۲۴۲ هزار و ۸۸۱ واحد رسید.",
+      "source": "دنیای اقتصاد",
+      "published": "2026-10-11T13:25:45+03:30",
+      "topics": [
+        "markets"
+      ],
+      "topic_scores": {
+        "markets": 20
+      },
+      "importance": 20,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-e7f22e703bf2",
+      "representative": false,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 18,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.7624135614766014
+    },
+    "0e2a254a10b9f5fc4c4b9b9d": {
+      "title": "آیتول در سال بحران؛ تداوم خدمات و توسعه شبکه همکاری",
+      "summary": "آیتول در گزارش عملکرد سالانه ۱۴۰۴ خود از ارائه خدمات به بیش از ۵.۲ میلیون مشتری و ثبت ۸.۷۷ میلیون کاربر خبر داده است؛ پلتفرمی که فعالیت خود را با خدمات پرداخت عوارض آغاز کرد و اکنون با توسعه خدمات بیمه‌ای، اعتباری، امدادی و اجرایی، به‌دنبال ایفای نقش گسترده‌تری در مدیریت چرخه عمر خودرو است.",
+      "source": "دنیای اقتصاد",
+      "published": "2026-10-11T13:02:33+03:30",
+      "topics": [
+        "auto"
+      ],
+      "topic_scores": {
+        "auto": 17
+      },
+      "importance": 17,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-826e0caea30e",
+      "representative": false,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 12,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.3395311264859306
+    },
+    "9846a820fee6705c44fafa73": {
+      "title": "9 خودروی جامانده از گرانی بازار + لیست",
+      "summary": "یکی از نکات قابل‌توجه در بررسی بازار خودرو، عقب‌ماندگی نسبی قیمت برخی مدل‌ها از موج افزایش قیمت‌های اخیر است. در حالی که رشد ...",
+      "source": "ایران‌جیب",
+      "published": "2026-10-11T12:11:13+03:30",
+      "topics": [
+        "auto"
+      ],
+      "topic_scores": {
+        "auto": 16
+      },
+      "importance": 16,
+      "important": true,
+      "important_topics": [
+        "auto"
+      ],
+      "slider_topics": [
+        "auto"
+      ],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-235aa35d273d",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 11,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 1.339038957092497
+    },
+    "6764c694e7ab566da93a427a": {
+      "title": "وپارس از عدم حصول نتیجه مزایده واگذاری سهام شرکت گروه مالی پارسیان خبر داد",
+      "summary": "بانک پارسیان در جدیدترین اطلاعیه خود، از عدم حصول نتیجه در مزایده واگذاری سهام شرکت گروه مالی پارسیان خبر داد.",
+      "source": "صدای بورس",
+      "published": "2026-10-11T10:59:00+03:30",
+      "topics": [
+        "markets"
+      ],
+      "topic_scores": {
+        "markets": 15
+      },
+      "importance": 15,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-c4d308b05a3e",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 10,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.5338106120957269
+    },
+    "ef6d53c49a7e93dcd439510f": {
+      "title": "فروش پارس نوآ و کوییک GX-L سایپا از امروز 19 مهر",
+      "summary": "ثبت‌نام طرح مشارکت در تولید پارس نوآ دنده‌ای و کوییک GX-L از ساعت 10 صبح امروز یکشنبه 19 مهر 1405، ویژه متقاضیان عادی و ...",
+      "source": "ایران‌جیب",
+      "published": "2026-10-11T08:31:57+03:30",
+      "topics": [
+        "economy",
+        "auto"
+      ],
+      "topic_scores": {
+        "economy": 9,
+        "auto": 9
+      },
+      "importance": 9,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-6e28516d218d",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.0743710795376036
     }
   },
   "groups": {
@@ -24779,13 +27667,13 @@
       "representative_id": "15a648cdf33dcd982ebe58f4"
     },
     "local-d01152dabcd7": {
-      "representative_id": "97b4201510aa2ee4b288c4d4"
+      "representative_id": "fbde87fe5f392ec960d761cf"
     },
     "local-e5d3e02af750": {
-      "representative_id": "69f6331fd9f33f981e41b0fb"
+      "representative_id": "4820cc1345ca99d6dcd92734"
     },
     "local-64ece4743100": {
-      "representative_id": "25659614fc6fea1b34468025"
+      "representative_id": "3a97f3da8179f084d249a2e0"
     },
     "local-1268d6415154": {
       "representative_id": "b2ef4454a7c85b81d403bd57"
@@ -25703,7 +28591,7 @@
       "representative_id": "47080d32d24b67371a8a8aff"
     },
     "local-c2d5014b69c6": {
-      "representative_id": "a1abd56443b4036a8df1db80"
+      "representative_id": "8da52c39eeda258db7a60d18"
     },
     "local-0ae57b6cfaee": {
       "representative_id": "f704a0c35066536c4e502632"
@@ -26443,22 +29331,274 @@
     "local-cc68628e2c3e": {
       "representative_id": "aa35ef833b970588b329a151"
     },
+    "local-eb3abf914d54": {
+      "representative_id": "065cd2365348638b51003f23"
+    },
     "local-d5bec462be5f": {
       "representative_id": "ef31a057899129c9dde2bdbe"
     },
-    "local-192e443e42dd": {
-      "representative_id": "eff3d863585626e64111a0d8"
+    "local-4e73c9d73fb2": {
+      "representative_id": "b54efc1f421cab9dedb31495"
+    },
+    "local-faa29f976d0c": {
+      "representative_id": "d01c65dd7aab324754b4837c"
+    },
+    "local-3f0f39cf7f26": {
+      "representative_id": "5845ebf5484e5c67935d3b1c"
+    },
+    "local-9f9ba457f23d": {
+      "representative_id": "bdb4fbf86bf88bf04b0d6e35"
+    },
+    "local-042e67cbe058": {
+      "representative_id": "2228ce2f84ee905ed7401cf2"
+    },
+    "local-dedb7a02e7d4": {
+      "representative_id": "efb25be097c86dfb4fcf58a7"
+    },
+    "local-c0f03c20b0e1": {
+      "representative_id": "b44ab2afd8f27c043e458064"
+    },
+    "local-8a43444a1481": {
+      "representative_id": "504348315434f9cc867af2d0"
+    },
+    "local-33cba7040ed5": {
+      "representative_id": "6dc83660dcb6e95d718599c5"
+    },
+    "local-908f2bda3bbf": {
+      "representative_id": "3164dd195e551cdfd29bd718"
+    },
+    "local-23be9a3dfdf2": {
+      "representative_id": "853cbd4c310d6ab8d10003d8"
+    },
+    "local-347b63c8ee48": {
+      "representative_id": "88c1d45c9670a58cc2b705e9"
+    },
+    "local-25557bc1743d": {
+      "representative_id": "bffaf523f3ad2b9768a696ab"
+    },
+    "local-c559bbbe23a1": {
+      "representative_id": "4c336b2d1ea984dde2e469d5"
+    },
+    "local-73b8a946f7e1": {
+      "representative_id": "dbc988b5730a8ab710ae8f6b"
+    },
+    "local-56d38c2a377e": {
+      "representative_id": "825b2884ef081bfd58841e41"
+    },
+    "local-3bef5b266967": {
+      "representative_id": "f1eeb4e5e3d4caf0e5cb7bb3"
+    },
+    "local-b67bac3b245f": {
+      "representative_id": "0df9fb689270370e0f8c4f01"
+    },
+    "local-2028ff2b9bb2": {
+      "representative_id": "e20678b6c02cae1c28d99810"
+    },
+    "local-54d0416241a6": {
+      "representative_id": "ba8ab2aaddfd3dbff71073a9"
+    },
+    "local-419c39d853cb": {
+      "representative_id": "a3af93a1faa7d8bdd990435b"
+    },
+    "local-113a7a59d4a9": {
+      "representative_id": "d074e550871a8aa66cf7d5b0"
+    },
+    "local-8c6aff488fbd": {
+      "representative_id": "9fc52e3c5a31821e22d054c5"
+    },
+    "local-a4238547ce1d": {
+      "representative_id": "3da2172f20b928cc2bdecf43"
+    },
+    "local-8719f72da618": {
+      "representative_id": "2316b8c9175fe1db77f0413a"
+    },
+    "local-b696384cdaa6": {
+      "representative_id": "b9e69362849e507cc91c0c1a"
+    },
+    "local-228dd2f5781a": {
+      "representative_id": "5a19bf6340e0efb6a4bdea5f"
+    },
+    "local-b29aff3e348f": {
+      "representative_id": "a099fb6d0036e2563f539425"
+    },
+    "local-0ac70178e887": {
+      "representative_id": "854382062d1da34184f539a2"
+    },
+    "local-764a33d9286c": {
+      "representative_id": "f913a09c5ce028350b1b0515"
+    },
+    "local-cae1f1b01a90": {
+      "representative_id": "14ba71b76e711f98ca9af8d7"
+    },
+    "local-2d739e73ca50": {
+      "representative_id": "061fcfa9a3c06360b61a1965"
+    },
+    "local-410c3548809b": {
+      "representative_id": "2caab8bf8bbf3a6c43ab1062"
+    },
+    "local-c9f5230b393e": {
+      "representative_id": "b21cf7082f048698715e2f11"
+    },
+    "local-8c5795abcf54": {
+      "representative_id": "6500187bdae8c3afed2d0ac4"
+    },
+    "local-bd0dda4e5442": {
+      "representative_id": "f7a69518f7aa43cbee933564"
+    },
+    "local-c5c15d8039e7": {
+      "representative_id": "a0b3ee3aa09400e985fdbcca"
+    },
+    "local-cb6ea843c6ee": {
+      "representative_id": "dd1406e382e25daec3108c37"
+    },
+    "local-f9c34ff0cf7a": {
+      "representative_id": "0e47436547fc72c12811f280"
+    },
+    "local-04873cf397a0": {
+      "representative_id": "cdbf9caf88da0eb04dc14be2"
+    },
+    "local-e44acd01b435": {
+      "representative_id": "6c685d1fa8908a836c0d9bf1"
+    },
+    "local-6272cdbd8b95": {
+      "representative_id": "2af436e2161aae6367b51354"
+    },
+    "local-5a0b31cca000": {
+      "representative_id": "04cba689c8e201e802103dfb"
+    },
+    "local-63628ab597cb": {
+      "representative_id": "f18ea6aeb7337d1e50d45ff1"
+    },
+    "local-fa5f3ec95cfb": {
+      "representative_id": "3abae24b5c82ab3755c8a3f7"
+    },
+    "local-34b314151827": {
+      "representative_id": "c814fdd359a96c037e50ca5f"
+    },
+    "local-a92fcc7f5ca7": {
+      "representative_id": "85cc06e10bc1cae723f34bf8"
+    },
+    "local-5927137aeb3c": {
+      "representative_id": "bc1b9e86305df8518a808128"
+    },
+    "local-e711def50955": {
+      "representative_id": "af3009a4b827eba2c6ebddbb"
+    },
+    "local-6169a1223397": {
+      "representative_id": "b1da3906e8518f724c23ecce"
+    },
+    "local-f53923ca52e7": {
+      "representative_id": "3dc6dd25c0ce07082ae4bdbb"
+    },
+    "local-91099d14b516": {
+      "representative_id": "ee22b89b5a7d78477db2d21b"
+    },
+    "local-e7f22e703bf2": {
+      "representative_id": "30c11e09099ab1c37e6941fc"
+    },
+    "local-ec3b7634424f": {
+      "representative_id": "348bdb6844bbe11c1539546e"
+    },
+    "local-783ef5cbbb51": {
+      "representative_id": "b41da67fb82fa0c12bafc3cc"
+    },
+    "local-c19a4522cd0a": {
+      "representative_id": "d0384c4d15f1070e4eecdbbb"
+    },
+    "local-42cad518625e": {
+      "representative_id": "3553cc4bae5216f07262ffbf"
+    },
+    "local-9bf28160ce06": {
+      "representative_id": "41de5ee86d9058b438b33477"
+    },
+    "local-eba0753d9fee": {
+      "representative_id": "2da1e60a76c7cf01278b4ae6"
+    },
+    "local-953af20e03fe": {
+      "representative_id": "aac01aceb9ec3961299b039f"
+    },
+    "local-9efb42ac35f2": {
+      "representative_id": "d07fcfa7f0dfb00fb4f3d4f3"
+    },
+    "local-a7a1c04b083f": {
+      "representative_id": "75d6ac97f2b010e08bd78217"
+    },
+    "local-fba71318d1d2": {
+      "representative_id": "53ab336880fae81439a5d18d"
+    },
+    "local-4fd489ef03d6": {
+      "representative_id": "eb8e5feb17041f78d2be75fd"
+    },
+    "local-3f01956e290e": {
+      "representative_id": "5aa108d600d277ae9291e030"
+    },
+    "local-47b0d15c3055": {
+      "representative_id": "cf7a8a722ce41efa8f965ea5"
+    },
+    "local-4623bab87796": {
+      "representative_id": "5566b5aad40966dfc50bd8ce"
+    },
+    "local-6a903ed06974": {
+      "representative_id": "c8ddc47af9592494548bd0af"
+    },
+    "local-5b36440f91b2": {
+      "representative_id": "1d09859f243da4403e4e035a"
+    },
+    "local-514a66c6719c": {
+      "representative_id": "566d4264603fd88e5fbda956"
+    },
+    "local-1c1aafed8f59": {
+      "representative_id": "5b0c50e1756823f54c58a721"
+    },
+    "local-068a4900b8a9": {
+      "representative_id": "869ba76a914d04bc4fd4bcfd"
+    },
+    "local-28976db39383": {
+      "representative_id": "564553a0aa2bc13f600a9e0e"
+    },
+    "local-31205245c906": {
+      "representative_id": "0ed1cc0cecab01db1f09a777"
+    },
+    "local-0cf9980f951b": {
+      "representative_id": "fb1d6f2d595984f146ce8b24"
+    },
+    "local-c37d14429c8e": {
+      "representative_id": "1ec5697b27f08925b237e088"
+    },
+    "local-7b0553345c4d": {
+      "representative_id": "4491843dfc440f44417d8d12"
+    },
+    "local-311789a2bdf9": {
+      "representative_id": "29efd989c791e1a48e3a2d6b"
+    },
+    "local-230a2ada77c3": {
+      "representative_id": "1abdfb87bcc3a4fa5b101c9a"
+    },
+    "local-e71f3d9a780d": {
+      "representative_id": "6ace986e2c2abdb8dbd3abdb"
+    },
+    "local-9d095e7aa358": {
+      "representative_id": "8a97c050ebe49b94a7437ddc"
+    },
+    "local-235aa35d273d": {
+      "representative_id": "9846a820fee6705c44fafa73"
+    },
+    "local-c4d308b05a3e": {
+      "representative_id": "6764c694e7ab566da93a427a"
+    },
+    "local-6e28516d218d": {
+      "representative_id": "ef6d53c49a7e93dcd439510f"
     }
   },
   "usage": {
     "date": "2026-10-11",
-    "requests": 23,
+    "requests": 24,
     "last_success": "2026-10-11T05:23:32Z",
     "last_success_epoch": 1791696212.862786,
-    "last_article_generation": "2026-10-11T10:09:29Z",
-    "quota_block_until_epoch": 1791734966.5392315,
-    "quota_block_until": "2026-10-11T16:09:26Z"
+    "last_article_generation": "2026-10-11T12:11:49Z",
+    "quota_block_until_epoch": 1791742304.87176,
+    "quota_block_until": "2026-10-11T18:11:44Z"
   },
-  "selection_window_end": "2026-10-11T10:09:24Z",
-  "selection_window_start": "2026-10-11T08:09:24Z"
+  "selection_window_end": "2026-10-11T12:11:40Z",
+  "selection_window_start": "2026-10-11T10:11:40Z"
 }
