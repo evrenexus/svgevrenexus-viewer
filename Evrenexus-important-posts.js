@@ -193,7 +193,6 @@
           var slides = document.getElementById("Evrenxus-slides");
           if (slides && !slides.children.length) setStatus(slides, "دریافت مطالب مهم ممکن نشد؛ کمی بعد دوباره تلاش کنید");
         }
-        renderSidebar([]);
       });
   }
 
