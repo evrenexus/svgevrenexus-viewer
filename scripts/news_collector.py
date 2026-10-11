@@ -39,6 +39,10 @@ SOURCES=[
  {"name":"پزشک سایت","category":"پزشکی و سلامت","site":"https://www.pezeshk-site.ir/","feeds":["https://www.pezeshk-site.ir/feed/"],"allow_internal_republish":True},
  {"name":"انتخاب","category":"اقتصاد و سرمایه‌گذاری","site":"https://www.entekhab.ir/","feeds":["https://www.entekhab.ir/fa/rss/1"],"allow_internal_republish":True},
  {"name":"فرارو","category":"اقتصاد و سرمایه‌گذاری","site":"https://fararu.com/","feeds":["https://fararu.com/fa/rss"],"allow_internal_republish":True},
+ {"name":"ایسنا","category":"اقتصاد و سرمایه‌گذاری","site":"https://www.isna.ir/","feeds":["https://www.isna.ir/rss"],"allow_internal_republish":True},
+ {"name":"ایرنا","category":"اقتصاد و سرمایه‌گذاری","site":"https://www.irna.ir/","feeds":["https://www.irna.ir/rss"],"allow_internal_republish":True},
+ {"name":"مهر","category":"اقتصاد و سرمایه‌گذاری","site":"https://www.mehrnews.com/","feeds":["https://www.mehrnews.com/rss"],"allow_internal_republish":True},
+ {"name":"ایران‌جیب","category":"اقتصاد و سرمایه‌گذاری","site":"https://www.iranjib.ir/","feeds":[],"allow_internal_republish":True},
 ]
 
 TOPIC_RULES={
@@ -239,20 +243,36 @@ def dedup_text(item):
     return "".join(sorted(dedup_tokens(item)))
 
 def is_duplicate_news(a,b):
+    # Same-source follow-up coverage should remain available; only collapse
+    # cross-publisher copies/syndicated reports.
     if a.get("source")==b.get("source"): return False
+    title_a=normalize_text(a.get("title",""))
+    title_b=normalize_text(b.get("title",""))
     ta=dedup_tokens(a); tb=dedup_tokens(b)
     if not ta or not tb: return False
     shared=len(ta & tb); union=len(ta | tb)
     jaccard=shared/union if union else 0
-    ratio=SequenceMatcher(None,normalize_text(a.get("title","")),normalize_text(b.get("title",""))).ratio()
-    # Very similar headlines are duplicates even when one source changes word order.
+    ratio=SequenceMatcher(None,title_a,title_b).ratio()
+    # Catch near-identical headlines despite punctuation or word-order changes.
     if ratio>=0.76: return True
-    # Two or more meaningful shared terms plus reasonable title overlap catches
-    # variants such as «استعفای وزیر نفت» / «وزیر نفت استعفا داد».
+    # Catch headline variants while requiring meaningful overlap to avoid
+    # merging unrelated stories that merely share a person or broad topic.
     if shared>=2 and (jaccard>=0.50 or ratio>=0.52): return True
-    # A compact event headline can be worded quite differently; require three
-    # shared meaningful terms to avoid merging generic stories.
     if shared>=3 and jaccard>=0.42: return True
+
+    # Some publishers rewrite a copied headline. Compare summaries only as a
+    # secondary signal and require both several shared terms and high overlap.
+    summary_a=normalize_text(a.get("summary",""))
+    summary_b=normalize_text(b.get("summary",""))
+    if len(summary_a)>=80 and len(summary_b)>=80:
+        sa={t for t in (dedup_stem(x) for x in re.findall(r"[\\w؀-ۿ]+",summary_a,re.UNICODE)) if t}
+        sb={t for t in (dedup_stem(x) for x in re.findall(r"[\\w؀-ۿ]+",summary_b,re.UNICODE)) if t}
+        summary_shared=len(sa & sb)
+        summary_union=len(sa | sb)
+        summary_jaccard=summary_shared/summary_union if summary_union else 0
+        summary_ratio=SequenceMatcher(None,summary_a,summary_b).ratio()
+        if summary_ratio>=0.72 and summary_shared>=8: return True
+        if summary_shared>=10 and summary_jaccard>=0.55: return True
     return False
 
 def deduplicate_news(items):
