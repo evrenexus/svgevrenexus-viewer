@@ -152,15 +152,15 @@ function fetchWithTimeout(url){
   ]);
 }
 function fetchJSON(file,fallback){
-  var urls=[dataURL(file),"https://evrenexus.github.io/svgevrenexus-viewer/market-data/"+file+"?v="+Date.now(),fallback+file+"?v="+Date.now()];
+  var urls=[dataURL(file)];
   function attempt(i){
     if(i>=urls.length)return Promise.reject(new Error("all data sources failed: "+file));
     return fetchWithTimeout(urls[i]).then(function(r){if(!r.ok)throw new Error(file+" "+r.status);return r.json()}).catch(function(){return attempt(i+1)});
   }
   return attempt(0);
 }
-function loadTGJU(){return fetchJSON("tgju.json","https://raw.githubusercontent.com/evrenexus/svgevrenexus-viewer/main/market-data/").then(function(t){render(metal,"metals",[t.precious||[],t.baseMetals||[],t.energy||[]],t.scrapedAt);render(cur,"currency",[t.currency||[]],t.scrapedAt)})}
-function loadCrypto(){return fetchJSON("nobitex.json","https://raw.githubusercontent.com/evrenexus/svgevrenexus-viewer/main/market-data/").then(function(n){
+function loadTGJU(){return fetchJSON("tgju.json").then(function(t){render(metal,"metals",[t.precious||[],t.baseMetals||[],t.energy||[]],t.scrapedAt);render(cur,"currency",[t.currency||[]],t.scrapedAt)})}
+function loadCrypto(){return fetchJSON("nobitex.json").then(function(n){
   if(!crypto)return;
   var markets=(n.markets||[]).filter(function(x){return x.symbol!=="USDT"&&x.changePercent1hUSDT!=null&&Number.isFinite(Number(x.changePercent1hUSDT));});
   var ranked=(n.markets||[]).filter(function(x){return x.symbol!=="USDT"&&Number(x.rank)>0;}).sort(function(a,b){return Number(a.rank)-Number(b.rank);}).slice(0,8);
@@ -198,7 +198,7 @@ update();setInterval(update,1000);
   if (window.__EVRENEXUS_IMPORTANT_POSTS_SCRIPT_REQUESTED__) return;
   window.__EVRENEXUS_IMPORTANT_POSTS_SCRIPT_REQUESTED__ = true;
   var script = document.createElement("script");
-  script.src = "https://evrenexus.github.io/svgevrenexus-viewer/Evrenexus-important-posts.js?v=20261011-06";
+  script.src = "https://evrenexus.ir/Evrenexus-important-posts.js?v=20261011-07";
   script.async = true;
   document.head.appendChild(script);
 })();
