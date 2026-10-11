@@ -137,7 +137,7 @@ def parse_json_object_response(raw):
 def call_OpenRouter(prompt, key):
     """Call OpenRouter's OpenAI-compatible API and require a JSON object response."""
     payload = json.dumps({
-        "model": os.environ.get("OPENROUTER_MODEL", "openrouter/free"),
+        "model": os.environ.get("OPENROUTER_MODEL", "google/gemma-4-31b-it:free"),
         "messages": [{"role": "user", "content": prompt}],
         "temperature": 0.1,
         "max_completion_tokens": 8192,
