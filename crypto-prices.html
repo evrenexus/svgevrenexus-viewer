@@ -24,7 +24,7 @@ th{background:#f6f7f8;color:#596168;font-weight:700}
 th,td{padding:8px 9px;border-bottom:1px solid #edf0f1;text-align:right}
 td.num{text-align:left;direction:ltr;font-variant-numeric:tabular-nums}
 tr:hover td{background:#fafafa}
-.change-up{color:#16844a}.change-down{color:#c62828}.crypto-row{cursor:pointer}.crypto-row:hover td{background:#f4f7f9}
+.change-up{color:#16844a}.change-down{color:#c62828}.crypto-row{cursor:pointer}.crypto-row:hover td{background:#f4f7f9}.table-wrap{width:100%;overflow-x:auto}table{min-width:760px}th.sortable{cursor:pointer;white-space:nowrap;user-select:none}th.sortable:hover{background:#e9edf0}th .sort-mark{font-size:8px;margin-right:3px;color:#202c35}.row-num{color:#858c91;text-align:center!important}.rank-missing{color:#a1a6aa}
 .note{font-size:8.5px;color:#737a7f;line-height:1.9;padding:11px 13px;background:#fafafa}
 .status{padding:25px;text-align:center;color:#777;font-size:10px}
 @media(max-width:700px){#page{width:100%;padding:112px 8px 20px}.head h1{font-size:16px}.tools{flex-wrap:wrap}table{font-size:8.5px}th,td{padding:7px 6px}}
@@ -54,7 +54,7 @@ tr:hover td{background:#fafafa}
   <div id="updated" class="update">در حال دریافت قیمت‌ها...</div>
 </div>
 <div id="prices" class="card"><div class="status">در حال دریافت قیمت‌ها...</div></div>
-<div class="card note">قیمت تومانی مستقیماً از داده بازار نوبیتکس دریافت می‌شود. قیمت تتر نیز به‌صورت مستقل در ستون «قیمت تتر» نمایش داده می‌شود. داده‌ها حداکثر هر ۵ دقیقه به‌روزرسانی می‌شوند.</div>
+<div class="card note">قیمت‌ها از بازارهای نوبیتکس دریافت می‌شوند و ترتیب اولیه بر اساس رتبه جهانی ارزش بازار است. برای مرتب‌سازی صعودی یا نزولی، روی عنوان هر یک از دو ستون نوسان ۱۵ دقیقه‌ای کلیک کنید. درصد نوسان با مقایسه قیمت فعلی و آخرین سابقه موجود در فاصله حداقل ۱۵ دقیقه محاسبه می‌شود؛ پس از فعال‌شدن سابقه‌گیری، حدود ۱۵ تا ۲۰ دقیقه زمان لازم است تا داده اولیه آماده شود. رتبه جهانی از CoinGecko دریافت می‌شود.</div>
 </section><div id="sidebar-host"></div></main>
 <footer class="Evrenxus-home-footer"><div class="footer-tags-title">برچسب‌های خبری</div><div class="news-tags-list" id="newsTags"></div><div class="footer-copy">© اورین نکسوس</div></footer>
 <script>
@@ -66,24 +66,57 @@ function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){retur
 function num(v){return v==null?null:Number(v)}
 function money(v){return v==null?"-":new Intl.NumberFormat("fa-IR",{maximumFractionDigits:2}).format(v)}
 function tvSymbol(x){return ({BTC:"BINANCE:BTCUSDT",ETH:"BINANCE:ETHUSDT",LTC:"BINANCE:LTCUSDT",USDT:"BINANCE:USDTUSD",XRP:"BINANCE:XRPUSDT",BNB:"BINANCE:BNBUSDT",DOGE:"BINANCE:DOGEUSDT",TRX:"BINANCE:TRXUSDT",ADA:"BINANCE:ADAUSDT",SOL:"BINANCE:SOLUSDT"})[x.symbol]||""}
+var sortKey=null,sortDir=1;
 function render(){
  var q=(search.value||"").trim().toLocaleLowerCase();
  var rows=items.filter(function(x){return !q||String(x.name||"").toLocaleLowerCase().indexOf(q)!==-1||String(x.symbol||"").toLocaleLowerCase().indexOf(q)!==-1});
- if(!rows.length){prices.innerHTML='<div class="status">ارزی با این مشخصات پیدا نشد.</div>';return}
- var html='<section class="group"><div class="group-title">ارزهای دیجیتال</div><table><thead><tr><th>ارز</th><th>نماد</th><th>قیمت تومان</th><th>قیمت تتر</th><th>تغییر ۲۴ ساعت</th></tr></thead><tbody>';
- rows.forEach(function(x){
-   var ch=num(x.changePercent24h),cls=ch>0?"change-up":ch<0?"change-down":"",arrow=ch>0?"▲":ch<0?"▼":"";
-   var toman=x.priceIRT==null?null:x.priceIRT;
-   var tv=tvSymbol(x);var link=tv?"./market-chart.html?symbol="+encodeURIComponent(tv)+"&name="+encodeURIComponent(x.name||""):"";html+='<tr class="crypto-row" data-link="'+esc(link)+'" onclick="if(this.dataset.link)location.href=this.dataset.link"><td>'+esc(x.name)+'</td><td class="num">'+esc(x.symbol)+'</td><td class="num">'+money(toman)+' تومان</td><td class="num">'+money(x.priceUSDT)+' USDT</td><td class="'+cls+'">'+arrow+(ch!=null?money(ch)+"%":"-")+'</td></tr>';
+ rows.sort(function(a,b){
+   if(sortKey){
+     var av=num(a[sortKey]),bv=num(b[sortKey]);
+     if(av==null&&bv!=null)return 1;
+     if(av!=null&&bv==null)return -1;
+     if(av!=null&&bv!=null&&av!==bv)return (av-bv)*sortDir;
+   }
+   var ar=num(a.rank),br=num(b.rank);
+   if(ar==null&&br!=null)return 1;
+   if(ar!=null&&br==null)return -1;
+   if(ar!=null&&br!=null&&ar!==br)return ar-br;
+   return String(a.symbol||"").localeCompare(String(b.symbol||""));
  });
- html+='</tbody></table></section>';
+ if(!rows.length){prices.innerHTML='<div class="status">ارزی با این مشخصات پیدا نشد.</div>';return}
+ function changeCell(value){
+   var ch=num(value),cls=ch>0?"change-up":ch<0?"change-down":"";
+   var arrow=ch>0?"▲ ":ch<0?"▼ ":"";
+   return '<td class="'+cls+' num">'+(ch==null?"—":arrow+money(Math.abs(ch))+"%")+'</td>';
+ }
+ var html='<section class="group"><div class="group-title">همه ارزهای قابل معامله در نوبیتکس · ترتیب پیش‌فرض: رتبه جهانی ارزش بازار</div><div class="table-wrap"><table><thead><tr>'+
+ '<th>ردیف</th><th>نام ارز به فارسی</th><th>شناسه ارز</th><th>قیمت بر اساس تومان</th>'+
+ '<th class="sortable" data-sort="changePercent15mIRT">نوسان ۱۵ دقیقه‌ای تومان <span class="sort-mark">'+(sortKey==="changePercent15mIRT"?(sortDir===1?"▲":"▼"):"↕")+'</span></th>'+
+ '<th>قیمت بر اساس تتر</th>'+
+ '<th class="sortable" data-sort="changePercent15mUSDT">نوسان ۱۵ دقیقه‌ای تتر <span class="sort-mark">'+(sortKey==="changePercent15mUSDT"?(sortDir===1?"▲":"▼"):"↕")+'</span></th>'+
+ '</tr></thead><tbody>';
+ rows.forEach(function(x,i){
+   html+='<tr class="crypto-row"><td class="row-num">'+money(i+1)+'</td><td>'+esc(x.name||x.symbol)+'</td><td class="num">'+esc(x.symbol)+'</td>'+
+     '<td class="num">'+(num(x.priceIRT)==null?"—":money(x.priceIRT)+" تومان")+'</td>'+
+     changeCell(x.changePercent15mIRT)+
+     '<td class="num">'+(num(x.priceUSDT)==null?"—":money(x.priceUSDT)+" USDT")+'</td>'+
+     changeCell(x.changePercent15mUSDT)+'</tr>';
+ });
+ html+='</tbody></table></div></section>';
  prices.innerHTML=html;
+ Array.prototype.forEach.call(prices.querySelectorAll("th[data-sort]"),function(th){
+   th.addEventListener("click",function(){
+     var key=th.getAttribute("data-sort");
+     if(sortKey===key)sortDir*=-1;else{sortKey=key;sortDir=-1;}
+     render();
+   });
+ });
 }
 fetch(dataUrl,{cache:"no-store"}).then(function(r){if(!r.ok)throw new Error("data unavailable");return r.json()}).then(function(d){
  items=Array.isArray(d.markets)?d.markets:[];
  if(!items.length)throw new Error("empty");
  var n=d.scrapedAt?new Date(d.scrapedAt):null;
- updated.textContent="آخرین دریافت از نوبیتکس: "+(n?n.toLocaleString("fa-IR-u-ca-persian",{timeZone:"Asia/Tehran"}):"-");
+ updated.textContent="آخرین دریافت قیمت از نوبیتکس: "+(n?n.toLocaleString("fa-IR-u-ca-persian",{timeZone:"Asia/Tehran"}):"-");
  render();
 }).catch(function(){prices.innerHTML='<div class="status">فعلاً اطلاعات قیمت ارزهای دیجیتال در دسترس نیست.</div>';updated.textContent="دریافت قیمت‌ها ناموفق بود."});
 search.addEventListener("input",render);
