@@ -122,11 +122,13 @@ jobs:
         if: steps.build_public_data.outcome == 'failure'
         run: git checkout -- data/public/news.json data/public/editorial.json data/public/policy-terms.json data/public/meta.json
       - name: Install image-check dependency
+        id: install_image_check
         if: steps.build_public_data.outcome == 'success'
+        continue-on-error: true
         run: npm install --no-save cheerio@1.0.0-rc.12
       - name: Check images for separate site features
         id: check_images
-        if: steps.build_public_data.outcome == 'success'
+        if: steps.build_public_data.outcome == 'success' && steps.install_image_check.outcome == 'success'
         continue-on-error: true
         run: node scripts/check-images.mjs
       - name: Restore image health if image check fails
