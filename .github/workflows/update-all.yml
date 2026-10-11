@@ -156,6 +156,11 @@ jobs:
         if: steps.build_important_boxes.outcome == 'success'
         continue-on-error: true
         run: node scripts/validate-featured.mjs
+      - name: Restore separate boxes if their build or validation fails
+        if: steps.build_important_boxes.outcome != 'success' || steps.validate_important_boxes.outcome != 'success'
+        run: |
+          git checkout -- data/public/featured.json articles || true
+          git clean -fd articles/
       - name: Commit important boxes and article pages
         if: steps.build_important_boxes.outcome == 'success' && steps.validate_important_boxes.outcome == 'success'
         run: |
