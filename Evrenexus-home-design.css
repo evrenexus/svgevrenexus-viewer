@@ -1,0 +1,57 @@
+/* Evren Nexus — homepage visual refresh (keeps existing live-data scripts intact) */
+:root{--home-bg:#f3f5f7;--home-surface:#fff;--home-ink:#182b3a;--home-muted:#687987;--home-line:#e0e6eb;--home-navy:#142d40;--home-red:#d64c43;--home-teal:#178477;--home-shadow:0 8px 26px rgba(18,39,55,.06)}
+html,body{background:var(--home-bg)!important;color:var(--home-ink)}
+#page{width:1180px!important;max-width:100%!important;min-width:0!important;margin:0 auto!important;padding:148px 18px 28px!important;display:flex!important;flex-direction:row!important;align-items:flex-start!important;gap:20px!important;direction:rtl}
+#content{width:auto!important;max-width:none!important;min-width:0!important;flex:1 1 auto!important;order:1;overflow:visible!important}
+#sidebar-host{width:285px!important;min-width:285px!important;max-width:285px!important;flex:0 0 285px!important;order:2}
+.news-search{background:#fff;border:1px solid var(--home-line);border-radius:12px;padding:8px;gap:8px;margin-bottom:16px;box-shadow:var(--home-shadow)}
+.news-search input{border:0!important;background:#f8fafb;border-radius:8px;padding:10px 12px!important;font:12px Tahoma,Arial,sans-serif!important;color:var(--home-ink)}
+.news-search input:focus{outline:1px solid #b9d3d0;border-color:#b9d3d0}
+.news-search button{border-radius:8px;background:var(--home-navy);padding:0 18px;font:700 11px Tahoma,Arial,sans-serif}
+#Evrenxus-slider{border-radius:16px!important;box-shadow:var(--home-shadow);margin-bottom:20px!important;height:350px!important}
+#Evrenxus-slider .Evrenxus-slide-caption{right:24px!important;left:24px!important;bottom:24px!important;max-width:calc(100% - 48px)!important;width:fit-content;background:rgba(13,32,46,.86)!important;border-left:0!important;border-right:4px solid var(--home-red)!important;border-radius:8px!important;text-align:right!important;direction:rtl!important;font:900 22px/1.8 Tahoma,Arial,sans-serif!important;padding:15px 18px!important}
+#Evrenxus-slider .Evrenxus-slider-prev,#Evrenxus-slider .Evrenxus-slider-next{border-radius:7px;background:rgba(13,32,46,.65)}
+#river{border:1px solid var(--home-line)!important;border-radius:14px!important;box-shadow:var(--home-shadow);overflow:hidden!important;background:transparent!important}
+#river>.section-title{padding:13px 16px!important;background:#fff!important;border-bottom:1px solid var(--home-line)!important;border-top:3px solid var(--home-navy);font-size:16px!important;color:var(--home-ink)!important}
+#list{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px!important;padding:14px!important;background:var(--home-bg)}
+#list .item{min-width:0;min-height:100%;display:flex!important;flex-direction:column!important;gap:0!important;padding:0!important;border:1px solid var(--home-line)!important;border-radius:12px!important;overflow:hidden!important;background:#fff!important;box-shadow:var(--home-shadow);transition:transform .18s,border-color .18s}
+#list .item:hover{background:#fff!important;border-color:#b6d8d2!important;transform:translateY(-2px)}
+#list .item img{width:100%!important;min-width:0!important;height:150px!important;object-fit:cover!important;background:#e7edf0!important}
+#list .item .content{width:100%;padding:13px 14px 12px;display:flex;flex-direction:column;flex:1}
+#list .item .title{font:800 14px/1.9 Tahoma,Arial,sans-serif!important;color:var(--home-ink)!important;overflow-wrap:anywhere}
+#list .item .summary{font:400 12px/1.9 Tahoma,Arial,sans-serif!important;color:var(--home-muted)!important;margin-top:7px}
+#list .item .meta{font:400 10px/1.8 Tahoma,Arial,sans-serif!important;color:#8998a3!important;margin-top:auto;padding-top:10px}
+#Evrenxus-sidebar .Evrenxus-sidebar-box{width:100%!important;border:1px solid var(--home-line)!important;border-radius:14px!important;box-shadow:var(--home-shadow);overflow:hidden;margin-bottom:16px!important}
+#Evrenxus-sidebar .Evrenxus-sidebar-title{padding:13px 15px!important;font-size:15px!important;background:#fff;border-bottom:1px solid var(--home-line)!important}
+#Evrenxus-sidebar .Evrenxus-sidebar-title:before{height:19px!important;border-radius:3px}
+#Evrenxus-sidebar-important .Evrenxus-important-link{padding:11px 13px!important;font:700 12px/1.9 Tahoma,Arial,sans-serif!important;background:#fff}
+#Evrenxus-sidebar-important .Evrenxus-important-time{font:400 10px/1.8 Tahoma,Arial,sans-serif!important;color:#94a1aa!important}
+#Evrenxus-sidebar .Evrenxus-menu-link{padding:11px 13px!important;font-size:12px!important}
+#news-pagination{padding:0 14px 14px;background:var(--home-bg)}
+#news-pagination button{border-radius:8px;padding:8px 14px;font-size:11px}
+#news-pagination .page-numbers button{border-radius:6px}
+.Evrenxus-home-footer{width:min(1144px,calc(100% - 36px))!important;margin:28px auto 0!important;border-radius:14px 14px 0 0;padding:20px!important;box-sizing:border-box}
+.Evrenxus-home-footer .footer-copy{font-size:11px!important}
+@media(max-width:900px){
+ #page{width:100%!important;padding:145px 13px 24px!important;gap:14px!important}
+ #sidebar-host{width:245px!important;min-width:245px!important;max-width:245px!important;flex-basis:245px!important}
+ #list{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:11px!important;padding:11px!important}
+ #Evrenxus-slider{height:auto!important;aspect-ratio:16/9;min-height:230px;max-height:340px}
+ #Evrenxus-slider .Evrenxus-slide-caption{font-size:17px!important;right:15px!important;left:15px!important;bottom:15px!important;max-width:calc(100% - 30px)!important}
+}
+@media(max-width:700px){
+ #page{width:100%!important;max-width:100%!important;padding:140px 11px 20px!important;display:flex!important;flex-direction:column!important;gap:16px!important;overflow:hidden}
+ #content{width:100%!important;max-width:100%!important;min-width:0!important;flex:0 0 auto!important;overflow:hidden!important}
+ #sidebar-host{display:block!important;width:100%!important;min-width:0!important;max-width:100%!important;flex:0 0 auto!important;margin-top:0!important}
+ #Evrenxus-slider{margin-bottom:16px!important;min-height:190px;aspect-ratio:16/9}
+ #Evrenxus-slider .Evrenxus-slide-caption{font-size:13px!important;line-height:1.75!important;padding:8px 10px!important;right:10px!important;left:10px!important;bottom:12px!important;max-width:calc(100% - 20px)!important}
+ #list{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:9px!important;padding:9px!important}
+ #list .item img{height:110px!important}
+ #list .item .content{padding:10px!important}
+ #list .item .title{font-size:12px!important;line-height:1.8!important}
+ #list .item .summary{font-size:10px!important}
+ #list .item .meta{font-size:9px!important}
+ .news-search button{padding:0 12px}
+ .Evrenxus-home-footer{width:calc(100% - 22px)!important}
+}
+@media(max-width:390px){#list{grid-template-columns:1fr!important}#list .item img{height:160px!important}}
