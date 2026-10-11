@@ -49,7 +49,7 @@ tr:hover td{background:#fafafa}
 <div class="card">
   <div class="head">
     <h1>قیمت زنده ارزهای دیجیتال</h1>
-    <p>۸ ارز با بیشترین افزایش و ۸ ارز با بیشترین کاهش بر اساس تغییر قیمت تتری در یک ساعت اخیر.</p>
+    <p>قیمت و نوسان یک‌ساعته ارزهای دیجیتال بر اساس USDT.</p>
   </div>
   <div class="nav"><a href="./">← صفحه اصلی</a><a href="./news-river.html?topic=currency-gold">اخبار ارز و طلا</a></div>
   <div class="tools"><input id="search" type="search" placeholder="جستجو با شناسه ارز (مثلاً BTC)..." autocomplete="off"></div>
@@ -94,7 +94,7 @@ function render(){
    var arrow=ch>0?"▲ ":ch<0?"▼ ":"";
    return '<td class="'+cls+' num">'+(ch==null?'<span title="برای محاسبه درصد نوسان، سابقه قیمت یک‌ساعته لازم است">انتظار</span>':arrow+cryptoMoney(Math.abs(ch))+"%")+'</td>';
  }
- var html='<section class="group"><div class="group-title">۸ ارز با بیشترین افزایش و ۸ ارز با بیشترین کاهش بر اساس نوسان USDT در یک ساعت اخیر</div><div class="table-wrap"><table><thead><tr>'+
+ var html='<section class="group"><div class="group-title">ارزهای دیجیتال</div><div class="table-wrap"><table><thead><tr>'+
  '<th>ردیف</th><th>شناسه</th><th>قیمت (USDT)</th>'+
  '<th class="sortable" data-sort="changePercent1hUSDT">تغییر ۱ ساعته (%) <span class="sort-mark">'+(sortKey==="changePercent1hUSDT"?(sortDir===1?"▲":"▼"):"↕")+'</span></th>'+
  '</tr></thead><tbody>';
