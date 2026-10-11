@@ -104,13 +104,11 @@ function fetchWithTimeout(url){
     new Promise(function(_,reject){setTimeout(function(){reject(new Error("timeout"))},8000)})
   ]);
 }
-function fetchJSON(file,fallback){
-  return fetchWithTimeout(dataURL(file)).then(function(r){if(!r.ok)throw new Error(file+" "+r.status);return r.json()}).catch(function(){
-    return fetchWithTimeout(fallback+file+"?v="+Date.now()).then(function(r){if(!r.ok)throw new Error(file+" fallback "+r.status);return r.json()});
-  });
+function fetchJSON(file){
+  return fetchWithTimeout(dataURL(file)).then(function(r){if(!r.ok)throw new Error(file+" "+r.status);return r.json()});
 }
-function loadTGJU(){return fetchJSON("tgju.json","https://raw.githubusercontent.com/evrenexus/svgevrenexus-viewer/main/market-data/").then(function(t){render(metal,"metals",[t.precious||[],t.baseMetals||[],t.energy||[]],t.scrapedAt);render(cur,"currency",[t.currency||[]],t.scrapedAt)})}
-function loadCrypto(){return fetchJSON("nobitex.json","https://raw.githubusercontent.com/evrenexus/svgevrenexus-viewer/main/market-data/").then(function(n){render(crypto,"crypto",[(n.markets||[]).slice().sort(function(a,b){return a.symbol==="USDT"?-1:b.symbol==="USDT"?1:0})],n.scrapedAt)})}
+function loadTGJU(){return fetchJSON("tgju.json").then(function(t){render(metal,"metals",[t.precious||[],t.baseMetals||[],t.energy||[]],t.scrapedAt);render(cur,"currency",[t.currency||[]],t.scrapedAt)})}
+function loadCrypto(){return fetchJSON("nobitex.json").then(function(n){render(crypto,"crypto",[(n.markets||[]).slice().sort(function(a,b){return a.symbol==="USDT"?-1:b.symbol==="USDT"?1:0})],n.scrapedAt)})}
 function showLoadError(track){if(track)track.innerHTML='<span class="Evrenxus-ticker-item">خطا در دریافت داده — تلاش مجدد</span>';}
 loadTGJU().catch(function(){showLoadError(metal);showLoadError(cur)});
 loadCrypto().catch(function(){showLoadError(crypto)});
