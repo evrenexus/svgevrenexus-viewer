@@ -1,7 +1,7 @@
 {
   "version": 1,
   "policy_version": 9,
-  "updated": "2026-10-11T03:08:40Z",
+  "updated": "2026-10-11T03:39:29Z",
   "items": {
     "72b4eb7a7155ed214c32324d": {
       "title": "تصاویر؛ جشن «مهرگان» در غار کرفتو",
@@ -17240,6 +17240,35 @@
       "local_score": 7,
       "breaking": false,
       "breaking_topics": []
+    },
+    "129f94f1400735c48039359f": {
+      "title": "تصاویری جدید از سردار قاآنی در مراسم ختم مادر معاون پزشکیان",
+      "summary": "اقتصادنیوز: تصاویری از سردار قاآنی در مراسم یادبود مادر رئیس سازمان برنامه و بودجه را مشاهده می کنید.",
+      "source": "اقتصادنیوز",
+      "published": "2026-10-11T06:50:00+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 9
+      },
+      "importance": 9,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-3799b35e7564",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.14291762881808812
     }
   },
   "groups": {
@@ -18832,14 +18861,17 @@
     },
     "5cf11cd3ac1c2f26a96dd3b1": {
       "representative_id": "5cf11cd3ac1c2f26a96dd3b1"
+    },
+    "local-3799b35e7564": {
+      "representative_id": "129f94f1400735c48039359f"
     }
   },
   "usage": {
     "date": "2026-10-11",
-    "requests": 8,
+    "requests": 9,
     "last_success": "2026-10-11T02:57:57Z",
     "last_success_epoch": 1791687477.3441513,
-    "last_article_generation": "2026-10-11T02:58:03Z",
+    "last_article_generation": "2026-10-11T03:39:29Z",
     "quota_block_until_epoch": 1791706881.9577627,
     "quota_block_until": "2026-10-11T08:21:21Z"
   }
