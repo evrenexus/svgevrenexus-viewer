@@ -144,6 +144,11 @@ def assign_topics(item):
     # Never use them to mislabel an unrelated article.
     return classify_topics(item)
 
+IRRELEVANT_HEADLINE_RE = re.compile(r"قتل|قاتل|جنایی|قاچاقچی|سارق|سرقت|دستگیری|زندانی|زندان|چوگان|فوتبال|فوتسال|بسکتبال|والیبال|هندبال|تنیس|کشتی|سرمربی|بازیکن|لیگ برتر|مسابقه ورزشی|قهرمانی|جام جهانی|ورزشکار|ورزشی")
+
+def is_irrelevant_headline(item):
+    return bool(IRRELEVANT_HEADLINE_RE.search(normalize_text(item.get("title", ""))))
+
 
 # ---------- importance scoring ----------
 # Important news must represent a meaningful event or decision, not merely a
@@ -535,10 +540,13 @@ def main():
     existing={}
     for x in old.get("items",[]):
         if isinstance(x,dict) and is_valid_item(x,now_ts):
-            if out_of_scope(x):
+            if out_of_scope({"title":x.get("title","")}):
                 continue
             x["published"]=normalize_published(x.get("published",""))
-            x["topics"]=assign_topics(x); existing[x["id"]]=x
+            x["topics"]=assign_topics(x)
+            if not x["topics"] or is_irrelevant_headline(x):
+                continue
+            existing[x["id"]]=x
     def collect_source(s):
         attempted_at=datetime.now(timezone.utc).isoformat(); got=[]; errors=[]
         for u in dict.fromkeys(s["feeds"]):
@@ -561,11 +569,12 @@ def main():
                         if parsed: got=parsed; break
                         errors.append("discovered feed parsed but contained no articles: "+u)
                 except Exception as e: errors.append(type(e).__name__+": "+str(e)[:180])
-        valid=[x for x in got if is_valid_item(x,now_ts)]
+        valid=[x for x in got if is_valid_item(x,now_ts) and not out_of_scope({"title":x.get("title","")})]
         for item in valid:
-            if out_of_scope(item):
-                continue
-            item["published"]=normalize_published(item.get("published","")); item["topics"]=assign_topics(item); assign_importance(item)
+            item["published"]=normalize_published(item.get("published",""))
+            item["topics"]=assign_topics(item)
+            assign_importance(item)
+        valid=[x for x in valid if x.get("topics") and not is_irrelevant_headline(x)]
         latest=max((date_key(x.get("published","")) for x in valid),default=0)
         info={"name":s["name"],"category":s["category"],"ok":bool(valid),"items":len(valid),"attempted_at":attempted_at,"last_success_at":datetime.now(timezone.utc).isoformat() if valid else "","last_article_published":datetime.fromtimestamp(latest,TEHRAN_TZ).isoformat() if latest else "","error":"" if valid else (" | ".join(errors[-3:])[:600] if errors else "no feed found")}
         return valid,info
@@ -599,7 +608,7 @@ def main():
     # never override, the topic signal from its title and summary.
     for item in all_items:
         item["topics"]=assign_topics(item)
-    all_items=[x for x in all_items if is_valid_item(x,now_ts)]
+    all_items=[x for x in all_items if is_valid_item(x,now_ts) and x.get("topics") and not is_irrelevant_headline(x) and not out_of_scope({"title":x.get("title","")})]
     all_items.sort(key=lambda x:date_key(x.get("published","")),reverse=True)
     all_items=all_items[:300]
     # Remove cross-source reports of the same event. The newest report wins.
