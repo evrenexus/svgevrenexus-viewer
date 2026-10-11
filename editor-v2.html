@@ -15,7 +15,7 @@ body{font-family:Tahoma,Arial,sans-serif;background:#f3f4f6;margin:0;color:#222}
 <div id="status">در حال بارگذاری...</div><div id="list"></div></div>
 <script>
 'use strict';
-const API='https://raw.githubusercontent.com/evrenexus/svgevrenexus-viewer/main/data/';
+const API='./data/';
 let news=[],editorial={},original={};const $=id=>document.getElementById(id);
 const cats=[['economy','اقتصادی'],['markets','بازار و سرمایه‌گذاری'],['currency-gold','ارز و طلا'],['real-estate','مسکن'],['technology','فناوری'],['ai','هوش مصنوعی'],['science-life','علم و سبک زندگی'],['health','پزشکی و سلامت'],['auto','خودرو']];
 const clone=x=>JSON.parse(JSON.stringify(x||{})),state=id=>editorial[id]||{};
