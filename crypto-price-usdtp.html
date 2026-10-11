@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>قیمت لحظه‌ای فیوچرز تتر | Evren Nexus</title>
+<link rel="stylesheet" href="./Evrenexus-site-shell.css?v=3">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#f1f2f3;color:#20272d;font-family:Vazir,Tahoma,Arial,sans-serif}
+#page{width:1200px;max-width:100%;margin:0 auto;padding:123px 10px 28px}
+.card{background:#fff;border:1px solid #dfe2e4;margin-bottom:12px;overflow:hidden}
+.head{padding:14px;border-top:3px solid #202c35}
+.head h1{font-size:19px;margin:0;color:#20272d}
+.head p{font-size:10px;color:#858c91;margin:6px 0 0;line-height:1.9}
+.toolbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:10px;border-top:1px solid #edf0f1}
+.toolbar input{height:34px;border:1px solid #dfe2e4;background:#fff;padding:0 10px;font:11px Vazir,Tahoma,Arial;min-width:180px;flex:1}
+.status{font-size:10px;color:#737d85}
+.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#16a36a;margin-left:5px}
+.dot.off{background:#d97706}
+.table-wrap{width:100%;overflow:auto;max-height:none}
+table{width:100%;min-width:1450px;border-collapse:separate;border-spacing:0;font-size:11px;white-space:nowrap}
+thead th{position:sticky;top:0;background:#f5f7f8;color:#59636b;font-weight:700;z-index:2;border-bottom:1px solid #dfe4e7;padding:10px 8px;text-align:center}
+th.sort{cursor:pointer;user-select:none}
+th.sort:hover{background:#eaf0f3;color:#202c35}
+tbody td{padding:9px 8px;text-align:center;border-bottom:1px solid #edf0f1;font-variant-numeric:tabular-nums}
+tbody tr:hover{background:#f8fafb}
+tbody tr:last-child td{border-bottom:0}
+.symbol{font-weight:700;color:#202c35;text-align:right}
+.pair{font-size:9px;color:#8b949a;display:block;margin-top:3px;font-weight:400;direction:ltr;text-align:right}
+.price{font-weight:700;color:#20272d}
+.pos{color:#07845b;font-weight:700}.neg{color:#d34545;font-weight:700}.flat{color:#899198}
+.small{font-size:9px;color:#8b949a}
+.info{padding:10px 12px;color:#737d85;font-size:9px;line-height:1.9;border-top:1px solid #edf0f1}
+.empty{padding:35px 12px;text-align:center;color:#858c91;font-size:12px}
+@media(max-width:650px){#page{padding:110px 5px 20px}.head h1{font-size:16px}.head p{font-size:9px}.toolbar input{min-width:100%}}
+</style>
+</head>
+<body>
+<div id="page">
+ <section class="card">
+  <header class="head">
+   <h1>قیمت لحظه‌ای فیوچرز LBank — USDT Perpetual</h1>
+   <p>تمام قراردادهای دائمی با مارجین USDT در بازار فیوچرز LBank؛ قیمت زنده، حجم ۲۴ ساعته و تغییرات تایم‌فریم‌ها در یک جدول قابل مرتب‌سازی.</p>
+  </header>
+  <div class="toolbar">
+   <input id="search" type="search" placeholder="جست‌وجوی نماد ارز، مثل BTC یا ETH" autocomplete="off">
+   <span class="status" id="connection"><span class="dot off"></span>در حال اتصال به LBank…</span>
+   <span class="status" id="updated">آخرین به‌روزرسانی: —</span>
+   <span class="status" id="count">۰ قرارداد</span>
+  </div>
+  <div class="table-wrap">
+   <table aria-label="قیمت و نوسان قراردادهای فیوچرز LBank">
+    <thead><tr id="headers"></tr></thead>
+    <tbody id="rows"><tr><td colspan="15" class="empty">در حال دریافت قیمت‌های بازار فیوچرز LBank…</td></tr></tbody>
+   </table>
+  </div>
+  <div class="info">منبع قیمت: API عمومی فیوچرز LBank. قیمت‌ها هر ۲ ثانیه به‌روزرسانی می‌شوند. نوسان روزانه از قیمت آغاز ۲۴ ساعت بازار گرفته می‌شود؛ سایر بازه‌ها بر پایه قیمت‌های زنده‌ای محاسبه می‌شوند که این صفحه از زمان شروع رصد در مرورگر ثبت می‌کند. اگر داده ابتدای یک بازه هنوز موجود نباشد، به‌جای عدد ساختگی «—» نمایش داده می‌شود. برای مشاهده نوسان دقیق یک بازه، صفحه باید در زمان شروع آن بازه در دسترس باشد.</div>
+ </section>
+</div>
+<script src="./Evrenexus-header.js?v=20261011-03"></script>
+<script>
+(function(){
+"use strict";
+var API="https://lbkperp.lbank.com/cfd/openApi/v1/pub/marketData?productGroup=SwapU";
+var POLL_MS=2000;
+var frames=[
+ {key:"m1",label:"۱ دقیقه",ms:60000},
+ {key:"m3",label:"۳ دقیقه",ms:180000},
+ {key:"m5",label:"۵ دقیقه",ms:300000},
+ {key:"m15",label:"۱۵ دقیقه",ms:900000},
+ {key:"m30",label:"۳۰ دقیقه",ms:1800000},
+ {key:"h1",label:"۱ ساعت",ms:3600000},
+ {key:"h2",label:"۲ ساعت",ms:7200000},
+ {key:"h4",label:"۴ ساعت",ms:14400000},
+ {key:"h8",label:"۸ ساعت",ms:28800000},
+ {key:"h12",label:"۱۲ ساعت",ms:43200000},
+ {key:"d1",label:"۱ روز",ms:86400000}
+];
+var state={markets:[],sort:"turnover",dir:-1,search:"",lastUpdated:0,baselines:{}};
+var $=function(id){return document.getElementById(id)};
+var nf=new Intl.NumberFormat("en-US",{maximumFractionDigits:10});
+var volumeFmt=new Intl.NumberFormat("en-US",{notation:"compact",maximumFractionDigits:2});
+function num(v){if(v===null||v===undefined||v==="")return null;var n=Number(v);return Number.isFinite(n)?n:null}
+function fmt(v){return v===null||v===undefined?"—":nf.format(v)}
+function pct(now,base){return now!==null&&base!==null&&base!==0?((now-base)/base)*100:null}
+function pctText(v){return v===null?"—":(v>0?"+":"")+v.toFixed(2)+"%"}
+function pctClass(v){return v===null?"flat":v>0?"pos":v<0?"neg":"flat"}
+function symbolOf(m){return String(m.symbol||"").toUpperCase().replace(/[^A-Z0-9]/g,"")}
+function isUsdtPerp(m){var s=symbolOf(m);return s.endsWith("USDT")&&s.length>4}
+function readStored(){
+ try{var raw=localStorage.getItem("evrenexus_usdtp_baselines_v1");if(raw){var parsed=JSON.parse(raw);if(parsed&&typeof parsed==="object")state.baselines=parsed}}catch(e){}
+}
+function saveStored(){try{localStorage.setItem("evrenexus_usdtp_baselines_v1",JSON.stringify(state.baselines))}catch(e){}}
+function updateBaselines(markets,now){
+ frames.forEach(function(f){
+  if(f.key==="d1")return;
+  var bucket=Math.floor(now/f.ms);
+  var record=state.baselines[f.key];
+  if(!record||record.bucket!==bucket){
+   var prices={};
+   markets.forEach(function(m){prices[m.symbol]=m.last});
+   state.baselines[f.key]={bucket:bucket,prices:prices};
+  }else{
+   markets.forEach(function(m){if(record.prices[m.symbol]===undefined)record.prices[m.symbol]=m.last});
+  }
+ });
+ saveStored();
+}
+function changeFor(m,f){
+ if(f.key==="d1")return pct(m.last,m.open24);
+ var rec=state.baselines[f.key];
+ if(!rec||!rec.prices||rec.prices[m.symbol]===undefined)return null;
+ return pct(m.last,num(rec.prices[m.symbol]));
+}
+function renderHeaders(){
+ var h='<th>ردیف</th><th>ارز / قرارداد</th><th class="sort" data-key="last">قیمت (USDT) ↕</th><th class="sort" data-key="turnover">حجم ۲۴ساعته ↕</th>';
+ frames.forEach(function(f){h+='<th class="sort" data-key="'+f.key+'">'+f.label+' (%) '+(state.sort===f.key?(state.dir===1?"▲":"▼"):"↕")+'</th>'});
+ $("headers").innerHTML=h;
+ Array.prototype.forEach.call($("headers").querySelectorAll("th.sort"),function(th){th.addEventListener("click",function(){var k=th.getAttribute("data-key");if(state.sort===k)state.dir*=-1;else{state.sort=k;state.dir=-1}renderHeaders();renderRows()})});
+}
+function renderRows(){
+ var items=state.markets.filter(function(m){return !state.search||m.symbol.toLowerCase().indexOf(state.search)!==-1});
+ items.sort(function(a,b){
+  var av,bv;
+  if(state.sort==="last"){av=a.last;bv=b.last}
+  else if(state.sort==="turnover"){av=a.turnover;bv=b.turnover}
+  else {var f=frames.filter(function(x){return x.key===state.sort})[0];av=f?changeFor(a,f):null;bv=f?changeFor(b,f):null}
+  if(av===null||av===undefined)return bv===null||bv===undefined?0:1;
+  if(bv===null||bv===undefined)return -1;
+  return (av-bv)*state.dir;
+ });
+ $("count").textContent=items.length.toLocaleString("fa-IR")+" قرارداد";
+ if(!items.length){$("rows").innerHTML='<tr><td colspan="15" class="empty">قراردادی با این نماد پیدا نشد.</td></tr>';return}
+ var html="";
+ items.forEach(function(m,i){
+  html+='<tr><td>'+(i+1).toLocaleString("fa-IR")+'</td><td class="symbol">'+m.base+'<span class="pair">'+m.symbol+'.P</span></td><td class="price">'+fmt(m.last)+'</td><td>'+ (m.turnover===null?"—":volumeFmt.format(m.turnover))+'</td>';
+  frames.forEach(function(f){var v=changeFor(m,f);html+='<td class="'+pctClass(v)+'">'+pctText(v)+'</td>'});
+  html+='</tr>';
+ });
+ $("rows").innerHTML=html;
+}
+async function refresh(){
+ try{
+  var response=await fetch(API,{cache:"no-store"});
+  if(!response.ok)throw new Error("HTTP "+response.status);
+  var payload=await response.json();
+  var raw=Array.isArray(payload)?payload:(Array.isArray(payload.data)?payload.data:(Array.isArray(payload.data&&payload.data.data)?payload.data.data:[]));
+  if(payload&&payload.success===false)throw new Error(payload.msg||"LBank API error");
+  if(!raw.length)throw new Error("پاسخ بازار خالی است");
+  var markets=raw.filter(isUsdtPerp).map(function(x){
+   var symbol=symbolOf(x);
+   return {symbol:symbol,base:symbol.slice(0,-4),last:num(x.lastPrice),open24:num(x.openPrice),turnover:num(x.turnover),volume:num(x.volume),marked:num(x.markedPrice)};
+  }).filter(function(m){return m.last!==null&&m.last>0});
+  if(!markets.length)throw new Error("قرارداد USDT در پاسخ پیدا نشد");
+  var now=Date.now();
+  state.markets=markets;
+  updateBaselines(markets,now);
+  state.lastUpdated=now;
+  $("connection").innerHTML='<span class="dot"></span>متصل به LBank';
+  $("updated").textContent="آخرین به‌روزرسانی: "+new Date(now).toLocaleTimeString("fa-IR");
+  renderRows();
+ }catch(e){
+  $("connection").innerHTML='<span class="dot off"></span>دریافت داده ناموفق';
+  if(!state.markets.length)$("rows").innerHTML='<tr><td colspan="15" class="empty">داده زنده دریافت نشد. ممکن است اتصال مستقیم مرورگر به API فیوچرز LBank محدود باشد؛ بعداً دوباره تلاش می‌کنیم.</td></tr>';
+  console.warn("LBank futures data:",e);
+ }
+}
+$("search").addEventListener("input",function(){state.search=this.value.trim().toUpperCase().replace(/[^A-Z0-9]/g,"");renderRows()});
+readStored();renderHeaders();refresh();setInterval(refresh,POLL_MS);
+})();
+</script>
+</body>
+</html>
