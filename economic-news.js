@@ -6,16 +6,16 @@ function init(){
  if(!content||document.getElementById("Evrenxus-donya-box")) return;
  var style=document.createElement("style");
  style.textContent=
- "#Evrenxus-donya-box{width:610px;max-width:610px;box-sizing:border-box;margin:20px 0 25px;background:#fff;border:1px solid #dfe2e4;overflow:hidden;display:block}"+
- "#Evrenxus-donya-box .Evrenxus-donya-heading{padding:9px 10px;border-bottom:1px solid #e1e4e6;color:#202c35;font-size:12px;font-weight:700}"+
- "#Evrenxus-donya-box .Evrenxus-donya-heading:before{content:'';display:inline-block;width:4px;height:14px;margin-left:7px;vertical-align:-2px;background:#d9232e}"+
- ".Evrenxus-donya-item{display:flex;width:100%;box-sizing:border-box;padding:10px;border-bottom:1px solid #edf0f1;color:#343b40;text-decoration:none;font-size:10px;line-height:1.9;direction:rtl;gap:10px;align-items:flex-start}"+
- ".Evrenxus-donya-item:hover{background:#fafafa;color:#d9232e}"+
+ "#Evrenxus-donya-box{width:100%;max-width:100%;box-sizing:border-box;margin:20px 0 25px;background:#fff;border:1px solid #e0e6eb;overflow:hidden;display:block}"+
+ "#Evrenxus-donya-box .Evrenxus-donya-heading{padding:9px 10px;border-bottom:1px solid #e1e4e6;color:#142d40;font-size:12px;font-weight:700}"+
+ "#Evrenxus-donya-box .Evrenxus-donya-heading:before{content:'';display:inline-block;width:4px;height:14px;margin-left:7px;vertical-align:-2px;background:#d64c43}"+
+ ".Evrenxus-donya-item{display:flex;width:100%;box-sizing:border-box;padding:10px;border-bottom:1px solid #e8edf1;color:#243949;text-decoration:none;font-size:10px;line-height:1.9;direction:rtl;gap:10px;align-items:flex-start}"+
+ ".Evrenxus-donya-item:hover{background:#f8fafb;color:#d64c43}"+
  ".Evrenxus-donya-image{display:block;width:130px;min-width:130px;height:80px;object-fit:cover;background:#eee;margin:0}"+
  ".Evrenxus-donya-content{flex:1;min-width:0}"+
- ".Evrenxus-donya-title{font-weight:700;color:#20272d;margin:0 0 4px}"+
+ ".Evrenxus-donya-title{font-weight:700;color:#182b3a;margin:0 0 4px}"+
  ".Evrenxus-donya-meta{font-size:9px;color:#888;margin-top:5px}"+
- ".Evrenxus-donya-summary{color:#737a7f;font-weight:400}"+
+ ".Evrenxus-donya-summary{color:#687987;font-weight:400}"+
  ".Evrenxus-news-loading,.Evrenxus-news-error{padding:18px 8px;text-align:center;color:#777;font-size:10px}";
  document.head.appendChild(style);
  var box=document.createElement("div"); box.id="Evrenxus-donya-box";
@@ -28,13 +28,13 @@ function init(){
  if(sidebar && !document.getElementById("Evrenxus-asriran-box")){
   var sc=document.createElement("style");
   sc.textContent=
-   "#Evrenxus-asriran-box{width:200px;margin:0 0 16px;background:#fff;border:1px solid #dfe2e4;overflow:hidden}"+
-   "#Evrenxus-asriran-box .Evrenxus-section-title{padding:9px 10px;border-bottom:1px solid #e1e4e6;color:#202c35;font-size:12px;font-weight:700}"+
-   ".Evrenxus-asriran-item{display:block;padding:9px;border-bottom:1px solid #edf0f1;color:#343b40;text-decoration:none;font-size:10px;line-height:1.9;direction:rtl}"+
-   ".Evrenxus-asriran-item:hover{background:#fafafa;color:#d9232e}"+
+   "#Evrenxus-asriran-box{width:200px;margin:0 0 16px;background:#fff;border:1px solid #e0e6eb;overflow:hidden}"+
+   "#Evrenxus-asriran-box .Evrenxus-section-title{padding:9px 10px;border-bottom:1px solid #e1e4e6;color:#142d40;font-size:12px;font-weight:700}"+
+   ".Evrenxus-asriran-item{display:block;padding:9px;border-bottom:1px solid #e8edf1;color:#243949;text-decoration:none;font-size:10px;line-height:1.9;direction:rtl}"+
+   ".Evrenxus-asriran-item:hover{background:#f8fafb;color:#d64c43}"+
    ".Evrenxus-asriran-image{display:block;width:180px;height:105px;object-fit:cover;background:#eee;margin:0 0 7px}"+
-   ".Evrenxus-asriran-title{font-weight:700;color:#20272d;margin-bottom:4px}"+
-   ".Evrenxus-asriran-summary{color:#737a7f;font-weight:400}";
+   ".Evrenxus-asriran-title{font-weight:700;color:#182b3a;margin-bottom:4px}"+
+   ".Evrenxus-asriran-summary{color:#687987;font-weight:400}";
   document.head.appendChild(sc);
   var ab=document.createElement("div");
   ab.id="Evrenxus-asriran-box";
