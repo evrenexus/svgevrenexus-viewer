@@ -1,7 +1,7 @@
 {
   "version": 1,
   "policy_version": 9,
-  "updated": "2026-10-11T05:15:23Z",
+  "updated": "2026-10-11T05:23:36Z",
   "items": {
     "72b4eb7a7155ed214c32324d": {
       "title": "تصاویر؛ جشن «مهرگان» در غار کرفتو",
@@ -528,8 +528,10 @@
         "real-estate": 17
       },
       "importance": 20,
-      "important": false,
-      "important_topics": [],
+      "important": true,
+      "important_topics": [
+        "real-estate"
+      ],
       "slider_topics": [
         "real-estate"
       ],
@@ -546,7 +548,9 @@
       "political": false,
       "breaking_signal": false,
       "age_hours": 3.8659754267666075,
-      "image": "https://cdn.eghtesadnews.com/thumbnail/Kkf35sCRWZ1F/GZaVsfEIKzAgpc994QuV62NAfibJXmJ3p9dKqndTLZMOm0YHbObgdLAeQjdEROXcXmjsodsDLVFbxttaV6O7yBDIq7fPo1fSPa4bLEIOReJ45QBCafn1aoBfUcn2xwkzHiQqSBvyqivgAmFrBxfJyQEJd4ftgHcrg1EZomhWcj-fBLS4T9lxYgGJVOeG4uFK/64007965.jpg"
+      "image": "https://cdn.eghtesadnews.com/thumbnail/Kkf35sCRWZ1F/GZaVsfEIKzAgpc994QuV62NAfibJXmJ3p9dKqndTLZMOm0YHbObgdLAeQjdEROXcXmjsodsDLVFbxttaV6O7yBDIq7fPo1fSPa4bLEIOReJ45QBCafn1aoBfUcn2xwkzHiQqSBvyqivgAmFrBxfJyQEJd4ftgHcrg1EZomhWcj-fBLS4T9lxYgGJVOeG4uFK/64007965.jpg",
+      "permanent_article": true,
+      "article_id": "article-0a53381e89480d02"
     },
     "519866e071ac21ba573dc566": {
       "title": "رشد ۴۲ درصدی تامین منابع مالی از طریق بازار سرمایه",
@@ -3588,7 +3592,9 @@
       "importance": 16,
       "important": false,
       "important_topics": [],
-      "slider_topics": [],
+      "slider_topics": [
+        "real-estate"
+      ],
       "ticker_topics": [],
       "breaking": false,
       "breaking_topics": [],
@@ -17540,30 +17546,36 @@
       "source": "تجارت‌نیوز",
       "published": "2026-10-11T07:45:35+03:30",
       "topics": [
-        "real-estate",
         "economy"
       ],
       "topic_scores": {
-        "economy": 20,
-        "real-estate": 20
+        "economy": 10,
+        "markets": 0,
+        "crypto": 0,
+        "currency-gold": 0,
+        "real-estate": 0,
+        "technology": 0,
+        "ai": 0,
+        "health": 0,
+        "auto": 0,
+        "science-life": 0
       },
-      "importance": 20,
+      "importance": 10,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
       "ticker_topics": [],
-      "breaking": false,
-      "breaking_topics": [],
       "publishable": true,
       "exclude_reason": "",
-      "group_id": "local-9c104cbf349f",
-      "representative": false,
-      "reason": "local rule-based classification",
-      "analysis_mode": "local",
+      "content_type": "economic_news",
+      "reject_reason": "",
+      "group_id": "e71654b7c18415dac3b2963e",
+      "representative": true,
+      "reason": "",
+      "analysis_mode": "ai",
       "local_score": 20,
-      "political": false,
-      "breaking_signal": true,
-      "age_hours": 0.661955218580034
+      "breaking": false,
+      "breaking_topics": []
     },
     "1a7982a20ff313c9af60b6da": {
       "title": "بهزاد نبوی: به حرف خاتمی گوش بدهیم و دنبال اصلاحات باشیم/ پزشکیان شرایط بسیار دشواری دارد",
@@ -17588,7 +17600,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 0.8172329963578118
+      "age_hours": 1.2117404821183946
     },
     "c4e6a56346d13c0d7ad59cf6": {
       "title": "حضور سردار قاآنی در مراسم ختم مادر معاون پزشکیان+ عکس",
@@ -17617,7 +17629,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 1.210566329691145
+      "age_hours": 1.605073815451728
     },
     "9e863aee21f7dc0472a1bc7b": {
       "title": "رفتار عجیب مجری تلویزیون",
@@ -17642,7 +17654,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 0.06389966302447848
+      "age_hours": 0.4584071487850613
     },
     "c7dd19ff37951cbd989765b7": {
       "title": "ترافیک نیمه‌سنگین در ۴ محور مواصلاتی منتهی به تهران/بارش باران در ۵ استان",
@@ -17667,7 +17679,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 0.08278855191336738
+      "age_hours": 0.4772960376739502
     },
     "741222966b7b87e2a59ef07c": {
       "title": "باورهای القایی غلط فضای مجازی درباره قند خون",
@@ -17696,7 +17708,7 @@
       "local_score": 13,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.11389966302447849
+      "age_hours": 0.5084071487850613
     },
     "4fce0b5b59e132d925d084c7": {
       "title": "قیمت تیرآهن امروز یکشنبه ۱۹ مهر 1405 + جدول",
@@ -17704,40 +17716,36 @@
       "source": "تجارت‌نیوز",
       "published": "2026-10-11T08:15:37+03:30",
       "topics": [
-        "real-estate",
         "economy"
       ],
       "topic_scores": {
-        "economy": 20,
-        "real-estate": 20
+        "economy": 9,
+        "markets": 0,
+        "crypto": 0,
+        "currency-gold": 0,
+        "real-estate": 0,
+        "technology": 0,
+        "ai": 0,
+        "health": 0,
+        "auto": 0,
+        "science-life": 0
       },
-      "importance": 20,
-      "important": true,
-      "important_topics": [
-        "real-estate"
-      ],
-      "slider_topics": [
-        "real-estate"
-      ],
-      "ticker_topics": [
-        "economy",
-        "real-estate"
-      ],
-      "breaking": true,
-      "breaking_topics": [
-        "economy",
-        "real-estate"
-      ],
+      "importance": 9,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
       "publishable": true,
       "exclude_reason": "",
-      "group_id": "local-9c104cbf349f",
+      "content_type": "economic_news",
+      "reject_reason": "",
+      "group_id": "4fce0b5b59e132d925d084c7",
       "representative": true,
-      "reason": "local rule-based classification",
-      "analysis_mode": "local",
+      "reason": "",
+      "analysis_mode": "ai",
       "local_score": 13,
-      "political": false,
-      "breaking_signal": true,
-      "age_hours": 0.1613996630244785
+      "breaking": false,
+      "breaking_topics": []
     },
     "58979ef87f741bb19d5d70e0": {
       "title": "سونامی سرطان در ایران",
@@ -17766,7 +17774,7 @@
       "local_score": 7,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 0.17667744080225625
+      "age_hours": 0.571184926562839
     },
     "3882c0d2ce53205efb2c1314": {
       "title": "قیمت خودرو‌های سایپا امروز یکشنبه ۱۹ مهر ۱۴۰۵ + جدول",
@@ -17777,25 +17785,33 @@
         "auto"
       ],
       "topic_scores": {
-        "auto": 20
+        "economy": 0,
+        "markets": 0,
+        "crypto": 0,
+        "currency-gold": 0,
+        "real-estate": 0,
+        "technology": 0,
+        "ai": 0,
+        "health": 0,
+        "auto": 12,
+        "science-life": 0
       },
-      "importance": 20,
+      "importance": 12,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
       "ticker_topics": [],
-      "breaking": false,
-      "breaking_topics": [],
       "publishable": true,
       "exclude_reason": "",
-      "group_id": "local-9c104cbf349f",
-      "representative": false,
-      "reason": "local rule-based classification",
-      "analysis_mode": "local",
+      "content_type": "auto_news",
+      "reject_reason": "",
+      "group_id": "3882c0d2ce53205efb2c1314",
+      "representative": true,
+      "reason": "",
+      "analysis_mode": "ai",
       "local_score": 12,
-      "political": false,
-      "breaking_signal": false,
-      "age_hours": 0.18917744080225626
+      "breaking": false,
+      "breaking_topics": []
     },
     "e57e435c29a63cf4589c1ec3": {
       "title": "مطالعه‌ای جدید: مصرف روزانه بادام‌زمینی بدون نمک ممکن است حساسیت انسولینی مغز را در سالمندان بهتر کند",
@@ -17806,25 +17822,33 @@
         "science-life"
       ],
       "topic_scores": {
-        "science-life": 12
+        "economy": 0,
+        "markets": 0,
+        "crypto": 0,
+        "currency-gold": 0,
+        "real-estate": 0,
+        "technology": 0,
+        "ai": 0,
+        "health": 0,
+        "auto": 0,
+        "science-life": 15
       },
-      "importance": 12,
+      "importance": 15,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
       "ticker_topics": [],
-      "breaking": false,
-      "breaking_topics": [],
       "publishable": true,
       "exclude_reason": "",
-      "group_id": "local-8eb916d005d4",
+      "content_type": "science_news",
+      "reject_reason": "",
+      "group_id": "e57e435c29a63cf4589c1ec3",
       "representative": true,
-      "reason": "local rule-based classification",
-      "analysis_mode": "local",
+      "reason": "",
+      "analysis_mode": "ai",
       "local_score": 7,
-      "political": false,
-      "breaking_signal": false,
-      "age_hours": 0.22056632969114515
+      "breaking": false,
+      "breaking_topics": []
     },
     "81ba7e2987d04696c1f210d5": {
       "title": "قیمت خودرو‌های ایران خودرو امروز یکشنبه ۱۹ مهر ۱۴۰۵ + جدول",
@@ -17835,25 +17859,33 @@
         "auto"
       ],
       "topic_scores": {
-        "auto": 20
+        "economy": 0,
+        "markets": 0,
+        "crypto": 0,
+        "currency-gold": 0,
+        "real-estate": 0,
+        "technology": 0,
+        "ai": 0,
+        "health": 0,
+        "auto": 0,
+        "science-life": 0
       },
-      "importance": 20,
+      "importance": 0,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
       "ticker_topics": [],
-      "breaking": false,
-      "breaking_topics": [],
-      "publishable": true,
-      "exclude_reason": "",
-      "group_id": "local-9c104cbf349f",
-      "representative": false,
-      "reason": "local rule-based classification",
-      "analysis_mode": "local",
+      "publishable": false,
+      "exclude_reason": "duplicate",
+      "content_type": "auto_news",
+      "reject_reason": "duplicate",
+      "group_id": "81ba7e2987d04696c1f210d5",
+      "representative": true,
+      "reason": "",
+      "analysis_mode": "ai",
       "local_score": 12,
-      "political": false,
-      "breaking_signal": false,
-      "age_hours": 0.22806632969114515
+      "breaking": false,
+      "breaking_topics": []
     },
     "ebd66650381e9323498da0cd": {
       "title": "پیش‌بینی آب و هوا در 5 روز آینده/ این مناطق بارانی می‌شوند",
@@ -17882,7 +17914,7 @@
       "local_score": 9,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.2547329963578118
+      "age_hours": 0.6492404821183947
     },
     "ade4b4659d020cab0b66f934": {
       "title": "بارندگی و رعدوبرق در ۴ استان نوار شمالی کشور",
@@ -17907,7 +17939,7 @@
       "local_score": 7,
       "political": false,
       "breaking_signal": false,
-      "age_hours": 0.28556632969114515
+      "age_hours": 0.680073815451728
     },
     "c85ad3ab92f0dd1fec1da78e": {
       "title": "پیش بینی قیمت طلای جهانی / مقاومت 4300 دلاری در برابر طلا؛ اونس قدرت صعود دارد؟",
@@ -17936,7 +17968,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 0.40945521858003403
+      "age_hours": 0.8039627043406169
     },
     "313e5090498ceba45ab16220": {
       "title": "سیلاب ۱۸مهر، جان یک نفر را در گلستان گرفت/ یک نفر در مینودشت مفقود است",
@@ -17961,7 +17993,7 @@
       "local_score": 17,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 0.5577885519133674
+      "age_hours": 0.9522960376739502
     },
     "0372a67ace3e2e21ab02f752": {
       "title": "یک شهروند برای قدم‌ زدن باید پاسخگو باشد؟",
@@ -17986,7 +18018,369 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 0.6716774408022562
+      "age_hours": 1.0661849265628391
+    },
+    "f0040103b1a0411e4b759835": {
+      "title": "افزایش ۸۰ درصدی قیمت‌ لوازم خانگی از نهم اسفند/ کالا هست، اما قدرت خرید نیست",
+      "summary": "اقتصادنیوز: نایب‌رئیس اتحادیه لوازم خانگی با اشاره به افزایش هزینه تولید و کاهش قدرت خرید خانوارها گفت: بازار در حال حاضر با کمبود محسوس کالا مواجه نیست، اما افت تقاضا، کاهش حاشیه سود فروشندگان و دشوار شدن فروش اقساطی، فعالان این صنف را تحت فشار قرار داده است.",
+      "source": "اقتصادنیوز",
+      "published": "2026-10-11T08:47:09+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 11,
+        "markets": 0,
+        "crypto": 0,
+        "currency-gold": 0,
+        "real-estate": 0,
+        "technology": 0,
+        "ai": 0,
+        "health": 0,
+        "auto": 0,
+        "science-life": 0
+      },
+      "importance": 11,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "content_type": "economic_news",
+      "reject_reason": "",
+      "group_id": "f0040103b1a0411e4b759835",
+      "representative": true,
+      "reason": "",
+      "analysis_mode": "ai",
+      "local_score": 4,
+      "breaking": false,
+      "breaking_topics": []
+    },
+    "c2da92d69c1bf2b27cf872c7": {
+      "title": "کار این پزشکان به مسافرکشی رسید",
+      "summary": "درآمد پایین و افزایش هزینه‌های مطب‌داری باعث شده بسیاری از پزشکان عمومی به مشاغلی همچون مسافرکشی و پرستاری از سالمند روی آوردند؛ افرادی که در تصور عمومی، دستمزدهای بالایی دارند درحالی‌که حقوق ماهانه بیشتر آنها هم‌اکنون، بین ۲۵ تا ۳۵ میلیون تومان است.",
+      "source": "سلامت نیوز",
+      "published": "2026-10-11T08:46:29+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 9
+      },
+      "importance": 9,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-432066ef0231",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 0.041462704340616864
+    },
+    "cebcefe72c6ebcf6e55e4d5a": {
+      "title": "قیمت گوشت قرمز امروز یکشنبه ۱۹ مهر ۱۴۰۵ + جدول",
+      "summary": "قیمت گوشت قرمز امروز یکشنبه ۱۹ مهر ۱۴۰۵ اعلام شد. پست قیمت گوشت قرمز امروز یکشنبه ۱۹ مهر ۱۴۰۵ + جدول اولین بار در تجارت نیوز ظاهر شد.",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-11T08:45:31+03:30",
+      "topics": [],
+      "topic_scores": {},
+      "importance": 10,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-f19360b16f78",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 10,
+      "political": false,
+      "breaking_signal": true,
+      "age_hours": 0.057573815451727975
+    },
+    "cc0285bab0bd88e8d3bc6415": {
+      "title": "اینترمیامی پرگل برد؛ مسی بریس کرد",
+      "summary": "اینترمیامی در دیداری که لیونل مسی و لوئیس سوارس هر کدام دو گل به ثمر رساندند حریف خود را با ۴ گل در هم کوبید.",
+      "source": "فرارو",
+      "published": "2026-10-11T08:45:25+03:30",
+      "topics": [],
+      "topic_scores": {},
+      "importance": 7,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-e8fb5b92802b",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.05924048211839464
+    },
+    "f4a7158578ecc308d88a31be": {
+      "title": "غذا خوردن در این ساعت از روز کبدتان را نابود می کند",
+      "summary": "اقتصادنیوز: به گفته پژوهشگران، کبد از ریتم شبانه‌روزی بدن پیروی می‌کند؛ چرخه‌ای زیستی که بسیاری از عملکردهای بدن، از جمله خواب، ترشح هورمون‌ها و سوخت‌وساز مواد غذایی را تنظیم می‌کند.",
+      "source": "اقتصادنیوز",
+      "published": "2026-10-11T08:42:09+03:30",
+      "topics": [],
+      "topic_scores": {},
+      "importance": 15,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-449f34051d43",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 15,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.11368492656283909
+    },
+    "78ebf1f9806000ab6cad7f3d": {
+      "title": "وام ساخت این خانه‌ها افزایش یافت+ جزئیات",
+      "summary": "رئیس بنیاد مسکن انقلاب اسلامی عنوان کرد: به‌ازای هر واحد مسکونی ۵۰۰ میلیون تومان وام قرض‌الحسنه ۲۰ ساله و ۲۰۰ میلیون تومان بلاعوض از حساب ۱۰۰ امام خمینی پرداخت می‌شود.",
+      "source": "دنیای اقتصاد",
+      "published": "2026-10-11T08:37:41+03:30",
+      "topics": [
+        "real-estate"
+      ],
+      "topic_scores": {
+        "economy": 0,
+        "markets": 0,
+        "crypto": 0,
+        "currency-gold": 0,
+        "real-estate": 13,
+        "technology": 0,
+        "ai": 0,
+        "health": 0,
+        "auto": 0,
+        "science-life": 0
+      },
+      "importance": 13,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "content_type": "real-estate_news",
+      "reject_reason": "",
+      "group_id": "78ebf1f9806000ab6cad7f3d",
+      "representative": true,
+      "reason": "",
+      "analysis_mode": "ai",
+      "local_score": 4,
+      "breaking": false,
+      "breaking_topics": []
+    },
+    "5bf2d0fc6b8dcc3fc2bd63c0": {
+      "title": "آگهی استخدام مرگبار",
+      "summary": "حدود یک‌ماه قبل، گزارش ناپدید شدن پسری جوان به پلیس تهران اعلام شد. خانواده این جوان در مراجعه به پلیس گفتند که مدتی قبل، فردی ناشناس با وی تماس گرفته و مدعی شده است برای انجام مصاحبه کاری به یک شرکت مراجعه کند. پسر جوان پس از دریافت این تماس، برای حضور در محل اعلام‌شده از خانه خارج شد، اما دیگر باز",
+      "source": "سلامت نیوز",
+      "published": "2026-10-11T08:36:36+03:30",
+      "topics": [],
+      "topic_scores": {},
+      "importance": 4,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-382ecd607e45",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 0.20618492656283907
+    },
+    "e0da0fab081b5753dc3b6789": {
+      "title": "سیل در گلستان چند کشته و مفقودی برجا گذاشت؟",
+      "summary": "اقتصادنیوز: رئیس اورژانس دانشگاه علوم پزشکی گلستان با تاکید بر اینکه مجموعه اورژانس استان در آماده‌باش کامل قرار دارد، خاطرنشان کرد: نیروها و پایگاه‌های اورژانس در سراسر استان آمادگی لازم را برای ارائه خدمات فوریت‌های پزشکی و پشتیبانی از عملیات امدادی دارند.",
+      "source": "اقتصادنیوز",
+      "published": "2026-10-11T08:36:25+03:30",
+      "topics": [
+        "science-life",
+        "health"
+      ],
+      "topic_scores": {
+        "health": 9,
+        "science-life": 9
+      },
+      "importance": 9,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-ef430b90d854",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 0.20924048211839463
+    },
+    "57b98b433caed6bb8bf4debb": {
+      "title": "۵ اشتباه رایج هنگام خرید میوه و سبزیجات منجمد",
+      "summary": "میوه‌ها و سبزیجات منجمد می‌توانند راهی مقرون‌به‌صرفه برای داشتن تغذیه سالم باشند، اما انتخاب محصولات حاوی شکر افزوده، سس‌های پرچرب یا بسته‌بندی آسیب‌دیده ممکن است کیفیت انتخاب غذایی را تحت‌تأثیر قرار دهد. متخصصان تغذیه پنج اشتباه رایج هنگام خرید این محصولات را توضیح داده‌اند.",
+      "source": "سلامت نیوز",
+      "published": "2026-10-11T08:35:00+03:30",
+      "topics": [
+        "science-life"
+      ],
+      "topic_scores": {
+        "science-life": 15
+      },
+      "importance": 15,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-5464bfd5dfc7",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 10,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.23285159322950574
+    },
+    "2ba8d8bd278c4754ba43646a": {
+      "title": "تیر خلاص همتی به بساط خالی‌خوانی تراستی‌ها",
+      "summary": "در سازوکار جدید بانک مرکزی، تراستی‌ها ابتدا باید مبلغ مشخصی را منتقل و پس از تأیید کامل از سوی بانک مرکزی، مجوز جابه‌جایی مبالغ بالاتر را دریافت کنند. پست تیر خلاص همتی به بساط خالی‌خوانی تراستی‌ها اولین بار در تجارت نیوز ظاهر شد.",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-11T08:27:11+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 10,
+        "markets": 0,
+        "crypto": 0,
+        "currency-gold": 0,
+        "real-estate": 0,
+        "technology": 0,
+        "ai": 0,
+        "health": 0,
+        "auto": 0,
+        "science-life": 0
+      },
+      "importance": 10,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "content_type": "economic_news",
+      "reject_reason": "",
+      "group_id": "2ba8d8bd278c4754ba43646a",
+      "representative": true,
+      "reason": "",
+      "analysis_mode": "ai",
+      "local_score": 4,
+      "breaking": false,
+      "breaking_topics": []
+    },
+    "0e6248142b317a56ad44b12b": {
+      "title": "ببینید؛ خلاصه بازی رئال مادرید 1 - ویارئال 0",
+      "summary": "خلاصه بازی رئال مادرید 1 - ویارئال 0 - لالیگا - هفته هشتم فصل 2026/27 را ببینید.",
+      "source": "فرارو",
+      "published": "2026-10-11T08:26:59+03:30",
+      "topics": [],
+      "topic_scores": {},
+      "importance": 7,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-b4db65aa0ab2",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.36646270434061684
+    },
+    "87c3418b36ba6cf1dfdfe117": {
+      "title": "مزایده ۱.۴ همتی آپ برای واگذاری ساختمان اداری و دیتاسنتر در پارک فناوری",
+      "summary": "شرکت آسان پرداخت پرشین (آپ) با انتشار اطلاعیه افشای اطلاعات بااهمیت (گروه ب)، از برگزاری مزایده عمومی مرحله اول جهت فروش تجمیعی یک باب ساختمان اداری در پارک فناوری و یک دستگاه دیتاسنتر کانتینری پیشرفته با قیمت پایه مجموعاً ۱۴,۵۷۲ میلیارد ریال (۱,۴۵۷ میلیارد تومان) خبر داد.",
+      "source": "صدای بورس",
+      "published": "2026-10-11T08:25:00+03:30",
+      "topics": [
+        "technology"
+      ],
+      "topic_scores": {
+        "economy": 0,
+        "markets": 0,
+        "crypto": 0,
+        "currency-gold": 0,
+        "real-estate": 0,
+        "technology": 14,
+        "ai": 0,
+        "health": 0,
+        "auto": 0,
+        "science-life": 0
+      },
+      "importance": 14,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "content_type": "technology_news",
+      "reject_reason": "",
+      "group_id": "87c3418b36ba6cf1dfdfe117",
+      "representative": true,
+      "reason": "",
+      "analysis_mode": "ai",
+      "local_score": 13,
+      "breaking": false,
+      "breaking_topics": []
     }
   },
   "groups": {
@@ -19604,8 +19998,8 @@
     "group-5fd7ac3e4252fc3597bff568": {
       "representative_id": "5fd7ac3e4252fc3597bff568"
     },
-    "local-9c104cbf349f": {
-      "representative_id": "4fce0b5b59e132d925d084c7"
+    "e71654b7c18415dac3b2963e": {
+      "representative_id": "e71654b7c18415dac3b2963e"
     },
     "local-5b32a0530144": {
       "representative_id": "1a7982a20ff313c9af60b6da"
@@ -19622,11 +20016,20 @@
     "local-c851b27105fd": {
       "representative_id": "741222966b7b87e2a59ef07c"
     },
+    "4fce0b5b59e132d925d084c7": {
+      "representative_id": "4fce0b5b59e132d925d084c7"
+    },
     "local-d5f3bd2f59dd": {
       "representative_id": "58979ef87f741bb19d5d70e0"
     },
-    "local-8eb916d005d4": {
+    "3882c0d2ce53205efb2c1314": {
+      "representative_id": "3882c0d2ce53205efb2c1314"
+    },
+    "e57e435c29a63cf4589c1ec3": {
       "representative_id": "e57e435c29a63cf4589c1ec3"
+    },
+    "81ba7e2987d04696c1f210d5": {
+      "representative_id": "81ba7e2987d04696c1f210d5"
     },
     "local-80ea5335c4cd": {
       "representative_id": "ebd66650381e9323498da0cd"
@@ -19642,14 +20045,50 @@
     },
     "local-ebefe01e9b80": {
       "representative_id": "0372a67ace3e2e21ab02f752"
+    },
+    "f0040103b1a0411e4b759835": {
+      "representative_id": "f0040103b1a0411e4b759835"
+    },
+    "local-432066ef0231": {
+      "representative_id": "c2da92d69c1bf2b27cf872c7"
+    },
+    "local-f19360b16f78": {
+      "representative_id": "cebcefe72c6ebcf6e55e4d5a"
+    },
+    "local-e8fb5b92802b": {
+      "representative_id": "cc0285bab0bd88e8d3bc6415"
+    },
+    "local-449f34051d43": {
+      "representative_id": "f4a7158578ecc308d88a31be"
+    },
+    "78ebf1f9806000ab6cad7f3d": {
+      "representative_id": "78ebf1f9806000ab6cad7f3d"
+    },
+    "local-382ecd607e45": {
+      "representative_id": "5bf2d0fc6b8dcc3fc2bd63c0"
+    },
+    "local-ef430b90d854": {
+      "representative_id": "e0da0fab081b5753dc3b6789"
+    },
+    "local-5464bfd5dfc7": {
+      "representative_id": "57b98b433caed6bb8bf4debb"
+    },
+    "2ba8d8bd278c4754ba43646a": {
+      "representative_id": "2ba8d8bd278c4754ba43646a"
+    },
+    "local-b4db65aa0ab2": {
+      "representative_id": "0e6248142b317a56ad44b12b"
+    },
+    "87c3418b36ba6cf1dfdfe117": {
+      "representative_id": "87c3418b36ba6cf1dfdfe117"
     }
   },
   "usage": {
     "date": "2026-10-11",
-    "requests": 13,
-    "last_success": "2026-10-11T04:15:49Z",
-    "last_success_epoch": 1791692149.3656526,
-    "last_article_generation": "2026-10-11T05:15:23Z",
+    "requests": 15,
+    "last_success": "2026-10-11T05:23:32Z",
+    "last_success_epoch": 1791696212.862786,
+    "last_article_generation": "2026-10-11T05:23:36Z",
     "quota_block_until_epoch": 1791706881.9577627,
     "quota_block_until": "2026-10-11T08:21:21Z"
   }
