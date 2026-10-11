@@ -25,37 +25,10 @@ box.innerHTML=`
 <div class="Evrenxus-sidebar-box Evrenxus-sidebar-menu">
 <a class="Evrenxus-menu-link" target="_top" href="./">صفحه اصلی</a>
 <a class="Evrenxus-menu-link" target="_top" href="./news-river.html">آخرین مطالب</a>
-<a class="Evrenxus-menu-link" target="_top" href="./important-archive.html">آرشیو مطالب مهم</a>
 <a class="Evrenxus-menu-link" target="_top" href="https://evrenexus.blogfa.com/archive">آرشیو وبلاگ</a>
 <a class="Evrenxus-menu-link" target="_top" href="https://evrenexus.blogfa.com/posts/">عناوین نوشته‌های وبلاگ</a>
 </div>`;
 var host=document.getElementById("sidebar-host")||document.getElementById("Evrenxus-sidebar-host");
 if(host){host.innerHTML="";host.appendChild(box)}else document.body.appendChild(box);
-function uniquePush(out,seen,x,score){
- if(!x||!String(x.title||"").trim())return;
- var title=String(x.title).trim(),key=title.toLowerCase();
- if(seen[key])return;
- var href="";
- if(x.articleUrl)href="./"+String(x.articleUrl).replace(/^\.\//,"");
- else if(x.url)href="./viewer.html?url="+encodeURIComponent(x.url);
- if(!href)return;
- seen[key]=true;out.push({title:title,href:href,score:Number(score||x.score||x.importance_score||0),published:x.published||"",selectedAt:x.selectedAt||x.published||""});
-}
-function render(items){
- var el=document.getElementById("Evrenxus-sidebar-important");if(!el)return;
- var seen={},out=[];
- (items||[]).forEach(function(x){uniquePush(out,seen,x,x.score||x.importance_score)});
- out.sort(function(a,b){return String(b.selectedAt).localeCompare(String(a.selectedAt))||b.score-a.score;});
- out=out.slice(0,20);el.innerHTML="";
- if(!out.length){el.innerHTML='<div style="padding:12px;font-size:10px;color:#888">مطالبی برای نمایش پیدا نشد.</div>';return}
- out.forEach(function(x){var a=document.createElement("a");a.className="Evrenxus-important-link";a.target="_top";a.href=x.href;a.textContent=x.title;el.appendChild(a)});
-}
-function load(){
- fetch("./data/public/important-posts.json?v="+Date.now(),{cache:"no-store"})
- .then(function(r){if(!r.ok)throw Error("important-posts HTTP "+r.status);return r.json()})
- .then(function(doc){render(Array.isArray(doc&&doc.items)?doc.items:[])})
- .catch(function(){render([])});
-}
 
-if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",load,{once:true});else load();
 })();
