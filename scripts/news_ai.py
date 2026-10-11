@@ -111,6 +111,24 @@ def call_gemini(prompt, key):
     raise RuntimeError(last)
 
 
+def parse_json_object_response(raw):
+    """Recover a JSON object even when a provider wraps it in prose or Markdown."""
+    text = str(raw or "").strip()
+    text = re.sub(r"^\s*```(?:json)?\s*", "", text, flags=re.IGNORECASE)
+    text = re.sub(r"\s*```\s*$", "", text)
+    decoder = json.JSONDecoder()
+    for index, char in enumerate(text):
+        if char != "{":
+            continue
+        try:
+            value, _ = decoder.raw_decode(text, index)
+        except json.JSONDecodeError:
+            continue
+        if isinstance(value, dict):
+            return value
+    raise ValueError("No valid JSON object found in provider response")
+
+
 def call_OpenRouter(prompt, key):
     """Call OpenRouter's OpenAI-compatible API and require a JSON object response."""
     payload = json.dumps({
@@ -134,8 +152,8 @@ def call_OpenRouter(prompt, key):
             if not text:
                 raise RuntimeError("Empty OpenRouter response")
             try:
-                return json.loads(text)
-            except json.JSONDecodeError as e:
+                return parse_json_object_response(text)
+            except (ValueError, json.JSONDecodeError) as e:
                 raise RuntimeError(f"Invalid OpenRouter JSON: {e}; response preview: {text[:500]}")
         except HTTPError as e:
             body = ""
