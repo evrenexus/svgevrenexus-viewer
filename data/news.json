@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-11T20:55:16.971065+00:00",
+  "updated": "2026-10-11T21:05:30.616939+00:00",
   "items": [
     {
       "id": "199d024baad8fe91fc54",
@@ -228,7 +228,8 @@
       ],
       "importance_score": 3,
       "important": false,
-      "first_seen_at": "2026-10-11T20:42:49.248208+00:00"
+      "first_seen_at": "2026-10-11T20:42:49.248208+00:00",
+      "image_tries": 1
     },
     {
       "id": "f450818b8b85a48e0d5f",
@@ -327,7 +328,7 @@
       "importance_score": 8,
       "important": true,
       "first_seen_at": "2026-10-11T19:05:50.499405+00:00",
-      "image_tries": 1
+      "image_tries": 2
     },
     {
       "id": "8e10febf58c2160bb440",
@@ -348,7 +349,7 @@
       "importance_score": 10,
       "important": true,
       "first_seen_at": "2026-10-11T18:47:36.340187+00:00",
-      "image_tries": 2
+      "image_tries": 3
     },
     {
       "id": "0625bb072c7f5b872f31",
@@ -387,7 +388,7 @@
       "importance_score": 0,
       "important": false,
       "first_seen_at": "2026-10-11T18:47:37.284933+00:00",
-      "image_tries": 1
+      "image_tries": 2
     },
     {
       "id": "9d07786cf966bee88efa",
@@ -453,7 +454,7 @@
       "summary": "رئیس پیشین صداوسیمانوشت: «مرحوم مهدوی کنی در اوائل انقلاب و در خطبه‌ی ⁧ نماز جمعه⁩ به خانم بازیگر سریال صداوسیما اهانت می‌کند. در خطبه‌ی بعدی عذرخواهی می‌کند و از او حلالیت می‌طلبد.»",
       "content": "۲۱:۲۲ - \n۱۹ مهر ۱۴۰۵ \n\nروایت ضرغامی از ماجرای اهانت و عذرخواهی آیت‌الله مهدوی کنی به خانم بازیگر در خطبه‌های نماز جمعه \n\nرئیس پیشین صداوسیمانوشت: «مرحوم مهدوی کنی در اوائل انقلاب و در خطبه‌ی ⁧ نماز جمعه⁩ به خانم بازیگر سریال صداوسیما اهانت می‌کند. در خطبه‌ی بعدی عذرخواهی می‌کند و از او حلالیت می‌طلبد.» \n\nپ\n\n،\n\nپـ\n\nعزت الله ضرغامی، رئیس پیشین صداوسیما، در حساب کاربری خود در شبکه اجتماعی ایکس نوشت:\n\r\n\r\n\n«مرحوم آیت‌الله مهدوی کنی در اوائل انقلاب و در خطبه‌ی ⁧ نماز جمعه⁩ به خانم بازیگر سریال صداوسیما اهانت می‌کند. در خطبه‌ی بعدی عذرخواهی می‌کند و از او حلالیت می‌طلبد. (رحمه‌الله علیه)»\n\r\n\r\n\nضرغامی افزود: «آیا همه‌ی تریبون‌های رسمی و مقدس ما همینطورند؟! شیشه را با ⁧دستمال چرکین⁩ پاک نمی‌کنند.»\n\r\n\r\n\n\r\n\r\n\n \n\r\n\nva NewsLis Limi = 5;\n\nاز میان اخبار \n\nروایت ضرغامی از ماجرای اهانت و عذرخواهی آیت‌الله مهدوی کنی به خانم بازیگر در خطبه‌های نماز جمعه \n\nهمتی: بسنت اول بگوید وعده‌‌ای که داد چی شد! \n\nویدیو؛ لحظه برخورد سوپر نفتکش با مین دریایی در تنگه هرمز \n\nبازگشت ۱۳۵ کارمند روس‌اتم به نیروگاه هسته‌ای بوشهر \n\nشما قبلا این خبر را لایک کرده‌اید . \n\nfunc ion oPe sianNumbe (numbe ) {\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\nelemen .addEven Lis ene (\"click\", func ion() {\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n. hen(func ion( esponse) {\nif ( esponse.s a us == 200) {\nesponse.json(). hen(func ion(newSco e) {\nva likeNumbe Span = elemen .que ySelec o (\".like\");\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\nva hiddenHea = elemen .que ySelec o (\".hidden\");\nvisibleHea .classLis .add(\"hidden\");\nfavo i eBu on.classLis .add(\"hidden\");\nhiddenHea .classLis . emove(\"hidden\");\nva e o Message = elemen .que ySelec o (\".e o _message\");\nif (e o Message) {\ne o Message.classLis . emove(\"hidden_e o \");\n}\n});\n} else {\nva e o Message = elemen .que ySelec o (\".e o _message\");\nif (e o Message) {\ne o Message.classLis .add(\"hidden_e o \");\nse Timeou (func ion() {\ne o Message.classLis . emove(\"hidden_e o \");\n}, 3000);\n}\n}\n})\n});\n});",
       "url": "https://fararu.com/fa/news/1009038/%D8%B1%D9%88%D8%A7%DB%8C%D8%AA-%D8%B6%D8%B1%D8%BA%D8%A7%D9%85%DB%8C-%D8%A7%D8%B2-%D9%85%D8%A7%D8%AC%D8%B1%D8%A7%DB%8C-%D8%A7%D9%87%D8%A7%D9%86%D8%AA-%D8%B9%D8%B0%D8%B1%D8%AE%D9%88%D8%A7%D9%87%DB%8C-%D8%A2%DB%8C%D8%AA-%D8%A7%D9%84%D9%84%D9%87-%D9%85%D9%87%D8%AF%D9%88%DB%8C-%DA%A9%D9%86%DB%8C-%D8%A8%D9%87-%D8%AE%D8%A7%D9%86%D9%85-%D8%A8%D8%A7%D8%B2%DB%8C%DA%AF%D8%B1-%D8%AF%D8%B1-%D8%AE%D8%B7%D8%A8%D9%87-%D9%87%D8%A7%DB%8C-%D9%86%D9%85%D8%A7%D8%B2-%D8%AC%D9%85%D8%B9%D9%87",
-      "image": "https://cdn.fararu.com/thumbnail/P3VTDqQayx0h/E3e3vqkv1vfZVDfeJiIrf35BZGH-xUNfzZrnEIdKLKHO013jGUZH61rBqDDw1LoaJkmoAGm-yTDlgIHjFFAD0ukG8vtQKjQW7K9xMgu2cEfPdQDE2Xb2JoocdlVPZ2cW/%D8%B6%D8%B1%D8%BA%D8%A7%D9%85%DB%8C.jpg",
+      "image": "https://cdn.fararu.com/thumbnail/P3VTDqQayx0h/kaO2tNXmVgG2qZmQsCLHK-kzZkgtYHd-ie1ER6lTC8bOQTbf4PRC0UNTKk0dfKRnfhwpv_VWJXfeFLiOpSiniRAO9dFb0ZhDplE-vKnZPKnuRUikKlWgc3xHOZCXtk_Y/%D8%B6%D8%B1%D8%BA%D8%A7%D9%85%DB%8C.jpg",
       "source": "فرارو",
       "source_site": "https://fararu.com/",
       "allow_internal_republish": true,
@@ -512,7 +513,7 @@
       "summary": "سازمان سنجش از تمدید مهلت انتخاب رشته کنکور خبر داد.",
       "content": "۲۱:۰۰ - \n۱۹ مهر ۱۴۰۵ \n\nتمدید مهلت انتخاب رشته کنکور ۱۴۰۵ \n\nسازمان سنجش از تمدید مهلت انتخاب رشته کنکور خبر داد. \n\nپ\n\n،\n\nپـ\n\nسازمان سنجش در اطلاعیه‌ای اعلام کرد: مهلت ویرایش و انتخاب رشته برای آزمون سراسری، دانشجومعلم و پذیرش صرفاً بر اساس سوابق تحصیلی، تا پایان روز دوشنبه ۲۰ مهر تمدید شد. \n\r\n\r\n\nدر این اطلاعیه تأکید شده است: این مهلت به هیچ وجه تمدید نخواهد شد.\n\r\n\r\n\n \n\r\n\nva NewsLis Limi = 5;\n\nاز میان اخبار \n\nتمدید مهلت انتخاب رشته کنکور ۱۴۰۵ \n\n۲۶ استان در معرض سامانه بارشی جدید/ تهران و البرز هم بارانی می‌شوند \n\nاز سرخ و سیاه تا جزئیات قتل در پاساژ سعدی \n\nانبار نفت فردیس به اشتهارد منتقل می‌شود \n\nشما قبلا این خبر را لایک کرده‌اید . \n\nfunc ion oPe sianNumbe (numbe ) {\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\nelemen .addEven Lis ene (\"click\", func ion() {\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n. hen(func ion( esponse) {\nif ( esponse.s a us == 200) {\nesponse.json(). hen(func ion(newSco e) {\nva likeNumbe Span = elemen .que ySelec o (\".like\");\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\nva hiddenHea = elemen .que ySelec o (\".hidden\");\nvisibleHea .classLis .add(\"hidden\");\nfavo i eBu on.classLis .add(\"hidden\");\nhiddenHea .classLis . emove(\"hidden\");\nva e o Message = elemen .que ySelec o (\".e o _message\");\nif (e o Message) {\ne o Message.classLis . emove(\"hidden_e o \");\n}\n});\n} else {\nva e o Message = elemen .que ySelec o (\".e o _message\");\nif (e o Message) {\ne o Message.classLis .add(\"hidden_e o \");\nse Timeou (func ion() {\ne o Message.classLis . emove(\"hidden_e o \");\n}, 3000);\n}\n}\n})\n});\n});",
       "url": "https://fararu.com/fa/news/1009035/%D8%AA%D9%85%D8%AF%DB%8C%D8%AF-%D9%85%D9%87%D9%84%D8%AA-%D8%A7%D9%86%D8%AA%D8%AE%D8%A7%D8%A8-%D8%B1%D8%B4%D8%AA%D9%87-%DA%A9%D9%86%DA%A9%D9%88%D8%B1",
-      "image": "https://cdn.fararu.com/thumbnail/sm0ODSJXuECK/1dwLS_ShyKVztPsHwNghNaFup3uQn-jkbrFjcc3S2hL7hZHn_tmokuYBXUtkKsoplkqey_ILMAIn0QfFSxgxKEMmYH1SSzDlMKp_4f4ZmKFlGS0d6pbGEqWvzDgTKeMa/%D8%A7%D9%86%D8%AA%D8%AE%D8%A7%D8%A8+%D8%B1%D8%B4%D8%AA%D9%87.jpg",
+      "image": "https://cdn.fararu.com/thumbnail/sm0ODSJXuECK/DyJJpLBFgtYsk8OxmaNcwR-WaCDc0jTXdcUJ7TLr4N_kwFp3xN8b7MEysv1F7agJLngQUmT0LCrrou0hO1NNxt7XEDs3D8hNFWa6fc4V8WWOIvZ7qEWZpOK8-YgNCojo/%D8%A7%D9%86%D8%AA%D8%AE%D8%A7%D8%A8+%D8%B1%D8%B4%D8%AA%D9%87.jpg",
       "source": "فرارو",
       "source_site": "https://fararu.com/",
       "allow_internal_republish": true,
@@ -660,7 +661,7 @@
       "importance_score": 8,
       "important": true,
       "first_seen_at": "2026-10-11T16:53:34.897748+00:00",
-      "image_tries": 2
+      "image_tries": 3
     },
     {
       "id": "e925466c700dec1fd5fe",
@@ -700,7 +701,7 @@
       "importance_score": 0,
       "important": false,
       "first_seen_at": "2026-10-11T16:43:11.552917+00:00",
-      "image_tries": 2
+      "image_tries": 3
     },
     {
       "id": "18ab16d754a0b8874003",
@@ -3556,7 +3557,7 @@
       "id": "6c10db948eed81ebaa47",
       "title": "اگر فروشنده خودرو برای تعویض پلاک حاضر نشود چه باید کرد؟",
       "summary": "امتناع فروشنده از حضور در مرکز تعویض پلاک، خریداران خودرو را با چالش حقوقی مواجه می‌کند. پست اگر فروشنده خودرو برای تعویض پلاک حاضر نشود چه باید کرد؟ اولین بار در تجارت نیوز ظاهر شد.",
-      "content": "",
+      "content": "اگر فروشنده خودرو برای تعویض پلاک حاضر نشود چه باید کرد؟\n\n|\n\nبروزرسانی: 14 ساعت پیش \n\nکد خبر: 1357767 \n\nخودرو \n\nلینک کوتاه\n\nکپی شد \n\nامتناع فروشنده از حضور در مرکز تعویض پلاک، خریداران خودرو را با چالش حقوقی مواجه می‌کند. \nپس از دریافت وجه معامله و تحویل خودرو به خریداران، مربوط می‌شود.\n\nبر اساس ماده 10 قانون مدنی ، قراردادهای خصوصی که مخالف صریح قانون نباشند، برای طرفین لازم‌الاجرا است؛ بنابراین، وقتی فروشنده و خریدار در مبایعه‌نامه یا قولنامه توافق کرده‌اند که فروشنده در موعد مشخص در مرکز تعویض پلاک حاضر شود، این تعهد الزام‌آور است.\n\nمطابق مواد 219 و 220 قانون مدنی نیز به لزوم اجرای تعهدات طرفین در قراردادها اشاره دارد:\n\nماده 219: عقودی که بر طبق قانون واقع شده باشد بین متعاملین و قائم مقام آنها لازم‌الاتباع است مگر اینکه به رضای طرفین اقاله یا به علت ‌قانونی فسخ شود.\n\nماده 220: عقود نه فقط متعاملین را به اجرای چیزی که در آن تصریح شده است ملزم مینماید بلکه متعاملین به کلیه نتایجی هم که به موجب‌ عرف و عادت یا به موجب قانون از عقد حاصل می‌شود ملزم می‌باشند.\n\nامتناع فروشنده از دادن وکالت تعویض پلاک، مصداق تخلف از انجام تعهد است و خریدار می‌تواند با طرح دعوای الزام به تعویض پلاک و فک پلاک قبلی یا الزام به تنظیم سند رسمی انتقال خودرو، از دادگاه یا دادگاه صلح محل اقامت فروشنده یا محل وقوع عقد، صدور حکم بگیرد.\n\nدر مواردی که فروشنده همچنان خودروی فروخته‌شده را به نام خود نگه دارد، در خسارات وارد شده به شخص ثالث، او همچنان مسئول خسارات ناشی از حوادث خودرو است و این مسئولیت تا زمان انتقال رسمی مالکیت پابرجا می‌ماند.\n\nخریداران باید پیش از پرداخت کامل ثمن، یا در قرارداد شرط کنند که تسویه نهایی پس از تعویض پلاک انجام شود، یا از فروشنده وکالت بلاعزل برای تعویض پلاک اخذ کنند. در غیر این صورت، پیگیری قضائی اجباراً زمان‌بر خواهد بود.\n\nمنبع: تسنیم",
       "url": "https://tejaratnews.com/%d8%a7%da%af%d8%b1-%d9%81%d8%b1%d9%88%d8%b4%d9%86%d8%af%d9%87-%d8%ae%d9%88%d8%af%d8%b1%d9%88-%d8%a8%d8%b1%d8%a7%db%8c-%d8%aa%d8%b9%d9%88%db%8c%d8%b6-%d9%be%d9%84%d8%a7%da%a9-%d8%ad%d8%a7%d8%b6%d8%b1",
       "image": "https://tejaratnews.com/wp-content/uploads/2026/10/baznashr-1791701403737-ak-1200x800-1.webp",
       "source": "تجارت‌نیوز",
@@ -3985,8 +3986,8 @@
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
       "items": 5,
-      "attempted_at": "2026-10-11T20:55:21.161036+00:00",
-      "last_success_at": "2026-10-11T20:55:22.586512+00:00",
+      "attempted_at": "2026-10-11T21:05:35.019866+00:00",
+      "last_success_at": "2026-10-11T21:05:36.705434+00:00",
       "last_article_published": "2026-10-12T00:00:00+03:30",
       "error": ""
     },
@@ -3995,39 +3996,19 @@
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
       "items": 5,
-      "attempted_at": "2026-10-11T20:55:21.161821+00:00",
-      "last_success_at": "2026-10-11T20:55:23.001193+00:00",
+      "attempted_at": "2026-10-11T21:05:35.020771+00:00",
+      "last_success_at": "2026-10-11T21:05:37.432533+00:00",
       "last_article_published": "2026-10-11T23:59:00+03:30",
-      "error": ""
-    },
-    {
-      "name": "پزشک سایت",
-      "category": "پزشکی و سلامت",
-      "ok": true,
-      "items": 9,
-      "attempted_at": "2026-10-11T20:55:21.175012+00:00",
-      "last_success_at": "2026-10-11T20:55:23.155332+00:00",
-      "last_article_published": "2026-10-11T22:52:04+03:30",
       "error": ""
     },
     {
       "name": "فرارو",
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
-      "items": 7,
-      "attempted_at": "2026-10-11T20:55:21.176166+00:00",
-      "last_success_at": "2026-10-11T20:55:23.320103+00:00",
+      "items": 6,
+      "attempted_at": "2026-10-11T21:05:35.036067+00:00",
+      "last_success_at": "2026-10-11T21:05:37.906346+00:00",
       "last_article_published": "2026-10-12T00:14:06+03:30",
-      "error": ""
-    },
-    {
-      "name": "تجارت‌نیوز",
-      "category": "اقتصاد و سرمایه‌گذاری",
-      "ok": true,
-      "items": 9,
-      "attempted_at": "2026-10-11T20:55:21.162390+00:00",
-      "last_success_at": "2026-10-11T20:55:24.070961+00:00",
-      "last_article_published": "2026-10-11T22:47:52+03:30",
       "error": ""
     },
     {
@@ -4035,29 +4016,29 @@
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
       "items": 7,
-      "attempted_at": "2026-10-11T20:55:21.176751+00:00",
-      "last_success_at": "2026-10-11T20:55:24.242724+00:00",
+      "attempted_at": "2026-10-11T21:05:35.039488+00:00",
+      "last_success_at": "2026-10-11T21:05:38.152425+00:00",
       "last_article_published": "2026-10-11T21:18:58+03:30",
       "error": ""
     },
     {
-      "name": "فردای اقتصاد",
-      "category": "بورس و بازار سرمایه",
+      "name": "تجارت‌نیوز",
+      "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
-      "items": 13,
-      "attempted_at": "2026-10-11T20:55:21.165973+00:00",
-      "last_success_at": "2026-10-11T20:55:25.841177+00:00",
-      "last_article_published": "2026-10-11T18:00:00+03:30",
+      "items": 9,
+      "attempted_at": "2026-10-11T21:05:35.021210+00:00",
+      "last_success_at": "2026-10-11T21:05:38.467060+00:00",
+      "last_article_published": "2026-10-11T22:47:52+03:30",
       "error": ""
     },
     {
-      "name": "انتخاب",
-      "category": "اقتصاد و سرمایه‌گذاری",
+      "name": "پزشک سایت",
+      "category": "پزشکی و سلامت",
       "ok": true,
-      "items": 5,
-      "attempted_at": "2026-10-11T20:55:21.175556+00:00",
-      "last_success_at": "2026-10-11T20:55:26.494748+00:00",
-      "last_article_published": "2026-10-11T20:14:34+03:30",
+      "items": 9,
+      "attempted_at": "2026-10-11T21:05:35.031519+00:00",
+      "last_success_at": "2026-10-11T21:05:39.960772+00:00",
+      "last_article_published": "2026-10-11T22:52:04+03:30",
       "error": ""
     },
     {
@@ -4065,9 +4046,19 @@
       "category": "بورس و بازار سرمایه",
       "ok": true,
       "items": 11,
-      "attempted_at": "2026-10-11T20:55:21.162870+00:00",
-      "last_success_at": "2026-10-11T20:55:26.633878+00:00",
+      "attempted_at": "2026-10-11T21:05:35.022162+00:00",
+      "last_success_at": "2026-10-11T21:05:39.967433+00:00",
       "last_article_published": "2026-10-11T14:50:11+03:30",
+      "error": ""
+    },
+    {
+      "name": "فردای اقتصاد",
+      "category": "بورس و بازار سرمایه",
+      "ok": true,
+      "items": 13,
+      "attempted_at": "2026-10-11T21:05:35.025625+00:00",
+      "last_success_at": "2026-10-11T21:05:41.087752+00:00",
+      "last_article_published": "2026-10-11T18:00:00+03:30",
       "error": ""
     },
     {
@@ -4075,9 +4066,19 @@
       "category": "فناوری و علم",
       "ok": true,
       "items": 6,
-      "attempted_at": "2026-10-11T20:55:21.169966+00:00",
-      "last_success_at": "2026-10-11T20:55:26.716649+00:00",
+      "attempted_at": "2026-10-11T21:05:35.026179+00:00",
+      "last_success_at": "2026-10-11T21:05:41.597163+00:00",
       "last_article_published": "2026-10-11T12:48:29+03:30",
+      "error": ""
+    },
+    {
+      "name": "انتخاب",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "ok": true,
+      "items": 5,
+      "attempted_at": "2026-10-11T21:05:35.035514+00:00",
+      "last_success_at": "2026-10-11T21:05:42.520977+00:00",
+      "last_article_published": "2026-10-11T20:14:34+03:30",
       "error": ""
     },
     {
@@ -4085,8 +4086,8 @@
       "category": "پزشکی و سلامت",
       "ok": true,
       "items": 8,
-      "attempted_at": "2026-10-11T20:55:21.172968+00:00",
-      "last_success_at": "2026-10-11T20:55:26.902582+00:00",
+      "attempted_at": "2026-10-11T21:05:35.028608+00:00",
+      "last_success_at": "2026-10-11T21:05:43.620022+00:00",
       "last_article_published": "2026-10-11T14:36:41+03:30",
       "error": ""
     },
@@ -4095,8 +4096,8 @@
       "category": "بورس و بازار سرمایه",
       "ok": true,
       "items": 10,
-      "attempted_at": "2026-10-11T20:55:21.163581+00:00",
-      "last_success_at": "2026-10-11T20:55:31.551976+00:00",
+      "attempted_at": "2026-10-11T21:05:35.022691+00:00",
+      "last_success_at": "2026-10-11T21:05:44.815319+00:00",
       "last_article_published": "2026-10-11T20:00:00+03:30",
       "error": ""
     }
