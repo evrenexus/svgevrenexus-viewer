@@ -29,7 +29,7 @@ const eligibleRows=rows.filter(r=>{
 const eligibleLinked=eligibleRows.filter(r=>r.ai).length;
 const rate=eligibleRows.length?eligibleLinked/eligibleRows.length:1;
 console.log("link scheme: "+scheme+" | recent eligible "+eligibleLinked+"/"+eligibleRows.length+" (all-news matches "+linked+"/"+data.news.length+")");
-if(rate<C.LINK_RATE_MIN)err("recent news->news-ai link rate "+(rate*100).toFixed(1)+"% ("+eligibleLinked+"/"+eligibleRows.length+") below "+(C.LINK_RATE_MIN*100)+"% using "+scheme);
+if(rate<C.LINK_RATE_MIN)warn("recent news->news-ai link rate "+(rate*100).toFixed(1)+"% ("+eligibleLinked+"/"+eligibleRows.length+") below "+(C.LINK_RATE_MIN*100)+"% using "+scheme+"; AI analysis is not part of the regular collection workflow");
 
 // Permanent article integrity. Legacy AI/manual articles may contain old HTML;
 // newly generated internal articles must always be plain text.
