@@ -22,7 +22,7 @@ function init(){
  box.innerHTML='<div class="Evrenxus-donya-heading">آخرین مطالب</div><div id="Evrenxus-donya-list"><div class="Evrenxus-news-loading">در حال دریافت مطالب...</div></div>';
  if(slider&&slider.parentNode===content) slider.parentNode.insertBefore(box,slider.nextSibling); else content.appendChild(box);
  var list=document.getElementById("Evrenxus-donya-list");
- var viewer="https://evrenexus.github.io/svgevrenexus-viewer/viewer.html";
+ var viewer="https://evrenexus.ir/viewer.html";
  // Asriran sidebar — kept independent from the unified news river
  var sidebar=document.getElementById("sidebar");
  if(sidebar && !document.getElementById("Evrenxus-asriran-box")){
@@ -97,7 +97,7 @@ function init(){
    c.appendChild(t); if(s.textContent)c.appendChild(s); c.appendChild(m); a.appendChild(c); list.appendChild(a);
   });
  }
- fetch("https://evrenexus.github.io/svgevrenexus-viewer/data/news.json?v="+Date.now(),{cache:"no-store"})
+ fetch("https://evrenexus.ir/data/news.json?v="+Date.now(),{cache:"no-store"})
  .then(function(r){if(!r.ok)throw new Error("news");return r.json()})
  .then(function(data){render((data.items||[]).filter(function(x){return x&&x.title&&x.published&&String(x.url||"").indexOf("http")===0}).sort(function(a,b){return new Date(b.published)-new Date(a.published)}).slice(0,50))})
  .catch(function(){list.innerHTML='<div class="Evrenxus-news-error">دریافت خبرها انجام نشد.</div>'});
