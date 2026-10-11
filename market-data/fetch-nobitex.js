@@ -193,7 +193,7 @@ async function main() {
     .sort((a, b) => b.timestamp - a.timestamp)[0];
   const targetHour = now - 60 * 60 * 1000;
   const baselineHour = history
-    .filter(h => number(h.timestamp) != null && h.timestamp <= targetHour && h.prices)
+    .filter(h => number(h.timestamp) != null && h.timestamp <= targetHour && h.timestamp >= targetHour - 10 * 60 * 1000 && h.prices)
     .sort((a, b) => b.timestamp - a.timestamp)[0];
 
   if (baseline) {
