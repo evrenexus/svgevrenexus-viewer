@@ -14,6 +14,9 @@ WINDOW_HOURS = 2
 BATCH_SIZE = 4
 BATCH_COUNT = 4
 TOTAL = BATCH_SIZE * BATCH_COUNT
+# Canonical topics that map to one of the seven categories in Evrenexus-header.js.
+ALLOWED_TOPICS = {"economy", "markets", "crypto", "currency-gold", "real-estate",
+                  "technology", "ai", "health", "auto", "science-life"}
 
 
 def parse_date(value):
@@ -64,7 +67,8 @@ def clean_item(raw):
         "image": str(raw.get("image") or "").strip(),
         "source": str(raw.get("source") or "").strip(),
         "published": str(raw.get("published") or ""),
-        "topics": raw.get("topics") if isinstance(raw.get("topics"), list) else [],
+        "topics": [t for t in raw.get("topics", []) if isinstance(t, str) and t in ALLOWED_TOPICS]
+                  if isinstance(raw.get("topics"), list) else [],
         "importance_score": score,
         "_timestamp": parse_date(raw.get("published")),
     }
