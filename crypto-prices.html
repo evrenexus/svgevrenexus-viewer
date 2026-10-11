@@ -24,7 +24,7 @@ th{background:#f6f7f8;color:#596168;font-weight:700}
 th,td{padding:8px 9px;border-bottom:1px solid #edf0f1;text-align:right}
 td.num{text-align:left;direction:ltr;font-variant-numeric:tabular-nums}
 tr:hover td{background:#fafafa}
-.change-up{color:#16844a}.change-down{color:#c62828}.crypto-row{cursor:pointer}.crypto-row:hover td{background:#f4f7f9}#prices .table-wrap{display:block;width:100%;max-width:100%;overflow:hidden}#prices table{display:table;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:fixed;font-size:7px;border-collapse:collapse}#prices th,#prices td{padding:4px 1px!important;line-height:1.55;overflow-wrap:anywhere;word-break:break-word;white-space:normal}#prices th:nth-child(1),#prices td:nth-child(1){width:5%}#prices th:nth-child(2),#prices td:nth-child(2){width:14%}#prices th:nth-child(3),#prices td:nth-child(3){width:8%}#prices th:nth-child(4),#prices td:nth-child(4){width:19%}#prices th:nth-child(5),#prices td:nth-child(5){width:17%}#prices th:nth-child(6),#prices td:nth-child(6){width:19%}#prices th:nth-child(7),#prices td:nth-child(7){width:18%}#prices td.num{font-size:7px;white-space:normal;overflow-wrap:anywhere;word-break:break-all}#prices th.sortable{cursor:pointer;user-select:none}#prices th.sortable:hover{background:#e9edf0}#prices th .sort-mark{font-size:6px;margin-right:0;color:#202c35}.row-num{color:#858c91;text-align:center!important}.rank-missing{color:#a1a6aa}
+.change-up{color:#16844a}.change-down{color:#c62828}.crypto-row{cursor:pointer}.crypto-row:hover td{background:#f4f7f9}#prices .table-wrap{display:block;width:100%;max-width:100%;overflow:hidden}#prices table{display:table;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:fixed;font-size:9.5px;border-collapse:collapse}#prices th,#prices td{padding:7px 5px!important;line-height:1.6;overflow-wrap:normal;word-break:normal;white-space:normal}#prices th:nth-child(1),#prices td:nth-child(1){width:5%}#prices th:nth-child(2),#prices td:nth-child(2){width:14%}#prices th:nth-child(3),#prices td:nth-child(3){width:8%}#prices th:nth-child(4),#prices td:nth-child(4){width:19%}#prices th:nth-child(5),#prices td:nth-child(5){width:12%}#prices th:nth-child(6),#prices td:nth-child(6){width:30%}#prices th:nth-child(7),#prices td:nth-child(7){width:12%}#prices td.num{font-size:9px;white-space:normal;overflow-wrap:anywhere;word-break:normal}#prices th.sortable{cursor:pointer;user-select:none}#prices th.sortable:hover{background:#e9edf0}#prices th .sort-mark{font-size:6px;margin-right:0;color:#202c35}.row-num{color:#858c91;text-align:center!important}.rank-missing{color:#a1a6aa}
 .note{font-size:8.5px;color:#737a7f;line-height:1.9;padding:11px 13px;background:#fafafa}
 .status{padding:25px;text-align:center;color:#777;font-size:10px}
 @media(max-width:700px){#page{width:100%;padding:112px 8px 20px}.head h1{font-size:16px}.tools{flex-wrap:wrap}table{font-size:8.5px}th,td{padding:7px 6px}}
@@ -38,7 +38,7 @@ tr:hover td{background:#fafafa}
 .Evrenxus-home-footer .news-tags-list{display:flex;flex-wrap:wrap;gap:5px;justify-content:center}
 .Evrenxus-home-footer .news-tag{border:1px solid #fff;background:#fff;color:#596168;padding:4px 8px;font-size:8.5px;text-decoration:none}
 .Evrenxus-home-footer .footer-copy{font-size:9px;color:#d7dadd;margin-top:12px;padding-top:9px;border-top:1px solid #3c4850}
-@media(max-width:700px){html,body{background:#fff;overflow-x:hidden}#page{width:100%;max-width:100%;padding:137px 8px 20px;display:block;overflow-x:hidden}#content{width:100%;max-width:100%;min-width:0;flex:0 0 100%;box-sizing:border-box;overflow:hidden}#sidebar-host{display:block;width:100%;min-width:0;max-width:100%;margin-top:16px}.head h1{font-size:16px}.tools{flex-wrap:wrap}#prices table{font-size:6.5px!important}#prices th,#prices td{padding:3px 1px!important}#prices td.num{font-size:6.5px!important}}
+@media(max-width:700px){html,body{background:#fff;overflow-x:hidden}#page{width:100%;max-width:100%;padding:137px 8px 20px;display:block;overflow-x:hidden}#content{width:100%;max-width:100%;min-width:0;flex:0 0 100%;box-sizing:border-box;overflow:hidden}#sidebar-host{display:block;width:100%;min-width:0;max-width:100%;margin-top:16px}.head h1{font-size:16px}.tools{flex-wrap:wrap}#prices table{font-size:8.5px!important}#prices th,#prices td{padding:6px 3px!important}#prices td.num{font-size:8.5px!important}}
 
 </style>
 </head>
@@ -90,10 +90,10 @@ function render(){
    return '<td class="'+cls+' num">'+(ch==null?'<span title="برای محاسبه درصد نوسان، حداقل ۱۵ دقیقه سابقه قیمت لازم است">انتظار</span>':arrow+money(Math.abs(ch))+"%")+'</td>';
  }
  var html='<section class="group"><div class="group-title">همه ارزهای قابل معامله در نوبیتکس · ترتیب پیش‌فرض: رتبه جهانی ارزش بازار</div><div class="table-wrap"><table><thead><tr>'+
- '<th>ردیف</th><th>نام ارز به فارسی</th><th>شناسه ارز</th><th>قیمت بر اساس تومان</th>'+
- '<th class="sortable" data-sort="changePercent15mIRT">نوسان ۱۵ دقیقه‌ای تومان <span class="sort-mark">'+(sortKey==="changePercent15mIRT"?(sortDir===1?"▲":"▼"):"↕")+'</span></th>'+
- '<th>قیمت بر اساس تتر</th>'+
- '<th class="sortable" data-sort="changePercent15mUSDT">نوسان ۱۵ دقیقه‌ای تتر <span class="sort-mark">'+(sortKey==="changePercent15mUSDT"?(sortDir===1?"▲":"▼"):"↕")+'</span></th>'+
+ '<th>ردیف</th><th>ارز</th><th>شناسه</th><th>قیمت (تومان)</th>'+
+ '<th class="sortable" data-sort="changePercent15mIRT">میزان نوسان (15min) <span class="sort-mark">'+(sortKey==="changePercent15mIRT"?(sortDir===1?"▲":"▼"):"↕")+'</span></th>'+
+ '<th>قیمت (USDT)</th>'+
+ '<th class="sortable" data-sort="changePercent15mUSDT">میزان نوسان (15min) <span class="sort-mark">'+(sortKey==="changePercent15mUSDT"?(sortDir===1?"▲":"▼"):"↕")+'</span></th>'+
  '</tr></thead><tbody>';
  rows.forEach(function(x,i){
    var tv=tvSymbol(x);var link=tv?"./market-chart.html?symbol="+encodeURIComponent(tv)+"&name="+encodeURIComponent(x.name||""):"";
