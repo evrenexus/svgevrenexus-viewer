@@ -1,7 +1,7 @@
 {
   "version": 1,
   "policy_version": 9,
-  "updated": "2026-10-11T04:31:31Z",
+  "updated": "2026-10-11T05:15:23Z",
   "items": {
     "72b4eb7a7155ed214c32324d": {
       "title": "تصاویر؛ جشن «مهرگان» در غار کرفتو",
@@ -528,10 +528,8 @@
         "real-estate": 17
       },
       "importance": 20,
-      "important": true,
-      "important_topics": [
-        "real-estate"
-      ],
+      "important": false,
+      "important_topics": [],
       "slider_topics": [
         "real-estate"
       ],
@@ -548,8 +546,6 @@
       "political": false,
       "breaking_signal": false,
       "age_hours": 3.8659754267666075,
-      "permanent_article": true,
-      "article_id": "article-0a53381e89480d02",
       "image": "https://cdn.eghtesadnews.com/thumbnail/Kkf35sCRWZ1F/GZaVsfEIKzAgpc994QuV62NAfibJXmJ3p9dKqndTLZMOm0YHbObgdLAeQjdEROXcXmjsodsDLVFbxttaV6O7yBDIq7fPo1fSPa4bLEIOReJ45QBCafn1aoBfUcn2xwkzHiQqSBvyqivgAmFrBxfJyQEJd4ftgHcrg1EZomhWcj-fBLS4T9lxYgGJVOeG4uFK/64007965.jpg"
     },
     "519866e071ac21ba573dc566": {
@@ -3592,9 +3588,7 @@
       "importance": 16,
       "important": false,
       "important_topics": [],
-      "slider_topics": [
-        "real-estate"
-      ],
+      "slider_topics": [],
       "ticker_topics": [],
       "breaking": false,
       "breaking_topics": [],
@@ -17546,10 +17540,12 @@
       "source": "تجارت‌نیوز",
       "published": "2026-10-11T07:45:35+03:30",
       "topics": [
+        "real-estate",
         "economy"
       ],
       "topic_scores": {
-        "economy": 20
+        "economy": 20,
+        "real-estate": 20
       },
       "importance": 20,
       "important": false,
@@ -17560,14 +17556,14 @@
       "breaking_topics": [],
       "publishable": true,
       "exclude_reason": "",
-      "group_id": "local-dc223fe1290e",
-      "representative": true,
+      "group_id": "local-9c104cbf349f",
+      "representative": false,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
-      "local_score": 19,
+      "local_score": 20,
       "political": false,
       "breaking_signal": true,
-      "age_hours": 0.2643807336356905
+      "age_hours": 0.661955218580034
     },
     "1a7982a20ff313c9af60b6da": {
       "title": "بهزاد نبوی: به حرف خاتمی گوش بدهیم و دنبال اصلاحات باشیم/ پزشکیان شرایط بسیار دشواری دارد",
@@ -17592,7 +17588,7 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": true,
-      "age_hours": 0.41965851141346827
+      "age_hours": 0.8172329963578118
     },
     "c4e6a56346d13c0d7ad59cf6": {
       "title": "حضور سردار قاآنی در مراسم ختم مادر معاون پزشکیان+ عکس",
@@ -17621,7 +17617,376 @@
       "local_score": 4,
       "political": true,
       "breaking_signal": false,
-      "age_hours": 0.8129918447468016
+      "age_hours": 1.210566329691145
+    },
+    "9e863aee21f7dc0472a1bc7b": {
+      "title": "رفتار عجیب مجری تلویزیون",
+      "summary": "«چطور بود آقا؟ از مصاحبه راضی بودین؟» انگار که قرار و مداری پیش از مصاحبه گذاشته شده بود و بعد از پایان برنامه مجری برنامه مثل کارآموزها می‌خواست ببیند درسش را به درستی پس داده است یا نه.",
+      "source": "فرارو",
+      "published": "2026-10-11T08:21:28+03:30",
+      "topics": [],
+      "topic_scores": {},
+      "importance": 4,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-d7ed176633ea",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 0.06389966302447848
+    },
+    "c7dd19ff37951cbd989765b7": {
+      "title": "ترافیک نیمه‌سنگین در ۴ محور مواصلاتی منتهی به تهران/بارش باران در ۵ استان",
+      "summary": "رئیس مرکز اطلاعات و کنترل ترافیک پلیس راهور فراجا، از بارش باران در برخی محورهای مواصلاتی استان‌های مازندران، گلستان، سمنان، خراسان شمالی و خراسان رضوی خبر داد و گفت: ترافیک در بخش‌هایی از آزادراه‌های منتهی به تهران و محور شهریار ـ تهران نیمه‌سنگین است. پست ترافیک نیمه‌سنگین در ۴ محور مواصلاتی منتهی",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-11T08:20:20+03:30",
+      "topics": [],
+      "topic_scores": {},
+      "importance": 4,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-02994bf6a041",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.08278855191336738
+    },
+    "741222966b7b87e2a59ef07c": {
+      "title": "باورهای القایی غلط فضای مجازی درباره قند خون",
+      "summary": "متخصصان می‌گویند بالا رفتن قندخون پس از غذا خوردن، در افراد سالم واکنشی طبیعی است و لزوما به‌معنای بیماری نیست.",
+      "source": "سلامت نیوز",
+      "published": "2026-10-11T08:18:28+03:30",
+      "topics": [
+        "health"
+      ],
+      "topic_scores": {
+        "health": 18
+      },
+      "importance": 18,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-c851b27105fd",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 13,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.11389966302447849
+    },
+    "4fce0b5b59e132d925d084c7": {
+      "title": "قیمت تیرآهن امروز یکشنبه ۱۹ مهر 1405 + جدول",
+      "summary": "قیمت تیرآهن امروز یکشنبه ۱۹ مهر 1405 اعلام شد. پست قیمت تیرآهن امروز یکشنبه ۱۹ مهر 1405 + جدول اولین بار در تجارت نیوز ظاهر شد.",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-11T08:15:37+03:30",
+      "topics": [
+        "real-estate",
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 20,
+        "real-estate": 20
+      },
+      "importance": 20,
+      "important": true,
+      "important_topics": [
+        "real-estate"
+      ],
+      "slider_topics": [
+        "real-estate"
+      ],
+      "ticker_topics": [
+        "economy",
+        "real-estate"
+      ],
+      "breaking": true,
+      "breaking_topics": [
+        "economy",
+        "real-estate"
+      ],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-9c104cbf349f",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 13,
+      "political": false,
+      "breaking_signal": true,
+      "age_hours": 0.1613996630244785
+    },
+    "58979ef87f741bb19d5d70e0": {
+      "title": "سونامی سرطان در ایران",
+      "summary": "سرطان‌های گوارش و کبد بعد از بیماری‌های قلبی و عروقی، دومین علت مرگ‌ومیر در جهان هستند و در ایران نیز رو به افزایش است؛ به‌طوری که در مردان به ازای هر 100هزار نفر، 13تا 15نفر و در زنان به ازای هر ۱۰۰هزار نفر، 9تا 12نفر به یکی از آنها مبتلا هستند.",
+      "source": "سلامت نیوز",
+      "published": "2026-10-11T08:14:42+03:30",
+      "topics": [
+        "health"
+      ],
+      "topic_scores": {
+        "health": 12
+      },
+      "importance": 12,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-d5f3bd2f59dd",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.17667744080225625
+    },
+    "3882c0d2ce53205efb2c1314": {
+      "title": "قیمت خودرو‌های سایپا امروز یکشنبه ۱۹ مهر ۱۴۰۵ + جدول",
+      "summary": "قیمت متوسط بازار آزاد و قیمت نمایندگی خودرو‌های سایپا امروز یکشنبه ۱۹ مهر ۱۴۰۵ را در جدول زیر مشاهده نمایید. پست قیمت خودرو‌های سایپا امروز یکشنبه ۱۹ مهر ۱۴۰۵ + جدول اولین بار در تجارت نیوز ظاهر شد.",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-11T08:13:57+03:30",
+      "topics": [
+        "auto"
+      ],
+      "topic_scores": {
+        "auto": 20
+      },
+      "importance": 20,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-9c104cbf349f",
+      "representative": false,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 12,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.18917744080225626
+    },
+    "e57e435c29a63cf4589c1ec3": {
+      "title": "مطالعه‌ای جدید: مصرف روزانه بادام‌زمینی بدون نمک ممکن است حساسیت انسولینی مغز را در سالمندان بهتر کند",
+      "summary": "خلاصه سریع برای خواننده تحقیق جدید از دانشگاه ماستریخت نشان می‌دهد که مصرف طولانی‌مدت بادام‌زمینی بوداده و بدون نمک می‌تواند پاسخ انسولینی مغز را در بزرگسالان مسن بهبود بخشد. نتایج در مجله Food & Function منتشر شده و به تأثیرات بالقوه ترکیبات موجود در بادام‌زمینی بر متابولیسم مغزی اشاره دارد. یادآور",
+      "source": "پزشک سایت",
+      "published": "2026-10-11T08:12:04+03:30",
+      "topics": [
+        "science-life"
+      ],
+      "topic_scores": {
+        "science-life": 12
+      },
+      "importance": 12,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-8eb916d005d4",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.22056632969114515
+    },
+    "81ba7e2987d04696c1f210d5": {
+      "title": "قیمت خودرو‌های ایران خودرو امروز یکشنبه ۱۹ مهر ۱۴۰۵ + جدول",
+      "summary": "قیمت بازار و قیمت نمایندگی خودرو‌های ایران خودرو امروز یکشنبه ۱۹ مهر ۱۴۰۵ را در جدول زیر مشاهده نمایید. پست قیمت خودرو‌های ایران خودرو امروز یکشنبه ۱۹ مهر ۱۴۰۵ + جدول اولین بار در تجارت نیوز ظاهر شد.",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-11T08:11:37+03:30",
+      "topics": [
+        "auto"
+      ],
+      "topic_scores": {
+        "auto": 20
+      },
+      "importance": 20,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-9c104cbf349f",
+      "representative": false,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 12,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.22806632969114515
+    },
+    "ebd66650381e9323498da0cd": {
+      "title": "پیش‌بینی آب و هوا در 5 روز آینده/ این مناطق بارانی می‌شوند",
+      "summary": "امروز ۴ استان نوار شمالی کشور شاهد رعد و برق و بارندگی خواهند بود.",
+      "source": "دنیای اقتصاد",
+      "published": "2026-10-11T08:10:01+03:30",
+      "topics": [
+        "science-life"
+      ],
+      "topic_scores": {
+        "science-life": 9
+      },
+      "importance": 9,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-80ea5335c4cd",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 9,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.2547329963578118
+    },
+    "ade4b4659d020cab0b66f934": {
+      "title": "بارندگی و رعدوبرق در ۴ استان نوار شمالی کشور",
+      "summary": "سازمان هواشناسی اعلام‌کرد: امروز (یکشنبه) در برخی مناطق استان‌های مازندران، گلستان، خراسان شمالی و خراسان رضوی در برخی ساعات بارندگی، رعد و برق و وزش باد شدید موقت پیش بینی می شود. پست بارندگی و رعدوبرق در ۴ استان نوار شمالی کشور اولین بار در تجارت نیوز ظاهر شد.",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-11T08:08:10+03:30",
+      "topics": [],
+      "topic_scores": {},
+      "importance": 7,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-af8f4095fa9c",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.28556632969114515
+    },
+    "c85ad3ab92f0dd1fec1da78e": {
+      "title": "پیش بینی قیمت طلای جهانی / مقاومت 4300 دلاری در برابر طلا؛ اونس قدرت صعود دارد؟",
+      "summary": "طلا پس از افت تا پایین‌ترین سطح دو ماهه، بخشی از زیان‌های خود را جبران کرد و هفته را با رشد محدودی به پایان رساند. با این‌حال، باقی ماندن قیمت زیر میانگین‌های متحرک مهم و قرار گرفتن شاخص قدرت نسبی زیر سطح ۵۰ نشان می‌دهد خریداران هنوز کنترل بازار را به دست نگرفته‌اند. پست پیش بینی قیمت طلای جهانی / م",
+      "source": "تجارت‌نیوز",
+      "published": "2026-10-11T08:00:44+03:30",
+      "topics": [
+        "currency-gold"
+      ],
+      "topic_scores": {
+        "currency-gold": 14
+      },
+      "importance": 14,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-047261ef0015",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 0.40945521858003403
+    },
+    "313e5090498ceba45ab16220": {
+      "title": "سیلاب ۱۸مهر، جان یک نفر را در گلستان گرفت/ یک نفر در مینودشت مفقود است",
+      "summary": "مدیرکل مدیریت بحران گلستان از جان‌باختن یک نفر بر اثر سیلاب، مفقودشدن یک نفر دیگر در شهرستان مینودشت، آب‌گرفتگی معابر شهری و انسداد برخی محورهای روستایی و جاده‌ای در پی بارش‌های شدید شب گذشته خبر داد.",
+      "source": "فرارو",
+      "published": "2026-10-11T07:51:50+03:30",
+      "topics": [],
+      "topic_scores": {},
+      "importance": 17,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-395e1b8f35e3",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 17,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 0.5577885519133674
+    },
+    "0372a67ace3e2e21ab02f752": {
+      "title": "یک شهروند برای قدم‌ زدن باید پاسخگو باشد؟",
+      "summary": "«اگر کسی سد معبر کرده، باید با سد معبر برخورد شود. اگر یک واحد صنفی مقرراتی را نقض کرده، باید بررسی شود. اگر جرمی اتفاق افتاده، مرتکب آن باید شناسایی و تعقیب شود. اما تعمیم رفتار یک فرد یا یک واحد صنفی به تمام شهروندانی که در یک محدوده حضور دارند، با منطق مسوولیت فردی و سازمانی ماموران انتظامی و همی",
+      "source": "فرارو",
+      "published": "2026-10-11T07:45:00+03:30",
+      "topics": [],
+      "topic_scores": {},
+      "importance": 4,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-ebefe01e9b80",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 4,
+      "political": true,
+      "breaking_signal": false,
+      "age_hours": 0.6716774408022562
     }
   },
   "groups": {
@@ -19239,22 +19604,52 @@
     "group-5fd7ac3e4252fc3597bff568": {
       "representative_id": "5fd7ac3e4252fc3597bff568"
     },
-    "local-dc223fe1290e": {
-      "representative_id": "e71654b7c18415dac3b2963e"
+    "local-9c104cbf349f": {
+      "representative_id": "4fce0b5b59e132d925d084c7"
     },
     "local-5b32a0530144": {
       "representative_id": "1a7982a20ff313c9af60b6da"
     },
     "local-ee255337cf56": {
       "representative_id": "c4e6a56346d13c0d7ad59cf6"
+    },
+    "local-d7ed176633ea": {
+      "representative_id": "9e863aee21f7dc0472a1bc7b"
+    },
+    "local-02994bf6a041": {
+      "representative_id": "c7dd19ff37951cbd989765b7"
+    },
+    "local-c851b27105fd": {
+      "representative_id": "741222966b7b87e2a59ef07c"
+    },
+    "local-d5f3bd2f59dd": {
+      "representative_id": "58979ef87f741bb19d5d70e0"
+    },
+    "local-8eb916d005d4": {
+      "representative_id": "e57e435c29a63cf4589c1ec3"
+    },
+    "local-80ea5335c4cd": {
+      "representative_id": "ebd66650381e9323498da0cd"
+    },
+    "local-af8f4095fa9c": {
+      "representative_id": "ade4b4659d020cab0b66f934"
+    },
+    "local-047261ef0015": {
+      "representative_id": "c85ad3ab92f0dd1fec1da78e"
+    },
+    "local-395e1b8f35e3": {
+      "representative_id": "313e5090498ceba45ab16220"
+    },
+    "local-ebefe01e9b80": {
+      "representative_id": "0372a67ace3e2e21ab02f752"
     }
   },
   "usage": {
     "date": "2026-10-11",
-    "requests": 12,
+    "requests": 13,
     "last_success": "2026-10-11T04:15:49Z",
     "last_success_epoch": 1791692149.3656526,
-    "last_article_generation": "2026-10-11T04:15:56Z",
+    "last_article_generation": "2026-10-11T05:15:23Z",
     "quota_block_until_epoch": 1791706881.9577627,
     "quota_block_until": "2026-10-11T08:21:21Z"
   }
