@@ -114,12 +114,24 @@ jobs:
         run: node scripts/build-latest-news.mjs
       - name: Validate independent latest-news feed
         run: node scripts/validate-latest-news.mjs
-      - name: Build public data
+      - name: Build public data for separate site features
+        id: build_public_data
+        continue-on-error: true
         run: python3 scripts/build_public.py
+      - name: Restore public data if separate public-data build fails
+        if: steps.build_public_data.outcome == 'failure'
+        run: git checkout -- data/public/news.json data/public/editorial.json data/public/policy-terms.json data/public/meta.json
       - name: Install image-check dependency
+        if: steps.build_public_data.outcome == 'success'
         run: npm install --no-save cheerio@1.0.0-rc.12
-      - name: Check images
+      - name: Check images for separate site features
+        id: check_images
+        if: steps.build_public_data.outcome == 'success'
+        continue-on-error: true
         run: node scripts/check-images.mjs
+      - name: Restore image health if image check fails
+        if: steps.check_images.outcome == 'failure'
+        run: git checkout -- data/public/image-health.json
       # Commit the independent public/latest feeds before starting the separate AI-derived boxes.
       - name: Commit public data and independent latest-news feed
         run: |
@@ -139,6 +151,7 @@ jobs:
         run: git checkout -- data/articles.json
       - name: Commit generated permanent articles
         if: steps.build_internal_articles.outcome == 'success'
+        continue-on-error: true
         run: |
           git config user.name "evrenexus-update-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -163,6 +176,7 @@ jobs:
           git clean -fd articles/
       - name: Commit important boxes and article pages
         if: steps.build_important_boxes.outcome == 'success' && steps.validate_important_boxes.outcome == 'success'
+        continue-on-error: true
         run: |
           git config user.name "evrenexus-update-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
