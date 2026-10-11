@@ -65,7 +65,7 @@ var prices=document.getElementById("prices"),search=document.getElementById("sea
 function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
 function num(v){return v==null?null:Number(v)}
 function money(v){return v==null?"-":new Intl.NumberFormat("fa-IR",{maximumFractionDigits:2}).format(v)}
-function tvSymbol(x){return ({BTC:"BINANCE:BTCUSDT",ETH:"BINANCE:ETHUSDT",LTC:"BINANCE:LTCUSDT",USDT:"BINANCE:USDTUSD",XRP:"BINANCE:XRPUSDT",BNB:"BINANCE:BNBUSDT",DOGE:"BINANCE:DOGEUSDT",TRX:"BINANCE:TRXUSDT",ADA:"BINANCE:ADAUSDT",SOL:"BINANCE:SOLUSDT"})[x.symbol]||""}
+function tvSymbol(x){return ({BTC:"BINANCE:BTCUSDT",ETH:"BINANCE:ETHUSDT",LTC:"BINANCE:LTCUSDT",USDT:"BINANCE:USDTUSD",XRP:"BINANCE:XRPUSDT",BNB:"BINANCE:BNBUSDT",DOGE:"BINANCE:DOGEUSDT",TRX:"BINANCE:TRXUSDT",ADA:"BINANCE:ADAUSDT",SOL:"BINANCE:SOLUSDT"})[x.symbol]||("SEARCH:"+String(x.symbol||""))}
 var sortKey=null,sortDir=1,currentPage=1;
 function render(){
  var q=(search.value||"").trim().toLocaleLowerCase();
@@ -99,7 +99,7 @@ function render(){
  '<th class="sortable" data-sort="changePercent15mUSDT">میزان نوسان (15min) <span class="sort-mark">'+(sortKey==="changePercent15mUSDT"?(sortDir===1?"▲":"▼"):"↕")+'</span></th>'+
  '</tr></thead><tbody>';
  pageRows.forEach(function(x,i){
-   var tv=tvSymbol(x),link=tv?"./market-chart.html?symbol="+encodeURIComponent(tv)+"&name="+encodeURIComponent(x.name||""):"";
+   var tv=tvSymbol(x),link=tv?(tv.indexOf("SEARCH:")===0?"https://www.tradingview.com/search/?query="+encodeURIComponent(tv.slice(7)):"./market-chart.html?symbol="+encodeURIComponent(tv)+"&name="+encodeURIComponent(x.name||"")):"https://www.tradingview.com/search/?query="+encodeURIComponent(x.symbol||x.name||"");
    html+='<tr class="crypto-row" data-link="'+esc(link)+'"><td class="row-num">'+money((currentPage-1)*pageSize+i+1)+'</td><td>'+esc(x.name||x.symbol)+'</td><td class="num">'+esc(x.symbol)+'</td>'+
      '<td class="num">'+(num(x.priceIRT)==null?"—":money(x.priceIRT)+" تومان")+'</td>'+
      changeCell(x.changePercent15mIRT)+
