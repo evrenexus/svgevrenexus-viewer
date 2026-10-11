@@ -54,6 +54,15 @@ if(!promotionRows.length&&storedWindow===promotionWindow&&storedIds.length){
  for(const r of candidates){if(groups.has(r.group))continue;promotionRows.push(r);groups.add(r.group);if(promotionRows.length>=C.FEATURED_COUNT)break;}
  selectionSource="ai-or-local-fallback";
 }
+if(!promotionRows.length&&storedIds.length){
+ const wanted=new Set(storedIds);
+ const preserved=storedIds.map(id=>rows.find(r=>String(r.n.id)===id&&promotionReady(r))).filter(Boolean);
+ const groups=new Set(preserved.map(r=>r.group));
+ if(preserved.length===C.FEATURED_COUNT&&groups.size===C.FEATURED_COUNT){
+  promotionRows=preserved;
+  selectionSource="previous-selection-preserved";
+ }
+}
 const promotionNewsIds=promotionRows.map(r=>String(r.n.id));
 console.log("two-hour promotion window "+new Date(completedWindowStart).toISOString()+" to "+promotionWindow+" | selected "+promotionRows.length+" / "+C.FEATURED_COUNT+" | source "+selectionSource);
 const aiTopicMatch=(r,topic)=>{const ts=Array.isArray(r.ai?.important_topics)?r.ai.important_topics:[];if(topic===C.HOME)return ts.length===0;if(topic==="economy-investment")return ts.includes("economy")||ts.includes("markets");if(topic==="technology-ai")return ts.includes("technology")||ts.includes("ai");return ts.includes(topic)};
