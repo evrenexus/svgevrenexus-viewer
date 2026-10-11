@@ -67,7 +67,7 @@ var prices=document.getElementById("prices"),search=document.getElementById("sea
 function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
 function num(v){return v==null?null:Number(v)}
 function money(v){return v==null?"-":new Intl.NumberFormat("fa-IR",{maximumFractionDigits:2}).format(v)}function cryptoMoney(v){return v==null?"-":new Intl.NumberFormat("en-US",{maximumFractionDigits:8}).format(v)}
-function tvSymbol(x){var symbol=String(x.symbol||"").toUpperCase().replace(/[^A-Z0-9]/g,"");if(!symbol||symbol==="USDT")return "";return "LBANK:"+symbol+"USDT.P"}
+function tvSymbol(x){var symbol=String(x.symbol||"").toUpperCase().replace(/[^A-Z0-9]/g,"");if(!symbol||symbol==="USDT")return "";return "LBANK:"+symbol+"USDT"}
 var sortKey=null,sortDir=1,currentPage=1;
 function render(){
  var q=(search.value||"").trim().toLocaleLowerCase();
