@@ -74,6 +74,19 @@ async function fetchPersianNames(symbols) {
           }
         }
       });
+      // Nobitex renders part of the long market list as links rather than table rows.
+      $("a").each((_, anchor) => {
+        const label = $(anchor).text().replace(/\\s+/g, " ").trim();
+        if (!label) return;
+        for (const symbol of symbols) {
+          const re = new RegExp("(^|[^A-Z0-9])" + symbol + "([^A-Z0-9]|$)", "i");
+          if (!re.test(label)) continue;
+          const candidate = label.replace(re, " ").replace(/[()|·•—–-]/g, " ").replace(/\\s+/g, " ").trim();
+          if (/[\\u0600-\\u06FF]/.test(candidate) && candidate.length < 80) {
+            names.set(symbol, candidate);
+          }
+        }
+      });
       if (names.size) break;
     } catch (e) {
       console.warn("Nobitex Persian names unavailable:", e.message);
@@ -145,15 +158,15 @@ async function main() {
     const info = coinInfo.get(symbol) || {};
     const rawName = String(info.name || info.stdName || symbol.toUpperCase());
     const name = scrapedNames.get(symbol) || persianNames[symbol] || (persianText(info.stdName) ? info.stdName : rawName);
-    const rlsLatest = rlsStat ? number(rlsStat.latest) : null;
-    const usdtLatest = usdtStat ? number(usdtStat.latest) : null;
-    const priceIRT = symbol === "usdt"
-      ? usdtToman
-      : (rlsLatest == null ? null : rlsLatest / 10);
-    const priceUSDT = symbol === "usdt"
-      ? 1
-      : usdtLatest;
-    if (priceIRT == null && priceUSDT == null) continue;
+    const rlsLatestRaw = rlsStat ? number(rlsStat.latest) : null;
+    const usdtLatestRaw = usdtStat ? number(usdtStat.latest) : null;
+    const rlsLatest = rlsLatestRaw != null && rlsLatestRaw > 0 ? rlsLatestRaw : null;
+    const usdtLatest = usdtLatestRaw != null && usdtLatestRaw > 0 ? usdtLatestRaw : null;
+    const directIRT = symbol === "usdt" ? usdtToman : (rlsLatest == null ? null : rlsLatest / 10);
+    const directUSDT = symbol === "usdt" ? 1 : usdtLatest;
+    const priceIRT = directIRT != null ? directIRT : (directUSDT != null && usdtToman ? directUSDT * usdtToman : null);
+    const priceUSDT = directUSDT != null ? directUSDT : (directIRT != null && usdtToman ? directIRT / usdtToman : null);
+    if (!(priceIRT > 0) && !(priceUSDT > 0)) continue;
 
     markets.push({
       symbol: symbol.toUpperCase(),
