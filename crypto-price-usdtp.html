@@ -93,19 +93,24 @@ function readStored(){
 }
 function saveStored(){try{localStorage.setItem("evrenexus_usdtp_baselines_v1",JSON.stringify(state.baselines))}catch(e){}}
 function updateBaselines(markets,now){
+ var changed=false;
  frames.forEach(function(f){
   if(f.key==="d1")return;
   var bucket=Math.floor(now/f.ms);
   var record=state.baselines[f.key];
-  if(!record||record.bucket!==bucket){
+  if(!record){
+   // On first visit, wait for the next real timeframe boundary instead of
+   // presenting "since page opened" as a full 1m/5m/4h candle change.
+   state.baselines[f.key]={bucket:bucket,prices:{},waiting:true};
+   changed=true;
+  }else if(record.bucket!==bucket){
    var prices={};
    markets.forEach(function(m){prices[m.symbol]=m.last});
-   state.baselines[f.key]={bucket:bucket,prices:prices};
-  }else{
-   markets.forEach(function(m){if(record.prices[m.symbol]===undefined)record.prices[m.symbol]=m.last});
+   state.baselines[f.key]={bucket:bucket,prices:prices,waiting:false};
+   changed=true;
   }
  });
- saveStored();
+ if(changed)saveStored();
 }
 function changeFor(m,f){
  if(f.key==="d1")return pct(m.last,m.open24);
