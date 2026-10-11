@@ -39,13 +39,13 @@ function uniquePush(out,seen,x,score){
  if(x.articleUrl)href="./"+String(x.articleUrl).replace(/^\.\//,"");
  else if(x.url)href="./viewer.html?url="+encodeURIComponent(x.url);
  if(!href)return;
- seen[key]=true;out.push({title:title,href:href,score:Number(score||x.score||x.importance_score||0),published:x.published||""});
+ seen[key]=true;out.push({title:title,href:href,score:Number(score||x.score||x.importance_score||0),published:x.published||"",selectedAt:x.selectedAt||x.published||""});
 }
 function render(items){
  var el=document.getElementById("Evrenxus-sidebar-important");if(!el)return;
  var seen={},out=[];
  (items||[]).forEach(function(x){uniquePush(out,seen,x,x.score||x.importance_score)});
- out.sort(function(a,b){return b.score-a.score||String(b.published).localeCompare(String(a.published))});
+ out.sort(function(a,b){return String(b.selectedAt).localeCompare(String(a.selectedAt))||b.score-a.score;});
  out=out.slice(0,20);el.innerHTML="";
  if(!out.length){el.innerHTML='<div style="padding:12px;font-size:10px;color:#888">مطالبی برای نمایش پیدا نشد.</div>';return}
  out.forEach(function(x){var a=document.createElement("a");a.className="Evrenxus-important-link";a.target="_top";a.href=x.href;a.textContent=x.title;el.appendChild(a)});
@@ -54,16 +54,13 @@ function load(){
  fetch("./data/public/featured.json?v="+Date.now(),{cache:"no-store"})
  .then(function(r){if(!r.ok)throw Error("featured HTTP "+r.status);return r.json()})
  .then(function(doc){
-  var topics=doc&&doc.topics?doc.topics:{},all=[],seen={};
-  Object.keys(topics).forEach(function(k){
-   var t=topics[k]||{};
-   ["important","featured","regular"].forEach(function(group){
-    (Array.isArray(t[group])?t[group]:[]).forEach(function(x){
-     if(x&&x.articleUrl)uniquePush(all,seen,x,x.score||x.importance_score);
-    });
-   });
+  var home=doc&&doc.topics&&doc.topics.home?doc.topics.home:{};
+  var cutoff=Date.now()-10*60*60*1000,now=Date.now();
+  var all=(Array.isArray(home.important)?home.important:[]).filter(function(x){
+   if(!x||!x.articleUrl)return false;
+   var selected=Date.parse(x.selectedAt||x.published||"");
+   return Number.isFinite(selected)&&selected>=cutoff&&selected<=now+5*60*1000;
   });
-  all.sort(function(a,b){return b.score-a.score||String(b.published).localeCompare(String(a.published))});
   render(all);
  }).catch(function(){render([])});
 }
