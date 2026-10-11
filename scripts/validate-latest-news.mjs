@@ -15,7 +15,8 @@ const err=s=>errors.push(s);
 if(doc.source!=="data/news.json")err("source must be data/news.json");
 if(!doc.topics||typeof doc.topics!=="object")err("topics object missing");
 if(!Array.isArray(doc.topics?.[C.HOME]?.items)||doc.topics[C.HOME].items.length===0)err("home latest-news feed is empty");
-const rawIds=new Set(source.filter(n=>n&&n.id&&n.title&&/^https?:\/\//i.test(String(n.url||""))&&outOfScope({title:n.title,summary:n.summary,content:n.content})===null).map(n=>String(n.id)));
+const IRRELEVANT_HEADLINE_RE=/(?:قتل|قاتل|جنایی|قاچاقچی|سارق|سرقت|دستگیری|زندانی|زندان|چوگان|فوتبال|فوتسال|بسکتبال|والیبال|هندبال|تنیس|کشتی|سرمربی|بازیکن|لیگ برتر|مسابقه ورزشی|قهرمانی|جام جهانی|ورزشکار|ورزشی)/u;
+const rawIds=new Set(source.filter(n=>n&&n.id&&n.title&&/^https?:\/\//i.test(String(n.url||""))&&Array.isArray(n.topics)&&n.topics.some(t=>C.TOPICS.includes(t))&&!IRRELEVANT_HEADLINE_RE.test(String(n.title||"").replace(/[\u200c\u200d\u200e\u200f]/g," "))&&outOfScope({title:n.title})===null).map(n=>String(n.id)));
 const keys=[C.HOME,...C.PAGE_TOPICS];
 for(const topic of keys){
   const list=doc.topics?.[topic]?.items;
