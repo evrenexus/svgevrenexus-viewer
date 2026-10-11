@@ -30,9 +30,9 @@ html,body{margin:0;padding:0;width:100%;min-height:100%;background:#fff;font-fam
 <body>
 
 <div id="market-chart-page">
-<div id="chart-toolbar"><span id="chart-title">بازار ارز دیجیتال در خبرخوان Evren Nexus</span><div class="chart-actions"><button type="button" id="show-tv" class="active">TradingView</button><button type="button" id="show-lbank">صرافی LBank</button><a id="open-destination" href="#" target="_blank" rel="noopener noreferrer">بازکردن مستقیم ↗</a></div></div>
+<div id="chart-toolbar"><span id="chart-title">بازار ارز دیجیتال در خبرخوان Evren Nexus</span><div class="chart-actions"><a id="open-destination" href="#" target="_blank" rel="noopener noreferrer">بازکردن در TradingView ↗</a></div></div>
 <div id="tradingview-chart"></div>
-<iframe id="lbank-frame" title="LBank در خبرخوان Evren Nexus" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+
 <div id="market-chart-error"></div><footer class="Evrenxus-page-footer">© اورین نکسوس</footer>
 </div>
 <script>
@@ -43,10 +43,7 @@ name=(p.get("name")||"").trim().toUpperCase().replace(/[^A-Z0-9]/g,""),
 error=document.getElementById("market-chart-error"),
 title=document.getElementById("chart-title"),
 external=document.getElementById("open-destination"),
-tvButton=document.getElementById("show-tv"),
-lbankButton=document.getElementById("show-lbank"),
-tvContainer=document.getElementById("tradingview-chart"),
-lbankFrame=document.getElementById("lbank-frame");
+tvContainer=document.getElementById("tradingview-chart");
 if(name)title.textContent="بازار "+name+" در خبرخوان Evren Nexus";
 if(!symbol || !/^[A-Z0-9:_!.-]+$/i.test(symbol)){
 error.textContent="نماد بازار مشخص نشده یا معتبر نیست.";
@@ -55,28 +52,17 @@ external.style.display="none";
 tvButton.disabled=true;lbankButton.disabled=true;
 return;
 }
-var tvUrl="https://www.tradingview.com/chart/?symbol="+encodeURIComponent(symbol);
-var coin=(name||symbol.split(":").pop().replace(/USDT$/,"")).toLowerCase();
-var lbankUrl="https://www.lbank.com/trade/"+encodeURIComponent(coin)+"_usdt";
+var coin=(name||symbol.split(":").pop().replace(/USDT(?:\.P)?$/i,"")).toUpperCase();
+var chartSymbol="LBANK:"+coin+"USDT.P";
+var tvUrl="https://www.tradingview.com/chart/BU8OsLK2/?symbol="+encodeURIComponent(chartSymbol);
 external.href=tvUrl;
-function showMarket(which){
-var isLbank=which==="lbank";
-tvContainer.style.display=isLbank?"none":"block";
-lbankFrame.style.display=isLbank?"block":"none";
-tvButton.classList.toggle("active",!isLbank);
-lbankButton.classList.toggle("active",isLbank);
-external.href=isLbank?lbankUrl:tvUrl;
-external.textContent=isLbank?"بازکردن مستقیم در LBank ↗":"بازکردن مستقیم در TradingView ↗";
-if(isLbank&&!lbankFrame.src)lbankFrame.src=lbankUrl;
-}
-tvButton.addEventListener("click",function(){showMarket("tv")});
-lbankButton.addEventListener("click",function(){showMarket("lbank")});
+external.textContent="بازکردن در TradingView ↗";
 var s=document.createElement("script");
 s.src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
 s.async=true;
 s.innerHTML=JSON.stringify({
 "autosize":true,
-"symbol":symbol,
+"symbol":chartSymbol,
 "interval":"D",
 "timezone":"Asia/Tehran",
 "theme":"light",
@@ -90,7 +76,6 @@ s.innerHTML=JSON.stringify({
 "support_host":"https://www.tradingview.com"
 });
 tvContainer.appendChild(s);
-showMarket("tv");
 })();
 </script>
 <script src="./Evrenexus-header.js?v=20261011-03"></script>
