@@ -1,7 +1,7 @@
 {
   "version": 1,
   "policy_version": 9,
-  "updated": "2026-10-11T02:21:25Z",
+  "updated": "2026-10-11T02:28:43Z",
   "items": {
     "72b4eb7a7155ed214c32324d": {
       "title": "تصاویر؛ جشن «مهرگان» در غار کرفتو",
@@ -12995,9 +12995,7 @@
       "importance": 20,
       "important": false,
       "important_topics": [],
-      "slider_topics": [
-        "currency-gold"
-      ],
+      "slider_topics": [],
       "ticker_topics": [],
       "breaking": false,
       "breaking_topics": [],
@@ -14691,8 +14689,7 @@
       "importance": 20,
       "important": true,
       "important_topics": [
-        "crypto",
-        "currency-gold"
+        "crypto"
       ],
       "slider_topics": [
         "crypto",
@@ -14711,8 +14708,6 @@
       "political": false,
       "breaking_signal": true,
       "age_hours": 3.9278292878468832,
-      "permanent_article": true,
-      "article_id": "article-2d5db4ed625b8119",
       "image": "https://cdn.eghtesadnews.com/thumbnail/MJnHz91AYG7M/9wFJ5bHahv2PMDUde8i7WGPUoZPhR2k6vQp3Wbes3xFjVYxKGQfhsfeyB_vNOuor5irbViqQy551GzH5u7amOVt7U9Qe-hBRRcLG_SJKFAxBTXtP4xgq5ZoaYYWFfV2QSdjc06WX1efEm0DGXDg7wg1TTYMbKgS4afbUYZcpgxCfQnH7xFenn-z8sYeZ97wZ/%D9%82%DB%8C%D9%85%D8%AA+%D8%A8%DB%8C%D8%AA+%DA%A9%D9%88%DB%8C%D9%86+%D9%88+%D8%AA%D8%AA%D8%B1.jpg"
     },
     "731ce975bf27ccca5dc715bd": {
@@ -17094,6 +17089,46 @@
       "local_score": 7,
       "breaking": false,
       "breaking_topics": []
+    },
+    "109eeaf4ff4f9a3fa257a14e": {
+      "title": "۱۰ رمزارز برتر بازار ارز دیجیتال | کاردانو پیشتاز شد، اتریوم و ریپل هنوز در زیان هفتگی",
+      "summary": "اقتصادنیوز: بازار رمزارزها در معاملات روز شنبه، با وجود رشد روزانه اتریوم، ریپل و بایننس‌کوین، همچنان زیر فشار افت هفتگی قرار داشت؛ در این میان، کاردانو برخلاف جریان غالب بازار در هر دو بازه روزانه و هفتگی صعودی ماند و ترون و تون‌کوین به مسیر نزولی ادامه دادند.",
+      "source": "اقتصادنیوز",
+      "published": "2026-10-11T05:49:38+03:30",
+      "topics": [
+        "currency-gold",
+        "crypto"
+      ],
+      "topic_scores": {
+        "currency-gold": 20,
+        "crypto": 20
+      },
+      "importance": 20,
+      "important": true,
+      "important_topics": [
+        "crypto",
+        "currency-gold"
+      ],
+      "slider_topics": [
+        "crypto",
+        "currency-gold"
+      ],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-86925bc7e5fc",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 17,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.11966083460383944,
+      "permanent_article": true,
+      "article_id": "article-2d5db4ed625b8119",
+      "image": "https://cdn.eghtesadnews.com/thumbnail/MJnHz91AYG7M/9wFJ5bHahv2PMDUde8i7WGPUoZPhR2k6vQp3Wbes3xFjVYxKGQfhsfeyB_vNOuor5irbViqQy551GzH5u7amOVt7U9Qe-hBRRcLG_SJKFAxBTXtP4xgq5ZoaYYWFfV2QSdjc06WX1efEm0DGXDg7wg1TTYMbKgS4afbUYZcpgxCfQnH7xFenn-z8sYeZ97wZ/%D9%82%DB%8C%D9%85%D8%AA+%D8%A8%DB%8C%D8%AA+%DA%A9%D9%88%DB%8C%D9%86+%D9%88+%D8%AA%D8%AA%D8%B1.jpg"
     }
   },
   "groups": {
@@ -18674,6 +18709,9 @@
     },
     "ec905f7af168b15c71d201a6": {
       "representative_id": "ec905f7af168b15c71d201a6"
+    },
+    "local-86925bc7e5fc": {
+      "representative_id": "109eeaf4ff4f9a3fa257a14e"
     }
   },
   "usage": {
