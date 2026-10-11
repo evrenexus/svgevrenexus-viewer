@@ -176,7 +176,7 @@ function loadCrypto(){return fetchJSON("nobitex.json","https://raw.githubusercon
   html+=losers.map(function(x){return item(x,true,false);}).join("");
   if(n.scrapedAt)html+='<a class="Evrenxus-ticker-update" href="'+href+'" target="_blank" rel="noopener noreferrer">'+updateLabel(n.scrapedAt)+'</a>';
   if(!ranked.length&&!gainers.length&&!losers.length)throw new Error("1-hour crypto changes unavailable");
-  crypto.innerHTML=html;startTicker(crypto);
+  crypto.innerHTML=Array.from((function(){var box=document.createElement("div");box.innerHTML=html;return box.children;})()).reverse().map(function(el){return el.outerHTML;}).join("");startTicker(crypto);
 })}
 function loadCars(){return fetchWithTimeout("https://evrenexus.ir/car-data/car-prices.json?v="+Date.now()).then(function(r){if(!r.ok)throw new Error("car "+r.status);return r.json()}).then(renderCars)}
 function showLoadError(track){if(track)track.innerHTML='<span class="Evrenxus-ticker-item">خطا در دریافت داده — تلاش مجدد</span>';}
