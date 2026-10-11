@@ -127,6 +127,48 @@
   }
 
 
+  function renderSidebar(items) {
+    var slot = document.getElementById("Evrenxus-sidebar-important");
+    var customBox = null;
+    if (!slot) {
+      var sidebar = document.getElementById("sidebar");
+      customBox = sidebar && sidebar.querySelector(".custombox");
+      slot = customBox;
+    }
+    if (!slot) return;
+    slot.textContent = "";
+
+    if (!items.length) {
+      var empty = document.createElement("div");
+      empty.textContent = "فعلاً مطلب مهمی برای نمایش وجود ندارد";
+      empty.style.cssText = "padding:10px;font:10px/1.8 Tahoma,Arial,sans-serif;color:#888";
+      slot.appendChild(empty);
+      return;
+    }
+
+    if (customBox) {
+      var heading = document.createElement("div");
+      heading.textContent = "مطالب مهم";
+      heading.style.cssText = "padding:9px 10px;background:#202c35;color:#fff;font:700 12px/1.8 Tahoma,Arial,sans-serif";
+      slot.appendChild(heading);
+    }
+
+    var list = document.createElement("div");
+    items.slice(0, 16).forEach(function (item) {
+      var link = document.createElement("a");
+      link.href = makeViewerLink(item);
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.textContent = safeText(item.title);
+      link.style.cssText = customBox
+        ? "display:block;padding:8px 9px;border-bottom:1px solid #edf0f1;color:#343b40;text-decoration:none;font:10px/1.9 Tahoma,Arial,sans-serif"
+        : "";
+      if (!customBox) link.className = "Evrenxus-important-link";
+      list.appendChild(link);
+    });
+    slot.appendChild(list);
+  }
+
   function load() {
     fetch(DATA_URL + "?t=" + Date.now(), { cache: "no-store" })
       .then(function (response) { if (!response.ok) throw new Error("HTTP " + response.status); return response.json(); })
@@ -142,6 +184,7 @@
           : items.slice(0, 4);
         addStyles();
         renderSlider(currentBatch);
+        renderSidebar(items);
       })
       .catch(function () {
         addStyles();
@@ -150,7 +193,7 @@
           var slides = document.getElementById("Evrenxus-slides");
           if (slides && !slides.children.length) setStatus(slides, "دریافت مطالب مهم ممکن نشد؛ کمی بعد دوباره تلاش کنید");
         }
-
+        renderSidebar([]);
       });
   }
 
