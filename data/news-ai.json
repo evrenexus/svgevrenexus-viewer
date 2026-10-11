@@ -1,7 +1,7 @@
 {
   "version": 1,
   "policy_version": 9,
-  "updated": "2026-10-11T02:43:27Z",
+  "updated": "2026-10-11T02:58:03Z",
   "items": {
     "72b4eb7a7155ed214c32324d": {
       "title": "تصاویر؛ جشن «مهرگان» در غار کرفتو",
@@ -12995,7 +12995,9 @@
       "importance": 20,
       "important": false,
       "important_topics": [],
-      "slider_topics": [],
+      "slider_topics": [
+        "currency-gold"
+      ],
       "ticker_topics": [],
       "breaking": false,
       "breaking_topics": [],
@@ -14689,7 +14691,8 @@
       "importance": 20,
       "important": true,
       "important_topics": [
-        "crypto"
+        "crypto",
+        "currency-gold"
       ],
       "slider_topics": [
         "crypto",
@@ -17096,39 +17099,36 @@
       "source": "اقتصادنیوز",
       "published": "2026-10-11T05:49:38+03:30",
       "topics": [
-        "currency-gold",
         "crypto"
       ],
       "topic_scores": {
-        "currency-gold": 20,
-        "crypto": 20
+        "economy": 0,
+        "markets": 0,
+        "crypto": 9,
+        "currency-gold": 0,
+        "real-estate": 0,
+        "technology": 0,
+        "ai": 0,
+        "health": 0,
+        "auto": 0,
+        "science-life": 0
       },
-      "importance": 20,
-      "important": true,
-      "important_topics": [
-        "crypto",
-        "currency-gold"
-      ],
-      "slider_topics": [
-        "crypto",
-        "currency-gold"
-      ],
+      "importance": 9,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
       "ticker_topics": [],
-      "breaking": false,
-      "breaking_topics": [],
       "publishable": true,
       "exclude_reason": "",
-      "group_id": "local-86925bc7e5fc",
+      "content_type": "market_news",
+      "reject_reason": "",
+      "group_id": "109eeaf4ff4f9a3fa257a14e",
       "representative": true,
-      "reason": "local rule-based classification",
-      "analysis_mode": "local",
+      "reason": "بازار رمزارز هفته‌ای",
+      "analysis_mode": "ai",
       "local_score": 17,
-      "political": false,
-      "breaking_signal": false,
-      "age_hours": 0.3953980527321498,
-      "permanent_article": true,
-      "article_id": "article-2d5db4ed625b8119",
-      "image": "https://cdn.eghtesadnews.com/thumbnail/MJnHz91AYG7M/9wFJ5bHahv2PMDUde8i7WGPUoZPhR2k6vQp3Wbes3xFjVYxKGQfhsfeyB_vNOuor5irbViqQy551GzH5u7amOVt7U9Qe-hBRRcLG_SJKFAxBTXtP4xgq5ZoaYYWFfV2QSdjc06WX1efEm0DGXDg7wg1TTYMbKgS4afbUYZcpgxCfQnH7xFenn-z8sYeZ97wZ/%D9%82%DB%8C%D9%85%D8%AA+%D8%A8%DB%8C%D8%AA+%DA%A9%D9%88%DB%8C%D9%86+%D9%88+%D8%AA%D8%AA%D8%B1.jpg"
+      "breaking": false,
+      "breaking_topics": []
     },
     "e7b91fa9ebc6ed1850e290f9": {
       "title": "استیبل‌کوین‌ها در مسیر ورود به زندگی روزمره و فتح بازار آسیا | آیا پول دیجیتال جای پرداخت‌های سنتی را می‌گیرد؟",
@@ -17139,25 +17139,33 @@
         "crypto"
       ],
       "topic_scores": {
-        "crypto": 4
+        "economy": 0,
+        "markets": 0,
+        "crypto": 10,
+        "currency-gold": 0,
+        "real-estate": 0,
+        "technology": 0,
+        "ai": 0,
+        "health": 0,
+        "auto": 0,
+        "science-life": 0
       },
-      "importance": 4,
+      "importance": 10,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
       "ticker_topics": [],
-      "breaking": false,
-      "breaking_topics": [],
-      "publishable": false,
-      "exclude_reason": "political content is excluded",
-      "group_id": "local-f1452cb08a70",
+      "publishable": true,
+      "exclude_reason": "",
+      "content_type": "market_news",
+      "reject_reason": "",
+      "group_id": "e7b91fa9ebc6ed1850e290f9",
       "representative": true,
-      "reason": "local rule-based classification",
-      "analysis_mode": "local",
+      "reason": "نتایج نظرسنجی ویزا درباره استیبل‌کوین",
+      "analysis_mode": "ai",
       "local_score": 4,
-      "political": true,
-      "breaking_signal": false,
-      "age_hours": 0.19706471939881642
+      "breaking": false,
+      "breaking_topics": []
     },
     "810522f3ce9b55a73889b351": {
       "title": "شبکه‌های رشوه افقی و عمودی در کره شمالی | هیچ زیرساختی برای کسب‌وکارهای خصوصی وجود ندارد | شتاب گرفتن نابرابری ثروت در کره شمالی پس از پاندمی کرونا",
@@ -17165,28 +17173,73 @@
       "source": "اقتصادنیوز",
       "published": "2026-10-11T05:57:43+03:30",
       "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 0,
+        "markets": 0,
+        "crypto": 0,
+        "currency-gold": 0,
+        "real-estate": 0,
+        "technology": 0,
+        "ai": 0,
+        "health": 0,
+        "auto": 0,
+        "science-life": 0
+      },
+      "importance": 0,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "content_type": "commentary",
+      "reject_reason": "تحلیل/نظر بدون رویداد جدید",
+      "group_id": "810522f3ce9b55a73889b351",
+      "representative": true,
+      "reason": "",
+      "analysis_mode": "ai",
+      "local_score": 4,
+      "breaking": false,
+      "breaking_topics": []
+    },
+    "5cf11cd3ac1c2f26a96dd3b1": {
+      "title": "زنان مبتلا به اختلال دوقطبی و علائم پیش از قاعدگی شدیدتر: یافته‌های مقدماتی و پیامدهای بالینی",
+      "summary": "مقدمه اخیراً محققان در کنگره سالانه ECNP 2026 در مونیخ گزارشی مقدماتی منتشر کردند که نشان می‌دهد زنان مبتلا به اختلال دوقطبی که قاعدگی منظمی دارند، نسبت به کسانی با چرخه قاعدگی نامنظم، بیشتر از شدت علائم پیش از قاعدگی شکایت می‌کنند. این یافته می‌تواند توجه به جنبه‌های تلفیقی مراقبت سلامت زنان و سلام",
+      "source": "پزشک سایت",
+      "published": "2026-10-11T06:12:04+03:30",
+      "topics": [
         "health"
       ],
       "topic_scores": {
-        "health": 9
+        "economy": 0,
+        "markets": 0,
+        "crypto": 0,
+        "currency-gold": 0,
+        "real-estate": 0,
+        "technology": 0,
+        "ai": 0,
+        "health": 9,
+        "auto": 0,
+        "science-life": 0
       },
       "importance": 9,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
       "ticker_topics": [],
-      "breaking": false,
-      "breaking_topics": [],
-      "publishable": false,
-      "exclude_reason": "political content is excluded",
-      "group_id": "local-98a92587ef5a",
+      "publishable": true,
+      "exclude_reason": "",
+      "content_type": "health_news",
+      "reject_reason": "",
+      "group_id": "5cf11cd3ac1c2f26a96dd3b1",
       "representative": true,
-      "reason": "local rule-based classification",
-      "analysis_mode": "local",
-      "local_score": 4,
-      "political": true,
-      "breaking_signal": true,
-      "age_hours": 0.26067583050992754
+      "reason": "نتایج مطالعات اختلال دوقطبی",
+      "analysis_mode": "ai",
+      "local_score": 7,
+      "breaking": false,
+      "breaking_topics": []
     }
   },
   "groups": {
@@ -18768,22 +18821,25 @@
     "ec905f7af168b15c71d201a6": {
       "representative_id": "ec905f7af168b15c71d201a6"
     },
-    "local-86925bc7e5fc": {
+    "109eeaf4ff4f9a3fa257a14e": {
       "representative_id": "109eeaf4ff4f9a3fa257a14e"
     },
-    "local-f1452cb08a70": {
+    "e7b91fa9ebc6ed1850e290f9": {
       "representative_id": "e7b91fa9ebc6ed1850e290f9"
     },
-    "local-98a92587ef5a": {
+    "810522f3ce9b55a73889b351": {
       "representative_id": "810522f3ce9b55a73889b351"
+    },
+    "5cf11cd3ac1c2f26a96dd3b1": {
+      "representative_id": "5cf11cd3ac1c2f26a96dd3b1"
     }
   },
   "usage": {
     "date": "2026-10-11",
-    "requests": 6,
-    "last_success": "2026-10-11T02:21:21Z",
-    "last_success_epoch": 1791685281.9594967,
-    "last_article_generation": "2026-10-11T02:21:25Z",
+    "requests": 8,
+    "last_success": "2026-10-11T02:57:57Z",
+    "last_success_epoch": 1791687477.3441513,
+    "last_article_generation": "2026-10-11T02:58:03Z",
     "quota_block_until_epoch": 1791706881.9577627,
     "quota_block_until": "2026-10-11T08:21:21Z"
   }
