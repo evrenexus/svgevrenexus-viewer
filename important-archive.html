@@ -6,40 +6,36 @@
 <style>
 *{box-sizing:border-box}html,body{margin:0;background:#f1f2f3;color:#20272d;font-family:Vazir,Tahoma,Arial,sans-serif}
 #page{width:850px;max-width:100%;margin:auto;padding:123px 10px 25px;display:flex;gap:10px;direction:rtl}
-#content{width:610px;min-width:0}.archive{background:#fff;border:1px solid #dfe2e4}.head{padding:13px 14px;background:#d9232e;color:#fff}.head h1{font-size:16px;margin:0}.head p{font-size:9px;margin:5px 0 0;opacity:.9}.item{display:flex;gap:10px;padding:11px;border-bottom:1px solid #edf0f1;text-decoration:none;color:#343b40}.item:hover{background:#fafafa}.item img{width:125px;min-width:125px;height:78px;object-fit:cover;background:#eee}.content{min-width:0;flex:1}.title{font-size:11px;font-weight:700;line-height:1.9;color:#20272d}.summary{font-size:9.5px;line-height:1.8;color:#737a7f;margin-top:3px}.meta{font-size:8.5px;color:#969da2;margin-top:6px}.back{display:inline-block;margin-bottom:10px;background:#202c35;color:#fff;text-decoration:none;padding:7px 12px;font-size:9px}.error{padding:25px;text-align:center;color:#777;font-size:10px}
+#content{width:610px;min-width:0}.archive{background:#fff;border:1px solid #dfe2e4}.head{padding:13px 14px;background:#d9232e;color:#fff}.head h1{font-size:16px;margin:0}.head p{font-size:9px;margin:5px 0 0;opacity:.9}.item{display:flex;gap:10px;padding:11px;border-bottom:1px solid #edf0f1;text-decoration:none;color:#343b40}.item:hover{background:#fafafa}.item img{width:125px;min-width:125px;height:78px;object-fit:cover;background:#eee}.content{min-width:0;flex:1}.title{font-size:11px;font-weight:700;line-height:1.9;color:#20272d}.summary{font-size:9.5px;line-height:1.8;color:#737a7f;margin-top:3px}.meta{font-size:8.5px;color:#969da2;margin-top:6px}.back{display:inline-block;margin-bottom:10px;background:#202c35;color:#fff;text-decoration:none;padding:7px 12px;font-size:9px}.error{padding:25px;text-align:center;color:#777;font-size:10px}.pagination{display:flex;justify-content:center;align-items:center;gap:8px;padding:13px;border-top:1px solid #edf0f1}.pagination a{background:#202c35;color:#fff;text-decoration:none;padding:7px 11px;font-size:10px}.pagination a[aria-disabled="true"]{opacity:.35;pointer-events:none}.pagination span{font-size:10px;color:#737a7f}
 @media(max-width:700px){#page{width:100%;padding:112px 8px 20px;display:block}#content{width:100%}.item img{width:105px;min-width:105px;height:66px}.title{font-size:10px}}
 </style></head>
 <body>
 <main id="page"><section id="content"><a class="back" href="./">بازگشت به خانه</a><div class="archive"><div class="head"><h1>آرشیو مطالب مهم</h1><p>مطالب مهم بیش از چهار عنوان اصلی صفحه اول</p></div><div id="list"><div class="error">در حال دریافت مطالب...</div></div></div></section></main>
-<script src="./Evrenexus-featured.js?v=20261010-09"></script>
 <script>
 (function(){
 "use strict";
-var q=new URLSearchParams(location.search),topic=q.get("topic")||"home",host=document.getElementById("list");
+var q=new URLSearchParams(location.search),topic=q.get("topic")||"home",page=Math.max(1,parseInt(q.get("page")||"1",10)||1),perPage=16,host=document.getElementById("list");
 function img(v){return typeof v==="string"&&/^https?:\/\//i.test(v)?v:""}
-function render(r){
- var items=(r.important||[]).filter(function(x){return !!x.articleUrl;});
- if(!items.length){
-  var seen={};
-  items=(r.featured||[]).concat(r.regular||[]).filter(function(x){
-   if(!x||!x.articleUrl)return false;
-   var k=String(x.articleUrl);if(seen[k])return false;seen[k]=true;return true;
-  }).sort(function(a,b){return Number(b.score||b.importance_score||0)-Number(a.score||a.importance_score||0)||String(b.published||"").localeCompare(String(a.published||""))});
- }
- items=items.slice(0,20);
- var html="";
- items.forEach(function(x){
-  if(!x.articleUrl)return;
-  html+='<a class="item" href="./'+x.articleUrl+'">';
+function esc(v){return String(v||"").replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function pageUrl(p){var u="./important-archive.html";var args=[];if(topic!=="home")args.push("topic="+encodeURIComponent(topic));if(p>1)args.push("page="+p);return u+(args.length?"?"+args.join("&"):"")}
+function render(doc){
+ var section=doc&&doc.topics&&doc.topics[topic]||doc&&doc.topics&&doc.topics.home||{};
+ var items=(Array.isArray(section.important)?section.important:[]).filter(function(x){return x&&x.articleUrl});
+ var seen={};items=items.filter(function(x){var k=String(x.articleId||x.articleUrl||x.id||"");if(!k||seen[k])return false;seen[k]=true;return true});
+ items.sort(function(a,b){return String(b.selectedAt||b.published||"").localeCompare(String(a.selectedAt||a.published||""))||Number(b.score||0)-Number(a.score||0)});
+ var pages=Math.max(1,Math.ceil(items.length/perPage));page=Math.min(page,pages);
+ var visible=items.slice((page-1)*perPage,page*perPage),html="";
+ visible.forEach(function(x){
+  html+='<a class="item" href="./'+String(x.articleUrl).replace(/^\.\//,"").replace(/"/g,"&quot;")+'">';
   var u=img(x.image);if(u)html+='<img src="'+u.replace(/"/g,"&quot;")+'" alt="" loading="lazy" referrerpolicy="no-referrer">';
   html+='<div class="content"><div class="title">'+esc(x.title)+'</div>';
   if(x.summary)html+='<div class="summary">'+esc(x.summary)+'</div>';
   html+='<div class="meta">'+esc(x.source||"")+' • '+(x.published?new Date(x.published).toLocaleString("fa-IR",{dateStyle:"short",timeStyle:"short"}):"")+'</div></div></a>';
  });
- host.innerHTML=html||'<div class="error">فعلاً مطلب مهم دیگری وجود ندارد.</div>';
+ if(items.length){html+='<nav class="pagination" aria-label="صفحه‌بندی آرشیو">';html+='<a href="'+pageUrl(Math.max(1,page-1))+'" aria-disabled="'+(page<=1)+'">قبلی</a>';html+='<span>صفحه '+page+' از '+pages+' · '+items.length+' مطلب</span>';html+='<a href="'+pageUrl(Math.min(pages,page+1))+'" aria-disabled="'+(page>=pages)+'">بعدی</a></nav>'}
+ host.innerHTML=html||'<div class="error">هنوز مطلب مهمی در آرشیو ثبت نشده است.</div>';
 }
-function esc(v){return String(v||"").replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
-window.EvrenFeatured.getTopic(topic,1).then(render).catch(function(){host.innerHTML='<div class="error">دریافت آرشیو انجام نشد.</div>'});
+fetch("./data/public/featured.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("featured HTTP "+r.status);return r.json()}).then(render).catch(function(){host.innerHTML='<div class="error">دریافت آرشیو مطالب مهم انجام نشد؛ مطالب حذف نشده‌اند.</div>'});
 })();
 </script>
 <script src="./Evrenexus-header.js?v=20261010-08"></script>
