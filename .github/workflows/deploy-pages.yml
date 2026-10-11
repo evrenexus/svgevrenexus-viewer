@@ -9,7 +9,7 @@ on:
       - "market-data/**"
   workflow_dispatch:
   workflow_run:
-    workflows: ["Build public data"]
+    workflows: ["Build public data", "Evren Nexus — AI Manager (Gemini → Groq → OpenRouter failover)"]
     types: [completed]
 
 permissions:
