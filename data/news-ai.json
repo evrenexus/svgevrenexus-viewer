@@ -1,7 +1,7 @@
 {
   "version": 1,
   "policy_version": 9,
-  "updated": "2026-10-11T03:53:57Z",
+  "updated": "2026-10-11T04:15:56Z",
   "items": {
     "72b4eb7a7155ed214c32324d": {
       "title": "تصاویر؛ جشن «مهرگان» در غار کرفتو",
@@ -17250,75 +17250,109 @@
         "economy"
       ],
       "topic_scores": {
-        "economy": 9
+        "economy": 0,
+        "markets": 0,
+        "crypto": 0,
+        "currency-gold": 0,
+        "real-estate": 0,
+        "technology": 0,
+        "ai": 0,
+        "health": 0,
+        "auto": 0,
+        "science-life": 0
       },
-      "importance": 9,
+      "importance": 0,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
       "ticker_topics": [],
-      "breaking": false,
-      "breaking_topics": [],
       "publishable": false,
       "exclude_reason": "political content is excluded",
-      "group_id": "local-3799b35e7564",
+      "content_type": "personal_fluff",
+      "reject_reason": "personal_fluff",
+      "group_id": "group-129f94f1400735c48039359f",
       "representative": true,
-      "reason": "local rule-based classification",
-      "analysis_mode": "local",
+      "reason": "تصاویر حضور سردار قاآنی در مراسم ختم؛ حاشیه و زندگی شخصی/مراسمی مقام نظامی، فاقد ارزش خبری",
+      "analysis_mode": "ai",
       "local_score": 4,
-      "political": true,
-      "breaking_signal": false,
-      "age_hours": 0.4586307424969143
+      "breaking": false,
+      "breaking_topics": []
     },
     "52d2888fcbb40b89cd0bf85d": {
       "title": "قیمت سیمان عمده امروز یکشنبه ۱۹ مهر ۱۴۰۵ + جدول",
       "summary": "قیمت سیمان عمده امروز یکشنبه ۱۹ مهر ۱۴۰۵ مشخص شد. پست قیمت سیمان عمده امروز یکشنبه ۱۹ مهر ۱۴۰۵ + جدول اولین بار در تجارت نیوز ظاهر شد.",
       "source": "تجارت‌نیوز",
       "published": "2026-10-11T07:15:33+03:30",
-      "topics": [],
-      "topic_scores": {},
-      "importance": 9,
+      "topics": [
+        "real-estate",
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 4,
+        "markets": 0,
+        "crypto": 0,
+        "currency-gold": 0,
+        "real-estate": 5,
+        "technology": 0,
+        "ai": 0,
+        "health": 0,
+        "auto": 0,
+        "science-life": 0
+      },
+      "importance": 5,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
       "ticker_topics": [],
-      "breaking": false,
-      "breaking_topics": [],
       "publishable": true,
       "exclude_reason": "",
-      "group_id": "local-ce431db73003",
+      "content_type": "market_news",
+      "reject_reason": "",
+      "group_id": "group-52d2888fcbb40b89cd0bf85d",
       "representative": true,
-      "reason": "local rule-based classification",
-      "analysis_mode": "local",
+      "reason": "اعلام روزانه قیمت سیمان عمده؛ داده بازار مواد ساخت با اهمیت پایین",
+      "analysis_mode": "ai",
       "local_score": 9,
-      "political": false,
-      "breaking_signal": false,
-      "age_hours": 0.032797409163581
+      "breaking": false,
+      "breaking_topics": []
     },
     "4acc75b00bfff509f4140bb6": {
       "title": "مطالعات جدید: تنهایی و انزوا اجتماعی ممکن است چند سال از «عمر سالم» شما بکاهد",
       "summary": "خلاصه سریع برای خواننده مطالعه بزرگ منتشرشده در منابع خبری علمی نشان می‌دهد تنهایی و انزوا اجتماعی با کاهش سال‌های زندگی سالم مرتبط است. براساس گزارش، مردانی که هم تنهایی و هم انزوای اجتماعی را تجربه کردند تقریباً ۵.۸ سال زیستن بدون علامت افسردگی یا اضطراب را از دست دادند؛ برای زنان این عدد تقریباً ",
       "source": "پزشک سایت",
       "published": "2026-10-11T07:12:04+03:30",
-      "topics": [],
-      "topic_scores": {},
-      "importance": 7,
+      "topics": [
+        "health",
+        "science-life"
+      ],
+      "topic_scores": {
+        "economy": 0,
+        "markets": 0,
+        "crypto": 0,
+        "currency-gold": 0,
+        "real-estate": 0,
+        "technology": 0,
+        "ai": 0,
+        "health": 13,
+        "auto": 0,
+        "science-life": 12
+      },
+      "importance": 13,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
       "ticker_topics": [],
-      "breaking": false,
-      "breaking_topics": [],
       "publishable": true,
       "exclude_reason": "",
-      "group_id": "local-d147a7cdaacb",
+      "content_type": "science_news",
+      "reject_reason": "",
+      "group_id": "group-4acc75b00bfff509f4140bb6",
       "representative": true,
-      "reason": "local rule-based classification",
-      "analysis_mode": "local",
+      "reason": "مطالعه بزرگ‌مقیاس علمی: تنهایی و انزوا اجتماعی با کاهش ۵.۸ ساله عمر سالم در مردان و تأثیر قابل‌توجه در زنان مرتبط است",
+      "analysis_mode": "ai",
       "local_score": 7,
-      "political": false,
-      "breaking_signal": false,
-      "age_hours": 0.09085296471913655
+      "breaking": false,
+      "breaking_topics": []
     },
     "d2a25999a4b4ff2f54cede94": {
       "title": "آیا اقتصاد ایران همچنان تاب‌آوری دارد؟ | کدام سپرده کالایی انتخاب سرمایه‌گذاران است؟ | تاثیر بنادر بسته بر بازارهای مالی | تورم در چه نقطه‌ای خواهد ایستاد؟",
@@ -17326,30 +17360,36 @@
       "source": "اقتصادنیوز",
       "published": "2026-10-11T07:08:28+03:30",
       "topics": [
-        "economy",
-        "markets"
+        "economy"
       ],
       "topic_scores": {
-        "economy": 16,
-        "markets": 14
+        "economy": 0,
+        "markets": 0,
+        "crypto": 0,
+        "currency-gold": 0,
+        "real-estate": 0,
+        "technology": 0,
+        "ai": 0,
+        "health": 0,
+        "auto": 0,
+        "science-life": 0
       },
-      "importance": 16,
+      "importance": 0,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
       "ticker_topics": [],
-      "breaking": false,
-      "breaking_topics": [],
       "publishable": false,
-      "exclude_reason": "political content is excluded",
-      "group_id": "local-e72adc51b15f",
+      "exclude_reason": "analysis_commentary",
+      "content_type": "commentary",
+      "reject_reason": "analysis_commentary",
+      "group_id": "group-d2a25999a4b4ff2f54cede94",
       "representative": true,
-      "reason": "local rule-based classification",
-      "analysis_mode": "local",
+      "reason": "مقاله تحلیلی/هفته‌نامه تخصصی بدون رویداد خبری جدید؛ صرفاً تحلیل و پیش‌بینی کارشناسان",
+      "analysis_mode": "ai",
       "local_score": 4,
-      "political": true,
-      "breaking_signal": false,
-      "age_hours": 0.15085296471913656
+      "breaking": false,
+      "breaking_topics": []
     },
     "ebf428d1cb232d7bef47d7ad": {
       "title": "مرعشی: حفظ ایران مهم‌تر از غنی‌سازی و حفظ دستاوردهای هسته‌ای است/ تحت هیچ شرایطی نباید ایران را در معرض خطر جدی قرار دهیم",
@@ -17360,25 +17400,33 @@
         "economy"
       ],
       "topic_scores": {
-        "economy": 14
+        "economy": 0,
+        "markets": 0,
+        "crypto": 0,
+        "currency-gold": 0,
+        "real-estate": 0,
+        "technology": 0,
+        "ai": 0,
+        "health": 0,
+        "auto": 0,
+        "science-life": 0
       },
-      "importance": 14,
+      "importance": 0,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
       "ticker_topics": [],
-      "breaking": false,
-      "breaking_topics": [],
       "publishable": false,
-      "exclude_reason": "political content is excluded",
-      "group_id": "local-cb8e103dc43c",
+      "exclude_reason": "political_statement",
+      "content_type": "political_statement",
+      "reject_reason": "political_statement",
+      "group_id": "group-ebf428d1cb232d7bef47d7ad",
       "representative": true,
-      "reason": "local rule-based classification",
-      "analysis_mode": "local",
+      "reason": "اظهارنظر سیاسی حسین مرعشی (مقام سابق) بدون تصمیم یا رویداد اجرایی جدید؛ صرفاً موضع‌گیری و تحلیل",
+      "analysis_mode": "ai",
       "local_score": 4,
-      "political": true,
-      "breaking_signal": false,
-      "age_hours": 0.20863074249691432
+      "breaking": false,
+      "breaking_topics": []
     },
     "365637d274c562fbfaa32d65": {
       "title": "قیمت خودرو امروز یکشنبه ۱۹ مهر ۱۴۰۵ / شوک قیمتی به بازار؛ صعود گسترده محصولات داخلی و مونتاژی + جدول",
@@ -17389,29 +17437,33 @@
         "auto"
       ],
       "topic_scores": {
-        "auto": 16
+        "economy": 0,
+        "markets": 0,
+        "crypto": 0,
+        "currency-gold": 0,
+        "real-estate": 0,
+        "technology": 0,
+        "ai": 0,
+        "health": 0,
+        "auto": 6,
+        "science-life": 0
       },
-      "importance": 16,
+      "importance": 6,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
-      "ticker_topics": [
-        "auto"
-      ],
-      "breaking": true,
-      "breaking_topics": [
-        "auto"
-      ],
+      "ticker_topics": [],
       "publishable": true,
       "exclude_reason": "",
-      "group_id": "local-fa9c9b99e4ae",
+      "content_type": "market_news",
+      "reject_reason": "",
+      "group_id": "group-365637d274c562fbfaa32d65",
       "representative": true,
-      "reason": "local rule-based classification",
-      "analysis_mode": "local",
+      "reason": "اعلام روزانه قیمت‌های خودرو توسط بنگاه‌های معاملاتی؛ خبر روتین با اهمیت متوسط برای بازار خودرو",
+      "analysis_mode": "ai",
       "local_score": 11,
-      "political": false,
-      "breaking_signal": true,
-      "age_hours": 0.28418629805246987
+      "breaking": false,
+      "breaking_topics": []
     },
     "4037e4a97d12e4d7df30054d": {
       "title": "کدام اقتصاددانان باید پیش از مرگ جایزه نوبل می‌گرفتند؟ | آنها نوبل نگرفتند اما مسیر علم اقتصاد را تغییر دادند",
@@ -17419,30 +17471,74 @@
       "source": "اقتصادنیوز",
       "published": "2026-10-11T06:59:35+03:30",
       "topics": [
-        "science-life",
-        "economy"
+        "economy",
+        "science-life"
       ],
       "topic_scores": {
-        "economy": 9,
-        "science-life": 9
+        "economy": 0,
+        "markets": 0,
+        "crypto": 0,
+        "currency-gold": 0,
+        "real-estate": 0,
+        "technology": 0,
+        "ai": 0,
+        "health": 0,
+        "auto": 0,
+        "science-life": 0
+      },
+      "importance": 0,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "publishable": false,
+      "exclude_reason": "commentary",
+      "content_type": "commentary",
+      "reject_reason": "commentary",
+      "group_id": "group-4037e4a97d12e4d7df30054d",
+      "representative": true,
+      "reason": "مقاله نظر/تحلیل درباره اقتصاددانانی که نوبل نگرفته‌اند؛ فاقد رویداد خبری یا تصمیم واقعی",
+      "analysis_mode": "ai",
+      "local_score": 4,
+      "breaking": false,
+      "breaking_topics": []
+    },
+    "5fd7ac3e4252fc3597bff568": {
+      "title": "ریزش مو و جدا شدن ناخن، عوارض گزارش‌شده در مصرف‌کنندگان GLP-1",
+      "summary": "جدا شدن ناخن، تغییر رنگ آن و ریزش مو از جمله مشکلاتی هستند که در مطالعه‌ای جدید میان مصرف‌کنندگان داروهای GLP-1 بیشتر گزارش شده‌اند. با این حال، وجود این علائم پیش از شروع درمان در بخشی از شرکت‌کنندگان و محدودیت‌های روش مطالعه، مانع از آن است که این تغییرات را مستقیماً به داروها نسبت دهیم.",
+      "source": "سلامت نیوز",
+      "published": "2026-10-11T07:19:00+03:30",
+      "topics": [
+        "health"
+      ],
+      "topic_scores": {
+        "economy": 0,
+        "markets": 0,
+        "crypto": 0,
+        "currency-gold": 0,
+        "real-estate": 0,
+        "technology": 0,
+        "ai": 0,
+        "health": 9,
+        "auto": 0,
+        "science-life": 0
       },
       "importance": 9,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
       "ticker_topics": [],
-      "breaking": false,
-      "breaking_topics": [],
-      "publishable": false,
-      "exclude_reason": "political content is excluded",
-      "group_id": "local-78f5bb823e48",
+      "publishable": true,
+      "exclude_reason": "",
+      "content_type": "health_news",
+      "reject_reason": "",
+      "group_id": "group-5fd7ac3e4252fc3597bff568",
       "representative": true,
-      "reason": "local rule-based classification",
-      "analysis_mode": "local",
-      "local_score": 4,
-      "political": true,
-      "breaking_signal": true,
-      "age_hours": 0.2989085202746921
+      "reason": "مطالعه پزشکی جدید با نتایج قابل‌توجه درباره عوارض داروهای GLP-1، با ذکر محدودیت‌های روش‌شناختی",
+      "analysis_mode": "ai",
+      "local_score": 15,
+      "breaking": false,
+      "breaking_topics": []
     }
   },
   "groups": {
@@ -19036,34 +19132,37 @@
     "5cf11cd3ac1c2f26a96dd3b1": {
       "representative_id": "5cf11cd3ac1c2f26a96dd3b1"
     },
-    "local-3799b35e7564": {
+    "group-129f94f1400735c48039359f": {
       "representative_id": "129f94f1400735c48039359f"
     },
-    "local-ce431db73003": {
+    "group-52d2888fcbb40b89cd0bf85d": {
       "representative_id": "52d2888fcbb40b89cd0bf85d"
     },
-    "local-d147a7cdaacb": {
+    "group-4acc75b00bfff509f4140bb6": {
       "representative_id": "4acc75b00bfff509f4140bb6"
     },
-    "local-e72adc51b15f": {
+    "group-d2a25999a4b4ff2f54cede94": {
       "representative_id": "d2a25999a4b4ff2f54cede94"
     },
-    "local-cb8e103dc43c": {
+    "group-ebf428d1cb232d7bef47d7ad": {
       "representative_id": "ebf428d1cb232d7bef47d7ad"
     },
-    "local-fa9c9b99e4ae": {
+    "group-365637d274c562fbfaa32d65": {
       "representative_id": "365637d274c562fbfaa32d65"
     },
-    "local-78f5bb823e48": {
+    "group-4037e4a97d12e4d7df30054d": {
       "representative_id": "4037e4a97d12e4d7df30054d"
+    },
+    "group-5fd7ac3e4252fc3597bff568": {
+      "representative_id": "5fd7ac3e4252fc3597bff568"
     }
   },
   "usage": {
     "date": "2026-10-11",
-    "requests": 10,
-    "last_success": "2026-10-11T02:57:57Z",
-    "last_success_epoch": 1791687477.3441513,
-    "last_article_generation": "2026-10-11T03:53:57Z",
+    "requests": 12,
+    "last_success": "2026-10-11T04:15:49Z",
+    "last_success_epoch": 1791692149.3656526,
+    "last_article_generation": "2026-10-11T04:15:56Z",
     "quota_block_until_epoch": 1791706881.9577627,
     "quota_block_until": "2026-10-11T08:21:21Z"
   }
