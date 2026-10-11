@@ -25,7 +25,7 @@ th{background:#f6f7f8;color:#596168;font-weight:700}
 th,td{padding:8px 9px;border-bottom:1px solid #edf0f1;text-align:right}
 td.num{text-align:left;direction:ltr;font-variant-numeric:tabular-nums}
 tr:hover td{background:#fafafa}
-.change-up{color:#16844a}.change-down{color:#c62828}.crypto-row{cursor:pointer}.crypto-row:hover td{background:#f4f7f9}#prices .table-wrap{display:block;width:100%;max-width:100%;overflow:hidden}#prices table{display:table;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:fixed;font-size:12px!important;border-collapse:collapse}#prices th,#prices td{padding:7px 5px!important;line-height:1.6;overflow-wrap:normal;word-break:normal;white-space:normal;text-align:center!important;vertical-align:middle}#prices th:nth-child(1),#prices td:nth-child(1){width:5%}#prices th:nth-child(2),#prices td:nth-child(2){width:14%}#prices th:nth-child(3),#prices td:nth-child(3){width:8%}#prices th:nth-child(4),#prices td:nth-child(4){width:19%}#prices th:nth-child(5),#prices td:nth-child(5){width:12%}#prices th:nth-child(6),#prices td:nth-child(6){width:15%}#prices th:nth-child(7),#prices td:nth-child(7){width:12%}#prices td.num{font-size:12px!important;white-space:normal;overflow-wrap:anywhere;word-break:normal}#prices th.sortable{cursor:pointer;user-select:none}#prices th.sortable:hover{background:#e9edf0}#prices th .sort-mark{font-size:6px;margin-right:0;color:#202c35}.row-num{color:#858c91;text-align:center!important}.rank-missing{color:#a1a6aa}
+.change-up{color:#16844a}.change-down{color:#c62828}.crypto-row{cursor:pointer}.crypto-row:hover td{background:#f4f7f9}#prices .table-wrap{display:block;width:100%;max-width:100%;overflow:hidden}#prices table{display:table;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:fixed;font-size:12px!important;border-collapse:collapse}#prices th,#prices td{padding:7px 5px!important;line-height:1.6;overflow-wrap:normal;word-break:normal;white-space:normal;text-align:center!important;vertical-align:middle}#prices th:nth-child(1),#prices td:nth-child(1){width:10%}#prices th:nth-child(2),#prices td:nth-child(2){width:25%}#prices th:nth-child(3),#prices td:nth-child(3){width:35%}#prices th:nth-child(4),#prices td:nth-child(4){width:30%}#prices td.num{font-size:12px!important;white-space:normal;overflow-wrap:anywhere;word-break:normal}#prices th.sortable{cursor:pointer;user-select:none}#prices th.sortable:hover{background:#e9edf0}#prices th .sort-mark{font-size:6px;margin-right:0;color:#202c35}.row-num{color:#858c91;text-align:center!important}.rank-missing{color:#a1a6aa}
 .note{font-size:8.5px;color:#737a7f;line-height:1.9;padding:11px 13px;background:#fafafa}
 .status{padding:25px;text-align:center;color:#777;font-size:10px}
 @media(max-width:700px){#page{width:100%;padding:112px 8px 20px}.head h1{font-size:16px}.tools{flex-wrap:wrap}table{font-size:8.5px}th,td{padding:7px 6px}}
@@ -49,14 +49,14 @@ tr:hover td{background:#fafafa}
 <div class="card">
   <div class="head">
     <h1>قیمت زنده ارزهای دیجیتال</h1>
-    <p>۸ ارز با بیشترین افزایش و ۸ ارز با بیشترین کاهش در بازه یک‌ساعته، همراه با قیمت تومان و تتر.</p>
+    <p>۸ ارز با بیشترین افزایش و ۸ ارز با بیشترین کاهش بر اساس تغییر قیمت تتری در یک ساعت اخیر.</p>
   </div>
   <div class="nav"><a href="./">← صفحه اصلی</a><a href="./news-river.html?topic=currency-gold">اخبار ارز و طلا</a></div>
-  <div class="tools"><input id="search" type="search" placeholder="جستجوی نام ارز دیجیتال..." autocomplete="off"></div>
+  <div class="tools"><input id="search" type="search" placeholder="جستجو با شناسه ارز (مثلاً BTC)..." autocomplete="off"></div>
   <div id="updated" class="update">در حال دریافت قیمت‌ها...</div>
 </div>
 <div id="prices" class="card"><div class="status">در حال دریافت قیمت‌ها...</div></div>
-<div class="card note">ترتیب اولیه بر اساس رتبه جهانی ارزش بازار است. برای مرتب‌سازی، روی عنوان ستون‌های نوسان ۱۵ دقیقه‌ای کلیک کنید. درصد نوسان با مقایسه قیمت فعلی و آخرین سابقه موجود محاسبه می‌شود؛ پس از شروع سابقه‌گیری، حدود ۱۵ تا ۲۰ دقیقه برای آماده‌شدن داده اولیه زمان لازم است. رتبه جهانی از CoinGecko دریافت می‌شود.<div style="font-size:8px;color:#9aa0a5;margin-top:5px">منبع داده قیمت: نوبیتکس</div></div>
+<div class="card note">قیمت‌ها بر حسب USDT هستند و فهرست افزایش‌ها و کاهش‌ها بر اساس درصد تغییر قیمت تتری در یک ساعت اخیر مرتب شده است. برای مرتب‌سازی روی عنوان ستون تغییر یک‌ساعته کلیک کنید.<div style="font-size:8px;color:#9aa0a5;margin-top:5px">منبع داده قیمت: نوبیتکس</div></div>
 </section><div id="sidebar-host"></div></main>
 <footer class="Evrenxus-home-footer"><div class="footer-tags-title">برچسب‌های خبری</div><div class="news-tags-list" id="newsTags"></div><div class="footer-copy">© اورین نکسوس</div></footer>
 <script>
@@ -66,12 +66,12 @@ var dataUrl="./market-data/nobitex.json?v="+Date.now();
 var prices=document.getElementById("prices"),search=document.getElementById("search"),updated=document.getElementById("updated"),items=[];
 function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
 function num(v){return v==null?null:Number(v)}
-function money(v){return v==null?"-":new Intl.NumberFormat("fa-IR",{maximumFractionDigits:2}).format(v)}
+function money(v){return v==null?"-":new Intl.NumberFormat("fa-IR",{maximumFractionDigits:2}).format(v)}function cryptoMoney(v){return v==null?"-":new Intl.NumberFormat("en-US",{maximumFractionDigits:8}).format(v)}
 function tvSymbol(x){return ({BTC:"BINANCE:BTCUSDT",ETH:"BINANCE:ETHUSDT",LTC:"BINANCE:LTCUSDT",USDT:"BINANCE:USDTUSD",XRP:"BINANCE:XRPUSDT",BNB:"BINANCE:BNBUSDT",DOGE:"BINANCE:DOGEUSDT",TRX:"BINANCE:TRXUSDT",ADA:"BINANCE:ADAUSDT",SOL:"BINANCE:SOLUSDT"})[x.symbol]||("SEARCH:"+String(x.symbol||""))}
 var sortKey=null,sortDir=1,currentPage=1;
 function render(){
  var q=(search.value||"").trim().toLocaleLowerCase();
- var rows=items.filter(function(x){return !q||String(x.name||"").toLocaleLowerCase().indexOf(q)!==-1||String(x.symbol||"").toLocaleLowerCase().indexOf(q)!==-1});
+ var rows=items.filter(function(x){return !q||String(x.symbol||"").toLocaleLowerCase().indexOf(q)!==-1});
  rows.sort(function(a,b){
    if(sortKey){
      var av=num(a[sortKey]),bv=num(b[sortKey]);
@@ -92,20 +92,16 @@ function render(){
  function changeCell(value){
    var ch=num(value),cls=ch>0?"change-up":ch<0?"change-down":"";
    var arrow=ch>0?"▲ ":ch<0?"▼ ":"";
-   return '<td class="'+cls+' num">'+(ch==null?'<span title="برای محاسبه درصد نوسان، سابقه قیمت یک‌ساعته لازم است">انتظار</span>':arrow+money(Math.abs(ch))+"%")+'</td>';
+   return '<td class="'+cls+' num">'+(ch==null?'<span title="برای محاسبه درصد نوسان، سابقه قیمت یک‌ساعته لازم است">انتظار</span>':arrow+cryptoMoney(Math.abs(ch))+"%")+'</td>';
  }
- var html='<section class="group"><div class="group-title">۸ ارز با بیشترین افزایش و ۸ ارز با بیشترین کاهش در یک ساعت اخیر</div><div class="table-wrap"><table><thead><tr>'+
- '<th>ردیف</th><th>ارز</th><th>شناسه</th><th>قیمت (تومان)</th>'+
- '<th class="sortable" data-sort="changePercent1hIRT">میزان نوسان (1h) <span class="sort-mark">'+(sortKey==="changePercent1hIRT"?(sortDir===1?"▲":"▼"):"↕")+'</span></th>'+
- '<th>قیمت (USDT)</th>'+
- '<th class="sortable" data-sort="changePercent1hUSDT">میزان نوسان (1h) <span class="sort-mark">'+(sortKey==="changePercent1hUSDT"?(sortDir===1?"▲":"▼"):"↕")+'</span></th>'+
+ var html='<section class="group"><div class="group-title">۸ ارز با بیشترین افزایش و ۸ ارز با بیشترین کاهش بر اساس نوسان USDT در یک ساعت اخیر</div><div class="table-wrap"><table><thead><tr>'+
+ '<th>ردیف</th><th>شناسه</th><th>قیمت (USDT)</th>'+
+ '<th class="sortable" data-sort="changePercent1hUSDT">تغییر ۱ ساعته (%) <span class="sort-mark">'+(sortKey==="changePercent1hUSDT"?(sortDir===1?"▲":"▼"):"↕")+'</span></th>'+
  '</tr></thead><tbody>';
  pageRows.forEach(function(x,i){
-   var tv=tvSymbol(x),link=tv?(tv.indexOf("SEARCH:")===0?"https://www.tradingview.com/search/?query="+encodeURIComponent(tv.slice(7)):"./market-chart.html?symbol="+encodeURIComponent(tv)+"&name="+encodeURIComponent(x.name||"")):"https://www.tradingview.com/search/?query="+encodeURIComponent(x.symbol||x.name||"");
-   html+='<tr class="crypto-row" data-link="'+esc(link)+'"><td class="row-num">'+money((currentPage-1)*pageSize+i+1)+'</td><td>'+esc(x.name||x.symbol)+'</td><td class="num">'+esc(x.symbol)+'</td>'+
-     '<td class="num">'+(num(x.priceIRT)==null?"—":money(x.priceIRT)+" تومان")+'</td>'+
-     changeCell(x.changePercent1hIRT)+
-     '<td class="num">'+(num(x.priceUSDT)==null?"—":money(x.priceUSDT)+" USDT")+'</td>'+
+   var tv=tvSymbol(x),link=tv?(tv.indexOf("SEARCH:")===0?"https://www.tradingview.com/search/?query="+encodeURIComponent(tv.slice(7)):"./market-chart.html?symbol="+encodeURIComponent(tv)+"&name="+encodeURIComponent(x.symbol||"")):"https://www.tradingview.com/search/?query="+encodeURIComponent(x.symbol||"");
+   html+='<tr class="crypto-row" data-link="'+esc(link)+'"><td class="row-num">'+money((currentPage-1)*pageSize+i+1)+'</td><td class="num">'+esc(x.symbol)+'</td>'+
+     '<td class="num">'+(num(x.priceUSDT)==null?"—":cryptoMoney(x.priceUSDT)+" USDT")+'</td>'+
      changeCell(x.changePercent1hUSDT)+'</tr>';
  });
  html+='</tbody></table></div><div class="pagination" style="display:flex;align-items:center;justify-content:center;gap:10px;padding:10px;direction:rtl;border-top:1px solid #edf0f1">'+
@@ -133,9 +129,9 @@ fetch(dataUrl,{cache:"no-store"}).then(function(r){if(!r.ok)throw new Error("dat
      if(num(x.changePercent1hUSDT)==null)x.changePercent1hUSDT=num(x.priceUSDT)!=null&&num(old.priceUSDT)!=null&&Number(old.priceUSDT)!==0?Number(((Number(x.priceUSDT)-Number(old.priceUSDT))/Number(old.priceUSDT)*100).toFixed(6)):null;
    });
  }
- var eligible=items.filter(function(x){return x.symbol!=="USDT"&&num(x.changePercent1hIRT)!=null;});
- var gainers=eligible.filter(function(x){return Number(x.changePercent1hIRT)>0;}).sort(function(a,b){return Number(b.changePercent1hIRT)-Number(a.changePercent1hIRT);}).slice(0,8);
- var losers=eligible.filter(function(x){return Number(x.changePercent1hIRT)<0;}).sort(function(a,b){return Number(a.changePercent1hIRT)-Number(b.changePercent1hIRT);}).slice(0,8);
+ var eligible=items.filter(function(x){return x.symbol!=="USDT"&&num(x.changePercent1hUSDT)!=null;});
+ var gainers=eligible.filter(function(x){return Number(x.changePercent1hUSDT)>0;}).sort(function(a,b){return Number(b.changePercent1hUSDT)-Number(a.changePercent1hUSDT);}).slice(0,8);
+ var losers=eligible.filter(function(x){return Number(x.changePercent1hUSDT)<0;}).sort(function(a,b){return Number(a.changePercent1hUSDT)-Number(b.changePercent1hUSDT);}).slice(0,8);
  items=gainers.concat(losers);
  var n=d.scrapedAt?new Date(d.scrapedAt):null;
  updated.textContent="آخرین به‌روزرسانی قیمت‌ها: "+(n?n.toLocaleString("fa-IR-u-ca-persian",{timeZone:"Asia/Tehran"}):"-");
@@ -156,7 +152,7 @@ prices.addEventListener("click",function(event){
    var next=Number(btn.getAttribute("data-page"));
    var total=Math.max(1,Math.ceil(items.filter(function(x){
      var q=(search.value||"").trim().toLocaleLowerCase();
-     return !q||String(x.name||"").toLocaleLowerCase().indexOf(q)!==-1||String(x.symbol||"").toLocaleLowerCase().indexOf(q)!==-1;
+     return !q||String(x.symbol||"").toLocaleLowerCase().indexOf(q)!==-1;
    }).length/16));
    if(next>=1&&next<=total){currentPage=next;render();}
  }
