@@ -69,6 +69,12 @@ class TopicClassificationTests(unittest.TestCase):
             self.topics("قیمت سیمان عمده امروز اعلام شد"),
         )
 
+    def test_rebar_price_news_is_economy(self):
+        self.assertIn(
+            "economy",
+            self.topics("قیمت میلگرد امروز یکشنبه اعلام شد"),
+        )
+
     def test_health_research_on_loneliness_is_health(self):
         topics = self.topics(
             "تنهایی و انزوای اجتماعی ممکن است چند سال از عمر سالم شما بکاهد",
@@ -137,6 +143,12 @@ class TopicClassificationTests(unittest.TestCase):
         self.assertIn(
             "economy",
             self.ai_topics("قیمت سیمان عمده امروز اعلام شد"),
+        )
+
+    def test_ai_fallback_classifies_rebar_prices_as_economy(self):
+        self.assertIn(
+            "economy",
+            self.ai_topics("قیمت میلگرد امروز یکشنبه اعلام شد"),
         )
 
     def test_ai_fallback_classifies_health_research(self):
