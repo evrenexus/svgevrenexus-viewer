@@ -112,25 +112,10 @@ function render(){
  '<button type="button" data-page="'+(currentPage+1)+'" '+(currentPage===totalPages?'disabled':'')+' style="font:11px Vazir,Tahoma,Arial;padding:6px 12px;border:1px solid #dfe2e4;background:#fff;color:#202c35;cursor:pointer">بعدی</button>'+
  '</div></section>';
  prices.innerHTML=html;
- Array.prototype.forEach.call(prices.querySelectorAll("th[data-sort]"),function(th){
-   th.addEventListener("click",function(){
-     var key=th.getAttribute("data-sort");
-     if(sortKey===key)sortDir*=-1;else{sortKey=key;sortDir=-1;}
-     currentPage=1;
-     render();
-   });
+ prices.querySelectorAll("th[data-sort]").forEach(function(th){
+   th.setAttribute("aria-sort",sortKey===th.getAttribute("data-sort")?(sortDir===1?"ascending":"descending"):"none");
  });
- Array.prototype.forEach.call(prices.querySelectorAll("button[data-page]"),function(btn){
-   btn.addEventListener("click",function(){
-     var next=Number(btn.getAttribute("data-page"));
-     if(next>=1&&next<=totalPages){currentPage=next;render();}
-   });
- });
- Array.prototype.forEach.call(prices.querySelectorAll("tr[data-link]"),function(row){
-   row.addEventListener("click",function(){
-     if(row.dataset.link)window.open(row.dataset.link,"_blank","noopener,noreferrer");
-   });
- });
+
 }
 fetch(dataUrl,{cache:"no-store"}).then(function(r){if(!r.ok)throw new Error("data unavailable");return r.json()}).then(function(d){
  items=Array.isArray(d.markets)?d.markets:[];
@@ -139,6 +124,27 @@ fetch(dataUrl,{cache:"no-store"}).then(function(r){if(!r.ok)throw new Error("dat
  updated.textContent="آخرین به‌روزرسانی قیمت‌ها: "+(n?n.toLocaleString("fa-IR-u-ca-persian",{timeZone:"Asia/Tehran"}):"-");
  render();
 }).catch(function(){prices.innerHTML='<div class="status">فعلاً اطلاعات قیمت ارزهای دیجیتال در دسترس نیست.</div>';updated.textContent="دریافت قیمت‌ها ناموفق بود."});
+prices.addEventListener("click",function(event){
+ var th=event.target.closest("th[data-sort]");
+ if(th){
+   var key=th.getAttribute("data-sort");
+   if(sortKey===key){sortDir=sortDir===1?-1:1;}else{sortKey=key;sortDir=-1;}
+   currentPage=1;
+   render();
+   return;
+ }
+ var btn=event.target.closest("button[data-page]");
+ if(btn){
+   var next=Number(btn.getAttribute("data-page"));
+   var total=Math.max(1,Math.ceil(items.filter(function(x){
+     var q=(search.value||"").trim().toLocaleLowerCase();
+     return !q||String(x.name||"").toLocaleLowerCase().indexOf(q)!==-1||String(x.symbol||"").toLocaleLowerCase().indexOf(q)!==-1;
+   }).length/16));
+   if(next>=1&&next<=total){currentPage=next;render();}
+ }
+ var row=event.target.closest("tr[data-link]");
+ if(row&&row.dataset.link)window.open(row.dataset.link,"_blank","noopener,noreferrer");
+});
 search.addEventListener("input",function(){currentPage=1;render();});
 })();
 </script>
