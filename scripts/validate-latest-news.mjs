@@ -14,6 +14,7 @@ const errors=[];
 const err=s=>errors.push(s);
 if(doc.source!=="data/news.json")err("source must be data/news.json");
 if(!doc.topics||typeof doc.topics!=="object")err("topics object missing");
+if(!Array.isArray(doc.topics?.[C.HOME]?.items)||doc.topics[C.HOME].items.length===0)err("home latest-news feed is empty");
 const rawIds=new Set(source.filter(n=>n&&n.id&&n.title&&/^https?:\/\//i.test(String(n.url||""))&&outOfScope({title:n.title,summary:n.summary,content:n.content})===null).map(n=>String(n.id)));
 const keys=[C.HOME,...C.PAGE_TOPICS];
 for(const topic of keys){
