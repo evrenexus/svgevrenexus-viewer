@@ -1,7 +1,7 @@
 {
   "version": 1,
   "policy_version": 9,
-  "updated": "2026-10-11T00:39:11Z",
+  "updated": "2026-10-11T01:02:09Z",
   "items": {
     "72b4eb7a7155ed214c32324d": {
       "title": "تصاویر؛ جشن «مهرگان» در غار کرفتو",
@@ -16906,6 +16906,66 @@
       "local_score": 4,
       "breaking": false,
       "breaking_topics": []
+    },
+    "8cd0e3ef20ac153670cf151f": {
+      "title": "تمرینات تنفسی شدید و تغییر در هوشیاری: کاهش جریان خون مغز تا ۴۵% و تغییر ارتباط شبکه‌های مغزی",
+      "summary": "مقدمه تمرینات تنفسی، از روش‌های قدیمی برای کاهش استرس، بهبود تمرکز و تقویت آرامش شناخته می‌شوند. در سال‌های اخیر شکل‌های مختلفی از breathwork یا تمرینات تنفسی فعال در میان عموم محبوب شد و برخی افراد آن را هم‌ردیف تجربه‌های معنوی یا روانگردان توصیف کردند. حال یک مطالعه تصویربرداری مغزی که در کنگره EC",
+      "source": "پزشک سایت",
+      "published": "2026-10-11T04:12:04+03:30",
+      "topics": [],
+      "topic_scores": {},
+      "importance": 7,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "group_id": "local-a7d5d756d3a5",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 7,
+      "political": false,
+      "breaking_signal": false,
+      "age_hours": 0.3331152813302146
+    },
+    "eb711aa9b094e783d75a2474": {
+      "title": "ابرنفتکش‌ها در تنگنای هرمز | هزینه انتقال نفت آمریکا به آسیا هشت برابر شده است | انتقال نفت خام از خاورمیانه پیچیده‌تر شد",
+      "summary": "اقتصادنیوز: تازه‌ترین داده‌های بورس بالتیک/ Baltic Exchange نشان می‌دهد که اجاره یک ابرنفتکش که «VLCC» خوانده می‌شود، برای انتقال نفت آمریکا به آسیا اکنون حدود ۷۷ میلیون دلار هزینه دارد.",
+      "source": "اقتصادنیوز",
+      "published": "2026-10-11T04:00:00+03:30",
+      "topics": [
+        "real-estate",
+        "markets",
+        "economy",
+        "currency-gold"
+      ],
+      "topic_scores": {
+        "economy": 20,
+        "markets": 20,
+        "currency-gold": 20,
+        "real-estate": 20
+      },
+      "importance": 20,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "breaking": false,
+      "breaking_topics": [],
+      "publishable": false,
+      "exclude_reason": "political content is excluded",
+      "group_id": "local-9a181cc4b317",
+      "representative": true,
+      "reason": "local rule-based classification",
+      "analysis_mode": "local",
+      "local_score": 17,
+      "political": true,
+      "breaking_signal": true,
+      "age_hours": 0.5342263924413257
     }
   },
   "groups": {
@@ -18471,6 +18531,12 @@
     },
     "local-62ab4f58ec4c": {
       "representative_id": "c4bb4d30cf46831ce9cfd0ce"
+    },
+    "local-a7d5d756d3a5": {
+      "representative_id": "8cd0e3ef20ac153670cf151f"
+    },
+    "local-9a181cc4b317": {
+      "representative_id": "eb711aa9b094e783d75a2474"
     }
   },
   "usage": {
