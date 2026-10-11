@@ -28,7 +28,7 @@ export default {
       }
 
       const response = await fetch(
-        "https://api.github.com/repos/evrenexus/svgevrenexus-viewer/actions/workflows/refresh-all.yml/dispatches",
+        "https://api.github.com/repos/evrenexus/svgevrenexus-viewer/actions/workflows/update-all.yml/dispatches",
         {
           method: "POST",
           headers: {
