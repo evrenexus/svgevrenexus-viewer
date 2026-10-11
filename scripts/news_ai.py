@@ -117,15 +117,20 @@ def parse_json_object_response(raw):
     text = re.sub(r"^\s*```(?:json)?\s*", "", text, flags=re.IGNORECASE)
     text = re.sub(r"\s*```\s*$", "", text)
     decoder = json.JSONDecoder()
+    best = None
+    best_length = 0
     for index, char in enumerate(text):
         if char != "{":
             continue
         try:
-            value, _ = decoder.raw_decode(text, index)
+            value, end = decoder.raw_decode(text, index)
         except json.JSONDecodeError:
             continue
-        if isinstance(value, dict):
-            return value
+        if isinstance(value, dict) and end - index > best_length:
+            best = value
+            best_length = end - index
+    if best is not None:
+        return best
     raise ValueError("No valid JSON object found in provider response")
 
 
