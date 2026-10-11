@@ -178,7 +178,9 @@ async function main() {
       priceIRT,
       priceUSDT,
       changePercent15mIRT: null,
-      changePercent15mUSDT: null
+      changePercent15mUSDT: null,
+      changePercent1hIRT: null,
+      changePercent1hUSDT: null
     });
   }
 
@@ -189,6 +191,10 @@ async function main() {
   const baseline = history
     .filter(h => number(h.timestamp) != null && h.timestamp <= targetTime && h.prices)
     .sort((a, b) => b.timestamp - a.timestamp)[0];
+  const targetHour = now - 60 * 60 * 1000;
+  const baselineHour = history
+    .filter(h => number(h.timestamp) != null && h.timestamp <= targetHour && h.prices)
+    .sort((a, b) => b.timestamp - a.timestamp)[0];
 
   if (baseline) {
     markets.forEach(x => {
@@ -196,6 +202,14 @@ async function main() {
       if (!old) return;
       x.changePercent15mIRT = pct(x.priceIRT, number(old.priceIRT));
       x.changePercent15mUSDT = pct(x.priceUSDT, number(old.priceUSDT));
+    });
+  }
+  if (baselineHour) {
+    markets.forEach(x => {
+      const old = baselineHour.prices[x.symbol];
+      if (!old) return;
+      x.changePercent1hIRT = pct(x.priceIRT, number(old.priceIRT));
+      x.changePercent1hUSDT = pct(x.priceUSDT, number(old.priceUSDT));
     });
   }
 
@@ -227,7 +241,8 @@ async function main() {
   fs.mkdirSync("market-data", { recursive: true });
   fs.writeFileSync(DATA_FILE, JSON.stringify(payload, null, 2) + "\n");
   console.log("Nobitex updated:", markets.length, "markets; global ranks:", ranks.size,
-    "; 15-minute baseline:", baseline ? new Date(baseline.timestamp).toISOString() : "warming up");
+    "; 15-minute baseline:", baseline ? new Date(baseline.timestamp).toISOString() : "warming up",
+    "; 1-hour baseline:", baselineHour ? new Date(baselineHour.timestamp).toISOString() : "warming up");
 }
 main().catch(err => {
   console.error(err);
