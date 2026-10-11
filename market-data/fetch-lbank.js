@@ -4,7 +4,7 @@ const fs = require("fs");
 const API = "https://api.lbkex.com/v2";
 const DATA_FILE = "market-data/lbank.json";
 const LIMIT = 60;
-const CONCURRENCY = 5;
+const CONCURRENCY = 3;
 const FRAMES = [
   { key: "5m", type: "minute5", seconds: 5 * 60 },
   { key: "15m", type: "minute15", seconds: 15 * 60 },
