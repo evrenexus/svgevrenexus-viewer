@@ -97,7 +97,7 @@
       return;
     }
 
-    items.slice(0, 4).forEach(function (item, index) {
+    items.slice(0, 8).forEach(function (item, index) {
       var slide = document.createElement("div");
       slide.className = "Evrenxus-slide" + (index === 0 ? " active" : "");
       var link = document.createElement("a");
