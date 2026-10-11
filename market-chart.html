@@ -54,7 +54,7 @@ return;
 }
 var coin=(name||symbol.split(":").pop().replace(/USDT(?:\.P)?$/i,"")).toUpperCase();
 var chartSymbol="LBANK:"+coin+"USDT.P";
-var tvUrl="https://www.tradingview.com/chart/BU8OsLK2/?symbol="+encodeURIComponent(chartSymbol);
+var tvUrl="https://www.tradingview.com/chart/BU8OsLK2/?symbol="+encodeURIComponent(chartSymbol)+"&interval=60";
 external.href=tvUrl;
 external.textContent="بازکردن در TradingView ↗";
 var s=document.createElement("script");
@@ -63,7 +63,7 @@ s.async=true;
 s.innerHTML=JSON.stringify({
 "autosize":true,
 "symbol":chartSymbol,
-"interval":"D",
+"interval":"60",
 "timezone":"Asia/Tehran",
 "theme":"light",
 "style":"1",
