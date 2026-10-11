@@ -145,9 +145,12 @@ function fetchWithTimeout(url){
   ]);
 }
 function fetchJSON(file,fallback){
-  return fetchWithTimeout(dataURL(file)).then(function(r){if(!r.ok)throw new Error(file+" "+r.status);return r.json()}).catch(function(){
-    return fetchWithTimeout(fallback+file+"?v="+Date.now()).then(function(r){if(!r.ok)throw new Error(file+" fallback "+r.status);return r.json()});
-  });
+  var urls=[dataURL(file),"https://evrenexus.github.io/svgevrenexus-viewer/market-data/"+file+"?v="+Date.now(),fallback+file+"?v="+Date.now()];
+  function attempt(i){
+    if(i>=urls.length)return Promise.reject(new Error("all data sources failed: "+file));
+    return fetchWithTimeout(urls[i]).then(function(r){if(!r.ok)throw new Error(file+" "+r.status);return r.json()}).catch(function(){return attempt(i+1)});
+  }
+  return attempt(0);
 }
 function loadTGJU(){return fetchJSON("tgju.json","https://raw.githubusercontent.com/evrenexus/svgevrenexus-viewer/main/market-data/").then(function(t){render(metal,"metals",[t.precious||[],t.baseMetals||[],t.energy||[]],t.scrapedAt);render(cur,"currency",[t.currency||[]],t.scrapedAt)})}
 function loadCrypto(){return fetchJSON("nobitex.json","https://raw.githubusercontent.com/evrenexus/svgevrenexus-viewer/main/market-data/").then(function(n){render(crypto,"crypto",[(n.markets||[]).slice().sort(function(a,b){return a.symbol==="USDT"?-1:b.symbol==="USDT"?1:0})],n.scrapedAt)})}
