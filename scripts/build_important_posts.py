@@ -46,7 +46,7 @@ def near_duplicate(a, b):
     aa, bb = title_tokens(ta), title_tokens(tb)
     similarity = len(aa & bb) / len(aa | bb) if aa and bb else 0.0
     # Headlines from the same publisher often differ by only a few words.
-    if str(a.get("source") or "").strip() == str(b.get("source") or "").strip() and similarity >= 0.45:
+    if str(a.get("source") or "").strip() == str(b.get("source") or "").strip() and similarity >= 0.40:
         return True
     return similarity >= 0.72
 
