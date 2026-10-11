@@ -26,6 +26,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Node.js
         uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
       - name: Fetch LBank USDT prices and timeframes
         run: node market-data/fetch-lbank.js
       - name: Commit changed price data
