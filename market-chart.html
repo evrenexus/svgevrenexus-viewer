@@ -11,8 +11,11 @@ html,body{margin:0;padding:0;width:100%;min-height:100%;background:#fff;font-fam
 #market-chart-page{width:100%;height:calc(100vh - 144px);margin-top:144px;position:relative;background:#fff;display:flex;flex-direction:column}
 #chart-toolbar{flex:0 0 auto;min-height:40px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:7px 12px;background:#f5f7f8;border-bottom:1px solid #dfe3e6;color:#414b52;font-size:12px}
 #chart-title{font-weight:700;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-#open-tradingview{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;padding:7px 10px;background:#d9232e;color:#fff;text-decoration:none;border-radius:3px;font-size:10px;font-weight:700}
-#tradingview-chart{width:100%;flex:1;min-height:0}
+.chart-actions{display:flex;gap:6px;flex:0 0 auto}
+.chart-actions a,.chart-actions button{display:inline-flex;align-items:center;justify-content:center;padding:7px 10px;border:0;background:#263640;color:#fff;text-decoration:none;border-radius:3px;font:700 10px Tahoma,Arial;cursor:pointer;white-space:nowrap}
+.chart-actions .active{background:#d9232e}
+#tradingview-chart,#lbank-frame{width:100%;flex:1;min-height:0;border:0;background:#fff}
+#lbank-frame{display:none}
 #market-chart-error{position:absolute;top:55%;left:50%;transform:translate(-50%,-50%);color:#b4232e;font-size:13px;display:none;z-index:3;background:#fff;padding:10px}
 @media(max-width:700px){
 #market-chart-page{height:calc(100vh - 133px);margin-top:133px}
@@ -27,27 +30,47 @@ html,body{margin:0;padding:0;width:100%;min-height:100%;background:#fff;font-fam
 <body>
 
 <div id="market-chart-page">
-<div id="chart-toolbar"><span id="chart-title">نمودار زنده بازار در خبرخوان Evren Nexus</span><a id="open-tradingview" href="#" target="_blank" rel="noopener noreferrer">بازکردن در TradingView ↗</a></div>
+<div id="chart-toolbar"><span id="chart-title">بازار ارز دیجیتال در خبرخوان Evren Nexus</span><div class="chart-actions"><button type="button" id="show-tv" class="active">TradingView</button><button type="button" id="show-lbank">صرافی LBank</button><a id="open-destination" href="#" target="_blank" rel="noopener noreferrer">بازکردن مستقیم ↗</a></div></div>
 <div id="tradingview-chart"></div>
+<iframe id="lbank-frame" title="LBank در خبرخوان Evren Nexus" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
 <div id="market-chart-error"></div><footer class="Evrenxus-page-footer">© اورین نکسوس</footer>
 </div>
 <script>
 (function(){
 var p=new URLSearchParams(location.search),
 symbol=(p.get("symbol")||"").trim(),
-name=(p.get("name")||"").trim(),
+name=(p.get("name")||"").trim().toUpperCase().replace(/[^A-Z0-9]/g,""),
 error=document.getElementById("market-chart-error"),
 title=document.getElementById("chart-title"),
-external=document.getElementById("open-tradingview");
-if(name)title.textContent="نمودار زنده "+name+" در خبرخوان Evren Nexus";
+external=document.getElementById("open-destination"),
+tvButton=document.getElementById("show-tv"),
+lbankButton=document.getElementById("show-lbank"),
+tvContainer=document.getElementById("tradingview-chart"),
+lbankFrame=document.getElementById("lbank-frame");
+if(name)title.textContent="بازار "+name+" در خبرخوان Evren Nexus";
 if(!symbol || !/^[A-Z0-9:_!.-]+$/i.test(symbol)){
 error.textContent="نماد بازار مشخص نشده یا معتبر نیست.";
 error.style.display="block";
 external.style.display="none";
+tvButton.disabled=true;lbankButton.disabled=true;
 return;
 }
-external.href="https://www.tradingview.com/chart/?symbol="+encodeURIComponent(symbol);
-var container=document.getElementById("tradingview-chart");
+var tvUrl="https://www.tradingview.com/chart/?symbol="+encodeURIComponent(symbol);
+var coin=(name||symbol.split(":").pop().replace(/USDT$/,"")).toLowerCase();
+var lbankUrl="https://www.lbank.com/trade/"+encodeURIComponent(coin)+"_usdt";
+external.href=tvUrl;
+function showMarket(which){
+var isLbank=which==="lbank";
+tvContainer.style.display=isLbank?"none":"block";
+lbankFrame.style.display=isLbank?"block":"none";
+tvButton.classList.toggle("active",!isLbank);
+lbankButton.classList.toggle("active",isLbank);
+external.href=isLbank?lbankUrl:tvUrl;
+external.textContent=isLbank?"بازکردن مستقیم در LBank ↗":"بازکردن مستقیم در TradingView ↗";
+if(isLbank&&!lbankFrame.src)lbankFrame.src=lbankUrl;
+}
+tvButton.addEventListener("click",function(){showMarket("tv")});
+lbankButton.addEventListener("click",function(){showMarket("lbank")});
 var s=document.createElement("script");
 s.src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
 s.async=true;
@@ -66,7 +89,8 @@ s.innerHTML=JSON.stringify({
 "calendar":false,
 "support_host":"https://www.tradingview.com"
 });
-container.appendChild(s);
+tvContainer.appendChild(s);
+showMarket("tv");
 })();
 </script>
 <script src="./Evrenexus-header.js?v=20261011-03"></script>
