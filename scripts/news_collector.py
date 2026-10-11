@@ -27,6 +27,8 @@ RETRY_BACKOFF_SECONDS=1
 TEHRAN_TZ=ZoneInfo("Asia/Tehran")
 DUPLICATE_WINDOW_HOURS=48
 
+EXCLUDED_SOURCE_NAMES={"ایسنا","ایرنا"}
+
 SOURCES=[
  {"name":"دنیای اقتصاد","category":"اقتصاد و سرمایه‌گذاری","site":"https://donya-e-eqtesad.com/","feeds":["https://donya-e-eqtesad.com/feeds/"],"allow_internal_republish":True},
  {"name":"اقتصادنیوز","category":"اقتصاد و سرمایه‌گذاری","site":"https://www.eghtesadnews.com/","feeds":["https://www.eghtesadnews.com/feeds"],"allow_internal_republish":True},
@@ -39,8 +41,6 @@ SOURCES=[
  {"name":"پزشک سایت","category":"پزشکی و سلامت","site":"https://www.pezeshk-site.ir/","feeds":["https://www.pezeshk-site.ir/feed/"],"allow_internal_republish":True},
  {"name":"انتخاب","category":"اقتصاد و سرمایه‌گذاری","site":"https://www.entekhab.ir/","feeds":["https://www.entekhab.ir/fa/rss/1"],"allow_internal_republish":True},
  {"name":"فرارو","category":"اقتصاد و سرمایه‌گذاری","site":"https://fararu.com/","feeds":["https://fararu.com/fa/rss"],"allow_internal_republish":True},
- {"name":"ایسنا","category":"خبرگزاری عمومی","site":"https://www.isna.ir/","feeds":["https://www.isna.ir/rss"],"allow_internal_republish":True},
- {"name":"ایرنا","category":"خبرگزاری عمومی","site":"https://www.irna.ir/","feeds":["https://www.irna.ir/rss"],"allow_internal_republish":True},
  {"name":"مهر","category":"خبرگزاری عمومی","site":"https://www.mehrnews.com/","feeds":["https://www.mehrnews.com/rss"],"allow_internal_republish":True},
  {"name":"ایران‌جیب","category":"اقتصاد و سرمایه‌گذاری","site":"https://www.iranjib.ir/","feeds":[],"allow_internal_republish":True},
 ]
@@ -545,7 +545,7 @@ def main():
     old=json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else {"updated":"","items":[],"sources":[]}
     existing={}
     for x in old.get("items",[]):
-        if isinstance(x,dict) and is_valid_item(x,now_ts):
+        if isinstance(x,dict) and x.get("source") not in EXCLUDED_SOURCE_NAMES and is_valid_item(x,now_ts):
             if out_of_scope({"title":x.get("title","")}):
                 continue
             x["published"]=normalize_published(x.get("published",""))
