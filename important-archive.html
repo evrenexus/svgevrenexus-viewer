@@ -67,7 +67,7 @@ function render(doc){
 fetch("./data/public/featured.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("featured HTTP "+r.status);return r.json()}).then(render).catch(function(){host.innerHTML='<div class="error">دریافت آرشیو مطالب مهم انجام نشد؛ مطالب حذف نشده‌اند.</div>'});
 })();
 </script>
-<script src="./Evrenexus-sidebar.js?v=20261011-01"></script>
+<script src="./Evrenexus-sidebar.js?v=20261011-02"></script>
 <script src="./Evrenexus-header.js?v=20261011-04"></script>
 </body>
 </html>
