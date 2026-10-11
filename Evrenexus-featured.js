@@ -32,17 +32,15 @@ function loadPolicy(){
 }
 function getTopic(topic,page,q){
  var key=topic||"home",query=String(q||"").trim().toLowerCase();
- return Promise.all([load().catch(function(){return null}),loadLatest(),loadPolicy()]).then(function(parts){
-  var doc=parts[0],latest=parts[1],t=doc&&doc.topics&&doc.topics[key],lt=latest&&latest.topics&&latest.topics[key];
+ return Promise.all([loadLatest(),loadPolicy()]).then(function(parts){
+  var latest=parts[0],lt=latest&&latest.topics&&latest.topics[key];
   if(!lt||!Array.isArray(lt.items))throw Error("latest-news.json topic missing: "+key);
   var per=(latest.config&&latest.config.regularPerPage)||16,p=Math.max(1,parseInt(page,10)||1);
   var rr=filterItems(lt.items).filter(function(x){return topicMatches(x,key);});
   if(query)rr=rr.filter(function(x){return((x.title||"")+" "+(x.summary||"")+" "+(x.source||"")).toLowerCase().indexOf(query)!==-1;});
   rr.sort(function(a,b){return (Date.parse(b.published)||0)-(Date.parse(a.published)||0)||String(a.id||"").localeCompare(String(b.id||""));});
-  var ff=t&&Array.isArray(t.featured)?filterItems(t.featured).filter(function(x){return topicMatches(x,key)}):[];
-  var imp=t&&Array.isArray(t.important)?filterItems(t.important).filter(function(x){return topicMatches(x,key)}):[];
   var start=(p-1)*per;
-  return{ok:true,featured:ff,important:imp,regular:rr.slice(start,start+per),page:p,hasPrev:p>1,hasNext:start+per<rr.length};
+  return{ok:true,featured:[],important:[],regular:rr.slice(start,start+per),page:p,hasPrev:p>1,hasNext:start+per<rr.length};
  });
 }
 function img(v){return typeof v==="string"&&/^https?:\/\//i.test(v.trim())?v.trim():"";}
@@ -69,6 +67,22 @@ function renderOldWay(topic,page,q){
   var total=Math.max(1,Math.ceil(items.length/16)),pg=document.getElementById("news-pagination"),prev=document.getElementById("news-prev"),next=document.getElementById("news-next");
   if(pg){pg.style.display=total>1?"flex":"none";if(prev){prev.disabled=page<=1;prev.onclick=function(){if(page<=1)return;var u=new URL(location.href);u.searchParams.set("page",String(page-1));location.href=u.href}}if(next){next.disabled=page>=total;next.onclick=function(){if(page>=total)return;var u=new URL(location.href);u.searchParams.set("page",String(page+1));location.href=u.href}}}
  }).catch(function(e){var list=document.getElementById("list");if(list)list.innerHTML='<div class="error">دریافت آخرین مطالب انجام نشد.</div>';console.warn("latest-news fallback:",e)});
+}
+function renderAiBoxes(doc,topic){
+ var key=topic||"home",t=doc&&doc.topics&&doc.topics[key]||{};
+ var F=filterItems(t.featured||[]).filter(function(x){return topicMatches(x,key)}).slice(0,4);
+ var I=filterItems(t.important||[]).filter(function(x){return !!x.articleUrl&&topicMatches(x,key)}).slice(0,4);
+ var important=document.getElementById("important"),ih=document.getElementById("importantList"),br=document.getElementById("Evrenxus-breaking-track");
+ if(br){br.innerHTML="";if(F.length){var tk=document.createElement("div");tk.className="Evrenxus-breaking-ticker";var g=document.createElement("div");g.className="Evrenxus-breaking-group";F.forEach(function(x){if(!x.articleUrl)return;var a=document.createElement("a");a.href="./"+x.articleUrl;a.textContent=x.title||"";g.appendChild(a)});tk.appendChild(g);tk.appendChild(g.cloneNode(true));br.appendChild(tk)}else br.textContent="فعلاً مطلب مهمی برای این موضوع وجود ندارد."}
+ if(important)important.style.display="";
+ if(ih){ih.innerHTML="";I.forEach(function(x){
+   var a=document.createElement("a");a.className="important-item";a.href="./"+x.articleUrl;
+   var iu=img(x.image);if(iu){var im=document.createElement("img");im.src=iu;im.alt=x.title||"";im.loading="lazy";im.referrerPolicy="no-referrer";im.onerror=function(){this.remove()};a.appendChild(im);}
+   var c=document.createElement("div");c.className="important-content";var h=document.createElement("div");h.className="important-title";h.textContent=x.title||"";c.appendChild(h);
+   if(x.summary){var sm=document.createElement("div");sm.className="important-summary";sm.textContent=x.summary;c.appendChild(sm)}
+   var m=document.createElement("div");m.className="important-meta";m.textContent=(x.source||"")+" • "+(x.published?new Date(x.published).toLocaleString("fa-IR",{dateStyle:"short",timeStyle:"short"}):"");c.appendChild(m);a.appendChild(c);ih.appendChild(a);
+ });}
+ if(ih){var ia=document.createElement("a");ia.href="./important-archive.html"+(key&&key!=="home"?"?topic="+encodeURIComponent(key):"");ia.textContent="مشاهده آرشیو مطالب مهم";ia.style.cssText="display:block;text-align:center;padding:10px;background:#f7f7f7;color:#d9232e;text-decoration:none;font-size:10px;font-weight:700;border-top:1px solid #edf0f1";ih.appendChild(ia);}
 }
 function render(r){
  var F=(r.featured||[]).slice(0,4),I=(r.important||[]).filter(function(x){return !!x.articleUrl;}).slice(0,4),list=document.getElementById("list"),important=document.getElementById("important"),ih=document.getElementById("importantList");
@@ -110,19 +124,20 @@ function render(r){
  if(pg){pg.style.display=(r.hasPrev||r.hasNext)?"flex":"none";if(prev){prev.disabled=!r.hasPrev;prev.onclick=function(){if(!r.hasPrev)return;var u=new URL(location.href);u.searchParams.set("page",String(r.page-1));location.href=u.href}}if(next){next.disabled=!r.hasNext;next.onclick=function(){if(!r.hasNext)return;var u=new URL(location.href);u.searchParams.set("page",String(r.page+1));location.href=u.href}}}
 }
 function buildClientFallback(topic,page,q){
- return Promise.all([loadLatest(),loadPolicy(),load().catch(function(){return null})]).then(function(parts){
-  var latest=parts[0],doc=parts[2],key=topic||"home",t=latest&&latest.topics&&latest.topics[key],f=doc&&doc.topics&&doc.topics[key];
+ return Promise.all([loadLatest(),loadPolicy()]).then(function(parts){
+  var latest=parts[0],key=topic||"home",t=latest&&latest.topics&&latest.topics[key];
   if(!t||!Array.isArray(t.items))throw Error("latest-news.json topic missing: "+key);
   var items=filterItems(t.items).filter(function(x){return topicMatches(x,key);});
   if(q)items=items.filter(function(x){return((x.title||"")+" "+(x.summary||"")+" "+(x.source||"")).toLowerCase().indexOf(String(q).toLowerCase())!==-1;});
   items.sort(function(a,b){return (Date.parse(b.published)||0)-(Date.parse(a.published)||0)||String(a.id||"").localeCompare(String(b.id||""));});
   var p=Math.max(1,parseInt(page,10)||1),per=(latest.config&&latest.config.regularPerPage)||16,start=(p-1)*per;
-  return{ok:true,featured:f&&Array.isArray(f.featured)?filterItems(f.featured).filter(function(x){return topicMatches(x,key)}):[],important:f&&Array.isArray(f.important)?filterItems(f.important).filter(function(x){return topicMatches(x,key)}):[],regular:items.slice(start,start+per),page:p,hasPrev:p>1,hasNext:start+per<items.length};
+  return{ok:true,featured:[],important:[],regular:items.slice(start,start+per),page:p,hasPrev:p>1,hasNext:start+per<items.length};
  });
 }
 function renderPage(){
  var qx=new URLSearchParams(location.search),topic=qx.get("topic")||"home",page=Math.max(1,parseInt(qx.get("page"),10)||1),q=(qx.get("q")||"").trim().toLowerCase();activeTopic=topic;
- getTopic(topic,page,q).then(function(r){if(!r.ok){console.warn("featured.json:",r.reason);return buildClientFallback(topic,page,q).then(render).catch(function(e){console.warn("client fallback:",e);return renderOldWay(topic,page,q)})}render(r)}).catch(function(e){console.warn("featured.json:",e);buildClientFallback(topic,page,q).then(render).catch(function(){renderOldWay(topic,page,q)});});
+ function showLatest(r){render(r);load().then(function(doc){renderAiBoxes(doc,topic)}).catch(function(e){console.warn("important boxes unavailable; latest-news remains independent",e);});}
+ getTopic(topic,page,q).then(showLatest).catch(function(e){console.warn("latest-news.json:",e);buildClientFallback(topic,page,q).then(showLatest).catch(function(e2){console.warn("latest-news fallback:",e2);renderOldWay(topic,page,q)});});
 }
 window.EvrenFeatured={load:load,getTopic:getTopic,render:renderPage};
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",renderPage,{once:true});else renderPage();
