@@ -44,7 +44,7 @@ html,body{background:#f1f2f3}
 (function(){
 "use strict";
 var q=new URLSearchParams(location.search),topic=q.get("topic")||"home",page=Math.max(1,parseInt(q.get("page")||"1",10)||1),perPage=16,host=document.getElementById("list");
-function img(v){return typeof v==="string"&&/^https?:\\/\\//i.test(v)?v:""}
+function img(v){return typeof v==="string"&&/^https?:\/\//i.test(v)?v:""}
 function esc(v){return String(v||"").replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
 function pageUrl(p){var u="./important-archive.html";var args=[];if(topic!=="home")args.push("topic="+encodeURIComponent(topic));if(p>1)args.push("page="+p);return u+(args.length?"?"+args.join("&"):"")}
 function render(doc){
