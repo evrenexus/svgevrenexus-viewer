@@ -96,7 +96,8 @@ function render(){
  '<th class="sortable" data-sort="changePercent15mUSDT">نوسان ۱۵ دقیقه‌ای تتر <span class="sort-mark">'+(sortKey==="changePercent15mUSDT"?(sortDir===1?"▲":"▼"):"↕")+'</span></th>'+
  '</tr></thead><tbody>';
  rows.forEach(function(x,i){
-   html+='<tr class="crypto-row"><td class="row-num">'+money(i+1)+'</td><td>'+esc(x.name||x.symbol)+'</td><td class="num">'+esc(x.symbol)+'</td>'+
+   var tv=tvSymbol(x);var link=tv?"./market-chart.html?symbol="+encodeURIComponent(tv)+"&name="+encodeURIComponent(x.name||""):"";
+   html+='<tr class="crypto-row" data-link="'+esc(link)+'" onclick="if(this.dataset.link)location.href=this.dataset.link"><td class="row-num">'+money(i+1)+'</td><td>'+esc(x.name||x.symbol)+'</td><td class="num">'+esc(x.symbol)+'</td>'+
      '<td class="num">'+(num(x.priceIRT)==null?"—":money(x.priceIRT)+" تومان")+'</td>'+
      changeCell(x.changePercent15mIRT)+
      '<td class="num">'+(num(x.priceUSDT)==null?"—":money(x.priceUSDT)+" USDT")+'</td>'+
