@@ -28,6 +28,7 @@ const valid=source.filter(n=>{
 
 const seen=new Set();
 const items=valid.filter(n=>{if(seen.has(n.id))return false;seen.add(n.id);return true;});
+if(!items.length) throw new Error("No eligible news items; refusing to publish an empty latest-news feed");
 const inTopic=(n,topic)=>{
   if(topic===C.HOME)return true;
   if(topic==="economy-investment")return n.topics.includes("economy")||n.topics.includes("markets");
