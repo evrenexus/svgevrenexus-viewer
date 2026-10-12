@@ -7,9 +7,6 @@ on:
     paths:
     - 'data/news.json'
     - 'data/editorial.json'
-    - 'scripts/build_important_posts.py'
-    - 'scripts/build-important-pages.mjs'
-    - 'scripts/build-featured.mjs'
     - '.github/workflows/build-public.yml'
 permissions:
   contents: write
@@ -30,20 +27,6 @@ jobs:
 
       - name: Validate and build editorial data
         run: python3 scripts/build_public.py
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - name: Build permanent article pages and important sections
-        run: node scripts/build-featured.mjs
-
-      - name: Validate important sections
-        run: node scripts/validate-featured.mjs
-
-      - name: Build sidebar and slider selection
-        run: python3 scripts/build_important_posts.py
 
       - name: Commit
         run: |
