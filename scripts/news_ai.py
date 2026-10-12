@@ -648,7 +648,8 @@ def write_editorial(ai, old):
         if "manual_breaking" not in e and "breaking" in e:
             e["manual_breaking"]=bool(e["breaking"]);e.pop("breaking",None)
         e.pop("ai_managed",None)
-        e["updated_at"]=out["updated"]
+        if e.get("published") is not True:
+            e["updated_at"]=out["updated"]
     EDITORIAL.write_text(json.dumps(out, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 def find_commons_image(query, article_id):
