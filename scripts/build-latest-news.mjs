@@ -1,5 +1,5 @@
-// Build the "آخرین مطالب" feed exclusively from collected, rule-classified news.
-// Deliberately does not read news-ai.json, editorial.json, articles.json, or featured.json.
+// Build the "آخرین مطالب" feed from collected, rule-classified news,
+// excluding items explicitly hidden by the editorial panel.
 import fs from "node:fs";
 import path from "node:path";
 import {fileURLToPath} from "node:url";
@@ -9,6 +9,9 @@ import {outOfScope} from "./content-policy.mjs";
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"..");
 const readJson=(rel)=>JSON.parse(fs.readFileSync(path.join(ROOT,rel),"utf8"));
 const raw=readJson("data/news.json");
+const editorialData=readJson("data/editorial.json");
+if(!editorialData||typeof editorialData!=="object"||!editorialData.items||typeof editorialData.items!=="object"||Array.isArray(editorialData.items)) throw new Error("data/editorial.json has an invalid items object");
+const editorial=editorialData.items;
 const source=Array.isArray(raw)?raw:(Array.isArray(raw?.items)?raw.items:Array.isArray(raw?.news)?raw.news:Array.isArray(raw?.articles)?raw.articles:[]);
 if(!source.length) throw new Error("data/news.json contains no collected news items");
 
@@ -26,6 +29,8 @@ function titleKey(value){
 const IRRELEVANT_HEADLINE_RE=/(?:قتل|قاتل|جنایی|قاچاقچی|سارق|سرقت|دستگیری|زندانی|زندان|چوگان|فوتبال|فوتسال|بسکتبال|والیبال|هندبال|تنیس|کشتی|سرمربی|بازیکن|لیگ برتر|مسابقه ورزشی|قهرمانی|جام جهانی|ورزشکار|ورزشی|مهدوی[‌ ]?کیا|گل[‌ ]?محمدی|تجارت رنج|استخوان کودکان|کتاب برتر حقوقی|خط نصر|خوشنویسی|معارف قرآنی|جشنواره گردشگری پیاز|صلح[‌ ]?یاران|همکاری[‌ ]های فرهنگی|پنجره هنر|نقدی به فیلم|داریوش عیاری|مسعود کیمیایی|مرد عنکبوتی|دل تورو|علیرضا خمسه|مریم سعادت|تماشاخانه سنگلج|خانه تئاتر|دوربین ۳۶۰ درجه صحنه جرم|اتصال لوله پلی[‌ ]?اتیلن|کاهش سطح آب دریای خزر|کشف بیش از ۴ تن خاک طلا|چین و روسیه همچنان پشت سر قدرت‌های غربی|بلیط هواپیما چارتر|توزیع سه هزار وعده صبحانه|مدیرکل استاندارد.*فرهنگ‌سازی|پرسه علنی و راحت موش‌ها|شرکت ملی پست در تحقق سرشماری|بازنگری در سرفصل‌های آموزش رانندگی|میرسلیم|تصویر میرسلیم سوار بر تویوتا)/u;
 const valid=source.filter(n=>{
   if(!n||typeof n!=="object"||!String(n.id||"").trim()||!String(n.title||"").trim()||!/^https?:\/\//i.test(String(n.url||"").trim())) return false;
+  const editorialState=editorial[String(n.id)]||{};
+  if(editorialState.deleted===true||editorialState.hidden===true||editorialState.reject===true) return false;
   const topics=Array.isArray(n.topics)?n.topics.filter(t=>C.TOPICS.includes(t)):[];
   if(!topics.length||IRRELEVANT_HEADLINE_RE.test(String(n.title||"").replace(/[\u200c\u200d\u200e\u200f]/g," "))) return false;
   return outOfScope({title:n.title})===null;
