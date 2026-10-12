@@ -17,7 +17,7 @@ input,select,button{font:inherit;padding:8px;border:1px solid #ccc;border-radius
 </head>
 <body><div id="loginScreen" style="position:fixed;inset:0;background:#f4f5f7;display:flex;align-items:center;justify-content:center;z-index:9999"><div style="background:#fff;width:min(380px,90%);padding:28px;border-radius:12px;box-shadow:0 8px 30px #0002;text-align:center"><h2 style="margin-top:0">رمز را وارد کنید</h2><input id="loginToken" type="password" placeholder="رمز را وارد کنید" aria-label="رمز را وارد کنید" style="width:100%;box-sizing:border-box;margin:10px 0;padding:11px"><button class="primary" id="loginButton" type="button">ورود</button><div id="loginStatus" style="color:#b42318;font-size:12px;margin-top:10px"></div></div></div><div id="panel" style="display:none"><div class="wrap">
 <h1>پنل سردبیری Evren Nexus</h1>
-<div class="sub">دسته‌بندی ابتدا به‌صورت خودکار انجام می‌شود؛ مدیر می‌تواند هر انتخابی را ویرایش و ذخیره کند.</div>
+<div class="sub">دسته‌بندی اولیه خودکار است؛ انتخاب مطالب مهم و انتشار صفحه کامل، فقط با تصمیم سردبیر انجام می‌شود.</div>
 <div class="info">عنوان، خلاصه، متن، تصویر، دسته‌بندی و وضعیت مهم‌بودن خبر را ویرایش کن. ذخیره با GitHub انجام می‌شود؛ توکن فقط در نشست همین مرورگر می‌ماند. برای ذخیره، توکن Fine-grained با دسترسی Contents: Read and write لازم است.</div>
 <div class="automation-box"><div id="automationState" class="automation-state">وضعیت پردازش خودکار در حال بررسی است...</div><button id="automationToggle" class="automation-button pause" type="button" onclick="toggleAutomation()" disabled>در حال بررسی...</button></div>
 <div class="bar">
@@ -196,8 +196,8 @@ async function publishManualArticle(id){
     choices[id].edited=true;
   }
   const s=choices[id];
-  const bodyText=String(s.content||n.content||"").replace(/<[^>]*>/g," ").replace(/&nbsp;|&#160;/gi," ").replace(/\s+/g," ").trim();
-  if(bodyText.length<40){$('status').textContent='برای انتشار صفحه مستقل، ابتدا متن کامل را در بخش «ویرایش» وارد و ذخیره کن.';if(box)box.classList.add('open');return;}
+  const bodyText=String(s.content||"").replace(/<[^>]*>/g," ").replace(/&nbsp;|&#160;/gi," ").replace(/\s+/g," ").trim();
+  if(bodyText.length<100){$('status').textContent='برای انتشار صفحه مستقل، ابتدا متن کامل را در بخش «ویرایش» وارد و ذخیره کن.';if(box)box.classList.add('open');return;}
   s.title=String(s.title||n.title||"").trim();s.summary=String(s.summary||n.summary||"").trim();s.important=true;s.published=true;s.republish=true;s.edited=true;s.updated_at=new Date().toISOString();
   const path="articles/manual-"+safeArticleId(id)+".html";s.article_url=path;
   $('status').textContent='در حال ساخت صفحه مستقل و ثبت انتخاب دستی مطالب مهم...';
