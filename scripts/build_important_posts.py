@@ -159,7 +159,7 @@ def choose_batch(candidates, count=BATCH_SIZE):
 
 def main():
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-    OUTPUT.write_text(json.dumps({"version": 3, "updated": datetime.now(timezone.utc).isoformat(timespec="seconds"), "windowHours": 2, "batchSize": 4, "batchCount": 4, "batches": [], "items": []}, ensure_ascii=False) + "\\n", encoding="utf-8")
+    OUTPUT.write_text(json.dumps({"version": 3, "updated": datetime.now(timezone.utc).isoformat(timespec="seconds"), "windowHours": 2, "batchSize": 4, "batchCount": 4, "batches": [], "items": []}, ensure_ascii=False) + "\n", encoding="utf-8")
     print("Automatic important-post selection is disabled; use the editorial panel.")
     return
     now = datetime.now(timezone.utc)
