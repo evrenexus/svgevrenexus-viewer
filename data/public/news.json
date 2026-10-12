@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-12T16:55:14.045070+00:00",
+  "updated": "2026-10-12T17:06:37.866096+00:00",
   "items": [
     {
       "id": "bac30b5959e16b8328d1",
@@ -19,7 +19,7 @@
       "importance_score": 1,
       "important": false,
       "first_seen_at": "2026-10-12T16:55:25.244896+00:00",
-      "image_tries": 1
+      "image_tries": 2
     },
     {
       "id": "66b567cb8da866d97bc4",
@@ -388,7 +388,7 @@
       "importance_score": 16,
       "important": true,
       "first_seen_at": "2026-10-12T10:55:56.940358+00:00",
-      "image_tries": 2
+      "image_tries": 3
     },
     {
       "id": "9a6f5169cbcc34e0aa8e",
@@ -407,7 +407,8 @@
       ],
       "importance_score": 0,
       "important": false,
-      "first_seen_at": "2026-10-12T13:57:41.234970+00:00"
+      "first_seen_at": "2026-10-12T13:57:41.234970+00:00",
+      "image_tries": 1
     },
     {
       "id": "12a8579a46529c99cc24",
@@ -427,7 +428,7 @@
       "importance_score": 8,
       "important": true,
       "first_seen_at": "2026-10-12T13:57:41.234983+00:00",
-      "image_tries": 2
+      "image_tries": 3
     },
     {
       "id": "7a22404f8feec603cafa",
@@ -3068,8 +3069,8 @@
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
       "items": 10,
-      "attempted_at": "2026-10-12T16:55:20.117343+00:00",
-      "last_success_at": "2026-10-12T16:55:21.634502+00:00",
+      "attempted_at": "2026-10-12T17:06:41.836396+00:00",
+      "last_success_at": "2026-10-12T17:06:43.139048+00:00",
       "last_article_published": "2026-10-12T20:00:55+03:30",
       "error": ""
     },
@@ -3077,40 +3078,10 @@
       "name": "اقتصادنیوز",
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
-      "items": 7,
-      "attempted_at": "2026-10-12T16:55:20.118165+00:00",
-      "last_success_at": "2026-10-12T16:55:22.399487+00:00",
+      "items": 6,
+      "attempted_at": "2026-10-12T17:06:41.836958+00:00",
+      "last_success_at": "2026-10-12T17:06:43.735661+00:00",
       "last_article_published": "2026-10-12T20:20:57+03:30",
-      "error": ""
-    },
-    {
-      "name": "فرارو",
-      "category": "اقتصاد و سرمایه‌گذاری",
-      "ok": true,
-      "items": 5,
-      "attempted_at": "2026-10-12T16:55:20.133115+00:00",
-      "last_success_at": "2026-10-12T16:55:22.635802+00:00",
-      "last_article_published": "2026-10-12T19:47:27+03:30",
-      "error": ""
-    },
-    {
-      "name": "ایران‌جیب",
-      "category": "اقتصاد و سرمایه‌گذاری",
-      "ok": true,
-      "items": 8,
-      "attempted_at": "2026-10-12T16:55:20.138140+00:00",
-      "last_success_at": "2026-10-12T16:55:23.059673+00:00",
-      "last_article_published": "2026-10-12T18:11:33+03:30",
-      "error": ""
-    },
-    {
-      "name": "تجارت‌نیوز",
-      "category": "اقتصاد و سرمایه‌گذاری",
-      "ok": true,
-      "items": 9,
-      "attempted_at": "2026-10-12T16:55:20.118657+00:00",
-      "last_success_at": "2026-10-12T16:55:23.507449+00:00",
-      "last_article_published": "2026-10-12T19:56:19+03:30",
       "error": ""
     },
     {
@@ -3118,9 +3089,39 @@
       "category": "پزشکی و سلامت",
       "ok": true,
       "items": 6,
-      "attempted_at": "2026-10-12T16:55:20.128132+00:00",
-      "last_success_at": "2026-10-12T16:55:24.090138+00:00",
+      "attempted_at": "2026-10-12T17:06:41.847089+00:00",
+      "last_success_at": "2026-10-12T17:06:43.788361+00:00",
       "last_article_published": "2026-10-12T12:57:40+03:30",
+      "error": ""
+    },
+    {
+      "name": "فرارو",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "ok": true,
+      "items": 4,
+      "attempted_at": "2026-10-12T17:06:41.855017+00:00",
+      "last_success_at": "2026-10-12T17:06:43.910715+00:00",
+      "last_article_published": "2026-10-12T19:47:27+03:30",
+      "error": ""
+    },
+    {
+      "name": "تجارت‌نیوز",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "ok": true,
+      "items": 9,
+      "attempted_at": "2026-10-12T17:06:41.837254+00:00",
+      "last_success_at": "2026-10-12T17:06:44.256347+00:00",
+      "last_article_published": "2026-10-12T19:56:19+03:30",
+      "error": ""
+    },
+    {
+      "name": "ایران‌جیب",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "ok": true,
+      "items": 8,
+      "attempted_at": "2026-10-12T17:06:41.860016+00:00",
+      "last_success_at": "2026-10-12T17:06:44.877499+00:00",
+      "last_article_published": "2026-10-12T18:11:33+03:30",
       "error": ""
     },
     {
@@ -3128,8 +3129,8 @@
       "category": "بورس و بازار سرمایه",
       "ok": true,
       "items": 11,
-      "attempted_at": "2026-10-12T16:55:20.119641+00:00",
-      "last_success_at": "2026-10-12T16:55:25.244818+00:00",
+      "attempted_at": "2026-10-12T17:06:41.837536+00:00",
+      "last_success_at": "2026-10-12T17:06:46.618312+00:00",
       "last_article_published": "2026-10-12T20:01:11+03:30",
       "error": ""
     },
@@ -3138,8 +3139,8 @@
       "category": "فناوری و علم",
       "ok": true,
       "items": 5,
-      "attempted_at": "2026-10-12T16:55:20.122118+00:00",
-      "last_success_at": "2026-10-12T16:55:25.265452+00:00",
+      "attempted_at": "2026-10-12T17:06:41.838520+00:00",
+      "last_success_at": "2026-10-12T17:06:46.865815+00:00",
       "last_article_published": "2026-10-12T15:10:25+03:30",
       "error": ""
     },
@@ -3148,19 +3149,9 @@
       "category": "بورس و بازار سرمایه",
       "ok": true,
       "items": 10,
-      "attempted_at": "2026-10-12T16:55:20.120755+00:00",
-      "last_success_at": "2026-10-12T16:55:26.250926+00:00",
+      "attempted_at": "2026-10-12T17:06:41.838106+00:00",
+      "last_success_at": "2026-10-12T17:06:47.822060+00:00",
       "last_article_published": "2026-10-12T18:29:40+03:30",
-      "error": ""
-    },
-    {
-      "name": "انتخاب",
-      "category": "اقتصاد و سرمایه‌گذاری",
-      "ok": true,
-      "items": 6,
-      "attempted_at": "2026-10-12T16:55:20.132110+00:00",
-      "last_success_at": "2026-10-12T16:55:27.086214+00:00",
-      "last_article_published": "2026-10-12T18:22:33+03:30",
       "error": ""
     },
     {
@@ -3168,9 +3159,19 @@
       "category": "پزشکی و سلامت",
       "ok": true,
       "items": 12,
-      "attempted_at": "2026-10-12T16:55:20.122802+00:00",
-      "last_success_at": "2026-10-12T16:55:27.734434+00:00",
+      "attempted_at": "2026-10-12T17:06:41.838939+00:00",
+      "last_success_at": "2026-10-12T17:06:48.474955+00:00",
       "last_article_published": "2026-10-12T15:27:43+03:30",
+      "error": ""
+    },
+    {
+      "name": "انتخاب",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "ok": true,
+      "items": 6,
+      "attempted_at": "2026-10-12T17:06:41.850017+00:00",
+      "last_success_at": "2026-10-12T17:06:48.571358+00:00",
+      "last_article_published": "2026-10-12T18:22:33+03:30",
       "error": ""
     },
     {
@@ -3178,8 +3179,8 @@
       "category": "بورس و بازار سرمایه",
       "ok": true,
       "items": 12,
-      "attempted_at": "2026-10-12T16:55:20.120236+00:00",
-      "last_success_at": "2026-10-12T16:55:30.639075+00:00",
+      "attempted_at": "2026-10-12T17:06:41.837872+00:00",
+      "last_success_at": "2026-10-12T17:06:55.163777+00:00",
       "last_article_published": "2026-10-12T18:41:26+03:30",
       "error": ""
     }
