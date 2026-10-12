@@ -1,9 +1,14 @@
 /* Evren Nexus — shared featured loader and safe page rendering */
 (function(){
 "use strict";
-var URL_="data/public/featured.json",LATEST_URL_="data/public/latest-news.json",pending=null,latestPending=null,policyPending=null,activeTopic="home";
+var URL_="data/public/featured.json",LATEST_URL_="data/public/latest-news.json",pending=null,latestPending=null,policyPending=null,editorialPending=null,deletedEditorial={},activeTopic="home";
+function loadEditorial(){
+ if(!editorialPending)editorialPending=fetch("data/editorial.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("editorial.json HTTP "+r.status);return r.json()}).then(function(d){deletedEditorial={};Object.keys(d&&d.items||{}).forEach(function(id){if(d.items[id]&&d.items[id].deleted===true)deletedEditorial[String(id)]=true});return deletedEditorial}).catch(function(e){editorialPending=null;console.warn("Editorial status unavailable:",e);return deletedEditorial});
+ return editorialPending;
+}
+function hideDeleted(doc){if(!doc||!doc.topics)return doc;Object.keys(doc.topics).forEach(function(k){var t=doc.topics[k];["items","featured","important","regular"].forEach(function(key){if(Array.isArray(t[key]))t[key]=t[key].filter(function(x){return !deletedEditorial[String(x&&x.id||"")]})})});return doc;}
 function load(){
- if(!pending)pending=fetch(URL_+"?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("featured.json HTTP "+r.status);return r.json()}).catch(function(e){pending=null;throw e});
+ if(!pending)pending=Promise.all([fetch(URL_+"?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("featured.json HTTP "+r.status);return r.json()}),loadEditorial()]).then(function(parts){return hideDeleted(parts[0])}).catch(function(e){pending=null;throw e});
  return pending;
 }
 function loadLatest(){
