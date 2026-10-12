@@ -12,7 +12,7 @@ function load(){
  return pending;
 }
 function loadLatest(){
- if(!latestPending)latestPending=fetch(LATEST_URL_+"?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("latest-news.json HTTP "+r.status);return r.json()}).catch(function(e){latestPending=null;throw e});
+ if(!latestPending)latestPending=Promise.all([fetch(LATEST_URL_+"?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("latest-news.json HTTP "+r.status);return r.json()}),loadEditorial()]).then(function(parts){return hideDeleted(parts[0])}).catch(function(e){latestPending=null;throw e});
  return latestPending;
 }
 var FALLBACK_POLICY=["جنگ","جنگی","جنگ افزار","درگیری","درگیری مسلحانه","مسلحانه","نظامی","نظامیان","ارتش","سپاه","نیروهای مسلح","نیروی انتظامی","موشک","موشکی","پهپاد","بمباران","جنگنده","حمله","حمله مسلحانه","حمله نظامی","حمله موشکی","حمله هوایی","تسلیحات","سلاح","رزمایش","آتش بس","انفجار","تیراندازی","ترور","تروریستی","غزه","حماس","حزب الله","حوثی","اسرائیل","رژیم صهیونیستی","صهیونیستی","صهیونیست","نتانیاهو","ترامپ","بایدن","پوتین","شهید","شهادت","رهبر انقلاب","رهبری","انتخابات","انتخاباتی","نماینده مجلس","مجلس شورای اسلامی","مجلس","سیاست","سیاسی","سیاستمدار","مقام سیاسی","حادثه","حوادث","تصادف","آتش سوزی","زلزله","زمین لرزه","پس لرزه","فروریختن","فرو ریختن","ریزش ساختمان","فروپاشی ساختمان","رانش زمین","آواربرداری"];
