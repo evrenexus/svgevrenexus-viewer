@@ -7,6 +7,8 @@
   var VIEWER_URL = "./viewer.html";
   var FALLBACK_IMAGE = "https://cdn.imgurl.ir/uploads/p26339_EVREN_NEXUS_Avrin_2.png";
   var SLIDE_MS = 5000;
+  var SLIDER_COUNT = 8;
+  var SIDEBAR_COUNT = 16;
   var ALLOWED_TOPICS = ["economy", "markets", "crypto", "currency-gold", "real-estate", "technology", "ai", "health", "auto", "science-life"];
   var lastUpdated = "";
   var slideIndex = 0;
@@ -97,7 +99,7 @@
       return;
     }
 
-    items.slice(0, 8).forEach(function (item, index) {
+    items.slice(0, SLIDER_COUNT).forEach(function (item, index) {
       var slide = document.createElement("div");
       slide.className = "Evrenxus-slide" + (index === 0 ? " active" : "");
       var link = document.createElement("a");
@@ -149,7 +151,7 @@
     if (!slot) return;
     slot.textContent = "";
     var list = document.createElement("div");
-    var shown = items.slice(0, 16);
+    var shown = items.slice(0, SIDEBAR_COUNT);
     if (!shown.length) {
       var empty = document.createElement("div");
       empty.textContent = "فعلاً مطلب مهمی برای نمایش وجود ندارد";
@@ -197,13 +199,14 @@
         if (combinedStamp && combinedStamp === lastUpdated) return;
         lastUpdated = combinedStamp;
         var deleted = editorial && editorial.items || {};
+        // One canonical candidate list feeds both components; only the display limits differ.
         var items = data.items.filter(function (item) {
           return item && item.title && item.url && !(deleted[String(item.id)] && deleted[String(item.id)].deleted === true) && Array.isArray(item.topics) &&
             item.topics.some(function (topic) { return ALLOWED_TOPICS.indexOf(topic) !== -1; });
-        }).slice(0, 16);
+        });
         addStyles();
-        renderSlider(items);
-        renderSidebar(items);
+        renderSlider(items.slice(0, SLIDER_COUNT));
+        renderSidebar(items.slice(0, SIDEBAR_COUNT));
       })
       .catch(function () {
         addStyles();
