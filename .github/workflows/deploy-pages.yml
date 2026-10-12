@@ -9,7 +9,7 @@ on:
       - "market-data/**"
   workflow_dispatch:
   workflow_run:
-    workflows: ["Build public data", "Evren Nexus — AI Manager (Gemini → Groq → OpenRouter failover)", "Evren Nexus — Update All"]
+    workflows: ["Build public data", "Evren Nexus — AI Manager (Gemini → Groq → OpenRouter failover)", "Evren Nexus — Update All", "Reset editorial selections"]
     types: [completed]
 
 permissions:
@@ -35,12 +35,6 @@ jobs:
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
-
-      - name: Build featured data
-        run: node scripts/build-featured.mjs
-
-      - name: Validate featured data
-        run: node scripts/validate-featured.mjs
 
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
