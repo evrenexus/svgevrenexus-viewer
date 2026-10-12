@@ -72,7 +72,7 @@ Promise.all([
  news.forEach(function(n){if(n&&n.id!=null)byId[String(n.id)]=n});
  var manual=Object.keys(ed).map(function(id){
   var s=ed[id]||{},n=byId[String(id)]||{},path=String(s.article_url||"");
-  if(s.important!==true||s.published!==true||s.deleted===true||!/^articles\/[a-zA-Z0-9._-]+\.html$/.test(path)||!String(s.content||"").replace(/<[^>]*>/g," ").trim())return null;
+  if(s.manual_important!==true||s.published!==true||s.deleted===true||!/^articles\/[a-zA-Z0-9._-]+\.html$/.test(path)||!String(s.content||"").replace(/<[^>]*>/g," ").trim())return null;
   return {id:String(id),articleId:String(id),articleUrl:path,title:s.title||n.title||"",summary:s.summary||n.summary||"",image:img(s.image||n.image||""),source:n.source||"Evren Nexus",published:n.published||s.updated_at||"",selectedAt:s.updated_at||n.published||"",topics:s.topics_manual===true&&Array.isArray(s.topics)?s.topics:(Array.isArray(n.topics)?n.topics:[])};
  }).filter(function(x){return x&&x.title});
  var topics={home:{important:manual}};
