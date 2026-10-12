@@ -235,7 +235,7 @@ function render(){
     CATS.forEach(c=>{const lab=document.createElement('label');lab.style.cssText='display:inline-flex;align-items:center;gap:5px;font-size:12px;white-space:nowrap;cursor:pointer;padding:3px 0';const cb=document.createElement('input');cb.type='checkbox';cb.value=c[0];cb.checked=selectedTopics.includes(c[0]);cb.style.cssText='margin:0;width:15px;height:15px';cb.onchange=()=>{const next=selectedTopicsFor(n);const vals=cb.checked?[...next,c[0]]:next.filter(t=>t!==c[0]);setCategory(n.id,vals);};lab.appendChild(cb);lab.appendChild(document.createTextNode(c[1]));topicBox.appendChild(lab);});
     card.appendChild(topicBox);
     const ed=document.createElement('div');ed.id='ed_'+n.id;ed.className='editor';
-    ed.innerHTML='<input data-f="title" placeholder="عنوان"><textarea data-f="summary" placeholder="خلاصه"></textarea><input data-f="image" placeholder="آدرس تصویر"><div class="richbar"><button type="button" data-cmd="bold"><b>پررنگ</b></button><button type="button" data-cmd="italic"><i>کج</i></button><button type="button" data-cmd="insertUnorderedList">• فهرست</button><button type="button" data-cmd="insertOrderedList">۱. فهرست</button><button type="button" data-cmd="formatBlock" data-value="h2">عنوان</button><button type="button" data-cmd="formatBlock" data-value="p">پاراگراف</button><button type="button" data-cmd="createLink">لینک</button><button type="button" data-cmd="removeFormat">پاک‌کردن قالب</button></div><div class="richbody" data-f="content" contenteditable="true"></div>';
+    ed.innerHTML='<input data-f="title" placeholder="عنوان"><textarea data-f="summary" placeholder="خلاصه"></textarea><input data-f="image" placeholder="آدرس تصویر"><div class="richbar"><button type="button" data-cmd="bold"><b>پررنگ</b></button><button type="button" data-cmd="italic"><i>کج</i></button><button type="button" data-cmd="underline"><u>زیرخط</u></button><button type="button" data-cmd="formatBlock" data-value="h2">تیتر اصلی</button><button type="button" data-cmd="formatBlock" data-value="h3">تیتر فرعی</button><button type="button" data-cmd="formatBlock" data-value="p">پاراگراف</button><button type="button" data-cmd="insertUnorderedList">• فهرست</button><button type="button" data-cmd="insertOrderedList">۱. فهرست</button><button type="button" data-cmd="justifyRight">راست‌چین</button><button type="button" data-cmd="justifyCenter">وسط‌چین</button><button type="button" data-cmd="blockquote">نقل‌قول</button><button type="button" data-cmd="createLink">افزودن لینک</button><button type="button" data-cmd="insertImage">افزودن تصویر</button><button type="button" data-cmd="undo">↶ بازگشت</button><button type="button" data-cmd="redo">↷ تکرار</button><button type="button" data-cmd="removeFormat">پاک‌کردن قالب</button></div><div class="richbody" data-f="content" contenteditable="true"></div>';
     const saveEditButton=document.createElement('button');saveEditButton.className='primary';saveEditButton.textContent='💾 ذخیره ویرایش';saveEditButton.onclick=()=>saveEdit(n.id);ed.appendChild(saveEditButton);
     ed.querySelectorAll('[data-cmd]').forEach(function(b){b.addEventListener('click',function(){applyRichCommand(b.dataset.cmd,b.dataset.value,ed);});});card.appendChild(ed);
     const result=document.createElement('div');result.className='row-status'+(saveMessages[n.id]?.kind?' '+saveMessages[n.id].kind:'');result.id='row-status-'+n.id;result.textContent=saveMessages[n.id]?.status||'';card.appendChild(result);
@@ -249,10 +249,15 @@ function applyRichCommand(cmd,value,ed){
   body.focus();
   if(cmd==='createLink'){
     const url=prompt('آدرس لینک را وارد کنید:','https://');
-    if(url)document.execCommand('createLink',false,url);
+    if(url&&/^https?:\\/\\//i.test(url.trim()))document.execCommand('createLink',false,url.trim());
+    else if(url)alert('لینک باید با http:// یا https:// شروع شود.');
+  }else if(cmd==='insertImage'){
+    const url=prompt('آدرس مستقیم تصویر را وارد کنید:','https://');
+    if(url&&/^https?:\\/\\//i.test(url.trim()))document.execCommand('insertImage',false,url.trim());
+    else if(url)alert('آدرس تصویر باید با http:// یا https:// شروع شود.');
   }else if(cmd==='formatBlock'){
     document.execCommand(cmd,false,value||'p');
-  }else{
+  }else if(['bold','italic','underline','insertUnorderedList','insertOrderedList','justifyRight','justifyCenter','blockquote','removeFormat','undo','redo'].includes(cmd)){
     document.execCommand(cmd,false,null);
   }
 }
