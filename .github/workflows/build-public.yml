@@ -25,8 +25,16 @@ jobs:
         with:
           ref: main
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
       - name: Validate and build editorial data
-        run: python3 scripts/build_public.py
+        run: |
+          python3 scripts/build_public.py
+          node scripts/build-latest-news.mjs
+          node scripts/validate-latest-news.mjs
 
       - name: Commit
         run: |
