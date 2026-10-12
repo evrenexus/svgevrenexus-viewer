@@ -198,7 +198,7 @@ update();setInterval(update,1000);
   if (window.__EVRENEXUS_IMPORTANT_POSTS_SCRIPT_REQUESTED__) return;
   window.__EVRENEXUS_IMPORTANT_POSTS_SCRIPT_REQUESTED__ = true;
   var script = document.createElement("script");
-  script.src = "https://evrenexus.ir/Evrenexus-important-posts.js?v=20261011-08";
+  script.src = "https://evrenexus.ir/Evrenexus-important-posts.js?v=20261012-01";
   script.async = true;
   document.head.appendChild(script);
 })();
