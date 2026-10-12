@@ -99,7 +99,7 @@
       var items = Object.keys(editorial).map(function (id) {
         var s = editorial[id] || {}, n = byId[String(id)] || {};
         var articlePath = String(s.article_url || "");
-        if (s.important !== true || s.published !== true || s.deleted === true ||
+        if (s.manual_important !== true || s.published !== true || s.deleted === true ||
             !/^articles\/[a-zA-Z0-9._-]+\.html$/.test(articlePath) ||
             !String(s.content || "").replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim()) return null;
         var topics = s.topics_manual === true && Array.isArray(s.topics) ? s.topics : (Array.isArray(n.topics) ? n.topics : []);
