@@ -13,6 +13,7 @@ on:
       - 'scripts/build-featured.mjs'
       - 'scripts/build-latest-news.mjs'
       - 'data/editorial.json'
+      - 'data/automation.json'
       - 'scripts/build_public.py'
       - 'scripts/validate-latest-news.mjs'
       - 'Evrenexus-featured.js'
@@ -42,21 +43,41 @@ jobs:
         with:
           ref: main
           fetch-depth: 0
+      - name: Check automation pause flag
+        id: automation
+        run: |
+          python3 - <<'PY'
+          import json, os
+          try:
+              with open('data/automation.json', encoding='utf-8') as f: state=json.load(f)
+          except FileNotFoundError:
+              state={'paused': False}
+          paused='true' if state.get('paused') is True else 'false'
+          with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as f: f.write('paused='+paused+'\\n')
+          print('Automatic news processing paused:', paused)
+          PY
       - name: Test topic classification
+        if: steps.automation.outputs.paused != 'true'
         run: python3 scripts/test_topic_classification.py
       - name: Collect news
+        if: steps.automation.outputs.paused != 'true'
         run: python3 scripts/news_collector.py
       - name: Setup Node.js
+        if: steps.automation.outputs.paused != 'true'
         uses: actions/setup-node@v4
         with:
           node-version: 20
       - name: Install market-data dependency
+        if: steps.automation.outputs.paused != 'true'
         run: npm install --no-save cheerio@1.0.0-rc.12
       - name: Update TGJU
+        if: steps.automation.outputs.paused != 'true'
         run: node market-data/fetch-tgju.js
       - name: Update Nobitex
+        if: steps.automation.outputs.paused != 'true'
         run: node market-data/fetch-nobitex.js
       - name: Commit collected news
+        if: steps.automation.outputs.paused != 'true'
         run: |
           set -e
           git config user.name "evrenexus-update-bot"
@@ -66,6 +87,12 @@ jobs:
           # If a push loses that race, refresh from main and regenerate the
           # data before retrying so concurrent market-data updates are kept.
           for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            paused=$(git show origin/main:data/automation.json | python3 -c 'import json,sys; print("true" if json.load(sys.stdin).get("paused") is True else "false")')
+            if [ "$paused" = "true" ]; then
+              echo "Automatic processing was paused during collection; refusing to commit collected data."
+              exit 0
+            fi
             git add data/news.json market-data/tgju.json market-data/nobitex.json
             if git diff --cached --quiet; then
               echo "No news or market-data changes."
@@ -84,7 +111,6 @@ jobs:
             fi
 
             echo "Push race detected; refreshing main and regenerating data (attempt $attempt/5)."
-            git fetch origin main
             git reset --hard origin/main
             python3 scripts/news_collector.py
             node market-data/fetch-tgju.js
