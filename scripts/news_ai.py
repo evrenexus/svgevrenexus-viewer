@@ -641,7 +641,7 @@ def write_editorial(ai, old):
         else: e.pop("ai_slider_topics",None)
         if v.get("breaking_topics"): e["ai_breaking_topics"]=v["breaking_topics"]
         else: e.pop("ai_breaking_topics",None)
-        if "manual_important" not in e and "important" in e:
+        if e.get("published") is not True and "manual_important" not in e and "important" in e:
             e["manual_important"]=bool(e["important"]);e.pop("important",None)
         if "manual_slider" not in e and "slider" in e:
             e["manual_slider"]=bool(e["slider"]);e.pop("slider",None)
