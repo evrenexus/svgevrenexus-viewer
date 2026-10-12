@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-12T15:12:50.498564+00:00",
+  "updated": "2026-10-12T15:31:54.811020+00:00",
   "items": [
     {
       "id": "2ee7e33193f20bb6001a",
@@ -19,7 +19,7 @@
       "importance_score": 0,
       "important": false,
       "first_seen_at": "2026-10-12T15:13:03.065279+00:00",
-      "image_tries": 1
+      "image_tries": 2
     },
     {
       "id": "93e4c6d94170dad1e75c",
@@ -39,7 +39,7 @@
       "importance_score": 8,
       "important": true,
       "first_seen_at": "2026-10-12T14:49:00.313129+00:00",
-      "image_tries": 2
+      "image_tries": 3
     },
     {
       "id": "5db92cf3a007f9042812",
@@ -136,7 +136,7 @@
       "importance_score": 1,
       "important": false,
       "first_seen_at": "2026-10-12T14:49:03.460096+00:00",
-      "image_tries": 2
+      "image_tries": 3
     },
     {
       "id": "9460d2e04966ce95b160",
@@ -486,7 +486,7 @@
       "importance_score": 10,
       "important": true,
       "first_seen_at": "2026-10-12T13:26:25.175581+00:00",
-      "image_tries": 1
+      "image_tries": 2
     },
     {
       "id": "dfe053df489545a2deb5",
@@ -566,7 +566,7 @@
       "importance_score": 0,
       "important": false,
       "first_seen_at": "2026-10-12T12:53:21.575282+00:00",
-      "image_tries": 1
+      "image_tries": 2
     },
     {
       "id": "04bd9adee8e814f4cf2b",
@@ -586,7 +586,7 @@
       "importance_score": 0,
       "important": false,
       "first_seen_at": "2026-10-12T14:49:01.434012+00:00",
-      "image_tries": 2
+      "image_tries": 3
     },
     {
       "id": "9a6abf1f994f68d8c033",
@@ -663,7 +663,7 @@
       "importance_score": 0,
       "important": false,
       "first_seen_at": "2026-10-12T12:13:15.441285+00:00",
-      "image_tries": 2
+      "image_tries": 3
     },
     {
       "id": "df7daddf752c428a457b",
@@ -703,7 +703,7 @@
       "importance_score": 10,
       "important": true,
       "first_seen_at": "2026-10-12T11:51:03.108943+00:00",
-      "image_tries": 2
+      "image_tries": 3
     },
     {
       "id": "b93558b4aa9553dab537",
@@ -742,7 +742,7 @@
       "importance_score": 0,
       "important": false,
       "first_seen_at": "2026-10-12T11:51:03.143023+00:00",
-      "image_tries": 2
+      "image_tries": 3
     },
     {
       "id": "c96e65087bb26aeb5f92",
@@ -899,7 +899,7 @@
       "importance_score": 0,
       "important": false,
       "first_seen_at": "2026-10-12T10:53:15.905984+00:00",
-      "image_tries": 1
+      "image_tries": 2
     },
     {
       "id": "26208444061be5528fec",
@@ -937,7 +937,8 @@
       ],
       "importance_score": 8,
       "important": true,
-      "first_seen_at": "2026-10-12T07:42:03.484995+00:00"
+      "first_seen_at": "2026-10-12T07:42:03.484995+00:00",
+      "image_tries": 1
     },
     {
       "id": "bc67faed5095c805a8fe",
@@ -1015,7 +1016,7 @@
       "importance_score": 1,
       "important": false,
       "first_seen_at": "2026-10-12T10:44:16.909567+00:00",
-      "image_tries": 1
+      "image_tries": 2
     },
     {
       "id": "a890a690908f8ec97eb5",
@@ -3145,10 +3146,30 @@
       "name": "دنیای اقتصاد",
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
-      "items": 9,
-      "attempted_at": "2026-10-12T15:12:57.840380+00:00",
-      "last_success_at": "2026-10-12T15:12:59.200268+00:00",
-      "last_article_published": "2026-10-12T17:50:51+03:30",
+      "items": 10,
+      "attempted_at": "2026-10-12T15:32:02.169030+00:00",
+      "last_success_at": "2026-10-12T15:32:04.293085+00:00",
+      "last_article_published": "2026-10-12T18:51:01+03:30",
+      "error": ""
+    },
+    {
+      "name": "فرارو",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "ok": true,
+      "items": 4,
+      "attempted_at": "2026-10-12T15:32:02.183879+00:00",
+      "last_success_at": "2026-10-12T15:32:05.130368+00:00",
+      "last_article_published": "2026-10-12T18:59:39+03:30",
+      "error": ""
+    },
+    {
+      "name": "تجارت‌نیوز",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "ok": true,
+      "items": 7,
+      "attempted_at": "2026-10-12T15:32:02.170450+00:00",
+      "last_success_at": "2026-10-12T15:32:05.292016+00:00",
+      "last_article_published": "2026-10-12T18:17:46+03:30",
       "error": ""
     },
     {
@@ -3156,59 +3177,19 @@
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
       "items": 9,
-      "attempted_at": "2026-10-12T15:12:57.841189+00:00",
-      "last_success_at": "2026-10-12T15:12:59.699503+00:00",
+      "attempted_at": "2026-10-12T15:32:02.169982+00:00",
+      "last_success_at": "2026-10-12T15:32:05.650669+00:00",
       "last_article_published": "2026-10-12T18:25:27+03:30",
-      "error": ""
-    },
-    {
-      "name": "فرارو",
-      "category": "اقتصاد و سرمایه‌گذاری",
-      "ok": true,
-      "items": 3,
-      "attempted_at": "2026-10-12T15:12:57.854446+00:00",
-      "last_success_at": "2026-10-12T15:12:59.778678+00:00",
-      "last_article_published": "2026-10-12T18:20:39+03:30",
       "error": ""
     },
     {
       "name": "ایران‌جیب",
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
-      "items": 10,
-      "attempted_at": "2026-10-12T15:12:57.855020+00:00",
-      "last_success_at": "2026-10-12T15:13:00.469628+00:00",
+      "items": 9,
+      "attempted_at": "2026-10-12T15:32:02.186335+00:00",
+      "last_success_at": "2026-10-12T15:32:05.698629+00:00",
       "last_article_published": "2026-10-12T18:11:33+03:30",
-      "error": ""
-    },
-    {
-      "name": "تجارت‌نیوز",
-      "category": "اقتصاد و سرمایه‌گذاری",
-      "ok": true,
-      "items": 10,
-      "attempted_at": "2026-10-12T15:12:57.841683+00:00",
-      "last_success_at": "2026-10-12T15:13:00.590898+00:00",
-      "last_article_published": "2026-10-12T18:17:46+03:30",
-      "error": ""
-    },
-    {
-      "name": "پزشک سایت",
-      "category": "پزشکی و سلامت",
-      "ok": true,
-      "items": 6,
-      "attempted_at": "2026-10-12T15:12:57.849481+00:00",
-      "last_success_at": "2026-10-12T15:13:01.329714+00:00",
-      "last_article_published": "2026-10-12T12:57:40+03:30",
-      "error": ""
-    },
-    {
-      "name": "فردای اقتصاد",
-      "category": "بورس و بازار سرمایه",
-      "ok": true,
-      "items": 10,
-      "attempted_at": "2026-10-12T15:12:57.843538+00:00",
-      "last_success_at": "2026-10-12T15:13:01.431243+00:00",
-      "last_article_published": "2026-10-12T18:29:40+03:30",
       "error": ""
     },
     {
@@ -3216,9 +3197,19 @@
       "category": "بورس و بازار سرمایه",
       "ok": true,
       "items": 11,
-      "attempted_at": "2026-10-12T15:12:57.842265+00:00",
-      "last_success_at": "2026-10-12T15:13:02.124540+00:00",
+      "attempted_at": "2026-10-12T15:32:02.171020+00:00",
+      "last_success_at": "2026-10-12T15:32:07.203550+00:00",
       "last_article_published": "2026-10-12T16:45:00+03:30",
+      "error": ""
+    },
+    {
+      "name": "فردای اقتصاد",
+      "category": "بورس و بازار سرمایه",
+      "ok": true,
+      "items": 10,
+      "attempted_at": "2026-10-12T15:32:02.175324+00:00",
+      "last_success_at": "2026-10-12T15:32:07.478647+00:00",
+      "last_article_published": "2026-10-12T18:29:40+03:30",
       "error": ""
     },
     {
@@ -3226,19 +3217,19 @@
       "category": "فناوری و علم",
       "ok": true,
       "items": 5,
-      "attempted_at": "2026-10-12T15:12:57.844068+00:00",
-      "last_success_at": "2026-10-12T15:13:02.609741+00:00",
+      "attempted_at": "2026-10-12T15:32:02.176329+00:00",
+      "last_success_at": "2026-10-12T15:32:07.657669+00:00",
       "last_article_published": "2026-10-12T15:10:25+03:30",
       "error": ""
     },
     {
-      "name": "انتخاب",
-      "category": "اقتصاد و سرمایه‌گذاری",
+      "name": "پزشک سایت",
+      "category": "پزشکی و سلامت",
       "ok": true,
-      "items": 7,
-      "attempted_at": "2026-10-12T15:12:57.851454+00:00",
-      "last_success_at": "2026-10-12T15:13:03.065202+00:00",
-      "last_article_published": "2026-10-12T18:22:33+03:30",
+      "items": 6,
+      "attempted_at": "2026-10-12T15:32:02.180373+00:00",
+      "last_success_at": "2026-10-12T15:32:08.754941+00:00",
+      "last_article_published": "2026-10-12T12:57:40+03:30",
       "error": ""
     },
     {
@@ -3246,9 +3237,19 @@
       "category": "پزشکی و سلامت",
       "ok": true,
       "items": 12,
-      "attempted_at": "2026-10-12T15:12:57.846441+00:00",
-      "last_success_at": "2026-10-12T15:13:03.336334+00:00",
+      "attempted_at": "2026-10-12T15:32:02.179314+00:00",
+      "last_success_at": "2026-10-12T15:32:09.054477+00:00",
       "last_article_published": "2026-10-12T15:27:43+03:30",
+      "error": ""
+    },
+    {
+      "name": "انتخاب",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "ok": true,
+      "items": 6,
+      "attempted_at": "2026-10-12T15:32:02.183331+00:00",
+      "last_success_at": "2026-10-12T15:32:09.174275+00:00",
+      "last_article_published": "2026-10-12T18:22:33+03:30",
       "error": ""
     },
     {
@@ -3256,8 +3257,8 @@
       "category": "بورس و بازار سرمایه",
       "ok": true,
       "items": 12,
-      "attempted_at": "2026-10-12T15:12:57.843084+00:00",
-      "last_success_at": "2026-10-12T15:13:05.003849+00:00",
+      "attempted_at": "2026-10-12T15:32:02.171616+00:00",
+      "last_success_at": "2026-10-12T15:32:13.974878+00:00",
       "last_article_published": "2026-10-12T18:41:26+03:30",
       "error": ""
     }
@@ -3265,6 +3266,6 @@
   "dedup": {
     "enabled": true,
     "window_hours": 48,
-    "removed": 5
+    "removed": 4
   }
 }
