@@ -1,0 +1,50 @@
+name: Reset editorial selections
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/reset-editorial-selections.json'
+      - '.github/workflows/reset-editorial-selections.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  reset:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Clear previous selections
+        run: python3 scripts/reset-editorial-selections.py
+      - name: Commit the reset
+        run: |
+          set -e
+          git config user.name "evrenexus-editorial-reset"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/editorial.json data/news-ai.json data/public/featured.json data/public/important-posts.json data/manual-important-selection.json data/reset-editorial-selections.json
+          if git diff --cached --quiet; then
+            echo "No reset changes to commit."
+            exit 0
+          fi
+          git commit -m "Clear previous automatic editorial selections"
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            if git rebase origin/main && git push origin HEAD:main; then
+              echo "Manual-only editorial reset committed."
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            git reset --hard HEAD
+            sleep $((attempt * 3))
+          done
+          echo "Failed to publish editorial reset after retries."
+          exit 1
