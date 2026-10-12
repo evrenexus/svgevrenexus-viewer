@@ -12,6 +12,7 @@ on:
       - 'scripts/build-internal-articles.mjs'
       - 'scripts/build-featured.mjs'
       - 'scripts/build-latest-news.mjs'
+      - 'scripts/build_public.py'
       - 'scripts/validate-latest-news.mjs'
       - 'Evrenexus-featured.js'
       - 'scripts/featured-config.mjs'
