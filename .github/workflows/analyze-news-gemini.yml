@@ -45,7 +45,7 @@ jobs:
           except FileNotFoundError:
               state={'paused': False}
           paused='true' if state.get('paused') is True else 'false'
-          with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as f: f.write('paused='+paused+'\\n')
+          with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as f: f.write('paused='+paused+ '\n')
           print('Automatic AI classification paused:', paused)
           PY
       - name: Run AI analysis
