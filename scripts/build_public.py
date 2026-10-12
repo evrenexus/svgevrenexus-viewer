@@ -1,4 +1,4 @@
-import json, os, sys, datetime
+import json, os, sys, datetime, re
 
 NEWS_IN, ED_IN, OUT = 'data/news.json', 'data/editorial.json', 'data/public'
 MIN_NEWS = 20
@@ -21,8 +21,20 @@ def split_news(raw):
 
 from content_policy import out_of_scope
 
+def correct_known_headline(title):
+    title = re.sub(r"\\s+", " ", str(title or "")).strip()
+    if "طاعون" in title and "ماسک" in title and "منقاردار" in title:
+        title = title.replace("پزشکیان", "پزشکان")
+    return title
+
+def title_key(title):
+    title = correct_known_headline(title).lower()
+    title = title.replace("ي", "ی").replace("ك", "ک").replace("‌", " ")
+    title = re.sub(r"[\\W_]+", " ", title, flags=re.UNICODE)
+    return re.sub(r"\\s+", " ", title).strip()
+
 def clean_news(items):
-    out, seen, dropped, policy_dropped, valid_before_policy = [], set(), 0, 0, 0
+    out, seen, seen_titles, dropped, policy_dropped, valid_before_policy = [], set(), set(), 0, 0, 0
     for it in items:
         ok = (isinstance(it, dict)
               and isinstance(it.get('id'), str) and it['id']
@@ -37,7 +49,17 @@ def clean_news(items):
         if out_of_scope(it):
             policy_dropped += 1
             continue
-        seen.add(it['id']); out.append(it)
+        it = dict(it)
+        it['title'] = correct_known_headline(it.get('title', ''))
+        normalized_title = title_key(it['title'])
+        if normalized_title and normalized_title in seen_titles:
+            dropped += 1
+            print(f"::notice::عنوان تکراری ادغام شد: {it['title'][:100]}")
+            continue
+        seen.add(it['id'])
+        if normalized_title:
+            seen_titles.add(normalized_title)
+        out.append(it)
     return out, dropped, policy_dropped, valid_before_policy
 
 STR = ['category', 'title', 'summary', 'content', 'image', 'updated_at']
