@@ -12,6 +12,7 @@ const raw=readJson("data/news.json");
 const editorialData=readJson("data/editorial.json");
 if(!editorialData||typeof editorialData!=="object"||!editorialData.items||typeof editorialData.items!=="object"||Array.isArray(editorialData.items)) throw new Error("data/editorial.json has an invalid items object");
 const editorial=editorialData.items;
+const EDITOR_TOPICS=["economy-investment","crypto","currency-gold","real-estate","auto","technology-ai","health"];
 const source=Array.isArray(raw)?raw:(Array.isArray(raw?.items)?raw.items:Array.isArray(raw?.news)?raw.news:Array.isArray(raw?.articles)?raw.articles:[]);
 if(!source.length) throw new Error("data/news.json contains no collected news items");
 
@@ -33,7 +34,7 @@ const valid=source.filter(n=>{
   if(editorialState.deleted===true||editorialState.hidden===true||editorialState.reject===true) return false;
   const autoTopics=Array.isArray(n.topics)?n.topics.filter(t=>C.TOPICS.includes(t)):[];
   const manualTopics=editorialState.topics_manual===true&&Array.isArray(editorialState.topics)
-    ? [...new Set(editorialState.topics.filter(t=>C.PAGE_TOPICS.includes(t)))]
+    ? [...new Set(editorialState.topics.filter(t=>EDITOR_TOPICS.includes(t)))]
     : null;
   const topics=manualTopics===null?autoTopics:manualTopics;
   if((!topics.length&&manualTopics===null)||IRRELEVANT_HEADLINE_RE.test(String(n.title||"").replace(/[\u200c\u200d\u200e\u200f]/g," "))) return false;
@@ -46,7 +47,7 @@ const valid=source.filter(n=>{
   source:String(n.source||"").trim(),
   published:String(n.published||""),
   url:String(n.url).trim(),
-  topics:(()=>{const s=editorial[String(n.id)]||{};if(s.topics_manual===true&&Array.isArray(s.topics))return [...new Set(s.topics.filter(t=>typeof t==="string"&&C.PAGE_TOPICS.includes(t)))];return Array.isArray(n.topics)?[...new Set(n.topics.filter(t=>typeof t==="string"&&C.TOPICS.includes(t)))]:[]})()
+  topics:(()=>{const s=editorial[String(n.id)]||{};if(s.topics_manual===true&&Array.isArray(s.topics))return [...new Set(s.topics.filter(t=>typeof t==="string"&&EDITOR_TOPICS.includes(t)))];return Array.isArray(n.topics)?[...new Set(n.topics.filter(t=>typeof t==="string"&&C.TOPICS.includes(t)))]:[]})()
 })).sort((a,b)=>(Date.parse(b.published)||0)-(Date.parse(a.published)||0)||a.id.localeCompare(b.id));
 
 const seen=new Set(), seenTitles=new Set();
