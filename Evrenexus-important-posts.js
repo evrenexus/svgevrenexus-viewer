@@ -192,8 +192,10 @@
       .then(function (parts) {
         var data = parts[0], editorial = parts[1];
         if (!data || !Array.isArray(data.items)) throw new Error("Invalid data");
-        if (data.updated && data.updated === lastUpdated) return;
-        lastUpdated = data.updated || "";
+        var editorialStamp = editorial && editorial.updated || "";
+        var combinedStamp = (data.updated || "") + "|" + editorialStamp;
+        if (combinedStamp && combinedStamp === lastUpdated) return;
+        lastUpdated = combinedStamp;
         var deleted = editorial && editorial.items || {};
         var items = data.items.filter(function (item) {
           return item && item.title && item.url && !(deleted[String(item.id)] && deleted[String(item.id)].deleted === true) && Array.isArray(item.topics) &&
