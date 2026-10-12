@@ -9,7 +9,7 @@
   var SLIDE_MS = 5000;
   var SLIDER_COUNT = 8;
   var SIDEBAR_COUNT = 16;
-  var ALLOWED_TOPICS = ["economy", "markets", "crypto", "currency-gold", "real-estate", "technology", "ai", "health", "auto", "science-life"];
+  var ALLOWED_TOPICS = ["economy", "markets", "economy-investment", "crypto", "currency-gold", "real-estate", "technology", "technology-ai", "ai", "health", "auto", "science-life"];
   var lastUpdated = "";
   var slideIndex = 0;
   var slideTimer = null;
