@@ -15,10 +15,10 @@ input,select,button{font:inherit;padding:8px;border:1px solid #ccc;border-radius
 .editor{display:none;background:#f8f9fa;border:1px solid #ddd;padding:10px;margin-top:10px}.editor.open{display:block}.editor input,.editor textarea{width:100%;box-sizing:border-box;margin:4px 0}.editor textarea{min-height:90px}.richbar{display:flex;gap:5px;flex-wrap:wrap;background:#fff;border:1px solid #ccc;border-bottom:0;padding:7px;border-radius:6px 6px 0 0}.richbar button{padding:5px 9px}.richbody{min-height:260px;background:#fff;border:1px solid #ccc;border-radius:0 0 6px 6px;padding:12px;line-height:2.2;outline:none}.richbody:focus{border-color:#777}.richbody img{max-width:100%;height:auto}.publish{background:#14804a;color:#fff}.edit{background:#eee}
 </style>
 </head>
-<body><div id="loginScreen" style="position:fixed;inset:0;background:#f4f5f7;display:flex;align-items:center;justify-content:center;z-index:9999"><div style="background:#fff;width:min(380px,90%);padding:28px;border-radius:12px;box-shadow:0 8px 30px #0002;text-align:center"><h2 style="margin-top:0">ورود به پنل مدیریت</h2><p style="color:#666;font-size:13px">رمز عبور مدیریت را وارد کنید.</p><input id="loginToken" type="password" placeholder="رمز عبور" style="width:100%;box-sizing:border-box;margin:10px 0;padding:11px"><button class="primary" id="loginButton" type="button">ورود</button><div id="loginStatus" style="color:#b42318;font-size:12px;margin-top:10px"></div></div></div><div id="panel" style="display:none"><div class="wrap">
+<body><div id="loginScreen" style="position:fixed;inset:0;background:#f4f5f7;display:flex;align-items:center;justify-content:center;z-index:9999"><div style="background:#fff;width:min(380px,90%);padding:28px;border-radius:12px;box-shadow:0 8px 30px #0002;text-align:center"><h2 style="margin-top:0">ورود به پنل مدیریت</h2><p style="color:#666;font-size:13px">توکن دسترسی GitHub با مجوز Contents: Read and write را وارد کنید.</p><input id="loginToken" type="password" placeholder="GitHub Fine-grained Token" style="width:100%;box-sizing:border-box;margin:10px 0;padding:11px"><button class="primary" id="loginButton" type="button">ورود</button><div id="loginStatus" style="color:#b42318;font-size:12px;margin-top:10px"></div></div></div><div id="panel" style="display:none"><div class="wrap">
 <h1>پنل سردبیری Evren Nexus</h1>
 <div class="sub">دسته‌بندی ابتدا به‌صورت خودکار انجام می‌شود؛ مدیر می‌تواند هر انتخابی را ویرایش و ذخیره کند.</div>
-<div class="info">دسته‌بندی و تحلیل خبرها خودکار است. هر خبر دکمه «ذخیره» مستقل دارد و تغییرات همان خبر مستقیماً در GitHub ثبت می‌شود.</div>
+<div class="info">عنوان، خلاصه، متن، تصویر، دسته‌بندی و وضعیت مهم‌بودن خبر را ویرایش کن. ذخیره با GitHub انجام می‌شود؛ توکن فقط در نشست همین مرورگر می‌ماند. برای ذخیره، توکن Fine-grained با دسترسی Contents: Read and write لازم است.</div>
 <div class="bar">
 <input id="q" placeholder="جستجوی عنوان..." style="min-width:260px">
 <select id="cat"><option value="">همه دسته‌های فعلی</option></select>
@@ -52,10 +52,12 @@ async function load(){
 function state(id){return choices[id]||{}}
 function cleanIfEmpty(id){
   const s=choices[id]; if(!s)return;
-  if(!s.manual_important&&!s.manual_slider&&!s.manual_breaking&&!s.republish&&!s.reject&&!s.deleted&&!s.category&&!s.edited&&!s.published) delete choices[id];
+  if(!s.important&&!s.slider&&!s.manual_important&&!s.manual_slider&&!s.manual_breaking&&!s.republish&&!s.reject&&!s.deleted&&!s.category&&!s.edited&&!s.published) delete choices[id];
 }
 function setChoice(id,key,val){
   choices[id]=choices[id]||{};
+  if(key==='important') delete choices[id].manual_important;
+  if(key==='slider') delete choices[id].manual_slider;
   choices[id][key]=!!val;
   choices[id].updated_at=new Date().toISOString();
   render();
@@ -100,9 +102,9 @@ function render(){
   const q=$('q').value.trim().toLowerCase(),cat=$('cat').value,f=$('filter').value;
   let arr=news.filter(n=>(!q||(n.title||'').toLowerCase().includes(q))&&(!cat||n.category===cat));
   arr=arr.filter(n=>{const s=state(n.id);
-    return f==='all'||(f==='important'&&(s.manual_important===true||s.auto_important===true))||(f==='breaking'&&(s.manual_breaking===true||s.auto_breaking===true))||
-      (f==='slider'&&(s.manual_slider===true||s.auto_slider===true))||(f==='republish'&&s.republish)||(f==='deleted'&&s.deleted)||
-      (f==='unselected'&&!s.manual_important&&!s.manual_slider&&!s.manual_breaking&&!s.republish&&!s.reject&&!s.deleted&&!s.category&&!s.edited&&!s.published);
+    return f==='all'||(f==='important'&&(s.important===true||s.manual_important===true||s.auto_important===true))||(f==='breaking'&&(s.manual_breaking===true||s.auto_breaking===true))||
+      (f==='slider'&&(s.slider===true||s.manual_slider===true||s.auto_slider===true))||(f==='republish'&&s.republish)||(f==='deleted'&&s.deleted)||
+      (f==='unselected'&&!s.important&&!s.slider&&!s.manual_important&&!s.manual_slider&&!s.manual_breaking&&!s.republish&&!s.reject&&!s.deleted&&!s.category&&!s.edited&&!s.published);
   });
   const list=$('list');list.innerHTML='';if(!arr.length){list.innerHTML='<div class="empty">خبری پیدا نشد.</div>';return;}
   arr.forEach(n=>{
@@ -111,9 +113,9 @@ function render(){
     const meta=document.createElement('div');meta.className='meta';meta.textContent=(n.source||'')+' · '+fmt(n.published)+' · دسته فعلی: '+(n.category||'نامشخص')+(s.deleted?' · حذف‌شده':'');card.appendChild(meta);
     const actions=document.createElement('div');actions.className='actions';
     const aiLabel=document.createElement('span');aiLabel.style.cssText='font-size:11px;color:#666;padding:7px 4px';aiLabel.textContent='AI: '+(s.ai_importance!==undefined?s.ai_importance:'—')+(s.ai_political?' · فیلتر سیاسی':'');actions.appendChild(aiLabel);
-    const important=makeButton('important','⭐ مهم',!!s.manual_important);important.onclick=()=>setChoice(n.id,'manual_important',!state(n.id).manual_important);actions.appendChild(important);
+    const important=makeButton('important','⭐ مهم',!!(s.important||s.manual_important));important.onclick=()=>setChoice(n.id,'important',!((state(n.id).important===true)||(state(n.id).manual_important===true)));actions.appendChild(important);
     const breaking=makeButton('republish','🚨 خبر فوری',!!s.manual_breaking);breaking.onclick=()=>setChoice(n.id,'manual_breaking',!state(n.id).manual_breaking);actions.appendChild(breaking);
-    const slider=makeButton('slider','🖼 اسلایدر',!!s.manual_slider);slider.onclick=()=>setChoice(n.id,'manual_slider',!state(n.id).manual_slider);actions.appendChild(slider);
+    const slider=makeButton('slider','🖼 اسلایدر',!!(s.slider||s.manual_slider));slider.onclick=()=>setChoice(n.id,'slider',!((state(n.id).slider===true)||(state(n.id).manual_slider===true)));actions.appendChild(slider);
     const edit=makeButton('edit','✏️ ویرایش',false);edit.addEventListener("click",function(){toggleNewsEditor(n.id);});actions.appendChild(edit);
     const publish=makeButton('publish','📰 انتشار داخلی',!!s.republish);publish.onclick=()=>publishNews(n.id);actions.appendChild(publish);
     const del=makeButton('delete','🗑️ '+(s.deleted?'بازگردانی خبر':'حذف خبر'),!!s.deleted);del.onclick=()=>toggleDelete(n.id);actions.appendChild(del); const saveButton=makeButton('primary','💾 ذخیره',false);saveButton.onclick=()=>saveOne(n.id);actions.appendChild(saveButton);
@@ -154,8 +156,10 @@ async function saveOne(id,attempt){
     const get=await fetch('https://api.github.com/repos/'+repo+'/contents/'+path+'?ref=main&t='+Date.now(),{headers});
     if(!get.ok)throw new Error('دسترسی GitHub رد شد ('+get.status+')');
     const current=await get.json();
-    if(!current.content)throw new Error('محتوای editorial.json خالی برگشت؛ ذخیره متوقف شد.');
-    const bytes=Uint8Array.from(atob(current.content.replace(/\\s/g,'')),c=>c.charCodeAt(0));
+    let encodedCurrent=current.content;
+    if(!encodedCurrent&&current.sha){const br=await fetch('https://api.github.com/repos/'+repo+'/git/blobs/'+current.sha,{headers});if(!br.ok)throw new Error('خواندن نسخه بزرگ editorial.json شکست خورد ('+br.status+')');const blob=await br.json();encodedCurrent=blob.content;}
+    if(!encodedCurrent)throw new Error('محتوای editorial.json قابل خواندن نیست؛ ذخیره متوقف شد.');
+    const bytes=Uint8Array.from(atob(encodedCurrent.replace(/\\s/g,'')),c=>c.charCodeAt(0));
     const decoded=new TextDecoder('utf-8',{fatal:true}).decode(bytes);
     const data=JSON.parse(decoded);
     if(!data||typeof data!=='object'||Array.isArray(data)||
@@ -182,7 +186,7 @@ async function saveOne(id,attempt){
     }
     if(!put.ok){const e=await put.text();throw new Error('ذخیره شکست خورد ('+put.status+'): '+e.slice(0,180));}
     originalChoices[id]=JSON.parse(JSON.stringify(s));
-    $('output').value=content;
+    $('output').value='ثبت شد: '+id+'\\nزمان: '+now+'\\n';
     $('status').textContent='✅ تغییرات این خبر ذخیره شد.';
     render();
   }catch(e){console.error(e);$('status').textContent='❌ '+e.message;}
@@ -211,7 +215,8 @@ async function validateToken(t){
     throw new Error(msg);
   }
   const j=await r.json();
-  if(!j.content)throw new Error('دسترسی به editorial.json تأیید نشد.');
+  if(!j.content&&j.sha){const br=await fetch('https://api.github.com/repos/'+repo+'/git/blobs/'+j.sha,{headers:{Authorization:'Bearer '+t,Accept:'application/vnd.github+json'}});if(!br.ok)throw new Error('خواندن فایل editorial.json تأیید نشد.');const blob=await br.json();if(!blob.content)throw new Error('دسترسی به محتوای editorial.json تأیید نشد.');}
+  else if(!j.content)throw new Error('دسترسی به editorial.json تأیید نشد.');
   return true;
 }
 async function doLogin(){

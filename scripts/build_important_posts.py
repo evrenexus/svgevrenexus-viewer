@@ -9,6 +9,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "data" / "news.json"
+EDITORIAL = ROOT / "data" / "editorial.json"
 OUTPUT = ROOT / "data" / "public" / "important-posts.json"
 WINDOW_HOURS = 2
 BATCH_SIZE = 4
@@ -74,21 +75,36 @@ def clean_item(raw):
     }
 
 
-def eligible_items(data, now):
+def eligible_items(data, now, editorial):
     cutoff = now - timedelta(hours=WINDOW_HOURS)
     candidates = []
     for raw in data.get("items", []):
-        if raw.get("important") is not True:
+        nid = str(raw.get("id") or raw.get("url") or "").strip()
+        ed = editorial.get(nid, {}) if isinstance(editorial, dict) else {}
+        if not isinstance(ed, dict):
+            ed = {}
+        if ed.get("deleted") is True or ed.get("hidden") is True or ed.get("reject") is True:
             continue
-        item = clean_item(raw)
+        manual_slider = ed.get("slider") is True or ed.get("manual_slider") is True
+        manual_important = ed.get("important") is True or ed.get("manual_important") is True or manual_slider
+        if raw.get("important") is not True and not manual_important:
+            continue
+        merged = dict(raw)
+        for field in ("title", "summary", "image"):
+            if isinstance(ed.get(field), str):
+                merged[field] = ed[field]
+        item = clean_item(merged)
         dt = item.pop("_timestamp")
-        if not item["id"] or not item["title"] or not item["url"] or not item["topics"] or not dt:
+        if not item["id"] or not item["title"] or not item["url"] or not item["topics"]:
             continue
-        if dt < cutoff or dt > now + timedelta(minutes=5):
+        if not manual_important and (not dt or dt < cutoff or dt > now + timedelta(minutes=5)):
             continue
+        if not dt:
+            dt = now
         item["_published_dt"] = dt
+        item["_manual_priority"] = 0 if manual_slider else (1 if manual_important else 2)
         candidates.append(item)
-    candidates.sort(key=lambda x: (x["importance_score"], x["_published_dt"]), reverse=True)
+    candidates.sort(key=lambda x: (x.get("_manual_priority", 2), -x["importance_score"], -x["_published_dt"].timestamp()))
 
     # Deduplicate copies/syndicated stories before ranking the shortlist.
     unique = []
@@ -97,7 +113,6 @@ def eligible_items(data, now):
             continue
         unique.append(item)
     return unique
-
 
 def choose_batch(candidates, count=BATCH_SIZE):
     """Rank fresh items while strongly preferring distinct sources and topics."""
@@ -137,12 +152,15 @@ def choose_batch(candidates, count=BATCH_SIZE):
         topic_counts[(best.get("topics") or ["unknown"])[0]] += 1
     for item in selected:
         item.pop("_published_dt", None)
+        item.pop("_manual_priority", None)
     return selected
 
 def main():
     now = datetime.now(timezone.utc)
     data = json.loads(SOURCE.read_text(encoding="utf-8"))
-    candidates = eligible_items(data, now)
+    editorial_data = json.loads(EDITORIAL.read_text(encoding="utf-8")) if EDITORIAL.exists() else {}
+    editorial_items = editorial_data.get("items", {}) if isinstance(editorial_data, dict) else {}
+    candidates = eligible_items(data, now, editorial_items)
 
     previous = {"batches": []}
     if OUTPUT.exists():
@@ -167,7 +185,7 @@ def main():
         if isinstance(batch, dict)
         for item in batch.get("items", [])
     }
-    fresh = [item for item in candidates if item["id"] not in previous_top_ids]
+    fresh = [item for item in candidates if item["id"] not in previous_top_ids and item.get("_manual_priority", 2) >= 2]
     group = choose_batch(fresh)
     if group:
         batches = [{"selectedAt": now_text, "windowHours": WINDOW_HOURS, "items": group}] + batches[:BATCH_COUNT - 1]
@@ -176,14 +194,18 @@ def main():
         batches = [{"selectedAt": now_text, "windowHours": WINDOW_HOURS, "items": []}]
 
     items, seen = [], set()
-    for batch in batches[:BATCH_COUNT]:
-        for item in batch.get("items", []):
-            key = str(item.get("id") or "")
-            if key and key not in seen:
-                seen.add(key)
-                items.append(item)
-            if len(items) >= TOTAL:
-                break
+    rolling_items = [item for batch in batches[:BATCH_COUNT] for item in batch.get("items", [])]
+    manual_items = [item for item in candidates if item.get("_manual_priority", 2) < 2]
+    # Explicit slider picks appear first, then other manual important picks, then rolling news.
+    for item in manual_items + rolling_items:
+        key = str(item.get("id") or "")
+        if key and key not in seen:
+            seen.add(key)
+            clean = dict(item)
+            clean.pop("_timestamp", None)
+            clean.pop("_published_dt", None)
+            clean.pop("_manual_priority", None)
+            items.append(clean)
         if len(items) >= TOTAL:
             break
 

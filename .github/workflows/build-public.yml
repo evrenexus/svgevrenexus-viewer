@@ -22,14 +22,28 @@ jobs:
         with:
           ref: main
 
-      - name: Validate and build
+      - name: Validate and build editorial data
         run: python3 scripts/build_public.py
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Build permanent article pages and important sections
+        run: node scripts/build-featured.mjs
+
+      - name: Validate important sections
+        run: node scripts/validate-featured.mjs
+
+      - name: Build sidebar and slider selection
+        run: python3 scripts/build_important_posts.py
 
       - name: Commit
         run: |
           git config user.name "evrenexus-build-bot"
           git config user.email "evrenexus-build-bot@users.noreply.github.com"
-          git add data/public
+          git add data/public articles
           if git diff --cached --quiet; then echo "No changes"; exit 0; fi
           git commit -m "build: public data"
           for i in 1 2 3 4 5; do
