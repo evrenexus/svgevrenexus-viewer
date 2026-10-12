@@ -29,7 +29,7 @@ input,select,button{font:inherit;padding:8px;border:1px solid #ccc;border-radius
 <script>
 let news=[],choices={},originalChoices={},saveMessages={};
 const $=id=>document.getElementById(id);
-const CATS=[['economy','اقتصادی'],['markets','بازار و سرمایه‌گذاری'],['currency-gold','ارز و طلا'],['real-estate','مسکن'],['technology','فناوری'],['ai','هوش مصنوعی'],['science-life','علم و سبک زندگی'],['health','پزشکی و سلامت'],['auto','خودرو'],['sports','ورزش'],['war','جنگ و درگیری']];
+const CATS=[['economy-investment','اقتصاد و سرمایه‌گذاری'],['crypto','ارزهای دیجیتال'],['currency-gold','ارز و طلا'],['real-estate','بازار مسکن'],['auto','بازار خودرو'],['technology-ai','تکنولوژی و فناوری'],['health','دانش و سلامت'],['science-life','علم و سبک زندگی']];
 
 async function load(){
   $('status').textContent='در حال دریافت...';
@@ -51,7 +51,7 @@ async function load(){
 function state(id){return choices[id]||{}}
 function cleanIfEmpty(id){
   const s=choices[id]; if(!s)return;
-  if(!s.important&&!s.slider&&!s.manual_important&&!s.manual_slider&&!s.manual_breaking&&!s.republish&&!s.reject&&!s.deleted&&!s.category&&!s.edited&&!s.published) delete choices[id];
+  if(!s.important&&!s.slider&&!s.manual_important&&!s.manual_slider&&!s.manual_breaking&&!s.republish&&!s.reject&&!s.deleted&&!s.category&&!(Array.isArray(s.topics)&&s.topics.length)&&!s.edited&&!s.published) delete choices[id];
 }
 function setChoice(id,key,val){
   choices[id]=choices[id]||{};
@@ -61,8 +61,11 @@ function setChoice(id,key,val){
   render();
   $('status').textContent='تغییر ثبت‌نشده است؛ برای ذخیره واقعی روی دکمه «ذخیره» همین خبر کلیک کن.';
 }
-function setCategory(id,val){
-  choices[id]=choices[id]||{}; if(val)choices[id].category=val;else delete choices[id].category;
+function setCategory(id,vals){
+  choices[id]=choices[id]||{};
+  const selected=[...new Set((Array.isArray(vals)?vals:[vals]).filter(v=>CATS.some(c=>c[0]===v)))];
+  if(selected.length){choices[id].topics=selected;choices[id].category=selected[0];}
+  else{delete choices[id].topics;delete choices[id].category;}
   choices[id].updated_at=new Date().toISOString(); cleanIfEmpty(id); render();
 }
 function toggleDelete(id){
@@ -98,7 +101,7 @@ async function saveEdit(id){
 }
 function render(){
   const q=$('q').value.trim().toLowerCase(),cat=$('cat').value,f=$('filter').value;
-  let arr=news.filter(n=>(!q||(n.title||'').toLowerCase().includes(q))&&(!cat||n.category===cat));
+  let arr=news.filter(n=>(!q||(n.title||'').toLowerCase().includes(q))&&(!cat||n.category===cat||(Array.isArray(state(n.id).topics)&&state(n.id).topics.includes(cat))));
   arr=arr.filter(n=>{const s=state(n.id);
     return f==='all'||(f==='important'&&(s.important===true||s.manual_important===true||s.auto_important===true))||(f==='breaking'&&(s.manual_breaking===true||s.auto_breaking===true))||
       (f==='slider'&&(s.slider===true||s.manual_slider===true||s.auto_slider===true))||(f==='republish'&&s.republish)||(f==='deleted'&&s.deleted)||
@@ -116,7 +119,7 @@ function render(){
     const edit=makeButton('edit','✏️ ویرایش',false);edit.addEventListener("click",function(){toggleNewsEditor(n.id);});actions.appendChild(edit);
     const publish=makeButton('publish','📰 انتشار داخلی',!!s.republish);publish.onclick=()=>publishNews(n.id);actions.appendChild(publish);
     const del=makeButton('delete','🗑️ '+(s.deleted?'بازگردانی خبر':'حذف خبر'),!!s.deleted);del.onclick=()=>toggleDelete(n.id);actions.appendChild(del); const saveButton=makeButton('primary','💾 ذخیره',false);saveButton.onclick=()=>saveOne(n.id);actions.appendChild(saveButton);
-    const select=document.createElement('select');select.className='category';select.innerHTML='<option value="">خودکار: '+esc(labelCat(n.category||''))+'</option>'+CATS.map(c=>'<option value="'+c[0]+'">'+c[1]+'</option>').join('');if(s.category)select.value=s.category;select.onchange=()=>setCategory(n.id,select.value);actions.appendChild(select);card.appendChild(actions);
+    const topicBox=document.createElement('div');topicBox.className='topic-picker';topicBox.style.cssText='display:flex;gap:6px 10px;flex-wrap:wrap;align-items:center;width:100%;padding:8px 0;border-top:1px solid #eee;margin-top:5px';const topicTitle=document.createElement('strong');topicTitle.textContent='موضوعات خبر:';topicTitle.style.cssText='font-size:11px;color:#444';topicBox.appendChild(topicTitle);const selectedTopics=Array.isArray(s.topics)?s.topics:(s.category?[s.category]:[]);CATS.forEach(c=>{const lab=document.createElement('label');lab.style.cssText='display:inline-flex;align-items:center;gap:4px;font-size:11px;white-space:nowrap;cursor:pointer';const cb=document.createElement('input');cb.type='checkbox';cb.value=c[0];cb.checked=selectedTopics.includes(c[0]);cb.style.cssText='margin:0';cb.onchange=()=>{const next=Array.isArray(state(n.id).topics)?state(n.id).topics.slice():(state(n.id).category?[state(n.id).category]:[]);const vals=cb.checked?[...next,c[0]]:next.filter(t=>t!==c[0]);setCategory(n.id,vals);};lab.appendChild(cb);lab.appendChild(document.createTextNode(c[1]));topicBox.appendChild(lab);});actions.appendChild(topicBox);card.appendChild(actions);
     const ed=document.createElement('div');ed.id='ed_'+n.id;ed.className='editor';
     ed.innerHTML='<input data-f="title" placeholder="عنوان"><textarea data-f="summary" placeholder="خلاصه"></textarea><input data-f="image" placeholder="آدرس تصویر"><div class="richbar"><button type="button" data-cmd="bold"><b>پررنگ</b></button><button type="button" data-cmd="italic"><i>کج</i></button><button type="button" data-cmd="insertUnorderedList">• فهرست</button><button type="button" data-cmd="insertOrderedList">۱. فهرست</button><button type="button" data-cmd="formatBlock" data-value="h2">عنوان</button><button type="button" data-cmd="formatBlock" data-value="p">پاراگراف</button><button type="button" data-cmd="createLink">لینک</button><button type="button" data-cmd="removeFormat">پاک‌کردن قالب</button></div><div class="richbody" data-f="content" contenteditable="true"></div>';
     const saveEditButton=document.createElement('button');saveEditButton.className='primary';saveEditButton.textContent='💾 ذخیره ویرایش';saveEditButton.onclick=()=>saveEdit(n.id);ed.appendChild(saveEditButton);
