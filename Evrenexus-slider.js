@@ -39,29 +39,27 @@ function show(i){if(!slides.length)return;if(i>=slides.length)i=0;if(i<0)i=slide
 document.getElementById("Evrenxus-slider-prev").onclick=function(){show(current-1)};document.getElementById("Evrenxus-slider-next").onclick=function(){show(current+1)};
 if(slides.length>1)setInterval(function(){show(current+1)},5000);
 }
+var LATEST_URL="./data/public/latest-news.json";
 var EDITORIAL_URL="./data/editorial.json";
-var NEWS_URL="./data/news.json";
 var ALLOWED_TOPICS=["economy","markets","economy-investment","crypto","currency-gold","real-estate","technology","technology-ai","ai","health","auto","science-life"];
 function aiFor(){return{}}
 function renderFeatured(){
  return Promise.all([
-  fetch(EDITORIAL_URL+"?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("editorial HTTP "+r.status);return r.json()}),
-  fetch(NEWS_URL+"?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("news HTTP "+r.status);return r.json()})
+  fetch(LATEST_URL+"?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("latest-news HTTP "+r.status);return r.json()}),
+  fetch(EDITORIAL_URL+"?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("editorial HTTP "+r.status);return r.json()}).catch(function(){return {items:{}}})
  ]).then(function(parts){
-  var editorial=parts[0]&&parts[0].items||{},raw=parts[1],news=Array.isArray(raw)?raw:(Array.isArray(raw.items)?raw.items:(Array.isArray(raw.news)?raw.news:[])),byId={};
-  news.forEach(function(n){if(n&&n.id!=null)byId[String(n.id)]=n});
+  var doc=parts[0]||{},editorial=parts[1]&&parts[1].items||{};
+  var topic=doc.topics&&doc.topics.home,items=topic&&Array.isArray(topic.items)?topic.items:[];
   window.EVREN_EDITORIAL=editorial;
-  var items=Object.keys(editorial).map(function(id){
-   var ed=editorial[id]||{},n=byId[String(id)]||{},path=String(ed.article_url||"");
-   if(ed.important!==true||ed.published!==true||ed.deleted===true||!/^articles\/[a-zA-Z0-9._-]+\.html$/.test(path)||!String(ed.content||"").replace(/<[^>]*>/g," ").trim())return null;
-   var topics=ed.topics_manual===true&&Array.isArray(ed.topics)?ed.topics:(Array.isArray(n.topics)?n.topics:[]);
-   if(!topics.some(function(t){return ALLOWED_TOPICS.indexOf(t)!==-1}))return null;
-   return {id:String(id),title:ed.title||n.title||"",summary:ed.summary||n.summary||"",image:ed.image||n.image||"",url:n.url||"",articleUrl:path,content:ed.content||"",topics:topics,published:ed.updated_at||n.published||""};
-  }).filter(function(x){return x&&String(x.title).trim()});
+  items=items.filter(function(x){
+   if(!x||!String(x.title||"").trim())return false;
+   var topics=Array.isArray(x.topics)?x.topics:[];
+   return topics.some(function(t){return ALLOWED_TOPICS.indexOf(t)!==-1});
+  });
   items.sort(function(a,b){return (Date.parse(b.published)||0)-(Date.parse(a.published)||0)});
   render(items.slice(0,8),aiFor);
  }).catch(function(e){
-  console.warn("Evrenexus-slider manual articles:",e);
+  console.warn("Evrenexus-slider latest news:",e);
   slider.style.display="none";
  });
 }
