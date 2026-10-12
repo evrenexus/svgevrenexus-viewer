@@ -11,7 +11,7 @@ input,select,button{font:inherit;padding:8px;border:1px solid #ccc;border-radius
 .title{font-weight:700;font-size:16px;line-height:1.9}.meta{font-size:11px;color:#777;margin:5px 0 10px}.actions{display:flex;gap:7px;flex-wrap:wrap;align-items:center}.actions button.active{color:#fff}
 .important.active{background:#d89b00}.slider.active{background:#2867c7}.republish.active{background:#14804a}.reject.active{background:#b42318}.delete{color:#b42318}.delete.active{background:#b42318;color:#fff}
 .category{min-width:150px}.status{font-size:12px;color:#555;margin-right:auto}.empty{text-align:center;padding:30px;color:#777;background:#fff;border-radius:8px}
-.info{background:#fff8d8;border:1px solid #e6d36a;padding:10px;margin-bottom:12px;font-size:12px;line-height:2}.output{width:100%;min-height:90px;direction:ltr;text-align:left;font:12px Consolas,monospace}
+.info{background:#fff8d8;border:1px solid #e6d36a;padding:10px;margin-bottom:12px;font-size:12px;line-height:2}.output{width:100%;min-height:54px;direction:ltr;text-align:left;font:12px Consolas,monospace;margin-top:6px}.row-status{font-size:12px;margin-top:9px;color:#555}.row-status.ok{color:#14804a}.row-status.err{color:#b42318}
 .editor{display:none;background:#f8f9fa;border:1px solid #ddd;padding:10px;margin-top:10px}.editor.open{display:block}.editor input,.editor textarea{width:100%;box-sizing:border-box;margin:4px 0}.editor textarea{min-height:90px}.richbar{display:flex;gap:5px;flex-wrap:wrap;background:#fff;border:1px solid #ccc;border-bottom:0;padding:7px;border-radius:6px 6px 0 0}.richbar button{padding:5px 9px}.richbody{min-height:260px;background:#fff;border:1px solid #ccc;border-radius:0 0 6px 6px;padding:12px;line-height:2.2;outline:none}.richbody:focus{border-color:#777}.richbody img{max-width:100%;height:auto}.publish{background:#14804a;color:#fff}.edit{background:#eee}
 </style>
 </head>
@@ -25,10 +25,9 @@ input,select,button{font:inherit;padding:8px;border:1px solid #ccc;border-radius
 <select id="filter"><option value="all">همه</option><option value="important">مهم‌ها</option><option value="breaking">خبرهای فوری</option><option value="slider">اسلایدرها</option><option value="republish">بازنشرها</option><option value="deleted">حذف‌شده‌ها</option><option value="unselected">انتخاب‌نشده‌ها</option></select>
 <button onclick="load()">بارگذاری</button>
 <span id="status" class="status"></span></div>
-<div style="background:#fff;padding:10px;border:1px solid #ddd;border-radius:8px;margin-bottom:12px;font-size:12px"><b>ذخیره مستقیم:</b> برای ثبت واقعی تغییرات، GitHub Token لازم است. توکن فقط در همین نشست مرورگر نگه‌داری می‌شود.<br><input id="token" type="password" placeholder="GitHub Token" style="width:100%;box-sizing:border-box;margin-top:7px"><button onclick="clearToken()" style="margin-top:7px">پاک کردن توکن</button></div><textarea id="output" class="output" readonly placeholder="گزارش ذخیره اینجا نمایش داده می‌شود."></textarea>
-<div id="list"></div></div>
+<div style="background:#fff;padding:10px;border:1px solid #ddd;border-radius:8px;margin-bottom:12px;font-size:12px"><b>ذخیره مستقیم:</b> برای ثبت واقعی تغییرات، GitHub Token لازم است. توکن فقط در همین نشست مرورگر نگه‌داری می‌شود.<br><input id="token" type="password" placeholder="GitHub Token" style="width:100%;box-sizing:border-box;margin-top:7px"><button onclick="clearToken()" style="margin-top:7px">پاک کردن توکن</button></div><div id="list"></div></div>
 <script>
-let news=[],choices={},originalChoices={};
+let news=[],choices={},originalChoices={},saveMessages={};
 const $=id=>document.getElementById(id);
 const CATS=[['economy','اقتصادی'],['markets','بازار و سرمایه‌گذاری'],['currency-gold','ارز و طلا'],['real-estate','مسکن'],['technology','فناوری'],['ai','هوش مصنوعی'],['science-life','علم و سبک زندگی'],['health','پزشکی و سلامت'],['auto','خودرو'],['sports','ورزش'],['war','جنگ و درگیری']];
 
@@ -56,7 +55,6 @@ function cleanIfEmpty(id){
 }
 function setChoice(id,key,val){
   choices[id]=choices[id]||{};
-  if(key==='important') delete choices[id].manual_important;
   if(key==='slider') delete choices[id].manual_slider;
   choices[id][key]=!!val;
   choices[id].updated_at=new Date().toISOString();
@@ -113,8 +111,7 @@ function render(){
     const meta=document.createElement('div');meta.className='meta';meta.textContent=(n.source||'')+' · '+fmt(n.published)+' · دسته فعلی: '+(n.category||'نامشخص')+(s.deleted?' · حذف‌شده':'');card.appendChild(meta);
     const actions=document.createElement('div');actions.className='actions';
     const aiLabel=document.createElement('span');aiLabel.style.cssText='font-size:11px;color:#666;padding:7px 4px';aiLabel.textContent='AI: '+(s.ai_importance!==undefined?s.ai_importance:'—')+(s.ai_political?' · فیلتر سیاسی':'');actions.appendChild(aiLabel);
-    const important=makeButton('important','⭐ مهم',!!(s.important||s.manual_important||n.important));important.onclick=()=>setChoice(n.id,'important',!((state(n.id).important===true)||(state(n.id).manual_important===true)||(n.important===true)));actions.appendChild(important);
-    const breaking=makeButton('republish','🚨 خبر فوری',!!s.manual_breaking);breaking.onclick=()=>setChoice(n.id,'manual_breaking',!state(n.id).manual_breaking);actions.appendChild(breaking);
+    const isImportant=s.important!==undefined?!!s.important:!!(s.manual_important||n.important);const important=makeButton('important','⭐ مهم',isImportant);important.onclick=()=>setChoice(n.id,'important',!isImportant);actions.appendChild(important);
     const slider=makeButton('slider','🖼 اسلایدر',!!(s.slider||s.manual_slider));slider.onclick=()=>setChoice(n.id,'slider',!((state(n.id).slider===true)||(state(n.id).manual_slider===true)));actions.appendChild(slider);
     const edit=makeButton('edit','✏️ ویرایش',false);edit.addEventListener("click",function(){toggleNewsEditor(n.id);});actions.appendChild(edit);
     const publish=makeButton('publish','📰 انتشار داخلی',!!s.republish);publish.onclick=()=>publishNews(n.id);actions.appendChild(publish);
@@ -123,7 +120,10 @@ function render(){
     const ed=document.createElement('div');ed.id='ed_'+n.id;ed.className='editor';
     ed.innerHTML='<input data-f="title" placeholder="عنوان"><textarea data-f="summary" placeholder="خلاصه"></textarea><input data-f="image" placeholder="آدرس تصویر"><div class="richbar"><button type="button" data-cmd="bold"><b>پررنگ</b></button><button type="button" data-cmd="italic"><i>کج</i></button><button type="button" data-cmd="insertUnorderedList">• فهرست</button><button type="button" data-cmd="insertOrderedList">۱. فهرست</button><button type="button" data-cmd="formatBlock" data-value="h2">عنوان</button><button type="button" data-cmd="formatBlock" data-value="p">پاراگراف</button><button type="button" data-cmd="createLink">لینک</button><button type="button" data-cmd="removeFormat">پاک‌کردن قالب</button></div><div class="richbody" data-f="content" contenteditable="true"></div>';
     const saveEditButton=document.createElement('button');saveEditButton.className='primary';saveEditButton.textContent='💾 ذخیره ویرایش';saveEditButton.onclick=()=>saveEdit(n.id);ed.appendChild(saveEditButton);
-    ed.querySelectorAll('[data-cmd]').forEach(function(b){b.addEventListener('click',function(){applyRichCommand(b.dataset.cmd,b.dataset.value,ed);});});card.appendChild(ed);list.appendChild(card);
+    ed.querySelectorAll('[data-cmd]').forEach(function(b){b.addEventListener('click',function(){applyRichCommand(b.dataset.cmd,b.dataset.value,ed);});});card.appendChild(ed);
+    const result=document.createElement('div');result.className='row-status'+(saveMessages[n.id]?.kind?' '+saveMessages[n.id].kind:'');result.id='row-status-'+n.id;result.textContent=saveMessages[n.id]?.status||'';card.appendChild(result);
+    const report=document.createElement('textarea');report.className='output';report.id='row-output-'+n.id;report.readOnly=true;report.placeholder='کد و گزارش ذخیره این خبر اینجا نمایش داده می‌شود.';report.value=saveMessages[n.id]?.output||'';report.style.display=report.value?'block':'none';card.appendChild(report);
+    list.appendChild(card);
   });
 }
 function escRich(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>');}
@@ -149,7 +149,7 @@ async function saveOne(id,attempt){
   if(JSON.stringify(originalChoices[id]||{})===JSON.stringify(s)){ $('status').textContent='تغییری برای ذخیره این خبر وجود ندارد.'; return; }
   let token=$('token').value.trim()||sessionStorage.getItem('evren_github_token')||'';
   if(!token){$('status').textContent='ابتدا وارد پنل شوید.';return;}
-  $('status').textContent=attempt?'در حال تلاش دوباره برای ذخیره...':'در حال ذخیره این خبر...';
+  saveMessages[id]={status:attempt?'در حال تلاش دوباره برای ذخیره...':'در حال ذخیره این خبر...',output:'',kind:''};render();
   try{
     const repo='evrenexus/svgevrenexus-viewer',path='data/editorial.json';
     const headers={Authorization:'Bearer '+token,Accept:'application/vnd.github+json'};
@@ -186,10 +186,10 @@ async function saveOne(id,attempt){
     }
     if(!put.ok){const e=await put.text();throw new Error('ذخیره شکست خورد ('+put.status+'): '+e.slice(0,180));}
     originalChoices[id]=JSON.parse(JSON.stringify(s));
-    $('output').value='ثبت شد: '+id+'\nزمان: '+now+'\n';
-    $('status').textContent='✅ تغییرات این خبر ذخیره شد.';
+    saveMessages[id]={status:'✅ تغییرات این خبر ذخیره شد.',output:'ثبت شد: '+id+'\nزمان: '+now+'\n',kind:'ok'};
+    $('status').textContent='ذخیره خبر انجام شد.';
     render();
-  }catch(e){console.error(e);$('status').textContent='❌ '+e.message;}
+  }catch(e){console.error(e);saveMessages[id]={status:'❌ ذخیره این خبر ناموفق بود: '+e.message,output:'',kind:'err'};$('status').textContent='ذخیره ناموفق بود.';render();}
 }
 function clearToken(){
   sessionStorage.removeItem('evren_github_token');
