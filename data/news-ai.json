@@ -1,7 +1,7 @@
 {
   "version": 1,
   "policy_version": 9,
-  "updated": "2026-10-12T00:16:02Z",
+  "updated": "2026-10-12T02:12:43Z",
   "items": {
     "72b4eb7a7155ed214c32324d": {
       "title": "تصاویر؛ جشن «مهرگان» در غار کرفتو",
@@ -31635,6 +31635,81 @@
       "local_score": 4,
       "breaking": false,
       "breaking_topics": []
+    },
+    "38be703167c70b288e9687ac": {
+      "title": "از طبابت تا مسافرکشی | شیب افزایشی نرخ بیکاری در جامعه پزشکی | پزشکان به انجام اقدامات زیبایی روی آورده‌اند",
+      "summary": "اقتصادنیوز: درآمد پایین و افزایش هزینه‌های مطب‌داری باعث شده بسیاری از پزشکان عمومی به مشاغلی همچون مسافرکشی و پرستاری از سالمند روی آوردند؛ افرادی که در تصور عمومی، دستمزد‌های بالایی دارند درحالی‌که حقوق ماهانه بیشتر آنها هم‌اکنون، بین ۲۵ تا ۳۵ میلیون تومان است. آن‌طورکه بررسی‌ها نشان می‌دهد، در سا",
+      "source": "اقتصادنیوز",
+      "published": "2026-10-12T05:00:13+03:30",
+      "topics": [
+        "health",
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 0,
+        "markets": 0,
+        "crypto": 0,
+        "currency-gold": 0,
+        "real-estate": 0,
+        "technology": 0,
+        "ai": 0,
+        "health": 0,
+        "auto": 0,
+        "science-life": 0
+      },
+      "importance": 0,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "publishable": false,
+      "exclude_reason": "duplicate",
+      "content_type": "other",
+      "reject_reason": "duplicate",
+      "group_id": "local-69c5a5603cf0",
+      "representative": true,
+      "reason": "مورد قبلی",
+      "analysis_mode": "ai",
+      "local_score": 4,
+      "breaking": false,
+      "breaking_topics": []
+    },
+    "d7579835d581ae6448559546": {
+      "title": "این شهر آمریکایی صدرنشین ثروتمندترین شهرهای جهان شد/ غول‌های فناوری پیشتازند + اینفوگرافی",
+      "summary": "سنگاپور با تولید ناخالص داخلی سرانه حدود ۹۹ هزار دلار در رتبه ۳۶ و دمام عربستان سعودی با حدود ۹۷ هزار دلار در رتبه ۳۹ قرار گرفته‌اند.",
+      "source": "دنیای اقتصاد",
+      "published": "2026-10-12T04:30:20+03:30",
+      "topics": [
+        "economy"
+      ],
+      "topic_scores": {
+        "economy": 9,
+        "markets": 0,
+        "crypto": 0,
+        "currency-gold": 0,
+        "real-estate": 0,
+        "technology": 0,
+        "ai": 0,
+        "health": 0,
+        "auto": 0,
+        "science-life": 0
+      },
+      "importance": 9,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "publishable": true,
+      "exclude_reason": "",
+      "content_type": "economic_news",
+      "reject_reason": "",
+      "group_id": "local-d7579835d581ae6448559546",
+      "representative": true,
+      "reason": "گزارش رتبه‌های GDP سرانه",
+      "analysis_mode": "ai",
+      "local_score": 16,
+      "breaking": false,
+      "breaking_topics": []
     }
   },
   "groups": {
@@ -34529,15 +34604,21 @@
     },
     "local-c1d991193036": {
       "representative_id": "c9e4abaee894f22af02fd39b"
+    },
+    "local-69c5a5603cf0": {
+      "representative_id": "38be703167c70b288e9687ac"
+    },
+    "local-d7579835d581ae6448559546": {
+      "representative_id": "d7579835d581ae6448559546"
     }
   },
   "usage": {
     "date": "2026-10-12",
-    "requests": 2,
-    "last_success": "2026-10-12T00:16:02Z",
-    "last_success_epoch": 1791764162.7525938,
-    "last_article_generation": "2026-10-12T00:16:02Z"
+    "requests": 4,
+    "last_success": "2026-10-12T02:12:43Z",
+    "last_success_epoch": 1791771163.3533185,
+    "last_article_generation": "2026-10-12T02:12:43Z"
   },
-  "selection_window_end": "2026-10-12T00:15:39Z",
-  "selection_window_start": "2026-10-11T22:15:39Z"
+  "selection_window_end": "2026-10-12T02:11:35Z",
+  "selection_window_start": "2026-10-12T00:11:35Z"
 }
