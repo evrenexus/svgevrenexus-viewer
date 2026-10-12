@@ -41,12 +41,13 @@ const valid=source.filter(n=>{
   return outOfScope({title:n.title})===null;
 }).map(n=>({
   id:String(n.id),
-  title:correctKnownHeadline(n.title),
-  summary:String(n.summary||"").trim(),
-  image:/^https:\/\//i.test(String(n.image||"").trim())?String(n.image).trim():"",
+  title:correctKnownHeadline((editorial[String(n.id)]||{}).title || n.title),
+  summary:String((editorial[String(n.id)]||{}).summary !== undefined ? (editorial[String(n.id)]||{}).summary : (n.summary||"")).trim(),
+  image:/^https:\/\//i.test(String((editorial[String(n.id)]||{}).image !== undefined ? (editorial[String(n.id)]||{}).image : (n.image||"")).trim())?String((editorial[String(n.id)]||{}).image !== undefined ? (editorial[String(n.id)]||{}).image : (n.image||"")).trim():"",
   source:String(n.source||"").trim(),
   published:String(n.published||""),
   url:String(n.url).trim(),
+  articleUrl:(()=>{const s=editorial[String(n.id)]||{};return s.important===true&&s.published===true&&String(s.article_url||"").startsWith("articles/")?String(s.article_url):""})(),
   topics:(()=>{const s=editorial[String(n.id)]||{};if(s.topics_manual===true&&Array.isArray(s.topics))return [...new Set(s.topics.filter(t=>typeof t==="string"&&EDITOR_TOPICS.includes(t)))];return Array.isArray(n.topics)?[...new Set(n.topics.filter(t=>typeof t==="string"&&C.TOPICS.includes(t)))]:[]})()
 })).sort((a,b)=>(Date.parse(b.published)||0)-(Date.parse(a.published)||0)||a.id.localeCompare(b.id));
 
