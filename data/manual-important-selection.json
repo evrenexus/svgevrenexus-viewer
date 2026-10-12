@@ -1,12 +1,7 @@
 {
-  "window_start": "2026-10-11T04:24:20Z",
-  "window_end": "2026-10-11T06:24:20Z",
-  "news_ids": [
-    "5da5e883ffab498e26dbbf22",
-    "90caa7e40f2ca43313fee166",
-    "3fa1c7153a6eeb67dda051eb",
-    "546582c460cc760f70130bd6"
-  ],
-  "source": "assistant-editorial-fallback",
-  "reason": "One-time initial editorial selection after Gemini quota exhaustion, Groq access denial, and OpenRouter empty/rate-limited responses. This override expires automatically when the AI selection window changes."
+  "window_start": "2026-10-12T10:49:37+00:00",
+  "window_end": "2026-10-12T10:49:37+00:00",
+  "news_ids": [],
+  "source": "manual-only",
+  "reason": "Automatic AI/editorial selection disabled; only editorial-panel selections are allowed."
 }
