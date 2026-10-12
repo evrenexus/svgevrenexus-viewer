@@ -46,7 +46,7 @@
   }
 
   function makeViewerLink(item) {
-    return VIEWER_URL + "?url=" + encodeURIComponent(item.url || "");
+    return item.article_url ? "./" + String(item.article_url).replace(/^\.\//, "") : VIEWER_URL + "?url=" + encodeURIComponent(item.url || "");
   }
 
   function setStatus(container, message) {
@@ -188,34 +188,48 @@
 
   function load() {
     Promise.all([
-      fetch(DATA_URL + "?t=" + Date.now(), { cache: "no-store" }).then(function (response) { if (!response.ok) throw new Error("HTTP " + response.status); return response.json(); }),
-      fetch("./data/editorial.json?t=" + Date.now(), { cache: "no-store" }).then(function (response) { if (!response.ok) throw new Error("Editorial HTTP " + response.status); return response.json(); }).catch(function () { return { items: {} }; })
-    ])
-      .then(function (parts) {
-        var data = parts[0], editorial = parts[1];
-        if (!data || !Array.isArray(data.items)) throw new Error("Invalid data");
-        var editorialStamp = editorial && editorial.updated || "";
-        var combinedStamp = (data.updated || "") + "|" + editorialStamp;
-        if (combinedStamp && combinedStamp === lastUpdated) return;
-        lastUpdated = combinedStamp;
-        var deleted = editorial && editorial.items || {};
-        // One canonical candidate list feeds both components; only the display limits differ.
-        var items = data.items.filter(function (item) {
-          return item && item.title && item.url && !(deleted[String(item.id)] && deleted[String(item.id)].deleted === true) && Array.isArray(item.topics) &&
-            item.topics.some(function (topic) { return ALLOWED_TOPICS.indexOf(topic) !== -1; });
-        });
-        addStyles();
-        renderSlider(items.slice(0, SLIDER_COUNT));
-        renderSidebar(items.slice(0, SIDEBAR_COUNT));
-      })
-      .catch(function () {
-        addStyles();
-        var slider = ensureSlider();
-        if (slider) {
-          var slides = document.getElementById("Evrenxus-slides");
-          if (slides && !slides.children.length) setStatus(slides, "دریافت مطالب مهم ممکن نشد؛ کمی بعد دوباره تلاش کنید");
-        }
+      fetch("./data/editorial.json?t=" + Date.now(), { cache: "no-store" }).then(function (r) { if (!r.ok) throw new Error("Editorial HTTP " + r.status); return r.json(); }),
+      fetch("./data/news.json?t=" + Date.now(), { cache: "no-store" }).then(function (r) { if (!r.ok) throw new Error("News HTTP " + r.status); return r.json(); })
+    ]).then(function (parts) {
+      var editorial = parts[0] && parts[0].items || {};
+      var raw = parts[1];
+      var source = Array.isArray(raw) ? raw : (Array.isArray(raw.items) ? raw.items : (Array.isArray(raw.news) ? raw.news : []));
+      var byId = Object.create(null);
+      source.forEach(function (n) { if (n && n.id != null) byId[String(n.id)] = n; });
+      var stamp = String(parts[0] && parts[0].updated || "") + "|" + String(source.length);
+      if (stamp && stamp === lastUpdated) return;
+      lastUpdated = stamp;
+      // Only explicitly approved and published editorial items enter this list.
+      var items = Object.keys(editorial).map(function (id) {
+        var s = editorial[id] || {}, n = byId[String(id)] || {};
+        var articlePath = String(s.article_url || "");
+        if (s.important !== true || s.published !== true || s.deleted === true ||
+            !/^articles\/[a-zA-Z0-9._-]+\.html$/.test(articlePath) ||
+            !String(s.content || "").replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim()) return null;
+        var topics = s.topics_manual === true && Array.isArray(s.topics) ? s.topics : (Array.isArray(n.topics) ? n.topics : []);
+        if (!topics.some(function (topic) { return ALLOWED_TOPICS.indexOf(topic) !== -1; })) return null;
+        return {
+          id: String(id), title: safeText(s.title || n.title), summary: safeText(s.summary || n.summary),
+          image: /^https?:\/\//i.test(String(s.image || n.image || "")) ? String(s.image || n.image) : "",
+          source: safeText(n.source || "Evren Nexus"), published: String(n.published || s.updated_at || ""),
+          url: String(n.url || ""), article_url: articlePath, topics: topics,
+          updated_at: String(s.updated_at || "")
+        };
+      }).filter(function (item) { return item && item.title; });
+      items.sort(function (a, b) {
+        return (Date.parse(b.updated_at || b.published) || 0) - (Date.parse(a.updated_at || a.published) || 0);
       });
+      addStyles();
+      renderSlider(items.slice(0, SLIDER_COUNT));
+      renderSidebar(items.slice(0, SIDEBAR_COUNT));
+    }).catch(function () {
+      addStyles();
+      var slider = ensureSlider();
+      if (slider) {
+        var slides = document.getElementById("Evrenxus-slides");
+        if (slides && !slides.children.length) setStatus(slides, "دریافت مطالب مهم ممکن نشد؛ کمی بعد دوباره تلاش کنید");
+      }
+    });
   }
 
   function start() {
