@@ -12,6 +12,17 @@ const raw=readJson("data/news.json");
 const source=Array.isArray(raw)?raw:(Array.isArray(raw?.items)?raw.items:Array.isArray(raw?.news)?raw.news:Array.isArray(raw?.articles)?raw.articles:[]);
 if(!source.length) throw new Error("data/news.json contains no collected news items");
 
+function correctKnownHeadline(value){
+  let title=String(value||"").trim();
+  if(title.includes("طاعون")&&title.includes("ماسک")&&title.includes("منقاردار")) title=title.replaceAll("پزشکیان","پزشکان");
+  return title;
+}
+function titleKey(value){
+  return correctKnownHeadline(value).toLowerCase()
+    .replace(/[يى]/g,"ی").replace(/ك/g,"ک").replace(/[‌\u200c\u200d\u200e\u200f]/g," ")
+    .replace(/[^\p{L}\p{N}]+/gu," ").replace(/\s+/g," ").trim();
+}
+
 const IRRELEVANT_HEADLINE_RE=/(?:قتل|قاتل|جنایی|قاچاقچی|سارق|سرقت|دستگیری|زندانی|زندان|چوگان|فوتبال|فوتسال|بسکتبال|والیبال|هندبال|تنیس|کشتی|سرمربی|بازیکن|لیگ برتر|مسابقه ورزشی|قهرمانی|جام جهانی|ورزشکار|ورزشی|مهدوی[‌ ]?کیا|گل[‌ ]?محمدی|تجارت رنج|استخوان کودکان|کتاب برتر حقوقی|خط نصر|خوشنویسی|معارف قرآنی|جشنواره گردشگری پیاز|صلح[‌ ]?یاران|همکاری[‌ ]های فرهنگی|پنجره هنر|نقدی به فیلم|داریوش عیاری|مسعود کیمیایی|مرد عنکبوتی|دل تورو|علیرضا خمسه|مریم سعادت|تماشاخانه سنگلج|خانه تئاتر|دوربین ۳۶۰ درجه صحنه جرم|اتصال لوله پلی[‌ ]?اتیلن|کاهش سطح آب دریای خزر|کشف بیش از ۴ تن خاک طلا|چین و روسیه همچنان پشت سر قدرت‌های غربی|بلیط هواپیما چارتر|توزیع سه هزار وعده صبحانه|مدیرکل استاندارد.*فرهنگ‌سازی|پرسه علنی و راحت موش‌ها|شرکت ملی پست در تحقق سرشماری|بازنگری در سرفصل‌های آموزش رانندگی|میرسلیم|تصویر میرسلیم سوار بر تویوتا)/u;
 const valid=source.filter(n=>{
   if(!n||typeof n!=="object"||!String(n.id||"").trim()||!String(n.title||"").trim()||!/^https?:\/\//i.test(String(n.url||"").trim())) return false;
@@ -20,7 +31,7 @@ const valid=source.filter(n=>{
   return outOfScope({title:n.title})===null;
 }).map(n=>({
   id:String(n.id),
-  title:String(n.title||"").trim(),
+  title:correctKnownHeadline(n.title),
   summary:String(n.summary||"").trim(),
   image:/^https:\/\//i.test(String(n.image||"").trim())?String(n.image).trim():"",
   source:String(n.source||"").trim(),
@@ -29,8 +40,14 @@ const valid=source.filter(n=>{
   topics:Array.isArray(n.topics)?[...new Set(n.topics.filter(t=>typeof t==="string"&&C.TOPICS.includes(t)))]:[]
 })).sort((a,b)=>(Date.parse(b.published)||0)-(Date.parse(a.published)||0)||a.id.localeCompare(b.id));
 
-const seen=new Set();
-const items=valid.filter(n=>{if(seen.has(n.id))return false;seen.add(n.id);return true;});
+const seen=new Set(), seenTitles=new Set();
+const items=valid.filter(n=>{
+  const key=titleKey(n.title);
+  if(seen.has(n.id)||(key&&seenTitles.has(key)))return false;
+  seen.add(n.id);
+  if(key)seenTitles.add(key);
+  return true;
+});
 if(!items.length) throw new Error("No eligible news items; refusing to publish an empty latest-news feed");
 const inTopic=(n,topic)=>{
   if(topic===C.HOME)return true;
