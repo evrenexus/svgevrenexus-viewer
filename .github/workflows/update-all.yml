@@ -14,6 +14,8 @@ on:
       - 'scripts/build-latest-news.mjs'
       - 'data/editorial.json'
       - 'data/automation.json'
+      - 'scripts/reset-editorial-selections.py'
+      - 'data/reset-editorial-selections.json'
       - 'scripts/build_public.py'
       - 'scripts/validate-latest-news.mjs'
       - 'Evrenexus-featured.js'
@@ -140,6 +142,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+      - name: Clear previous editorial selections once
+        run: python3 scripts/reset-editorial-selections.py
       # This feed is generated and validated from data/news.json only, before the separate AI/editorial boxes are built.
       - name: Build independent latest-news feed
         run: node scripts/build-latest-news.mjs
@@ -174,7 +178,7 @@ jobs:
 
           # Retry if another workflow updates main between checkout and push.
           for attempt in 1 2 3 4 5; do
-            git add data/public/image-health.json data/public/news.json data/public/editorial.json data/public/policy-terms.json data/public/meta.json data/public/latest-news.json
+            git add data/public/image-health.json data/public/news.json data/public/editorial.json data/public/policy-terms.json data/public/meta.json data/public/latest-news.json data/public/featured.json data/public/important-posts.json data/manual-important-selection.json data/news-ai.json data/reset-editorial-selections.json
             if git diff --cached --quiet; then
               echo "No public-data, latest-news, or image-health changes."
               exit 0
@@ -201,7 +205,8 @@ jobs:
             sleep $((attempt * 3))
           done
       # The following is a separate, non-blocking stage for AI-managed permanent/important articles.
-      - name: Build permanent internal articles
+      - name: Build permanent internal articles (disabled: manual selection only)
+        if: false
         id: build_internal_articles
         continue-on-error: true
         run: node scripts/build-internal-articles.mjs
