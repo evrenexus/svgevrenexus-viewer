@@ -187,20 +187,20 @@ async function saveEdit(id){
   const s=choices[id],n=news.find(x=>String(x.id)===String(id));
   const selected=s.manual_important===true||s.important===true||s.manual_slider===true||s.slider===true;
   if(selected){
-    const bodyText=String(s.content||"").replace(/<[^>]*>/g," ").replace(/&nbsp;|&#160;/gi," ").replace(/\\s+/g," ").trim();
+    const bodyText=String(s.content||"").replace(/<[^>]*>/g," ").replace(/&nbsp;|&#160;/gi," ").replace(/\s+/g," ").trim();
     if(bodyText.length<100){$('status').textContent='برای ساخت صفحه مستقل، متن کامل خبر را حداقل در ۱۰۰ کاراکتر تکمیل کن.';return;}
     if(!n){$('status').textContent='خبر اصلی پیدا نشد؛ صفحه مستقل ساخته نشد.';return;}
     s.important=s.manual_important===true;s.slider=s.manual_slider===true;s.published=true;s.republish=true;
     s.article_url="articles/manual-"+safeArticleId(id)+".html";
     s.updated_at=new Date().toISOString();
-    $('status').textContent='در حال ساخت/به‌روزرسانی صفحه مستقل با متن ویرایش‌شده...;';
+    $('status').textContent='در حال ساخت/به‌روزرسانی صفحه مستقل با متن ویرایش‌شده...';
     try{
       const token=$('token').value.trim()||sessionStorage.getItem('evren_github_token')||'';
       if(!token)throw new Error('برای ساخت صفحه مستقل ابتدا توکن GitHub را وارد کن.');
       await writeRepoFile(s.article_url,makeManualArticlePage(id,s),'Update manually selected article '+id,token);
       await saveOne(id);
       if(JSON.stringify(originalChoices[id]||{})!==JSON.stringify(state(id)))throw new Error('صفحه ساخته شد اما ذخیره وضعیت تأیید نشد؛ دکمه ذخیره را دوباره بزن.');
-      saveMessages[id]={status:'✅ ویرایش ذخیره شد و صفحه مستقل به‌روز شد.',output:'صفحه: '+s.article_url+'\\nلینک: https://evrenexus.ir/'+s.article_url,kind:'ok'};
+      saveMessages[id]={status:'✅ ویرایش ذخیره شد و صفحه مستقل به‌روز شد.',output:'صفحه: '+s.article_url+'\nلینک: https://evrenexus.ir/'+s.article_url,kind:'ok'};
       $('status').textContent='✅ صفحه مستقل با آخرین ویرایش ساخته/به‌روزرسانی شد.';render();
     }catch(err){console.error(err);saveMessages[id]={status:'❌ صفحه مستقل ساخته نشد: '+err.message,output:'',kind:'err'};$('status').textContent='❌ '+err.message;render();}
     return;
