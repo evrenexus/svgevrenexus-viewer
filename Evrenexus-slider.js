@@ -56,7 +56,7 @@ function renderFeatured(){
    if(ed.important!==true||ed.published!==true||ed.deleted===true||!/^articles\/[a-zA-Z0-9._-]+\.html$/.test(path)||!String(ed.content||"").replace(/<[^>]*>/g," ").trim())return null;
    var topics=ed.topics_manual===true&&Array.isArray(ed.topics)?ed.topics:(Array.isArray(n.topics)?n.topics:[]);
    if(!topics.some(function(t){return ALLOWED_TOPICS.indexOf(t)!==-1}))return null;
-   return {id:String(id),title:ed.title||n.title||"",summary:ed.summary||n.summary||"",image:ed.image||n.image||"",url:n.url||"",articleUrl:path,content:ed.content||"",topics:topics,published:n.published||ed.updated_at||""};
+   return {id:String(id),title:ed.title||n.title||"",summary:ed.summary||n.summary||"",image:ed.image||n.image||"",url:n.url||"",articleUrl:path,content:ed.content||"",topics:topics,published:ed.updated_at||n.published||""};
   }).filter(function(x){return x&&String(x.title).trim()});
   items.sort(function(a,b){return (Date.parse(b.published)||0)-(Date.parse(a.published)||0)});
   render(items.slice(0,8),aiFor);
