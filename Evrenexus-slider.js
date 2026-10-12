@@ -39,14 +39,25 @@ function show(i){if(!slides.length)return;if(i>=slides.length)i=0;if(i<0)i=slide
 document.getElementById("Evrenxus-slider-prev").onclick=function(){show(current-1)};document.getElementById("Evrenxus-slider-next").onclick=function(){show(current+1)};
 if(slides.length>1)setInterval(function(){show(current+1)},5000);
 }
-var topic=new URLSearchParams(location.search).get("topic")||"home";
+var DATA_URL="./data/public/important-posts.json";
+var EDITORIAL_URL="./data/editorial.json";
+var ALLOWED_TOPICS=["economy","markets","crypto","currency-gold","real-estate","technology","ai","health","auto","science-life"];
 function aiFor(){return{}}
 function renderFeatured(){
- return window.EvrenFeatured.load().then(function(doc){
-  var section=doc&&doc.topics&&doc.topics[topic]||{},items=(Array.isArray(section.featured)?section.featured:[]).slice(0,4);
-  render(items,aiFor);
+ return Promise.all([
+  fetch(DATA_URL+"?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("important-posts HTTP "+r.status);return r.json()}),
+  fetch(EDITORIAL_URL+"?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("editorial HTTP "+r.status);return r.json()}).catch(function(){return{items:{}}})
+ ]).then(function(parts){
+  var data=parts[0],editorial=parts[1]&&parts[1].items||{};
+  if(!data||!Array.isArray(data.items))throw Error("Invalid important-posts data");
+  window.EVREN_EDITORIAL=editorial;
+  var items=data.items.filter(function(x){
+   var ed=editorial[String(x&&x.id||"")]||{};
+   return x&&String(x.title||"").trim()&&x.url&&!(ed.deleted===true||ed.hidden===true||ed.reject===true)&&Array.isArray(x.topics)&&x.topics.some(function(t){return ALLOWED_TOPICS.indexOf(t)!==-1});
+  });
+  render(items.slice(0,8),aiFor);
  }).catch(function(e){
-  console.warn("Evrenexus-slider featured:",e);
+  console.warn("Evrenexus-slider shared important-posts:",e);
   slider.style.display="none";
  });
 }
