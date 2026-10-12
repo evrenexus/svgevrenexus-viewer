@@ -159,7 +159,7 @@ async function saveOne(id,attempt){
     let encodedCurrent=current.content;
     if(!encodedCurrent&&current.sha){const br=await fetch('https://api.github.com/repos/'+repo+'/git/blobs/'+current.sha,{headers});if(!br.ok)throw new Error('خواندن نسخه بزرگ editorial.json شکست خورد ('+br.status+')');const blob=await br.json();encodedCurrent=blob.content;}
     if(!encodedCurrent)throw new Error('محتوای editorial.json قابل خواندن نیست؛ ذخیره متوقف شد.');
-    const bytes=Uint8Array.from(atob(encodedCurrent.replace(/\\s/g,'')),c=>c.charCodeAt(0));
+    const bytes=Uint8Array.from(atob(encodedCurrent.replace(/\s/g,'')),c=>c.charCodeAt(0));
     const decoded=new TextDecoder('utf-8',{fatal:true}).decode(bytes);
     const data=JSON.parse(decoded);
     if(!data||typeof data!=='object'||Array.isArray(data)||
@@ -186,7 +186,7 @@ async function saveOne(id,attempt){
     }
     if(!put.ok){const e=await put.text();throw new Error('ذخیره شکست خورد ('+put.status+'): '+e.slice(0,180));}
     originalChoices[id]=JSON.parse(JSON.stringify(s));
-    $('output').value='ثبت شد: '+id+'\\nزمان: '+now+'\\n';
+    $('output').value='ثبت شد: '+id+'\nزمان: '+now+'\n';
     $('status').textContent='✅ تغییرات این خبر ذخیره شد.';
     render();
   }catch(e){console.error(e);$('status').textContent='❌ '+e.message;}

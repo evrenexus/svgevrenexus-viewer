@@ -4,7 +4,13 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ['data/news.json', 'data/editorial.json']
+    paths:
+    - 'data/news.json'
+    - 'data/editorial.json'
+    - 'scripts/build_important_posts.py'
+    - 'scripts/build-important-pages.mjs'
+    - 'scripts/build-featured.mjs'
+    - '.github/workflows/build-public.yml'
 permissions:
   contents: write
 
