@@ -278,8 +278,8 @@ def is_duplicate_news(a,b):
     summary_a=normalize_text(a.get("summary",""))
     summary_b=normalize_text(b.get("summary",""))
     if len(summary_a)>=80 and len(summary_b)>=80:
-        sa={t for t in (dedup_stem(x) for x in re.findall(r"[\\w؀-ۿ]+",summary_a,re.UNICODE)) if t}
-        sb={t for t in (dedup_stem(x) for x in re.findall(r"[\\w؀-ۿ]+",summary_b,re.UNICODE)) if t}
+        sa={t for t in (dedup_stem(x) for x in re.findall(r"[\w؀-ۿ]+",summary_a,re.UNICODE)) if t}
+        sb={t for t in (dedup_stem(x) for x in re.findall(r"[\w؀-ۿ]+",summary_b,re.UNICODE)) if t}
         summary_shared=len(sa & sb)
         summary_union=len(sa | sb)
         summary_jaccard=summary_shared/summary_union if summary_union else 0
