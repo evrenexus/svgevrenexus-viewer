@@ -12,7 +12,6 @@ on:
       - 'scripts/build-internal-articles.mjs'
       - 'scripts/build-featured.mjs'
       - 'scripts/build-latest-news.mjs'
-      - 'data/editorial.json'
       - 'data/automation.json'
       - 'scripts/reset-editorial-selections.py'
       - 'data/reset-editorial-selections.json'
