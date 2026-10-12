@@ -36,7 +36,7 @@ const valid=source.filter(n=>{
     ? [...new Set(editorialState.topics.filter(t=>C.PAGE_TOPICS.includes(t)))]
     : null;
   const topics=manualTopics===null?autoTopics:manualTopics;
-  if((!topics.length&&manualTopics===null)||IRRELEVANT_HEADLINE_RE.test(String(n.title||"").replace(/[\\u200c\\u200d\\u200e\\u200f]/g," "))) return false;
+  if((!topics.length&&manualTopics===null)||IRRELEVANT_HEADLINE_RE.test(String(n.title||"").replace(/[\u200c\u200d\u200e\u200f]/g," "))) return false;
   return outOfScope({title:n.title})===null;
 }).map(n=>({
   id:String(n.id),
