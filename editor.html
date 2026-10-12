@@ -205,17 +205,22 @@ function showLoginError(msg){
   if(el)el.textContent=msg||'';
 }
 async function validateToken(t){
+  const headers={Authorization:'Bearer '+t,Accept:'application/vnd.github+json'};
+  const auth=await fetch('https://api.github.com/user',{headers,cache:'no-store'});
+  if(!auth.ok){
+    let msg='HTTP '+auth.status;
+    try{const j=await auth.json();if(j.message)msg=j.message;}catch(e){}
+    throw new Error('اعتبارسنجی توکن GitHub ناموفق بود: '+msg);
+  }
   const repo='evrenexus/svgevrenexus-viewer',path='data/editorial.json';
-  const r=await fetch('https://api.github.com/repos/'+repo+'/contents/'+path+'?ref=main&t='+Date.now(),{
-    headers:{Authorization:'Bearer '+t,Accept:'application/vnd.github+json'}
-  });
+  const r=await fetch('https://api.github.com/repos/'+repo+'/contents/'+path+'?ref=main&t='+Date.now(),{headers,cache:'no-store'});
   if(!r.ok){
     let msg='HTTP '+r.status;
     try{const j=await r.json();if(j.message)msg=j.message;}catch(e){}
-    throw new Error(msg);
+    throw new Error('توکن معتبر است، اما دسترسی به فایل editorial.json ناموفق بود: '+msg);
   }
   const j=await r.json();
-  if(!j.content&&j.sha){const br=await fetch('https://api.github.com/repos/'+repo+'/git/blobs/'+j.sha,{headers:{Authorization:'Bearer '+t,Accept:'application/vnd.github+json'}});if(!br.ok)throw new Error('خواندن فایل editorial.json تأیید نشد.');const blob=await br.json();if(!blob.content)throw new Error('دسترسی به محتوای editorial.json تأیید نشد.');}
+  if(!j.content&&j.sha){const br=await fetch('https://api.github.com/repos/'+repo+'/git/blobs/'+j.sha,{headers,cache:'no-store'});if(!br.ok)throw new Error('خواندن فایل editorial.json تأیید نشد.');const blob=await br.json();if(!blob.content)throw new Error('دسترسی به محتوای editorial.json تأیید نشد.');}
   else if(!j.content)throw new Error('دسترسی به editorial.json تأیید نشد.');
   return true;
 }
