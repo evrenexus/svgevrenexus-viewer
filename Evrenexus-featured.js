@@ -109,10 +109,14 @@ function render(r){
  if(list){
    list.innerHTML="";
    regular.forEach(function(x){
-     var a=document.createElement("a");a.className="item";a.href=x.url?"./viewer.html?url="+encodeURIComponent(x.url):"#";a.target="_blank";a.rel="noopener noreferrer";
-     var u=img(x.image);if(u){var im=document.createElement("img");im.src=u;im.alt=x.title||"";im.loading="lazy";im.referrerPolicy="no-referrer";im.onerror=function(){this.remove()};a.appendChild(im)}
+     var card=document.createElement("div");card.className="item";
+     var fullUrl=x.articleUrl?"./"+String(x.articleUrl).replace(/^\.\//,""):(x.url?"./viewer.html?url="+encodeURIComponent(x.url):"#");
+     var u=img(x.image);if(u){var im=document.createElement("img");im.src=u;im.alt=x.title||"";im.loading="lazy";im.referrerPolicy="no-referrer";im.onerror=function(){this.remove()};card.appendChild(im)}
      var cc=document.createElement("div");cc.className="content";
-     var h2=document.createElement("div");h2.className="title";h2.textContent=x.title||"";cc.appendChild(h2);
+     var h2=document.createElement("div");h2.className="title";
+     var titleLink=document.createElement("a");titleLink.href=fullUrl;titleLink.textContent=x.title||"";titleLink.style.cssText="color:inherit;text-decoration:none";
+     if(!x.articleUrl){titleLink.target="_blank";titleLink.rel="noopener noreferrer"}
+     h2.appendChild(titleLink);cc.appendChild(h2);
      if(x.summary){
        var summaryText=String(x.summary).replace(/\s+/g," ").trim();
        var titleText=String(x.title||"").replace(/\s+/g," ").trim();
@@ -121,8 +125,9 @@ function render(r){
        else if(titleText && summaryText.indexOf(titleText)===0){summaryText=summaryText.slice(titleText.length).replace(/^\s*[/|:؛—–-]?\s*/,"").trim();}
        if(summaryText && summaryText!==titleText){var sm2=document.createElement("div");sm2.className="summary";sm2.textContent=summaryText;cc.appendChild(sm2)}
      }
+     if(x.articleUrl){var full=document.createElement("a");full.href=fullUrl;full.className="Evrenxus-read-full";full.textContent="متن کامل ←";full.style.cssText="display:inline-block;margin-top:7px;color:#d64c43;font-size:10px;font-weight:700;text-decoration:none";cc.appendChild(full)}
      var m2=document.createElement("div");m2.className="meta";m2.textContent=(x.source||"")+" • "+(x.published?new Date(x.published).toLocaleString("fa-IR",{dateStyle:"short",timeStyle:"short"}):"");cc.appendChild(m2);
-     a.appendChild(cc);list.appendChild(a);
+     card.appendChild(cc);list.appendChild(card);
    });
    if(!list.children.length)list.innerHTML='<div class="error">فعلاً مطلبی در این بخش پیدا نشد.</div>';
  }
