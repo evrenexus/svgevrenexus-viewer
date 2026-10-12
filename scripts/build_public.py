@@ -22,7 +22,7 @@ def split_news(raw):
 from content_policy import out_of_scope
 
 def correct_known_headline(title):
-    title = re.sub(r"\\s+", " ", str(title or "")).strip()
+    title = re.sub(r"\s+", " ", str(title or "")).strip()
     if "طاعون" in title and "ماسک" in title and "منقاردار" in title:
         title = title.replace("پزشکیان", "پزشکان")
     return title
@@ -30,8 +30,8 @@ def correct_known_headline(title):
 def title_key(title):
     title = correct_known_headline(title).lower()
     title = title.replace("ي", "ی").replace("ك", "ک").replace("‌", " ")
-    title = re.sub(r"[\\W_]+", " ", title, flags=re.UNICODE)
-    return re.sub(r"\\s+", " ", title).strip()
+    title = re.sub(r"[\W_]+", " ", title, flags=re.UNICODE)
+    return re.sub(r"\s+", " ", title).strip()
 
 def clean_news(items):
     out, seen, seen_titles, dropped, policy_dropped, valid_before_policy = [], set(), set(), 0, 0, 0
