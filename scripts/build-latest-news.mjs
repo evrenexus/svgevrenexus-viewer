@@ -31,8 +31,12 @@ const valid=source.filter(n=>{
   if(!n||typeof n!=="object"||!String(n.id||"").trim()||!String(n.title||"").trim()||!/^https?:\/\//i.test(String(n.url||"").trim())) return false;
   const editorialState=editorial[String(n.id)]||{};
   if(editorialState.deleted===true||editorialState.hidden===true||editorialState.reject===true) return false;
-  const topics=Array.isArray(n.topics)?n.topics.filter(t=>C.TOPICS.includes(t)):[];
-  if(!topics.length||IRRELEVANT_HEADLINE_RE.test(String(n.title||"").replace(/[\u200c\u200d\u200e\u200f]/g," "))) return false;
+  const autoTopics=Array.isArray(n.topics)?n.topics.filter(t=>C.TOPICS.includes(t)):[];
+  const manualTopics=editorialState.topics_manual===true&&Array.isArray(editorialState.topics)
+    ? [...new Set(editorialState.topics.filter(t=>C.PAGE_TOPICS.includes(t)))]
+    : null;
+  const topics=manualTopics===null?autoTopics:manualTopics;
+  if((!topics.length&&manualTopics===null)||IRRELEVANT_HEADLINE_RE.test(String(n.title||"").replace(/[\\u200c\\u200d\\u200e\\u200f]/g," "))) return false;
   return outOfScope({title:n.title})===null;
 }).map(n=>({
   id:String(n.id),
@@ -42,7 +46,7 @@ const valid=source.filter(n=>{
   source:String(n.source||"").trim(),
   published:String(n.published||""),
   url:String(n.url).trim(),
-  topics:Array.isArray(n.topics)?[...new Set(n.topics.filter(t=>typeof t==="string"&&C.TOPICS.includes(t)))]:[]
+  topics:(()=>{const s=editorial[String(n.id)]||{};if(s.topics_manual===true&&Array.isArray(s.topics))return [...new Set(s.topics.filter(t=>typeof t==="string"&&C.PAGE_TOPICS.includes(t)))];return Array.isArray(n.topics)?[...new Set(n.topics.filter(t=>typeof t==="string"&&C.TOPICS.includes(t)))]:[]})()
 })).sort((a,b)=>(Date.parse(b.published)||0)-(Date.parse(a.published)||0)||a.id.localeCompare(b.id));
 
 const seen=new Set(), seenTitles=new Set();
@@ -56,6 +60,7 @@ const items=valid.filter(n=>{
 if(!items.length) throw new Error("No eligible news items; refusing to publish an empty latest-news feed");
 const inTopic=(n,topic)=>{
   if(topic===C.HOME)return true;
+  if(n.topics.includes(topic))return true;
   if(topic==="economy-investment")return n.topics.includes("economy")||n.topics.includes("markets");
   if(topic==="technology-ai")return n.topics.includes("technology")||n.topics.includes("ai");
   return n.topics.includes(topic);
