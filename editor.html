@@ -113,7 +113,7 @@ function render(){
     const meta=document.createElement('div');meta.className='meta';meta.textContent=(n.source||'')+' · '+fmt(n.published)+' · دسته فعلی: '+(n.category||'نامشخص')+(s.deleted?' · حذف‌شده':'');card.appendChild(meta);
     const actions=document.createElement('div');actions.className='actions';
     const aiLabel=document.createElement('span');aiLabel.style.cssText='font-size:11px;color:#666;padding:7px 4px';aiLabel.textContent='AI: '+(s.ai_importance!==undefined?s.ai_importance:'—')+(s.ai_political?' · فیلتر سیاسی':'');actions.appendChild(aiLabel);
-    const important=makeButton('important','⭐ مهم',!!(s.important||s.manual_important));important.onclick=()=>setChoice(n.id,'important',!((state(n.id).important===true)||(state(n.id).manual_important===true)));actions.appendChild(important);
+    const important=makeButton('important','⭐ مهم',!!(s.important||s.manual_important||n.important));important.onclick=()=>setChoice(n.id,'important',!((state(n.id).important===true)||(state(n.id).manual_important===true)||(n.important===true)));actions.appendChild(important);
     const breaking=makeButton('republish','🚨 خبر فوری',!!s.manual_breaking);breaking.onclick=()=>setChoice(n.id,'manual_breaking',!state(n.id).manual_breaking);actions.appendChild(breaking);
     const slider=makeButton('slider','🖼 اسلایدر',!!(s.slider||s.manual_slider));slider.onclick=()=>setChoice(n.id,'slider',!((state(n.id).slider===true)||(state(n.id).manual_slider===true)));actions.appendChild(slider);
     const edit=makeButton('edit','✏️ ویرایش',false);edit.addEventListener("click",function(){toggleNewsEditor(n.id);});actions.appendChild(edit);

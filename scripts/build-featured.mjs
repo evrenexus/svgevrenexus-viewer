@@ -23,7 +23,7 @@ const promotionWindow=new Date(promotionWindowStart).toISOString();
 const completedWindowStart=Number.isFinite(parsedWindowStart)?parsedWindowStart:promotionWindowStart-PROMOTION_WINDOW_MS;
 
 const wasPreviouslyImportant=r=>previouslyImportantIds.has(String(r?.article?.id??r?.article?.slug??r?.article?.__key??""));
-const isImportantCandidate=r=>wasPreviouslyImportant(r)||r.ed?.important===true||(r.ai?.important===true&&r.ai?.publishable===true&&r.ai?.political!==true&&Array.isArray(r.ai?.important_topics)&&r.ed?.auto_important===true);
+const isImportantCandidate=r=>r.ed?.important===false?false:(wasPreviouslyImportant(r)||r.ed?.important===true||(r.ai?.important===true&&r.ai?.publishable===true&&r.ai?.political!==true&&Array.isArray(r.ai?.important_topics)&&r.ed?.auto_important===true));
 const hasPermanentPage=r=>!!r?.article&&!!C.articleUrl(r.article)&&generatedImportantArticleIds.has(String(r.article.id??r.article.slug??r.article.__key??""))&&fs.existsSync(path.join(ROOT,C.articleUrl(r.article)));
 const promotionReady=r=>!isBlocked(r)&&isImportantCandidate(r)&&r.ai?.publishable===true&&r.ai?.political!==true&&r.article&&r.article.status==="published"&&r.article.ai_managed===true&&!!imageOf(r)&&hasPermanentPage(r)&&Article.featuredReady(r.article,{imageUsable,outOfScope}).ok;
 let promotionRows=[];

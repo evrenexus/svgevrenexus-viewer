@@ -87,6 +87,8 @@ def eligible_items(data, now, editorial):
             continue
         manual_slider = ed.get("slider") is True or ed.get("manual_slider") is True
         manual_important = ed.get("important") is True or ed.get("manual_important") is True or manual_slider
+        if ed.get("important") is False and not manual_slider:
+            continue
         if raw.get("important") is not True and not manual_important:
             continue
         merged = dict(raw)
