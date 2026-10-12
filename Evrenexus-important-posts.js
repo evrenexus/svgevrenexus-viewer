@@ -185,14 +185,18 @@
   }
 
   function load() {
-    fetch(DATA_URL + "?t=" + Date.now(), { cache: "no-store" })
-      .then(function (response) { if (!response.ok) throw new Error("HTTP " + response.status); return response.json(); })
-      .then(function (data) {
+    Promise.all([
+      fetch(DATA_URL + "?t=" + Date.now(), { cache: "no-store" }).then(function (response) { if (!response.ok) throw new Error("HTTP " + response.status); return response.json(); }),
+      fetch("./data/editorial.json?t=" + Date.now(), { cache: "no-store" }).then(function (response) { if (!response.ok) throw new Error("Editorial HTTP " + response.status); return response.json(); }).catch(function () { return { items: {} }; })
+    ])
+      .then(function (parts) {
+        var data = parts[0], editorial = parts[1];
         if (!data || !Array.isArray(data.items)) throw new Error("Invalid data");
         if (data.updated && data.updated === lastUpdated) return;
         lastUpdated = data.updated || "";
+        var deleted = editorial && editorial.items || {};
         var items = data.items.filter(function (item) {
-          return item && item.title && item.url && Array.isArray(item.topics) &&
+          return item && item.title && item.url && !(deleted[String(item.id)] && deleted[String(item.id)].deleted === true) && Array.isArray(item.topics) &&
             item.topics.some(function (topic) { return ALLOWED_TOPICS.indexOf(topic) !== -1; });
         }).slice(0, 16);
         addStyles();
