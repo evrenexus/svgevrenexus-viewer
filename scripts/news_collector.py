@@ -244,8 +244,14 @@ def dedup_stem(token):
     if token.endswith("ی") and len(token)>4: token=token[:-1]
     return token
 
+def correct_known_headline(value):
+    title=str(value or "").strip()
+    if "طاعون" in title and "ماسک" in title and "منقاردار" in title:
+        title=title.replace("پزشکیان","پزشکان")
+    return title
+
 def dedup_tokens(item):
-    title=normalize_text(item.get("title",""))
+    title=normalize_text(correct_known_headline(item.get("title","")))
     # Keep meaningful title words only; the event is primarily represented by the headline.
     return {t for t in (dedup_stem(x) for x in re.findall(r"[\w؀-ۿ]+",title,re.UNICODE)) if t}
 
@@ -604,6 +610,8 @@ def main():
     for item in all_items:
         item["topics"]=assign_topics(item)
     all_items=[x for x in all_items if is_valid_item(x,now_ts) and x.get("topics") and not is_irrelevant_headline(x) and not out_of_scope({"title":x.get("title","")})]
+    for item in all_items:
+        item["title"]=correct_known_headline(item.get("title",""))
     all_items.sort(key=lambda x:date_key(x.get("published","")),reverse=True)
     all_items=all_items[:300]
     # Remove cross-source reports of the same event. The newest report wins.
