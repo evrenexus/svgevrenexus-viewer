@@ -4,6 +4,9 @@ import * as C from "./featured-config.mjs";
 import{ROOT,loadAll,linkAll,isBlocked,imageOf,imageUsable,pinned,ts,inTopic,scoreFor,loadArticleResolver}from "./featured-lib.mjs";
 import{outOfScope}from "./content-policy.mjs";
 import{generateImportantPages}from "./build-important-pages.mjs";
+
+console.log("Automatic important/featured selection is disabled; use the editorial panel.");
+process.exit(0);
 const data=loadAll();const Article=loadArticleResolver();if(data.editorialError)console.warn("WARNING editorial.json ignored: "+data.editorialError);
 const{rows,scheme,linked}=linkAll(data);console.log("link scheme: "+scheme+" | linked "+linked+"/"+rows.length+" news to news-ai");
 // Build permanent pages before generating editorial boxes and sliders.
