@@ -27,7 +27,7 @@ input,select,button{font:inherit;padding:8px;border:1px solid #ccc;border-radius
 <span id="status" class="status"></span></div>
 <div style="background:#fff;padding:10px;border:1px solid #ddd;border-radius:8px;margin-bottom:12px;font-size:12px"><b>ذخیره مستقیم:</b> برای ثبت واقعی تغییرات، GitHub Token لازم است. توکن فقط در همین نشست مرورگر نگه‌داری می‌شود.<br><input id="token" type="password" placeholder="GitHub Token" style="width:100%;box-sizing:border-box;margin-top:7px"><button onclick="clearToken()" style="margin-top:7px">پاک کردن توکن</button></div><div id="list"></div></div>
 <script>
-let news=[],choices={},originalChoices={},saveMessages={};
+let news=[],choices={},originalChoices={},saveMessages={},saveQueue=Promise.resolve();
 const $=id=>document.getElementById(id);
 const CATS=[['economy-investment','اقتصاد و سرمایه‌گذاری'],['crypto','ارزهای دیجیتال'],['currency-gold','ارز و طلا'],['real-estate','بازار مسکن'],['auto','بازار خودرو'],['technology-ai','تکنولوژی و فناوری'],['health','دانش و سلامت'],['science-life','علم و سبک زندگی']];
 
@@ -55,7 +55,11 @@ function cleanIfEmpty(id){
 }
 function setChoice(id,key,val){
   choices[id]=choices[id]||{};
-  if(key==='slider') delete choices[id].manual_slider;
+  if(key==='slider'){
+    delete choices[id].manual_slider;
+    if(val) choices[id].important=true;
+  }
+  if(key==='important'&&!val) choices[id].slider=false;
   choices[id][key]=!!val;
   choices[id].updated_at=new Date().toISOString();
   render();
@@ -115,7 +119,7 @@ function render(){
     const actions=document.createElement('div');actions.className='actions';
     const aiLabel=document.createElement('span');aiLabel.style.cssText='font-size:11px;color:#666;padding:7px 4px';aiLabel.textContent='AI: '+(s.ai_importance!==undefined?s.ai_importance:'—')+(s.ai_political?' · فیلتر سیاسی':'');actions.appendChild(aiLabel);
     const isImportant=s.important!==undefined?!!s.important:!!(s.manual_important||n.important);const important=makeButton('important','⭐ مهم',isImportant);important.onclick=()=>setChoice(n.id,'important',!isImportant);actions.appendChild(important);
-    const slider=makeButton('slider','🖼 اسلایدر',!!(s.slider||s.manual_slider));slider.onclick=()=>setChoice(n.id,'slider',!((state(n.id).slider===true)||(state(n.id).manual_slider===true)));actions.appendChild(slider);
+    const slider=makeButton('slider','🖼 اسلایدر',!!(s.important&&(s.slider||s.manual_slider)));slider.disabled=!s.important;slider.title=s.important?'نمایش در اسلایدر':'ابتدا خبر را «مهم» کنید';slider.onclick=()=>setChoice(n.id,'slider',!((state(n.id).slider===true)||(state(n.id).manual_slider===true)));actions.appendChild(slider);
     const edit=makeButton('edit','✏️ ویرایش',false);edit.addEventListener("click",function(){toggleNewsEditor(n.id);});actions.appendChild(edit);
     const publish=makeButton('publish','📰 انتشار داخلی',!!s.republish);publish.onclick=()=>publishNews(n.id);actions.appendChild(publish);
     const del=makeButton('delete','🗑️ '+(s.deleted?'بازگردانی خبر':'حذف خبر'),!!s.deleted);del.onclick=()=>toggleDelete(n.id);actions.appendChild(del); const saveButton=makeButton('primary','💾 ذخیره',false);saveButton.onclick=()=>saveOne(n.id);actions.appendChild(saveButton);
@@ -146,9 +150,15 @@ function makeButton(cls,text,active){const b=document.createElement('button');b.
 function labelCat(x){const m=CATS.find(c=>c[0]===x);return m?m[1]:(x||'بدون دسته');}
 function fmt(x){try{return new Date(x).toLocaleString('fa-IR',{dateStyle:'short',timeStyle:'short'});}catch(e){return '';}}
 function esc(s){return String(s||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
-async function saveOne(id,attempt){
+function saveOne(id,attempt){
+  const run=()=>saveOneNow(id,attempt||0);
+  const job=saveQueue.then(run,run);
+  saveQueue=job.catch(()=>{});
+  return job;
+}
+async function saveOneNow(id,attempt){
   attempt=attempt||0;
-  const s=state(id)||{};
+  const s=JSON.parse(JSON.stringify(state(id)||{}));
   if(JSON.stringify(originalChoices[id]||{})===JSON.stringify(s)){ saveMessages[id]={status:'ℹ️ تغییری برای ذخیره این خبر شناسایی نشد.',output:'',kind:''}; $('status').textContent='تغییری برای ذخیره این خبر وجود ندارد.';render();return; }
   let token=$('token').value.trim()||sessionStorage.getItem('evren_github_token')||'';
   if(!token){saveMessages[id]={status:'❌ برای ذخیره این خبر ابتدا وارد پنل شوید.',output:'',kind:'err'};$('status').textContent='ابتدا وارد پنل شوید.';render();return;}
@@ -185,7 +195,7 @@ async function saveOne(id,attempt){
     });
     let putJson=null;if(put.ok){try{putJson=await put.clone().json();}catch(_){} }
     if(put.status===409){
-      if(attempt<1)return saveOne(id,attempt+1);
+      if(attempt<1)return saveOneNow(id,attempt+1);
       throw new Error('تداخل: فایل هم‌زمان تغییر کرد. ذخیره انجام نشد؛ دوباره تلاش کنید.');
     }
     if(!put.ok){const e=await put.text();throw new Error('ذخیره شکست خورد ('+put.status+'): '+e.slice(0,180));}
