@@ -237,7 +237,7 @@ function render(){
     const ed=document.createElement('div');ed.id='ed_'+n.id;ed.className='editor';
     ed.innerHTML='<input data-f="title" placeholder="عنوان"><textarea data-f="summary" placeholder="خلاصه"></textarea><input data-f="image" placeholder="آدرس تصویر"><div class="richbar"><button type="button" data-cmd="bold"><b>پررنگ</b></button><button type="button" data-cmd="italic"><i>کج</i></button><button type="button" data-cmd="underline"><u>زیرخط</u></button><button type="button" data-cmd="formatBlock" data-value="h2">تیتر اصلی</button><button type="button" data-cmd="formatBlock" data-value="h3">تیتر فرعی</button><button type="button" data-cmd="formatBlock" data-value="p">پاراگراف</button><button type="button" data-cmd="insertUnorderedList">• فهرست</button><button type="button" data-cmd="insertOrderedList">۱. فهرست</button><button type="button" data-cmd="justifyRight">راست‌چین</button><button type="button" data-cmd="justifyCenter">وسط‌چین</button><button type="button" data-cmd="blockquote">نقل‌قول</button><button type="button" data-cmd="createLink">افزودن لینک</button><button type="button" data-cmd="insertImage">افزودن تصویر</button><button type="button" data-cmd="undo">↶ بازگشت</button><button type="button" data-cmd="redo">↷ تکرار</button><button type="button" data-cmd="removeFormat">پاک‌کردن قالب</button></div><div class="richbody" data-f="content" contenteditable="true"></div>';
     const saveEditButton=document.createElement('button');saveEditButton.className='primary';saveEditButton.textContent='💾 ذخیره ویرایش';saveEditButton.onclick=()=>saveEdit(n.id);ed.appendChild(saveEditButton);
-    ed.querySelectorAll('[data-cmd]').forEach(function(b){b.addEventListener('click',function(){applyRichCommand(b.dataset.cmd,b.dataset.value,ed);});});card.appendChild(ed);
+    ed.querySelectorAll('[data-cmd]').forEach(function(b){b.addEventListener('mousedown',function(e){e.preventDefault();});b.addEventListener('click',function(){applyRichCommand(b.dataset.cmd,b.dataset.value,ed);});});card.appendChild(ed);
     const result=document.createElement('div');result.className='row-status'+(saveMessages[n.id]?.kind?' '+saveMessages[n.id].kind:'');result.id='row-status-'+n.id;result.textContent=saveMessages[n.id]?.status||'';card.appendChild(result);
     const report=document.createElement('textarea');report.className='output';report.id='row-output-'+n.id;report.readOnly=true;report.placeholder='کد و گزارش ذخیره این خبر اینجا نمایش داده می‌شود.';report.value=saveMessages[n.id]?.output||'';report.style.display=report.value?'block':'none';card.appendChild(report);
     list.appendChild(card);
@@ -249,11 +249,11 @@ function applyRichCommand(cmd,value,ed){
   body.focus();
   if(cmd==='createLink'){
     const url=prompt('آدرس لینک را وارد کنید:','https://');
-    if(url&&/^https?:\\/\\//i.test(url.trim()))document.execCommand('createLink',false,url.trim());
+    if(url&&/^https?:\/\//i.test(url.trim()))document.execCommand('createLink',false,url.trim());
     else if(url)alert('لینک باید با http:// یا https:// شروع شود.');
   }else if(cmd==='insertImage'){
     const url=prompt('آدرس مستقیم تصویر را وارد کنید:','https://');
-    if(url&&/^https?:\\/\\//i.test(url.trim()))document.execCommand('insertImage',false,url.trim());
+    if(url&&/^https?:\/\//i.test(url.trim()))document.execCommand('insertImage',false,url.trim());
     else if(url)alert('آدرس تصویر باید با http:// یا https:// شروع شود.');
   }else if(cmd==='formatBlock'){
     document.execCommand(cmd,false,value||'p');
