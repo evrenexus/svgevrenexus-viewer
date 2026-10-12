@@ -1,6 +1,44 @@
 {
-  "updated": "2026-10-12T05:56:12.232421+00:00",
+  "updated": "2026-10-12T06:13:04.267444+00:00",
   "items": [
+    {
+      "id": "dba61554d47cd81d0067",
+      "title": "قیمت موبایل‌ | جدول کامل قیمت گوشی‌های بازار امروز",
+      "summary": "آخرین قیمت انواع گوشی سامسونگ، اپل، شیائومی، هواوی و برندهای دیگر + جدول کامل و نوسانات امروز بازار موبایل ایران.",
+      "content": "۰۹:۳۲ - \n۲۰ مهر ۱۴۰۵ \n\nقیمت موبایل‌ | جدول کامل قیمت گوشی‌های بازار امروز \n\nآخرین قیمت انواع گوشی سامسونگ، اپل، شیائومی، هواوی و برندهای دیگر + جدول کامل و نوسانات امروز بازار موبایل ایران. \n\nپ\n\n،\n\nپـ\n\nتبلیغات\n\nتبلیغات\n\n\r\nقیمت گوشی امروز دوشنبه 20 مهر   1405 \r\n\r\n\r\n\r\n\nمدل \n\r\n\r\n\r\n\nقیمت \n\r\n\r\n\r\n\r\nآیفون 17 پرومکس (256 گیگابایت) \r\n509 میلیون و 500 هزار تومان \r\n\r\n\r\n\r\n\nآیفون 17 پرو  (۲۵۶ گیگابایت) \n\r\n\r\n\r\n\n502 میلیون تومان \n\r\n\r\n\r\n\r\n\r\n\nآیفون 17 (۲۵۶ گیگابایت) \n\r\n\r\n\r\n\n356 میلیون  تومان \n\r\n\r\n\r\n\r\n\r\n\nگلکسی A07 (۶۴ گیگابایت) \n\r\n\r\n\r\n\n41 میلیون و 200 هزار تومان \n\r\n\r\n\r\n\r\n\r\n\nگلکسی A17 (۱۲۸ گیگابایت) \n\r\n\r\n\r\n\n60 میلیون و 200 هزار   تومان \n\r\n\r\n\r\n\r\n\r\n\nگلکسی A57 (۲۵۶ گیگابایت) \n\r\n\r\n\r\n\n140 میلیون و 900 هزار تومان \n\r\n\r\n\r\n\r\n\r\n\nگلکسی S26 اولترا (۲۵۶ گیگابایت) \n\r\n\r\n\r\n\n465 میلیون تومان \n\r\n\r\n\r\n\r\n\r\n\nردمی نوت 15 (256 گیگابایت) \n\r\n\r\n\r\n\n85 میلیون و 300 هزار تومان \n\r\n\r\n\r\n\r\n\r\n\nردمی نوت 15 پرو پلاس (۵۱۲ گیگابایت) \n\r\n\r\n\r\n\n159 میلیون تومان \n\r\n\r\n\r\n\r\n\r\n\nپوکو F۶ پرو (۵۱۲ گیگابایت) \n\r\n\r\n\r\n\n138 میلیون تومان \n\r\n\r\n\r\n\r\n\r\n\nتبلیغات\n\nva NewsLis Limi = 5;\n\nاز میان اخبار \n\nقیمت موبایل‌ | جدول کامل قیمت گوشی‌های بازار امروز \n\nقیمت طلا امروز دوشنبه ۲۰ مهر ۱۴۰۵ \n\nقیمت روز خودرو | جدول جدید امروز \n\nقیمت محصولات ایران‌خودرو و سایپا امروز دوشنبه ۲۰ مهر ۱۴۰۵ \n\nشما قبلا این خبر را لایک کرده‌اید . \n\nfunc ion oPe sianNumbe (numbe ) {\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\nelemen .addEven Lis ene (\"click\", func ion() {\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n. hen(func ion( esponse) {\nif ( esponse.s a us == 200) {\nesponse.json(). hen(func ion(newSco e) {\nva likeNumbe Span = elemen .que ySelec o (\".like\");\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\nva hiddenHea = elemen .que ySelec o (\".hidden\");\nvisibleHea .classLis .add(\"hidden\");\nfavo i eBu on.classLis .add(\"hidden\");\nhiddenHea .classLis . emove(\"hidden\");\nva e o Message = elemen .que ySelec o (\".e o _message\");\nif (e o Message) {\ne o Message.classLis . emove(\"hidden_e o \");\n}\n});\n} else {\nva e o Message = elemen .que ySelec o (\".e o _message\");\nif (e o Message) {\ne o Message.classLis .add(\"hidden_e o \");\nse Timeou (func ion() {\ne o Message.classLis . emove(\"hidden_e o \");\n}, 3000);\n}\n}\n})\n});\n});\n\nتبلیغات",
+      "url": "https://fararu.com/fa/news/863551/%D9%82%DB%8C%D9%85%D8%AA-%D9%85%D9%88%D8%A8%D8%A7%DB%8C%D9%84-%D8%AC%D8%AF%D9%88%D9%84-%DA%A9%D8%A7%D9%85%D9%84-%D9%82%DB%8C%D9%85%D8%AA-%DA%AF%D9%88%D8%B4%DB%8C-%D9%87%D8%A7%DB%8C-%D8%A8%D8%A7%D8%B2%D8%A7%D8%B1-%D8%A7%D9%85%D8%B1%D9%88%D8%B2",
+      "image": "https://cdn.fararu.com/thumbnail/z5jjygkFimEl/KRyvyLRjZ01zZcOh2TGlfyZ1glDiEY4cNaKMb_X3bZfKPHQ-vNiPc1jw7Ctq0xbUC-Xgx8zCMEuU3BE5s2tgxklc9m_oTUezRWxAujGGnVtj67ktS2F5FX-8i7aO44_p/%D8%A2%DB%8C%D9%81%D9%88%D9%86+16.jpg",
+      "source": "فرارو",
+      "source_site": "https://fararu.com/",
+      "allow_internal_republish": true,
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "published": "2026-10-12T09:32:01+03:30",
+      "topics": [
+        "technology"
+      ],
+      "importance_score": 0,
+      "important": false,
+      "first_seen_at": "2026-10-12T06:13:11.131847+00:00"
+    },
+    {
+      "id": "b429848b74d696bec79d",
+      "title": "بیمه‌ها خریدار خدمت‌ هستند، اما در رتبه‌بندی بیمارستان‌ها نقشی ندارند",
+      "summary": "مدیرعامل سازمان بیمه‌سلامت با بیان اینکه بیان اینکه بیمه‌ها نقشی برای اعتبارسنجی بیمارستان‌ها ندارند، گفت: در وهله نخست، اختیارنداشتن بیمه‌ها در حزوه اعتباربخشی بیمارستان‌ها یک نقطه ضعف به حساب می‌آید و سپس موضوع منابع مطرح می‌شود؛ منابعی که به میزان کافی و در زمان مناسب تامین نمی‌شود.",
+      "content": "کد خبر 402451 \n\n۲۰ مهر ۱۴۰۵ - ۰۹:۲۶\n\nاخبار سلامت / اخبار نظام سلامت\n\nh ps://salama news.com/x5 Dj\n\nدوشنبه ۲۰ مهر ۱۴۰۵ - ۰۹:۲۶ \n\nکد خبر: 402451 \n\nمدیرعامل سازمان بیمه سلامت: \n\nبیمه‌ها خریدار خدمت‌ هستند، اما در رتبه‌بندی بیمارستان‌ها نقشی ندارند \n\nمدیرعامل سازمان بیمه‌سلامت با بیان اینکه بیان اینکه بیمه‌ها نقشی برای اعتبارسنجی بیمارستان‌ها ندارند، گفت: در وهله نخست، اختیارنداشتن بیمه‌ها در حزوه اعتباربخشی بیمارستان‌ها یک نقطه ضعف به حساب می‌آید و سپس موضوع منابع مطرح می‌شود؛ منابعی که به میزان کافی و در زمان مناسب تامین نمی‌شود. \nبیمه‌ها، اختیاری ندارند؛ اگرچه خریدار خدمت هستند اما محدودیت‌هایی برای بیمه‌ها در قانون آورده‌اند؛ به طور مثال، رتبه‌بندی بیمارستان‌ها به عهده بیمه‌ها نیست یا بیمه‌ها راهنمای بالینی را نمی‌نویسند. راهنماهای بالینی می‌بایست براساس منابعی که در اختیار داریم، نوشته شوند. \n\nاو ادامه داد: هنگامی که یک نهاد بالادستی راهنماهای بالینی را مشخص کند، منابع بیمه‌ها پاسخگو نخواهد بود و در چنین شرایطی، خرید خدمت مناسبی نخواهیم داشت. سازمان بیمه‌سلامت باید خرید خدمت را از بیمارستانی انجام دهد که هیچ نقشی در رتبه‌بندی آن مرکز درمانی ندارد. بیمه‌شده نیز به یک مرکز درمانی مراجعه می‌کند اما تکریم نمی‌شود؛ در عین حال نیز این احتمال وجود دارد که آن بیمارستان رتبه اعتباربخشی درجه یک کسب کرده باشد. \n\nمدیرعامل سازمان بیمه‌سلامت درباره ضرورت توجه به بیمه‌ها در اعتباربخشی بیمارستان‌ها توضیح داد: اگر در رتبه‌بندی بیمارستان‌ها نقش داشته‌باشیم، بیمارستان‌هایی که برخورد مناسبی با گیرندگان خدمت ندارند، به بیمه‌شده توجه ویژه نمی‌کنند و امکانات مناسبی ندارند به رتبه‌های پایین‌تر می‌روند. همچنین اگر پرداخت‌ها با توجه به مولفه‌هایی مانند توجه به گیرندگان خدمت تنظیم می‌شد، می‌توانستیم دقت بیشتری در زمینه منابع داشته باشیم.\n\nناصحی درباره نقاط ضعف بیمه‌ها گفت: در وهله نخست، اختیارنداشتن بیمه‌ها در حوزه اعتباربخشی بیمارستان‌ها یک نقطه ضعف به حساب می‌آید و سپس موضوع منابع مطرح می‌شود؛ منابعی که به میزان کافی و در زمان مناسب تامین نمی‌شود.",
+      "url": "https://www.salamatnews.com/news/402451/%D8%A8%DB%8C%D9%85%D9%87-%D9%87%D8%A7-%D8%AE%D8%B1%DB%8C%D8%AF%D8%A7%D8%B1-%D8%AE%D8%AF%D9%85%D8%AA-%D9%87%D8%B3%D8%AA%D9%86%D8%AF-%D8%A7%D9%85%D8%A7-%D8%AF%D8%B1-%D8%B1%D8%AA%D8%A8%D9%87-%D8%A8%D9%86%D8%AF%DB%8C-%D8%A8%DB%8C%D9%85%D8%A7%D8%B1%D8%B3%D8%AA%D8%A7%D9%86-%D9%87%D8%A7-%D9%86%D9%82%D8%B4%DB%8C",
+      "image": "https://media.salamatnews.com/d/2024/02/19/4/235925.jpg",
+      "source": "سلامت نیوز",
+      "source_site": "https://www.salamatnews.com/",
+      "allow_internal_republish": true,
+      "category": "پزشکی و سلامت",
+      "published": "2026-10-12T09:26:49+03:30",
+      "topics": [
+        "health"
+      ],
+      "importance_score": 0,
+      "important": false,
+      "first_seen_at": "2026-10-12T06:13:14.199932+00:00"
+    },
     {
       "id": "e4b91346455a019d6843",
       "title": "مواد غذایی سرشار از ویتامین سی و زینک",
@@ -57,7 +95,7 @@
       "importance_score": 1,
       "important": false,
       "first_seen_at": "2026-10-12T05:50:19.470678+00:00",
-      "image_tries": 2
+      "image_tries": 3
     },
     {
       "id": "55d5894c4e7f5b937378",
@@ -116,7 +154,7 @@
       "importance_score": 0,
       "important": false,
       "first_seen_at": "2026-10-12T05:50:22.808621+00:00",
-      "image_tries": 2
+      "image_tries": 3
     },
     {
       "id": "db58f722e8ef7d46f42b",
@@ -155,7 +193,7 @@
       "importance_score": 0,
       "important": false,
       "first_seen_at": "2026-10-12T05:50:22.808625+00:00",
-      "image_tries": 2
+      "image_tries": 3
     },
     {
       "id": "7fba59d39a2fd84749c9",
@@ -175,7 +213,7 @@
       "importance_score": 0,
       "important": false,
       "first_seen_at": "2026-10-12T05:50:19.470686+00:00",
-      "image_tries": 2
+      "image_tries": 3
     },
     {
       "id": "fbbe7e06d97a294880ea",
@@ -523,7 +561,7 @@
       "importance_score": 0,
       "important": false,
       "first_seen_at": "2026-10-11T20:55:23.320198+00:00",
-      "image_tries": 1
+      "image_tries": 2
     },
     {
       "id": "031f9387547adbd84106",
@@ -543,7 +581,7 @@
       "importance_score": 0,
       "important": false,
       "first_seen_at": "2026-10-11T20:42:49.248203+00:00",
-      "image_tries": 1
+      "image_tries": 2
     },
     {
       "id": "1d815512ceda42d6d1af",
@@ -802,7 +840,7 @@
       "importance_score": 0,
       "important": false,
       "first_seen_at": "2026-10-12T05:50:22.808627+00:00",
-      "image_tries": 2
+      "image_tries": 3
     },
     {
       "id": "18ab16d754a0b8874003",
@@ -1435,7 +1473,7 @@
       "importance_score": 0,
       "important": false,
       "first_seen_at": "2026-10-12T05:50:20.736423+00:00",
-      "image_tries": 2
+      "image_tries": 3
     },
     {
       "id": "cdb83dd15442febf71d2",
@@ -1455,7 +1493,7 @@
       "importance_score": 8,
       "important": true,
       "first_seen_at": "2026-10-12T05:50:20.736428+00:00",
-      "image_tries": 2
+      "image_tries": 3
     },
     {
       "id": "f5a5c8886df7e940512f",
@@ -1475,7 +1513,7 @@
       "importance_score": 8,
       "important": true,
       "first_seen_at": "2026-10-12T05:50:20.736430+00:00",
-      "image_tries": 2
+      "image_tries": 3
     },
     {
       "id": "4ee7de1104067e12c204",
@@ -2185,7 +2223,7 @@
       "importance_score": 8,
       "important": true,
       "first_seen_at": "2026-10-12T05:50:20.736434+00:00",
-      "image_tries": 2
+      "image_tries": 3
     },
     {
       "id": "862d95bf2cae9390dec5",
@@ -2243,7 +2281,7 @@
       "importance_score": 8,
       "important": true,
       "first_seen_at": "2026-10-12T05:50:20.736436+00:00",
-      "image_tries": 2
+      "image_tries": 3
     },
     {
       "id": "31edc9084d3417959aa1",
@@ -2824,8 +2862,8 @@
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
       "items": 8,
-      "attempted_at": "2026-10-12T05:56:15.196900+00:00",
-      "last_success_at": "2026-10-12T05:56:16.601927+00:00",
+      "attempted_at": "2026-10-12T06:13:08.816038+00:00",
+      "last_success_at": "2026-10-12T06:13:10.181740+00:00",
       "last_article_published": "2026-10-12T09:16:47+03:30",
       "error": ""
     },
@@ -2834,8 +2872,8 @@
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
       "items": 7,
-      "attempted_at": "2026-10-12T05:56:15.197470+00:00",
-      "last_success_at": "2026-10-12T05:56:17.339923+00:00",
+      "attempted_at": "2026-10-12T06:13:08.816672+00:00",
+      "last_success_at": "2026-10-12T06:13:10.395348+00:00",
       "last_article_published": "2026-10-12T08:57:42+03:30",
       "error": ""
     },
@@ -2844,8 +2882,8 @@
       "category": "پزشکی و سلامت",
       "ok": true,
       "items": 9,
-      "attempted_at": "2026-10-12T05:56:15.201670+00:00",
-      "last_success_at": "2026-10-12T05:56:17.429566+00:00",
+      "attempted_at": "2026-10-12T06:13:08.821505+00:00",
+      "last_success_at": "2026-10-12T06:13:10.467132+00:00",
       "last_article_published": "2026-10-11T22:52:04+03:30",
       "error": ""
     },
@@ -2854,19 +2892,9 @@
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
       "items": 8,
-      "attempted_at": "2026-10-12T05:56:15.210733+00:00",
-      "last_success_at": "2026-10-12T05:56:17.646383+00:00",
-      "last_article_published": "2026-10-12T09:20:05+03:30",
-      "error": ""
-    },
-    {
-      "name": "ایران‌جیب",
-      "category": "اقتصاد و سرمایه‌گذاری",
-      "ok": true,
-      "items": 6,
-      "attempted_at": "2026-10-12T05:56:15.212807+00:00",
-      "last_success_at": "2026-10-12T05:56:18.051235+00:00",
-      "last_article_published": "2026-10-12T09:15:06+03:30",
+      "attempted_at": "2026-10-12T06:13:08.825975+00:00",
+      "last_success_at": "2026-10-12T06:13:11.131767+00:00",
+      "last_article_published": "2026-10-12T09:32:01+03:30",
       "error": ""
     },
     {
@@ -2874,9 +2902,19 @@
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
       "items": 9,
-      "attempted_at": "2026-10-12T05:56:15.197766+00:00",
-      "last_success_at": "2026-10-12T05:56:18.258911+00:00",
+      "attempted_at": "2026-10-12T06:13:08.817059+00:00",
+      "last_success_at": "2026-10-12T06:13:11.284727+00:00",
       "last_article_published": "2026-10-12T08:55:04+03:30",
+      "error": ""
+    },
+    {
+      "name": "ایران‌جیب",
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "ok": true,
+      "items": 6,
+      "attempted_at": "2026-10-12T06:13:08.830974+00:00",
+      "last_success_at": "2026-10-12T06:13:11.466319+00:00",
+      "last_article_published": "2026-10-12T09:15:06+03:30",
       "error": ""
     },
     {
@@ -2884,9 +2922,19 @@
       "category": "بورس و بازار سرمایه",
       "ok": true,
       "items": 11,
-      "attempted_at": "2026-10-12T05:56:15.198041+00:00",
-      "last_success_at": "2026-10-12T05:56:20.190494+00:00",
+      "attempted_at": "2026-10-12T06:13:08.817412+00:00",
+      "last_success_at": "2026-10-12T06:13:12.707696+00:00",
       "last_article_published": "2026-10-11T14:50:11+03:30",
+      "error": ""
+    },
+    {
+      "name": "فردای اقتصاد",
+      "category": "بورس و بازار سرمایه",
+      "ok": true,
+      "items": 13,
+      "attempted_at": "2026-10-12T06:13:08.818264+00:00",
+      "last_success_at": "2026-10-12T06:13:12.969846+00:00",
+      "last_article_published": "2026-10-11T18:00:00+03:30",
       "error": ""
     },
     {
@@ -2894,8 +2942,8 @@
       "category": "فناوری و علم",
       "ok": true,
       "items": 6,
-      "attempted_at": "2026-10-12T05:56:15.201113+00:00",
-      "last_success_at": "2026-10-12T05:56:21.510734+00:00",
+      "attempted_at": "2026-10-12T06:13:08.818817+00:00",
+      "last_success_at": "2026-10-12T06:13:13.483698+00:00",
       "last_article_published": "2026-10-11T12:48:29+03:30",
       "error": ""
     },
@@ -2904,19 +2952,9 @@
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
       "items": 5,
-      "attempted_at": "2026-10-12T05:56:15.205359+00:00",
-      "last_success_at": "2026-10-12T05:56:22.171143+00:00",
+      "attempted_at": "2026-10-12T06:13:08.821883+00:00",
+      "last_success_at": "2026-10-12T06:13:13.635254+00:00",
       "last_article_published": "2026-10-12T08:52:26+03:30",
-      "error": ""
-    },
-    {
-      "name": "فردای اقتصاد",
-      "category": "بورس و بازار سرمایه",
-      "ok": true,
-      "items": 13,
-      "attempted_at": "2026-10-12T05:56:15.200808+00:00",
-      "last_success_at": "2026-10-12T05:56:22.371162+00:00",
-      "last_article_published": "2026-10-11T18:00:00+03:30",
       "error": ""
     },
     {
@@ -2924,9 +2962,9 @@
       "category": "پزشکی و سلامت",
       "ok": true,
       "items": 10,
-      "attempted_at": "2026-10-12T05:56:15.201394+00:00",
-      "last_success_at": "2026-10-12T05:56:22.574316+00:00",
-      "last_article_published": "2026-10-12T09:25:42+03:30",
+      "attempted_at": "2026-10-12T06:13:08.821071+00:00",
+      "last_success_at": "2026-10-12T06:13:14.199828+00:00",
+      "last_article_published": "2026-10-12T09:27:28+03:30",
       "error": ""
     },
     {
@@ -2934,9 +2972,9 @@
       "category": "بورس و بازار سرمایه",
       "ok": true,
       "items": 10,
-      "attempted_at": "2026-10-12T05:56:15.198450+00:00",
-      "last_success_at": "2026-10-12T05:56:26.809948+00:00",
-      "last_article_published": "2026-10-12T08:24:00+03:30",
+      "attempted_at": "2026-10-12T06:13:08.817826+00:00",
+      "last_success_at": "2026-10-12T06:13:16.231746+00:00",
+      "last_article_published": "2026-10-12T09:35:47+03:30",
       "error": ""
     }
   ],
