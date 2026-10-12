@@ -49,6 +49,18 @@ async function load(){
   }catch(e){console.error(e);$('status').textContent='خطا: '+e.message;}
 }
 function state(id){return choices[id]||{}}
+function selectedTopicsFor(n){
+  const s=state(n.id);
+  const raw=s.topics_manual===true&&Array.isArray(s.topics)?s.topics:(Array.isArray(s.topics)&&s.topics.some(t=>CATS.some(c=>c[0]===t))?s.topics:(Array.isArray(n.topics)?n.topics:(Array.isArray(s.topics)?s.topics:[])));
+  const selected=[];
+  raw.forEach(t=>{
+    if(t==='economy'||t==='markets')selected.push('economy-investment');
+    else if(t==='technology'||t==='ai')selected.push('technology-ai');
+    else if(CATS.some(c=>c[0]===t))selected.push(t);
+  });
+  if(!selected.length&&CATS.some(c=>c[0]===s.category))selected.push(s.category);
+  return [...new Set(selected)];
+}
 function cleanIfEmpty(id){
   const s=choices[id]; if(!s)return;
   if(!s.important&&!s.slider&&!s.manual_important&&!s.manual_slider&&!s.manual_breaking&&!s.republish&&!s.reject&&!s.deleted&&!s.category&&!s.topics_manual&&!(Array.isArray(s.topics)&&s.topics.length)&&!s.edited&&!s.published) delete choices[id];
@@ -128,8 +140,8 @@ function render(){
     card.appendChild(actions);
     const topicBox=document.createElement('div');topicBox.className='topic-picker';topicBox.style.cssText='display:flex;gap:8px 14px;flex-wrap:wrap;align-items:center;width:100%;padding:11px 12px;background:#f6fafb;border:1px solid #d9e5e9;border-radius:7px;margin-top:10px';
     const topicTitle=document.createElement('strong');topicTitle.textContent='موضوعات خبر (مطابق دسته‌های هدر):';topicTitle.style.cssText='font-size:12px;color:#142d40;width:100%;display:block;margin-bottom:2px';topicBox.appendChild(topicTitle);
-    const selectedTopics=Array.isArray(s.topics)?s.topics:(s.category?[s.category]:[]);
-    CATS.forEach(c=>{const lab=document.createElement('label');lab.style.cssText='display:inline-flex;align-items:center;gap:5px;font-size:12px;white-space:nowrap;cursor:pointer;padding:3px 0';const cb=document.createElement('input');cb.type='checkbox';cb.value=c[0];cb.checked=selectedTopics.includes(c[0]);cb.style.cssText='margin:0;width:15px;height:15px';cb.onchange=()=>{const next=Array.isArray(state(n.id).topics)?state(n.id).topics.slice():(state(n.id).category?[state(n.id).category]:[]);const vals=cb.checked?[...next,c[0]]:next.filter(t=>t!==c[0]);setCategory(n.id,vals);};lab.appendChild(cb);lab.appendChild(document.createTextNode(c[1]));topicBox.appendChild(lab);});
+    const selectedTopics=selectedTopicsFor(n);
+    CATS.forEach(c=>{const lab=document.createElement('label');lab.style.cssText='display:inline-flex;align-items:center;gap:5px;font-size:12px;white-space:nowrap;cursor:pointer;padding:3px 0';const cb=document.createElement('input');cb.type='checkbox';cb.value=c[0];cb.checked=selectedTopics.includes(c[0]);cb.style.cssText='margin:0;width:15px;height:15px';cb.onchange=()=>{const next=selectedTopicsFor(n);const vals=cb.checked?[...next,c[0]]:next.filter(t=>t!==c[0]);setCategory(n.id,vals);};lab.appendChild(cb);lab.appendChild(document.createTextNode(c[1]));topicBox.appendChild(lab);});
     card.appendChild(topicBox);
     const ed=document.createElement('div');ed.id='ed_'+n.id;ed.className='editor';
     ed.innerHTML='<input data-f="title" placeholder="عنوان"><textarea data-f="summary" placeholder="خلاصه"></textarea><input data-f="image" placeholder="آدرس تصویر"><div class="richbar"><button type="button" data-cmd="bold"><b>پررنگ</b></button><button type="button" data-cmd="italic"><i>کج</i></button><button type="button" data-cmd="insertUnorderedList">• فهرست</button><button type="button" data-cmd="insertOrderedList">۱. فهرست</button><button type="button" data-cmd="formatBlock" data-value="h2">عنوان</button><button type="button" data-cmd="formatBlock" data-value="p">پاراگراف</button><button type="button" data-cmd="createLink">لینک</button><button type="button" data-cmd="removeFormat">پاک‌کردن قالب</button></div><div class="richbody" data-f="content" contenteditable="true"></div>';
