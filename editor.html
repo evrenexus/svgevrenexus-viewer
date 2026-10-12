@@ -19,7 +19,7 @@ input,select,button{font:inherit;padding:8px;border:1px solid #ccc;border-radius
 <h1>پنل سردبیری Evren Nexus</h1>
 <div class="sub">دسته‌بندی اولیه خودکار است؛ انتخاب مطالب مهم و انتشار صفحه کامل، فقط با تصمیم سردبیر انجام می‌شود.</div>
 <div class="info">عنوان، خلاصه، متن، تصویر، دسته‌بندی و وضعیت مهم‌بودن خبر را ویرایش کن. ذخیره با GitHub انجام می‌شود؛ توکن فقط در نشست همین مرورگر می‌ماند. برای ذخیره، توکن Fine-grained با دسترسی Contents: Read and write لازم است.</div>
-<div class="automation-box"><div id="automationState" class="automation-state">وضعیت پردازش خودکار در حال بررسی است...</div><button id="automationToggle" class="automation-button pause" type="button" onclick="toggleAutomation()" disabled>در حال بررسی...</button></div>
+<div class="info">دریافت خبرها می‌تواند خودکار ادامه داشته باشد؛ اما انتخاب «مهم» و «اسلایدر» فقط دستی و با تصمیم سردبیر انجام می‌شود. هوش مصنوعی اجازه انتخاب یا انتشار این موارد را ندارد.</div>
 <div class="bar">
 <input id="q" placeholder="جستجوی عنوان..." style="min-width:260px">
 <select id="cat"><option value="">همه دسته‌های فعلی</option></select>
@@ -29,65 +29,17 @@ input,select,button{font:inherit;padding:8px;border:1px solid #ccc;border-radius
 <div style="background:#fff;padding:10px;border:1px solid #ddd;border-radius:8px;margin-bottom:12px;font-size:12px"><b>ذخیره مستقیم:</b> برای ثبت واقعی تغییرات، GitHub Token لازم است. توکن فقط در همین نشست مرورگر نگه‌داری می‌شود.<br><input id="token" type="password" placeholder="GitHub Token" style="width:100%;box-sizing:border-box;margin-top:7px"><button onclick="clearToken()" style="margin-top:7px">پاک کردن توکن</button></div><div id="list"></div></div>
 <script>
 let news=[],choices={},originalChoices={},saveMessages={},saveQueue=Promise.resolve();
-let automationPaused=false,automationBusy=false;
 const $=id=>document.getElementById(id);
 const CATS=[['economy-investment','اقتصاد و سرمایه‌گذاری'],['crypto','ارزهای دیجیتال'],['currency-gold','ارز و طلا'],['real-estate','بازار مسکن'],['auto','بازار خودرو'],['technology-ai','تکنولوژی و فناوری'],['health','دانش و سلامت']];
 
-function renderAutomation(){
-  const state=$('automationState'),button=$('automationToggle');
-  if(!state||!button)return;
-  state.innerHTML=automationPaused
-    ?'<b style="color:#b42318">پردازش خودکار متوقف است.</b><br>دریافت خبر از منابع و دسته‌بندی هوشمند تا فعال‌سازی مجدد اجرا نمی‌شود.'
-    :'<b style="color:#14804a">پردازش خودکار فعال است.</b><br>دریافت و دسته‌بندی خبرها طبق زمان‌بندی ادامه دارد.';
-  button.textContent=automationBusy?'در حال ثبت وضعیت...':(automationPaused?'▶️ فعال‌سازی دوباره خودکار':'⏸ توقف دریافت و دسته‌بندی خودکار');
-  button.className='automation-button '+(automationPaused?'resume':'pause');
-  button.disabled=automationBusy;
-}
-async function toggleAutomation(){
-  if(automationBusy)return;
-  const token=$('token').value.trim()||sessionStorage.getItem('evren_github_token')||'';
-  if(!token){$('status').textContent='برای تغییر وضعیت خودکار ابتدا وارد پنل شوید.';return;}
-  automationBusy=true;renderAutomation();$('status').textContent='در حال ثبت وضعیت پردازش خودکار در GitHub...';
-  try{
-    const repo='evrenexus/svgevrenexus-viewer',path='data/automation.json';
-    const headers={Authorization:'Bearer '+token,Accept:'application/vnd.github+json'};
-    const get=await fetch('https://api.github.com/repos/'+repo+'/contents/'+path+'?ref=main&t='+Date.now(),{headers,cache:'no-store'});
-    if(!get.ok)throw new Error('خواندن وضعیت خودکار ناموفق بود ('+get.status+')');
-    const current=await get.json();
-    let encoded=current.content;
-    if(!encoded&&current.sha){
-      const br=await fetch('https://api.github.com/repos/'+repo+'/git/blobs/'+current.sha,{headers,cache:'no-store'});
-      if(!br.ok)throw new Error('خواندن فایل وضعیت خودکار ناموفق بود ('+br.status+')');
-      encoded=(await br.json()).content;
-    }
-    if(!encoded)throw new Error('محتوای فایل وضعیت خودکار در دسترس نیست.');
-    const bytes=Uint8Array.from(atob(encoded.replace(/\s/g,'')),c=>c.charCodeAt(0));
-    const data=JSON.parse(new TextDecoder('utf-8',{fatal:true}).decode(bytes));
-    const next=!automationPaused,now=new Date().toISOString();
-    data.paused=next;data.updated=now;data.updated_by='editorial-panel';
-    const content=JSON.stringify(data,null,2)+'\n';
-    const b=new TextEncoder().encode(content);let bin='';for(const byte of b)bin+=String.fromCharCode(byte);
-    const put=await fetch('https://api.github.com/repos/'+repo+'/contents/'+path,{
-      method:'PUT',headers:Object.assign({},headers,{'Content-Type':'application/json'}),
-      body:JSON.stringify({message:next?'Pause automatic news collection and classification':'Resume automatic news collection and classification',content:btoa(bin),sha:current.sha,branch:'main'})
-    });
-    if(put.status===409)throw new Error('فایل هم‌زمان تغییر کرده؛ دوباره کلیک کن.');
-    if(!put.ok)throw new Error('ثبت وضعیت ناموفق بود ('+put.status+'): '+(await put.text()).slice(0,150));
-    automationPaused=next;
-    $('status').textContent=next?'⏸ توقف ثبت شد؛ اجرای خودکار بعدی از دریافت و دسته‌بندی خبر عبور می‌کند.':'▶️ فعال‌سازی ثبت شد؛ اجرای خودکار با تغییر وضعیت دوباره شروع می‌شود.';
-  }catch(e){console.error(e);$('status').textContent='❌ تغییر وضعیت ثبت نشد: '+e.message;}
-  finally{automationBusy=false;renderAutomation();}
-}
 async function load(){
   $('status').textContent='در حال دریافت...';
   try{
     const getJSON=async (urls)=>{let last='';for(const u of urls){try{const r=await fetch(u,{cache:'no-store'});if(!r.ok){last='HTTP '+r.status+' '+u;continue;}const t=await r.text();if(!t.trim())throw new Error('پاسخ خالی');return JSON.parse(t);}catch(e){last=e.message;}}throw new Error(last||'خطا در دریافت داده');};
-    const [d,e,a]=await Promise.all([
+    const [d,e]=await Promise.all([
       getJSON(['./data/news.json?'+Date.now()]),
-      getJSON(['./data/editorial.json?'+Date.now()]),
-      getJSON(['./data/automation.json?'+Date.now()])
+      getJSON(['./data/editorial.json?'+Date.now()])
     ]);
-    automationPaused=a.paused===true;renderAutomation();
     news=Array.isArray(d)?d:(Array.isArray(d.items)?d.items:(Array.isArray(d.news)?d.news:[]));
     if(!news.length) throw new Error('news.json دریافت شد اما آرایه خبرها پیدا نشد');
     choices=JSON.parse(JSON.stringify(e.items||{}));
@@ -127,12 +79,15 @@ function captureEditorFields(id){
 function setChoice(id,key,val){
   captureEditorFields(id);
   choices[id]=choices[id]||{};
-  if(key==='slider'){
-    delete choices[id].manual_slider;
-    if(val) choices[id].important=true;
+  if(key==='important'){
+    choices[id].manual_important=!!val;
+    choices[id].important=!!val;
+  }else if(key==='slider'){
+    choices[id].manual_slider=!!val;
+    choices[id].slider=!!val;
+  }else{
+    choices[id][key]=!!val;
   }
-  if(key==='important'&&!val) choices[id].slider=false;
-  choices[id][key]=!!val;
   choices[id].updated_at=new Date().toISOString();
   render();
   $('status').textContent='تغییر ثبت‌نشده است؛ برای ذخیره واقعی روی دکمه «ذخیره» همین خبر کلیک کن.';
@@ -207,10 +162,10 @@ async function publishManualArticle(id){
     choices[id].edited=true;
   }
   const s=choices[id];
-  if(s.important!==true&&!(s.important===undefined&&s.manual_important===true)){$('status').textContent='ابتدا با دکمه «⭐ مهم» این خبر را انتخاب کن؛ سپس صفحه مستقل را منتشر کن.';return;}
+  if(s.manual_important!==true&&s.important!==true&&s.manual_slider!==true&&s.slider!==true){$('status').textContent='ابتدا این خبر را در «⭐ مهم» یا «🖼 اسلایدر» انتخاب کن.';return;}
   const bodyText=String(s.content||"").replace(/<[^>]*>/g," ").replace(/&nbsp;|&#160;/gi," ").replace(/\s+/g," ").trim();
   if(bodyText.length<100){$('status').textContent='برای انتشار صفحه مستقل، ابتدا متن کامل را در بخش «ویرایش» وارد و ذخیره کن.';if(box)box.classList.add('open');return;}
-  s.title=String(s.title||n.title||"").trim();s.summary=String(s.summary||n.summary||"").trim();s.important=true;s.published=true;s.republish=true;s.edited=true;s.updated_at=new Date().toISOString();
+  s.title=String(s.title||n.title||"").trim();s.summary=String(s.summary||n.summary||"").trim();s.important=s.manual_important===true;s.slider=s.manual_slider===true;s.published=true;s.republish=true;s.edited=true;s.updated_at=new Date().toISOString();
   const path="articles/manual-"+safeArticleId(id)+".html";s.article_url=path;
   $('status').textContent='در حال ساخت صفحه مستقل و ثبت انتخاب دستی مطالب مهم...';
   try{
@@ -224,11 +179,32 @@ async function publishManualArticle(id){
 }
 async function saveEdit(id){
   const box=document.getElementById('ed_'+id); if(!box)return; choices[id]=choices[id]||{};
-  choices[id].title=box.querySelector('[data-f="title"]').value;
-  choices[id].summary=box.querySelector('[data-f="summary"]').value;
+  choices[id].title=box.querySelector('[data-f="title"]').value.trim();
+  choices[id].summary=box.querySelector('[data-f="summary"]').value.trim();
   choices[id].content=box.querySelector('[data-f="content"]').innerHTML;
-  choices[id].image=box.querySelector('[data-f="image"]').value;
+  choices[id].image=box.querySelector('[data-f="image"]').value.trim();
   choices[id].edited=true; choices[id].updated_at=new Date().toISOString();
+  const s=choices[id],n=news.find(x=>String(x.id)===String(id));
+  const selected=s.manual_important===true||s.important===true||s.manual_slider===true||s.slider===true;
+  if(selected){
+    const bodyText=String(s.content||"").replace(/<[^>]*>/g," ").replace(/&nbsp;|&#160;/gi," ").replace(/\\s+/g," ").trim();
+    if(bodyText.length<100){$('status').textContent='برای ساخت صفحه مستقل، متن کامل خبر را حداقل در ۱۰۰ کاراکتر تکمیل کن.';return;}
+    if(!n){$('status').textContent='خبر اصلی پیدا نشد؛ صفحه مستقل ساخته نشد.';return;}
+    s.important=s.manual_important===true;s.slider=s.manual_slider===true;s.published=true;s.republish=true;
+    s.article_url="articles/manual-"+safeArticleId(id)+".html";
+    s.updated_at=new Date().toISOString();
+    $('status').textContent='در حال ساخت/به‌روزرسانی صفحه مستقل با متن ویرایش‌شده...;';
+    try{
+      const token=$('token').value.trim()||sessionStorage.getItem('evren_github_token')||'';
+      if(!token)throw new Error('برای ساخت صفحه مستقل ابتدا توکن GitHub را وارد کن.');
+      await writeRepoFile(s.article_url,makeManualArticlePage(id,s),'Update manually selected article '+id,token);
+      await saveOne(id);
+      if(JSON.stringify(originalChoices[id]||{})!==JSON.stringify(state(id)))throw new Error('صفحه ساخته شد اما ذخیره وضعیت تأیید نشد؛ دکمه ذخیره را دوباره بزن.');
+      saveMessages[id]={status:'✅ ویرایش ذخیره شد و صفحه مستقل به‌روز شد.',output:'صفحه: '+s.article_url+'\\nلینک: https://evrenexus.ir/'+s.article_url,kind:'ok'};
+      $('status').textContent='✅ صفحه مستقل با آخرین ویرایش ساخته/به‌روزرسانی شد.';render();
+    }catch(err){console.error(err);saveMessages[id]={status:'❌ صفحه مستقل ساخته نشد: '+err.message,output:'',kind:'err'};$('status').textContent='❌ '+err.message;render();}
+    return;
+  }
   $('status').textContent='در حال ذخیره ویرایش در GitHub...';
   await saveOne(id);
 }
@@ -237,7 +213,7 @@ function render(){
   let arr=news.filter(n=>(!q||(n.title||'').toLowerCase().includes(q))&&(!cat||n.category===cat||(Array.isArray(state(n.id).topics)&&state(n.id).topics.includes(cat))));
   arr=arr.filter(n=>{const s=state(n.id);
     return f==='all'||(f==='important'&&(s.important===true||s.manual_important===true))||(f==='breaking'&&(s.manual_breaking===true||s.auto_breaking===true))||
-      (f==='slider'&&(s.slider===true||s.manual_slider===true||s.auto_slider===true))||(f==='republish'&&s.republish)||(f==='deleted'&&s.deleted)||
+      (f==='slider'&&(s.slider===true||s.manual_slider===true))||(f==='republish'&&s.republish)||(f==='deleted'&&s.deleted)||
       (f==='unselected'&&!s.important&&!s.slider&&!s.manual_important&&!s.manual_slider&&!s.manual_breaking&&!s.republish&&!s.reject&&!s.deleted&&!s.category&&!s.edited&&!s.published);
   });
   const list=$('list');list.innerHTML='';if(!arr.length){list.innerHTML='<div class="empty">خبری پیدا نشد.</div>';return;}
@@ -246,9 +222,9 @@ function render(){
     const title=document.createElement('div');title.className='title';title.textContent=n.title||'بدون عنوان';card.appendChild(title);
     const meta=document.createElement('div');meta.className='meta';meta.textContent=(n.source||'')+' · '+fmt(n.published)+' · دسته فعلی: '+(n.category||'نامشخص')+(s.deleted?' · حذف‌شده':'');card.appendChild(meta);
     const actions=document.createElement('div');actions.className='actions';
-    const aiLabel=document.createElement('span');aiLabel.style.cssText='font-size:11px;color:#666;padding:7px 4px';aiLabel.textContent='AI: '+(s.ai_importance!==undefined?s.ai_importance:'—')+(s.ai_political?' · فیلتر سیاسی':'');actions.appendChild(aiLabel);
-    const isImportant=s.important!==undefined?!!s.important:!!s.manual_important;const important=makeButton('important','⭐ مهم',isImportant);important.onclick=()=>setChoice(n.id,'important',!isImportant);actions.appendChild(important);
-    const slider=makeButton('slider','🖼 اسلایدر',!!(s.important&&(s.slider||s.manual_slider)));slider.disabled=!s.important;slider.title=s.important?'نمایش در اسلایدر':'ابتدا خبر را «مهم» کنید';slider.onclick=()=>setChoice(n.id,'slider',!((state(n.id).slider===true)||(state(n.id).manual_slider===true)));actions.appendChild(slider);
+    
+    const isImportant=s.manual_important===true||s.important===true;const important=makeButton('important','⭐ مهم',isImportant);important.onclick=()=>setChoice(n.id,'important',!isImportant);actions.appendChild(important);
+    const isSlider=s.manual_slider===true||s.slider===true;const slider=makeButton('slider','🖼 اسلایدر',isSlider);slider.title='انتخاب مستقل برای اسلایدر؛ نیازی به انتخاب «مهم» نیست';slider.onclick=()=>setChoice(n.id,'slider',!isSlider);actions.appendChild(slider);
     const edit=makeButton('edit','✏️ ویرایش',false);edit.addEventListener("click",function(){toggleNewsEditor(n.id);});actions.appendChild(edit);
     const publish=makeButton('publish',s.published===true?'📄 به‌روزرسانی صفحه مستقل':'📄 انتشار صفحه مستقل',s.published===true);publish.onclick=()=>publishManualArticle(n.id);actions.appendChild(publish);
     const del=makeButton('delete','🗑️ '+(s.deleted?'بازگردانی خبر':'حذف خبر'),!!s.deleted);del.onclick=()=>toggleDelete(n.id);actions.appendChild(del); const saveButton=makeButton('primary','💾 ذخیره',false);saveButton.onclick=()=>saveOne(n.id);actions.appendChild(saveButton);
