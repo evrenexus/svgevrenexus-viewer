@@ -53,7 +53,7 @@ function renderFeatured(){
   window.EVREN_EDITORIAL=editorial;
   var items=data.items.filter(function(x){
    var ed=editorial[String(x&&x.id||"")]||{};
-   return x&&String(x.title||"").trim()&&x.url&&!(ed.deleted===true||ed.hidden===true||ed.reject===true)&&Array.isArray(x.topics)&&x.topics.some(function(t){return ALLOWED_TOPICS.indexOf(t)!==-1});
+   return x&&String(x.title||"").trim()&&x.url&&!(ed.deleted===true)&&Array.isArray(x.topics)&&x.topics.some(function(t){return ALLOWED_TOPICS.indexOf(t)!==-1});
   });
   render(items.slice(0,8),aiFor);
  }).catch(function(e){
