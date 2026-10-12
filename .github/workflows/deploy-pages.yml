@@ -9,7 +9,7 @@ on:
       - "market-data/**"
   workflow_dispatch:
   workflow_run:
-    workflows: ["Build public data", "Evren Nexus — AI Manager (Gemini → Groq → OpenRouter failover)"]
+    workflows: ["Build public data", "Evren Nexus — AI Manager (Gemini → Groq → OpenRouter failover)", "Evren Nexus — Update All"]
     types: [completed]
 
 permissions:
@@ -23,7 +23,7 @@ concurrency:
 
 jobs:
   deploy:
-    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion != 'cancelled'
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
