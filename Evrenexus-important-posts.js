@@ -103,7 +103,6 @@
             !/^articles\/[a-zA-Z0-9._-]+\.html$/.test(articlePath) ||
             !String(s.content || "").replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim()) return null;
         var topics = s.topics_manual === true && Array.isArray(s.topics) ? s.topics : (Array.isArray(n.topics) ? n.topics : []);
-        if (!topics.some(function (topic) { return ALLOWED_TOPICS.indexOf(topic) !== -1; })) return null;
         return {
           id: String(id), title: safeText(s.title || n.title), summary: safeText(s.summary || n.summary),
           image: /^https?:\/\//i.test(String(s.image || n.image || "")) ? String(s.image || n.image) : "",
