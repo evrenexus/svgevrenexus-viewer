@@ -145,31 +145,56 @@ function renderRows(){
  });
  $("rows").innerHTML=html;
 }
-async function refresh(){
+async function readJson(url,timeoutMs){
+ var controller=typeof AbortController!=="undefined"?new AbortController():null;
+ var timer=controller?setTimeout(function(){controller.abort()},timeoutMs):null;
  try{
-  var response=await fetch(API,{cache:"no-store"});
+  var options={cache:"no-store"};
+  if(controller)options.signal=controller.signal;
+  var response=await fetch(url,options);
   if(!response.ok)throw new Error("HTTP "+response.status);
-  var payload=await response.json();
-  var raw=Array.isArray(payload)?payload:(Array.isArray(payload.data)?payload.data:(Array.isArray(payload.data&&payload.data.data)?payload.data.data:[]));
-  if(payload&&payload.success===false)throw new Error(payload.msg||"LBank API error");
-  if(!raw.length)throw new Error("پاسخ بازار خالی است");
-  var markets=raw.filter(isUsdtPerp).map(function(x){
-   var symbol=symbolOf(x);
-   return {symbol:symbol,base:symbol.slice(0,-4),last:num(x.lastPrice),open24:num(x.openPrice),turnover:num(x.turnover),volume:num(x.volume),marked:num(x.markedPrice)};
-  }).filter(function(m){return m.last!==null&&m.last>0});
-  if(!markets.length)throw new Error("قرارداد USDT در پاسخ پیدا نشد");
-  var now=Date.now();
-  state.markets=markets;
-  updateBaselines(markets,now);
-  state.lastUpdated=now;
-  $("connection").innerHTML='<span class="dot"></span>متصل به LBank';
-  $("updated").textContent="آخرین به‌روزرسانی: "+new Date(now).toLocaleTimeString("fa-IR");
-  renderRows();
+  return await response.json();
+ }finally{if(timer)clearTimeout(timer)}
+}
+function extractMarkets(payload){
+ if(payload&&payload.success===false)throw new Error(payload.msg||"LBank API error");
+ if(payload&&payload.result===false)throw new Error(payload.msg||"LBank API error");
+ if(payload&&payload.error_code!==undefined&&Number(payload.error_code)!==0)throw new Error(payload.msg||"LBank API error");
+ var raw=Array.isArray(payload)?payload:(Array.isArray(payload&&payload.data)?payload.data:(Array.isArray(payload&&payload.data&&payload.data.data)?payload.data.data:[]));
+ if(!raw.length)throw new Error("پاسخ بازار خالی است");
+ var markets=raw.filter(isUsdtPerp).map(function(x){
+  var symbol=symbolOf(x);
+  return {symbol:symbol,base:symbol.slice(0,-4),last:num(x.lastPrice),open24:num(x.openPrice),turnover:num(x.turnover),volume:num(x.volume),marked:num(x.markedPrice)};
+ }).filter(function(m){return m.last!==null&&m.last>0});
+ if(!markets.length)throw new Error("قرارداد USDT در پاسخ پیدا نشد");
+ return markets;
+}
+async function refresh(){
+ var markets=null,source="live",updatedAt=Date.now(),liveError=null;
+ try{
+  markets=extractMarkets(await readJson(API,4500));
  }catch(e){
-  $("connection").innerHTML='<span class="dot off"></span>دریافت داده ناموفق';
-  if(!state.markets.length)$("rows").innerHTML='<tr><td colspan="15" class="empty">داده زنده دریافت نشد. ممکن است اتصال مستقیم مرورگر به API فیوچرز LBank محدود باشد؛ بعداً دوباره تلاش می‌کنیم.</td></tr>';
-  console.warn("LBank futures data:",e);
+  liveError=e;
+  try{
+   var cached=await readJson("https://raw.githubusercontent.com/evrenexus/svgevrenexus-viewer/main/market-data/lbank-futures.json?v="+Date.now(),7000);
+   markets=extractMarkets(cached);
+   source="cache";
+   if(cached.updatedAt){var parsedDate=Date.parse(cached.updatedAt);if(Number.isFinite(parsedDate))updatedAt=parsedDate}
+  }catch(cacheError){
+   console.warn("LBank live API and fallback cache failed:",liveError,cacheError);
+  }
  }
+ if(!markets){
+  $("connection").innerHTML='<span class="dot off"></span>دریافت داده ناموفق';
+  if(!state.markets.length)$("rows").innerHTML='<tr><td colspan="15" class="empty">قیمت دریافت نشد. اتصال مستقیم LBank ناموفق است و داده جایگزین هنوز آماده نیست؛ صفحه دوباره تلاش می‌کند.</td></tr>';
+  return;
+ }
+ state.markets=markets;
+ updateBaselines(markets,Date.now());
+ state.lastUpdated=updatedAt;
+ $("connection").innerHTML=source==="live"?'<span class="dot"></span>متصل مستقیم به LBank':'<span class="dot off"></span>داده جایگزین LBank';
+ $("updated").textContent=(source==="live"?"آخرین به‌روزرسانی: ":"زمان آخرین داده: ")+new Date(updatedAt).toLocaleTimeString("fa-IR");
+ renderRows();
 }
 $("search").addEventListener("input",function(){state.search=this.value.trim().toUpperCase().replace(/[^A-Z0-9]/g,"");renderRows()});
 readStored();renderHeaders();refresh();setInterval(refresh,POLL_MS);
