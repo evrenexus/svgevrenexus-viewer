@@ -1,6 +1,25 @@
 {
-  "updated": "2026-10-12T15:57:10.139629+00:00",
+  "updated": "2026-10-12T16:11:05.047050+00:00",
   "items": [
+    {
+      "id": "66b567cb8da866d97bc4",
+      "title": "ویدئو؛ پخش آهنگ مهستی از سریال شبکه یک",
+      "summary": "پخش آهنگ مشهور مهستی در سکانس پایانی سریال «اسباب زحمت» به کارگردانی سعید آقاخانی مورد توجه مخاطبان قرار گرفت.",
+      "content": "۱۹:۲۷ - \n۲۰ مهر ۱۴۰۵ \n\nویدئو؛ پخش آهنگ مهستی از سریال شبکه یک \n\nپخش آهنگ مشهور مهستی در سکانس پایانی سریال «اسباب زحمت» به کارگردانی سعید آقاخانی مورد توجه مخاطبان قرار گرفت. \n\nپ\n\n،\n\nپـ\n\nتبلیغات\n\nتبلیغات\n\nتبلیغات\n\nva NewsLis Limi = 5;\n\nاز میان اخبار \n\nویدئو؛ پخش آهنگ مهستی از سریال شبکه یک \n\nپیام قابل تامل رئیس بنیاد ایران‌شناسی در روز گرامیداشت حافظ \n\nناروتو با مانگای جدید و انیمه تازه برمی‌گردد؛ ماجرای نینجای محبوب وارد مرحله تازه‌ای شد \n\nپُز دادن قیاسی با رضا گلزار! \n\nشما قبلا این خبر را لایک کرده‌اید . \n\nfunc ion oPe sianNumbe (numbe ) {\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\nelemen .addEven Lis ene (\"click\", func ion() {\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n. hen(func ion( esponse) {\nif ( esponse.s a us == 200) {\nesponse.json(). hen(func ion(newSco e) {\nva likeNumbe Span = elemen .que ySelec o (\".like\");\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\nva hiddenHea = elemen .que ySelec o (\".hidden\");\nvisibleHea .classLis .add(\"hidden\");\nfavo i eBu on.classLis .add(\"hidden\");\nhiddenHea .classLis . emove(\"hidden\");\nva e o Message = elemen .que ySelec o (\".e o _message\");\nif (e o Message) {\ne o Message.classLis . emove(\"hidden_e o \");\n}\n});\n} else {\nva e o Message = elemen .que ySelec o (\".e o _message\");\nif (e o Message) {\ne o Message.classLis .add(\"hidden_e o \");\nse Timeou (func ion() {\ne o Message.classLis . emove(\"hidden_e o \");\n}, 3000);\n}\n}\n})\n});\n});\n\nتبلیغات",
+      "url": "https://fararu.com/fa/news/1009291/%D9%88%DB%8C%D8%AF%D8%A6%D9%88-%D9%BE%D8%AE%D8%B4-%D8%A2%D9%87%D9%86%DA%AF-%D9%85%D9%87%D8%B3%D8%AA%DB%8C-%D8%A7%D8%B2-%D8%B3%D8%B1%DB%8C%D8%A7%D9%84-%D8%B4%D8%A8%DA%A9%D9%87-%DB%8C%DA%A9",
+      "image": "https://mcdn.fararu.com/ao/1a130cda379_1758ed.webp",
+      "source": "فرارو",
+      "source_site": "https://fararu.com/",
+      "allow_internal_republish": true,
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "published": "2026-10-12T19:27:48+03:30",
+      "topics": [
+        "science-life"
+      ],
+      "importance_score": 0,
+      "important": false,
+      "first_seen_at": "2026-10-12T16:11:14.584568+00:00"
+    },
     {
       "id": "e0e9984b2df034428dfa",
       "title": "افزایش شدید قیمت نفت در بازارهای جهانی/ قیمت هر بشکه نفت برنت از ۱۰۷ دلار گذشت",
@@ -387,7 +406,8 @@
       ],
       "importance_score": 8,
       "important": true,
-      "first_seen_at": "2026-10-12T13:57:41.234983+00:00"
+      "first_seen_at": "2026-10-12T13:57:41.234983+00:00",
+      "image_tries": 1
     },
     {
       "id": "7a22404f8feec603cafa",
@@ -938,7 +958,7 @@
       "importance_score": 0,
       "important": false,
       "first_seen_at": "2026-10-12T10:53:15.905984+00:00",
-      "image_tries": 2
+      "image_tries": 3
     },
     {
       "id": "26208444061be5528fec",
@@ -977,7 +997,7 @@
       "importance_score": 8,
       "important": true,
       "first_seen_at": "2026-10-12T07:42:03.484995+00:00",
-      "image_tries": 1
+      "image_tries": 2
     },
     {
       "id": "bc67faed5095c805a8fe",
@@ -1055,7 +1075,7 @@
       "importance_score": 1,
       "important": false,
       "first_seen_at": "2026-10-12T10:44:16.909567+00:00",
-      "image_tries": 2
+      "image_tries": 3
     },
     {
       "id": "a890a690908f8ec97eb5",
@@ -3118,26 +3138,6 @@
       "importance_score": 0,
       "important": false,
       "first_seen_at": "2026-10-11T15:04:50.462080+00:00"
-    },
-    {
-      "id": "2a37005dcdb37ebec3ba",
-      "title": "فروش خودرو لینک اند کو 03 مدل 2027 آغاز شد",
-      "summary": "نخستین شرایط فروش خودروی وارداتی لینک اند کو 03 نسخه Hyper Pro مدل 2027 اعلام شد. این سدان با قیمت قطعی ...",
-      "content": "",
-      "url": "https://www.iranjib.ir/shownews/148739/فروش-خودرو-لینک-اند-کو-03-مدل-2027-آغاز-شد/",
-      "image": "",
-      "source": "ایران‌جیب",
-      "source_site": "https://www.iranjib.ir/",
-      "allow_internal_republish": true,
-      "category": "اقتصاد و سرمایه‌گذاری",
-      "published": "2026-10-11T18:34:07+03:30",
-      "topics": [
-        "auto"
-      ],
-      "importance_score": 0,
-      "important": false,
-      "first_seen_at": "2026-10-11T15:19:15.157750+00:00",
-      "image_tries": 3
     }
   ],
   "sources": [
@@ -3146,8 +3146,8 @@
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
       "items": 10,
-      "attempted_at": "2026-10-12T15:57:17.383948+00:00",
-      "last_success_at": "2026-10-12T15:57:18.508186+00:00",
+      "attempted_at": "2026-10-12T16:11:12.663029+00:00",
+      "last_success_at": "2026-10-12T16:11:13.720118+00:00",
       "last_article_published": "2026-10-12T19:19:41+03:30",
       "error": ""
     },
@@ -3156,8 +3156,8 @@
       "category": "پزشکی و سلامت",
       "ok": true,
       "items": 6,
-      "attempted_at": "2026-10-12T15:57:17.394432+00:00",
-      "last_success_at": "2026-10-12T15:57:18.835860+00:00",
+      "attempted_at": "2026-10-12T16:11:12.673731+00:00",
+      "last_success_at": "2026-10-12T16:11:14.406510+00:00",
       "last_article_published": "2026-10-12T12:57:40+03:30",
       "error": ""
     },
@@ -3166,8 +3166,8 @@
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
       "items": 8,
-      "attempted_at": "2026-10-12T15:57:17.384805+00:00",
-      "last_success_at": "2026-10-12T15:57:18.987397+00:00",
+      "attempted_at": "2026-10-12T16:11:12.663965+00:00",
+      "last_success_at": "2026-10-12T16:11:14.516269+00:00",
       "last_article_published": "2026-10-12T19:19:36+03:30",
       "error": ""
     },
@@ -3176,9 +3176,9 @@
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
       "items": 5,
-      "attempted_at": "2026-10-12T15:57:17.401339+00:00",
-      "last_success_at": "2026-10-12T15:57:19.261664+00:00",
-      "last_article_published": "2026-10-12T19:10:33+03:30",
+      "attempted_at": "2026-10-12T16:11:12.677272+00:00",
+      "last_success_at": "2026-10-12T16:11:14.584510+00:00",
+      "last_article_published": "2026-10-12T19:27:48+03:30",
       "error": ""
     },
     {
@@ -3186,8 +3186,8 @@
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
       "items": 7,
-      "attempted_at": "2026-10-12T15:57:17.385252+00:00",
-      "last_success_at": "2026-10-12T15:57:19.579877+00:00",
+      "attempted_at": "2026-10-12T16:11:12.664382+00:00",
+      "last_success_at": "2026-10-12T16:11:14.949729+00:00",
       "last_article_published": "2026-10-12T19:06:02+03:30",
       "error": ""
     },
@@ -3196,8 +3196,8 @@
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
       "items": 9,
-      "attempted_at": "2026-10-12T15:57:17.402456+00:00",
-      "last_success_at": "2026-10-12T15:57:19.763690+00:00",
+      "attempted_at": "2026-10-12T16:11:12.677836+00:00",
+      "last_success_at": "2026-10-12T16:11:15.161888+00:00",
       "last_article_published": "2026-10-12T18:11:33+03:30",
       "error": ""
     },
@@ -3206,8 +3206,8 @@
       "category": "بورس و بازار سرمایه",
       "ok": true,
       "items": 11,
-      "attempted_at": "2026-10-12T15:57:17.385976+00:00",
-      "last_success_at": "2026-10-12T15:57:21.016765+00:00",
+      "attempted_at": "2026-10-12T16:11:12.665064+00:00",
+      "last_success_at": "2026-10-12T16:11:16.277096+00:00",
       "last_article_published": "2026-10-12T16:45:00+03:30",
       "error": ""
     },
@@ -3216,8 +3216,8 @@
       "category": "فناوری و علم",
       "ok": true,
       "items": 5,
-      "attempted_at": "2026-10-12T15:57:17.389351+00:00",
-      "last_success_at": "2026-10-12T15:57:22.113810+00:00",
+      "attempted_at": "2026-10-12T16:11:12.670801+00:00",
+      "last_success_at": "2026-10-12T16:11:17.433035+00:00",
       "last_article_published": "2026-10-12T15:10:25+03:30",
       "error": ""
     },
@@ -3226,8 +3226,8 @@
       "category": "بورس و بازار سرمایه",
       "ok": true,
       "items": 10,
-      "attempted_at": "2026-10-12T15:57:17.387037+00:00",
-      "last_success_at": "2026-10-12T15:57:22.249232+00:00",
+      "attempted_at": "2026-10-12T16:11:12.668231+00:00",
+      "last_success_at": "2026-10-12T16:11:17.488302+00:00",
       "last_article_published": "2026-10-12T18:29:40+03:30",
       "error": ""
     },
@@ -3236,8 +3236,8 @@
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
       "items": 6,
-      "attempted_at": "2026-10-12T15:57:17.398352+00:00",
-      "last_success_at": "2026-10-12T15:57:23.142084+00:00",
+      "attempted_at": "2026-10-12T16:11:12.676708+00:00",
+      "last_success_at": "2026-10-12T16:11:18.329796+00:00",
       "last_article_published": "2026-10-12T18:22:33+03:30",
       "error": ""
     },
@@ -3246,8 +3246,8 @@
       "category": "پزشکی و سلامت",
       "ok": true,
       "items": 12,
-      "attempted_at": "2026-10-12T15:57:17.393342+00:00",
-      "last_success_at": "2026-10-12T15:57:23.178345+00:00",
+      "attempted_at": "2026-10-12T16:11:12.671340+00:00",
+      "last_success_at": "2026-10-12T16:11:18.590940+00:00",
       "last_article_published": "2026-10-12T15:27:43+03:30",
       "error": ""
     },
@@ -3256,8 +3256,8 @@
       "category": "بورس و بازار سرمایه",
       "ok": true,
       "items": 12,
-      "attempted_at": "2026-10-12T15:57:17.386501+00:00",
-      "last_success_at": "2026-10-12T15:57:25.792907+00:00",
+      "attempted_at": "2026-10-12T16:11:12.667697+00:00",
+      "last_success_at": "2026-10-12T16:11:21.801421+00:00",
       "last_article_published": "2026-10-12T18:41:26+03:30",
       "error": ""
     }
