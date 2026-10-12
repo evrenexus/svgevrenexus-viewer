@@ -207,7 +207,7 @@ async function publishManualArticle(id){
     choices[id].edited=true;
   }
   const s=choices[id];
-  if(s.important!==true&&s.manual_important!==true){$('status').textContent='ابتدا با دکمه «⭐ مهم» این خبر را انتخاب کن؛ سپس صفحه مستقل را منتشر کن.';return;}
+  if(s.important!==true&&!(s.important===undefined&&s.manual_important===true)){$('status').textContent='ابتدا با دکمه «⭐ مهم» این خبر را انتخاب کن؛ سپس صفحه مستقل را منتشر کن.';return;}
   const bodyText=String(s.content||"").replace(/<[^>]*>/g," ").replace(/&nbsp;|&#160;/gi," ").replace(/\s+/g," ").trim();
   if(bodyText.length<100){$('status').textContent='برای انتشار صفحه مستقل، ابتدا متن کامل را در بخش «ویرایش» وارد و ذخیره کن.';if(box)box.classList.add('open');return;}
   s.title=String(s.title||n.title||"").trim();s.summary=String(s.summary||n.summary||"").trim();s.important=true;s.published=true;s.republish=true;s.edited=true;s.updated_at=new Date().toISOString();
