@@ -40,7 +40,7 @@ function getTopic(topic,page,q){
  return Promise.all([loadLatest(),loadPolicy()]).then(function(parts){
   var latest=parts[0],lt=latest&&latest.topics&&latest.topics[key];
   if(!lt||!Array.isArray(lt.items))throw Error("latest-news.json topic missing: "+key);
-  var per=(latest.config&&latest.config.regularPerPage)||21,p=Math.max(1,parseInt(page,10)||1);
+  var per=21,p=Math.max(1,parseInt(page,10)||1);
   var rr=filterItems(lt.items).filter(function(x){return topicMatches(x,key);});
   if(query)rr=rr.filter(function(x){return((x.title||"")+" "+(x.summary||"")+" "+(x.source||"")).toLowerCase().indexOf(query)!==-1;});
   rr.sort(function(a,b){return (Date.parse(b.published)||0)-(Date.parse(a.published)||0)||String(a.id||"").localeCompare(String(b.id||""));});
@@ -136,7 +136,7 @@ function buildClientFallback(topic,page,q){
   var items=filterItems(t.items).filter(function(x){return topicMatches(x,key);});
   if(q)items=items.filter(function(x){return((x.title||"")+" "+(x.summary||"")+" "+(x.source||"")).toLowerCase().indexOf(String(q).toLowerCase())!==-1;});
   items.sort(function(a,b){return (Date.parse(b.published)||0)-(Date.parse(a.published)||0)||String(a.id||"").localeCompare(String(b.id||""));});
-  var p=Math.max(1,parseInt(page,10)||1),per=(latest.config&&latest.config.regularPerPage)||21,start=(p-1)*per;
+  var p=Math.max(1,parseInt(page,10)||1),per=21,start=(p-1)*per;
   return{ok:true,featured:[],important:[],regular:items.slice(start,start+per),page:p,hasPrev:p>1,hasNext:start+per<items.length};
  });
 }
