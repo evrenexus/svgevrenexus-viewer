@@ -1,7 +1,7 @@
 {
   "version": 1,
   "policy_version": 9,
-  "updated": "2026-10-11T22:10:49Z",
+  "updated": "2026-10-12T00:16:02Z",
   "items": {
     "72b4eb7a7155ed214c32324d": {
       "title": "تصاویر؛ جشن «مهرگان» در غار کرفتو",
@@ -5996,7 +5996,7 @@
       "publishable": true,
       "exclude_reason": "",
       "group_id": "local-d01152dabcd7",
-      "representative": false,
+      "representative": true,
       "reason": "local rule-based classification",
       "analysis_mode": "local",
       "local_score": 7,
@@ -24226,25 +24226,33 @@
         "currency-gold"
       ],
       "topic_scores": {
-        "currency-gold": 20
+        "economy": 0,
+        "markets": 0,
+        "crypto": 0,
+        "currency-gold": 4,
+        "real-estate": 0,
+        "technology": 0,
+        "ai": 0,
+        "health": 0,
+        "auto": 0,
+        "science-life": 0
       },
-      "importance": 20,
+      "importance": 4,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
       "ticker_topics": [],
+      "publishable": false,
+      "exclude_reason": "خبر تکراری و گزارش روزمره نرخ توافقی ارز",
+      "content_type": "duplicate",
+      "reject_reason": "خبر تکراری و گزارش روزمره نرخ توافقی ارز",
+      "group_id": "local-192e443e42dd",
+      "representative": true,
+      "reason": "قبلاً در پایگاه داده ثبت و تحلیل شده است",
+      "analysis_mode": "ai",
+      "local_score": 10,
       "breaking": false,
-      "breaking_topics": [],
-      "publishable": true,
-      "exclude_reason": "",
-      "group_id": "local-e5d3e02af750",
-      "representative": false,
-      "reason": "local rule-based classification",
-      "analysis_mode": "local",
-      "local_score": 11,
-      "political": false,
-      "breaking_signal": false,
-      "age_hours": 0.7737697750992245
+      "breaking_topics": []
     },
     "b54efc1f421cab9dedb31495": {
       "title": "فیلم| ظرفیت‌های تجاری بازارچه مرزی «ریمدان» دشتیاری و لزوم تامین زیرساخت‌های پایدار",
@@ -25337,25 +25345,33 @@
         "currency-gold"
       ],
       "topic_scores": {
-        "currency-gold": 12
+        "economy": 0,
+        "markets": 0,
+        "crypto": 0,
+        "currency-gold": 3,
+        "real-estate": 0,
+        "technology": 0,
+        "ai": 0,
+        "health": 0,
+        "auto": 0,
+        "science-life": 0
       },
-      "importance": 12,
+      "importance": 3,
       "important": false,
       "important_topics": [],
       "slider_topics": [],
       "ticker_topics": [],
-      "breaking": false,
-      "breaking_topics": [],
-      "publishable": true,
-      "exclude_reason": "",
+      "publishable": false,
+      "exclude_reason": "خبر تکراری اعلام جدول قیمت روزمره سکه",
+      "content_type": "duplicate",
+      "reject_reason": "خبر تکراری اعلام جدول قیمت روزمره سکه",
       "group_id": "local-d01152dabcd7",
-      "representative": true,
-      "reason": "local rule-based classification",
-      "analysis_mode": "local",
+      "representative": false,
+      "reason": "گزارش روتین و تکراری بازار مسکوکات",
+      "analysis_mode": "ai",
       "local_score": 7,
-      "political": false,
-      "breaking_signal": false,
-      "age_hours": 0.7737697792715497
+      "breaking": false,
+      "breaking_topics": []
     },
     "4820cc1345ca99d6dcd92734": {
       "title": "قیمت دلار و سایر ارز‌ها - ۱۹ مهر ۱۴۰۵",
@@ -31508,6 +31524,117 @@
       "political": true,
       "breaking_signal": true,
       "age_hours": 1.7146638949049844
+    },
+    "c0bbf81cff8f04b3e0011d65": {
+      "title": "قیمت بیت‌کوین و اتریوم امروز دوشنبه ۲۰ مهر ۱۴۰۵/ افزایش قیمت بیت کوین",
+      "summary": "اقتصادنیوز: بیت کوین امروز با افزایش 83,720 (هشتاد و سه هزار و‌ هفتصد و بیست) دلار رسید.",
+      "source": "اقتصادنیوز",
+      "published": "2026-10-12T03:37:16+03:30",
+      "topics": [
+        "crypto"
+      ],
+      "topic_scores": {
+        "economy": 0,
+        "markets": 0,
+        "crypto": 4,
+        "currency-gold": 0,
+        "real-estate": 0,
+        "technology": 0,
+        "ai": 0,
+        "health": 0,
+        "auto": 0,
+        "science-life": 0
+      },
+      "importance": 4,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "publishable": false,
+      "exclude_reason": "خبر تکراری و نوسان روزمره قیمت رمزارزها فاقد ارزش تحلیلی جدید",
+      "content_type": "duplicate",
+      "reject_reason": "خبر تکراری و نوسان روزمره قیمت رمزارزها فاقد ارزش تحلیلی جدید",
+      "group_id": "local-49580b262b34",
+      "representative": true,
+      "reason": "گزارش روتین نرخ ارز دیجیتال و قبلاً تحلیل‌شده",
+      "analysis_mode": "ai",
+      "local_score": 18,
+      "breaking": false,
+      "breaking_topics": []
+    },
+    "c9e4abaee894f22af02fd39b": {
+      "title": "هشدار؛ غذا خوردن در ساعات پایانی شب باعث ابتلا به این بیماری خطرناک می شود",
+      "summary": "غذا خوردن در ساعات پایانی شب با افزایش خطر کبد چرب مرتبط با اختلالات متابولیک و سیروز ارتباط دارد.",
+      "source": "دنیای اقتصاد",
+      "published": "2026-10-12T02:45:31+03:30",
+      "topics": [
+        "health"
+      ],
+      "topic_scores": {
+        "economy": 0,
+        "markets": 0,
+        "crypto": 0,
+        "currency-gold": 0,
+        "real-estate": 0,
+        "technology": 0,
+        "ai": 0,
+        "health": 3,
+        "auto": 0,
+        "science-life": 0
+      },
+      "importance": 3,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "publishable": false,
+      "exclude_reason": "محتوای تکراری و توصیه عمومی سبک زندگی فاقد یافته علمی مستند جدید",
+      "content_type": "duplicate",
+      "reject_reason": "محتوای تکراری و توصیه عمومی سبک زندگی فاقد یافته علمی مستند جدید",
+      "group_id": "local-c1d991193036",
+      "representative": true,
+      "reason": "محتوای سلامت عمومی و تکراری در سیستم",
+      "analysis_mode": "ai",
+      "local_score": 15,
+      "breaking": false,
+      "breaking_topics": []
+    },
+    "e484a809aa60676fd5b095a3": {
+      "title": "قیمت طلا امروز دوشنبه ۲۰ مهر ۱۴۰۵/ کاهش قیمت طلا",
+      "summary": "اقتصادنیوز: قیمت طلا امروز با کاهش، 4187 (چهار هزار و یکصد و هشتاد و هفت) دلار نرخ‌گذاری شد.",
+      "source": "اقتصادنیوز",
+      "published": "2026-10-12T02:25:40+03:30",
+      "topics": [
+        "currency-gold"
+      ],
+      "topic_scores": {
+        "economy": 0,
+        "markets": 0,
+        "crypto": 0,
+        "currency-gold": 4,
+        "real-estate": 0,
+        "technology": 0,
+        "ai": 0,
+        "health": 0,
+        "auto": 0,
+        "science-life": 0
+      },
+      "importance": 4,
+      "important": false,
+      "important_topics": [],
+      "slider_topics": [],
+      "ticker_topics": [],
+      "publishable": false,
+      "exclude_reason": "گزارش تکراری نوسان روزانه انس جهانی طلا",
+      "content_type": "duplicate",
+      "reject_reason": "گزارش تکراری نوسان روزانه انس جهانی طلا",
+      "group_id": "local-49580b262b34",
+      "representative": false,
+      "reason": "خبر تکراری نرخ روزانه طلا",
+      "analysis_mode": "ai",
+      "local_score": 4,
+      "breaking": false,
+      "breaking_topics": []
     }
   },
   "groups": {
@@ -32064,7 +32191,7 @@
       "representative_id": "15a648cdf33dcd982ebe58f4"
     },
     "local-d01152dabcd7": {
-      "representative_id": "fbde87fe5f392ec960d761cf"
+      "representative_id": "97b4201510aa2ee4b288c4d4"
     },
     "local-e5d3e02af750": {
       "representative_id": "4820cc1345ca99d6dcd92734"
@@ -33734,6 +33861,9 @@
     "local-d5bec462be5f": {
       "representative_id": "ef31a057899129c9dde2bdbe"
     },
+    "local-192e443e42dd": {
+      "representative_id": "eff3d863585626e64111a0d8"
+    },
     "local-4e73c9d73fb2": {
       "representative_id": "b54efc1f421cab9dedb31495"
     },
@@ -34393,17 +34523,21 @@
     },
     "local-12d895385390": {
       "representative_id": "0bddf291b3d1895f4c9f4e2d"
+    },
+    "local-49580b262b34": {
+      "representative_id": "c0bbf81cff8f04b3e0011d65"
+    },
+    "local-c1d991193036": {
+      "representative_id": "c9e4abaee894f22af02fd39b"
     }
   },
   "usage": {
-    "date": "2026-10-11",
-    "requests": 24,
-    "last_success": "2026-10-11T05:23:32Z",
-    "last_success_epoch": 1791696212.862786,
-    "last_article_generation": "2026-10-11T12:11:49Z",
-    "quota_block_until_epoch": 1791742304.87176,
-    "quota_block_until": "2026-10-11T18:11:44Z"
+    "date": "2026-10-12",
+    "requests": 2,
+    "last_success": "2026-10-12T00:16:02Z",
+    "last_success_epoch": 1791764162.7525938,
+    "last_article_generation": "2026-10-12T00:16:02Z"
   },
-  "selection_window_end": "2026-10-11T22:09:17Z",
-  "selection_window_start": "2026-10-11T20:09:17Z"
+  "selection_window_end": "2026-10-12T00:15:39Z",
+  "selection_window_start": "2026-10-11T22:15:39Z"
 }
