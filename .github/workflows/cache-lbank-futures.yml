@@ -1,6 +1,11 @@
 name: Cache LBank futures market data
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/cache-lbank-futures.yml"
+      - "crypto-price-usdtp.html"
   schedule:
     - cron: "*/5 * * * *"
   workflow_dispatch:
