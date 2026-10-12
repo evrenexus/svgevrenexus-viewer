@@ -64,7 +64,23 @@ function render(doc){
  if(items.length){html+='<nav class="pagination" aria-label="صفحه‌بندی آرشیو">';html+='<a href="'+pageUrl(Math.max(1,page-1))+'" aria-disabled="'+(page<=1)+'">قبلی</a>';html+='<span>صفحه '+page+' از '+pages+' · '+items.length+' مطلب</span>';html+='<a href="'+pageUrl(Math.min(pages,page+1))+'" aria-disabled="'+(page>=pages)+'">بعدی</a></nav>'}
  host.innerHTML=html||'<div class="error">هنوز مطلب مهمی در آرشیو ثبت نشده است.</div>';
 }
-fetch("./data/public/featured.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("featured HTTP "+r.status);return r.json()}).then(render).catch(function(){host.innerHTML='<div class="error">دریافت آرشیو مطالب مهم انجام نشد؛ مطالب حذف نشده‌اند.</div>'});
+Promise.all([
+ fetch("./data/editorial.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("editorial HTTP "+r.status);return r.json()}),
+ fetch("./data/news.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("news HTTP "+r.status);return r.json()})
+]).then(function(parts){
+ var ed=parts[0]&&parts[0].items||{},raw=parts[1],news=Array.isArray(raw)?raw:(Array.isArray(raw.items)?raw.items:(Array.isArray(raw.news)?raw.news:[])),byId={};
+ news.forEach(function(n){if(n&&n.id!=null)byId[String(n.id)]=n});
+ var manual=Object.keys(ed).map(function(id){
+  var s=ed[id]||{},n=byId[String(id)]||{},path=String(s.article_url||"");
+  if(s.important!==true||s.published!==true||s.deleted===true||!/^articles\/[a-zA-Z0-9._-]+\.html$/.test(path)||!String(s.content||"").replace(/<[^>]*>/g," ").trim())return null;
+  return {id:String(id),articleId:String(id),articleUrl:path,title:s.title||n.title||"",summary:s.summary||n.summary||"",image:img(s.image||n.image||""),source:n.source||"Evren Nexus",published:n.published||s.updated_at||"",selectedAt:s.updated_at||n.published||"",topics:s.topics_manual===true&&Array.isArray(s.topics)?s.topics:(Array.isArray(n.topics)?n.topics:[])};
+ }).filter(function(x){return x&&x.title});
+ var topics={home:{important:manual}};
+ ["economy-investment","crypto","currency-gold","real-estate","auto","technology-ai","health","science-life"].forEach(function(t){
+  topics[t]={important:manual.filter(function(x){var a=x.topics||[];if(t==="economy-investment")return a.indexOf("economy")>=0||a.indexOf("markets")>=0||a.indexOf(t)>=0;if(t==="technology-ai")return a.indexOf("technology")>=0||a.indexOf("ai")>=0||a.indexOf(t)>=0;return a.indexOf(t)>=0})};
+ });
+ render({topics:topics});
+}).catch(function(){host.innerHTML='<div class="error">دریافت آرشیو مطالب مهم انجام نشد؛ مطالب حذف نشده‌اند.</div>'});
 })();
 </script>
 <script src="./Evrenexus-sidebar.js?v=20261011-02"></script>
