@@ -12,13 +12,14 @@ input,select,button{font:inherit;padding:8px;border:1px solid #ccc;border-radius
 .important.active{background:#d89b00}.slider.active{background:#2867c7}.republish.active{background:#14804a}.reject.active{background:#b42318}.delete{color:#b42318}.delete.active{background:#b42318;color:#fff}
 .category{min-width:150px}.status{font-size:12px;color:#555;margin-right:auto}.empty{text-align:center;padding:30px;color:#777;background:#fff;border-radius:8px}
 .info{background:#fff8d8;border:1px solid #e6d36a;padding:10px;margin-bottom:12px;font-size:12px;line-height:2}.output{width:100%;min-height:54px;direction:ltr;text-align:left;font:12px Consolas,monospace;margin-top:6px}.row-status{font-size:12px;margin-top:9px;color:#555}.row-status.ok{color:#14804a}.row-status.err{color:#b42318}
-.editor{display:none;background:#f8f9fa;border:1px solid #ddd;padding:10px;margin-top:10px}.editor.open{display:block}.editor input,.editor textarea{width:100%;box-sizing:border-box;margin:4px 0}.editor textarea{min-height:90px}.richbar{display:flex;gap:5px;flex-wrap:wrap;background:#fff;border:1px solid #ccc;border-bottom:0;padding:7px;border-radius:6px 6px 0 0}.richbar button{padding:5px 9px}.richbody{min-height:260px;background:#fff;border:1px solid #ccc;border-radius:0 0 6px 6px;padding:12px;line-height:2.2;outline:none}.richbody:focus{border-color:#777}.richbody img{max-width:100%;height:auto}.publish{background:#14804a;color:#fff}.edit{background:#eee}
+.editor{display:none;background:#f8f9fa;border:1px solid #ddd;padding:10px;margin-top:10px}.editor.open{display:block}.editor input,.editor textarea{width:100%;box-sizing:border-box;margin:4px 0}.editor textarea{min-height:90px}.richbar{display:flex;gap:5px;flex-wrap:wrap;background:#fff;border:1px solid #ccc;border-bottom:0;padding:7px;border-radius:6px 6px 0 0}.richbar button{padding:5px 9px}.richbody{min-height:260px;background:#fff;border:1px solid #ccc;border-radius:0 0 6px 6px;padding:12px;line-height:2.2;outline:none}.richbody:focus{border-color:#777}.richbody img{max-width:100%;height:auto}.publish{background:#14804a;color:#fff}.edit{background:#eee}.automation-box{background:#fff;border:1px solid #d6dce2;border-radius:8px;padding:12px;margin-bottom:12px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}.automation-state{font-size:12px;color:#555;line-height:1.9;flex:1;min-width:220px}.automation-button{font-weight:700}.automation-button.pause{background:#fff1d6;border-color:#e5b65a;color:#7a4b00}.automation-button.resume{background:#e4f7eb;border-color:#80c99a;color:#126b38}
 </style>
 </head>
 <body><div id="loginScreen" style="position:fixed;inset:0;background:#f4f5f7;display:flex;align-items:center;justify-content:center;z-index:9999"><div style="background:#fff;width:min(380px,90%);padding:28px;border-radius:12px;box-shadow:0 8px 30px #0002;text-align:center"><h2 style="margin-top:0">رمز را وارد کنید</h2><input id="loginToken" type="password" placeholder="رمز را وارد کنید" aria-label="رمز را وارد کنید" style="width:100%;box-sizing:border-box;margin:10px 0;padding:11px"><button class="primary" id="loginButton" type="button">ورود</button><div id="loginStatus" style="color:#b42318;font-size:12px;margin-top:10px"></div></div></div><div id="panel" style="display:none"><div class="wrap">
 <h1>پنل سردبیری Evren Nexus</h1>
 <div class="sub">دسته‌بندی ابتدا به‌صورت خودکار انجام می‌شود؛ مدیر می‌تواند هر انتخابی را ویرایش و ذخیره کند.</div>
 <div class="info">عنوان، خلاصه، متن، تصویر، دسته‌بندی و وضعیت مهم‌بودن خبر را ویرایش کن. ذخیره با GitHub انجام می‌شود؛ توکن فقط در نشست همین مرورگر می‌ماند. برای ذخیره، توکن Fine-grained با دسترسی Contents: Read and write لازم است.</div>
+<div class="automation-box"><div id="automationState" class="automation-state">وضعیت پردازش خودکار در حال بررسی است...</div><button id="automationToggle" class="automation-button pause" type="button" onclick="toggleAutomation()" disabled>در حال بررسی...</button></div>
 <div class="bar">
 <input id="q" placeholder="جستجوی عنوان..." style="min-width:260px">
 <select id="cat"><option value="">همه دسته‌های فعلی</option></select>
@@ -28,17 +29,65 @@ input,select,button{font:inherit;padding:8px;border:1px solid #ccc;border-radius
 <div style="background:#fff;padding:10px;border:1px solid #ddd;border-radius:8px;margin-bottom:12px;font-size:12px"><b>ذخیره مستقیم:</b> برای ثبت واقعی تغییرات، GitHub Token لازم است. توکن فقط در همین نشست مرورگر نگه‌داری می‌شود.<br><input id="token" type="password" placeholder="GitHub Token" style="width:100%;box-sizing:border-box;margin-top:7px"><button onclick="clearToken()" style="margin-top:7px">پاک کردن توکن</button></div><div id="list"></div></div>
 <script>
 let news=[],choices={},originalChoices={},saveMessages={},saveQueue=Promise.resolve();
+let automationPaused=false,automationBusy=false;
 const $=id=>document.getElementById(id);
 const CATS=[['economy-investment','اقتصاد و سرمایه‌گذاری'],['crypto','ارزهای دیجیتال'],['currency-gold','ارز و طلا'],['real-estate','بازار مسکن'],['auto','بازار خودرو'],['technology-ai','تکنولوژی و فناوری'],['health','دانش و سلامت']];
 
+function renderAutomation(){
+  const state=$('automationState'),button=$('automationToggle');
+  if(!state||!button)return;
+  state.innerHTML=automationPaused
+    ?'<b style="color:#b42318">پردازش خودکار متوقف است.</b><br>دریافت خبر از منابع و دسته‌بندی هوشمند تا فعال‌سازی مجدد اجرا نمی‌شود.'
+    :'<b style="color:#14804a">پردازش خودکار فعال است.</b><br>دریافت و دسته‌بندی خبرها طبق زمان‌بندی ادامه دارد.';
+  button.textContent=automationBusy?'در حال ثبت وضعیت...':(automationPaused?'▶️ فعال‌سازی دوباره خودکار':'⏸ توقف دریافت و دسته‌بندی خودکار');
+  button.className='automation-button '+(automationPaused?'resume':'pause');
+  button.disabled=automationBusy;
+}
+async function toggleAutomation(){
+  if(automationBusy)return;
+  const token=$('token').value.trim()||sessionStorage.getItem('evren_github_token')||'';
+  if(!token){$('status').textContent='برای تغییر وضعیت خودکار ابتدا وارد پنل شوید.';return;}
+  automationBusy=true;renderAutomation();$('status').textContent='در حال ثبت وضعیت پردازش خودکار در GitHub...';
+  try{
+    const repo='evrenexus/svgevrenexus-viewer',path='data/automation.json';
+    const headers={Authorization:'Bearer '+token,Accept:'application/vnd.github+json'};
+    const get=await fetch('https://api.github.com/repos/'+repo+'/contents/'+path+'?ref=main&t='+Date.now(),{headers,cache:'no-store'});
+    if(!get.ok)throw new Error('خواندن وضعیت خودکار ناموفق بود ('+get.status+')');
+    const current=await get.json();
+    let encoded=current.content;
+    if(!encoded&&current.sha){
+      const br=await fetch('https://api.github.com/repos/'+repo+'/git/blobs/'+current.sha,{headers,cache:'no-store'});
+      if(!br.ok)throw new Error('خواندن فایل وضعیت خودکار ناموفق بود ('+br.status+')');
+      encoded=(await br.json()).content;
+    }
+    if(!encoded)throw new Error('محتوای فایل وضعیت خودکار در دسترس نیست.');
+    const bytes=Uint8Array.from(atob(encoded.replace(/\s/g,'')),c=>c.charCodeAt(0));
+    const data=JSON.parse(new TextDecoder('utf-8',{fatal:true}).decode(bytes));
+    const next=!automationPaused,now=new Date().toISOString();
+    data.paused=next;data.updated=now;data.updated_by='editorial-panel';
+    const content=JSON.stringify(data,null,2)+'\n';
+    const b=new TextEncoder().encode(content);let bin='';for(const byte of b)bin+=String.fromCharCode(byte);
+    const put=await fetch('https://api.github.com/repos/'+repo+'/contents/'+path,{
+      method:'PUT',headers:Object.assign({},headers,{'Content-Type':'application/json'}),
+      body:JSON.stringify({message:next?'Pause automatic news collection and classification':'Resume automatic news collection and classification',content:btoa(bin),sha:current.sha,branch:'main'})
+    });
+    if(put.status===409)throw new Error('فایل هم‌زمان تغییر کرده؛ دوباره کلیک کن.');
+    if(!put.ok)throw new Error('ثبت وضعیت ناموفق بود ('+put.status+'): '+(await put.text()).slice(0,150));
+    automationPaused=next;
+    $('status').textContent=next?'⏸ توقف ثبت شد؛ اجرای خودکار بعدی از دریافت و دسته‌بندی خبر عبور می‌کند.':'▶️ فعال‌سازی ثبت شد؛ اجرای خودکار با تغییر وضعیت دوباره شروع می‌شود.';
+  }catch(e){console.error(e);$('status').textContent='❌ تغییر وضعیت ثبت نشد: '+e.message;}
+  finally{automationBusy=false;renderAutomation();}
+}
 async function load(){
   $('status').textContent='در حال دریافت...';
   try{
     const getJSON=async (urls)=>{let last='';for(const u of urls){try{const r=await fetch(u,{cache:'no-store'});if(!r.ok){last='HTTP '+r.status+' '+u;continue;}const t=await r.text();if(!t.trim())throw new Error('پاسخ خالی');return JSON.parse(t);}catch(e){last=e.message;}}throw new Error(last||'خطا در دریافت داده');};
-    const [d,e]=await Promise.all([
+    const [d,e,a]=await Promise.all([
       getJSON(['./data/news.json?'+Date.now()]),
-      getJSON(['./data/editorial.json?'+Date.now()])
+      getJSON(['./data/editorial.json?'+Date.now()]),
+      getJSON(['./data/automation.json?'+Date.now()])
     ]);
+    automationPaused=a.paused===true;renderAutomation();
     news=Array.isArray(d)?d:(Array.isArray(d.items)?d.items:(Array.isArray(d.news)?d.news:[]));
     if(!news.length) throw new Error('news.json دریافت شد اما آرایه خبرها پیدا نشد');
     choices=JSON.parse(JSON.stringify(e.items||{}));
