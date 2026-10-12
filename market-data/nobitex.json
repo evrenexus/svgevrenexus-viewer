@@ -2,45 +2,45 @@
   "source": "Nobitex",
   "rankingSource": "CoinGecko market-cap rank",
   "sourcePage": "Nobitex public market API",
-  "scrapedAt": "2026-10-12T18:34:56.460Z",
+  "scrapedAt": "2026-10-12T18:40:22.103Z",
   "scrapedAtTimezone": "UTC",
   "quoteCurrency": "USDT",
   "usdtPriceCurrency": "IRT",
   "marketCount": 229,
-  "rankingUpdatedAt": "2026-10-12T18:34:56.460Z",
+  "rankingUpdatedAt": "2026-10-12T18:40:22.103Z",
   "markets": [
     {
       "symbol": "BTC",
       "name": "بیت‌کوین",
       "rank": 1,
       "priceIRT": 21400000000,
-      "priceUSDT": 82400,
+      "priceUSDT": 82399,
       "changePercent15mIRT": -0.121348,
-      "changePercent15mUSDT": -0.071551,
-      "changePercent1hIRT": -0.288883,
-      "changePercent1hUSDT": -0.173388
+      "changePercent15mUSDT": -0.072763,
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "ETH",
       "name": "اتریوم",
       "rank": 2,
       "priceIRT": 653500000,
-      "priceUSDT": 2511.09,
+      "priceUSDT": 2507.05,
       "changePercent15mIRT": 0.222371,
-      "changePercent15mUSDT": -0.056119,
-      "changePercent1hIRT": -0.180361,
-      "changePercent1hUSDT": 0.013143
+      "changePercent15mUSDT": -0.216915,
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "LTC",
       "name": "لایت‌کوین",
-      "rank": 23,
-      "priceIRT": 16243580,
-      "priceUSDT": 62.26,
-      "changePercent15mIRT": 0.043186,
-      "changePercent15mUSDT": -0.384,
-      "changePercent1hIRT": 0.152316,
-      "changePercent1hUSDT": -0.399936
+      "rank": 24,
+      "priceIRT": 16175968,
+      "priceUSDT": 62.32,
+      "changePercent15mIRT": -0.373232,
+      "changePercent15mUSDT": -0.288,
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "USDT",
@@ -50,19 +50,19 @@
       "priceUSDT": 1,
       "changePercent15mIRT": 0,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -0.122665,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "XRP",
       "name": "ریپل",
       "rank": 5,
-      "priceIRT": 353700,
-      "priceUSDT": 1.359,
-      "changePercent15mIRT": -0.142291,
-      "changePercent15mUSDT": -0.330033,
-      "changePercent1hIRT": -0.472733,
-      "changePercent1hUSDT": -0.311755
+      "priceIRT": 354370,
+      "priceUSDT": 1.3589,
+      "changePercent15mIRT": 0.046866,
+      "changePercent15mUSDT": -0.337367,
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "BCH",
@@ -72,74 +72,74 @@
       "priceUSDT": 273.26,
       "changePercent15mIRT": 0.185908,
       "changePercent15mUSDT": -0.273713,
-      "changePercent1hIRT": -0.338753,
-      "changePercent1hUSDT": -0.270073
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "BNB",
       "name": "بایننس‌کوین",
       "rank": 4,
-      "priceIRT": 193850780,
-      "priceUSDT": 745.0222,
-      "changePercent15mIRT": 0.389922,
-      "changePercent15mUSDT": 0.00298,
-      "changePercent1hIRT": 0.033668,
-      "changePercent1hUSDT": 0.029296
+      "priceIRT": 193538255,
+      "priceUSDT": 748.5756,
+      "changePercent15mIRT": 0.228074,
+      "changePercent15mUSDT": 0.479946,
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "A",
       "name": "والتا",
       "rank": 205,
-      "priceIRT": 26084,
+      "priceIRT": 26733,
       "priceUSDT": 0.1026,
-      "changePercent15mIRT": -1.569811,
+      "changePercent15mIRT": 0.879245,
       "changePercent15mUSDT": -0.097371,
-      "changePercent1hIRT": -0.499714,
-      "changePercent1hUSDT": 1.48368
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "DOGE",
       "name": "دوج‌کوین",
       "rank": 12,
-      "priceIRT": 22093.2,
-      "priceUSDT": 0.0846449,
-      "changePercent15mIRT": -0.026246,
-      "changePercent15mUSDT": -0.256885,
-      "changePercent1hIRT": 0.131888,
-      "changePercent1hUSDT": -0.088881
+      "priceIRT": 22100,
+      "priceUSDT": 0.0846369,
+      "changePercent15mIRT": 0.004525,
+      "changePercent15mUSDT": -0.266312,
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "XLM",
       "name": "استلار",
       "rank": 21,
-      "priceIRT": 50999,
+      "priceIRT": 50991,
       "priceUSDT": 0.19505,
-      "changePercent15mIRT": 0.397661,
+      "changePercent15mIRT": 0.381912,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 0.017651,
-      "changePercent1hUSDT": -0.428812
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "TRX",
       "name": "ترون",
       "rank": 8,
       "priceIRT": 86260,
-      "priceUSDT": 0.33139,
+      "priceUSDT": 0.33104,
       "changePercent15mIRT": -0.21978,
-      "changePercent15mUSDT": -0.078396,
-      "changePercent1hIRT": -0.208237,
-      "changePercent1hUSDT": -0.27685
+      "changePercent15mUSDT": -0.183929,
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "ADA",
       "name": "کاردانو",
       "rank": 17,
-      "priceIRT": 62909,
+      "priceIRT": 62660,
       "priceUSDT": 0.2413,
-      "changePercent15mIRT": -0.241036,
+      "changePercent15mIRT": -0.635892,
       "changePercent15mUSDT": -0.494845,
-      "changePercent1hIRT": -0.141274,
-      "changePercent1hUSDT": -0.371594
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "XMR",
@@ -149,8 +149,8 @@
       "priceUSDT": 530.22,
       "changePercent15mIRT": -0.250179,
       "changePercent15mUSDT": -0.096094,
-      "changePercent1hIRT": -0.801467,
-      "changePercent1hUSDT": -0.096094
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "ETC",
@@ -160,8 +160,8 @@
       "priceUSDT": 8.2009,
       "changePercent15mIRT": 0.986381,
       "changePercent15mUSDT": 0.010976,
-      "changePercent1hIRT": -0.672637,
-      "changePercent1hUSDT": -0.516771
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "DASH",
@@ -171,19 +171,19 @@
       "priceUSDT": 50.71,
       "changePercent15mIRT": -0.000893,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -0.982615,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "ZEC",
       "name": "زی‌کش",
       "rank": 10,
-      "priceIRT": 322530153,
-      "priceUSDT": 1234,
-      "changePercent15mIRT": -0.208802,
-      "changePercent15mUSDT": -0.494303,
-      "changePercent1hIRT": 0.429751,
-      "changePercent1hUSDT": 0.14608
+      "priceIRT": 322623258,
+      "priceUSDT": 1230,
+      "changePercent15mIRT": -0.179995,
+      "changePercent15mUSDT": -0.81685,
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "XTZ",
@@ -193,19 +193,19 @@
       "priceUSDT": 0.3109,
       "changePercent15mIRT": 0.257451,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 0.431483,
-      "changePercent1hUSDT": -0.288647
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "LINK",
       "name": "چین‌لینک",
       "rank": 15,
-      "priceIRT": 3349978,
+      "priceIRT": 3350286,
       "priceUSDT": 12.864,
-      "changePercent15mIRT": -0.0137,
+      "changePercent15mIRT": -0.004507,
       "changePercent15mUSDT": -0.209448,
-      "changePercent1hIRT": -0.69926,
-      "changePercent1hUSDT": -0.525827
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "DAI",
@@ -215,140 +215,140 @@
       "priceUSDT": 0.9988,
       "changePercent15mIRT": 0.108491,
       "changePercent15mUSDT": -0.010011,
-      "changePercent1hIRT": -0.001543,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "DOT",
       "name": "پولکادات",
       "rank": 51,
-      "priceIRT": 312999,
+      "priceIRT": 313134,
       "priceUSDT": 1.202,
-      "changePercent15mIRT": -0.36924,
+      "changePercent15mIRT": -0.326268,
       "changePercent15mUSDT": -0.496689,
-      "changePercent1hIRT": -0.733244,
-      "changePercent1hUSDT": -0.661157
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "UNI",
       "name": "یونی‌سواپ",
-      "rank": 27,
-      "priceIRT": 1911000,
+      "rank": 26,
+      "priceIRT": 1910400,
       "priceUSDT": 7.345,
-      "changePercent15mIRT": -0.368288,
+      "changePercent15mIRT": -0.39957,
       "changePercent15mUSDT": 0.38267,
-      "changePercent1hIRT": 0.03036,
-      "changePercent1hUSDT": -0.312161
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "AAVE",
       "name": "آوه",
       "rank": 43,
-      "priceIRT": 41847100,
+      "priceIRT": 41846217,
       "priceUSDT": 160.59,
-      "changePercent15mIRT": 0.002108,
+      "changePercent15mIRT": -0.000002,
       "changePercent15mUSDT": 0.043608,
-      "changePercent1hIRT": -0.364081,
-      "changePercent1hUSDT": -0.024902
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "SOL",
       "name": "سولانا",
       "rank": 7,
-      "priceIRT": 28085857,
-      "priceUSDT": 107.849,
-      "changePercent15mIRT": 0.289744,
-      "changePercent15mUSDT": -0.084306,
-      "changePercent1hIRT": 0.305461,
-      "changePercent1hUSDT": 0.418063
+      "priceIRT": 28016627,
+      "priceUSDT": 107.65,
+      "changePercent15mIRT": 0.042536,
+      "changePercent15mUSDT": -0.268668,
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "POL",
       "name": "پالیگان",
       "rank": 78,
-      "priceIRT": 26553,
+      "priceIRT": 26872,
       "priceUSDT": 0.103,
-      "changePercent15mIRT": -3.426077,
+      "changePercent15mIRT": -2.265867,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -0.247943,
-      "changePercent1hUSDT": 0.389864
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "FIL",
       "name": "فایل‌کوین",
       "rank": 82,
-      "priceIRT": 296141,
-      "priceUSDT": 1.14,
-      "changePercent15mIRT": -0.766682,
-      "changePercent15mUSDT": -0.869565,
-      "changePercent1hIRT": -1.391844,
-      "changePercent1hUSDT": -0.869565
+      "priceIRT": 295982,
+      "priceUSDT": 1.139,
+      "changePercent15mIRT": -0.819961,
+      "changePercent15mUSDT": -0.956522,
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "GRT",
       "name": "گراف",
       "rank": 155,
-      "priceIRT": 6869,
+      "priceIRT": 6852,
       "priceUSDT": 0.02628,
-      "changePercent15mIRT": 0.277372,
+      "changePercent15mIRT": 0.029197,
       "changePercent15mUSDT": 0.076161,
-      "changePercent1hIRT": 0.482738,
-      "changePercent1hUSDT": 0.076161
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "1INCH",
       "name": "وان اینچ نتورک",
-      "rank": 239,
+      "rank": 238,
       "priceIRT": 25001,
       "priceUSDT": 0.0965,
       "changePercent15mIRT": -2.541613,
       "changePercent15mUSDT": -1.22825,
-      "changePercent1hIRT": -1.001821,
-      "changePercent1hUSDT": -1.731161
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "ANKR",
       "name": "انکر",
-      "rank": 500,
-      "priceIRT": 1216,
+      "rank": 501,
+      "priceIRT": 1232,
       "priceUSDT": 0.004665,
-      "changePercent15mIRT": -0.572363,
+      "changePercent15mIRT": 0.735895,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -1.138211,
-      "changePercent1hUSDT": -1.995798
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "ATOM",
       "name": "کازماس",
       "rank": 80,
-      "priceIRT": 482560,
+      "priceIRT": 483000,
       "priceUSDT": 1.853,
-      "changePercent15mIRT": 0.037937,
+      "changePercent15mIRT": 0.129152,
       "changePercent15mUSDT": 0.488069,
-      "changePercent1hIRT": 1.51336,
-      "changePercent1hUSDT": 1.645639
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "AVAX",
       "name": "آوالانچ",
-      "rank": 26,
-      "priceIRT": 2704999,
-      "priceUSDT": 10.367,
-      "changePercent15mIRT": -0.551507,
-      "changePercent15mUSDT": -1.002674,
-      "changePercent1hIRT": -0.806784,
-      "changePercent1hUSDT": -1.594684
+      "rank": 27,
+      "priceIRT": 2699515,
+      "priceUSDT": 10.314,
+      "changePercent15mIRT": -0.753125,
+      "changePercent15mUSDT": -1.508785,
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "AXS",
       "name": "اکسی‌اینفینیتی",
       "rank": 185,
-      "priceIRT": 311501,
+      "priceIRT": 312600,
       "priceUSDT": 1.203,
-      "changePercent15mIRT": 0.096401,
+      "changePercent15mIRT": 0.449549,
       "changePercent15mUSDT": 0.417362,
-      "changePercent1hIRT": -0.65792,
-      "changePercent1hUSDT": 0.083195
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "BAND",
@@ -358,30 +358,30 @@
       "priceUSDT": 0.2428,
       "changePercent15mIRT": 2.487935,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 1.330709,
-      "changePercent1hUSDT": -1.421031
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "BAT",
       "name": "بیسیک اتنشن توکن",
       "rank": 172,
       "priceIRT": 38847,
-      "priceUSDT": 0.1504,
+      "priceUSDT": 0.1494,
       "changePercent15mIRT": -2.148615,
-      "changePercent15mUSDT": -1.377049,
-      "changePercent1hIRT": 0.767814,
-      "changePercent1hUSDT": 2.592087
+      "changePercent15mUSDT": -2.032787,
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "CELR",
       "name": "سلر نتورک",
-      "rank": 773,
-      "priceIRT": 804.475,
+      "rank": 774,
+      "priceIRT": 800,
       "priceUSDT": 0.003092,
-      "changePercent15mIRT": 0,
+      "changePercent15mIRT": -0.556263,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 0.491041,
-      "changePercent1hUSDT": 0.324465
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "COMP",
@@ -391,19 +391,19 @@
       "priceUSDT": 23.89,
       "changePercent15mIRT": -0.731735,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 0.79678,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "COTI",
       "name": "کوتی",
       "rank": 569,
-      "priceIRT": 3440,
+      "priceIRT": 3408,
       "priceUSDT": 0.01311,
-      "changePercent15mIRT": 0.879765,
+      "changePercent15mIRT": -0.058651,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 0.879765,
-      "changePercent1hUSDT": 0.45977
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "EGLD",
@@ -413,8 +413,8 @@
       "priceUSDT": 3.745,
       "changePercent15mIRT": 2.575413,
       "changePercent15mUSDT": -0.820975,
-      "changePercent1hIRT": 2.54321,
-      "changePercent1hUSDT": -0.531208
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "LIT",
@@ -424,8 +424,8 @@
       "priceUSDT": 3.566,
       "changePercent15mIRT": 0.02117,
       "changePercent15mUSDT": -2.032967,
-      "changePercent1hIRT": 0.02117,
-      "changePercent1hUSDT": -1.109262
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "MASK",
@@ -435,30 +435,30 @@
       "priceUSDT": 0.473,
       "changePercent15mIRT": 1.947556,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 2.391436,
-      "changePercent1hUSDT": -0.21097
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "NEAR",
       "name": "نیر پروتکل",
       "rank": 20,
-      "priceIRT": 1412991,
-      "priceUSDT": 5.432,
-      "changePercent15mIRT": -0.326322,
-      "changePercent15mUSDT": 0.147493,
-      "changePercent1hIRT": -0.903447,
-      "changePercent1hUSDT": -0.403374
+      "priceIRT": 1414924,
+      "priceUSDT": 5.426,
+      "changePercent15mIRT": -0.189967,
+      "changePercent15mUSDT": 0.036873,
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "SFP",
       "name": "سیف پل",
-      "rank": 238,
+      "rank": 239,
       "priceIRT": 70000,
       "priceUSDT": 0.2794,
       "changePercent15mIRT": 0,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -0.032846,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "SNX",
@@ -468,85 +468,85 @@
       "priceUSDT": 0.2408,
       "changePercent15mIRT": -1.034989,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -1.022361,
-      "changePercent1hUSDT": -0.782859
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "SUSHI",
       "name": "سوشی‌سواپ",
       "rank": 385,
-      "priceIRT": 60324,
-      "priceUSDT": 0.2364,
-      "changePercent15mIRT": -0.52931,
-      "changePercent15mUSDT": 0.339559,
-      "changePercent1hIRT": -1.763643,
-      "changePercent1hUSDT": -0.505051
+      "priceIRT": 59862,
+      "priceUSDT": 0.2363,
+      "changePercent15mIRT": -1.29112,
+      "changePercent15mUSDT": 0.297114,
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "YFI",
       "name": "یرن فایننس",
-      "rank": 326,
+      "rank": 325,
       "priceIRT": 610660141,
       "priceUSDT": 2410,
       "changePercent15mIRT": 0,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 0.487763,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "ZIL",
       "name": "زیلیکا",
       "rank": 378,
-      "priceIRT": 910,
-      "priceUSDT": 0.003537,
-      "changePercent15mIRT": -1.727862,
-      "changePercent15mUSDT": -0.534308,
-      "changePercent1hIRT": -1.939655,
-      "changePercent1hUSDT": -1.831807
+      "priceIRT": 900,
+      "priceUSDT": 0.003526,
+      "changePercent15mIRT": -2.807775,
+      "changePercent15mUSDT": -0.843645,
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "MANA",
       "name": "دیسنترالند",
       "rank": 195,
-      "priceIRT": 24343,
+      "priceIRT": 24624,
       "priceUSDT": 0.0943,
-      "changePercent15mIRT": -1.141163,
+      "changePercent15mIRT": 0,
       "changePercent15mUSDT": -0.21164,
-      "changePercent1hIRT": -0.855293,
-      "changePercent1hUSDT": -1.256545
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "SAND",
       "name": "سندباکس",
       "rank": 198,
-      "priceIRT": 16377,
+      "priceIRT": 16161,
       "priceUSDT": 0.0622,
-      "changePercent15mIRT": -0.10979,
+      "changePercent15mIRT": -1.427264,
       "changePercent15mUSDT": -0.797448,
-      "changePercent1hIRT": 1.853349,
-      "changePercent1hUSDT": 0.974026
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "APE",
       "name": "ایپ‌کوین",
       "rank": 221,
-      "priceIRT": 39266,
+      "priceIRT": 39372,
       "priceUSDT": 0.152,
-      "changePercent15mIRT": 0.079011,
+      "changePercent15mIRT": 0.349178,
       "changePercent15mUSDT": -0.065746,
-      "changePercent1hIRT": -0.276825,
-      "changePercent1hUSDT": 0.462657
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "ONE",
       "name": "هارمونی",
-      "rank": 390,
-      "priceIRT": 495,
+      "rank": 391,
+      "priceIRT": 500,
       "priceUSDT": 0.001926,
-      "changePercent15mIRT": -0.201613,
+      "changePercent15mIRT": 0.806452,
       "changePercent15mUSDT": 0.943396,
-      "changePercent1hIRT": 0.202429,
-      "changePercent1hUSDT": -3.603604
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "WBTC",
@@ -556,118 +556,118 @@
       "priceUSDT": 82730,
       "changePercent15mIRT": 0,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -0.496111,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "USDC",
       "name": "یو‌اس‌دی کوین",
       "rank": 6,
-      "priceIRT": 260844,
+      "priceIRT": 261359,
       "priceUSDT": 1,
-      "changePercent15mIRT": 0.056387,
+      "changePercent15mIRT": 0.253935,
       "changePercent15mUSDT": 0.120144,
-      "changePercent1hIRT": 0.075581,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "ALGO",
       "name": "الگوراند",
       "rank": 75,
-      "priceIRT": 32034,
+      "priceIRT": 32149,
       "priceUSDT": 0.1231,
-      "changePercent15mIRT": -1.309344,
+      "changePercent15mIRT": -0.955051,
       "changePercent15mUSDT": -1.124498,
-      "changePercent1hIRT": -2.033701,
-      "changePercent1hUSDT": -1.990446
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "GMT",
       "name": "استپن",
       "rank": 746,
       "priceIRT": 2160,
-      "priceUSDT": 0.00836,
+      "priceUSDT": 0.00835,
       "changePercent15mIRT": -0.414938,
-      "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -0.689655,
-      "changePercent1hUSDT": 0.722892
+      "changePercent15mUSDT": -0.119617,
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "CHZ",
       "name": "چیلیز",
       "rank": 217,
-      "priceIRT": 3900,
+      "priceIRT": 3936,
       "priceUSDT": 0.01507,
-      "changePercent15mIRT": -1.165737,
+      "changePercent15mIRT": -0.253421,
       "changePercent15mUSDT": -0.198675,
-      "changePercent1hIRT": -1.015228,
-      "changePercent1hUSDT": -0.198675
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "QNT",
       "name": "کوانت",
       "rank": 35,
-      "priceIRT": 58602589,
-      "priceUSDT": 226.87,
-      "changePercent15mIRT": -0.638212,
-      "changePercent15mUSDT": -0.495614,
-      "changePercent1hIRT": -0.882,
-      "changePercent1hUSDT": -0.495614
+      "priceIRT": 59199000,
+      "priceUSDT": 227.22,
+      "changePercent15mIRT": 0.373014,
+      "changePercent15mUSDT": -0.342105,
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "FLOW",
       "name": "فلو",
-      "rank": 431,
-      "priceIRT": 8906,
-      "priceUSDT": 0.0343,
-      "changePercent15mIRT": 0.541883,
-      "changePercent15mUSDT": 0.292398,
-      "changePercent1hIRT": 0.225073,
-      "changePercent1hUSDT": 0.292398
+      "rank": 433,
+      "priceIRT": 8794,
+      "priceUSDT": 0.0338,
+      "changePercent15mIRT": -0.722511,
+      "changePercent15mUSDT": -1.169591,
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "HBAR",
       "name": "هدرا",
       "rank": 32,
-      "priceIRT": 23179,
-      "priceUSDT": 0.089,
-      "changePercent15mIRT": -0.176572,
-      "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -0.369654,
-      "changePercent1hUSDT": 0
+      "priceIRT": 23321,
+      "priceUSDT": 0.08919,
+      "changePercent15mIRT": 0.43497,
+      "changePercent15mUSDT": 0.213483,
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "EGALA",
       "name": "گالا",
       "rank": null,
-      "priceIRT": 595,
+      "priceIRT": 591,
       "priceUSDT": 0.002273,
-      "changePercent15mIRT": 1.709402,
+      "changePercent15mIRT": 1.025641,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 0.847458,
-      "changePercent1hUSDT": -0.915432
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "ENJ",
       "name": "انجین کوین",
       "rank": 408,
-      "priceIRT": 7906,
+      "priceIRT": 7920,
       "priceUSDT": 0.03044,
-      "changePercent15mIRT": -1.051314,
+      "changePercent15mIRT": -0.876095,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -1.78882,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "OP",
       "name": "آپتیمیسم",
       "rank": 147,
-      "priceIRT": 35630,
-      "priceUSDT": 0.13791,
-      "changePercent15mIRT": 0,
-      "changePercent15mUSDT": 2.117734,
-      "changePercent1hIRT": -0.577615,
-      "changePercent1hUSDT": 2.117734
+      "priceIRT": 34897,
+      "priceUSDT": 0.1347,
+      "changePercent15mIRT": -2.057255,
+      "changePercent15mUSDT": -0.259163,
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "CRV",
@@ -677,8 +677,8 @@
       "priceUSDT": 0.3531,
       "changePercent15mIRT": 0.255501,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -0.290255,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "CAKE",
@@ -688,19 +688,19 @@
       "priceUSDT": 2.3054,
       "changePercent15mIRT": -0.238125,
       "changePercent15mUSDT": 0.269659,
-      "changePercent1hIRT": -0.172566,
-      "changePercent1hUSDT": 0.269659
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "LDO",
       "name": "لیدو دائو",
-      "rank": 135,
+      "rank": 133,
       "priceIRT": 108831,
       "priceUSDT": 0.4195,
       "changePercent15mIRT": 0,
       "changePercent15mUSDT": 1.011317,
-      "changePercent1hIRT": 0,
-      "changePercent1hUSDT": 0.023844
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "DYDX",
@@ -710,19 +710,19 @@
       "priceUSDT": 0.1353,
       "changePercent15mIRT": -0.145258,
       "changePercent15mUSDT": 0.222222,
-      "changePercent1hIRT": -0.176533,
-      "changePercent1hUSDT": 0.073964
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "APT",
       "name": "اپتوس",
-      "rank": 95,
+      "rank": 96,
       "priceIRT": 213389,
-      "priceUSDT": 0.8248,
+      "priceUSDT": 0.8272,
       "changePercent15mIRT": -1.029642,
-      "changePercent15mUSDT": -0.386473,
-      "changePercent1hIRT": -0.281786,
-      "changePercent1hUSDT": 1.128004
+      "changePercent15mUSDT": -0.096618,
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "ENS",
@@ -732,8 +732,8 @@
       "priceUSDT": 6.15,
       "changePercent15mIRT": 0.000501,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -0.449126,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "LPT",
@@ -743,8 +743,8 @@
       "priceUSDT": 1.745,
       "changePercent15mIRT": 1.34515,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 0.764634,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "GLM",
@@ -754,41 +754,41 @@
       "priceUSDT": 0.1333,
       "changePercent15mIRT": 0,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -2.379092,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "API3",
       "name": "ای پی آی ۳",
       "rank": 504,
-      "priceIRT": 82603,
+      "priceIRT": 82866,
       "priceUSDT": 0.3147,
-      "changePercent15mIRT": 1.487861,
+      "changePercent15mIRT": 1.810989,
       "changePercent15mUSDT": 0.22293,
-      "changePercent1hIRT": 0.735366,
-      "changePercent1hUSDT": 1.254826
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "CVC",
       "name": "سیویک",
-      "rank": 767,
+      "rank": 768,
       "priceIRT": 6395,
       "priceUSDT": 0.02533,
       "changePercent15mIRT": 0.156617,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 0.172306,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "NMR",
       "name": "نومریر",
-      "rank": 307,
-      "priceIRT": 3320626,
+      "rank": 309,
+      "priceIRT": 3312105,
       "priceUSDT": 12.816,
-      "changePercent15mIRT": -0.563626,
+      "changePercent15mIRT": -0.818788,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -0.880238,
-      "changePercent1hUSDT": -0.589513
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "CVX",
@@ -798,41 +798,41 @@
       "priceUSDT": 2.049,
       "changePercent15mIRT": -0.478505,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -0.486875,
-      "changePercent1hUSDT": -0.870827
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "SLP",
       "name": "اسموث لاو پوشن",
-      "rank": 805,
+      "rank": 806,
       "priceIRT": 163.1,
       "priceUSDT": 0.0006282,
       "changePercent15mIRT": -0.260509,
       "changePercent15mUSDT": 0.079656,
-      "changePercent1hIRT": -0.275145,
-      "changePercent1hUSDT": 0.319387
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "T",
       "name": "ترشولد",
       "rank": 413,
       "priceIRT": 1401,
-      "priceUSDT": 0.005335,
+      "priceUSDT": 0.005311,
       "changePercent15mIRT": 0,
-      "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 0,
-      "changePercent1hUSDT": 0
+      "changePercent15mUSDT": -0.449859,
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "GRAM",
       "name": "گرام",
       "rank": 33,
-      "priceIRT": 362267,
-      "priceUSDT": 1.385,
-      "changePercent15mIRT": -1.472472,
-      "changePercent15mUSDT": -0.5743,
-      "changePercent1hIRT": -0.229688,
-      "changePercent1hUSDT": -0.07215
+      "priceIRT": 362283,
+      "priceUSDT": 1.39,
+      "changePercent15mIRT": -1.46812,
+      "changePercent15mUSDT": -0.215363,
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "ZRX",
@@ -842,19 +842,19 @@
       "priceUSDT": 0.1215,
       "changePercent15mIRT": -0.006333,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 0.104606,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "IMX",
       "name": "ایموتبل ایکس",
-      "rank": 215,
-      "priceIRT": 46188,
+      "rank": 214,
+      "priceIRT": 46484,
       "priceUSDT": 0.1784,
-      "changePercent15mIRT": 0,
+      "changePercent15mIRT": 0.640859,
       "changePercent15mUSDT": -0.501952,
-      "changePercent1hIRT": -0.856462,
-      "changePercent1hUSDT": -0.501952
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "BLUR",
@@ -864,19 +864,19 @@
       "priceUSDT": 0.01843,
       "changePercent15mIRT": -1.418144,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 0.148305,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "MAGIC",
       "name": "ترژر",
-      "rank": 552,
-      "priceIRT": 31056,
-      "priceUSDT": 0.11904,
-      "changePercent15mIRT": -0.649413,
-      "changePercent15mUSDT": -0.981534,
-      "changePercent1hIRT": -0.432817,
-      "changePercent1hUSDT": -0.750375
+      "rank": 555,
+      "priceIRT": 30701,
+      "priceUSDT": 0.11852,
+      "changePercent15mIRT": -1.785086,
+      "changePercent15mUSDT": -1.414074,
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "ARB",
@@ -886,30 +886,30 @@
       "priceUSDT": 0.185,
       "changePercent15mIRT": -0.162294,
       "changePercent15mUSDT": 0.054083,
-      "changePercent1hIRT": -0.483242,
-      "changePercent1hUSDT": 0.598151
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "PAXG",
       "name": "پکس گلد",
       "rank": 54,
       "priceIRT": 1084815708,
-      "priceUSDT": 4169,
+      "priceUSDT": 4167,
       "changePercent15mIRT": 0.260232,
-      "changePercent15mUSDT": 0.120077,
-      "changePercent1hIRT": -0.328271,
-      "changePercent1hUSDT": 0.120077
+      "changePercent15mUSDT": 0.072046,
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "GMX",
       "name": "جی‌ام‌اکس",
-      "rank": 321,
+      "rank": 322,
       "priceIRT": 2130001,
       "priceUSDT": 8.282,
       "changePercent15mIRT": 0,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -0.342252,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "SSV",
@@ -919,19 +919,19 @@
       "priceUSDT": 2.926,
       "changePercent15mIRT": -0.033571,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -0.000134,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "WLD",
       "name": "ورلد کوین",
       "rank": 52,
-      "priceIRT": 136555,
+      "priceIRT": 136784,
       "priceUSDT": 0.5234,
-      "changePercent15mIRT": 0,
+      "changePercent15mIRT": 0.167698,
       "changePercent15mUSDT": -0.152614,
-      "changePercent1hIRT": -0.103879,
-      "changePercent1hUSDT": 0.325858
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "AGLD",
@@ -941,8 +941,8 @@
       "priceUSDT": 0.1926,
       "changePercent15mIRT": -0.763934,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -0.406245,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "JST",
@@ -952,30 +952,30 @@
       "priceUSDT": 0.13595,
       "changePercent15mIRT": -0.239669,
       "changePercent15mUSDT": -2.537816,
-      "changePercent1hIRT": -0.239669,
-      "changePercent1hUSDT": -1.328204
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "RENDER",
       "name": "رندر",
       "rank": 79,
-      "priceIRT": 532000,
+      "priceIRT": 530000,
       "priceUSDT": 2.03,
-      "changePercent15mIRT": 0.659204,
+      "changePercent15mIRT": 0.280786,
       "changePercent15mUSDT": -0.098425,
-      "changePercent1hIRT": 1.175307,
-      "changePercent1hUSDT": -0.098425
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "BICO",
       "name": "بیکونومی",
-      "rank": 922,
-      "priceIRT": 4720,
+      "rank": 924,
+      "priceIRT": 4711,
       "priceUSDT": 0.01799,
-      "changePercent15mIRT": 0.833155,
+      "changePercent15mIRT": 0.640889,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 1.222389,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "WOO",
@@ -985,30 +985,30 @@
       "priceUSDT": 0.01305,
       "changePercent15mIRT": 0.266825,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -3.536794,
-      "changePercent1hUSDT": -1.28593
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "SKL",
       "name": "اسکیل",
-      "rank": 638,
-      "priceIRT": 1441,
-      "priceUSDT": 0.00553,
-      "changePercent15mIRT": -0.414651,
-      "changePercent15mUSDT": -1.601423,
-      "changePercent1hIRT": 5.029155,
-      "changePercent1hUSDT": 3.171642
+      "rank": 637,
+      "priceIRT": 1438,
+      "priceUSDT": 0.00544,
+      "changePercent15mIRT": -0.621977,
+      "changePercent15mUSDT": -3.202847,
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "FET",
       "name": "فچ ای آی",
-      "rank": 116,
-      "priceIRT": 57900,
+      "rank": 117,
+      "priceIRT": 57676,
       "priceUSDT": 0.2222,
-      "changePercent15mIRT": -0.005181,
+      "changePercent15mIRT": -0.392035,
       "changePercent15mUSDT": 0.316027,
-      "changePercent1hIRT": 0.560988,
-      "changePercent1hUSDT": 0.954112
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "TRB",
@@ -1018,30 +1018,30 @@
       "priceUSDT": 19.16,
       "changePercent15mIRT": 0,
       "changePercent15mUSDT": 0.471945,
-      "changePercent1hIRT": -0.187526,
-      "changePercent1hUSDT": -0.981912
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "RSR",
       "name": "رزرو رایتس",
       "rank": 231,
-      "priceIRT": 593.001,
-      "priceUSDT": 0.002278,
-      "changePercent15mIRT": -1.494687,
-      "changePercent15mUSDT": -0.740741,
-      "changePercent1hIRT": 1.019908,
-      "changePercent1hUSDT": 1.741849
+      "priceIRT": 593.662,
+      "priceUSDT": 0.002285,
+      "changePercent15mIRT": -1.384886,
+      "changePercent15mUSDT": -0.43573,
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "MEME",
       "name": "میم کوین",
-      "rank": 598,
+      "rank": 600,
       "priceIRT": 144.011,
       "priceUSDT": 0.000552,
       "changePercent15mIRT": -0.54489,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -0.045115,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "UMA",
@@ -1051,8 +1051,8 @@
       "priceUSDT": 0.404,
       "changePercent15mIRT": -0.000957,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 0.000957,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "ID",
@@ -1062,52 +1062,52 @@
       "priceUSDT": 0.03888,
       "changePercent15mIRT": 0.61816,
       "changePercent15mUSDT": 1.726845,
-      "changePercent1hIRT": 0.597771,
-      "changePercent1hUSDT": -0.537222
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "ETHFI",
       "name": "اترفای",
       "rank": 100,
-      "priceIRT": 180586,
+      "priceIRT": 179696,
       "priceUSDT": 0.6907,
-      "changePercent15mIRT": 0.502552,
+      "changePercent15mIRT": 0.007235,
       "changePercent15mUSDT": 0.101449,
-      "changePercent1hIRT": 0.22978,
-      "changePercent1hUSDT": 0.101449
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "NOT",
       "name": "نات‌کوین",
       "rank": 512,
-      "priceIRT": 118.83900000000001,
+      "priceIRT": 118.64200000000001,
       "priceUSDT": 0.0004481,
-      "changePercent15mIRT": 0.003366,
+      "changePercent15mIRT": -0.16241,
       "changePercent15mUSDT": -0.796989,
-      "changePercent1hIRT": 0.226025,
-      "changePercent1hUSDT": -1.103509
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "AEVO",
       "name": "آئوو",
-      "rank": 783,
+      "rank": 784,
       "priceIRT": 6601,
       "priceUSDT": 0.0256,
       "changePercent15mIRT": -0.030289,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -0.317125,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "W",
       "name": "ورم هول",
       "rank": 234,
-      "priceIRT": 5640,
-      "priceUSDT": 0.02149,
-      "changePercent15mIRT": -1.000527,
-      "changePercent15mUSDT": -2.051048,
-      "changePercent1hIRT": 1.658255,
-      "changePercent1hUSDT": 1.177024
+      "priceIRT": 5538,
+      "priceUSDT": 0.02163,
+      "changePercent15mIRT": -2.790943,
+      "changePercent15mUSDT": -1.412944,
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "ZRO",
@@ -1117,41 +1117,41 @@
       "priceUSDT": 2.229,
       "changePercent15mIRT": -1.906479,
       "changePercent15mUSDT": -0.889284,
-      "changePercent1hIRT": -0.163684,
-      "changePercent1hUSDT": 1.272149
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "G",
       "name": "گرویتی",
       "rank": 684,
-      "priceIRT": 1079,
+      "priceIRT": 1075,
       "priceUSDT": 0.004278,
-      "changePercent15mIRT": 0.55918,
+      "changePercent15mIRT": 0.186393,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -1.009174,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "ONDO",
       "name": "اوندو",
       "rank": 45,
-      "priceIRT": 127895,
+      "priceIRT": 127951,
       "priceUSDT": 0.4939,
-      "changePercent15mIRT": -0.622397,
+      "changePercent15mIRT": -0.578884,
       "changePercent15mUSDT": 0.182556,
-      "changePercent1hIRT": -0.682591,
-      "changePercent1hUSDT": 0.427003
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "DOGS",
       "name": "داگز",
-      "rank": 819,
-      "priceIRT": 11,
+      "rank": 818,
+      "priceIRT": 11.0731,
       "priceUSDT": 0.00004248,
-      "changePercent15mIRT": -0.630544,
+      "changePercent15mIRT": 0.029811,
       "changePercent15mUSDT": -0.141044,
-      "changePercent1hIRT": -1.077358,
-      "changePercent1hUSDT": -0.28169
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "CATI",
@@ -1161,30 +1161,30 @@
       "priceUSDT": 0.06136,
       "changePercent15mIRT": 0.179476,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 0.044809,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "HMSTR",
       "name": "همستر کامبت",
       "rank": null,
-      "priceIRT": 41.7633,
-      "priceUSDT": 0.0001607,
-      "changePercent15mIRT": 0.13619,
-      "changePercent15mUSDT": -0.310174,
-      "changePercent1hIRT": -0.333389,
-      "changePercent1hUSDT": 0.124611
+      "priceIRT": 41.9832,
+      "priceUSDT": 0.000161,
+      "changePercent15mIRT": 0.663446,
+      "changePercent15mUSDT": -0.124069,
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "XAUT",
       "name": "تتر گلد",
       "rank": 34,
-      "priceIRT": 1082517371,
-      "priceUSDT": 4168.8,
-      "changePercent15mIRT": -0.256393,
-      "changePercent15mUSDT": -0.004797,
-      "changePercent1hIRT": -0.314017,
-      "changePercent1hUSDT": -0.052745
+      "priceIRT": 1084555555,
+      "priceUSDT": 4167,
+      "changePercent15mIRT": -0.068593,
+      "changePercent15mUSDT": -0.047973,
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "EIGEN",
@@ -1194,30 +1194,30 @@
       "priceUSDT": 0.253,
       "changePercent15mIRT": -0.275885,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -1.493571,
-      "changePercent1hUSDT": -1.55642
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "JASMY",
       "name": "جسمی کوین",
-      "rank": 164,
-      "priceIRT": 1320,
+      "rank": 163,
+      "priceIRT": 1356,
       "priceUSDT": 0.005062,
-      "changePercent15mIRT": -0.377358,
+      "changePercent15mIRT": 2.339623,
       "changePercent15mUSDT": 0.536246,
-      "changePercent1hIRT": 0.994644,
-      "changePercent1hUSDT": -0.078958
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "ENA",
       "name": "اتنا",
       "rank": 40,
-      "priceIRT": 56771,
+      "priceIRT": 56815,
       "priceUSDT": 0.218,
-      "changePercent15mIRT": -0.586628,
+      "changePercent15mIRT": -0.509579,
       "changePercent15mUSDT": -0.999092,
-      "changePercent1hIRT": -0.522175,
-      "changePercent1hUSDT": -0.638104
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "PENDLE",
@@ -1227,30 +1227,30 @@
       "priceUSDT": 2.095,
       "changePercent15mIRT": -0.001103,
       "changePercent15mUSDT": -0.04771,
-      "changePercent1hIRT": -0.001103,
-      "changePercent1hUSDT": 0.6244
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "SUPER",
       "name": "سوپر ورس",
       "rank": 241,
-      "priceIRT": 54006,
+      "priceIRT": 54000,
       "priceUSDT": 0.2108,
-      "changePercent15mIRT": 0,
+      "changePercent15mIRT": -0.01111,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -0.482789,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "HOT",
       "name": "هولو",
-      "rank": 364,
+      "rank": 363,
       "priceIRT": 105.549,
       "priceUSDT": 0.000414,
       "changePercent15mIRT": 0.11572,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -1.025853,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "EDU",
@@ -1260,19 +1260,19 @@
       "priceUSDT": 0.0724,
       "changePercent15mIRT": 0.101811,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -0.891294,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "SAFE",
       "name": "سیف",
       "rank": 285,
-      "priceIRT": 35021,
-      "priceUSDT": 0.1344,
-      "changePercent15mIRT": -0.216543,
-      "changePercent15mUSDT": -0.296736,
-      "changePercent1hIRT": 0.724784,
-      "changePercent1hUSDT": 0.52356
+      "priceIRT": 34749,
+      "priceUSDT": 0.1348,
+      "changePercent15mIRT": -0.991538,
+      "changePercent15mUSDT": 0,
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "TWT",
@@ -1282,19 +1282,19 @@
       "priceUSDT": 0.5248,
       "changePercent15mIRT": -1.302941,
       "changePercent15mUSDT": 0.171789,
-      "changePercent1hIRT": -2.695963,
-      "changePercent1hUSDT": -0.511848
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "X",
       "name": "ایکس امپایر",
       "rank": null,
-      "priceIRT": 1.456,
+      "priceIRT": 1.4563000000000001,
       "priceUSDT": 0.00000561,
-      "changePercent15mIRT": -0.362691,
+      "changePercent15mIRT": -0.342161,
       "changePercent15mUSDT": 0.537634,
-      "changePercent1hIRT": -0.593978,
-      "changePercent1hUSDT": 0.178571
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "BANANA",
@@ -1304,8 +1304,8 @@
       "priceUSDT": 3.734,
       "changePercent15mIRT": 0,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 0,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "MOVE",
@@ -1315,30 +1315,30 @@
       "priceUSDT": 0.00894,
       "changePercent15mIRT": 1.211597,
       "changePercent15mUSDT": 0.56243,
-      "changePercent1hIRT": 0.386266,
-      "changePercent1hUSDT": 1.245753
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "STRK",
       "name": "استارک نت",
-      "rank": 96,
-      "priceIRT": 25493,
-      "priceUSDT": 0.09819,
-      "changePercent15mIRT": -2.318185,
-      "changePercent15mUSDT": -2.916749,
-      "changePercent1hIRT": -1.525803,
-      "changePercent1hUSDT": 0.193878
+      "rank": 95,
+      "priceIRT": 26028,
+      "priceUSDT": 0.09979,
+      "changePercent15mIRT": -0.26822,
+      "changePercent15mUSDT": -1.334783,
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "METIS",
       "name": "متیس دائو",
-      "rank": 672,
+      "rank": 673,
       "priceIRT": 967139,
       "priceUSDT": 3.757,
       "changePercent15mIRT": -2.0066,
       "changePercent15mUSDT": -1.183588,
-      "changePercent1hIRT": 1.091147,
-      "changePercent1hUSDT": 3.584229
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "INJ",
@@ -1348,41 +1348,41 @@
       "priceUSDT": 7.55,
       "changePercent15mIRT": 3.83165,
       "changePercent15mUSDT": -0.801472,
-      "changePercent1hIRT": 2.266442,
-      "changePercent1hUSDT": -0.277374
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "TURBO",
       "name": "توربو",
-      "rank": 389,
+      "rank": 390,
       "priceIRT": 251.493,
       "priceUSDT": 0.0009735,
       "changePercent15mIRT": -0.595652,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -0.481186,
-      "changePercent1hUSDT": 1.37457
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "DEXE",
       "name": "دکسی",
       "rank": 393,
-      "priceIRT": 484793,
-      "priceUSDT": 1.859,
-      "changePercent15mIRT": -0.412284,
-      "changePercent15mUSDT": -0.800427,
-      "changePercent1hIRT": -0.393869,
-      "changePercent1hUSDT": -0.375134
+      "priceIRT": 484900,
+      "priceUSDT": 1.87,
+      "changePercent15mIRT": -0.390304,
+      "changePercent15mUSDT": -0.213447,
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "ATH",
       "name": "ایثیر",
-      "rank": 251,
-      "priceIRT": 1640,
+      "rank": 252,
+      "priceIRT": 1608,
       "priceUSDT": 0.006148,
-      "changePercent15mIRT": 1.800124,
+      "changePercent15mIRT": -0.18622,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 1.99005,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "COOKIE",
@@ -1392,41 +1392,41 @@
       "priceUSDT": 0.01145,
       "changePercent15mIRT": 0.266667,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 0.033256,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "CGPT",
       "name": "چین جی پی تی",
       "rank": 835,
-      "priceIRT": 5813,
+      "priceIRT": 5826,
       "priceUSDT": 0.0235,
-      "changePercent15mIRT": -5.464303,
+      "changePercent15mIRT": -5.252887,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -1.824016,
-      "changePercent1hUSDT": 0.513259
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "S",
       "name": "سونیک",
-      "rank": 182,
-      "priceIRT": 14717,
-      "priceUSDT": 0.05632,
-      "changePercent15mIRT": -2.335921,
-      "changePercent15mUSDT": -2.560554,
-      "changePercent1hIRT": -0.634663,
-      "changePercent1hUSDT": -1.210314
+      "rank": 180,
+      "priceIRT": 14656,
+      "priceUSDT": 0.05629,
+      "changePercent15mIRT": -2.740726,
+      "changePercent15mUSDT": -2.612457,
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "NEIRO",
       "name": "نیرو",
-      "rank": 608,
-      "priceIRT": 21.25,
+      "rank": 609,
+      "priceIRT": 21.6218,
       "priceUSDT": 0.00008271,
-      "changePercent15mIRT": -1.16325,
+      "changePercent15mIRT": 0.566044,
       "changePercent15mUSDT": -0.217155,
-      "changePercent1hIRT": -1.464356,
-      "changePercent1hUSDT": -1.241791
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "MORPHO",
@@ -1436,8 +1436,8 @@
       "priceUSDT": 2.3746,
       "changePercent15mIRT": -0.271427,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -0.443923,
-      "changePercent1hUSDT": -1.083063
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "FORM",
@@ -1447,41 +1447,41 @@
       "priceUSDT": 0.2801,
       "changePercent15mIRT": 0.676625,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 1.255385,
-      "changePercent1hUSDT": 0.28643
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "SUI",
       "name": "سویی",
       "rank": 30,
-      "priceIRT": 277500,
-      "priceUSDT": 1.0651,
-      "changePercent15mIRT": -0.537634,
-      "changePercent15mUSDT": -0.550887,
-      "changePercent1hIRT": -1.098079,
-      "changePercent1hUSDT": -0.810207
+      "priceIRT": 278395,
+      "priceUSDT": 1.065,
+      "changePercent15mIRT": -0.216846,
+      "changePercent15mUSDT": -0.560224,
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "WIF",
       "name": "داگ‌ویف‌هت",
-      "rank": 187,
+      "rank": 186,
       "priceIRT": 54155,
       "priceUSDT": 0.2098,
       "changePercent15mIRT": 0,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -1.536364,
-      "changePercent1hUSDT": -1.456083
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "RAY",
       "name": "ریدیوم",
       "rank": 106,
-      "priceIRT": 572904,
+      "priceIRT": 563343,
       "priceUSDT": 2.1925,
-      "changePercent15mIRT": 1.756617,
+      "changePercent15mIRT": 0.058435,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 0.441808,
-      "changePercent1hUSDT": 0.490421
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "TNSR",
@@ -1491,8 +1491,8 @@
       "priceUSDT": 0.03646,
       "changePercent15mIRT": 0,
       "changePercent15mUSDT": -0.164294,
-      "changePercent1hIRT": -0.513143,
-      "changePercent1hUSDT": -0.164294
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "COW",
@@ -1502,41 +1502,41 @@
       "priceUSDT": 0.1539,
       "changePercent15mIRT": -0.057599,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -0.057599,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "AIXBT",
       "name": "ای آی ایکس بی تی",
-      "rank": 850,
+      "rank": 851,
       "priceIRT": 5347,
       "priceUSDT": 0.02104,
       "changePercent15mIRT": 0,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 0,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "VIRTUAL",
       "name": "ویرچوالز پروتکل",
       "rank": 123,
       "priceIRT": 180426,
-      "priceUSDT": 0.7037,
+      "priceUSDT": 0.7072,
       "changePercent15mIRT": 0.041586,
-      "changePercent15mUSDT": -0.551159,
-      "changePercent1hIRT": -1.774233,
-      "changePercent1hUSDT": -2.263889
+      "changePercent15mUSDT": -0.056529,
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "KAITO",
       "name": "کایتو",
-      "rank": 351,
+      "rank": 352,
       "priceIRT": 81007,
       "priceUSDT": 0.3123,
       "changePercent15mIRT": -0.508468,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -0.267162,
-      "changePercent1hUSDT": 0.418006
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "PENGU",
@@ -1546,19 +1546,19 @@
       "priceUSDT": 0.00781,
       "changePercent15mIRT": 0.245821,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 0,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "JUP",
       "name": "ژوپیتر",
-      "rank": 73,
+      "rank": 74,
       "priceIRT": 87000,
       "priceUSDT": 0.3349,
       "changePercent15mIRT": -0.898746,
       "changePercent15mUSDT": -0.178838,
-      "changePercent1hIRT": -0.764229,
-      "changePercent1hUSDT": -0.386675
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "IO",
@@ -1568,30 +1568,30 @@
       "priceUSDT": 0.1666,
       "changePercent15mIRT": 0.638567,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -0.202724,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "CETUS",
       "name": "ستوس پروتکل",
       "rank": 781,
-      "priceIRT": 6373,
+      "priceIRT": 6608,
       "priceUSDT": 0.02564,
-      "changePercent15mIRT": -0.031373,
+      "changePercent15mIRT": 3.654902,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -3.160614,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "PUMP",
       "name": "پامپ فان",
-      "rank": 46,
-      "priceIRT": 1347,
-      "priceUSDT": 0.005115,
-      "changePercent15mIRT": -0.956611,
-      "changePercent15mUSDT": -2.849003,
-      "changePercent1hIRT": -0.941315,
-      "changePercent1hUSDT": -2.049023
+      "rank": 47,
+      "priceIRT": 1342,
+      "priceUSDT": 0.005169,
+      "changePercent15mIRT": -1.324255,
+      "changePercent15mUSDT": -1.823362,
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "LAYER",
@@ -1601,30 +1601,30 @@
       "priceUSDT": 0.073,
       "changePercent15mIRT": 0.269789,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -1.573093,
-      "changePercent1hUSDT": 0.412655
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "PNUT",
       "name": "پینات",
       "rank": 483,
-      "priceIRT": 13072,
+      "priceIRT": 12900,
       "priceUSDT": 0.04984,
-      "changePercent15mIRT": 2.005462,
+      "changePercent15mIRT": 0.663285,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 0.809748,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "ORCA",
       "name": "اورکا",
-      "rank": 245,
-      "priceIRT": 555686,
+      "rank": 244,
+      "priceIRT": 555664,
       "priceUSDT": 2.124,
-      "changePercent15mIRT": 1.033818,
+      "changePercent15mIRT": 1.029818,
       "changePercent15mUSDT": 0.520587,
-      "changePercent1hIRT": 0.850454,
-      "changePercent1hUSDT": 0.520587
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "SYRUP",
@@ -1634,41 +1634,41 @@
       "priceUSDT": 0.2397,
       "changePercent15mIRT": -0.826217,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -3.79821,
-      "changePercent1hUSDT": -0.125
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "SAHARA",
       "name": "ساهارا ای آی",
-      "rank": 589,
+      "rank": 590,
       "priceIRT": 2243.9,
       "priceUSDT": 0.00871,
       "changePercent15mIRT": -0.133517,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -0.271111,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "BOME",
       "name": "بوک آف میم",
-      "rank": 433,
-      "priceIRT": 218.42,
-      "priceUSDT": 0.000844,
-      "changePercent15mIRT": -0.695613,
-      "changePercent15mUSDT": 1.077844,
-      "changePercent1hIRT": 1.336179,
-      "changePercent1hUSDT": 2.315432
+      "rank": 432,
+      "priceIRT": 217.60999999999999,
+      "priceUSDT": 0.0008353,
+      "changePercent15mIRT": -1.063878,
+      "changePercent15mUSDT": 0.035928,
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "PYTH",
       "name": "پایث نتورک",
       "rank": 101,
-      "priceIRT": 21502,
+      "priceIRT": 21595,
       "priceUSDT": 0.08394,
-      "changePercent15mIRT": -1.012798,
+      "changePercent15mIRT": -0.584661,
       "changePercent15mUSDT": 0.262781,
-      "changePercent1hIRT": -3.807095,
-      "changePercent1hUSDT": -1.513552
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "JTO",
@@ -1678,19 +1678,19 @@
       "priceUSDT": 0.514,
       "changePercent15mIRT": 0.802548,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 1.21322,
-      "changePercent1hUSDT": -0.829635
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "SKY",
       "name": "اسکای",
-      "rank": 58,
+      "rank": 59,
       "priceIRT": 19992,
       "priceUSDT": 0.07691,
       "changePercent15mIRT": 0.080096,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 0.120192,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "BIO",
@@ -1700,8 +1700,8 @@
       "priceUSDT": 0.02892,
       "changePercent15mIRT": -0.177112,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -1.146789,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "MEW",
@@ -1711,8 +1711,8 @@
       "priceUSDT": 0.0004566,
       "changePercent15mIRT": -0.250417,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 1.185436,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "SUN",
@@ -1722,8 +1722,8 @@
       "priceUSDT": 0.01687,
       "changePercent15mIRT": -1.130856,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -1.130856,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "ME",
@@ -1733,30 +1733,30 @@
       "priceUSDT": 0.0712,
       "changePercent15mIRT": -0.005466,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -0.163711,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "KMNO",
       "name": "کامینو فایننس",
-      "rank": 186,
+      "rank": 187,
       "priceIRT": 9402,
       "priceUSDT": 0.0361,
       "changePercent15mIRT": 1.358344,
       "changePercent15mUSDT": -3.372591,
-      "changePercent1hIRT": 0.599187,
-      "changePercent1hUSDT": -3.372591
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "LINEA",
       "name": "لینیا",
-      "rank": 356,
-      "priceIRT": 791,
+      "rank": 357,
+      "priceIRT": 790,
       "priceUSDT": 0.002981,
-      "changePercent15mIRT": 0.508259,
+      "changePercent15mIRT": 0.381194,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 0,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "AVNT",
@@ -1766,8 +1766,8 @@
       "priceUSDT": 0.1339,
       "changePercent15mIRT": 0.002888,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -0.187341,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "BARD",
@@ -1777,19 +1777,19 @@
       "priceUSDT": 0.12,
       "changePercent15mIRT": 0,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -0.054095,
-      "changePercent1hUSDT": -0.249377
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "ASTER",
       "name": "استر",
       "rank": 53,
       "priceIRT": 181024,
-      "priceUSDT": 0.6995,
+      "priceUSDT": 0.6977,
       "changePercent15mIRT": -0.519866,
-      "changePercent15mUSDT": -0.071429,
-      "changePercent1hIRT": -0.783215,
-      "changePercent1hUSDT": 0.071531
+      "changePercent15mUSDT": -0.328571,
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "HUMA",
@@ -1799,19 +1799,19 @@
       "priceUSDT": 0.03355,
       "changePercent15mIRT": -0.011472,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -0.45683,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "SPK",
       "name": "اسپارک",
       "rank": 373,
       "priceIRT": 5476,
-      "priceUSDT": 0.021057,
+      "priceUSDT": 0.021021,
       "changePercent15mIRT": 0,
-      "changePercent15mUSDT": 1.026724,
-      "changePercent1hIRT": -0.164084,
-      "changePercent1hUSDT": -1.247479
+      "changePercent15mUSDT": 0.854004,
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "XVS",
@@ -1821,19 +1821,19 @@
       "priceUSDT": 3.085,
       "changePercent15mIRT": 0,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -0.228635,
-      "changePercent1hUSDT": -1.532078
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "SEI",
       "name": "سی",
       "rank": 126,
-      "priceIRT": 17168,
+      "priceIRT": 17002,
       "priceUSDT": 0.0662,
-      "changePercent15mIRT": 0.976356,
+      "changePercent15mIRT": 0,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 0.110794,
-      "changePercent1hUSDT": 0.607903
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "USDE",
@@ -1843,8 +1843,8 @@
       "priceUSDT": 0.9999,
       "changePercent15mIRT": -0.836528,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -0.836528,
-      "changePercent1hUSDT": 1
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "2Z",
@@ -1854,8 +1854,8 @@
       "priceUSDT": 0.03643,
       "changePercent15mIRT": 0.326316,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 1.028196,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "AERO",
@@ -1865,19 +1865,19 @@
       "priceUSDT": 0.8902,
       "changePercent15mIRT": 0.653461,
       "changePercent15mUSDT": 0.485382,
-      "changePercent1hIRT": -0.304887,
-      "changePercent1hUSDT": -0.201794
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "BEAMX",
       "name": "بیم",
       "rank": null,
-      "priceIRT": 740,
+      "priceIRT": 753.7,
       "priceUSDT": 0.0029,
-      "changePercent15mIRT": 1.928375,
+      "changePercent15mIRT": 3.815427,
       "changePercent15mUSDT": 4.693141,
-      "changePercent1hIRT": 2.93504,
-      "changePercent1hUSDT": 5.569712
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "TOSHI",
@@ -1887,19 +1887,19 @@
       "priceUSDT": 0.0001107,
       "changePercent15mIRT": 0,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -0.338983,
-      "changePercent1hUSDT": -2.035398
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "MOODENG",
       "name": "مودنگ",
-      "rank": 547,
+      "rank": 548,
       "priceIRT": 10767,
       "priceUSDT": 0.04195,
       "changePercent15mIRT": 0,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 0,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "MET",
@@ -1909,8 +1909,8 @@
       "priceUSDT": 0.3879,
       "changePercent15mIRT": -0.819825,
       "changePercent15mUSDT": -0.334018,
-      "changePercent1hIRT": 2.731026,
-      "changePercent1hUSDT": 1.517927
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "GIGGLE",
@@ -1920,74 +1920,74 @@
       "priceUSDT": 35.3,
       "changePercent15mIRT": -0.68534,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -0.68534,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "PROVE",
       "name": "ساکسینکت",
-      "rank": 575,
+      "rank": 576,
       "priceIRT": 50879,
       "priceUSDT": 0.1974,
       "changePercent15mIRT": 0.848348,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 0.848348,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "ZORA",
       "name": "زورا",
-      "rank": 647,
-      "priceIRT": 1890,
+      "rank": 646,
+      "priceIRT": 1891,
       "priceUSDT": 0.00723,
-      "changePercent15mIRT": -2.325581,
+      "changePercent15mIRT": -2.273902,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 0.318471,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "PROM",
       "name": "پرام",
-      "rank": 298,
+      "rank": 300,
       "priceIRT": 1330003,
       "priceUSDT": 5.138,
       "changePercent15mIRT": -0.072353,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -1.037173,
-      "changePercent1hUSDT": -0.116641
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "ZEN",
       "name": "هورایزن",
-      "rank": 264,
+      "rank": 265,
       "priceIRT": 1622498,
       "priceUSDT": 6.248,
       "changePercent15mIRT": -1.03147,
       "changePercent15mUSDT": -0.287265,
-      "changePercent1hIRT": -0.59697,
-      "changePercent1hUSDT": -0.287265
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "WAL",
       "name": "والروس",
-      "rank": 300,
-      "priceIRT": 9214,
-      "priceUSDT": 0.0363,
-      "changePercent15mIRT": -0.604099,
-      "changePercent15mUSDT": 0.276243,
-      "changePercent1hIRT": -2.590126,
-      "changePercent1hUSDT": -1.358696
+      "rank": 298,
+      "priceIRT": 9237,
+      "priceUSDT": 0.0361,
+      "changePercent15mIRT": -0.355987,
+      "changePercent15mUSDT": -0.276243,
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "EUL",
       "name": "اولر",
-      "rank": 636,
+      "rank": 635,
       "priceIRT": 351501,
       "priceUSDT": 1.379,
       "changePercent15mIRT": 0,
       "changePercent15mUSDT": -0.072464,
-      "changePercent1hIRT": -2.108218,
-      "changePercent1hUSDT": -4.765193
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "MMT",
@@ -1997,19 +1997,19 @@
       "priceUSDT": 0.1718,
       "changePercent15mIRT": -0.002226,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -0.504894,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "KITE",
       "name": "کایت",
       "rank": 149,
-      "priceIRT": 32003,
+      "priceIRT": 32150,
       "priceUSDT": 0.12189,
-      "changePercent15mIRT": 0.00625,
+      "changePercent15mIRT": 0.46561,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 0.009375,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "WET",
@@ -2019,8 +2019,8 @@
       "priceUSDT": 0.05899,
       "changePercent15mIRT": 0,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 0,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "FLUID",
@@ -2030,8 +2030,8 @@
       "priceUSDT": 2.173,
       "changePercent15mIRT": 0,
       "changePercent15mUSDT": -1.182356,
-      "changePercent1hIRT": -1.721535,
-      "changePercent1hUSDT": -1.182356
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "DOOD",
@@ -2041,52 +2041,52 @@
       "priceUSDT": 0.001597,
       "changePercent15mIRT": 0,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 0,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "RED",
       "name": "رد استون",
       "rank": 328,
-      "priceIRT": 40024,
+      "priceIRT": 40333,
       "priceUSDT": 0.1548,
-      "changePercent15mIRT": 1.604387,
+      "changePercent15mIRT": 2.38881,
       "changePercent15mUSDT": 0.912647,
-      "changePercent1hIRT": -0.955209,
-      "changePercent1hUSDT": 0.71568
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "LA",
       "name": "لاگرانژ",
       "rank": null,
-      "priceIRT": 17200,
+      "priceIRT": 17201,
       "priceUSDT": 0.0664,
-      "changePercent15mIRT": -0.687107,
+      "changePercent15mIRT": -0.681333,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -0.040681,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "AT",
       "name": "اپرو",
-      "rank": 651,
+      "rank": 652,
       "priceIRT": 35456,
       "priceUSDT": 0.1384,
       "changePercent15mIRT": 0,
       "changePercent15mUSDT": 0.727802,
-      "changePercent1hIRT": -1.900783,
-      "changePercent1hUSDT": 0.727802
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "HYPE",
       "name": "هایپرلیکویید",
       "rank": 11,
-      "priceIRT": 21660082,
-      "priceUSDT": 83.763,
-      "changePercent15mIRT": 0.016208,
-      "changePercent15mUSDT": -0.044153,
-      "changePercent1hIRT": -1.774942,
-      "changePercent1hUSDT": -0.991702
+      "priceIRT": 21881693,
+      "priceUSDT": 83.52,
+      "changePercent15mIRT": 1.039504,
+      "changePercent15mUSDT": -0.334129,
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "BREV",
@@ -2096,8 +2096,8 @@
       "priceUSDT": 0.0879,
       "changePercent15mIRT": -1.309577,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -1.309577,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "ZAMA",
@@ -2107,8 +2107,8 @@
       "priceUSDT": 0.07677,
       "changePercent15mIRT": 0,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 0.669543,
-      "changePercent1hUSDT": -2.104055
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "ZK",
@@ -2118,19 +2118,19 @@
       "priceUSDT": 0.01486,
       "changePercent15mIRT": 0.762756,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -0.156372,
-      "changePercent1hUSDT": -0.134409
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "SENT",
       "name": "سنشنت",
-      "rank": 223,
-      "priceIRT": 5390,
-      "priceUSDT": 0.02064,
-      "changePercent15mIRT": 0.111441,
-      "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 0.484713,
-      "changePercent1hUSDT": 0
+      "rank": 222,
+      "priceIRT": 5370,
+      "priceUSDT": 0.02074,
+      "changePercent15mIRT": -0.26003,
+      "changePercent15mUSDT": 0.484496,
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "SLVON",
@@ -2140,85 +2140,85 @@
       "priceUSDT": 67.99,
       "changePercent15mIRT": 0,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 0,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "GRASS",
       "name": "گرس",
-      "rank": 113,
-      "priceIRT": 196683,
-      "priceUSDT": 0.762,
-      "changePercent15mIRT": -1.662925,
-      "changePercent15mUSDT": -0.65189,
-      "changePercent1hIRT": 1.438938,
-      "changePercent1hUSDT": 2.889549
+      "rank": 112,
+      "priceIRT": 201943,
+      "priceUSDT": 0.77,
+      "changePercent15mIRT": 0.966956,
+      "changePercent15mUSDT": 0.391134,
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "CHIP",
       "name": "یو‌اس‌دی ای آی",
       "rank": 260,
-      "priceIRT": 15365,
+      "priceIRT": 15506,
       "priceUSDT": 0.05906,
-      "changePercent15mIRT": -0.947653,
+      "changePercent15mIRT": -0.03868,
       "changePercent15mUSDT": 0.169607,
-      "changePercent1hIRT": -0.755716,
-      "changePercent1hUSDT": 0.339789
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "AWE",
       "name": "ای‌دبلیو‌ای",
-      "rank": 246,
+      "rank": 245,
       "priceIRT": 17415,
       "priceUSDT": 0.06717,
       "changePercent15mIRT": 0,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -0.667351,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "BASED",
       "name": "بیسد",
       "rank": null,
-      "priceIRT": 15400,
-      "priceUSDT": 0.05917,
-      "changePercent15mIRT": 0.410771,
-      "changePercent15mUSDT": 0.492527,
-      "changePercent1hIRT": 0.084487,
-      "changePercent1hUSDT": 0.441351
+      "priceIRT": 15350,
+      "priceUSDT": 0.05888,
+      "changePercent15mIRT": 0.084762,
+      "changePercent15mUSDT": 0,
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "CFG",
       "name": "سنتریفیوژ",
-      "rank": 461,
+      "rank": 462,
       "priceIRT": 36697,
       "priceUSDT": 0.14181,
       "changePercent15mIRT": 0,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 1.102019,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "ROBO",
       "name": "فبریک پروتکل",
-      "rank": 934,
+      "rank": 932,
       "priceIRT": 2017,
       "priceUSDT": 0.0079,
       "changePercent15mIRT": -1.609756,
       "changePercent15mUSDT": -0.503778,
-      "changePercent1hIRT": -2.039825,
-      "changePercent1hUSDT": -1.863354
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "HOME",
       "name": "دیفای اپ",
-      "rank": 780,
-      "priceIRT": 1483,
+      "rank": 778,
+      "priceIRT": 1482,
       "priceUSDT": 0.005675,
-      "changePercent15mIRT": 0.338295,
+      "changePercent15mIRT": 0.270636,
       "changePercent15mUSDT": 0.906828,
-      "changePercent1hIRT": 0.747283,
-      "changePercent1hUSDT": 0.83511
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "USOON",
@@ -2228,19 +2228,19 @@
       "priceUSDT": 152.03,
       "changePercent15mIRT": 0,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 0,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "ZBT",
       "name": "زیروبیس",
-      "rank": 755,
+      "rank": 754,
       "priceIRT": 20257,
       "priceUSDT": 0.07904,
       "changePercent15mIRT": -1.425791,
       "changePercent15mUSDT": -0.964791,
-      "changePercent1hIRT": -1.903148,
-      "changePercent1hUSDT": -0.964791
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "EDGE",
@@ -2250,19 +2250,19 @@
       "priceUSDT": 0.3499,
       "changePercent15mIRT": -0.552222,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -0.980208,
-      "changePercent1hUSDT": 1.538015
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "DUSK",
       "name": "داسک",
-      "rank": 459,
+      "rank": 460,
       "priceIRT": 22343,
       "priceUSDT": 0.08861,
       "changePercent15mIRT": -1.616028,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -1.616028,
-      "changePercent1hUSDT": 2.368299
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "OPEN",
@@ -2272,19 +2272,19 @@
       "priceUSDT": 0.106,
       "changePercent15mIRT": -0.003636,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 0,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "OPG",
       "name": "اوپن‌گردینت",
-      "rank": 646,
+      "rank": 650,
       "priceIRT": 35810,
       "priceUSDT": 0.1398,
       "changePercent15mIRT": 0.46008,
       "changePercent15mUSDT": -1.687764,
-      "changePercent1hIRT": -0.613361,
-      "changePercent1hUSDT": -0.639659
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "GENIUS",
@@ -2294,8 +2294,8 @@
       "priceUSDT": 0.3366,
       "changePercent15mIRT": -0.139004,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -0.139004,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "SLX",
@@ -2305,8 +2305,8 @@
       "priceUSDT": 0.057,
       "changePercent15mIRT": 0,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -0.41858,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "RE",
@@ -2316,74 +2316,74 @@
       "priceUSDT": 0.4279,
       "changePercent15mIRT": -0.099,
       "changePercent15mUSDT": 1.880952,
-      "changePercent1hIRT": -0.099,
-      "changePercent1hUSDT": -3.386769
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "SYN",
       "name": "سیناپس",
       "rank": 564,
-      "priceIRT": 46500,
+      "priceIRT": 46580,
       "priceUSDT": 0.18022,
-      "changePercent15mIRT": 0.258732,
+      "changePercent15mIRT": 0.43122,
       "changePercent15mUSDT": 1.235816,
-      "changePercent1hIRT": -0.935256,
-      "changePercent1hUSDT": 1.235816
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "BANK",
       "name": "لورنزو پروتکل",
-      "rank": 816,
-      "priceIRT": 7420,
+      "rank": 814,
+      "priceIRT": 7486,
       "priceUSDT": 0.02838,
-      "changePercent15mIRT": 0.107933,
+      "changePercent15mIRT": 0.998381,
       "changePercent15mUSDT": 0.141143,
-      "changePercent1hIRT": -0.094251,
-      "changePercent1hUSDT": 1.939655
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "ESP",
       "name": "اسپرسو",
-      "rank": 340,
+      "rank": 341,
       "priceIRT": 27963,
       "priceUSDT": 0.10511,
       "changePercent15mIRT": -0.132143,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -1.120934,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "PLUME",
       "name": "پلوم",
-      "rank": 233,
+      "rank": 235,
       "priceIRT": 5510,
       "priceUSDT": 0.021,
       "changePercent15mIRT": 0.127203,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -0.163073,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "HOLO",
       "name": "هولوورلد ای‌آی",
       "rank": 499,
       "priceIRT": 15685,
-      "priceUSDT": 0.06166,
+      "priceUSDT": 0.05979,
       "changePercent15mIRT": 0,
-      "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 0,
-      "changePercent1hUSDT": 0
+      "changePercent15mUSDT": -3.03276,
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "TAO",
       "name": "بیت‌تنسور",
       "rank": 36,
-      "priceIRT": 74602000,
+      "priceIRT": 76244699,
       "priceUSDT": 290.54,
-      "changePercent15mIRT": -2.686955,
+      "changePercent15mIRT": -0.54417,
       "changePercent15mUSDT": -2.175084,
-      "changePercent1hIRT": 0.677436,
-      "changePercent1hUSDT": -2.175084
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "TSM",
@@ -2393,8 +2393,8 @@
       "priceUSDT": 456.96,
       "changePercent15mIRT": 0,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 0,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "SKHY",
@@ -2404,8 +2404,8 @@
       "priceUSDT": 167.42,
       "changePercent15mIRT": 0,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 0,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "BABA",
@@ -2415,8 +2415,8 @@
       "priceUSDT": 110.8,
       "changePercent15mIRT": 0,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -0.000004,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "GPS",
@@ -2426,8 +2426,8 @@
       "priceUSDT": 0.01001,
       "changePercent15mIRT": -0.011537,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 0,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "GRVT",
@@ -2437,30 +2437,30 @@
       "priceUSDT": 0.20824,
       "changePercent15mIRT": 0,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 0,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "DOS",
       "name": "دپ‌اواس",
-      "rank": 432,
+      "rank": 431,
       "priceIRT": 46323,
       "priceUSDT": 0.2342,
       "changePercent15mIRT": 0,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 0,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "1K_SHIB",
       "name": "1k_شیبا",
       "rank": null,
-      "priceIRT": 1377.4,
-      "priceUSDT": 0.005293,
-      "changePercent15mIRT": -0.404917,
-      "changePercent15mUSDT": -0.470102,
-      "changePercent1hIRT": -0.354482,
-      "changePercent1hUSDT": 0.056711
+      "priceIRT": 1381,
+      "priceUSDT": 0.00529,
+      "changePercent15mIRT": -0.144613,
+      "changePercent15mUSDT": -0.526514,
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "1B_BABYDOGE",
@@ -2470,8 +2470,8 @@
       "priceUSDT": 0.374,
       "changePercent15mIRT": 0.018374,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": 0.035733,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "100K_FLOKI",
@@ -2481,8 +2481,8 @@
       "priceUSDT": 2.6282,
       "changePercent15mIRT": -0.353214,
       "changePercent15mUSDT": 0.003805,
-      "changePercent1hIRT": -0.091308,
-      "changePercent1hUSDT": 0.083778
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "1M_PEPE",
@@ -2492,8 +2492,8 @@
       "priceUSDT": 4.0798,
       "changePercent15mIRT": -0.001792,
       "changePercent15mUSDT": 0.48026,
-      "changePercent1hIRT": -0.189452,
-      "changePercent1hUSDT": -0.393076
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "1K_BONK",
@@ -2503,8 +2503,8 @@
       "priceUSDT": 0.003315,
       "changePercent15mIRT": 0.642415,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -0.185763,
-      "changePercent1hUSDT": 0.576456
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "1K_CAT",
@@ -2514,943 +2514,22 @@
       "priceUSDT": 0.001994,
       "changePercent15mIRT": -0.048814,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -0.194972,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     },
     {
       "symbol": "1K_CHEEMS",
       "name": "1k_چیمز",
       "rank": null,
-      "priceIRT": 130.1,
+      "priceIRT": 130.6,
       "priceUSDT": 0.0005236,
-      "changePercent15mIRT": 0,
+      "changePercent15mIRT": 0.38432,
       "changePercent15mUSDT": 0,
-      "changePercent1hIRT": -2.253944,
-      "changePercent1hUSDT": 0
+      "changePercent1hIRT": null,
+      "changePercent1hUSDT": null
     }
   ],
   "history": [
-    {
-      "timestamp": 1791824848896,
-      "prices": {
-        "BTC": {
-          "priceIRT": 21470000000,
-          "priceUSDT": 82576.06
-        },
-        "ETH": {
-          "priceIRT": 656512429,
-          "priceUSDT": 2516.91
-        },
-        "LTC": {
-          "priceIRT": 16342847,
-          "priceUSDT": 62.62
-        },
-        "USDT": {
-          "priceIRT": 260950,
-          "priceUSDT": 1
-        },
-        "XRP": {
-          "priceIRT": 355550,
-          "priceUSDT": 1.36558
-        },
-        "BCH": {
-          "priceIRT": 70859432,
-          "priceUSDT": 274.01
-        },
-        "BNB": {
-          "priceIRT": 194533696,
-          "priceUSDT": 744.1881
-        },
-        "A": {
-          "priceIRT": 26045,
-          "priceUSDT": 0.1017
-        },
-        "DOGE": {
-          "priceIRT": 22117,
-          "priceUSDT": 0.0844
-        },
-        "XLM": {
-          "priceIRT": 50858,
-          "priceUSDT": 0.19523
-        },
-        "TRX": {
-          "priceIRT": 86542,
-          "priceUSDT": 0.33231
-        },
-        "ADA": {
-          "priceIRT": 63243,
-          "priceUSDT": 0.2435
-        },
-        "XMR": {
-          "priceIRT": 138308296,
-          "priceUSDT": 530.73
-        },
-        "ETC": {
-          "priceIRT": 2139281,
-          "priceUSDT": 8.2503
-        },
-        "DASH": {
-          "priceIRT": 13167186,
-          "priceUSDT": 50.18
-        },
-        "ZEC": {
-          "priceIRT": 322472997,
-          "priceUSDT": 1239.59
-        },
-        "XTZ": {
-          "priceIRT": 80517,
-          "priceUSDT": 0.3109
-        },
-        "LINK": {
-          "priceIRT": 3377379,
-          "priceUSDT": 12.863
-        },
-        "DAI": {
-          "priceIRT": 260300,
-          "priceUSDT": 1
-        },
-        "DOT": {
-          "priceIRT": 317368,
-          "priceUSDT": 1.216
-        },
-        "UNI": {
-          "priceIRT": 1915111,
-          "priceUSDT": 7.336
-        },
-        "AAVE": {
-          "priceIRT": 42167137,
-          "priceUSDT": 162
-        },
-        "SOL": {
-          "priceIRT": 28070715,
-          "priceUSDT": 108
-        },
-        "POL": {
-          "priceIRT": 26789,
-          "priceUSDT": 0.103
-        },
-        "FIL": {
-          "priceIRT": 300226,
-          "priceUSDT": 1.154
-        },
-        "GRT": {
-          "priceIRT": 6857,
-          "priceUSDT": 0.02649
-        },
-        "1INCH": {
-          "priceIRT": 25121,
-          "priceUSDT": 0.0983
-        },
-        "ANKR": {
-          "priceIRT": 1230,
-          "priceUSDT": 0.00476
-        },
-        "ATOM": {
-          "priceIRT": 476002,
-          "priceUSDT": 1.831
-        },
-        "AVAX": {
-          "priceIRT": 2731017,
-          "priceUSDT": 10.451
-        },
-        "AXS": {
-          "priceIRT": 313798,
-          "priceUSDT": 1.201
-        },
-        "BAND": {
-          "priceIRT": 62858,
-          "priceUSDT": 0.246
-        },
-        "BAT": {
-          "priceIRT": 38170,
-          "priceUSDT": 0.1466
-        },
-        "CELR": {
-          "priceIRT": 800.544,
-          "priceUSDT": 0.003082
-        },
-        "COMP": {
-          "priceIRT": 6169698,
-          "priceUSDT": 23.77
-        },
-        "COTI": {
-          "priceIRT": 3407,
-          "priceUSDT": 0.01307
-        },
-        "EGLD": {
-          "priceIRT": 971351,
-          "priceUSDT": 3.781
-        },
-        "LIT": {
-          "priceIRT": 941000,
-          "priceUSDT": 3.606
-        },
-        "MASK": {
-          "priceIRT": 122889,
-          "priceUSDT": 0.474
-        },
-        "NEAR": {
-          "priceIRT": 1413810,
-          "priceUSDT": 5.439
-        },
-        "SFP": {
-          "priceIRT": 70310,
-          "priceUSDT": 0.2794
-        },
-        "SNX": {
-          "priceIRT": 62648,
-          "priceUSDT": 0.2401
-        },
-        "SUSHI": {
-          "priceIRT": 61599,
-          "priceUSDT": 0.2346
-        },
-        "YFI": {
-          "priceIRT": 616056788,
-          "priceUSDT": 2410
-        },
-        "ZIL": {
-          "priceIRT": 930,
-          "priceUSDT": 0.0036
-        },
-        "MANA": {
-          "priceIRT": 24548,
-          "priceUSDT": 0.0955
-        },
-        "SAND": {
-          "priceIRT": 16079,
-          "priceUSDT": 0.0614
-        },
-        "APE": {
-          "priceIRT": 39566,
-          "priceUSDT": 0.1515
-        },
-        "ONE": {
-          "priceIRT": 496,
-          "priceUSDT": 0.001888
-        },
-        "WBTC": {
-          "priceIRT": 21446942939,
-          "priceUSDT": 82730
-        },
-        "USDC": {
-          "priceIRT": 260301,
-          "priceUSDT": 1
-        },
-        "ALGO": {
-          "priceIRT": 32630,
-          "priceUSDT": 0.1245
-        },
-        "GMT": {
-          "priceIRT": 2167,
-          "priceUSDT": 0.0083
-        },
-        "CHZ": {
-          "priceIRT": 3933,
-          "priceUSDT": 0.01505
-        },
-        "QNT": {
-          "priceIRT": 59585024,
-          "priceUSDT": 229.22
-        },
-        "FLOW": {
-          "priceIRT": 8866,
-          "priceUSDT": 0.0341
-        },
-        "HBAR": {
-          "priceIRT": 23300,
-          "priceUSDT": 0.08928
-        },
-        "EGALA": {
-          "priceIRT": 603,
-          "priceUSDT": 0.002294
-        },
-        "ENJ": {
-          "priceIRT": 8050,
-          "priceUSDT": 0.03036
-        },
-        "OP": {
-          "priceIRT": 35630,
-          "priceUSDT": 0.13505
-        },
-        "CRV": {
-          "priceIRT": 91394,
-          "priceUSDT": 0.35
-        },
-        "CAKE": {
-          "priceIRT": 599500,
-          "priceUSDT": 2.31
-        },
-        "LDO": {
-          "priceIRT": 108617,
-          "priceUSDT": 0.4154
-        },
-        "DYDX": {
-          "priceIRT": 35292,
-          "priceUSDT": 0.1351
-        },
-        "APT": {
-          "priceIRT": 216417,
-          "priceUSDT": 0.8287
-        },
-        "ENS": {
-          "priceIRT": 1604004,
-          "priceUSDT": 6.15
-        },
-        "LPT": {
-          "priceIRT": 447811,
-          "priceUSDT": 1.704
-        },
-        "GLM": {
-          "priceIRT": 34495,
-          "priceUSDT": 0.1333
-        },
-        "API3": {
-          "priceIRT": 82150,
-          "priceUSDT": 0.3196
-        },
-        "CVC": {
-          "priceIRT": 6385,
-          "priceUSDT": 0.02479
-        },
-        "NMR": {
-          "priceIRT": 3372578,
-          "priceUSDT": 12.892
-        },
-        "CVX": {
-          "priceIRT": 535045,
-          "priceUSDT": 2.067
-        },
-        "SLP": {
-          "priceIRT": 163.5,
-          "priceUSDT": 0.0006262
-        },
-        "T": {
-          "priceIRT": 1401,
-          "priceUSDT": 0.005335
-        },
-        "GRAM": {
-          "priceIRT": 363106,
-          "priceUSDT": 1.388
-        },
-        "ZRX": {
-          "priceIRT": 31462,
-          "priceUSDT": 0.1215
-        },
-        "IMX": {
-          "priceIRT": 47102,
-          "priceUSDT": 0.1793
-        },
-        "BLUR": {
-          "priceIRT": 4719,
-          "priceUSDT": 0.01843
-        },
-        "MAGIC": {
-          "priceIRT": 31101,
-          "priceUSDT": 0.11942
-        },
-        "ARB": {
-          "priceIRT": 48327,
-          "priceUSDT": 0.1855
-        },
-        "PAXG": {
-          "priceIRT": 1081143146,
-          "priceUSDT": 4160
-        },
-        "GMX": {
-          "priceIRT": 2137316,
-          "priceUSDT": 8.282
-        },
-        "SSV": {
-          "priceIRT": 744446,
-          "priceUSDT": 2.926
-        },
-        "WLD": {
-          "priceIRT": 136000,
-          "priceUSDT": 0.5244
-        },
-        "AGLD": {
-          "priceIRT": 50179,
-          "priceUSDT": 0.1926
-        },
-        "JST": {
-          "priceIRT": 36000,
-          "priceUSDT": 0.13778
-        },
-        "RENDER": {
-          "priceIRT": 520257,
-          "priceUSDT": 2.012
-        },
-        "BICO": {
-          "priceIRT": 4682,
-          "priceUSDT": 0.0179
-        },
-        "WOO": {
-          "priceIRT": 3408,
-          "priceUSDT": 0.01358
-        },
-        "SKL": {
-          "priceIRT": 1400,
-          "priceUSDT": 0.00535
-        },
-        "FET": {
-          "priceIRT": 57451,
-          "priceUSDT": 0.2194
-        },
-        "TRB": {
-          "priceIRT": 4950807,
-          "priceUSDT": 19.35
-        },
-        "RSR": {
-          "priceIRT": 593.899,
-          "priceUSDT": 0.002272
-        },
-        "MEME": {
-          "priceIRT": 144.327,
-          "priceUSDT": 0.000551
-        },
-        "UMA": {
-          "priceIRT": 104500,
-          "priceUSDT": 0.404
-        },
-        "ID": {
-          "priceIRT": 9881,
-          "priceUSDT": 0.03909
-        },
-        "ETHFI": {
-          "priceIRT": 180606,
-          "priceUSDT": 0.6915
-        },
-        "NOT": {
-          "priceIRT": 118.79100000000001,
-          "priceUSDT": 0.0004534
-        },
-        "AEVO": {
-          "priceIRT": 6620,
-          "priceUSDT": 0.02554
-        },
-        "W": {
-          "priceIRT": 5567,
-          "priceUSDT": 0.02146
-        },
-        "ZRO": {
-          "priceIRT": 574406,
-          "priceUSDT": 2.206
-        },
-        "G": {
-          "priceIRT": 1068,
-          "priceUSDT": 0.004278
-        },
-        "ONDO": {
-          "priceIRT": 127682,
-          "priceUSDT": 0.4908
-        },
-        "DOGS": {
-          "priceIRT": 11.1235,
-          "priceUSDT": 0.00004254
-        },
-        "CATI": {
-          "priceIRT": 15622,
-          "priceUSDT": 0.06136
-        },
-        "HMSTR": {
-          "priceIRT": 41.9529,
-          "priceUSDT": 0.0001605
-        },
-        "XAUT": {
-          "priceIRT": 1086513938,
-          "priceUSDT": 4169
-        },
-        "EIGEN": {
-          "priceIRT": 66418,
-          "priceUSDT": 0.257
-        },
-        "JASMY": {
-          "priceIRT": 1315,
-          "priceUSDT": 0.005053
-        },
-        "ENA": {
-          "priceIRT": 57349,
-          "priceUSDT": 0.2185
-        },
-        "PENDLE": {
-          "priceIRT": 549356,
-          "priceUSDT": 2.11
-        },
-        "SUPER": {
-          "priceIRT": 54006,
-          "priceUSDT": 0.2108
-        },
-        "HOT": {
-          "priceIRT": 105.7995,
-          "priceUSDT": 0.000414
-        },
-        "EDU": {
-          "priceIRT": 19040,
-          "priceUSDT": 0.0724
-        },
-        "SAFE": {
-          "priceIRT": 34609,
-          "priceUSDT": 0.1331
-        },
-        "TWT": {
-          "priceIRT": 138661,
-          "priceUSDT": 0.538
-        },
-        "X": {
-          "priceIRT": 1.4641,
-          "priceUSDT": 0.00000561
-        },
-        "BANANA": {
-          "priceIRT": 972972,
-          "priceUSDT": 3.734
-        },
-        "MOVE": {
-          "priceIRT": 2292,
-          "priceUSDT": 0.00883
-        },
-        "STRK": {
-          "priceIRT": 25065,
-          "priceUSDT": 0.09629
-        },
-        "METIS": {
-          "priceIRT": 943499,
-          "priceUSDT": 3.627
-        },
-        "INJ": {
-          "priceIRT": 1977000,
-          "priceUSDT": 7.571
-        },
-        "TURBO": {
-          "priceIRT": 251.35700000000003,
-          "priceUSDT": 0.0009603
-        },
-        "DEXE": {
-          "priceIRT": 486900,
-          "priceUSDT": 1.859
-        },
-        "ATH": {
-          "priceIRT": 1608,
-          "priceUSDT": 0.006148
-        },
-        "COOKIE": {
-          "priceIRT": 3007,
-          "priceUSDT": 0.01145
-        },
-        "CGPT": {
-          "priceIRT": 5866,
-          "priceUSDT": 0.0228
-        },
-        "S": {
-          "priceIRT": 14900,
-          "priceUSDT": 0.0572
-        },
-        "NEIRO": {
-          "priceIRT": 21.772399999999998,
-          "priceUSDT": 0.00008383
-        },
-        "MORPHO": {
-          "priceIRT": 627480,
-          "priceUSDT": 2.4006
-        },
-        "FORM": {
-          "priceIRT": 72600,
-          "priceUSDT": 0.2793
-        },
-        "SUI": {
-          "priceIRT": 279343,
-          "priceUSDT": 1.0749
-        },
-        "WIF": {
-          "priceIRT": 55074,
-          "priceUSDT": 0.2129
-        },
-        "RAY": {
-          "priceIRT": 560001,
-          "priceUSDT": 2.18
-        },
-        "TNSR": {
-          "priceIRT": 9547,
-          "priceUSDT": 0.03661
-        },
-        "COW": {
-          "priceIRT": 38195,
-          "priceUSDT": 0.1539
-        },
-        "AIXBT": {
-          "priceIRT": 5347,
-          "priceUSDT": 0.02104
-        },
-        "VIRTUAL": {
-          "priceIRT": 183888,
-          "priceUSDT": 0.7201
-        },
-        "KAITO": {
-          "priceIRT": 81224,
-          "priceUSDT": 0.3131
-        },
-        "PENGU": {
-          "priceIRT": 2039,
-          "priceUSDT": 0.00781
-        },
-        "JUP": {
-          "priceIRT": 88000,
-          "priceUSDT": 0.3412
-        },
-        "IO": {
-          "priceIRT": 43941,
-          "priceUSDT": 0.1666
-        },
-        "CETUS": {
-          "priceIRT": 6498,
-          "priceUSDT": 0.02564
-        },
-        "PUMP": {
-          "priceIRT": 1363,
-          "priceUSDT": 0.005233
-        },
-        "LAYER": {
-          "priceIRT": 18919,
-          "priceUSDT": 0.0727
-        },
-        "PNUT": {
-          "priceIRT": 12955,
-          "priceUSDT": 0.05145
-        },
-        "ORCA": {
-          "priceIRT": 547003,
-          "priceUSDT": 2.113
-        },
-        "SYRUP": {
-          "priceIRT": 63000,
-          "priceUSDT": 0.24
-        },
-        "SAHARA": {
-          "priceIRT": 2267.4,
-          "priceUSDT": 0.00871
-        },
-        "BOME": {
-          "priceIRT": 221,
-          "priceUSDT": 0.0008424
-        },
-        "PYTH": {
-          "priceIRT": 22681,
-          "priceUSDT": 0.08663
-        },
-        "JTO": {
-          "priceIRT": 133372,
-          "priceUSDT": 0.5183
-        },
-        "SKY": {
-          "priceIRT": 20037,
-          "priceUSDT": 0.07731
-        },
-        "BIO": {
-          "priceIRT": 7355,
-          "priceUSDT": 0.02892
-        },
-        "MEW": {
-          "priceIRT": 118.1,
-          "priceUSDT": 0.0004566
-        },
-        "SUN": {
-          "priceIRT": 4333,
-          "priceUSDT": 0.01687
-        },
-        "ME": {
-          "priceIRT": 18503,
-          "priceUSDT": 0.0712
-        },
-        "KMNO": {
-          "priceIRT": 9346,
-          "priceUSDT": 0.03736
-        },
-        "LINEA": {
-          "priceIRT": 778,
-          "priceUSDT": 0.002981
-        },
-        "AVNT": {
-          "priceIRT": 35133,
-          "priceUSDT": 0.1339
-        },
-        "BARD": {
-          "priceIRT": 31426,
-          "priceUSDT": 0.1201
-        },
-        "ASTER": {
-          "priceIRT": 183375,
-          "priceUSDT": 0.6932
-        },
-        "HUMA": {
-          "priceIRT": 8756,
-          "priceUSDT": 0.03355
-        },
-        "SPK": {
-          "priceIRT": 5534,
-          "priceUSDT": 0.021323
-        },
-        "XVS": {
-          "priceIRT": 812650,
-          "priceUSDT": 3.133
-        },
-        "SEI": {
-          "priceIRT": 17053,
-          "priceUSDT": 0.0653
-        },
-        "USDE": {
-          "priceIRT": 260601,
-          "priceUSDT": 0.99
-        },
-        "2Z": {
-          "priceIRT": 9458,
-          "priceUSDT": 0.03643
-        },
-        "AERO": {
-          "priceIRT": 232216,
-          "priceUSDT": 0.892
-        },
-        "BEAMX": {
-          "priceIRT": 716.6,
-          "priceUSDT": 0.002747
-        },
-        "TOSHI": {
-          "priceIRT": 29.4,
-          "priceUSDT": 0.000113
-        },
-        "MOODENG": {
-          "priceIRT": 10767,
-          "priceUSDT": 0.04195
-        },
-        "MET": {
-          "priceIRT": 99157,
-          "priceUSDT": 0.3806
-        },
-        "GIGGLE": {
-          "priceIRT": 9190031,
-          "priceUSDT": 35.3
-        },
-        "PROVE": {
-          "priceIRT": 50451,
-          "priceUSDT": 0.1974
-        },
-        "ZORA": {
-          "priceIRT": 1904,
-          "priceUSDT": 0.00723
-        },
-        "PROM": {
-          "priceIRT": 1327190,
-          "priceUSDT": 5.121
-        },
-        "ZEN": {
-          "priceIRT": 1643210,
-          "priceUSDT": 6.266
-        },
-        "WAL": {
-          "priceIRT": 9489,
-          "priceUSDT": 0.0368
-        },
-        "EUL": {
-          "priceIRT": 359071,
-          "priceUSDT": 1.448
-        },
-        "MMT": {
-          "priceIRT": 45158,
-          "priceUSDT": 0.1718
-        },
-        "KITE": {
-          "priceIRT": 32000,
-          "priceUSDT": 0.12189
-        },
-        "WET": {
-          "priceIRT": 14910,
-          "priceUSDT": 0.05899
-        },
-        "FLUID": {
-          "priceIRT": 562698,
-          "priceUSDT": 2.199
-        },
-        "DOOD": {
-          "priceIRT": 408,
-          "priceUSDT": 0.001597
-        },
-        "RED": {
-          "priceIRT": 40297,
-          "priceUSDT": 0.1537
-        },
-        "LA": {
-          "priceIRT": 17255,
-          "priceUSDT": 0.0664
-        },
-        "AT": {
-          "priceIRT": 36100,
-          "priceUSDT": 0.1374
-        },
-        "HYPE": {
-          "priceIRT": 22001561,
-          "priceUSDT": 84.186
-        },
-        "BREV": {
-          "priceIRT": 22450,
-          "priceUSDT": 0.0879
-        },
-        "ZAMA": {
-          "priceIRT": 20163,
-          "priceUSDT": 0.07842
-        },
-        "ZK": {
-          "priceIRT": 3868,
-          "priceUSDT": 0.01488
-        },
-        "SENT": {
-          "priceIRT": 5365,
-          "priceUSDT": 0.02064
-        },
-        "SLVON": {
-          "priceIRT": 10688900,
-          "priceUSDT": 67.99
-        },
-        "GRASS": {
-          "priceIRT": 191000,
-          "priceUSDT": 0.7351
-        },
-        "CHIP": {
-          "priceIRT": 15238,
-          "priceUSDT": 0.05821
-        },
-        "AWE": {
-          "priceIRT": 17532,
-          "priceUSDT": 0.06717
-        },
-        "BASED": {
-          "priceIRT": 15306,
-          "priceUSDT": 0.0589
-        },
-        "CFG": {
-          "priceIRT": 36249,
-          "priceUSDT": 0.14181
-        },
-        "ROBO": {
-          "priceIRT": 2075,
-          "priceUSDT": 0.00805
-        },
-        "HOME": {
-          "priceIRT": 1473,
-          "priceUSDT": 0.005628
-        },
-        "USOON": {
-          "priceIRT": 40064915,
-          "priceUSDT": 152.03
-        },
-        "ZBT": {
-          "priceIRT": 20485,
-          "priceUSDT": 0.07981
-        },
-        "EDGE": {
-          "priceIRT": 90389,
-          "priceUSDT": 0.3446
-        },
-        "DUSK": {
-          "priceIRT": 22518,
-          "priceUSDT": 0.08656
-        },
-        "OPEN": {
-          "priceIRT": 27500,
-          "priceUSDT": 0.106
-        },
-        "OPG": {
-          "priceIRT": 37024,
-          "priceUSDT": 0.1407
-        },
-        "GENIUS": {
-          "priceIRT": 85609,
-          "priceUSDT": 0.3366
-        },
-        "SLX": {
-          "priceIRT": 14821,
-          "priceUSDT": 0.05832
-        },
-        "RE": {
-          "priceIRT": 111111,
-          "priceUSDT": 0.4429
-        },
-        "SYN": {
-          "priceIRT": 46021,
-          "priceUSDT": 0.17802
-        },
-        "BANK": {
-          "priceIRT": 7439,
-          "priceUSDT": 0.02784
-        },
-        "ESP": {
-          "priceIRT": 28187,
-          "priceUSDT": 0.10511
-        },
-        "PLUME": {
-          "priceIRT": 5486,
-          "priceUSDT": 0.021
-        },
-        "HOLO": {
-          "priceIRT": 15685,
-          "priceUSDT": 0.06166
-        },
-        "TAO": {
-          "priceIRT": 74969532,
-          "priceUSDT": 297
-        },
-        "TSM": {
-          "priceIRT": 119000000,
-          "priceUSDT": 456.96
-        },
-        "SKHY": {
-          "priceIRT": 43401960,
-          "priceUSDT": 167.42
-        },
-        "BABA": {
-          "priceIRT": 28500000,
-          "priceUSDT": 110.8
-        },
-        "GPS": {
-          "priceIRT": 2627.7,
-          "priceUSDT": 0.01001
-        },
-        "GRVT": {
-          "priceIRT": 42273,
-          "priceUSDT": 0.20824
-        },
-        "DOS": {
-          "priceIRT": 46323,
-          "priceUSDT": 0.2342
-        },
-        "1K_SHIB": {
-          "priceIRT": 1381.8,
-          "priceUSDT": 0.00531
-        },
-        "1B_BABYDOGE": {
-          "priceIRT": 98987,
-          "priceUSDT": 0.379
-        },
-        "100K_FLOKI": {
-          "priceIRT": 688000.1,
-          "priceUSDT": 2.6568
-        },
-        "1M_PEPE": {
-          "priceIRT": 1067399,
-          "priceUSDT": 4.0684
-        },
-        "1K_BONK": {
-          "priceIRT": 852,
-          "priceUSDT": 0.003296
-        },
-        "1K_CAT": {
-          "priceIRT": 507.83900000000006,
-          "priceUSDT": 0.001994
-        },
-        "1K_CHEEMS": {
-          "priceIRT": 133.1,
-          "priceUSDT": 0.0005236
-        }
-      }
-    },
     {
       "timestamp": 1791826180794,
       "prices": {
@@ -8052,6 +7131,927 @@
         },
         "1K_CHEEMS": {
           "priceIRT": 130.1,
+          "priceUSDT": 0.0005236
+        }
+      }
+    },
+    {
+      "timestamp": 1791830422103,
+      "prices": {
+        "BTC": {
+          "priceIRT": 21400000000,
+          "priceUSDT": 82399
+        },
+        "ETH": {
+          "priceIRT": 653500000,
+          "priceUSDT": 2507.05
+        },
+        "LTC": {
+          "priceIRT": 16175968,
+          "priceUSDT": 62.32
+        },
+        "USDT": {
+          "priceIRT": 260554,
+          "priceUSDT": 1
+        },
+        "XRP": {
+          "priceIRT": 354370,
+          "priceUSDT": 1.3589
+        },
+        "BCH": {
+          "priceIRT": 70939374,
+          "priceUSDT": 273.26
+        },
+        "BNB": {
+          "priceIRT": 193538255,
+          "priceUSDT": 748.5756
+        },
+        "A": {
+          "priceIRT": 26733,
+          "priceUSDT": 0.1026
+        },
+        "DOGE": {
+          "priceIRT": 22100,
+          "priceUSDT": 0.0846369
+        },
+        "XLM": {
+          "priceIRT": 50991,
+          "priceUSDT": 0.19505
+        },
+        "TRX": {
+          "priceIRT": 86260,
+          "priceUSDT": 0.33104
+        },
+        "ADA": {
+          "priceIRT": 62660,
+          "priceUSDT": 0.2413
+        },
+        "XMR": {
+          "priceIRT": 137199800,
+          "priceUSDT": 530.22
+        },
+        "ETC": {
+          "priceIRT": 2120817,
+          "priceUSDT": 8.2009
+        },
+        "DASH": {
+          "priceIRT": 13100000,
+          "priceUSDT": 50.71
+        },
+        "ZEC": {
+          "priceIRT": 322623258,
+          "priceUSDT": 1230
+        },
+        "XTZ": {
+          "priceIRT": 81000,
+          "priceUSDT": 0.3109
+        },
+        "LINK": {
+          "priceIRT": 3350286,
+          "priceUSDT": 12.864
+        },
+        "DAI": {
+          "priceIRT": 259288,
+          "priceUSDT": 0.9988
+        },
+        "DOT": {
+          "priceIRT": 313134,
+          "priceUSDT": 1.202
+        },
+        "UNI": {
+          "priceIRT": 1910400,
+          "priceUSDT": 7.345
+        },
+        "AAVE": {
+          "priceIRT": 41846217,
+          "priceUSDT": 160.59
+        },
+        "SOL": {
+          "priceIRT": 28016627,
+          "priceUSDT": 107.65
+        },
+        "POL": {
+          "priceIRT": 26872,
+          "priceUSDT": 0.103
+        },
+        "FIL": {
+          "priceIRT": 295982,
+          "priceUSDT": 1.139
+        },
+        "GRT": {
+          "priceIRT": 6852,
+          "priceUSDT": 0.02628
+        },
+        "1INCH": {
+          "priceIRT": 25001,
+          "priceUSDT": 0.0965
+        },
+        "ANKR": {
+          "priceIRT": 1232,
+          "priceUSDT": 0.004665
+        },
+        "ATOM": {
+          "priceIRT": 483000,
+          "priceUSDT": 1.853
+        },
+        "AVAX": {
+          "priceIRT": 2699515,
+          "priceUSDT": 10.314
+        },
+        "AXS": {
+          "priceIRT": 312600,
+          "priceUSDT": 1.203
+        },
+        "BAND": {
+          "priceIRT": 64345,
+          "priceUSDT": 0.2428
+        },
+        "BAT": {
+          "priceIRT": 38847,
+          "priceUSDT": 0.1494
+        },
+        "CELR": {
+          "priceIRT": 800,
+          "priceUSDT": 0.003092
+        },
+        "COMP": {
+          "priceIRT": 6237718,
+          "priceUSDT": 23.89
+        },
+        "COTI": {
+          "priceIRT": 3408,
+          "priceUSDT": 0.01311
+        },
+        "EGLD": {
+          "priceIRT": 992930,
+          "priceUSDT": 3.745
+        },
+        "LIT": {
+          "priceIRT": 940200,
+          "priceUSDT": 3.566
+        },
+        "MASK": {
+          "priceIRT": 125579,
+          "priceUSDT": 0.473
+        },
+        "NEAR": {
+          "priceIRT": 1414924,
+          "priceUSDT": 5.426
+        },
+        "SFP": {
+          "priceIRT": 70000,
+          "priceUSDT": 0.2794
+        },
+        "SNX": {
+          "priceIRT": 62057,
+          "priceUSDT": 0.2408
+        },
+        "SUSHI": {
+          "priceIRT": 59862,
+          "priceUSDT": 0.2363
+        },
+        "YFI": {
+          "priceIRT": 610660141,
+          "priceUSDT": 2410
+        },
+        "ZIL": {
+          "priceIRT": 900,
+          "priceUSDT": 0.003526
+        },
+        "MANA": {
+          "priceIRT": 24624,
+          "priceUSDT": 0.0943
+        },
+        "SAND": {
+          "priceIRT": 16161,
+          "priceUSDT": 0.0622
+        },
+        "APE": {
+          "priceIRT": 39372,
+          "priceUSDT": 0.152
+        },
+        "ONE": {
+          "priceIRT": 500,
+          "priceUSDT": 0.001926
+        },
+        "WBTC": {
+          "priceIRT": 21340542385,
+          "priceUSDT": 82730
+        },
+        "USDC": {
+          "priceIRT": 261359,
+          "priceUSDT": 1
+        },
+        "ALGO": {
+          "priceIRT": 32149,
+          "priceUSDT": 0.1231
+        },
+        "GMT": {
+          "priceIRT": 2160,
+          "priceUSDT": 0.00835
+        },
+        "CHZ": {
+          "priceIRT": 3936,
+          "priceUSDT": 0.01507
+        },
+        "QNT": {
+          "priceIRT": 59199000,
+          "priceUSDT": 227.22
+        },
+        "FLOW": {
+          "priceIRT": 8794,
+          "priceUSDT": 0.0338
+        },
+        "HBAR": {
+          "priceIRT": 23321,
+          "priceUSDT": 0.08919
+        },
+        "EGALA": {
+          "priceIRT": 591,
+          "priceUSDT": 0.002273
+        },
+        "ENJ": {
+          "priceIRT": 7920,
+          "priceUSDT": 0.03044
+        },
+        "OP": {
+          "priceIRT": 34897,
+          "priceUSDT": 0.1347
+        },
+        "CRV": {
+          "priceIRT": 91034,
+          "priceUSDT": 0.3531
+        },
+        "CAKE": {
+          "priceIRT": 597001,
+          "priceUSDT": 2.3054
+        },
+        "LDO": {
+          "priceIRT": 108831,
+          "priceUSDT": 0.4195
+        },
+        "DYDX": {
+          "priceIRT": 35059,
+          "priceUSDT": 0.1353
+        },
+        "APT": {
+          "priceIRT": 213389,
+          "priceUSDT": 0.8272
+        },
+        "ENS": {
+          "priceIRT": 1596800,
+          "priceUSDT": 6.15
+        },
+        "LPT": {
+          "priceIRT": 454910,
+          "priceUSDT": 1.745
+        },
+        "GLM": {
+          "priceIRT": 33729,
+          "priceUSDT": 0.1333
+        },
+        "API3": {
+          "priceIRT": 82866,
+          "priceUSDT": 0.3147
+        },
+        "CVC": {
+          "priceIRT": 6395,
+          "priceUSDT": 0.02533
+        },
+        "NMR": {
+          "priceIRT": 3312105,
+          "priceUSDT": 12.816
+        },
+        "CVX": {
+          "priceIRT": 532440,
+          "priceUSDT": 2.049
+        },
+        "SLP": {
+          "priceIRT": 163.1,
+          "priceUSDT": 0.0006282
+        },
+        "T": {
+          "priceIRT": 1401,
+          "priceUSDT": 0.005311
+        },
+        "GRAM": {
+          "priceIRT": 362283,
+          "priceUSDT": 1.39
+        },
+        "ZRX": {
+          "priceIRT": 31580,
+          "priceUSDT": 0.1215
+        },
+        "IMX": {
+          "priceIRT": 46484,
+          "priceUSDT": 0.1784
+        },
+        "BLUR": {
+          "priceIRT": 4727,
+          "priceUSDT": 0.01843
+        },
+        "MAGIC": {
+          "priceIRT": 30701,
+          "priceUSDT": 0.11852
+        },
+        "ARB": {
+          "priceIRT": 47983,
+          "priceUSDT": 0.185
+        },
+        "PAXG": {
+          "priceIRT": 1084815708,
+          "priceUSDT": 4167
+        },
+        "GMX": {
+          "priceIRT": 2130001,
+          "priceUSDT": 8.282
+        },
+        "SSV": {
+          "priceIRT": 744445,
+          "priceUSDT": 2.926
+        },
+        "WLD": {
+          "priceIRT": 136784,
+          "priceUSDT": 0.5234
+        },
+        "AGLD": {
+          "priceIRT": 50012,
+          "priceUSDT": 0.1926
+        },
+        "JST": {
+          "priceIRT": 36213,
+          "priceUSDT": 0.13595
+        },
+        "RENDER": {
+          "priceIRT": 530000,
+          "priceUSDT": 2.03
+        },
+        "BICO": {
+          "priceIRT": 4711,
+          "priceUSDT": 0.01799
+        },
+        "WOO": {
+          "priceIRT": 3382,
+          "priceUSDT": 0.01305
+        },
+        "SKL": {
+          "priceIRT": 1438,
+          "priceUSDT": 0.00544
+        },
+        "FET": {
+          "priceIRT": 57676,
+          "priceUSDT": 0.2222
+        },
+        "TRB": {
+          "priceIRT": 4950000,
+          "priceUSDT": 19.16
+        },
+        "RSR": {
+          "priceIRT": 593.662,
+          "priceUSDT": 0.002285
+        },
+        "MEME": {
+          "priceIRT": 144.011,
+          "priceUSDT": 0.000552
+        },
+        "UMA": {
+          "priceIRT": 104501,
+          "priceUSDT": 0.404
+        },
+        "ID": {
+          "priceIRT": 9929,
+          "priceUSDT": 0.03888
+        },
+        "ETHFI": {
+          "priceIRT": 179696,
+          "priceUSDT": 0.6907
+        },
+        "NOT": {
+          "priceIRT": 118.64200000000001,
+          "priceUSDT": 0.0004481
+        },
+        "AEVO": {
+          "priceIRT": 6601,
+          "priceUSDT": 0.0256
+        },
+        "W": {
+          "priceIRT": 5538,
+          "priceUSDT": 0.02163
+        },
+        "ZRO": {
+          "priceIRT": 569067,
+          "priceUSDT": 2.229
+        },
+        "G": {
+          "priceIRT": 1075,
+          "priceUSDT": 0.004278
+        },
+        "ONDO": {
+          "priceIRT": 127951,
+          "priceUSDT": 0.4939
+        },
+        "DOGS": {
+          "priceIRT": 11.0731,
+          "priceUSDT": 0.00004248
+        },
+        "CATI": {
+          "priceIRT": 15629,
+          "priceUSDT": 0.06136
+        },
+        "HMSTR": {
+          "priceIRT": 41.9832,
+          "priceUSDT": 0.000161
+        },
+        "XAUT": {
+          "priceIRT": 1084555555,
+          "priceUSDT": 4167
+        },
+        "EIGEN": {
+          "priceIRT": 65426,
+          "priceUSDT": 0.253
+        },
+        "JASMY": {
+          "priceIRT": 1356,
+          "priceUSDT": 0.005062
+        },
+        "ENA": {
+          "priceIRT": 56815,
+          "priceUSDT": 0.218
+        },
+        "PENDLE": {
+          "priceIRT": 543960,
+          "priceUSDT": 2.095
+        },
+        "SUPER": {
+          "priceIRT": 54000,
+          "priceUSDT": 0.2108
+        },
+        "HOT": {
+          "priceIRT": 105.549,
+          "priceUSDT": 0.000414
+        },
+        "EDU": {
+          "priceIRT": 18681,
+          "priceUSDT": 0.0724
+        },
+        "SAFE": {
+          "priceIRT": 34749,
+          "priceUSDT": 0.1348
+        },
+        "TWT": {
+          "priceIRT": 134228,
+          "priceUSDT": 0.5248
+        },
+        "X": {
+          "priceIRT": 1.4563000000000001,
+          "priceUSDT": 0.00000561
+        },
+        "BANANA": {
+          "priceIRT": 972972,
+          "priceUSDT": 3.734
+        },
+        "MOVE": {
+          "priceIRT": 2339,
+          "priceUSDT": 0.00894
+        },
+        "STRK": {
+          "priceIRT": 26028,
+          "priceUSDT": 0.09979
+        },
+        "METIS": {
+          "priceIRT": 967139,
+          "priceUSDT": 3.757
+        },
+        "INJ": {
+          "priceIRT": 2017992,
+          "priceUSDT": 7.55
+        },
+        "TURBO": {
+          "priceIRT": 251.493,
+          "priceUSDT": 0.0009735
+        },
+        "DEXE": {
+          "priceIRT": 484900,
+          "priceUSDT": 1.87
+        },
+        "ATH": {
+          "priceIRT": 1608,
+          "priceUSDT": 0.006148
+        },
+        "COOKIE": {
+          "priceIRT": 3008,
+          "priceUSDT": 0.01145
+        },
+        "CGPT": {
+          "priceIRT": 5826,
+          "priceUSDT": 0.0235
+        },
+        "S": {
+          "priceIRT": 14656,
+          "priceUSDT": 0.05629
+        },
+        "NEIRO": {
+          "priceIRT": 21.6218,
+          "priceUSDT": 0.00008271
+        },
+        "MORPHO": {
+          "priceIRT": 622782,
+          "priceUSDT": 2.3746
+        },
+        "FORM": {
+          "priceIRT": 73801,
+          "priceUSDT": 0.2801
+        },
+        "SUI": {
+          "priceIRT": 278395,
+          "priceUSDT": 1.065
+        },
+        "WIF": {
+          "priceIRT": 54155,
+          "priceUSDT": 0.2098
+        },
+        "RAY": {
+          "priceIRT": 563343,
+          "priceUSDT": 2.1925
+        },
+        "TNSR": {
+          "priceIRT": 9500,
+          "priceUSDT": 0.03646
+        },
+        "COW": {
+          "priceIRT": 38173,
+          "priceUSDT": 0.1539
+        },
+        "AIXBT": {
+          "priceIRT": 5347,
+          "priceUSDT": 0.02104
+        },
+        "VIRTUAL": {
+          "priceIRT": 180426,
+          "priceUSDT": 0.7072
+        },
+        "KAITO": {
+          "priceIRT": 81007,
+          "priceUSDT": 0.3123
+        },
+        "PENGU": {
+          "priceIRT": 2039,
+          "priceUSDT": 0.00781
+        },
+        "JUP": {
+          "priceIRT": 87000,
+          "priceUSDT": 0.3349
+        },
+        "IO": {
+          "priceIRT": 43813,
+          "priceUSDT": 0.1666
+        },
+        "CETUS": {
+          "priceIRT": 6608,
+          "priceUSDT": 0.02564
+        },
+        "PUMP": {
+          "priceIRT": 1342,
+          "priceUSDT": 0.005169
+        },
+        "LAYER": {
+          "priceIRT": 18583,
+          "priceUSDT": 0.073
+        },
+        "PNUT": {
+          "priceIRT": 12900,
+          "priceUSDT": 0.04984
+        },
+        "ORCA": {
+          "priceIRT": 555664,
+          "priceUSDT": 2.124
+        },
+        "SYRUP": {
+          "priceIRT": 60737,
+          "priceUSDT": 0.2397
+        },
+        "SAHARA": {
+          "priceIRT": 2243.9,
+          "priceUSDT": 0.00871
+        },
+        "BOME": {
+          "priceIRT": 217.60999999999999,
+          "priceUSDT": 0.0008353
+        },
+        "PYTH": {
+          "priceIRT": 21595,
+          "priceUSDT": 0.08394
+        },
+        "JTO": {
+          "priceIRT": 135149,
+          "priceUSDT": 0.514
+        },
+        "SKY": {
+          "priceIRT": 19992,
+          "priceUSDT": 0.07691
+        },
+        "BIO": {
+          "priceIRT": 7327,
+          "priceUSDT": 0.02892
+        },
+        "MEW": {
+          "priceIRT": 119.5,
+          "priceUSDT": 0.0004566
+        },
+        "SUN": {
+          "priceIRT": 4284,
+          "priceUSDT": 0.01687
+        },
+        "ME": {
+          "priceIRT": 18295,
+          "priceUSDT": 0.0712
+        },
+        "KMNO": {
+          "priceIRT": 9402,
+          "priceUSDT": 0.0361
+        },
+        "LINEA": {
+          "priceIRT": 790,
+          "priceUSDT": 0.002981
+        },
+        "AVNT": {
+          "priceIRT": 34631,
+          "priceUSDT": 0.1339
+        },
+        "BARD": {
+          "priceIRT": 31409,
+          "priceUSDT": 0.12
+        },
+        "ASTER": {
+          "priceIRT": 181024,
+          "priceUSDT": 0.6977
+        },
+        "HUMA": {
+          "priceIRT": 8716,
+          "priceUSDT": 0.03355
+        },
+        "SPK": {
+          "priceIRT": 5476,
+          "priceUSDT": 0.021021
+        },
+        "XVS": {
+          "priceIRT": 810792,
+          "priceUSDT": 3.085
+        },
+        "SEI": {
+          "priceIRT": 17002,
+          "priceUSDT": 0.0662
+        },
+        "USDE": {
+          "priceIRT": 258421,
+          "priceUSDT": 0.9999
+        },
+        "2Z": {
+          "priceIRT": 9531,
+          "priceUSDT": 0.03643
+        },
+        "AERO": {
+          "priceIRT": 231509,
+          "priceUSDT": 0.8902
+        },
+        "BEAMX": {
+          "priceIRT": 753.7,
+          "priceUSDT": 0.0029
+        },
+        "TOSHI": {
+          "priceIRT": 29.4,
+          "priceUSDT": 0.0001107
+        },
+        "MOODENG": {
+          "priceIRT": 10767,
+          "priceUSDT": 0.04195
+        },
+        "MET": {
+          "priceIRT": 100774,
+          "priceUSDT": 0.3879
+        },
+        "GIGGLE": {
+          "priceIRT": 9156036,
+          "priceUSDT": 35.3
+        },
+        "PROVE": {
+          "priceIRT": 50879,
+          "priceUSDT": 0.1974
+        },
+        "ZORA": {
+          "priceIRT": 1891,
+          "priceUSDT": 0.00723
+        },
+        "PROM": {
+          "priceIRT": 1330003,
+          "priceUSDT": 5.138
+        },
+        "ZEN": {
+          "priceIRT": 1622498,
+          "priceUSDT": 6.248
+        },
+        "WAL": {
+          "priceIRT": 9237,
+          "priceUSDT": 0.0361
+        },
+        "EUL": {
+          "priceIRT": 351501,
+          "priceUSDT": 1.379
+        },
+        "MMT": {
+          "priceIRT": 44930,
+          "priceUSDT": 0.1718
+        },
+        "KITE": {
+          "priceIRT": 32150,
+          "priceUSDT": 0.12189
+        },
+        "WET": {
+          "priceIRT": 14910,
+          "priceUSDT": 0.05899
+        },
+        "FLUID": {
+          "priceIRT": 553922,
+          "priceUSDT": 2.173
+        },
+        "DOOD": {
+          "priceIRT": 408,
+          "priceUSDT": 0.001597
+        },
+        "RED": {
+          "priceIRT": 40333,
+          "priceUSDT": 0.1548
+        },
+        "LA": {
+          "priceIRT": 17201,
+          "priceUSDT": 0.0664
+        },
+        "AT": {
+          "priceIRT": 35456,
+          "priceUSDT": 0.1384
+        },
+        "HYPE": {
+          "priceIRT": 21881693,
+          "priceUSDT": 83.52
+        },
+        "BREV": {
+          "priceIRT": 22156,
+          "priceUSDT": 0.0879
+        },
+        "ZAMA": {
+          "priceIRT": 20298,
+          "priceUSDT": 0.07677
+        },
+        "ZK": {
+          "priceIRT": 3831,
+          "priceUSDT": 0.01486
+        },
+        "SENT": {
+          "priceIRT": 5370,
+          "priceUSDT": 0.02074
+        },
+        "SLVON": {
+          "priceIRT": 10688900,
+          "priceUSDT": 67.99
+        },
+        "GRASS": {
+          "priceIRT": 201943,
+          "priceUSDT": 0.77
+        },
+        "CHIP": {
+          "priceIRT": 15506,
+          "priceUSDT": 0.05906
+        },
+        "AWE": {
+          "priceIRT": 17415,
+          "priceUSDT": 0.06717
+        },
+        "BASED": {
+          "priceIRT": 15350,
+          "priceUSDT": 0.05888
+        },
+        "CFG": {
+          "priceIRT": 36697,
+          "priceUSDT": 0.14181
+        },
+        "ROBO": {
+          "priceIRT": 2017,
+          "priceUSDT": 0.0079
+        },
+        "HOME": {
+          "priceIRT": 1482,
+          "priceUSDT": 0.005675
+        },
+        "USOON": {
+          "priceIRT": 40064915,
+          "priceUSDT": 152.03
+        },
+        "ZBT": {
+          "priceIRT": 20257,
+          "priceUSDT": 0.07904
+        },
+        "EDGE": {
+          "priceIRT": 89503,
+          "priceUSDT": 0.3499
+        },
+        "DUSK": {
+          "priceIRT": 22343,
+          "priceUSDT": 0.08861
+        },
+        "OPEN": {
+          "priceIRT": 27500,
+          "priceUSDT": 0.106
+        },
+        "OPG": {
+          "priceIRT": 35810,
+          "priceUSDT": 0.1398
+        },
+        "GENIUS": {
+          "priceIRT": 85490,
+          "priceUSDT": 0.3366
+        },
+        "SLX": {
+          "priceIRT": 14750,
+          "priceUSDT": 0.057
+        },
+        "RE": {
+          "priceIRT": 111001,
+          "priceUSDT": 0.4279
+        },
+        "SYN": {
+          "priceIRT": 46580,
+          "priceUSDT": 0.18022
+        },
+        "BANK": {
+          "priceIRT": 7486,
+          "priceUSDT": 0.02838
+        },
+        "ESP": {
+          "priceIRT": 27963,
+          "priceUSDT": 0.10511
+        },
+        "PLUME": {
+          "priceIRT": 5510,
+          "priceUSDT": 0.021
+        },
+        "HOLO": {
+          "priceIRT": 15685,
+          "priceUSDT": 0.05979
+        },
+        "TAO": {
+          "priceIRT": 76244699,
+          "priceUSDT": 290.54
+        },
+        "TSM": {
+          "priceIRT": 119000000,
+          "priceUSDT": 456.96
+        },
+        "SKHY": {
+          "priceIRT": 43401960,
+          "priceUSDT": 167.42
+        },
+        "BABA": {
+          "priceIRT": 28200001,
+          "priceUSDT": 110.8
+        },
+        "GPS": {
+          "priceIRT": 2600,
+          "priceUSDT": 0.01001
+        },
+        "GRVT": {
+          "priceIRT": 42273,
+          "priceUSDT": 0.20824
+        },
+        "DOS": {
+          "priceIRT": 46323,
+          "priceUSDT": 0.2342
+        },
+        "1K_SHIB": {
+          "priceIRT": 1381,
+          "priceUSDT": 0.00529
+        },
+        "1B_BABYDOGE": {
+          "priceIRT": 97983,
+          "priceUSDT": 0.374
+        },
+        "100K_FLOKI": {
+          "priceIRT": 687372.4,
+          "priceUSDT": 2.6282
+        },
+        "1M_PEPE": {
+          "priceIRT": 1060000,
+          "priceUSDT": 4.0798
+        },
+        "1K_BONK": {
+          "priceIRT": 862.5055,
+          "priceUSDT": 0.003315
+        },
+        "1K_CAT": {
+          "priceIRT": 505.75200000000007,
+          "priceUSDT": 0.001994
+        },
+        "1K_CHEEMS": {
+          "priceIRT": 130.6,
           "priceUSDT": 0.0005236
         }
       }
