@@ -114,7 +114,18 @@ function cleanIfEmpty(id){
   const s=choices[id]; if(!s)return;
   if(!s.important&&!s.slider&&!s.manual_important&&!s.manual_slider&&!s.manual_breaking&&!s.republish&&!s.reject&&!s.deleted&&!s.category&&!s.topics_manual&&!(Array.isArray(s.topics)&&s.topics.length)&&!s.edited&&!s.published) delete choices[id];
 }
+function captureEditorFields(id){
+  const box=document.getElementById('ed_'+id);
+  if(!box||!box.classList.contains('open'))return;
+  choices[id]=choices[id]||{};
+  choices[id].title=box.querySelector('[data-f="title"]').value;
+  choices[id].summary=box.querySelector('[data-f="summary"]').value;
+  choices[id].content=box.querySelector('[data-f="content"]').innerHTML;
+  choices[id].image=box.querySelector('[data-f="image"]').value;
+  choices[id].edited=true;
+}
 function setChoice(id,key,val){
+  captureEditorFields(id);
   choices[id]=choices[id]||{};
   if(key==='slider'){
     delete choices[id].manual_slider;
