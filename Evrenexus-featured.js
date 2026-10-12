@@ -62,7 +62,7 @@ function renderOldWay(topic,page,q){
   var list=document.getElementById("list");if(!list)return;
   list.innerHTML="";
   items.slice((page-1)*21,page*21).forEach(function(x){
-   var a=document.createElement("a");a.className="item";a.href=x.url?"./viewer.html?url="+encodeURIComponent(x.url):"#";a.target="_blank";a.rel="noopener noreferrer";
+   var a=document.createElement("a");a.className="item";a.href=x.articleUrl?"./"+String(x.articleUrl).replace(/^\\.\\//,""):(x.url?"./viewer.html?url="+encodeURIComponent(x.url):"#");if(!x.articleUrl){a.target="_blank";a.rel="noopener noreferrer";}
    var u=img(x.image);if(u){var im=document.createElement("img");im.src=u;im.alt=x.title||"";im.loading="lazy";im.referrerPolicy="no-referrer";im.onerror=function(){this.remove()};a.appendChild(im)}
    var c=document.createElement("div");c.className="content";var h=document.createElement("div");h.className="title";h.textContent=x.title||"";c.appendChild(h);
    if(x.summary){var sm=document.createElement("div");sm.className="summary";sm.textContent=x.summary;c.appendChild(sm)}
