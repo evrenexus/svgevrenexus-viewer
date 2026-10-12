@@ -149,12 +149,66 @@ function toggleNewsEditor(id){
     box.querySelector('[data-f="image"]').value=s.image!==undefined?s.image:(n.image||'');
   }
 }
-async function publishNews(id){
+function safeArticleId(id){return String(id||"").replace(/[^a-zA-Z0-9_-]/g,"-").slice(0,90)||("article-"+Date.now());}
+function cleanArticleHtml(value){
+  const box=document.createElement("div");box.innerHTML=String(value||"");
+  box.querySelectorAll("script,style,iframe,object,embed,form,button,textarea,input,link,meta").forEach(function(el){el.remove()});
+  box.querySelectorAll("*").forEach(function(el){
+    Array.from(el.attributes).forEach(function(a){
+      const name=a.name.toLowerCase(),v=String(a.value||"").trim();
+      if(name.startsWith("on")||name==="srcdoc"||((name==="href"||name==="src")&&/^\s*javascript:/i.test(v)))el.removeAttribute(a.name);
+    });
+  });
+  return box.innerHTML;
+}
+function makeManualArticlePage(id,s){
+  const n=news.find(x=>String(x.id)===String(id))||{};
+  const title=String(s.title||n.title||"بدون عنوان"),summary=String(s.summary||"");
+  const image=/^https?:\/\//i.test(String(s.image||n.image||""))?String(s.image||n.image):"";
+  const body=cleanArticleHtml(s.content||"");
+  const source=String(n.source||"Evren Nexus"),published=new Date().toLocaleString("fa-IR");
+  return '<!doctype html>\n<html lang="fa" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+esc(title)+' | Evren Nexus</title><style>*{box-sizing:border-box}body{margin:0;background:#f3f5f7;color:#24313b;font-family:Tahoma,Arial,sans-serif}main{width:850px;max-width:100%;margin:auto;padding:148px 10px 24px;display:flex;gap:10px;direction:rtl}article{width:610px;max-width:100%;min-width:0;background:#fff;border:1px solid #e0e6eb;padding:20px}#sidebar-host{width:200px}h1{font-size:21px;line-height:1.9;margin:0 0 8px}.meta{font-size:10px;color:#87929a;border-bottom:1px solid #e8edf1;padding-bottom:12px;margin-bottom:16px}.summary{font-size:12px;line-height:2;background:#f7f9fa;border-right:3px solid #d64c43;padding:12px;margin-bottom:20px}.hero{display:block;width:100%;max-height:390px;object-fit:cover;margin:0 0 18px}.body{font-size:13px;line-height:2.35;overflow-wrap:anywhere}.body p{margin:0 0 14px}.body h2,.body h3{line-height:1.9;margin:22px 0 9px}.body img{max-width:100%;height:auto}.back{display:inline-block;margin-bottom:14px;color:#fff;background:#142d40;text-decoration:none;padding:8px 12px;font-size:10px}.footer{width:850px;max-width:100%;margin:auto;background:#142d40;color:#fff;padding:14px;text-align:center;font-size:10px}.footer a{color:#fff;margin:0 8px;text-decoration:none}@media(max-width:700px){main{display:block;padding:242px 8px 18px}article{width:100%;padding:14px}#sidebar-host{display:none}h1{font-size:17px}.body{font-size:12px}.footer{width:100%}}</style></head><body><main><article><a class="back" href="../">بازگشت به خانه</a><h1>'+esc(title)+'</h1><div class="meta">'+esc(source)+' · '+esc(published)+'</div>'+(image?'<img class="hero" src="'+esc(image)+'" alt="'+esc(title)+'">':'')+(summary?'<div class="summary">'+esc(summary)+'</div>':'')+'<div class="body">'+body+'</div></article><aside id="sidebar-host"></aside></main><footer class="footer"><a href="../">صفحه اصلی</a><a href="../news-river.html">آخرین مطالب</a><a href="../important-archive.html">آرشیو مطالب مهم</a><div style="margin-top:10px;color:#cbd3d8">© Evren Nexus</div></footer><script src="../Evrenexus-sidebar.js?v=20261012-01"></script><script src="../Evrenexus-header.js?v=20261012-01"></script></body></html>';
+}
+async function writeRepoFile(path,content,message,token){
+  const repo="evrenexus/svgevrenexus-viewer",headers={Authorization:"Bearer "+token,Accept:"application/vnd.github+json"};
+  const endpoint="https://api.github.com/repos/"+repo+"/contents/"+path;
+  const current=await fetch(endpoint+"?ref=main&t="+Date.now(),{headers:headers,cache:"no-store"});
+  let sha="";
+  if(current.ok){const j=await current.json();sha=j.sha||"";}
+  else if(current.status!==404)throw new Error("خواندن "+path+" ناموفق بود ("+current.status+")");
+  const bytes=new TextEncoder().encode(content);let binary="";for(const b of bytes)binary+=String.fromCharCode(b);
+  const body={message:message,content:btoa(binary),branch:"main"};if(sha)body.sha=sha;
+  const put=await fetch(endpoint,{method:"PUT",headers:Object.assign({},headers,{"Content-Type":"application/json"}),body:JSON.stringify(body)});
+  if(!put.ok)throw new Error("ثبت "+path+" ناموفق بود ("+put.status+"): "+(await put.text()).slice(0,160));
+  return await put.json();
+}
+async function publishManualArticle(id){
+  const token=$('token').value.trim()||sessionStorage.getItem('evren_github_token')||'';
+  if(!token){$('status').textContent='برای انتشار صفحه مستقل ابتدا وارد پنل شوید.';return;}
+  const n=news.find(x=>String(x.id)===String(id));if(!n)return;
   choices[id]=choices[id]||{};
-  const next=!choices[id].republish;
-  choices[id].republish=next; choices[id].published=next; choices[id].updated_at=new Date().toISOString();
-  $('status').textContent=next?'در حال انتشار خبر...':'در حال لغو انتشار خبر...';
-  await saveOne(id);
+  const box=document.getElementById('ed_'+id);
+  if(box&&box.classList.contains('open')){
+    choices[id].title=box.querySelector('[data-f="title"]').value.trim();
+    choices[id].summary=box.querySelector('[data-f="summary"]').value.trim();
+    choices[id].content=box.querySelector('[data-f="content"]').innerHTML;
+    choices[id].image=box.querySelector('[data-f="image"]').value.trim();
+    choices[id].edited=true;
+  }
+  const s=choices[id];
+  const bodyText=String(s.content||n.content||"").replace(/<[^>]*>/g," ").replace(/&nbsp;|&#160;/gi," ").replace(/\s+/g," ").trim();
+  if(bodyText.length<40){$('status').textContent='برای انتشار صفحه مستقل، ابتدا متن کامل را در بخش «ویرایش» وارد و ذخیره کن.';if(box)box.classList.add('open');return;}
+  s.title=String(s.title||n.title||"").trim();s.summary=String(s.summary||n.summary||"").trim();s.important=true;s.published=true;s.republish=true;s.edited=true;s.updated_at=new Date().toISOString();
+  const path="articles/manual-"+safeArticleId(id)+".html";s.article_url=path;
+  $('status').textContent='در حال ساخت صفحه مستقل و ثبت انتخاب دستی مطالب مهم...';
+  try{
+    await writeRepoFile(path,makeManualArticlePage(id,s),'Publish manual editorial article '+id,token);
+    await saveOne(id);
+    if(JSON.stringify(originalChoices[id]||{})!==JSON.stringify(state(id)))throw new Error('صفحه ساخته شد اما ثبت وضعیت سردبیری تأیید نشد؛ دوباره «انتشار صفحه مستقل» را بزن.');
+    saveMessages[id]={status:'✅ صفحه مستقل منتشر شد؛ خبر در فهرست مطالب مهم دستی قرار گرفت.',output:'صفحه: '+path+'\nلینک: https://evrenexus.github.io/svgevrenexus-viewer/'+path,kind:'ok'};
+    $('status').textContent='✅ صفحه مستقل ساخته شد و وضعیت دستی خبر ذخیره شد.';
+    render();
+  }catch(e){console.error(e);saveMessages[id]={status:'❌ انتشار کامل نشد: '+e.message,output:'',kind:'err'};$('status').textContent='❌ انتشار کامل نشد: '+e.message;render();}
 }
 async function saveEdit(id){
   const box=document.getElementById('ed_'+id); if(!box)return; choices[id]=choices[id]||{};
@@ -184,7 +238,7 @@ function render(){
     const isImportant=s.important!==undefined?!!s.important:!!(s.manual_important||n.important);const important=makeButton('important','⭐ مهم',isImportant);important.onclick=()=>setChoice(n.id,'important',!isImportant);actions.appendChild(important);
     const slider=makeButton('slider','🖼 اسلایدر',!!(s.important&&(s.slider||s.manual_slider)));slider.disabled=!s.important;slider.title=s.important?'نمایش در اسلایدر':'ابتدا خبر را «مهم» کنید';slider.onclick=()=>setChoice(n.id,'slider',!((state(n.id).slider===true)||(state(n.id).manual_slider===true)));actions.appendChild(slider);
     const edit=makeButton('edit','✏️ ویرایش',false);edit.addEventListener("click",function(){toggleNewsEditor(n.id);});actions.appendChild(edit);
-    const publish=makeButton('publish','📰 انتشار داخلی',!!s.republish);publish.onclick=()=>publishNews(n.id);actions.appendChild(publish);
+    const publish=makeButton('publish',s.published===true?'📄 به‌روزرسانی صفحه مستقل':'📄 انتشار صفحه مستقل',s.published===true);publish.onclick=()=>publishManualArticle(n.id);actions.appendChild(publish);
     const del=makeButton('delete','🗑️ '+(s.deleted?'بازگردانی خبر':'حذف خبر'),!!s.deleted);del.onclick=()=>toggleDelete(n.id);actions.appendChild(del); const saveButton=makeButton('primary','💾 ذخیره',false);saveButton.onclick=()=>saveOne(n.id);actions.appendChild(saveButton);
     card.appendChild(actions);
     const topicBox=document.createElement('div');topicBox.className='topic-picker';topicBox.style.cssText='display:flex;gap:8px 14px;flex-wrap:wrap;align-items:center;width:100%;padding:11px 12px;background:#f6fafb;border:1px solid #d9e5e9;border-radius:7px;margin-top:10px';
