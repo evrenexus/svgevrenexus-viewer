@@ -1,6 +1,25 @@
 {
-  "updated": "2026-10-12T18:55:45.181970+00:00",
+  "updated": "2026-10-12T18:59:02.258884+00:00",
   "items": [
+    {
+      "id": "f2dbdc91dbed38e30473",
+      "title": "رئیس سازمان بورس انتخاب شد",
+      "summary": "با تصویب اعضای شورای‌عالی بورس، حجت‌اله صیدی مجدداً به عنوان رئیس سازمان بورس و اوراق بهادار انتخاب شد.",
+      "content": "۲۲:۲۸ - \n۲۰ مهر ۱۴۰۵ \n\nرئیس سازمان بورس انتخاب شد \n\nبا تصویب اعضای شورای‌عالی بورس، حجت‌اله صیدی مجدداً به عنوان رئیس سازمان بورس و اوراق بهادار انتخاب شد. \n\nپ\n\n،\n\nپـ\n\nحجت‌اله صیدی، علی‌رضا عظیمی‌پور، مهرداد مسعودی‌فر، علی نیازی و حمید یاری با رای شورای عالی بورس برای یک دوره دیگر عضو هیات مدیره سازمان بورس و اوراق بهادار خواهند بود.\n\r\n\r\n\nطبق قانون بازار اوراق بهادار(مصوب آذر ۱۳۸۴) مدت عضویت هر یک از اعضای هیات مدیره سازمان بورس و اوراق بهادار ۵ سال است.\n\r\n\r\n\n\r\n\nva NewsLis Limi = 5;\n\nاز میان اخبار \n\nرئیس سازمان بورس انتخاب شد \n\nسیگنال نگران‌کننده به بازار؛ افزایش قیمت خودرو کلید خورد؟ \n\nخوداظهاری کالابرگ؛ واریزی چه کسانی قطع می‌شود؟ \n\nدر بازار کار چه خبر است؟ \n\nشما قبلا این خبر را لایک کرده‌اید . \n\nfunc ion oPe sianNumbe (numbe ) {\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\nelemen .addEven Lis ene (\"click\", func ion() {\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n. hen(func ion( esponse) {\nif ( esponse.s a us == 200) {\nesponse.json(). hen(func ion(newSco e) {\nva likeNumbe Span = elemen .que ySelec o (\".like\");\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\nva hiddenHea = elemen .que ySelec o (\".hidden\");\nvisibleHea .classLis .add(\"hidden\");\nfavo i eBu on.classLis .add(\"hidden\");\nhiddenHea .classLis . emove(\"hidden\");\nva e o Message = elemen .que ySelec o (\".e o _message\");\nif (e o Message) {\ne o Message.classLis . emove(\"hidden_e o \");\n}\n});\n} else {\nva e o Message = elemen .que ySelec o (\".e o _message\");\nif (e o Message) {\ne o Message.classLis .add(\"hidden_e o \");\nse Timeou (func ion() {\ne o Message.classLis . emove(\"hidden_e o \");\n}, 3000);\n}\n}\n})\n});\n});",
+      "url": "https://fararu.com/fa/news/1009338/%D8%B1%D8%A6%DB%8C%D8%B3-%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86-%D8%A8%D9%88%D8%B1%D8%B3-%D8%A7%D9%86%D8%AA%D8%AE%D8%A7%D8%A8-%D8%B4%D8%AF",
+      "image": "https://cdn.fararu.com/thumbnail/24LI9KacW0KP/2CPWBGGAYJcQ-4BF7Nx65M9pG7HXgPxY9VUxekVtsjd8ceMWJkQiXRElZflymMWld0oesfDYF6evhmaAep8Dt2PrjEzGdkhbyvlshSfHREP420Oc-KaiGkOaH7iRe-Tl/%D8%B5%DB%8C%D8%AF%DB%8C.jpg",
+      "source": "فرارو",
+      "source_site": "https://fararu.com/",
+      "allow_internal_republish": true,
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "published": "2026-10-12T22:28:24+03:30",
+      "topics": [
+        "markets"
+      ],
+      "importance_score": 0,
+      "important": false,
+      "first_seen_at": "2026-10-12T18:59:11.264837+00:00"
+    },
     {
       "id": "0b593dfec558f48333bf",
       "title": "انجام فرایند سرمایه‌گذاری تک‌مرحله‌ای در \"خط ارزش\"",
@@ -19,7 +38,7 @@
       "importance_score": 0,
       "important": false,
       "first_seen_at": "2026-10-12T18:55:54.478698+00:00",
-      "image_tries": 1
+      "image_tries": 2
     },
     {
       "id": "19c6e810074ffc5f34ba",
@@ -39,7 +58,7 @@
       "importance_score": 0,
       "important": false,
       "first_seen_at": "2026-10-12T18:55:56.029724+00:00",
-      "image_tries": 1
+      "image_tries": 2
     },
     {
       "id": "c90bfd40b82d00b141e3",
@@ -59,7 +78,7 @@
       "importance_score": 10,
       "important": true,
       "first_seen_at": "2026-10-12T18:55:54.478702+00:00",
-      "image_tries": 1
+      "image_tries": 2
     },
     {
       "id": "e21a4e1d0dd48c343f26",
@@ -79,7 +98,7 @@
       "importance_score": 0,
       "important": false,
       "first_seen_at": "2026-10-12T18:55:54.478704+00:00",
-      "image_tries": 1
+      "image_tries": 2
     },
     {
       "id": "76aa3fd43ecd7072bf80",
@@ -99,7 +118,7 @@
       "importance_score": 0,
       "important": false,
       "first_seen_at": "2026-10-12T18:55:54.478706+00:00",
-      "image_tries": 1
+      "image_tries": 2
     },
     {
       "id": "61ff4b4259d6f8bb1c3b",
@@ -120,7 +139,7 @@
       "importance_score": 0,
       "important": false,
       "first_seen_at": "2026-10-12T18:55:54.478707+00:00",
-      "image_tries": 1
+      "image_tries": 2
     },
     {
       "id": "016103981293b85c35c4",
@@ -140,7 +159,7 @@
       "importance_score": 0,
       "important": false,
       "first_seen_at": "2026-10-12T18:55:54.478709+00:00",
-      "image_tries": 1
+      "image_tries": 2
     },
     {
       "id": "0f895324eb38f7c588e1",
@@ -180,7 +199,7 @@
       "importance_score": 0,
       "important": false,
       "first_seen_at": "2026-10-12T18:55:56.029729+00:00",
-      "image_tries": 1
+      "image_tries": 2
     },
     {
       "id": "0e2da8853d3ea1724b77",
@@ -810,7 +829,7 @@
       "summary": "قیمت نفت خام برنت برای نخستین بار از ۱۶ سپتامبر از ۱۰۷ دلار در هر بشکه فراتر رفت.",
       "content": "افزایش شدید قیمت نفت در بازارهای جهانی/ قیمت هر بشکه نفت برنت از ۱۰۷ دلار گذشت \n\nسرویس:\nاقتصادی \n\nکدخبر:\n۸۱۱۶۴۷ \n\n۱۴۰۵/۰۷/۲۰ - ۱۹:۱۹ \n\nقیمت نفت خام برنت برای نخستین بار از ۱۶ سپتامبر از ۱۰۷ دلار در هر بشکه فراتر رفت.\r\nقیمت نفت برنت در بازارهای جهانی از مرز ۱۰۷ دلار در هر بشکه عبور کرد؛ روندی که بار دیگر تأثیر تحولات منطقه‌ای بر بازار نفت را برجسته کرده است.\n\nکپی لینک کوتاه\n\nکپی شد \n\ndocumen .addEven Lis ene ('DOMCon en Loaded', func ion() {\ncons sha eBu on = documen .que ySelec o ('.news_sha e_bu on');\n\nif (!sha eBu on) e u n;\n\nif (!naviga o .sha e) {\nsha eBu on.s yle.display = 'none';\ne u n;\n}\n\nsha eBu on.addEven Lis ene ('click', async () => {\ny {\ncons sha eDa a = {\ni le: \" u0627 u0641 u0632 u0627 u06cc u0634 u0634 u062f u06cc u062f u0642 u06cc u0645 u062a u0646 u0641 u062a u062f u0631 u0628 u0627 u0632 u0627 u0631 u0647 u0627 u06cc u062c u0647 u0627 u0646 u06cc / u0642 u06cc u0645 u062a u0647 u0631 u0628 u0634 u06a9 u0647 u0646 u0641 u062a u0628 u0631 u0646 u062a u0627 u0632 u06f1 u06f0 u06f7 u062f u0644 u0627 u0631 u06af u0630 u0634 u062a\",\nex : \" u0642 u06cc u0645 u062a u0646 u0641 u062a u062e u0627 u0645 u0628 u0631 u0646 u062a u0628 u0631 u0627 u06cc u0646 u062e u0633 u062a u06cc u0646 u0628 u0627 u0631 u0627 u0632 u06f1 u06f6 u0633 u067e u062a u0627 u0645 u0628 u0631 u0627 u0632 u06f1 u06f0 u06f7 u062f u0644 u0627 u0631 u062f u0631 u0647 u0631 u0628 u0634 u06a9 u0647 u0641 u0631 u0627 u062a u0631 u0631 u0641 u062a. n n\",\nu l: \"h ps: / /www.egh esadnews.com /fa / iny /news-811647\" };\n\nawai naviga o .sha e(sha eDa a);\n} ca ch (e o ) {\nif (e o .name !== 'Abo E o ') {\nconsole.e o ('E o sha ing con en :', e o );\n}\n}\n});\n});\n\nva newsMas e IdFo Ra e = \"1867333\";",
       "url": "https://www.eghtesadnews.com/%D8%A8%D8%AE%D8%B4-%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF%DB%8C-67/811647-%D8%A7%D9%81%D8%B2%D8%A7%DB%8C%D8%B4-%D8%B4%D8%AF%DB%8C%D8%AF-%D9%82%DB%8C%D9%85%D8%AA-%D9%86%D9%81%D8%AA-%D8%AF%D8%B1-%D8%A8%D8%A7%D8%B2%D8%A7%D8%B1%D9%87%D8%A7%DB%8C-%D8%AC%D9%87%D8%A7%D9%86%DB%8C-%D9%82%DB%8C%D9%85%D8%AA-%D9%87%D8%B1-%D8%A8%D8%B4%DA%A9%D9%87-%D9%86%D9%81%D8%AA-%D8%A8%D8%B1%D9%86%D8%AA-%D8%A7%D8%B2-%D8%AF%D9%84%D8%A7%D8%B1-%DA%AF%D8%B0%D8%B4%D8%AA",
-      "image": "https://cdn.eghtesadnews.com/thumbnail/bLCNHbHb0fP1/xpRz2s2HSZoFUGhxU84FpTeCnDKX4Xq6WBOJDmt9DBKRVJvMSZNtV6R5rMflU8zhoGxGF3nhFddSLhwRGAJH0yARg_kKjXUYpqG-ifEhcnjk4PGEwgkRNzbUQOU0o0Ws52z8SJFBqIX-cVq-yfwyLYsVlxKOr6dcApulKSk1nDFAMdGfyzlgbqhCQDtK6wz3/%D9%86%D9%81%D8%AA.jpg",
+      "image": "https://cdn.eghtesadnews.com/thumbnail/bLCNHbHb0fP1/tJ0ZxRcXvNbgNHutPpWeaiZQASbCQNsl77lQ5GP8-pRY4gzr1E1qo9wczBwUjRdxs2Tx5S2oY1XrAqYfUQkQGOt0eVTT01k9qF9JqBJlWXdq8nIcsI4O2rLU292SwO5IzteiwmMKE8JGEiPGL0EkAnkiH2Gm93vNiWaYxe7IwY0yNK9Cn6TCwVxe7-IL0ZFX/%D9%86%D9%81%D8%AA.jpg",
       "source": "اقتصادنیوز",
       "source_site": "https://www.eghtesadnews.com/",
       "allow_internal_republish": true,
@@ -5875,37 +5894,17 @@
       "important": false,
       "first_seen_at": "2026-10-11T20:42:48.619686+00:00",
       "image_tries": 3
-    },
-    {
-      "id": "373902c61f676ecf341c",
-      "title": "نسخه کامل شماره امروز روزنامه «دنیای‌ اقتصاد» را اینجا بخوانید",
-      "summary": "",
-      "content": "آیا فروش ۱۰ هزار دلار به هر کدملی سیاستی اشتباه است؟ \n\nمهار انتظارات با مداخله ارزی \n\nدر هفته‌های اخیر، بانک مرکزی با اعلام طرح فروش ۱۰هزار دلار به هر کد ملی و تزریق ۲‌میلیارد دلار به بازار، درصدد مهار نوسانات ارزی و کنترل انتظارات تورمی برآمده است. کارشناسان معتقدند عرضه ارز با قیمتی نزدیک به بازار، ضمن کاهش انگیزه خرید احتیاطی از بازار غیررسمی، احتمال ایجاد رانت و تقاضای مازاد را محدود می‌کند. بررسی‌ها نشان می‌دهد نوسان قیمت دلار در هشت روز پس از اجرای طرح به ۱.۲درصد رسیده است؛ درحالی‌که این رقم در هشت روز پیش از آن ۱۵درصد بود. به نظر می‌رسد بانک مرکزی با اعمال این سیاست، تاحدودی در کنترل انتظارات موفق بوده است. بااین‌حال،…",
-      "url": "https://donya-e-eqtesad.com/%D8%A8%D8%AE%D8%B4-%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1-2/4301241-%D9%86%D8%B3%D8%AE%D9%87-%DA%A9%D8%A7%D9%85%D9%84-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%A7%D9%85%D8%B1%D9%88%D8%B2-%D8%B1%D9%88%D8%B2%D9%86%D8%A7%D9%85%D9%87-%D8%AF%D9%86%DB%8C%D8%A7%DB%8C-%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF-%D8%B1%D8%A7-%D8%A7%DB%8C%D9%86%D8%AC%D8%A7-%D8%A8%D8%AE%D9%88%D8%A7%D9%86%DB%8C%D8%AF",
-      "image": "https://cdn.donya-e-eqtesad.com/servev2/Jqi6aU5Dl48j/aztreVakjSU,/final-01.svg",
-      "source": "دنیای اقتصاد",
-      "source_site": "https://donya-e-eqtesad.com/",
-      "allow_internal_republish": true,
-      "category": "اقتصاد و سرمایه‌گذاری",
-      "published": "2026-10-12T00:00:00+03:30",
-      "topics": [
-        "economy"
-      ],
-      "importance_score": 0,
-      "important": false,
-      "first_seen_at": "2026-10-11T20:42:48.619689+00:00",
-      "image_tries": 1
     }
   ],
   "sources": [
     {
-      "name": "پزشک سایت",
-      "category": "پزشکی و سلامت",
+      "name": "اقتصادنیوز",
+      "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
       "items": 6,
-      "attempted_at": "2026-10-12T18:55:51.092488+00:00",
-      "last_success_at": "2026-10-12T18:55:52.068347+00:00",
-      "last_article_published": "2026-10-12T12:57:40+03:30",
+      "attempted_at": "2026-10-12T18:59:09.506664+00:00",
+      "last_success_at": "2026-10-12T18:59:10.520883+00:00",
+      "last_article_published": "2026-10-12T21:32:32+03:30",
       "error": ""
     },
     {
@@ -5913,29 +5912,29 @@
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
       "items": 10,
-      "attempted_at": "2026-10-12T18:55:51.083501+00:00",
-      "last_success_at": "2026-10-12T18:55:52.142552+00:00",
+      "attempted_at": "2026-10-12T18:59:09.505749+00:00",
+      "last_success_at": "2026-10-12T18:59:10.632268+00:00",
       "last_article_published": "2026-10-12T22:16:43+03:30",
       "error": ""
     },
     {
-      "name": "اقتصادنیوز",
-      "category": "اقتصاد و سرمایه‌گذاری",
+      "name": "پزشک سایت",
+      "category": "پزشکی و سلامت",
       "ok": true,
       "items": 6,
-      "attempted_at": "2026-10-12T18:55:51.084138+00:00",
-      "last_success_at": "2026-10-12T18:55:52.392101+00:00",
-      "last_article_published": "2026-10-12T21:32:32+03:30",
+      "attempted_at": "2026-10-12T18:59:09.517145+00:00",
+      "last_success_at": "2026-10-12T18:59:10.953763+00:00",
+      "last_article_published": "2026-10-12T12:57:40+03:30",
       "error": ""
     },
     {
       "name": "فرارو",
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
-      "items": 1,
-      "attempted_at": "2026-10-12T18:55:51.098459+00:00",
-      "last_success_at": "2026-10-12T18:55:52.919312+00:00",
-      "last_article_published": "2026-10-12T21:51:23+03:30",
+      "items": 2,
+      "attempted_at": "2026-10-12T18:59:09.521128+00:00",
+      "last_success_at": "2026-10-12T18:59:11.264777+00:00",
+      "last_article_published": "2026-10-12T22:28:24+03:30",
       "error": ""
     },
     {
@@ -5943,8 +5942,8 @@
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
       "items": 5,
-      "attempted_at": "2026-10-12T18:55:51.098852+00:00",
-      "last_success_at": "2026-10-12T18:55:53.538583+00:00",
+      "attempted_at": "2026-10-12T18:59:09.521680+00:00",
+      "last_success_at": "2026-10-12T18:59:11.488867+00:00",
       "last_article_published": "2026-10-12T18:11:33+03:30",
       "error": ""
     },
@@ -5953,29 +5952,9 @@
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
       "items": 8,
-      "attempted_at": "2026-10-12T18:55:51.084538+00:00",
-      "last_success_at": "2026-10-12T18:55:53.667745+00:00",
+      "attempted_at": "2026-10-12T18:59:09.507124+00:00",
+      "last_success_at": "2026-10-12T18:59:11.874136+00:00",
       "last_article_published": "2026-10-12T22:00:42+03:30",
-      "error": ""
-    },
-    {
-      "name": "بورس‌نیوز",
-      "category": "بورس و بازار سرمایه",
-      "ok": true,
-      "items": 12,
-      "attempted_at": "2026-10-12T18:55:51.084927+00:00",
-      "last_success_at": "2026-10-12T18:55:54.478608+00:00",
-      "last_article_published": "2026-10-12T22:24:28+03:30",
-      "error": ""
-    },
-    {
-      "name": "پیوست",
-      "category": "فناوری و علم",
-      "ok": true,
-      "items": 5,
-      "attempted_at": "2026-10-12T18:55:51.088883+00:00",
-      "last_success_at": "2026-10-12T18:55:55.476994+00:00",
-      "last_article_published": "2026-10-12T15:10:25+03:30",
       "error": ""
     },
     {
@@ -5983,9 +5962,19 @@
       "category": "بورس و بازار سرمایه",
       "ok": true,
       "items": 10,
-      "attempted_at": "2026-10-12T18:55:51.088465+00:00",
-      "last_success_at": "2026-10-12T18:55:55.618374+00:00",
+      "attempted_at": "2026-10-12T18:59:09.509027+00:00",
+      "last_success_at": "2026-10-12T18:59:12.938572+00:00",
       "last_article_published": "2026-10-12T18:29:40+03:30",
+      "error": ""
+    },
+    {
+      "name": "بورس‌نیوز",
+      "category": "بورس و بازار سرمایه",
+      "ok": true,
+      "items": 12,
+      "attempted_at": "2026-10-12T18:59:09.507738+00:00",
+      "last_success_at": "2026-10-12T18:59:13.081801+00:00",
+      "last_article_published": "2026-10-12T22:24:28+03:30",
       "error": ""
     },
     {
@@ -5993,9 +5982,19 @@
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
       "items": 6,
-      "attempted_at": "2026-10-12T18:55:51.096464+00:00",
-      "last_success_at": "2026-10-12T18:55:56.029647+00:00",
+      "attempted_at": "2026-10-12T18:59:09.519116+00:00",
+      "last_success_at": "2026-10-12T18:59:13.562641+00:00",
       "last_article_published": "2026-10-12T22:24:27+03:30",
+      "error": ""
+    },
+    {
+      "name": "پیوست",
+      "category": "فناوری و علم",
+      "ok": true,
+      "items": 5,
+      "attempted_at": "2026-10-12T18:59:09.511119+00:00",
+      "last_success_at": "2026-10-12T18:59:13.618467+00:00",
+      "last_article_published": "2026-10-12T15:10:25+03:30",
       "error": ""
     },
     {
@@ -6003,8 +6002,8 @@
       "category": "پزشکی و سلامت",
       "ok": true,
       "items": 12,
-      "attempted_at": "2026-10-12T18:55:51.089272+00:00",
-      "last_success_at": "2026-10-12T18:55:56.345634+00:00",
+      "attempted_at": "2026-10-12T18:59:09.513122+00:00",
+      "last_success_at": "2026-10-12T18:59:14.769982+00:00",
       "last_article_published": "2026-10-12T15:27:43+03:30",
       "error": ""
     },
@@ -6013,8 +6012,8 @@
       "category": "بورس و بازار سرمایه",
       "ok": true,
       "items": 12,
-      "attempted_at": "2026-10-12T18:55:51.086480+00:00",
-      "last_success_at": "2026-10-12T18:55:57.875491+00:00",
+      "attempted_at": "2026-10-12T18:59:09.508482+00:00",
+      "last_success_at": "2026-10-12T18:59:17.461468+00:00",
       "last_article_published": "2026-10-12T18:41:26+03:30",
       "error": ""
     }
