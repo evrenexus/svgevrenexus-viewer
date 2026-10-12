@@ -206,7 +206,7 @@ jobs:
           done
       # The following is a separate, non-blocking stage for AI-managed permanent/important articles.
       - name: Build permanent internal articles (disabled: manual selection only)
-        if: false
+        if: ${{ false }}
         id: build_internal_articles
         continue-on-error: true
         run: node scripts/build-internal-articles.mjs
