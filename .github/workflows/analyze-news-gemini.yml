@@ -8,6 +8,7 @@ on:
     paths:
       - 'scripts/news_ai.py'
       - '.github/workflows/analyze-news-gemini.yml'
+      - 'data/automation.json'
   workflow_call:
     secrets:
       GEMINI_API_KEY:
@@ -34,7 +35,21 @@ jobs:
           ref: main
           fetch-depth: 0
 
+      - name: Check automation pause flag
+        id: automation
+        run: |
+          python3 - <<'PY'
+          import json, os
+          try:
+              with open('data/automation.json', encoding='utf-8') as f: state=json.load(f)
+          except FileNotFoundError:
+              state={'paused': False}
+          paused='true' if state.get('paused') is True else 'false'
+          with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as f: f.write('paused='+paused+'\\n')
+          print('Automatic AI classification paused:', paused)
+          PY
       - name: Run AI analysis
+        if: steps.automation.outputs.paused != 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
@@ -43,12 +58,21 @@ jobs:
         run: python3 scripts/news_ai.py
 
       - name: Commit AI database
+        if: steps.automation.outputs.paused != 'true'
         run: |
           git config user.name "evrenexus-ai-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           # news_ai.py writes both files. Commit both together so
           # no generated editorial changes remain unstaged during rebase.
+          git fetch origin main
+          paused=$(git show origin/main:data/automation.json | python3 -c 'import json,sys; print("true" if json.load(sys.stdin).get("paused") is True else "false")')
+          if [ "$paused" = "true" ]; then
+            git reset --hard origin/main
+            echo "Automatic processing was paused during AI analysis; refusing to commit AI changes."
+            exit 0
+          fi
+
           git add data/news-ai.json data/editorial.json data/articles.json
           if [ -d assets/articles ]; then git add assets/articles/; fi
 
@@ -61,6 +85,12 @@ jobs:
 
           for i in 1 2 3 4 5; do
             git fetch origin main
+            paused=$(git show origin/main:data/automation.json | python3 -c 'import json,sys; print("true" if json.load(sys.stdin).get("paused") is True else "false")')
+            if [ "$paused" = "true" ]; then
+              git reset --hard origin/main
+              echo "Automatic processing was paused before push; discarding local AI changes."
+              exit 0
+            fi
 
             if git rebase origin/main && git push origin HEAD:main; then
               echo "Push succeeded on attempt $i"
