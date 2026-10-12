@@ -146,9 +146,9 @@ function esc(s){return String(s||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&l
 async function saveOne(id,attempt){
   attempt=attempt||0;
   const s=state(id)||{};
-  if(JSON.stringify(originalChoices[id]||{})===JSON.stringify(s)){ $('status').textContent='تغییری برای ذخیره این خبر وجود ندارد.'; return; }
+  if(JSON.stringify(originalChoices[id]||{})===JSON.stringify(s)){ saveMessages[id]={status:'ℹ️ تغییری برای ذخیره این خبر شناسایی نشد.',output:'',kind:''}; $('status').textContent='تغییری برای ذخیره این خبر وجود ندارد.';render();return; }
   let token=$('token').value.trim()||sessionStorage.getItem('evren_github_token')||'';
-  if(!token){$('status').textContent='ابتدا وارد پنل شوید.';return;}
+  if(!token){saveMessages[id]={status:'❌ برای ذخیره این خبر ابتدا وارد پنل شوید.',output:'',kind:'err'};$('status').textContent='ابتدا وارد پنل شوید.';render();return;}
   saveMessages[id]={status:attempt?'در حال تلاش دوباره برای ذخیره...':'در حال ذخیره این خبر...',output:'',kind:''};render();
   try{
     const repo='evrenexus/svgevrenexus-viewer',path='data/editorial.json';
@@ -180,16 +180,17 @@ async function saveOne(id,attempt){
       method:'PUT',headers:Object.assign({},headers,{'Content-Type':'application/json'}),
       body:JSON.stringify({message:'Update editorial item '+id,content:encoded,sha:current.sha,branch:'main'})
     });
+    let putJson=null;if(put.ok){try{putJson=await put.clone().json();}catch(_){} }
     if(put.status===409){
       if(attempt<1)return saveOne(id,attempt+1);
       throw new Error('تداخل: فایل هم‌زمان تغییر کرد. ذخیره انجام نشد؛ دوباره تلاش کنید.');
     }
     if(!put.ok){const e=await put.text();throw new Error('ذخیره شکست خورد ('+put.status+'): '+e.slice(0,180));}
     originalChoices[id]=JSON.parse(JSON.stringify(s));
-    saveMessages[id]={status:'✅ تغییرات این خبر ذخیره شد.',output:'ثبت شد: '+id+'\nزمان: '+now+'\n',kind:'ok'};
-    $('status').textContent='ذخیره خبر انجام شد.';
+    saveMessages[id]={status:'✅ ذخیره نهایی شد؛ تغییرات در GitHub ثبت شدند.',output:'کد ثبت: '+id+'\nزمان ثبت: '+now+'\nCommit: '+(putJson&&putJson.commit&&putJson.commit.sha?putJson.commit.sha:'ثبت‌شده در data/editorial.json')+'\n',kind:'ok'};
+    $('status').textContent='✅ ذخیره نهایی شد؛ تغییرات در GitHub ثبت شدند.';
     render();
-  }catch(e){console.error(e);saveMessages[id]={status:'❌ ذخیره این خبر ناموفق بود: '+e.message,output:'',kind:'err'};$('status').textContent='ذخیره ناموفق بود.';render();}
+  }catch(e){console.error(e);saveMessages[id]={status:'❌ ذخیره نهایی نشد: '+e.message,output:'',kind:'err'};$('status').textContent='❌ ذخیره نهایی نشد: '+e.message;render();}
 }
 function clearToken(){
   sessionStorage.removeItem('evren_github_token');
