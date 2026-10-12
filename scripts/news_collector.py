@@ -253,9 +253,6 @@ def dedup_text(item):
     return "".join(sorted(dedup_tokens(item)))
 
 def is_duplicate_news(a,b):
-    # Same-source follow-up coverage should remain available; only collapse
-    # cross-publisher copies/syndicated reports.
-    if a.get("source")==b.get("source"): return False
     title_a=normalize_text(a.get("title",""))
     title_b=normalize_text(b.get("title",""))
     ta=dedup_tokens(a); tb=dedup_tokens(b)
@@ -263,44 +260,37 @@ def is_duplicate_news(a,b):
     shared=len(ta & tb); union=len(ta | tb)
     jaccard=shared/union if union else 0
     ratio=SequenceMatcher(None,title_a,title_b).ratio()
-    # Catch near-identical headlines despite punctuation or word-order changes.
-    if ratio>=0.76: return True
-    # Catch headline variants while requiring meaningful overlap to avoid
-    # merging unrelated stories that merely share a person or broad topic.
-    if shared>=2 and (jaccard>=0.50 or ratio>=0.52): return True
-    if shared>=3 and jaccard>=0.42: return True
+    same_source=a.get("source")==b.get("source")
 
-    # Some publishers rewrite a copied headline. Compare summaries only as a
-    # secondary signal and require both several shared terms and high overlap.
+    # Merge repeated feed entries from the same publisher only when headlines
+    # are effectively identical; preserve genuinely distinct follow-up reports.
+    if same_source:
+        if ratio>=0.90: return True
+        if shared>=4 and jaccard>=0.80: return True
+    else:
+        # Cross-publisher copies often differ only in punctuation or word order.
+        if ratio>=0.76: return True
+        # Require meaningful overlap to avoid merging stories sharing only a topic.
+        if shared>=2 and (jaccard>=0.50 or ratio>=0.52): return True
+        if shared>=3 and jaccard>=0.42: return True
+
+    # Rewritten headlines can still be copies. Use summaries as a secondary signal.
     summary_a=normalize_text(a.get("summary",""))
     summary_b=normalize_text(b.get("summary",""))
     if len(summary_a)>=80 and len(summary_b)>=80:
-        sa={t for t in (dedup_stem(x) for x in re.findall(r"[\w؀-ۿ]+",summary_a,re.UNICODE)) if t}
-        sb={t for t in (dedup_stem(x) for x in re.findall(r"[\w؀-ۿ]+",summary_b,re.UNICODE)) if t}
+        sa={t for t in (dedup_stem(x) for x in re.findall(r"[\\w؀-ۿ]+",summary_a,re.UNICODE)) if t}
+        sb={t for t in (dedup_stem(x) for x in re.findall(r"[\\w؀-ۿ]+",summary_b,re.UNICODE)) if t}
         summary_shared=len(sa & sb)
         summary_union=len(sa | sb)
         summary_jaccard=summary_shared/summary_union if summary_union else 0
         summary_ratio=SequenceMatcher(None,summary_a,summary_b).ratio()
-        if summary_ratio>=0.72 and summary_shared>=8: return True
-        if summary_shared>=10 and summary_jaccard>=0.55: return True
+        if same_source:
+            if summary_ratio>=0.90 and summary_shared>=10: return True
+            if summary_shared>=14 and summary_jaccard>=0.75: return True
+        else:
+            if summary_ratio>=0.72 and summary_shared>=8: return True
+            if summary_shared>=10 and summary_jaccard>=0.55: return True
     return False
-
-def deduplicate_news(items):
-    items=sorted(items,key=lambda x:date_key(x.get("published","")),reverse=True)
-    kept=[]; duplicate_count=0
-    for item in items:
-        item_ts=date_key(item.get("published",""))
-        duplicate=False
-        for winner in kept:
-            winner_ts=date_key(winner.get("published",""))
-            if item_ts<=0 or winner_ts<=0: continue
-            if abs(winner_ts-item_ts)>DUPLICATE_WINDOW_HOURS*3600: continue
-            if is_duplicate_news(item,winner):
-                duplicate=True
-                duplicate_count+=1
-                break
-        if not duplicate: kept.append(item)
-    return kept,duplicate_count
 
 def fetch(url):
     req=Request(url,headers={"User-Agent":UA,"Accept":"application/rss+xml,application/atom+xml,application/xml,text/html;q=0.9,*/*;q=0.5"})
