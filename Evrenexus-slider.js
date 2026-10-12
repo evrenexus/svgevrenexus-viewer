@@ -64,7 +64,7 @@ function renderFeatured(){
     url:String(n.url||""),articleUrl:String(s.article_url||"").replace(/^\.\//,""),
     content:String(s.content||""),topics:topics,updated_at:String(s.updated_at||"")
    };
-  }).filter(function(x){return x&&x.title&&x.url&&x.topics.some(function(t){return ALLOWED_TOPICS.indexOf(t)!==-1})});
+  }).filter(function(x){return x&&x.title&&x.url});
   items.sort(function(a,b){return (Date.parse(b.updated_at)||Date.parse(b.published)||0)-(Date.parse(a.updated_at)||Date.parse(a.published)||0)});
   render(items.slice(0,8),aiFor);
  }).catch(function(e){
