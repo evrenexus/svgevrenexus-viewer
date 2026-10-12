@@ -139,12 +139,38 @@ jobs:
       # Commit the independent public/latest feeds before starting the separate AI-derived boxes.
       - name: Commit public data and independent latest-news feed
         run: |
+          set -e
           git config user.name "evrenexus-update-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/public/image-health.json data/public/news.json data/public/editorial.json data/public/policy-terms.json data/public/meta.json data/public/latest-news.json
-          if git diff --cached --quiet; then echo "No public-data, latest-news, or image-health changes."; exit 0; fi
-          git commit -m "Publish rule-based latest news and public data"
-          git push origin HEAD:main
+
+          # Retry if another workflow updates main between checkout and push.
+          for attempt in 1 2 3 4 5; do
+            git add data/public/image-health.json data/public/news.json data/public/editorial.json data/public/policy-terms.json data/public/meta.json data/public/latest-news.json
+            if git diff --cached --quiet; then
+              echo "No public-data, latest-news, or image-health changes."
+              exit 0
+            fi
+
+            git commit -m "Publish rule-based latest news and public data"
+            if git push origin HEAD:main; then
+              echo "Public data and latest-news feed published successfully."
+              exit 0
+            fi
+
+            if [ "$attempt" -eq 5 ]; then
+              echo "Push failed after 5 attempts."
+              exit 1
+            fi
+
+            echo "Push race detected; refreshing main and rebuilding generated data (attempt $attempt/5)."
+            git fetch origin main
+            git reset --hard origin/main
+            node scripts/build-latest-news.mjs
+            node scripts/validate-latest-news.mjs
+            python3 scripts/build_public.py
+            node scripts/check-images.mjs
+            sleep $((attempt * 3))
+          done
       # The following is a separate, non-blocking stage for AI-managed permanent/important articles.
       - name: Build permanent internal articles
         id: build_internal_articles
