@@ -111,6 +111,7 @@ jobs:
             fi
 
             echo "Push race detected; refreshing main and regenerating data (attempt $attempt/5)."
+            git fetch origin main
             git reset --hard origin/main
             python3 scripts/news_collector.py
             node market-data/fetch-tgju.js
