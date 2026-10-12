@@ -24,6 +24,7 @@ permissions:
 
 jobs:
   analyze:
+    if: false
     name: Analyze news with Gemini, Groq, then OpenRouter
     runs-on: ubuntu-latest
     continue-on-error: true
