@@ -26,7 +26,7 @@ host.outerHTML='<div id="Evrenxus-slider"><div id="Evrenxus-slides"></div><butto
 var slider=document.getElementById("Evrenxus-slider"),slidesContainer=document.getElementById("Evrenxus-slides"),dotsContainer=document.getElementById("Evrenxus-slider-dots"),current=0;
 function proxy(v){return v?"https://images.weserv.nl/?url="+encodeURIComponent(v)+"&w=1200&q=88&output=webp":""}
 function render(items,aiForFn){
-items=items.filter(function(x){return String(x&&x.title||"").trim().length>0}).slice(0,4);if(!items.length){slider.style.display="none";return}
+items=items.filter(function(x){return String(x&&x.title||"").trim().length>0}).slice(0,8);if(!items.length){slider.style.display="none";return}
 items.forEach(function(x,i){
 var slide=document.createElement("div");slide.className="Evrenxus-slide"+(i===0?" active":"");
 var a=document.createElement("a");var es=(window.EVREN_EDITORIAL||{})[x.id]||{},aix=aiForFn(x),edited=es.edited===true,data=Object.assign({},x);if(edited){if(es.title!==undefined)data.title=es.title;if(es.image!==undefined)data.image=es.image}if(!data.image&&aix&&aix.image)data.image=aix.image;var permanentId=(aix&&aix.article_id)?String(aix.article_id):"";var permanentUrl=String(data.articleUrl||x.articleUrl||"").replace(/^\.\//,"");var internal=!!(permanentUrl||permanentId);if(permanentUrl){a.href="./"+permanentUrl}else if(permanentId){a.href="./article.html?id="+encodeURIComponent(permanentId)}else{internal=es.published===true&&data.content;a.href=internal?"./news-article.html?id="+encodeURIComponent(x.id):"./viewer.html?url="+encodeURIComponent(x.url)}if(!internal){a.target="_blank";a.rel="noopener noreferrer"}
@@ -39,25 +39,29 @@ function show(i){if(!slides.length)return;if(i>=slides.length)i=0;if(i<0)i=slide
 document.getElementById("Evrenxus-slider-prev").onclick=function(){show(current-1)};document.getElementById("Evrenxus-slider-next").onclick=function(){show(current+1)};
 if(slides.length>1)setInterval(function(){show(current+1)},5000);
 }
-var DATA_URL="./data/public/important-posts.json";
 var EDITORIAL_URL="./data/editorial.json";
-var ALLOWED_TOPICS=["economy","markets","crypto","currency-gold","real-estate","technology","ai","health","auto","science-life"];
+var NEWS_URL="./data/news.json";
+var ALLOWED_TOPICS=["economy","markets","economy-investment","crypto","currency-gold","real-estate","technology","technology-ai","ai","health","auto","science-life"];
 function aiFor(){return{}}
 function renderFeatured(){
  return Promise.all([
-  fetch(DATA_URL+"?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("important-posts HTTP "+r.status);return r.json()}),
-  fetch(EDITORIAL_URL+"?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("editorial HTTP "+r.status);return r.json()}).catch(function(){return{items:{}}})
+  fetch(EDITORIAL_URL+"?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("editorial HTTP "+r.status);return r.json()}),
+  fetch(NEWS_URL+"?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("news HTTP "+r.status);return r.json()})
  ]).then(function(parts){
-  var data=parts[0],editorial=parts[1]&&parts[1].items||{};
-  if(!data||!Array.isArray(data.items))throw Error("Invalid important-posts data");
+  var editorial=parts[0]&&parts[0].items||{},raw=parts[1],news=Array.isArray(raw)?raw:(Array.isArray(raw.items)?raw.items:(Array.isArray(raw.news)?raw.news:[])),byId={};
+  news.forEach(function(n){if(n&&n.id!=null)byId[String(n.id)]=n});
   window.EVREN_EDITORIAL=editorial;
-  var items=data.items.filter(function(x){
-   var ed=editorial[String(x&&x.id||"")]||{};
-   return x&&String(x.title||"").trim()&&x.url&&!(ed.deleted===true)&&Array.isArray(x.topics)&&x.topics.some(function(t){return ALLOWED_TOPICS.indexOf(t)!==-1});
-  });
+  var items=Object.keys(editorial).map(function(id){
+   var ed=editorial[id]||{},n=byId[String(id)]||{},path=String(ed.article_url||"");
+   if(ed.important!==true||ed.published!==true||ed.deleted===true||!/^articles\/[a-zA-Z0-9._-]+\.html$/.test(path)||!String(ed.content||"").replace(/<[^>]*>/g," ").trim())return null;
+   var topics=ed.topics_manual===true&&Array.isArray(ed.topics)?ed.topics:(Array.isArray(n.topics)?n.topics:[]);
+   if(!topics.some(function(t){return ALLOWED_TOPICS.indexOf(t)!==-1}))return null;
+   return {id:String(id),title:ed.title||n.title||"",summary:ed.summary||n.summary||"",image:ed.image||n.image||"",url:n.url||"",articleUrl:path,content:ed.content||"",topics:topics,published:n.published||ed.updated_at||""};
+  }).filter(function(x){return x&&String(x.title).trim()});
+  items.sort(function(a,b){return (Date.parse(b.published)||0)-(Date.parse(a.published)||0)});
   render(items.slice(0,8),aiFor);
  }).catch(function(e){
-  console.warn("Evrenexus-slider shared important-posts:",e);
+  console.warn("Evrenexus-slider manual articles:",e);
   slider.style.display="none";
  });
 }
