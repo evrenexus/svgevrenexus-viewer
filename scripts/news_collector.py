@@ -535,6 +535,43 @@ def is_valid_item(item,now_ts):
     if ts<=0 or ts>now_ts+300: return False
     return True
 
+def deduplicate_news(items):
+    """Remove near-identical reports from different sources within the configured time window."""
+    def title_key(item):
+        title=normalize_text(item.get("title",""))
+        return re.sub(r"[^\w\s]"," ",title,flags=re.UNICODE).strip()
+
+    kept=[]
+    removed=0
+    for item in sorted(items,key=lambda x:date_key(x.get("published","")),reverse=True):
+        title=title_key(item)
+        if len(title)<18:
+            kept.append(item)
+            continue
+        published=date_key(item.get("published",""))
+        duplicate=False
+        for prior in kept:
+            if normalize_text(item.get("source",""))==normalize_text(prior.get("source","")):
+                continue
+            prior_published=date_key(prior.get("published",""))
+            if not published or not prior_published or abs(published-prior_published)>DUPLICATE_WINDOW_HOURS*3600:
+                continue
+            prior_title=title_key(prior)
+            if len(prior_title)<18:
+                continue
+            similarity=SequenceMatcher(None,title,prior_title).ratio()
+            words_a={w for w in title.split() if len(w)>2}
+            words_b={w for w in prior_title.split() if len(w)>2}
+            overlap=len(words_a&words_b)/max(1,len(words_a|words_b))
+            if similarity>=0.88 or (similarity>=0.78 and overlap>=0.72):
+                duplicate=True
+                break
+        if duplicate:
+            removed+=1
+        else:
+            kept.append(item)
+    return kept,removed
+
 def main():
     now=datetime.now(timezone.utc); now_ts=now.timestamp()
     old=json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else {"updated":"","items":[],"sources":[]}
