@@ -1,0 +1,60 @@
+name: Cache LBank futures market data
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: lbank-futures-cache
+  cancel-in-progress: true
+
+jobs:
+  cache-market-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Fetch public LBank futures data
+        run: |
+          set -euo pipefail
+          mkdir -p market-data
+          curl --fail --silent --show-error --location --max-time 20 \
+            "https://lbkperp.lbank.com/cfd/openApi/v1/pub/marketData?productGroup=SwapU" \
+            -o /tmp/lbank-futures-raw.json
+          node <<'NODE'
+          const fs = require('fs');
+          const payload = JSON.parse(fs.readFileSync('/tmp/lbank-futures-raw.json', 'utf8'));
+          const data = Array.isArray(payload) ? payload :
+            (Array.isArray(payload.data) ? payload.data :
+            (Array.isArray(payload.data?.data) ? payload.data.data : null));
+          if (!data || !data.length) {
+            throw new Error('LBank API response did not contain a market-data array');
+          }
+          const valid = data.filter(x => x && x.symbol && Number(x.lastPrice) > 0);
+          if (!valid.length) throw new Error('No valid futures prices found in LBank response');
+          fs.writeFileSync('market-data/lbank-futures.json', JSON.stringify({
+            source: 'LBank public futures API',
+            updatedAt: new Date().toISOString(),
+            data: valid
+          }) + '\n');
+          console.log('Cached ' + valid.length + ' LBank market rows');
+          NODE
+
+      - name: Commit cache
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add market-data/lbank-futures.json
+          if git diff --cached --quiet; then
+            echo "Market cache unchanged"
+            exit 0
+          fi
+          git commit -m "Refresh LBank futures market cache"
+          git push
