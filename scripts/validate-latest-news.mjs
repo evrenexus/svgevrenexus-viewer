@@ -33,7 +33,7 @@ for(const topic of keys){
     for(const forbidden of ["ai","editorial","articleId","articleUrl","score","importance","important"])if(Object.prototype.hasOwnProperty.call(n,forbidden))err("["+topic+"] forbidden derived field "+forbidden+" on "+n.id);
     if(topic!==C.HOME){
       const tsArr=Array.isArray(n.topics)?n.topics:[];
-      const match=topic==="economy-investment"?(tsArr.includes("economy")||tsArr.includes("markets")):topic==="technology-ai"?(tsArr.includes("technology")||tsArr.includes("ai")):tsArr.includes(topic);
+      const match=topic==="economy-investment"?(tsArr.includes("economy-investment")||tsArr.includes("economy")||tsArr.includes("markets")):topic==="technology-ai"?(tsArr.includes("technology-ai")||tsArr.includes("technology")||tsArr.includes("ai")):tsArr.includes(topic);
       if(!match)err("["+topic+"] item does not match rule-based topics: "+n.id);
     }
   }
