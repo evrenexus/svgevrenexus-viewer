@@ -172,7 +172,7 @@ async function publishManualArticle(id){
     await writeRepoFile(path,makeManualArticlePage(id,s),'Publish manual editorial article '+id,token);
     await saveOne(id);
     if(JSON.stringify(originalChoices[id]||{})!==JSON.stringify(state(id)))throw new Error('صفحه ساخته شد اما ثبت وضعیت سردبیری تأیید نشد؛ دوباره «انتشار صفحه مستقل» را بزن.');
-    saveMessages[id]={status:'✅ صفحه مستقل منتشر شد؛ خبر در فهرست مطالب مهم دستی قرار گرفت.',output:'صفحه: '+path+'\nلینک: https://evrenexus.ir/'+path,kind:'ok'};
+    saveMessages[id]={status:'✅ صفحه مستقل منتشر شد و در بخش‌های انتخاب‌شده نمایش داده می‌شود.',output:'صفحه: '+path+'\nلینک: https://evrenexus.ir/'+path,kind:'ok'};
     $('status').textContent='✅ صفحه مستقل ساخته شد و وضعیت دستی خبر ذخیره شد.';
     render();
   }catch(e){console.error(e);saveMessages[id]={status:'❌ انتشار کامل نشد: '+e.message,output:'',kind:'err'};$('status').textContent='❌ انتشار کامل نشد: '+e.message;render();}
