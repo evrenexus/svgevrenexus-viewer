@@ -47,6 +47,7 @@ const valid=source.filter(n=>{
   source:String(n.source||"").trim(),
   published:String(n.published||""),
   url:String(n.url).trim(),
+  articleUrl:(()=>{const s=editorial[String(n.id)]||{};const p=String(s.article_url||"").replace(/^\\.\\//,"");const body=String(s.content||"").replace(/<[^>]*>/g," ").replace(/&nbsp;|&#160;/gi," ").replace(/\\s+/g," ").trim();return s.published===true&&(s.manual_important===true||s.important===true||s.manual_slider===true||s.slider===true)&&body.length>=100&&/^articles\\/[a-zA-Z0-9._-]+\\.html$/.test(p)?p:""})(),
   topics:(()=>{const s=editorial[String(n.id)]||{};if(s.topics_manual===true&&Array.isArray(s.topics))return [...new Set(s.topics.filter(t=>typeof t==="string"&&EDITOR_TOPICS.includes(t)))];return Array.isArray(n.topics)?[...new Set(n.topics.filter(t=>typeof t==="string"&&C.TOPICS.includes(t)))]:[]})()
 })).sort((a,b)=>(Date.parse(b.published)||0)-(Date.parse(a.published)||0)||a.id.localeCompare(b.id));
 
