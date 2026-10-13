@@ -20,6 +20,7 @@ var box=document.createElement("aside");box.id="Evrenxus-sidebar";
 box.innerHTML=`
 <div class="Evrenxus-sidebar-box">
 <div class="Evrenxus-sidebar-title">مطالب مهم</div>
+<a class="Evrenxus-important-archive" target="_top" href="./important-archive.html" style="display:block;padding:8px 10px;text-align:center;background:#f8fafb;color:#d64c43;text-decoration:none;font-size:10px;font-weight:700;border-bottom:1px solid #e8edf1">مطالب بیشتر</a>
 <div id="Evrenxus-sidebar-important"><div style="padding:12px;font-size:10px;color:#888">در حال دریافت مطالب...</div></div>
 </div>
 <div class="Evrenxus-sidebar-box Evrenxus-sidebar-menu">
