@@ -88,7 +88,7 @@ function renderAiBoxes(doc,topic){
    if(x.summary){var sm=document.createElement("div");sm.className="important-summary";sm.textContent=x.summary;c.appendChild(sm)}
    var m=document.createElement("div");m.className="important-meta";m.textContent=(x.source||"")+" • "+(x.published?new Date(x.published).toLocaleString("fa-IR",{dateStyle:"short",timeStyle:"short"}):"");c.appendChild(m);a.appendChild(c);ih.appendChild(a);
  });}
- if(ih){var ia=document.createElement("a");ia.href="./important-archive.html"+(key&&key!=="home"?"?topic="+encodeURIComponent(key):"");ia.textContent="مشاهده آرشیو مطالب مهم";ia.style.cssText="display:block;text-align:center;padding:10px;background:#f8fafb;color:#d64c43;text-decoration:none;font-size:10px;font-weight:700;border-top:1px solid #e8edf1";ih.appendChild(ia);}
+ if(ih){var ia=document.createElement("a");ia.href="./important-archive.html"+(key&&key!=="home"?"?topic="+encodeURIComponent(key):"");ia.textContent="مطالب مهم";ia.style.cssText="display:block;text-align:center;padding:10px;background:#f8fafb;color:#d64c43;text-decoration:none;font-size:10px;font-weight:700;border-top:1px solid #e8edf1";ih.appendChild(ia);}
 }
 function render(r){
  var F=(r.featured||[]).slice(0,4),I=recentImportant(r.important||[],activeTopic),list=document.getElementById("list"),important=document.getElementById("important"),ih=document.getElementById("importantList");
