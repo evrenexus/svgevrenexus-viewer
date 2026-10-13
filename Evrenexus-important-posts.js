@@ -4,7 +4,7 @@
   window.__EVRENEXUS_IMPORTANT_POSTS_LOADED__ = true;
 
   var VIEWER_URL = "./viewer.html";
-  var SIDEBAR_COUNT = 16;
+  var SIDEBAR_COUNT = 12;
   var ALLOWED_TOPICS = ["economy", "markets", "economy-investment", "crypto", "currency-gold", "real-estate", "technology", "technology-ai", "ai", "health", "auto", "science-life"];
   var lastUpdated = "";
 
@@ -13,9 +13,11 @@
     var style = document.createElement("style");
     style.id = "Evrenxus-important-posts-css";
     style.textContent = [
-      "#Evrenxus-sidebar-important .Evrenxus-important-link{display:block;padding:8px 10px;border-bottom:1px solid #e8edf1;color:#243949;text-decoration:none;font:700 10px/1.8 Tahoma,Arial,sans-serif;overflow-wrap:anywhere}",
+      "#Evrenxus-sidebar-important .Evrenxus-important-link{display:block;padding:0 0 10px;margin:0 0 10px;border-bottom:1px solid #e8edf1;color:#243949;text-decoration:none;font:700 10px/1.8 Tahoma,Arial,sans-serif;overflow-wrap:anywhere}",
+      "#Evrenxus-sidebar-important .Evrenxus-important-image{display:block;width:100%;aspect-ratio:16/9;height:auto;object-fit:cover;background:#edf0f2;margin:0 0 7px}",
+      "#Evrenxus-sidebar-important .Evrenxus-important-title{display:block;padding:0 10px}",
       "#Evrenxus-sidebar-important .Evrenxus-important-link:hover{background:#f8fafb;color:#d64c43}",
-      "#Evrenxus-sidebar-important .Evrenxus-important-summary{display:block;margin-top:3px;color:#687987;font:400 9px/1.8 Tahoma,Arial,sans-serif}",
+      
       "#Evrenxus-sidebar-important .Evrenxus-important-time{display:block;margin-top:2px;color:#9aa1a6;font:400 8px/1.7 Tahoma,Arial,sans-serif}",
       "#Evrenxus-sidebar-important .Evrenxus-important-archive{display:block;padding:10px;text-align:center;background:#f8fafb;color:#d64c43;text-decoration:none;font:700 10px/1.8 Tahoma,Arial,sans-serif;border-top:1px solid #e8ebed}",
       "@media(max-width:700px){#sidebar-host{width:100%!important;min-width:0!important;max-width:100%!important}}"
@@ -61,14 +63,21 @@
       link.href = makeViewerLink(item);
       link.target = "_blank";
       link.rel = "noopener noreferrer";
+      var imageUrl = String(item.image || "");
+      if (/^https?:\/\//i.test(imageUrl)) {
+        var image = document.createElement("img");
+        image.className = "Evrenxus-important-image";
+        image.src = imageUrl;
+        image.alt = "";
+        image.loading = "lazy";
+        image.referrerPolicy = "no-referrer";
+        image.onerror = function () { this.remove(); };
+        link.appendChild(image);
+      }
       var title = document.createElement("span");
       title.className = "Evrenxus-important-title";
       title.textContent = safeText(item.title);
       link.appendChild(title);
-      var summary = document.createElement("span");
-      summary.className = "Evrenxus-important-summary";
-      summary.textContent = safeText(item.summary).slice(0, 120);
-      link.appendChild(summary);
       var published = formatPublished(item.published);
       if (published) {
         var time = document.createElement("span");
@@ -83,7 +92,7 @@
     archive.className = "Evrenxus-important-archive";
     archive.href = "https://evrenexus.ir/important-archive.html";
     archive.target = "_top";
-    archive.textContent = "آرشیو مطالب مهم";
+    archive.textContent = "مطالب مهم";
     slot.appendChild(archive);
   }
 
