@@ -15,6 +15,7 @@
     style.textContent = [
       "#Evrenxus-sidebar-important .Evrenxus-important-link{display:block;padding:8px 10px;border-bottom:1px solid #e8edf1;color:#243949;text-decoration:none;font:700 10px/1.8 Tahoma,Arial,sans-serif;overflow-wrap:anywhere}",
       "#Evrenxus-sidebar-important .Evrenxus-important-link:hover{background:#f8fafb;color:#d64c43}",
+      "#Evrenxus-sidebar-important .Evrenxus-important-summary{display:block;margin-top:3px;color:#687987;font:400 9px/1.8 Tahoma,Arial,sans-serif}",
       "#Evrenxus-sidebar-important .Evrenxus-important-time{display:block;margin-top:2px;color:#9aa1a6;font:400 8px/1.7 Tahoma,Arial,sans-serif}",
       "#Evrenxus-sidebar-important .Evrenxus-important-archive{display:block;padding:10px;text-align:center;background:#f8fafb;color:#d64c43;text-decoration:none;font:700 10px/1.8 Tahoma,Arial,sans-serif;border-top:1px solid #e8ebed}",
       "@media(max-width:700px){#sidebar-host{width:100%!important;min-width:0!important;max-width:100%!important}}"
@@ -64,6 +65,10 @@
       title.className = "Evrenxus-important-title";
       title.textContent = safeText(item.title);
       link.appendChild(title);
+      var summary = document.createElement("span");
+      summary.className = "Evrenxus-important-summary";
+      summary.textContent = safeText(item.summary).slice(0, 120);
+      link.appendChild(summary);
       var published = formatPublished(item.published);
       if (published) {
         var time = document.createElement("span");
@@ -95,7 +100,7 @@
       var stamp = String(parts[0] && parts[0].updated || "") + "|" + String(source.length);
       if (stamp && stamp === lastUpdated) return;
       lastUpdated = stamp;
-      // Only explicitly approved and published editorial items enter this list.
+      // Sidebar content is based on manual selection; publishing/content fields are not prerequisites.
       var items = Object.keys(editorial).map(function (id) {
         var s = editorial[id] || {}, n = byId[String(id)] || {};
         var articlePath = String(s.article_url || "");
