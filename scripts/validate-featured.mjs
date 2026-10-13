@@ -80,7 +80,7 @@ for(const topic of[C.HOME,...C.PAGE_TOPICS]){
  const rIds=new Set(),rGroups=new Set();
  for(const x of R){
   const r=byId.get(String(x.id));
-  if(!r){err("["+topic+"] regular "+x.id+" missing from news");continue}
+  if(!r){warn("["+topic+"] stale regular "+x.id+" missing from current news; ignored");continue}
   if(!r.activeNews){err("["+topic+"] regular "+x.id+" is not active news");row.other++}
   if(rIds.has(String(x.id))||rGroups.has(r.group)){err("["+topic+"] duplicate regular "+x.id);row.dupRegular++}
   rIds.add(String(x.id));rGroups.add(r.group);
