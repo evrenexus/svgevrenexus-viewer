@@ -20,7 +20,10 @@ DAILY_MARKET_PRICE_TITLE = re.compile(r"^(?:قیمت|نرخ)\s+(?:(?:روز|ام
 def out_of_scope(item):
     """Return matched term, or None when title + summary are in scope."""
     plain = lambda value: re.sub(r"<[^>]*>", " ", html.unescape(str(value or "")))
-    title = _norm(plain(item.get("title", "")))\n    if DAILY_MARKET_PRICE_TITLE.search(title):\n        return "daily-market-price"\n    text = _norm(" ".join(plain(item.get(key, "")) for key in ("title", "summary", "content")))\n    for term, rx in _RULES:
+    title = _norm(plain(item.get("title", "")))
+    if DAILY_MARKET_PRICE_TITLE.search(title):
+        return "daily-market-price"
+    text = _norm(" ".join(plain(item.get(key, "")) for key in ("title", "summary", "content")))\n    for term, rx in _RULES:
         if rx.search(text):
             return term
     return None
