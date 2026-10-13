@@ -59,7 +59,7 @@ function renderFeatured(){
    return {
     id:String(id),title:String(s.title!==undefined?s.title:(n.title||"")).trim(),
     summary:String(s.summary!==undefined?s.summary:(n.summary||"")),
-    image:String(s.image!==undefined?s.image:(n.image||"")),
+    image:(/^https?:\/\//i.test(String(s.image||"").trim())?String(s.image).trim():(n.image||"")),
     source:String(n.source||"Evren Nexus"),published:String(n.published||s.updated_at||""),
     url:String(n.url||""),articleUrl:String(s.article_url||"").replace(/^\.\//,""),
     content:String(s.content||""),topics:topics,updated_at:String(s.updated_at||"")
