@@ -40,4 +40,30 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
     const byTerm={}; for(const h of hits) byTerm[h.term]=(byTerm[h.term]||0)+1; console.table(byTerm);
     for(const h of hits.slice(0,25)) console.log(h.id+" | "+h.term+" | "+String(h.title).slice(0,90));
   }
+}export function outOfScope(item) {
+  const plain = (v) => String(v ?? "").replace(/<[^>]*>/g, " ").replace(/&nbsp;|&#160;/gi, " ").replace(/&amp;/gi, "&");
+  const title = norm(plain(item?.title));
+  const dateCue = /(?:امروز|جدول|قیمت روز|نرخ روز|فروردین|اردیبهشت|خرداد|تیر|مرداد|شهریور|مهر|آبان|آذر|دی|بهمن|اسفند|شنبه|یکشنبه|دوشنبه|سه\s+شنبه|چهارشنبه|پنجشنبه|جمعه|[۰-۹0-9]{1,2}\s*(?:مهر|آبان|آذر|دی|بهمن|اسفند|فروردین|اردیبهشت|خرداد|تیر|مرداد|شهریور))/u;
+  if (DAILY_MARKET_PRICE_TITLE.test(title) && dateCue.test(title)) return "daily-market-price";
+  const text = norm([item?.title, item?.summary, item?.content].map(plain).filter(Boolean).join(" "));
+  for (const r of RULES) if (r.re.test(text)) return r.term;
+  return null;
+}
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url) && process.argv.includes("--scan")) {
+  const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+  const load = (f) => {
+    const p = path.join(ROOT, "data", f); if (!fs.existsSync(p)) return [];
+    const d = JSON.parse(fs.readFileSync(p, "utf8"));
+    if (Array.isArray(d)) return d;
+    if (Array.isArray(d?.items)) return d.items;
+    if (Array.isArray(d?.articles)) return d.articles;
+    const o = d?.items ?? d?.articles ?? d;
+    return o && typeof o === "object" ? Object.entries(o).map(([k,v]) => ({id:k,...(v&&typeof v==="object"?v:{})})) : [];
+  };
+  for (const f of ["news.json","articles.json"]) {
+    const list=load(f),hits=list.map(x=>({id:x.id,title:x.title,term:outOfScope(x)})).filter(x=>x.term);
+    console.log("\n== "+f+": "+hits.length+" out-of-scope of "+list.length+" ==");
+    const byTerm={}; for(const h of hits) byTerm[h.term]=(byTerm[h.term]||0)+1; console.table(byTerm);
+    for(const h of hits.slice(0,25)) console.log(h.id+" | "+h.term+" | "+String(h.title).slice(0,90));
+  }
 }
