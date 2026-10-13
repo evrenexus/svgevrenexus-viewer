@@ -20,6 +20,8 @@ on:
       - 'Evrenexus-featured.js'
       - 'scripts/featured-config.mjs'
       - 'scripts/news_collector.py'
+      - 'scripts/content_policy.py'
+      - 'scripts/content-policy.mjs'
       - 'scripts/test_topic_classification.py'
       - 'scripts/validate-featured.mjs'
       - 'scripts/policy-terms.json'
