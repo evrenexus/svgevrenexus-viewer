@@ -43,7 +43,7 @@ const valid=source.filter(n=>{
   id:String(n.id),
   title:correctKnownHeadline((editorial[String(n.id)]||{}).title || n.title),
   summary:String((editorial[String(n.id)]||{}).summary !== undefined ? (editorial[String(n.id)]||{}).summary : (n.summary||"")).trim(),
-  image:/^https:\/\//i.test(String((editorial[String(n.id)]||{}).image !== undefined ? (editorial[String(n.id)]||{}).image : (n.image||"")).trim())?String((editorial[String(n.id)]||{}).image !== undefined ? (editorial[String(n.id)]||{}).image : (n.image||"")).trim():"",
+  image:(()=>{const editorialImage=String((editorial[String(n.id)]||{}).image||"").trim();const originalImage=String(n.image||"").trim();return /^https:\/\//i.test(editorialImage)?editorialImage:(/^https:\/\//i.test(originalImage)?originalImage:"")})(),
   source:String(n.source||"").trim(),
   published:String(n.published||""),
   url:String(n.url).trim(),
