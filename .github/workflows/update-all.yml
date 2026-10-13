@@ -168,6 +168,9 @@ jobs:
       - name: Restore image health if image check fails
         if: steps.check_images.outcome == 'failure'
         run: git checkout -- data/public/image-health.json
+      # Keep editorial selections intact while pruning stale or invalid regular-news entries.
+      - name: Synchronize regular featured items
+        run: node scripts/build-featured.mjs
       # Commit the independent public/latest feeds before starting the separate AI-derived boxes.
       - name: Commit public data and independent latest-news feed
         run: |
