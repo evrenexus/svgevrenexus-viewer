@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>آرشیو مطالب مهم | Evren Nexus</title>
 <link rel="stylesheet" href="./Evrenexus-site-shell.css?v=3">
+<link rel="stylesheet" href="./Evrenexus-home-design.css?v=1">
 <style>
 /* فقط ظاهر اختصاصی آرشیو؛ چیدمان صفحه از قالب مشترک می‌آید. */
 html,body{background:#f3f5f7}
@@ -50,7 +51,7 @@ function pageUrl(p){var u="./important-archive.html";var args=[];if(topic!=="hom
 function articleHref(x){var p=String(x&&x.articleUrl||"").replace(/^\.\//,"");if(/^articles\/[a-zA-Z0-9._-]+\.html$/.test(p))return "./"+p;return "./viewer.html?url="+encodeURIComponent(String(x&&x.url||""));}
 function render(doc){
  var section=doc&&doc.topics&&doc.topics[topic]||doc&&doc.topics&&doc.topics.home||{};
- var items=(Array.isArray(section.important)?section.important:[]).filter(function(x){return x&&x.articleUrl});
+ var items=(Array.isArray(section.important)?section.important:[]).filter(function(x){return x&&x.title});
  var seen={};items=items.filter(function(x){var k=String(x.articleId||x.articleUrl||x.id||"");if(!k||seen[k])return false;seen[k]=true;return true});
  items.sort(function(a,b){return String(b.selectedAt||b.published||"").localeCompare(String(a.selectedAt||a.published||""))||Number(b.score||0)-Number(a.score||0)});
  var pages=Math.max(1,Math.ceil(items.length/perPage));page=Math.min(page,pages);
