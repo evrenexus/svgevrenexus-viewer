@@ -79,12 +79,6 @@
       list.appendChild(link);
     });
     slot.appendChild(list);
-    var archive = document.createElement("a");
-    archive.className = "Evrenxus-important-archive";
-    archive.href = "./important-archive.html";
-    archive.target = "_top";
-    archive.textContent = "آرشیو مطالب مهم";
-    slot.appendChild(archive);
   }
 
   function load() {
