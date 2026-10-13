@@ -20,8 +20,9 @@ DAILY_MARKET_PRICE_TITLE = re.compile(r"^(?:قیمت|نرخ)\s+(?:(?:روز|ام
 def out_of_scope(item):
     """Return matched term, or None when title + summary are in scope."""
     plain = lambda value: re.sub(r"<[^>]*>", " ", html.unescape(str(value or "")))
-    if DAILY_MARKET_PRICE_TITLE.search(title) and re.search(r"(?:امروز|جدول|قیمت روز|نرخ روز|فروردین|اردیبهشت|خرداد|تیر|مرداد|شهریور|مهر|آبان|آذر|دی|بهمن|اسفند|شنبه|یکشنبه|دوشنبه|سه\s+شنبه|چهارشنبه|پنجشنبه|جمعه|[۰-۹0-9]{1,2}\s*(?:مهر|آبان|آذر|دی|بهمن|اسفند|فروردین|اردیبهشت|خرداد|تیر|مرداد|شهریور))", title):
-    if DAILY_MARKET_PRICE_TITLE.search(title):
+    title = _norm(plain(item.get("title", "")))
+    date_cue = re.search(r"(?:امروز|جدول|قیمت روز|نرخ روز|فروردین|اردیبهشت|خرداد|تیر|مرداد|شهریور|مهر|آبان|آذر|دی|بهمن|اسفند|شنبه|یکشنبه|دوشنبه|سه\s+شنبه|چهارشنبه|پنجشنبه|جمعه|[۰-۹0-9]{1,2}\s*(?:مهر|آبان|آذر|دی|بهمن|اسفند|فروردین|اردیبهشت|خرداد|تیر|مرداد|شهریور))", title)
+    if DAILY_MARKET_PRICE_TITLE.search(title) and date_cue:
         return "daily-market-price"
     text = _norm(" ".join(plain(item.get(key, "")) for key in ("title", "summary", "content")))
     for term, rx in _RULES:
