@@ -14,8 +14,13 @@ const RULES = OUT_OF_SCOPE_TERMS.map((t) => ({
   term: t,
   re: new RegExp("(?<![\\p{L}\\p{N}])" + esc(norm(t)) + "(?![\\p{L}\\p{N}])", "u")
 }));
-const DAILY_MARKET_PRICE_TITLE = /^(?:قیمت|نرخ)\s+(?:(?:روز|امروز|لحظه‌ای|لحظه ای)\s+)*(?:پوند(?:\s+انگلیس)?|دلار(?:\s+آمریکا)?|یورو|درهم(?:\s+امارات)?|لیر(?:\s+ترکیه)?|دینار(?:\s+عراق)?|روبل|یوآن|فرانک|طلا|سکه|نیم\s+سکه|ربع\s+سکه|ارز)(?=.*(?:امروز|جدول|قیمت روز|نرخ روز|فروردین|اردیبهشت|خرداد|تیر|مرداد|شهریور|مهر|آبان|آذر|دی|بهمن|اسفند|شنبه|یکشنبه|دوشنبه|سه\s+شنبه|چهارشنبه|پنجشنبه|جمعه|[۰-۹0-9]{1,2}\s*(?:مهر|آبان|آذر|دی|بهمن|اسفند|فروردین|اردیبهشت|خرداد|تیر|مرداد|شهریور)))/u;\nexport function outOfScope(item) {\n  const plain = (v) => String(v ?? "").replace(/<[^>]*>/g, " ").replace(/&nbsp;|&#160;/gi, " ").replace(/&amp;/gi, "&");
-  const title = norm(plain(item?.title));\n  if (DAILY_MARKET_PRICE_TITLE.test(title)) return "daily-market-price";\n  const text = norm([item?.title, item?.summary, item?.content].map(plain).filter(Boolean).join(" "));\n  for (const r of RULES) if (r.re.test(text)) return r.term;
+const DAILY_MARKET_PRICE_TITLE = /^(?:قیمت|نرخ)\s+(?:(?:روز|امروز|لحظه‌ای|لحظه ای)\s+)*(?:پوند(?:\s+انگلیس)?|دلار(?:\s+آمریکا)?|یورو|درهم(?:\s+امارات)?|لیر(?:\s+ترکیه)?|دینار(?:\s+عراق)?|روبل|یوآن|فرانک|طلا|سکه|نیم\s+سکه|ربع\s+سکه|ارز)(?=.*(?:امروز|جدول|قیمت روز|نرخ روز|فروردین|اردیبهشت|خرداد|تیر|مرداد|شهریور|مهر|آبان|آذر|دی|بهمن|اسفند|شنبه|یکشنبه|دوشنبه|سه\s+شنبه|چهارشنبه|پنجشنبه|جمعه|[۰-۹0-9]{1,2}\s*(?:مهر|آبان|آذر|دی|بهمن|اسفند|فروردین|اردیبهشت|خرداد|تیر|مرداد|شهریور)))/u;
+export function outOfScope(item) {
+  const plain = (v) => String(v ?? "").replace(/<[^>]*>/g, " ").replace(/&nbsp;|&#160;/gi, " ").replace(/&amp;/gi, "&");
+  const title = norm(plain(item?.title));
+  if (DAILY_MARKET_PRICE_TITLE.test(title)) return "daily-market-price";
+  const text = norm([item?.title, item?.summary, item?.content].map(plain).filter(Boolean).join(" "));
+  for (const r of RULES) if (r.re.test(text)) return r.term;
   return null;
 }
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url) && process.argv.includes("--scan")) {
