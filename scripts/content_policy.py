@@ -23,7 +23,8 @@ def out_of_scope(item):
     title = _norm(plain(item.get("title", "")))
     if DAILY_MARKET_PRICE_TITLE.search(title):
         return "daily-market-price"
-    text = _norm(" ".join(plain(item.get(key, "")) for key in ("title", "summary", "content")))\n    for term, rx in _RULES:
+    text = _norm(" ".join(plain(item.get(key, "")) for key in ("title", "summary", "content")))
+    for term, rx in _RULES:
         if rx.search(text):
             return term
     return None
