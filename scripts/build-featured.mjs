@@ -5,7 +5,42 @@ import{ROOT,loadAll,linkAll,isBlocked,imageOf,imageUsable,pinned,ts,inTopic,scor
 import{outOfScope}from "./content-policy.mjs";
 import{generateImportantPages}from "./build-important-pages.mjs";
 
-console.log("Automatic important/featured selection is disabled; use the editorial panel.");
+// Automatic featured selection stays disabled, but keep the editorial panel's
+// regular lists synchronized with current news so stale/blocked/out-of-topic rows
+// cannot break validation or remain visible on the site.
+const currentData=loadAll();
+const {rows:currentRows}=linkAll(currentData);
+const currentById=new Map(currentRows.map(r=>[String(r.n.id),r]));
+const featuredPath=path.join(ROOT,"data/public/featured.json");
+const currentDoc=JSON.parse(fs.readFileSync(featuredPath,"utf8"));
+let removedRegular=0;
+for(const topic of [C.HOME,...C.PAGE_TOPICS]){
+  const section=currentDoc.topics?.[topic];
+  if(!section)continue;
+  const featuredIds=new Set(),featuredGroups=new Set();
+  for(const item of Array.isArray(section.featured)?section.featured:[]){
+    const r=currentById.get(String(item?.id??""));
+    if(r){featuredIds.add(String(item.id));featuredGroups.add(r.group);}
+  }
+  const keptIds=new Set(),keptGroups=new Set(),kept=[];
+  const oldRegular=Array.isArray(section.regular)?section.regular:[];
+  for(const item of oldRegular){
+    const id=String(item?.id??"");
+    const r=currentById.get(id);
+    if(!r||!r.activeNews||isBlocked(r)||!inTopic(r,topic)||featuredIds.has(id)||featuredGroups.has(r.group)||keptIds.has(id)||keptGroups.has(r.group)){
+      removedRegular++;
+      continue;
+    }
+    kept.push(item);keptIds.add(id);keptGroups.add(r.group);
+  }
+  kept.sort((a,b)=>(ts(currentById.get(String(b.id)))-ts(currentById.get(String(a.id))))||String(a.id).localeCompare(String(b.id)));
+  section.regular=kept.slice(0,C.REGULAR_MAX);
+}
+if(removedRegular){
+  currentDoc.generated=new Date().toISOString();
+  fs.writeFileSync(featuredPath,JSON.stringify(currentDoc)+"\n");
+}
+console.log("Automatic featured selection remains disabled; synchronized regular lists with current eligible news (removed "+removedRegular+" stale/invalid rows).");
 process.exit(0);
 const data=loadAll();const Article=loadArticleResolver();if(data.editorialError)console.warn("WARNING editorial.json ignored: "+data.editorialError);
 const{rows,scheme,linked}=linkAll(data);console.log("link scheme: "+scheme+" | linked "+linked+"/"+rows.length+" news to news-ai");
