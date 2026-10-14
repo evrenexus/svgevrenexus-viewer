@@ -76,6 +76,15 @@ run_news() {
   done
   if python3 scripts/build_public.py; then
     echo "Public data build succeeded."
+    if [[ -f data/public/image-health.json ]]; then cp -p data/public/image-health.json "$backup/image-health.json"; fi
+    if node scripts/check-images.mjs; then
+      echo "Image checks completed."
+    else
+      echo "WARNING: image checks failed; restoring previous image-health data."
+      if [[ -f "$backup/image-health.json" ]]; then
+        cp -p "$backup/image-health.json" data/public/image-health.json
+      fi
+    fi
   else
     echo "WARNING: public data build failed; restoring previous public-data outputs."
     for name in "${files[@]}"; do
