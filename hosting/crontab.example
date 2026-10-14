@@ -1,0 +1,8 @@
+# Run "crontab -e" in the hosting account and add these lines after confirming paths.
+# Set the absolute path to the repository checkout on the host.
+# News + latest feed + TGJU/Nobitex every 15 minutes:
+*/15 * * * * /bin/bash /home/USERNAME/evrenexus/hosting/run-update.sh news
+# LBank crypto data every 5 minutes:
+*/5 * * * * /bin/bash /home/USERNAME/evrenexus/hosting/run-update.sh crypto
+# Domestic car prices every 30 minutes:
+*/30 * * * * /bin/bash /home/USERNAME/evrenexus/hosting/run-update.sh cars
