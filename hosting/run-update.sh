@@ -95,6 +95,7 @@ run_news() {
 
   # The workflow treats this as a required publication step.
   node scripts/build-featured.mjs
+  node scripts/run-important-pages.mjs
 }
 
 run_crypto() {
