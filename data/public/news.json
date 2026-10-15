@@ -1,6 +1,25 @@
 {
-  "updated": "2026-10-15T21:55:57.222537+00:00",
+  "updated": "2026-10-15T22:16:27.962509+00:00",
   "items": [
+    {
+      "id": "4255b50b1bf2dd26ca8b",
+      "title": "عکس مشترک آلن دلون و مونیکا بلوچی؛ ۳۷ سال قبل",
+      "summary": "دو تصویر کمتر دیده‌شده از آلن دلون و مونیکا بلوچی را ببینید که این دو ستاره سینمای جهان را به‌ترتیب در ۵۴ و ۲۵ سالگی نشان می‌دهد. این تصاویر مربوط به سال ۱۳۶۸ است.",
+      "content": "۰۱:۳۷ - \n۲۴ مهر ۱۴۰۵ \n\nعکس مشترک آلن دلون و مونیکا بلوچی؛ ۳۷ سال قبل \n\nدو تصویر کمتر دیده‌شده از آلن دلون و مونیکا بلوچی را ببینید که این دو ستاره سینمای جهان را به‌ترتیب در ۵۴ و ۲۵ سالگی نشان می‌دهد. این تصاویر مربوط به سال ۱۳۶۸ است. \n\nپ\n\n،\n\nپـ\n\nتبلیغات\n\nتبلیغات\n\n\r\n\nتبلیغات\n\nva NewsLis Limi = 5;\n\nاز میان اخبار \n\nپیمان قاسم‌خانی: به اصرار رامبد جوان دوباره پدر شدم \n\nرضا عطاران در اختتامیه جشنواره فیلم بوسان با فیلم «خواب» \n\nلحظه اعلام نام مجید مجیدی به عنوان برنده بهترین فیلم با «غذای نیمروز» در جشنواره بوسان \n\nواکنش بابک انصاری به اختلاف سنی با همسرش آرام جعفری \n\nشما قبلا این خبر را لایک کرده‌اید . \n\nfunc ion oPe sianNumbe (numbe ) {\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\nelemen .addEven Lis ene (\"click\", func ion() {\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n. hen(func ion( esponse) {\nif ( esponse.s a us == 200) {\nesponse.json(). hen(func ion(newSco e) {\nva likeNumbe Span = elemen .que ySelec o (\".like\");\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\nva hiddenHea = elemen .que ySelec o (\".hidden\");\nvisibleHea .classLis .add(\"hidden\");\nfavo i eBu on.classLis .add(\"hidden\");\nhiddenHea .classLis . emove(\"hidden\");\nva e o Message = elemen .que ySelec o (\".e o _message\");\nif (e o Message) {\ne o Message.classLis . emove(\"hidden_e o \");\n}\n});\n} else {\nva e o Message = elemen .que ySelec o (\".e o _message\");\nif (e o Message) {\ne o Message.classLis .add(\"hidden_e o \");\nse Timeou (func ion() {\ne o Message.classLis . emove(\"hidden_e o \");\n}, 3000);\n}\n}\n})\n});\n});\n\nتبلیغات",
+      "url": "https://fararu.com/fa/news/1010075/%D8%B9%DA%A9%D8%B3-%D9%85%D8%B4%D8%AA%D8%B1%DA%A9-%D8%A2%D9%84%D9%86-%D8%AF%D9%84%D9%88%D9%86-%D9%85%D9%88%D9%86%DB%8C%DA%A9%D8%A7-%D8%A8%D9%84%D9%88%DA%86%DB%8C-%D8%B3%D8%A7%D9%84-%D9%82%D8%A8%D9%84",
+      "image": "https://cdn.fararu.com/thumbnail/dbwS3fR4Uaus/zs35uTTvsCIFXFzOSODeRS3UWmeFr-uZOyE6VER8qoP_Xu43MrYXVmTh87KWGlY_qGn_D4fNQzG3UIWLLBxIbYQJfY5Ue93qpWujkKRQ87IC9tdVZieddr-UJqt3IWOh/Screenshot+2026-10-16+012113.jpg",
+      "source": "فرارو",
+      "source_site": "https://fararu.com/",
+      "allow_internal_republish": true,
+      "category": "اقتصاد و سرمایه‌گذاری",
+      "published": "2026-10-16T01:37:04+03:30",
+      "topics": [
+        "science-life"
+      ],
+      "importance_score": 0,
+      "important": false,
+      "first_seen_at": "2026-10-15T22:16:33.775758+00:00"
+    },
     {
       "id": "494cdf54fbb24037205a",
       "title": "برتری یوونتوس برابر سلتاویگو در لیگ اروپا / بنفیکا سلتیک را درهم کوبید/ شکست مارسی مقابل المپیاکوس",
@@ -19,7 +38,7 @@
       "importance_score": 0,
       "important": false,
       "first_seen_at": "2026-10-15T21:56:10.467178+00:00",
-      "image_tries": 1
+      "image_tries": 2
     },
     {
       "id": "529feb19bcd1cf940d8f",
@@ -332,7 +351,7 @@
       "importance_score": 0,
       "important": false,
       "first_seen_at": "2026-10-15T16:40:44.700901+00:00",
-      "image_tries": 1
+      "image_tries": 2
     },
     {
       "id": "f1c70c4135cb7e7e69f8",
@@ -412,7 +431,7 @@
       "importance_score": 3,
       "important": false,
       "first_seen_at": "2026-10-15T16:02:19.479374+00:00",
-      "image_tries": 2
+      "image_tries": 3
     },
     {
       "id": "cbc32a0df4dd75748e1f",
@@ -470,7 +489,7 @@
       "importance_score": 0,
       "important": false,
       "first_seen_at": "2026-10-15T15:28:45.183414+00:00",
-      "image_tries": 2
+      "image_tries": 3
     },
     {
       "id": "18df0f485f45f0d26dc8",
@@ -549,7 +568,8 @@
       ],
       "importance_score": 0,
       "important": false,
-      "first_seen_at": "2026-10-15T16:40:44.700906+00:00"
+      "first_seen_at": "2026-10-15T16:40:44.700906+00:00",
+      "image_tries": 1
     },
     {
       "id": "c7186a47df9a89be2b3f",
@@ -3698,8 +3718,8 @@
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
       "items": 2,
-      "attempted_at": "2026-10-15T21:56:03.874997+00:00",
-      "last_success_at": "2026-10-15T21:56:05.303740+00:00",
+      "attempted_at": "2026-10-15T22:16:31.608233+00:00",
+      "last_success_at": "2026-10-15T22:16:32.786403+00:00",
       "last_article_published": "2026-10-15T20:40:08+03:30",
       "error": ""
     },
@@ -3707,9 +3727,9 @@
       "name": "اقتصادنیوز",
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
-      "items": 2,
-      "attempted_at": "2026-10-15T21:56:03.875983+00:00",
-      "last_success_at": "2026-10-15T21:56:05.540660+00:00",
+      "items": 1,
+      "attempted_at": "2026-10-15T22:16:31.608780+00:00",
+      "last_success_at": "2026-10-15T22:16:33.260822+00:00",
       "last_article_published": "2026-10-15T21:34:21+03:30",
       "error": ""
     },
@@ -3717,20 +3737,10 @@
       "name": "فرارو",
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
-      "items": 2,
-      "attempted_at": "2026-10-15T21:56:03.894437+00:00",
-      "last_success_at": "2026-10-15T21:56:06.404206+00:00",
-      "last_article_published": "2026-10-15T23:53:03+03:30",
-      "error": ""
-    },
-    {
-      "name": "تجارت‌نیوز",
-      "category": "اقتصاد و سرمایه‌گذاری",
-      "ok": true,
-      "items": 7,
-      "attempted_at": "2026-10-15T21:56:03.876425+00:00",
-      "last_success_at": "2026-10-15T21:56:06.842367+00:00",
-      "last_article_published": "2026-10-15T22:29:31+03:30",
+      "items": 3,
+      "attempted_at": "2026-10-15T22:16:31.622731+00:00",
+      "last_success_at": "2026-10-15T22:16:33.775697+00:00",
+      "last_article_published": "2026-10-16T01:37:04+03:30",
       "error": ""
     },
     {
@@ -3738,19 +3748,19 @@
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
       "items": 9,
-      "attempted_at": "2026-10-15T21:56:03.902847+00:00",
-      "last_success_at": "2026-10-15T21:56:07.203257+00:00",
+      "attempted_at": "2026-10-15T22:16:31.623788+00:00",
+      "last_success_at": "2026-10-15T22:16:34.474754+00:00",
       "last_article_published": "2026-10-15T10:14:56+03:30",
       "error": ""
     },
     {
-      "name": "پزشک سایت",
-      "category": "پزشکی و سلامت",
+      "name": "تجارت‌نیوز",
+      "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
-      "items": 6,
-      "attempted_at": "2026-10-15T21:56:03.887534+00:00",
-      "last_success_at": "2026-10-15T21:56:07.652143+00:00",
-      "last_article_published": "2026-10-15T22:42:04+03:30",
+      "items": 7,
+      "attempted_at": "2026-10-15T22:16:31.609042+00:00",
+      "last_success_at": "2026-10-15T22:16:34.561885+00:00",
+      "last_article_published": "2026-10-15T22:29:31+03:30",
       "error": ""
     },
     {
@@ -3758,9 +3768,19 @@
       "category": "فناوری و علم",
       "ok": true,
       "items": 4,
-      "attempted_at": "2026-10-15T21:56:03.885843+00:00",
-      "last_success_at": "2026-10-15T21:56:07.855404+00:00",
+      "attempted_at": "2026-10-15T22:16:31.610110+00:00",
+      "last_success_at": "2026-10-15T22:16:34.946406+00:00",
       "last_article_published": "2026-10-16T00:02:28+03:30",
+      "error": ""
+    },
+    {
+      "name": "پزشک سایت",
+      "category": "پزشکی و سلامت",
+      "ok": true,
+      "items": 6,
+      "attempted_at": "2026-10-15T22:16:31.614772+00:00",
+      "last_success_at": "2026-10-15T22:16:35.067380+00:00",
+      "last_article_published": "2026-10-15T22:42:04+03:30",
       "error": ""
     },
     {
@@ -3768,8 +3788,8 @@
       "category": "بورس و بازار سرمایه",
       "ok": true,
       "items": 9,
-      "attempted_at": "2026-10-15T21:56:03.877046+00:00",
-      "last_success_at": "2026-10-15T21:56:09.105824+00:00",
+      "attempted_at": "2026-10-15T22:16:31.609330+00:00",
+      "last_success_at": "2026-10-15T22:16:36.016645+00:00",
       "last_article_published": "2026-10-15T17:24:58+03:30",
       "error": ""
     },
@@ -3778,8 +3798,8 @@
       "category": "بورس و بازار سرمایه",
       "ok": true,
       "items": 8,
-      "attempted_at": "2026-10-15T21:56:03.878850+00:00",
-      "last_success_at": "2026-10-15T21:56:09.401271+00:00",
+      "attempted_at": "2026-10-15T22:16:31.609769+00:00",
+      "last_success_at": "2026-10-15T22:16:37.442561+00:00",
       "last_article_published": "2026-10-14T20:09:03+03:30",
       "error": ""
     },
@@ -3788,8 +3808,8 @@
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
       "items": 6,
-      "attempted_at": "2026-10-15T21:56:03.893861+00:00",
-      "last_success_at": "2026-10-15T21:56:10.467083+00:00",
+      "attempted_at": "2026-10-15T22:16:31.619724+00:00",
+      "last_success_at": "2026-10-15T22:16:37.853015+00:00",
       "last_article_published": "2026-10-16T00:59:03+03:30",
       "error": ""
     },
@@ -3798,8 +3818,8 @@
       "category": "پزشکی و سلامت",
       "ok": true,
       "items": 9,
-      "attempted_at": "2026-10-15T21:56:03.886945+00:00",
-      "last_success_at": "2026-10-15T21:56:11.764193+00:00",
+      "attempted_at": "2026-10-15T22:16:31.610628+00:00",
+      "last_success_at": "2026-10-15T22:16:40.056713+00:00",
       "last_article_published": "2026-10-15T11:36:10+03:30",
       "error": ""
     },
@@ -3808,8 +3828,8 @@
       "category": "بورس و بازار سرمایه",
       "ok": true,
       "items": 6,
-      "attempted_at": "2026-10-15T21:56:03.877696+00:00",
-      "last_success_at": "2026-10-15T21:56:28.773252+00:00",
+      "attempted_at": "2026-10-15T22:16:31.609553+00:00",
+      "last_success_at": "2026-10-15T22:16:42.487504+00:00",
       "last_article_published": "2026-10-15T20:52:22+03:30",
       "error": ""
     }
