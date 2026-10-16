@@ -1,15 +1,8 @@
 name: Evren Nexus — Update domestic car prices
 
 on:
-  schedule:
-    - cron: "*/30 * * * *"
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - "scripts/fetch-car-prices.py"
-      - "car-prices.html"
-      - ".github/workflows/update-car-prices.yml"
+    if: ${{ false }}
 
 permissions:
   contents: write
@@ -20,6 +13,7 @@ concurrency:
 
 jobs:
   update:
+    if: ${{ false }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
