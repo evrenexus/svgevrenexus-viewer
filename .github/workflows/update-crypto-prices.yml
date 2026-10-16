@@ -1,15 +1,8 @@
 name: Evren Nexus — Update crypto prices
 
 on:
-  schedule:
-    - cron: "*/5 * * * *"
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - "market-data/fetch-lbank.js"
-      - "crypto-prices.html"
-      - ".github/workflows/update-crypto-prices.yml"
+    if: ${{ false }}
 
 permissions:
   contents: write
@@ -20,6 +13,7 @@ concurrency:
 
 jobs:
   update:
+    if: ${{ false }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
