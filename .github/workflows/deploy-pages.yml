@@ -2,7 +2,6 @@ name: Deploy Evren Nexus to GitHub Pages
 
 on:
   workflow_dispatch:
-    if: ${{ false }}
 
 permissions:
   contents: read
