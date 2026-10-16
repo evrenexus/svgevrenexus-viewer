@@ -1,16 +1,8 @@
 name: Deploy Evren Nexus to GitHub Pages
 
 on:
-  push:
-    branches:
-      - main
-    paths-ignore:
-      - "data/**"
-      - "market-data/**"
   workflow_dispatch:
-  workflow_run:
-    workflows: ["Build public data", "Evren Nexus — AI Manager (Gemini → Groq → OpenRouter failover)", "Evren Nexus — Update All", "Reset editorial selections"]
-    types: [completed]
+    if: ${{ false }}
 
 permissions:
   contents: read
@@ -23,7 +15,7 @@ concurrency:
 
 jobs:
   deploy:
-    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    if: ${{ false }}
     runs-on: ubuntu-latest
     environment:
       name: github-pages
