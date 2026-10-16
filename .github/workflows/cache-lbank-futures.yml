@@ -1,14 +1,8 @@
 name: Cache LBank futures market data
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - ".github/workflows/cache-lbank-futures.yml"
-      - "crypto-price-usdtp.html"
-  schedule:
-    - cron: "*/5 * * * *"
   workflow_dispatch:
+    if: ${{ false }}
 
 permissions:
   contents: write
@@ -19,6 +13,7 @@ concurrency:
 
 jobs:
   cache-market-data:
+    if: ${{ false }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
