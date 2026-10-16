@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-16T11:59:34.337463+00:00",
+  "updated": "2026-10-16T12:07:21.621492+00:00",
   "items": [
     {
       "id": "87a3e6133560c0d4e437",
@@ -57,7 +57,7 @@
       "importance_score": 0,
       "important": false,
       "first_seen_at": "2026-10-16T11:39:17.762236+00:00",
-      "image_tries": 2
+      "image_tries": 3
     },
     {
       "id": "059710e0f741ba922645",
@@ -77,7 +77,7 @@
       "importance_score": 0,
       "important": false,
       "first_seen_at": "2026-10-16T11:39:16.799654+00:00",
-      "image_tries": 2
+      "image_tries": 3
     },
     {
       "id": "ff3482c16c053170bcb7",
@@ -671,7 +671,7 @@
       "summary": "ستاره آرژانتینی اینتر در هفت بازی پیش‌روی این تیم به دلیل مصدومیت غایب خواهد بود.",
       "content": "۱۱:۲۶ - \n۲۴ مهر ۱۴۰۵ \n\nلائوتارو ۷ بازی بعدی اینتر را از دست داد\r\n\r\n\nستاره آرژانتینی اینتر در هفت بازی پیش‌روی این تیم به دلیل مصدومیت غایب خواهد بود.\r\n\r\n\nپ\n\n،\n\nپـ\n\nباشگاه اینتر در تشریح آخرین وضعیت کاپیتان خود که در جریان شکست 4 بر 3 سه‌شنبه شب این تیم مقابل کلوب بروژ در هفته دوم از فاز لیگی رقابت‌های لیگ قهرمانان اروپا از ناحیه پای چپ دچار آسیب‌دیدگی شد، اعلام کرد؛ «لائوتارو مارتینس دیروز (پنجشنبه) تحت معاینات بالینی و تشخیصی قرار گرفت و این آزمایش‌ها نشان‌دهنده کشیدگی عضلانی در عضلات خم‌کننده ران پای چپ او بود».\n\r\n\r\n\nباشگاه اینتر مدت زمان دوری کاپیتان آرژانتینی‌اش از میادین فوتبال را اعلام نکرده، اما شبکه تلویزیونی «اسکای اسپورت ایتالیا» گزارش داد لائوتارو مارتینس 29 ساله تا پایان بازی‌های ملی پیش‌رو در ماه نوامبر، به دور از میادین خواهد بود.\n\r\n\r\n\nاین بدین معناست که لائوتارو بازی با تیم‌های بولونیا، شاختار دونتسک (لیگ قهرمانان)، فیورنتینا، ونتزیا، میلان، فاینورد (لیگ قهرمانان) و کومو را از دست خواهد داد. همچنین انتظار می‌رود او به همین خاطر در اردوی بعدی تیم ملی آرژانتین هم غایب باشد.\n\r\n\r\n\nمهاجم آرژانتینی اینتر که در بازی با کلوب بروژ 90 دقیقه بازی کرد و دو گل تیمش را هم در آن بازی به ثمر رساند، این فصل در مجموع در 7 بازی برای نراتزوری به میدان رفته که حاصل آن 6 گل‌زده و یک پاس‌گل بوده است.\n\r\n\r\n\n \n\r\n\nمنبع :\n\nتسنیم \n\nva NewsLis Limi = 5;\n\nاز میان اخبار \n\nتمدید قرارداد بیرانوند با تراکتور مشکل حقوقی دارد؟ \n\nادعای جدید عراقی‌ها درباره یحیی گل‌محمدی \n\nتصویر؛ قایق لوکس و ۶۵۰ میلیارد تومانی لیونل مسی \n\nتولد دوباره سردار\r\n\r\n\nشما قبلا این خبر را لایک کرده‌اید . \n\nfunc ion oPe sianNumbe (numbe ) {\ncons pe sianDigi s = '۰۱۲۳۴۵۶۷۸۹';\n\n}\nva a eNewsElemen s = documen .ge Elemen sByClassName(\" a e_news\");\nA ay.p o o ype.fo Each.call( a eNewsElemen s, func ion(elemen ) {\nelemen .addEven Lis ene (\"click\", func ion() {\nfe ch(\"/ a es/sco e/? ype=%2B&objec _mas e _id=\" + newsMas e IdFo Ra e)\n. hen(func ion( esponse) {\nif ( esponse.s a us == 200) {\nesponse.json(). hen(func ion(newSco e) {\nva likeNumbe Span = elemen .que ySelec o (\".like\");\nva favo i eBu on = elemen .que ySelec o (\".favo i e_bu on span\");\nlikeNumbe Span.inne HTML = oPe sianNumbe (newSco e.plus);\nva visibleHea = elemen .que ySelec o (\".hea :no (.hidden)\");\nva hiddenHea = elemen .que ySelec o (\".hidden\");\nvisibleHea .classLis .add(\"hidden\");\nfavo i eBu on.classLis .add(\"hidden\");\nhiddenHea .classLis . emove(\"hidden\");\nva e o Message = elemen .que ySelec o (\".e o _message\");\nif (e o Message) {\ne o Message.classLis . emove(\"hidden_e o \");\n}\n});\n} else {\nva e o Message = elemen .que ySelec o (\".e o _message\");\nif (e o Message) {\ne o Message.classLis .add(\"hidden_e o \");\nse Timeou (func ion() {\ne o Message.classLis . emove(\"hidden_e o \");\n}, 3000);\n}\n}\n})\n});\n});",
       "url": "https://fararu.com/fa/news/1010114/%D9%84%D8%A7%D8%A6%D9%88%D8%AA%D8%A7%D8%B1%D9%88-%D8%A8%D8%A7%D8%B2%DB%8C-%D8%A8%D8%B9%D8%AF%DB%8C-%D8%A7%DB%8C%D9%86%D8%AA%D8%B1-%D8%B1%D8%A7-%D8%A7%D8%B2-%D8%AF%D8%B3%D8%AA-%D8%AF%D8%A7%D8%AF",
-      "image": "https://cdn.fararu.com/thumbnail/WGFFjh5nWiGU/uT2CtAm5f9Qnm2Xjt_dpKyFJ-zQQi_hlRA9tOP-jHQbOOFTY1JhOnk3QpkCTViGC4WeG9Stwimy1jaoON9kA27BH1uxGL73OLFVM2bFDS4DBwuxYkyNKplJFhSFtQLnY/%D9%84%D8%A7%D8%A6%D9%88%D8%AA%D8%A7%D8%B1%D9%88+%D9%85%D8%A7%D8%B1%D8%AA%DB%8C%D9%86%D8%B2.jpg",
+      "image": "https://cdn.fararu.com/thumbnail/WGFFjh5nWiGU/W-i1ZYrKXKOQVGxyfucNIog-A_abWWXddg6cf1T3iE7VSi7Lx2WRh9LIOUobnenX83CvD1OVW3VhTxV21hPXY6qIkXzKCl9Gqf5hJ3BTrYj9RtkwHUP_UV85p7bPvBgU/%D9%84%D8%A7%D8%A6%D9%88%D8%AA%D8%A7%D8%B1%D9%88+%D9%85%D8%A7%D8%B1%D8%AA%DB%8C%D9%86%D8%B2.jpg",
       "source": "فرارو",
       "source_site": "https://fararu.com/",
       "allow_internal_republish": true,
@@ -1051,7 +1051,7 @@
       "importance_score": 0,
       "important": false,
       "first_seen_at": "2026-10-16T06:46:51.407966+00:00",
-      "image_tries": 2
+      "image_tries": 3
     },
     {
       "id": "14e09e94b79fbc4fef09",
@@ -1091,7 +1091,7 @@
       "importance_score": 10,
       "important": true,
       "first_seen_at": "2026-10-16T06:07:41.922171+00:00",
-      "image_tries": 2
+      "image_tries": 3
     },
     {
       "id": "86f481e38718b06fb971",
@@ -1289,7 +1289,7 @@
       "importance_score": 14,
       "important": true,
       "first_seen_at": "2026-10-16T04:38:39.879325+00:00",
-      "image_tries": 2
+      "image_tries": 3
     },
     {
       "id": "50f1a8b5168b34af614f",
@@ -5911,19 +5911,9 @@
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
       "items": 3,
-      "attempted_at": "2026-10-16T11:59:40.908933+00:00",
-      "last_success_at": "2026-10-16T11:59:42.217584+00:00",
+      "attempted_at": "2026-10-16T12:07:28.400701+00:00",
+      "last_success_at": "2026-10-16T12:07:29.625934+00:00",
       "last_article_published": "2026-10-16T15:15:47+03:30",
-      "error": ""
-    },
-    {
-      "name": "پزشک سایت",
-      "category": "پزشکی و سلامت",
-      "ok": true,
-      "items": 9,
-      "attempted_at": "2026-10-16T11:59:40.925661+00:00",
-      "last_success_at": "2026-10-16T11:59:42.253495+00:00",
-      "last_article_published": "2026-10-16T14:38:04+03:30",
       "error": ""
     },
     {
@@ -5931,8 +5921,8 @@
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
       "items": 2,
-      "attempted_at": "2026-10-16T11:59:40.909830+00:00",
-      "last_success_at": "2026-10-16T11:59:42.269503+00:00",
+      "attempted_at": "2026-10-16T12:07:28.401534+00:00",
+      "last_success_at": "2026-10-16T12:07:29.869464+00:00",
       "last_article_published": "2026-10-16T14:04:07+03:30",
       "error": ""
     },
@@ -5941,8 +5931,8 @@
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
       "items": 5,
-      "attempted_at": "2026-10-16T11:59:40.927011+00:00",
-      "last_success_at": "2026-10-16T11:59:42.635751+00:00",
+      "attempted_at": "2026-10-16T12:07:28.421179+00:00",
+      "last_success_at": "2026-10-16T12:07:30.469408+00:00",
       "last_article_published": "2026-10-16T13:56:37+03:30",
       "error": ""
     },
@@ -5951,8 +5941,8 @@
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
       "items": 8,
-      "attempted_at": "2026-10-16T11:59:40.910270+00:00",
-      "last_success_at": "2026-10-16T11:59:42.986779+00:00",
+      "attempted_at": "2026-10-16T12:07:28.401972+00:00",
+      "last_success_at": "2026-10-16T12:07:30.691339+00:00",
       "last_article_published": "2026-10-16T15:00:15+03:30",
       "error": ""
     },
@@ -5961,9 +5951,19 @@
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
       "items": 8,
-      "attempted_at": "2026-10-16T11:59:40.927605+00:00",
-      "last_success_at": "2026-10-16T11:59:43.282194+00:00",
+      "attempted_at": "2026-10-16T12:07:28.428170+00:00",
+      "last_success_at": "2026-10-16T12:07:30.753116+00:00",
       "last_article_published": "2026-10-16T14:46:41+03:30",
+      "error": ""
+    },
+    {
+      "name": "پزشک سایت",
+      "category": "پزشکی و سلامت",
+      "ok": true,
+      "items": 9,
+      "attempted_at": "2026-10-16T12:07:28.415199+00:00",
+      "last_success_at": "2026-10-16T12:07:31.375203+00:00",
+      "last_article_published": "2026-10-16T14:38:04+03:30",
       "error": ""
     },
     {
@@ -5971,8 +5971,8 @@
       "category": "فناوری و علم",
       "ok": true,
       "items": 4,
-      "attempted_at": "2026-10-16T11:59:40.915021+00:00",
-      "last_success_at": "2026-10-16T11:59:44.056706+00:00",
+      "attempted_at": "2026-10-16T12:07:28.411166+00:00",
+      "last_success_at": "2026-10-16T12:07:31.659676+00:00",
       "last_article_published": "2026-10-16T00:02:28+03:30",
       "error": ""
     },
@@ -5981,8 +5981,8 @@
       "category": "بورس و بازار سرمایه",
       "ok": true,
       "items": 11,
-      "attempted_at": "2026-10-16T11:59:40.910835+00:00",
-      "last_success_at": "2026-10-16T11:59:44.348893+00:00",
+      "attempted_at": "2026-10-16T12:07:28.402609+00:00",
+      "last_success_at": "2026-10-16T12:07:32.463509+00:00",
       "last_article_published": "2026-10-16T12:57:47+03:30",
       "error": ""
     },
@@ -5991,8 +5991,8 @@
       "category": "بورس و بازار سرمایه",
       "ok": true,
       "items": 8,
-      "attempted_at": "2026-10-16T11:59:40.914452+00:00",
-      "last_success_at": "2026-10-16T11:59:44.550923+00:00",
+      "attempted_at": "2026-10-16T12:07:28.406152+00:00",
+      "last_success_at": "2026-10-16T12:07:32.953914+00:00",
       "last_article_published": "2026-10-14T20:09:03+03:30",
       "error": ""
     },
@@ -6001,8 +6001,8 @@
       "category": "اقتصاد و سرمایه‌گذاری",
       "ok": true,
       "items": 3,
-      "attempted_at": "2026-10-16T11:59:40.926456+00:00",
-      "last_success_at": "2026-10-16T11:59:45.509148+00:00",
+      "attempted_at": "2026-10-16T12:07:28.415801+00:00",
+      "last_success_at": "2026-10-16T12:07:33.862849+00:00",
       "last_article_published": "2026-10-16T12:38:35+03:30",
       "error": ""
     },
@@ -6011,8 +6011,8 @@
       "category": "پزشکی و سلامت",
       "ok": true,
       "items": 10,
-      "attempted_at": "2026-10-16T11:59:40.920453+00:00",
-      "last_success_at": "2026-10-16T11:59:46.912663+00:00",
+      "attempted_at": "2026-10-16T12:07:28.413169+00:00",
+      "last_success_at": "2026-10-16T12:07:34.151504+00:00",
       "last_article_published": "2026-10-16T14:26:04+03:30",
       "error": ""
     },
@@ -6021,8 +6021,8 @@
       "category": "بورس و بازار سرمایه",
       "ok": true,
       "items": 8,
-      "attempted_at": "2026-10-16T11:59:40.911660+00:00",
-      "last_success_at": "2026-10-16T11:59:48.050084+00:00",
+      "attempted_at": "2026-10-16T12:07:28.403415+00:00",
+      "last_success_at": "2026-10-16T12:07:36.419305+00:00",
       "last_article_published": "2026-10-16T11:18:00+03:30",
       "error": ""
     }
