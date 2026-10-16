@@ -2,7 +2,6 @@ name: Evren Nexus — Update domestic car prices
 
 on:
   workflow_dispatch:
-    if: ${{ false }}
 
 permissions:
   contents: write
