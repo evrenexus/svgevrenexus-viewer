@@ -2,7 +2,6 @@ name: Build public data
 
 on:
   workflow_dispatch:
-    if: ${{ false }}
 
 permissions:
   contents: write
