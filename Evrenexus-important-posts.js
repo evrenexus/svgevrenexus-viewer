@@ -137,7 +137,8 @@
   function load() {
     if (window.EvrenWordPress && typeof window.EvrenWordPress.getPosts === "function") {
       window.EvrenWordPress.getPosts(true).then(function (posts) {
-        if (!Array.isArray(posts) || !posts.length) { loadLegacy(); return; }
+        if (!Array.isArray(posts)) { loadLegacy(); return; }
+        if (!posts.length) { renderSidebar([]); return; }
         lastUpdated = "wordpress|" + posts.map(function (p) { return p.id + ":" + p.updated_at; }).join("|");
         renderSidebar(posts.map(function (p) {
           return { id: p.id, wordpress: true, title: p.title, summary: p.summary, image: p.image,
