@@ -145,8 +145,8 @@
             url: p.url, published: p.published, updated_at: p.updated_at, topics: p.topics || [] };
         }).slice(0, SIDEBAR_COUNT));
       }).catch(function (error) {
-        console.warn("WordPress important posts unavailable; using legacy feed:", error);
-        loadLegacy();
+        console.warn("WordPress important posts unavailable:", error);
+        renderSidebar([]);
       });
       return;
     }
