@@ -30,6 +30,7 @@
   }
 
   function makeViewerLink(item) {
+    if (item.wordpress && item.url) return item.url;
     return item.article_url ? "./" + String(item.article_url).replace(/^\.\//, "") : VIEWER_URL + "?url=" + encodeURIComponent(item.url || "");
   }
 
@@ -96,7 +97,7 @@
     slot.appendChild(archive);
   }
 
-  function load() {
+  function loadLegacy() {
     Promise.all([
       fetch("./data/editorial.json?t=" + Date.now(), { cache: "no-store" }).then(function (r) { if (!r.ok) throw new Error("Editorial HTTP " + r.status); return r.json(); }),
       fetch("./data/news.json?t=" + Date.now(), { cache: "no-store" }).then(function (r) { if (!r.ok) throw new Error("News HTTP " + r.status); return r.json(); })
@@ -133,10 +134,28 @@
     });
   }
 
+  function load() {
+    if (window.EvrenWordPress && typeof window.EvrenWordPress.getPosts === "function") {
+      window.EvrenWordPress.getPosts(true).then(function (posts) {
+        if (!Array.isArray(posts) || !posts.length) { loadLegacy(); return; }
+        lastUpdated = "wordpress|" + posts.map(function (p) { return p.id + ":" + p.updated_at; }).join("|");
+        renderSidebar(posts.map(function (p) {
+          return { id: p.id, wordpress: true, title: p.title, summary: p.summary, image: p.image,
+            url: p.url, published: p.published, updated_at: p.updated_at, topics: p.topics || [] };
+        }).slice(0, SIDEBAR_COUNT));
+      }).catch(function (error) {
+        console.warn("WordPress important posts unavailable; using legacy feed:", error);
+        loadLegacy();
+      });
+      return;
+    }
+    loadLegacy();
+  }
+
   function start() {
     addStyles();
     load();
-    window.setInterval(load, 10 * 60 * 1000);
+    window.setInterval(load, 2 * 60 * 1000);
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start);
   else start();
