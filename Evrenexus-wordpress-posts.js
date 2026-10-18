@@ -66,7 +66,7 @@
   function getPosts(force) {
     if (!force && cached && Date.now() - cachedAt < 45000) return Promise.resolve(cached.slice());
     if (pending) return pending.then(function (items) { return items.slice(); });
-    var fields = "id,date,modified,link,title,excerpt,content,categories,_embedded";
+    var fields = "id,date,modified,link,title,excerpt,content,featured_media,categories,_links,_embedded";
     var url = API + "?per_page=100&page=1&orderby=date&order=desc&_embed=1&_fields=" + encodeURIComponent(fields) + "&_wpv=" + Date.now();
     pending = fetch(url, { cache: "no-store", credentials: "same-origin" })
       .then(function (r) { if (!r.ok) throw new Error("WordPress REST API HTTP " + r.status); return r.json(); })
