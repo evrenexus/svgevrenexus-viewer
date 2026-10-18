@@ -24,6 +24,7 @@
 </section><aside id="sidebar-host"></aside></main>
 <script src="./Evrenexus-sidebar.js?v=20261010-02"></script>
 <script src="./Evrenexus-header.js?v=20261010-03"></script>
+<script src="./Evrenexus-wordpress-posts.js?v=20261018-01"></script>
 <script>
 (function(){
 "use strict";
@@ -41,8 +42,8 @@ function render(){
  var rows=all.filter(matches),pages=Math.max(1,Math.ceil(rows.length/per));if(page>pages)page=pages;
  var start=(page-1)*per,items=rows.slice(start,start+per),html="";
  items.forEach(function(x){
-  var url=x.url?"./viewer.html?url="+encodeURIComponent(x.url):"#";
-  html+='<a class="item" href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">';
+  var url=x.wordpress&&x.url?x.url:(x.url?"./viewer.html?url="+encodeURIComponent(x.url):"#");
+  html+='<a class="item" href="'+esc(url)+'"'+(x.wordpress?'':' target="_blank" rel="noopener noreferrer"')+'>';
   if(/^https?:\/\//i.test(x.image||""))html+='<img src="'+esc(x.image)+'" alt="" loading="lazy" referrerpolicy="no-referrer">';
   html+='<div class="content"><div class="title">'+esc(x.title)+'</div>';
   if(x.summary)html+='<div class="summary">'+esc(plain(x.summary))+'</div>';
@@ -52,8 +53,13 @@ function render(){
  prev.disabled=page<=1;next.disabled=page>=pages;pageNum.textContent=page.toLocaleString("fa-IR")+" / "+pages.toLocaleString("fa-IR")+" · "+rows.length.toLocaleString("fa-IR")+" مطلب";
 }
 function load(url){return fetch(url+"?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("fetch failed");return r.json()})}
-load("data/public/news.json").catch(function(){return load("data/news.json")}).then(function(d){
- all=(Array.isArray(d.items)?d.items:Array.isArray(d)?d:[]).slice().sort(function(a,b){return new Date(b.first_seen_at||b.published||0)-new Date(a.first_seen_at||a.published||0)});
+Promise.all([
+ load("data/public/news.json").catch(function(){return load("data/news.json")}),
+ window.EvrenWordPress&&typeof window.EvrenWordPress.getPosts==="function"?window.EvrenWordPress.getPosts(true).catch(function(e){console.warn("WordPress archive feed unavailable:",e);return[]}):Promise.resolve([])
+]).then(function(parts){
+ var d=parts[0],news=Array.isArray(d.items)?d.items:Array.isArray(d)?d:[],wp=Array.isArray(parts[1])?parts[1]:[],seen=Object.create(null);
+ all=news.concat(wp).filter(function(x){var k=String(x.url||"").replace(/\/$/,"").toLowerCase()||String(x.title||"").toLowerCase();if(seen[k])return false;seen[k]=true;return true;});
+ all.sort(function(a,b){return new Date(b.first_seen_at||b.published||0)-new Date(a.first_seen_at||a.published||0)});
  render();
 }).catch(function(){list.innerHTML='<div class="status">آرشیو دریافت نشد؛ لطفاً بعداً دوباره تلاش کنید.</div>'});
 q.addEventListener("input",function(){page=1;render()});topic.addEventListener("change",function(){page=1;render()});
