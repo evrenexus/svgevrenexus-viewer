@@ -66,11 +66,43 @@ function renderFeatured(){
    };
   }).filter(function(x){return x&&x.title&&x.url});
   items.sort(function(a,b){return (Date.parse(b.updated_at)||Date.parse(b.published)||0)-(Date.parse(a.updated_at)||Date.parse(a.published)||0)});
-  render(items.slice(0,8),aiFor);
+  if(items.length){
+   render(items.slice(0,8),aiFor);
+  }else{
+   console.warn("Evrenexus-slider: no manual selections; using latest available news as fallback.");
+   renderFallback(news);
+  }
  }).catch(function(e){
-  console.warn("Evrenexus-slider manual selection:",e);
-  slider.style.display="none";
+  console.warn("Evrenexus-slider manual selection failed; trying public news fallback:",e);
+  fetch("./data/public/news.json?v="+Date.now(),{cache:"no-store"})
+   .then(function(r){if(!r.ok)throw Error("public news HTTP "+r.status);return r.json()})
+   .then(function(d){renderFallback(Array.isArray(d)?d:(d&&Array.isArray(d.items)?d.items:[]))})
+   .catch(function(fallbackError){
+    console.error("Evrenexus-slider fallback failed:",fallbackError);
+    slider.style.display="none";
+   });
  });
+}
+function renderFallback(news){
+ var items=(Array.isArray(news)?news:[]).map(function(n){
+  if(!n)return null;
+  return {
+   id:String(n.id||n.article_id||n.url||""),
+   title:String(n.title||"").trim(),
+   summary:String(n.summary||""),
+   image:String(n.image||n.image_url||""),
+   source:String(n.source||"Evren Nexus"),
+   published:String(n.published||n.updated_at||""),
+   updated_at:String(n.updated_at||n.published||""),
+   url:String(n.url||n.source_url||""),
+   articleUrl:String(n.articleUrl||n.article_url||""),
+   content:String(n.content||""),
+   topics:Array.isArray(n.topics)?n.topics:[]
+  };
+ }).filter(function(x){return x&&x.title&&(x.url||x.articleUrl)});
+ items.sort(function(a,b){return (Date.parse(b.updated_at)||Date.parse(b.published)||0)-(Date.parse(a.updated_at)||Date.parse(a.published)||0)});
+ if(items.length)render(items.slice(0,8),aiFor);
+ else{console.error("Evrenexus-slider: no usable news items for fallback.");slider.style.display="none";}
 }
 renderFeatured();
 })();
