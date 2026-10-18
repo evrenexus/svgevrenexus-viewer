@@ -116,7 +116,7 @@ function renderWordPressPosts(posts){
 if(window.EvrenWordPress&&typeof window.EvrenWordPress.getPosts==="function"){
  window.EvrenWordPress.getPosts(true).then(function(posts){
   if(posts&&posts.length)renderWordPressPosts(posts);else renderFeatured();
- }).catch(function(e){console.warn("WordPress slider feed unavailable; using legacy feed:",e);renderFeatured()});
+ }).catch(function(e){console.warn("WordPress slider feed unavailable:",e);slidesContainer.innerHTML="";dotsContainer.innerHTML="";slider.style.display="none"});
  window.setInterval(function(){window.EvrenWordPress.getPosts(true).then(renderWordPressPosts).catch(function(e){console.warn("WordPress slider refresh failed:",e);});},120000);
 }else{renderFeatured()}
 })();
