@@ -41,6 +41,7 @@ html,body{background:#f3f5f7}
   <aside id="sidebar-host"></aside>
 </main>
 <footer class="Evrenxus-home-footer"><div class="footer-copy">© اورین نکسوس</div></footer>
+<script src="./Evrenexus-wordpress-posts.js?v=20261018-01"></script>
 <script>
 (function(){
 "use strict";
@@ -48,7 +49,7 @@ var q=new URLSearchParams(location.search),topic=q.get("topic")||"home",page=Mat
 function img(v){return typeof v==="string"&&/^https?:\/\//i.test(v)?v:""}
 function esc(v){return String(v||"").replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
 function pageUrl(p){var u="./important-archive.html";var args=[];if(topic!=="home")args.push("topic="+encodeURIComponent(topic));if(p>1)args.push("page="+p);return u+(args.length?"?"+args.join("&"):"")}
-function articleHref(x){var p=String(x&&x.articleUrl||"").replace(/^\.\//,"");if(/^articles\/[a-zA-Z0-9._-]+\.html$/.test(p))return "./"+p;return "./viewer.html?url="+encodeURIComponent(String(x&&x.url||""));}
+function articleHref(x){if(x&&x.wordpress&&x.url)return String(x.url);var p=String(x&&x.articleUrl||"").replace(/^\.\//,"");if(/^articles\/[a-zA-Z0-9._-]+\.html$/.test(p))return "./"+p;return "./viewer.html?url="+encodeURIComponent(String(x&&x.url||""));}
 function render(doc){
  var section=doc&&doc.topics&&doc.topics[topic]||doc&&doc.topics&&doc.topics.home||{};
  var items=(Array.isArray(section.important)?section.important:[]).filter(function(x){return x&&x.title});
@@ -66,7 +67,8 @@ function render(doc){
  if(items.length){html+='<nav class="pagination" aria-label="صفحه‌بندی آرشیو">';html+='<a href="'+pageUrl(Math.max(1,page-1))+'" aria-disabled="'+(page<=1)+'">قبلی</a>';html+='<span>صفحه '+page+' از '+pages+' · '+items.length+' مطلب</span>';html+='<a href="'+pageUrl(Math.min(pages,page+1))+'" aria-disabled="'+(page>=pages)+'">بعدی</a></nav>'}
  host.innerHTML=html||'<div class="error">هنوز مطلب مهمی در آرشیو ثبت نشده است.</div>';
 }
-Promise.all([
+function loadLegacyArchive(){
+ Promise.all([
  fetch("./data/editorial.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("editorial HTTP "+r.status);return r.json()}),
  fetch("./data/news.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("news HTTP "+r.status);return r.json()})
 ]).then(function(parts){
@@ -83,6 +85,25 @@ Promise.all([
  });
  render({topics:topics});
 }).catch(function(){host.innerHTML='<div class="error">دریافت آرشیو مطالب مهم انجام نشد؛ مطالب حذف نشده‌اند.</div>'});
+function matchesTopic(x){
+ if(topic==="home")return true;
+ var ts=Array.isArray(x.topics)?x.topics:[];
+ if(topic==="economy-investment")return ts.indexOf("economy")>=0||ts.indexOf("markets")>=0||ts.indexOf(topic)>=0;
+ if(topic==="technology-ai")return ts.indexOf("technology")>=0||ts.indexOf("ai")>=0||ts.indexOf(topic)>=0;
+ if(topic==="crypto")return ts.indexOf("crypto")>=0;
+ return ts.indexOf(topic)>=0;
+}
+function renderWordPress(posts){
+ var items=(Array.isArray(posts)?posts:[]).filter(matchesTopic).map(function(x){
+  return {id:x.id,articleId:x.id,wordpress:true,articleUrl:"",url:x.url,title:x.title,summary:x.summary,image:x.image,source:x.source,published:x.published,selectedAt:x.published,topics:x.topics||[]};
+ });
+ var data={topics:{}};data.topics[topic]={important:items};data.topics.home={important:topic==="home"?items:(Array.isArray(posts)?posts:[]).map(function(x){return{id:x.id,articleId:x.id,wordpress:true,url:x.url,title:x.title,summary:x.summary,image:x.image,source:x.source,published:x.published,selectedAt:x.published,topics:x.topics||[]};})};
+ render(data);
+}
+if(window.EvrenWordPress&&typeof window.EvrenWordPress.getPosts==="function"){
+ window.EvrenWordPress.getPosts(true).then(renderWordPress).catch(function(error){console.warn("WordPress important archive unavailable; using legacy archive:",error);loadLegacyArchive();});
+}else{loadLegacyArchive();}
+
 })();
 </script>
 <script src="./Evrenexus-sidebar.js?v=20261011-02"></script>
