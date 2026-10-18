@@ -8,19 +8,19 @@ html,body{background:var(--home-bg)!important;color:var(--home-ink)}
 .news-search input{border:0!important;background:#f8fafb;border-radius:8px;padding:10px 12px!important;font:12px Tahoma,Arial,sans-serif!important;color:var(--home-ink)}
 .news-search input:focus{outline:1px solid #b9d3d0;border-color:#b9d3d0}
 .news-search button{border-radius:8px;background:var(--home-navy);padding:0 18px;font:700 11px Tahoma,Arial,sans-serif}
-#Evrenxus-slider{border-radius:16px!important;box-shadow:var(--home-shadow);margin-bottom:20px!important;height:350px!important}
-#Evrenxus-slider .Evrenxus-slide-caption{right:24px!important;left:24px!important;bottom:24px!important;max-width:calc(100% - 48px)!important;width:fit-content;background:rgba(13,32,46,.86)!important;border-left:0!important;border-right:4px solid var(--home-red)!important;border-radius:8px!important;text-align:right!important;direction:rtl!important;font:900 22px/1.8 Tahoma,Arial,sans-serif!important;padding:15px 18px!important}
+#Evrenxus-slider{border-radius:12px!important;box-shadow:var(--home-shadow);margin-bottom:12px!important;height:230px!important}
+#Evrenxus-slider .Evrenxus-slide-caption{right:14px!important;left:14px!important;bottom:14px!important;max-width:calc(100% - 28px)!important;width:fit-content;background:rgba(13,32,46,.86)!important;border-left:0!important;border-right:4px solid var(--home-red)!important;border-radius:7px!important;text-align:right!important;direction:rtl!important;font:800 15px/1.7 Tahoma,Arial,sans-serif!important;padding:8px 11px!important}
 #Evrenxus-slider .Evrenxus-slider-prev,#Evrenxus-slider .Evrenxus-slider-next{border-radius:7px;background:rgba(13,32,46,.65)}
 #river{border:1px solid var(--home-line)!important;border-radius:14px!important;box-shadow:var(--home-shadow);overflow:hidden!important;background:transparent!important}
 #river>.section-title{padding:13px 16px!important;background:#fff!important;border-bottom:1px solid var(--home-line)!important;border-top:3px solid var(--home-navy);font-size:16px!important;color:var(--home-ink)!important}
-#list{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px!important;padding:14px!important;background:var(--home-bg)}
+#list{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px!important;padding:8px!important;background:var(--home-bg)}
 #list .item{min-width:0;min-height:100%;display:flex!important;flex-direction:column!important;gap:0!important;padding:0!important;border:1px solid var(--home-line)!important;border-radius:12px!important;overflow:hidden!important;background:#fff!important;box-shadow:var(--home-shadow);transition:transform .18s,border-color .18s}
 #list .item:hover{background:#fff!important;border-color:#b6d8d2!important;transform:translateY(-2px)}
-#list .item img{width:100%!important;min-width:0!important;height:150px!important;object-fit:cover!important;background:#e7edf0!important}
-#list .item .content{width:100%;padding:13px 14px 12px;display:flex;flex-direction:column;flex:1}
-#list .item .title{font:800 14px/1.9 Tahoma,Arial,sans-serif!important;color:var(--home-ink)!important;overflow-wrap:anywhere}
-#list .item .summary{font:400 12px/1.9 Tahoma,Arial,sans-serif!important;color:var(--home-muted)!important;margin-top:7px}
-#list .item .meta{font:400 10px/1.8 Tahoma,Arial,sans-serif!important;color:#8998a3!important;margin-top:auto;padding-top:10px}
+#list .item img{width:100%!important;min-width:0!important;height:92px!important;object-fit:cover!important;background:#e7edf0!important}
+#list .item .content{width:100%;padding:8px 9px 8px;display:flex;flex-direction:column;flex:1}
+#list .item .title{font:800 11px/1.75 Tahoma,Arial,sans-serif!important;color:var(--home-ink)!important;overflow-wrap:anywhere}
+#list .item .summary{font:400 10px/1.75 Tahoma,Arial,sans-serif!important;color:var(--home-muted)!important;margin-top:4px}
+#list .item .meta{font:400 9px/1.7 Tahoma,Arial,sans-serif!important;color:#8998a3!important;margin-top:auto;padding-top:6px}
 #Evrenxus-sidebar .Evrenxus-sidebar-box{width:100%!important;border:1px solid var(--home-line)!important;border-radius:14px!important;box-shadow:var(--home-shadow);overflow:hidden;margin-bottom:16px!important}
 #Evrenxus-sidebar .Evrenxus-sidebar-title{padding:13px 15px!important;font-size:15px!important;background:#fff;border-bottom:1px solid var(--home-line)!important}
 #Evrenxus-sidebar .Evrenxus-sidebar-title:before{height:19px!important;border-radius:3px}
