@@ -35,15 +35,34 @@ function loadPolicy(){
  }).catch(function(){return true});
  return policyPending;
 }
+function loadWordPressItems(){
+ if(!window.EvrenWordPress||typeof window.EvrenWordPress.getPosts!=="function")return Promise.resolve([]);
+ return window.EvrenWordPress.getPosts().then(function(posts){return Array.isArray(posts)?posts:[];}).catch(function(e){console.warn("WordPress posts unavailable in news list:",e);return[];});
+}
+function mergeWordPressItems(items,posts,topic,query){
+ var key=topic||"home",q=String(query||"").trim().toLowerCase(),out=[],seen=Object.create(null);
+ (Array.isArray(posts)?posts:[]).filter(function(x){return x&&x.wordpress&&x.title&&x.url&&topicMatches(x,key);}).forEach(function(x){
+  if(q&&((x.title||"")+" "+(x.summary||"")+" "+(x.source||"")).toLowerCase().indexOf(q)===-1)return;
+  var k=String(x.url||"").replace(/\/$/,"").toLowerCase()||String(x.title||"").toLowerCase();
+  if(seen[k])return;seen[k]=true;out.push(x);
+ });
+ (Array.isArray(items)?items:[]).forEach(function(x){
+  var k=String(x.url||"").replace(/\/$/,"").toLowerCase()||String(x.title||"").toLowerCase();
+  if(seen[k])return;
+  if(q&&((x.title||"")+" "+(x.summary||"")+" "+(x.source||"")).toLowerCase().indexOf(q)===-1)return;
+  seen[k]=true;out.push(x);
+ });
+ out.sort(function(a,b){return (Date.parse(b.published)||0)-(Date.parse(a.published)||0)||String(a.id||"").localeCompare(String(b.id||""));});
+ return out;
+}
 function getTopic(topic,page,q){
  var key=topic||"home",query=String(q||"").trim().toLowerCase();
- return Promise.all([loadLatest(),loadPolicy()]).then(function(parts){
+ return Promise.all([loadLatest(),loadPolicy(),loadWordPressItems()]).then(function(parts){
   var latest=parts[0],lt=latest&&latest.topics&&latest.topics[key];
   if(!lt||!Array.isArray(lt.items))throw Error("latest-news.json topic missing: "+key);
   var per=21,p=Math.max(1,parseInt(page,10)||1);
-  var rr=filterItems(lt.items).filter(function(x){return topicMatches(x,key);});
-  if(query)rr=rr.filter(function(x){return((x.title||"")+" "+(x.summary||"")+" "+(x.source||"")).toLowerCase().indexOf(query)!==-1;});
-  rr.sort(function(a,b){return (Date.parse(b.published)||0)-(Date.parse(a.published)||0)||String(a.id||"").localeCompare(String(b.id||""));});
+  var base=filterItems(lt.items).filter(function(x){return topicMatches(x,key);});
+  var rr=mergeWordPressItems(base,parts[2],key,query);
   var start=(p-1)*per;
   return{ok:true,featured:[],important:[],regular:rr.slice(start,start+per),page:p,hasPrev:p>1,hasNext:start+per<rr.length};
  });
@@ -110,12 +129,12 @@ function render(r){
    list.innerHTML="";
    regular.forEach(function(x){
      var card=document.createElement("div");card.className="item";
-     var fullUrl=x.articleUrl?"./"+String(x.articleUrl).replace(/^\.\//,""):(x.url?"./viewer.html?url="+encodeURIComponent(x.url):"#");
+     var fullUrl=x.wordpress&&x.url?x.url:(x.articleUrl?"./"+String(x.articleUrl).replace(/^\.\//,""):(x.url?"./viewer.html?url="+encodeURIComponent(x.url):"#"));
      var u=img(x.image);if(u){var im=document.createElement("img");im.src=u;im.alt=x.title||"";im.loading="lazy";im.referrerPolicy="no-referrer";im.onerror=function(){this.remove()};card.appendChild(im)}
      var cc=document.createElement("div");cc.className="content";
      var h2=document.createElement("div");h2.className="title";
      var titleLink=document.createElement("a");titleLink.href=fullUrl;titleLink.textContent=x.title||"";titleLink.style.cssText="color:inherit;text-decoration:none";
-     if(!x.articleUrl){titleLink.target="_blank";titleLink.rel="noopener noreferrer"}
+     if(!x.articleUrl&&!x.wordpress){titleLink.target="_blank";titleLink.rel="noopener noreferrer"}
      h2.appendChild(titleLink);cc.appendChild(h2);
      if(x.summary){
        var summaryText=String(x.summary).replace(/\s+/g," ").trim();
@@ -135,12 +154,11 @@ function render(r){
  if(pg){pg.style.display=(r.hasPrev||r.hasNext)?"flex":"none";if(prev){prev.disabled=!r.hasPrev;prev.onclick=function(){if(!r.hasPrev)return;var u=new URL(location.href);u.searchParams.set("page",String(r.page-1));location.href=u.href}}if(next){next.disabled=!r.hasNext;next.onclick=function(){if(!r.hasNext)return;var u=new URL(location.href);u.searchParams.set("page",String(r.page+1));location.href=u.href}}}
 }
 function buildClientFallback(topic,page,q){
- return Promise.all([loadLatest(),loadPolicy()]).then(function(parts){
+ return Promise.all([loadLatest(),loadPolicy(),loadWordPressItems()]).then(function(parts){
   var latest=parts[0],key=topic||"home",t=latest&&latest.topics&&latest.topics[key];
   if(!t||!Array.isArray(t.items))throw Error("latest-news.json topic missing: "+key);
   var items=filterItems(t.items).filter(function(x){return topicMatches(x,key);});
-  if(q)items=items.filter(function(x){return((x.title||"")+" "+(x.summary||"")+" "+(x.source||"")).toLowerCase().indexOf(String(q).toLowerCase())!==-1;});
-  items.sort(function(a,b){return (Date.parse(b.published)||0)-(Date.parse(a.published)||0)||String(a.id||"").localeCompare(String(b.id||""));});
+  items=mergeWordPressItems(items,parts[2],key,q);
   var p=Math.max(1,parseInt(page,10)||1),per=21,start=(p-1)*per;
   return{ok:true,featured:[],important:[],regular:items.slice(start,start+per),page:p,hasPrev:p>1,hasNext:start+per<items.length};
  });
