@@ -55,3 +55,17 @@ html,body{background:var(--home-bg)!important;color:var(--home-ink)}
  .Evrenxus-home-footer{width:calc(100% - 22px)!important}
 }
 @media(max-width:390px){#list{grid-template-columns:1fr!important}#list .item img{height:160px!important}}
+
+/* Slider + adjacent important-news card */
+#Evrenxus-slider-row{display:grid;grid-template-columns:minmax(0,1fr) 245px;gap:12px;align-items:stretch;direction:rtl;margin-bottom:12px}
+#Evrenxus-slider-host{min-width:0;min-height:0}
+#Evrenxus-slider-row #Evrenxus-slider{height:190px!important;min-height:0!important;max-height:none!important;margin:0!important;aspect-ratio:auto!important}
+#Evrenxus-slider-card{min-width:0;height:190px;overflow:hidden;background:#fff;border:1px solid var(--home-line);border-radius:12px;box-shadow:var(--home-shadow);display:flex;flex-direction:column}
+.Evrenxus-slider-card-heading{font:800 12px/1.5 Tahoma,Arial,sans-serif;color:var(--home-ink);padding:9px 11px;border-bottom:2px solid var(--home-red);flex:0 0 auto}
+#Evrenxus-slider-card-items{flex:1;min-height:0;overflow:hidden}
+.Evrenxus-slider-card-item{display:block;padding:7px 10px;border-bottom:1px solid #edf0f2;color:var(--home-ink);text-decoration:none;font:700 10px/1.8 Tahoma,Arial,sans-serif;overflow-wrap:anywhere}
+.Evrenxus-slider-card-item:hover{background:#f7f9fa;color:var(--home-red)}
+.Evrenxus-slider-card-time{display:block;color:#97a1a9;font:400 8px/1.6 Tahoma,Arial,sans-serif;margin-top:2px}
+.Evrenxus-slider-card-archive{display:block;flex:0 0 auto;text-align:center;padding:6px;background:#f8fafb;color:var(--home-red);text-decoration:none;border-top:1px solid var(--home-line);font:700 9px/1.5 Tahoma,Arial,sans-serif}
+@media(max-width:900px){#Evrenxus-slider-row{grid-template-columns:minmax(0,1fr) 220px;gap:10px}#Evrenxus-slider-row #Evrenxus-slider{height:190px!important}}
+@media(max-width:700px){#Evrenxus-slider-row{display:flex;flex-direction:column;gap:10px}#Evrenxus-slider-row #Evrenxus-slider{height:auto!important;aspect-ratio:16/9!important;min-height:0!important;max-height:300px!important}#Evrenxus-slider-card{height:auto;min-height:0;max-height:none}#Evrenxus-slider-card-items{max-height:210px}#Evrenxus-slider-card .Evrenxus-slider-card-item{font-size:11px;padding:8px 10px}}
