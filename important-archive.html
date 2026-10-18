@@ -85,6 +85,7 @@ function loadLegacyArchive(){
  });
  render({topics:topics});
 }).catch(function(){host.innerHTML='<div class="error">دریافت آرشیو مطالب مهم انجام نشد؛ مطالب حذف نشده‌اند.</div>'});
+}
 function matchesTopic(x){
  if(topic==="home")return true;
  var ts=Array.isArray(x.topics)?x.topics:[];
