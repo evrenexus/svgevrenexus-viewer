@@ -8,8 +8,8 @@ html,body{background:var(--home-bg)!important;color:var(--home-ink)}
 .news-search input{border:0!important;background:#f8fafb;border-radius:8px;padding:10px 12px!important;font:12px Tahoma,Arial,sans-serif!important;color:var(--home-ink)}
 .news-search input:focus{outline:1px solid #b9d3d0;border-color:#b9d3d0}
 .news-search button{border-radius:8px;background:var(--home-navy);padding:0 18px;font:700 11px Tahoma,Arial,sans-serif}
-#Evrenxus-slider{border-radius:12px!important;box-shadow:var(--home-shadow);margin-bottom:12px!important;height:230px!important}
-#Evrenxus-slider .Evrenxus-slide-caption{right:14px!important;left:14px!important;bottom:14px!important;max-width:calc(100% - 28px)!important;width:fit-content;background:rgba(13,32,46,.86)!important;border-left:0!important;border-right:4px solid var(--home-red)!important;border-radius:7px!important;text-align:right!important;direction:rtl!important;font:800 15px/1.7 Tahoma,Arial,sans-serif!important;padding:8px 11px!important}
+#Evrenxus-slider{border-radius:12px!important;box-shadow:var(--home-shadow);margin-bottom:10px!important;height:190px!important}
+#Evrenxus-slider .Evrenxus-slide-caption{right:10px!important;left:10px!important;bottom:10px!important;max-width:calc(100% - 20px)!important;width:fit-content;background:rgba(13,32,46,.86)!important;border-left:0!important;border-right:3px solid var(--home-red)!important;border-radius:6px!important;text-align:right!important;direction:rtl!important;font:800 12px/1.6 Tahoma,Arial,sans-serif!important;padding:6px 8px!important}
 #Evrenxus-slider .Evrenxus-slider-prev,#Evrenxus-slider .Evrenxus-slider-next{border-radius:7px;background:rgba(13,32,46,.65)}
 #river{border:1px solid var(--home-line)!important;border-radius:14px!important;box-shadow:var(--home-shadow);overflow:hidden!important;background:transparent!important}
 #river>.section-title{padding:13px 16px!important;background:#fff!important;border-bottom:1px solid var(--home-line)!important;border-top:3px solid var(--home-navy);font-size:16px!important;color:var(--home-ink)!important}
@@ -21,11 +21,11 @@ html,body{background:var(--home-bg)!important;color:var(--home-ink)}
 #list .item .title{font:800 11px/1.75 Tahoma,Arial,sans-serif!important;color:var(--home-ink)!important;overflow-wrap:anywhere}
 #list .item .summary{font:400 10px/1.75 Tahoma,Arial,sans-serif!important;color:var(--home-muted)!important;margin-top:4px}
 #list .item .meta{font:400 9px/1.7 Tahoma,Arial,sans-serif!important;color:#8998a3!important;margin-top:auto;padding-top:6px}
-#Evrenxus-sidebar .Evrenxus-sidebar-box{width:100%!important;border:1px solid var(--home-line)!important;border-radius:14px!important;box-shadow:var(--home-shadow);overflow:hidden;margin-bottom:16px!important}
-#Evrenxus-sidebar .Evrenxus-sidebar-title{padding:13px 15px!important;font-size:15px!important;background:#fff;border-bottom:1px solid var(--home-line)!important}
+#Evrenxus-sidebar .Evrenxus-sidebar-box{width:100%!important;border:1px solid var(--home-line)!important;border-radius:12px!important;box-shadow:var(--home-shadow);overflow:hidden;margin-bottom:10px!important}\n#Evrenxus-sidebar .Evrenxus-sidebar-box:first-child{max-height:190px!important}\n#Evrenxus-sidebar #Evrenxus-sidebar-important{max-height:150px!important;overflow:hidden!important}
+#Evrenxus-sidebar .Evrenxus-sidebar-title{padding:8px 10px!important;font-size:12px!important;background:#fff;border-bottom:1px solid var(--home-line)!important}
 #Evrenxus-sidebar .Evrenxus-sidebar-title:before{height:19px!important;border-radius:3px}
 #Evrenxus-sidebar-important .Evrenxus-important-link{padding:11px 13px!important;font:700 12px/1.9 Tahoma,Arial,sans-serif!important;background:#fff}
-#Evrenxus-sidebar-important .Evrenxus-important-time{font:400 10px/1.8 Tahoma,Arial,sans-serif!important;color:#94a1aa!important}
+#Evrenxus-sidebar-important .Evrenxus-important-time{font:400 8px/1.4 Tahoma,Arial,sans-serif!important;color:#94a1aa!important}
 #Evrenxus-sidebar .Evrenxus-menu-link{padding:11px 13px!important;font-size:12px!important}
 #news-pagination{padding:0 14px 14px;background:var(--home-bg)}
 #news-pagination button{border-radius:8px;padding:8px 14px;font-size:11px}
