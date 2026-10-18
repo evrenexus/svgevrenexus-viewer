@@ -124,7 +124,7 @@ function render(r){
  });}
  if(ih){var ia=document.createElement("a");ia.href="./important-archive.html"+(activeTopic&&activeTopic!=="home"?"?topic="+encodeURIComponent(activeTopic):"");ia.textContent="مشاهده آرشیو مطالب مهم";ia.style.cssText="display:block;text-align:center;padding:10px;background:#f8fafb;color:#d64c43;text-decoration:none;font-size:10px;font-weight:700;border-top:1px solid #e8edf1";ih.appendChild(ia);}
 
- var regular=(r.regular||[]).slice(0,21),list=document.getElementById("list");
+ var regular=(r.regular||[]).slice(0,activeTopic==="home"?13:21),list=document.getElementById("list");
  if(list){
    list.innerHTML="";
    regular.forEach(function(x){
