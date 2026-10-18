@@ -23,7 +23,7 @@ var css=`
 var s=document.createElement("style");s.id="Evrenxus-slider-style";s.textContent=css;document.head.appendChild(s);
 var host=document.getElementById("Evrenxus-slider-host");if(!host)return;
 host.outerHTML='<div id="Evrenxus-slider"><div id="Evrenxus-slides"></div><button type="button" class="Evrenxus-slider-prev" id="Evrenxus-slider-prev">‹</button><button type="button" class="Evrenxus-slider-next" id="Evrenxus-slider-next">›</button><div id="Evrenxus-slider-dots" class="Evrenxus-slider-dots"></div></div>';
-var slider=document.getElementById("Evrenxus-slider"),slidesContainer=document.getElementById("Evrenxus-slides"),dotsContainer=document.getElementById("Evrenxus-slider-dots"),current=0;
+var slider=document.getElementById("Evrenxus-slider"),slidesContainer=document.getElementById("Evrenxus-slides"),dotsContainer=document.getElementById("Evrenxus-slider-dots"),current=0,slideTimer=null;
 function proxy(v){return v?"https://images.weserv.nl/?url="+encodeURIComponent(v)+"&w=1200&q=88&output=webp":""}
 function render(items,aiForFn){
 items=items.filter(function(x){return String(x&&x.title||"").trim().length>0}).slice(0,8);if(!items.length){slider.style.display="none";return}
@@ -37,7 +37,7 @@ var dot=document.createElement("span");dot.className="Evrenxus-slider-dot"+(i===
 var slides=slider.querySelectorAll(".Evrenxus-slide"),dots=slider.querySelectorAll(".Evrenxus-slider-dot");
 function show(i){if(!slides.length)return;if(i>=slides.length)i=0;if(i<0)i=slides.length-1;slides[current].classList.remove("active");dots[current].classList.remove("active");current=i;slides[current].classList.add("active");dots[current].classList.add("active")}
 document.getElementById("Evrenxus-slider-prev").onclick=function(){show(current-1)};document.getElementById("Evrenxus-slider-next").onclick=function(){show(current+1)};
-if(slides.length>1)setInterval(function(){show(current+1)},5000);
+if(slideTimer)clearInterval(slideTimer);slideTimer=slides.length>1?setInterval(function(){show(current+1)},5000):null;
 }
 var NEWS_URL="./data/news.json";
 var EDITORIAL_URL="./data/editorial.json";
@@ -105,16 +105,18 @@ function renderFallback(news){
  else{console.error("Evrenexus-slider: no usable news items for fallback.");slider.style.display="none";}
 }
 function renderWordPressPosts(posts){
+ slidesContainer.innerHTML="";dotsContainer.innerHTML="";current=0;slider.style.display="";
  var items=(Array.isArray(posts)?posts:[]).map(function(p){return{
   id:String(p.id),title:p.title,summary:p.summary,image:p.image,url:p.url,articleUrl:"",
   source:p.source||"Evren Nexus",published:p.published,updated_at:p.updated_at,
   content:"",topics:p.topics||[],wordpress:true
  }});
- if(items.length){render(items.slice(0,8),aiFor)}else{renderFeatured()}
+ if(items.length){render(items.slice(0,8),aiFor)}else{slider.style.display="none"}
 }
 if(window.EvrenWordPress&&typeof window.EvrenWordPress.getPosts==="function"){
  window.EvrenWordPress.getPosts(true).then(function(posts){
   if(posts&&posts.length)renderWordPressPosts(posts);else renderFeatured();
  }).catch(function(e){console.warn("WordPress slider feed unavailable; using legacy feed:",e);renderFeatured()});
+ window.setInterval(function(){window.EvrenWordPress.getPosts(true).then(renderWordPressPosts).catch(function(e){console.warn("WordPress slider refresh failed:",e);});},120000);
 }else{renderFeatured()}
 })();
