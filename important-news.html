@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>مطالب مهم | Evren Nexus</title>
+<link rel="stylesheet" href="./Evrenexus-site-shell.css?v=3">
+<link rel="stylesheet" href="./Evrenexus-home-design.css?v=3">
+<style>
+*{box-sizing:border-box}html,body{margin:0;background:#f3f5f7;color:#182b3a;font-family:Vazir,Tahoma,Arial,sans-serif}
+#page{width:850px;max-width:100%;margin:0 auto;padding:148px 10px 25px;display:flex;flex-direction:row;align-items:flex-start;gap:10px;direction:rtl}
+#content{width:610px;max-width:610px;min-width:0;flex:1;order:1;overflow:hidden}#sidebar-host{width:200px;min-width:200px;max-width:200px;flex:0 0 200px;order:2}
+.back{display:inline-block;margin-bottom:10px;background:#142d40;color:#fff;text-decoration:none;padding:7px 12px;font-size:10px}
+.archive{background:#fff;border:1px solid #e0e6eb;overflow:hidden}.head{padding:13px 14px;background:#142d40;color:#fff}.head h1{font-size:16px;margin:0}.head p{font-size:9px;margin:5px 0 0;opacity:.85}
+.item{display:flex;gap:10px;padding:11px;border-bottom:1px solid #e8edf1;text-decoration:none;color:#243949;background:#fff}.item:hover{background:#f8fafb}.item img{width:125px;min-width:125px;height:78px;object-fit:cover;background:#eee}.content{min-width:0;flex:1}.title{font-size:11px;font-weight:700;line-height:1.9;color:#182b3a}.summary{font-size:9.5px;line-height:1.8;color:#687987;margin-top:3px}.meta{font-size:8.5px;color:#8b9aa5;margin-top:6px}.error{padding:25px;text-align:center;color:#777;font-size:10px}
+@media(max-width:700px){html,body{background:#fff;overflow-x:hidden}#page{width:100%;padding:141px 8px 15px;display:block}#content{width:100%;max-width:none}#sidebar-host{width:100%;min-width:0;max-width:none}.item{gap:8px;padding:9px}.item img{width:105px;min-width:105px;height:66px}.title{font-size:10px}}
+</style>
+</head>
+<body>
+<main id="page">
+<section id="content">
+<a class="back" href="./">بازگشت به خانه</a>
+<div class="archive"><header class="head"><h1>مطالب مهم</h1><p id="stamp">گزیدهٔ خبرهای مهم دو ساعت اخیر؛ حداکثر ۱۶ مطلب</p></header><div id="list"><div class="error">در حال دریافت مطالب مهم...</div></div></div>
+</section>
+<aside id="sidebar-host"></aside>
+</main>
+<footer class="Evrenxus-home-footer"><div class="footer-copy">© Evren Nexus</div></footer>
+<script>
+(function(){
+"use strict";
+var host=document.getElementById("list"),stamp=document.getElementById("stamp");
+function esc(v){return String(v||"").replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function href(x){var p=String(x.articleUrl||"").replace(/^\.\//,"");if(/^articles\/[a-zA-Z0-9._-]+\.html$/.test(p))return "./"+p;if(x.url)return "./viewer.html?url="+encodeURIComponent(x.url);return "#"}
+function date(v){try{return new Date(v).toLocaleString("fa-IR",{dateStyle:"short",timeStyle:"short"})}catch(e){return ""}}
+fetch("./data/public/important-news.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("HTTP "+r.status);return r.json()}).then(function(doc){
+ var items=Array.isArray(doc.items)?doc.items:[],seen={},html="";
+ items=items.filter(function(x){var k=String(x.group_id||x.id||x.url||"");if(!k||seen[k])return false;seen[k]=true;return !!x.title}).slice(0,16);
+ items.forEach(function(x){html+='<a class="item" href="'+esc(href(x))+'">';if(/^https?:\/\//i.test(x.image||""))html+='<img src="'+esc(x.image)+'" alt="" loading="lazy" referrerpolicy="no-referrer">';html+='<div class="content"><div class="title">'+esc(x.title)+'</div>';if(x.summary)html+='<div class="summary">'+esc(x.summary)+'</div>';html+='<div class="meta">'+esc(x.source||"")+' · '+esc(date(x.published))+'</div></div></a>'});
+ host.innerHTML=html||'<div class="error">در بازهٔ اخیر خبر واجد شرایطی برای نمایش انتخاب نشده است.</div>';
+ if(doc.updated)stamp.textContent='به‌روزرسانی: '+date(doc.updated)+' · '+items.length+' مطلب مهم';
+}).catch(function(){host.innerHTML='<div class="error">دریافت مطالب مهم ممکن نشد. کمی بعد دوباره تلاش کنید.</div>'});
+})();
+</script>
+<script src="./Evrenexus-sidebar.js?v=20261018-02"></script>
+<script src="./Evrenexus-important-posts.js?v=20261018-02"></script>
+<script src="./Evrenexus-header.js?v=20261011-04"></script>
+</body>
+</html>
