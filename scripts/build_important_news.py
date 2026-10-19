@@ -1,16 +1,18 @@
 #!/usr/bin/env python3
-"""Build rolling, conservative important-news list without touching editorial/manual selections."""
+"""Select up to four important stories from the latest two hours and keep a rolling 16-day/16-item list."""
 import hashlib, json, os, re, urllib.request, urllib.error
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+import argparse
 
 ROOT = Path(__file__).resolve().parent.parent
 NEWS = ROOT / "data/news.json"
 AI = ROOT / "data/news-ai.json"
 OUT = ROOT / "data/public/important-news.json"
 MAX_ITEMS = 16
+MAX_BATCH_ITEMS = 4
 WINDOW_HOURS = 2
-MIN_LOCAL_SCORE = 7
+RETENTION_DAYS = 16
 TOPICS = {"economy","markets","currency-gold","real-estate","technology","ai","health","auto","science-life","crypto"}
 
 def load(path, default):
@@ -128,68 +130,122 @@ def api_select(candidates):
         parsed = json.loads(answer)
         selected = parsed.get("selected", [])
         if not isinstance(selected,list): return None,"invalid response structure"
-        return selected, "ok:"+provider
+        return selected[:MAX_BATCH_ITEMS], "ok:"+provider
     except Exception as e:
         return None, provider+" failed:"+type(e).__name__
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--dry-run", action="store_true", help="select and validate without writing output")
+    args = parser.parse_args()
+
     now = datetime.now(timezone.utc)
     cutoff = now - timedelta(hours=WINDOW_HOURS)
+    retention_cutoff = now - timedelta(days=RETENTION_DAYS)
     news = rows(load(NEWS, {}))
     ai_doc = load(AI, {})
     ai_map = ai_doc.get("items", {}) if isinstance(ai_doc,dict) else {}
+    old_doc = load(OUT, {})
+    old_items = old_doc.get("items", []) if isinstance(old_doc,dict) else []
+    if not isinstance(old_items, list):
+        old_items = []
+
+    retained, retained_ids, retained_groups, retained_urls, retained_titles = [], set(), set(), set(), set()
+    for item in sorted((x for x in old_items if isinstance(x,dict)), key=lambda x: str(x.get("published","")), reverse=True):
+        published = dt(item.get("published") or item.get("published_at"))
+        if not published or published < retention_cutoff or published > now + timedelta(minutes=10):
+            continue
+        titlekey = re.sub(r"[^\w]+", "", norm(item.get("title")))
+        group = str(item.get("group_id") or "")
+        ident = str(item.get("id") or "")
+        url = str(item.get("url") or "")
+        if (ident and ident in retained_ids) or (group and group in retained_groups) or (url and url in retained_urls) or (titlekey and titlekey in retained_titles):
+            continue
+        retained.append(item)
+        if ident: retained_ids.add(ident)
+        if group: retained_groups.add(group)
+        if url: retained_urls.add(url)
+        if titlekey: retained_titles.add(titlekey)
+
     candidates, seen_titles = [], set()
     for n in news:
-        if not isinstance(n,dict) or not n.get("id") or not n.get("title") or not n.get("url"): continue
+        if not isinstance(n,dict) or not n.get("id") or not n.get("title") or not n.get("url"):
+            continue
         published = dt(n.get("published") or n.get("published_at") or n.get("first_seen_at"))
-        if not published or published < cutoff or published > now + timedelta(minutes=10): continue
-        key = hashlib.sha256(str(n["id"]).encode()).hexdigest()[:24]
+        if not published or published < cutoff or published > now + timedelta(minutes=10):
+            continue
+        ident = str(n["id"])
+        url = str(n.get("url") or "")
+        titlekey = re.sub(r"[^\w]+", "", norm(n.get("title")))
+        key = hashlib.sha256(ident.encode()).hexdigest()[:24]
         ai = ai_map.get(key) or {}
         score, topics = local_score(n, ai)
-        if score < 0 or not topics: continue
-        titlekey = re.sub(r"[^\w]+","",norm(n.get("title")))
-        if not titlekey or titlekey in seen_titles: continue
+        if score < 0 or not topics or not titlekey:
+            continue
+        group = str(ai.get("group_id") or n.get("group_id") or "")
+        if ident in retained_ids or (url and url in retained_urls) or (titlekey in retained_titles) or (group and group in retained_groups):
+            continue
+        if titlekey in seen_titles:
+            continue
         seen_titles.add(titlekey)
-        candidates.append({"id":str(n["id"]),"title":str(n.get("title","")).strip(),
+        candidates.append({"id":ident,"title":str(n.get("title","")).strip(),
           "summary":str(n.get("summary","")).strip(),"source":str(n.get("source","")).strip(),
-          "url":str(n.get("url","")).strip(),"image":str(n.get("image","")).strip(),
+          "url":url,"image":str(n.get("image","")).strip(),
           "published":published.isoformat(),"topics":topics,"local_score":score,
-          "ai":ai,"group_id":str(ai.get("group_id") or n.get("group_id") or "")})
-    candidates.sort(key=lambda x:(x["local_score"],x["published"]),reverse=True)
-    selected, mode = api_select(candidates)
-    by_id = {x["id"]:x for x in candidates}
-    output = []
-    if selected is not None:
-        for s in selected:
-            if not isinstance(s,dict): continue
-            c = by_id.get(str(s.get("id","")))
-            if not c: continue
-            try: score = int(s.get("score",0))
-            except Exception: score = 0
-            if score < 65: continue
-            output.append({**c,"importance_score":min(100,score),"reason":str(s.get("reason","")).strip()[:180],"selection_mode":"ai"})
+          "ai":ai,"group_id":group})
+    candidates.sort(key=lambda x:(x["published"],x["local_score"]),reverse=True)
+
+    if candidates:
+        selected, mode = api_select(candidates)
+        if selected is None:
+            raise SystemExit("AI selection failed; existing important-news output preserved. " + mode)
     else:
-        # Conservative fallback: no API call retries; only clear-impact stories survive.
-        for c in candidates:
-            if c["local_score"] < MIN_LOCAL_SCORE: continue
-            ai = c["ai"]
-            if ai.get("political") is True or ai.get("publishable") is False: continue
-            output.append({**c,"importance_score":min(64,c["local_score"]*7),"reason":"انتخاب محافظه‌کارانه بر اساس نشانه‌های اثرگذاری","selection_mode":"local"})
-    # Deduplicate by event group and similar title, keep strongest item.
-    final, seen_groups = [], set()
-    for x in sorted(output,key=lambda z:(z["importance_score"],z["published"]),reverse=True):
-        group = x.get("group_id")
-        if group and group in seen_groups: continue
-        if group: seen_groups.add(group)
-        final.append(x)
-        if len(final) >= MAX_ITEMS: break
-    final.sort(key=lambda x:x["published"],reverse=True)
-    doc = {"updated":now.isoformat(),"window_hours":WINDOW_HOURS,"max_items":MAX_ITEMS,
-           "count":len(final),"selection_mode":mode,"items":final}
-    OUT.parent.mkdir(parents=True,exist_ok=True)
+        selected, mode = [], "no-new-candidates"
+
+    by_id = {x["id"]:x for x in candidates}
+    batch, seen_batch_groups = [], set()
+    for s in selected:
+        if not isinstance(s,dict):
+            continue
+        item = by_id.get(str(s.get("id","")))
+        if not item:
+            continue
+        try:
+            score = int(s.get("score",0))
+        except Exception:
+            score = 0
+        if score < 65:
+            continue
+        group = item.get("group_id") or ""
+        if group and group in seen_batch_groups:
+            continue
+        if group:
+            seen_batch_groups.add(group)
+        batch.append({**item,"importance_score":min(100,score),
+                      "reason":str(s.get("reason","")).strip()[:180],"selection_mode":"ai"})
+        if len(batch) >= MAX_BATCH_ITEMS:
+            break
+
+    final = (batch + retained)[:MAX_ITEMS]
+    final.sort(key=lambda x: str(x.get("published","")), reverse=True)
+    doc = {"updated":now.isoformat(),"window_hours":WINDOW_HOURS,"retention_days":RETENTION_DAYS,
+           "batch_limit":MAX_BATCH_ITEMS,"max_items":MAX_ITEMS,"count":len(final),
+           "selection_mode":mode,"new_batch_count":len(batch),"items":final}
+
+    print(f"Dry run: {args.dry_run}")
+    print(f"Recent candidates: {len(candidates)} | selected this cycle: {len(batch)} | retained from previous cycles: {len(retained)} | final: {len(final)}")
+    for x in batch:
+        print(f"NEW {x['importance_score']:>3} | {x['source']} | {x['published']} | {x['title']}")
+    for x in retained:
+        print(f"OLD {x.get('importance_score',0):>3} | {x.get('source','')} | {x.get('published','')} | {x.get('title','')}")
+    if args.dry_run:
+        print("DRY RUN: output file was not changed.")
+        return
+
+    OUT.parent.mkdir(parents=True, exist_ok=True)
     temp = OUT.with_suffix(".tmp")
     temp.write_text(json.dumps(doc,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     temp.replace(OUT)
-    print(f"Important news: {len(final)} selected from {len(candidates)} candidates; mode={mode}; window={WINDOW_HOURS}h")
-    for x in final: print(f"{x['importance_score']:>3} | {x['source']} | {x['title']}")
-if __name__ == "__main__": main()
+    print(f"Published data file: {OUT}; count={len(final)}")
+if __name__ == "__main__":
+    main()
