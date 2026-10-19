@@ -1,15 +1,13 @@
-name: Build important news page
+name: Build rolling important news
 
 on:
-  schedule:
-    - cron: "7 */2 * * *"
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - "scripts/build_important_news.py"
-      - "important-news.html"
-      - ".github/workflows/build-important-news.yml"
+    inputs:
+      dry_run:
+        description: "Run selection without publishing data"
+        required: true
+        type: boolean
+        default: true
 
 permissions:
   contents: write
@@ -24,7 +22,7 @@ jobs:
     timeout-minutes: 5
     env:
       AI_PROVIDER: gemini
-      GEMINI_API_KEY: \${{ secrets.GEMINI_API_KEY }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -32,9 +30,19 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Select important stories and build data
-        run: python scripts/build_important_news.py
+      - name: Select and validate important stories
+        run: |
+          set -e
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            python scripts/build_important_news.py --dry-run
+          else
+            python scripts/build_important_news.py
+          fi
+      - name: Validate generated JSON
+        if: inputs.dry_run == false
+        run: python -c "import json; d=json.load(open('data/public/important-news.json', encoding='utf-8')); assert d['count'] <= 16; assert len(d['items']) == d['count']; print('JSON valid; count=', d['count'])"
       - name: Commit generated important-news data
+        if: inputs.dry_run == false
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
