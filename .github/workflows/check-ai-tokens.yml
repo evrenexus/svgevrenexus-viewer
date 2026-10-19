@@ -27,7 +27,7 @@ jobs:
           prompt = 'Reply with exactly this JSON object and nothing else: {"ok":true}'
           tests = [
               ("Gemini", "GEMINI_API_KEY",
-               "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
+               "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent",
                lambda key: ({"contents":[{"parts":[{"text":prompt}]}],
                              "generationConfig":{"temperature":0,"responseMimeType":"application/json"}},
                             {"x-goog-api-key":key,"Content-Type":"application/json"})),
@@ -39,7 +39,7 @@ jobs:
                             {"Authorization":"Bearer "+key,"Content-Type":"application/json"})),
               ("OpenRouter", "OPENROUTER_API_KEY",
                "https://openrouter.ai/api/v1/chat/completions",
-               lambda key: ({"model":"openrouter/free",
+               lambda key: ({"model":"google/gemma-4-26b-a4b-it:free",
                              "messages":[{"role":"user","content":prompt}],
                              "temperature":0,"max_tokens":80,"response_format":{"type":"json_object"}},
                             {"Authorization":"Bearer "+key,"Content-Type":"application/json",
