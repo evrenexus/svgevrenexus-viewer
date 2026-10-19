@@ -1,0 +1,79 @@
+name: Check existing AI API tokens
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/check-ai-tokens.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Test configured AI providers without exposing secrets
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.request, urllib.error
+
+          prompt = 'Reply with exactly this JSON object and nothing else: {"ok":true}'
+          tests = [
+              ("Gemini", "GEMINI_API_KEY",
+               "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
+               lambda key: ({"contents":[{"parts":[{"text":prompt}]}],
+                             "generationConfig":{"temperature":0,"responseMimeType":"application/json"}},
+                            {"x-goog-api-key":key,"Content-Type":"application/json"})),
+              ("Groq", "GROQ_API_KEY",
+               "https://api.groq.com/openai/v1/chat/completions",
+               lambda key: ({"model":"llama-3.3-70b-versatile",
+                             "messages":[{"role":"user","content":prompt}],
+                             "temperature":0,"max_tokens":80,"response_format":{"type":"json_object"}},
+                            {"Authorization":"Bearer "+key,"Content-Type":"application/json"})),
+              ("OpenRouter", "OPENROUTER_API_KEY",
+               "https://openrouter.ai/api/v1/chat/completions",
+               lambda key: ({"model":"openrouter/free",
+                             "messages":[{"role":"user","content":prompt}],
+                             "temperature":0,"max_tokens":80,"response_format":{"type":"json_object"}},
+                            {"Authorization":"Bearer "+key,"Content-Type":"application/json",
+                             "HTTP-Referer":"https://evrenexus.github.io/svgevrenexus-viewer/",
+                             "X-Title":"Evren Nexus token check"})),
+          ]
+          successes = []
+          for name, env_name, url, make_request in tests:
+              key = os.environ.get(env_name, "").strip()
+              if not key:
+                  print(f"{name}: SECRET_NOT_CONFIGURED")
+                  continue
+              body, headers = make_request(key)
+              req = urllib.request.Request(url, data=json.dumps(body).encode(), headers=headers, method="POST")
+              try:
+                  with urllib.request.urlopen(req, timeout=45) as response:
+                      data = json.load(response)
+                  if name == "Gemini":
+                      answer = "".join(p.get("text","") for c in data.get("candidates",[])
+                                       for p in c.get("content",{}).get("parts",[]))
+                  else:
+                      answer = str((((data.get("choices") or [{}])[0]).get("message") or {}).get("content") or "")
+                  if not answer.strip():
+                      print(f"{name}: REACHABLE_BUT_EMPTY_RESPONSE")
+                  else:
+                      print(f"{name}: OK")
+                      successes.append(name)
+              except urllib.error.HTTPError as e:
+                  # Never print request headers or secret values.
+                  detail = e.read(500).decode("utf-8","replace").replace(key,"[REDACTED]")
+                  print(f"{name}: HTTP_{e.code} {detail[:350]}")
+              except Exception as e:
+                  print(f"{name}: ERROR {type(e).__name__}: {str(e).replace(key,'[REDACTED]')[:250]}")
+          print("WORKING_PROVIDERS:", ", ".join(successes) if successes else "NONE")
+          if not successes:
+              raise SystemExit("No configured AI provider passed the connectivity test.")
+          PY
